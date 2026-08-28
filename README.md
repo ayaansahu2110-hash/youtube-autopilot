@@ -43,19 +43,26 @@ python -m autopilot.cli run --dry-run
 
 ## YouTube authentication
 
-Use a Google Cloud OAuth **Desktop app** credential and enable the YouTube Data API v3. The app requests only the `youtube.upload` scope for publishing. Keep the downloaded client JSON outside the repository and point `YOUTUBE_CLIENT_SECRETS_FILE` to it.
+Use a Google Cloud OAuth **Desktop app** credential and enable the YouTube Data API v3. The app requests upload + read-only analytics scopes so a single consent flow can publish and later learn from channel performance. Keep the downloaded client JSON outside the repository and point `YOUTUBE_CLIENT_SECRETS_FILE` to it.
 
 ## Current status
 
-Implemented foundation:
+Implemented foundation plus production core:
 
 - Typed `.env` configuration and secret protection
+- Persistent topic/video history
+- Automated Google News RSS trend discovery
+- Multi-source research packs
 - OpenAI-backed script planner with no-key fallback mode
 - Edge TTS narration adapter
+- Pexels stock-video provider with attribution support
+- Caption and thumbnail generators
+- Originality/quality gate
 - FFmpeg rendering adapter
 - Guarded YouTube OAuth uploader
+- YouTube Analytics feedback client
 - Dry-run and render pipeline
 - Daily scheduler CLI
 - Pytest safety tests and GitHub Actions CI
 
-Next build phase: automated topic discovery/research, stronger visuals/captions/thumbnail generation, quality gates, analytics feedback, and deployment for unattended daily execution.
+Next: connect these modules into the production runner, add resilient uploads/thumbnails, cloud daily workflow, and one-time credential setup instructions.
