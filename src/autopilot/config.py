@@ -23,6 +23,9 @@ class Settings(BaseSettings):
     youtube_category_id: str = "28"
     youtube_made_for_kids: bool = False
 
+    # Gemini is the preferred no-cost scripting provider. OpenAI remains an optional fallback.
+    gemini_api_key: str | None = None
+    gemini_model: str = "gemini-2.5-flash"
     openai_api_key: str | None = None
     openai_model: str = "gpt-5-mini"
 
@@ -56,6 +59,18 @@ class Settings(BaseSettings):
     @property
     def longform_day_set(self) -> set[str]:
         return {item.strip().lower()[:3] for item in self.longform_days.split(",") if item.strip()}
+
+    @property
+    def llm_configured(self) -> bool:
+        return bool(self.gemini_api_key or self.openai_api_key)
+
+    @property
+    def llm_provider_name(self) -> str:
+        if self.gemini_api_key:
+            return "Gemini"
+        if self.openai_api_key:
+            return "OpenAI"
+        return "fallback"
 
     def ensure_artifacts_dir(self) -> Path:
         self.artifacts_dir.mkdir(parents=True, exist_ok=True)
