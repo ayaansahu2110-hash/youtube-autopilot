@@ -57,6 +57,9 @@ Rules:
 - Do not imitate, quote, paraphrase closely, or mention another creator's script.
 - Write a fresh explanation from the verified facts in the supplied research.
 - Do not invent statistics, dates, prices, product capabilities or quotes.
+- Treat the topic/headline as a lead, NOT as verified evidence.
+- Never call a product 'free', 'open source', 'unlimited', 'private', or similar unless the research itself supports that exact claim and you include material restrictions or licensing conditions when relevant.
+- If sources conflict, prefer the more specific primary-source limitation and phrase the claim conservatively.
 - If evidence is uncertain, say so briefly rather than guessing.
 - Script target: {target}.
 - Open with a strong non-clickbait hook and deliver useful information immediately.
