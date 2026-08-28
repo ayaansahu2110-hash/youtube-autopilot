@@ -1,4 +1,5 @@
 import json
+import time
 
 import httpx
 from openai import OpenAI
@@ -85,26 +86,43 @@ thumbnail_brief, thumbnail_text, visual_queries (array).
     def _gemini_json(self, prompt: str) -> dict:
         configured = self.settings.gemini_model.strip()
         models = []
+        # Prefer the current stable Flash model even if a stale repository variable
+        # still points at an older model. Keep the configured model as a fallback.
         for model in (
-            configured,
             "gemini-3.7-flash",
+            configured,
             "gemini-3.6-flash",
             "gemini-3.5-flash-lite",
         ):
             if model and model not in models:
                 models.append(model)
 
+        transient_statuses = {429, 500, 502, 503, 504}
         last_error: Exception | None = None
+
         for model in models:
-            try:
-                return self._gemini_json_with_model(prompt, model)
-            except httpx.HTTPStatusError as exc:
-                last_error = exc
-                # A stale/retired model can return 404. Automatically move to the
-                # next supported Flash model so unattended runs keep working.
-                if exc.response.status_code == 404:
-                    continue
-                raise
+            for attempt in range(3):
+                try:
+                    return self._gemini_json_with_model(prompt, model)
+                except httpx.HTTPStatusError as exc:
+                    last_error = exc
+                    status = exc.response.status_code
+                    if status == 404:
+                        # Retired/unavailable model: move immediately to the next model.
+                        break
+                    if status in transient_statuses:
+                        if attempt < 2:
+                            time.sleep(2**attempt)
+                            continue
+                        # Repeated overload/rate-limit: try a different Flash model.
+                        break
+                    raise
+                except httpx.RequestError as exc:
+                    last_error = exc
+                    if attempt < 2:
+                        time.sleep(2**attempt)
+                        continue
+                    break
 
         if last_error:
             raise last_error
