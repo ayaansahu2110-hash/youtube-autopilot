@@ -41,3 +41,8 @@ testpaths = ["tests"]
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+
+# Keep CI focused on correctness-oriented linting. The production pipeline intentionally
+# uses a few broad fail-safe exception boundaries and supports Python 3.11 syntax.
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "B"]
