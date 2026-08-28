@@ -41,6 +41,21 @@ class Researcher:
                 break
             self._append_url_source(sources, seen_urls, seen_publishers, candidate.title, url)
 
+        # New developer tools are often first announced as a GitHub repository
+        # before they receive independent press coverage. When that happens,
+        # GitHub's public repository metadata can point us to the project's
+        # official homepage/docs, giving the script a second substantive page
+        # to cross-check capabilities, pricing and licensing details.
+        if len(sources) < self.settings.min_research_sources:
+            github_urls = [source.url for source in sources if "github.com" in urlparse(source.url).netloc]
+            github_urls.extend(url for url in candidate.source_urls if "github.com" in urlparse(url).netloc)
+            for github_url in dict.fromkeys(github_urls):
+                companion = self._github_homepage_entry(github_url)
+                if companion:
+                    self._append_entry(sources, seen_urls, seen_publishers, companion)
+                if len(sources) >= self.settings.min_research_sources:
+                    break
+
         # A final public no-key fallback searches Hacker News for related recent
         # stories and then reads the linked original pages. This is discovery
         # evidence, not a substitute for factual verification.
@@ -197,6 +212,41 @@ class Researcher:
         return entries
 
     @staticmethod
+    def _github_homepage_entry(repo_url: str) -> dict | None:
+        parsed = urlparse(repo_url)
+        if parsed.netloc.lower() not in {"github.com", "www.github.com"}:
+            return None
+        parts = [part for part in parsed.path.split("/") if part]
+        if len(parts) < 2:
+            return None
+        owner, repo = parts[0], parts[1].removesuffix(".git")
+        try:
+            response = httpx.get(
+                f"https://api.github.com/repos/{owner}/{repo}",
+                timeout=12,
+                follow_redirects=True,
+                headers={**_BROWSER_HEADERS, "Accept": "application/vnd.github+json"},
+            )
+            response.raise_for_status()
+            data = response.json()
+        except Exception:
+            return None
+
+        homepage = str(data.get("homepage") or "").strip()
+        if not homepage.startswith(("http://", "https://")):
+            return None
+        homepage_domain = urlparse(homepage).netloc.lower()
+        if not homepage_domain or "github.com" in homepage_domain:
+            return None
+        return {
+            "title": str(data.get("name") or repo) + " official website",
+            "url": homepage,
+            "publisher": homepage_domain,
+            "published": None,
+            "summary": str(data.get("description") or ""),
+        }
+
+    @staticmethod
     def _extract_page_text(url: str) -> str:
         if not url:
             return ""
@@ -214,7 +264,16 @@ class Researcher:
             for element in soup(["script", "style", "nav", "footer", "header", "aside"]):
                 element.decompose()
             paragraphs = [p.get_text(" ", strip=True) for p in soup.find_all("p")]
-            return "\n".join(text for text in paragraphs if len(text) >= 40)[:12000]
+            # Some product landing pages rely on headings/list items rather than
+            # long paragraphs. Include those only when paragraph extraction is
+            # too sparse so a legitimate official page can still be evaluated.
+            if sum(len(text) for text in paragraphs) < 300:
+                extras = [
+                    node.get_text(" ", strip=True)
+                    for node in soup.find_all(["h1", "h2", "h3", "li"])
+                ]
+                paragraphs.extend(extras)
+            return "\n".join(text for text in paragraphs if len(text) >= 30)[:12000]
         except Exception:
             return ""
 
