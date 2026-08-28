@@ -25,7 +25,7 @@ class Settings(BaseSettings):
 
     # Gemini is the preferred no-cost scripting provider. OpenAI remains an optional fallback.
     gemini_api_key: str | None = None
-    gemini_model: str = "gemini-2.5-flash"
+    gemini_model: str = "gemini-3.7-flash"
     openai_api_key: str | None = None
     openai_model: str = "gpt-5-mini"
 
