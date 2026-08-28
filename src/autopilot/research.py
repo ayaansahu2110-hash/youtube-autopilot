@@ -9,36 +9,46 @@ from autopilot.config import Settings
 from autopilot.models import ResearchPack, ResearchSource, TopicCandidate
 
 
+_BROWSER_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140 Safari/537.36"
+    )
+}
+
+
 class Researcher:
     def __init__(self, settings: Settings):
         self.settings = settings
 
     def research(self, candidate: TopicCandidate) -> ResearchPack:
         sources: list[ResearchSource] = []
+        seen_urls: set[str] = set()
         seen_publishers: set[str] = set()
 
+        # Search more than one public news endpoint because hosted runners can
+        # occasionally be rate-limited or blocked by an individual provider.
         for item in self._news_entries(candidate.title):
-            publisher = item.get("publisher") or urlparse(item["url"]).netloc
-            publisher_key = publisher.lower().strip()
-            if publisher_key in seen_publishers:
-                continue
-            seen_publishers.add(publisher_key)
-            snippet = self._extract_page_text(item["url"]) or item.get("summary", "")
-            sources.append(
-                ResearchSource(
-                    title=item["title"],
-                    url=item["url"],
-                    publisher=publisher,
-                    published_at=item.get("published"),
-                    snippet=self._clean(snippet)[:5000],
-                )
-            )
+            self._append_entry(sources, seen_urls, seen_publishers, item)
             if len(sources) >= 5:
                 break
 
-        if not sources:
-            for url in candidate.source_urls[:3]:
-                sources.append(ResearchSource(title=candidate.title, url=url, snippet="Demand signal only; verify claims."))
+        # Preserve the discovery evidence and fetch the original pages. Only
+        # count sources with useful text so the production quality gate cannot
+        # be satisfied by empty URLs alone.
+        for url in candidate.source_urls:
+            if len(sources) >= 5:
+                break
+            self._append_url_source(sources, seen_urls, seen_publishers, candidate.title, url)
+
+        # A final public no-key fallback searches Hacker News for related recent
+        # stories and then reads the linked original pages. This is discovery
+        # evidence, not a substitute for factual verification.
+        if len(sources) < self.settings.min_research_sources:
+            for item in self._hacker_news_entries(candidate.title):
+                self._append_entry(sources, seen_urls, seen_publishers, item)
+                if len(sources) >= 5:
+                    break
 
         notes = "\n\n".join(
             f"SOURCE {index + 1}: {source.publisher or 'Unknown'} — {source.title}\n{source.snippet[:1500]}"
@@ -46,10 +56,90 @@ class Researcher:
         )
         return ResearchPack(topic=candidate.title, sources=sources, research_notes=notes)
 
+    def _append_entry(
+        self,
+        sources: list[ResearchSource],
+        seen_urls: set[str],
+        seen_publishers: set[str],
+        item: dict,
+    ) -> None:
+        url = str(item.get("url") or "").strip()
+        if not url or url in seen_urls:
+            return
+        publisher = str(item.get("publisher") or urlparse(url).netloc).strip()
+        publisher_key = publisher.lower()
+        if publisher_key and publisher_key in seen_publishers:
+            return
+        page_text = self._extract_page_text(url)
+        snippet = self._clean(page_text or str(item.get("summary") or ""))
+        if len(snippet) < 120:
+            return
+        seen_urls.add(url)
+        if publisher_key:
+            seen_publishers.add(publisher_key)
+        sources.append(
+            ResearchSource(
+                title=str(item.get("title") or "Source"),
+                url=url,
+                publisher=publisher,
+                published_at=item.get("published"),
+                snippet=snippet[:5000],
+            )
+        )
+
+    def _append_url_source(
+        self,
+        sources: list[ResearchSource],
+        seen_urls: set[str],
+        seen_publishers: set[str],
+        title: str,
+        url: str,
+    ) -> None:
+        url = str(url or "").strip()
+        if not url or url in seen_urls:
+            return
+        publisher = urlparse(url).netloc.strip()
+        publisher_key = publisher.lower()
+        if publisher_key and publisher_key in seen_publishers:
+            return
+        snippet = self._clean(self._extract_page_text(url))
+        if len(snippet) < 120:
+            return
+        seen_urls.add(url)
+        if publisher_key:
+            seen_publishers.add(publisher_key)
+        sources.append(
+            ResearchSource(
+                title=title,
+                url=url,
+                publisher=publisher,
+                snippet=snippet[:5000],
+            )
+        )
+
     def _news_entries(self, topic: str) -> list[dict]:
-        url = f"https://news.google.com/rss/search?q={quote_plus(topic)}&hl=en-US&gl=US&ceid=US:en"
+        urls = [
+            f"https://news.google.com/rss/search?q={quote_plus(topic)}&hl=en-US&gl=US&ceid=US:en",
+            f"https://www.bing.com/news/search?q={quote_plus(topic)}&format=rss",
+        ]
+        entries: list[dict] = []
+        seen: set[str] = set()
+        for url in urls:
+            for item in self._parse_rss(url, topic):
+                key = str(item.get("url") or "")
+                if key and key not in seen:
+                    seen.add(key)
+                    entries.append(item)
+        return entries[:15]
+
+    def _parse_rss(self, url: str, topic: str) -> list[dict]:
         try:
-            response = httpx.get(url, timeout=12, follow_redirects=True, headers={"User-Agent": "YouTubeAutopilot/1.0"})
+            response = httpx.get(
+                url,
+                timeout=15,
+                follow_redirects=True,
+                headers=_BROWSER_HEADERS,
+            )
             response.raise_for_status()
             parsed = feedparser.loads(response.text)
         except Exception:
@@ -72,12 +162,51 @@ class Researcher:
             )
         return entries
 
+    def _hacker_news_entries(self, topic: str) -> list[dict]:
+        # Keep the query compact; headline-like full sentences often return no
+        # Algolia matches even when the underlying subject is active.
+        words = [word for word in re.findall(r"[A-Za-z0-9]+", topic) if len(word) >= 3]
+        query = " ".join(words[:6]) or topic
+        try:
+            response = httpx.get(
+                "https://hn.algolia.com/api/v1/search_by_date",
+                params={"query": query, "tags": "story", "hitsPerPage": 12},
+                timeout=15,
+                follow_redirects=True,
+                headers=_BROWSER_HEADERS,
+            )
+            response.raise_for_status()
+            hits = response.json().get("hits") or []
+        except Exception:
+            return []
+
+        entries: list[dict] = []
+        for hit in hits:
+            original = str(hit.get("url") or "").strip()
+            if not original:
+                continue
+            entries.append(
+                {
+                    "title": str(hit.get("title") or topic),
+                    "url": original,
+                    "publisher": urlparse(original).netloc,
+                    "published": hit.get("created_at"),
+                    "summary": "",
+                }
+            )
+        return entries
+
     @staticmethod
     def _extract_page_text(url: str) -> str:
         if not url:
             return ""
         try:
-            response = httpx.get(url, timeout=12, follow_redirects=True, headers={"User-Agent": "Mozilla/5.0 YouTubeAutopilot/1.0"})
+            response = httpx.get(
+                url,
+                timeout=15,
+                follow_redirects=True,
+                headers=_BROWSER_HEADERS,
+            )
             response.raise_for_status()
             if "text/html" not in response.headers.get("content-type", ""):
                 return ""
