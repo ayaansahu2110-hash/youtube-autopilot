@@ -16,6 +16,8 @@ jobs:
   produce:
     runs-on: ubuntu-latest
     env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
       YOUTUBE_CLIENT_SECRETS_B64: ${{ secrets.YOUTUBE_CLIENT_SECRETS_B64 }}
@@ -36,9 +38,9 @@ jobs:
       - name: Preflight secrets
         shell: bash
         run: |
-          if [ -z "$OPENAI_API_KEY" ] || [ -z "$YOUTUBE_CLIENT_SECRETS_B64" ] || [ -z "$YOUTUBE_TOKEN_B64" ]; then
+          if { [ -z "$GEMINI_API_KEY" ] && [ -z "$OPENAI_API_KEY" ]; } || [ -z "$YOUTUBE_CLIENT_SECRETS_B64" ] || [ -z "$YOUTUBE_TOKEN_B64" ]; then
             echo "READY=false" >> "$GITHUB_ENV"
-            echo "Required secrets are not configured yet; safely skipping production."
+            echo "Required AI/YouTube secrets are not configured yet; safely skipping production."
           else
             echo "READY=true" >> "$GITHUB_ENV"
           fi
