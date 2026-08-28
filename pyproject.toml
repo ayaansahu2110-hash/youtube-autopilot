@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "youtube-autopilot"
+version = "0.1.0"
+description = "Original-content YouTube automation pipeline"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "apscheduler>=3.10,<4",
+  "edge-tts>=7,<8",
+  "google-api-python-client>=2.170,<3",
+  "google-auth-oauthlib>=1.2,<2",
+  "openai>=1.100,<2",
+  "pydantic>=2.10,<3",
+  "pydantic-settings>=2.7,<3",
+  "rich>=14,<15",
+  "typer>=0.16,<1"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<9", "ruff>=0.12,<1"]
+
+[project.scripts]
+youtube-autopilot = "autopilot.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
