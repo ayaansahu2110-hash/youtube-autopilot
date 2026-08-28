@@ -77,8 +77,14 @@ if (-not $gh) {
 Write-Host "GitHub CLI ready." -ForegroundColor Green
 
 Step "Checking GitHub sign-in"
-& $gh auth status --hostname github.com *> $null
-if ($LASTEXITCODE -ne 0) {
+# GitHub CLI writes its unauthenticated status to stderr. Windows PowerShell 5 can
+# turn that expected stderr output into a terminating NativeCommandError when
+# ErrorActionPreference is Stop, so run the status probe through cmd and inspect
+# only its exit code.
+$quotedGh = '"' + $gh + '"'
+& cmd.exe /d /c "$quotedGh auth status --hostname github.com >nul 2>&1"
+$authStatus = $LASTEXITCODE
+if ($authStatus -ne 0) {
     Write-Host "A browser sign-in will open. Sign in to GitHub and approve access once."
     & $gh auth login --hostname github.com --web --git-protocol https
     if ($LASTEXITCODE -ne 0) { throw "GitHub sign-in was not completed." }
