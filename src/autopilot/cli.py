@@ -61,6 +61,8 @@ def run_once(
     settings = load_settings()
     result = AutopilotPipeline(settings).run(topic=topic, dry_run=dry_run, video_format=video_format)
     _print_result(result, settings)
+    if result.status == "failed":
+        raise typer.Exit(code=1)
 
 
 @app.command()
@@ -80,14 +82,20 @@ def daily(
     state = StateStore(settings.state_file)
     AnalyticsClient(settings, state).refresh()
     dry_run = not live
+    results = []
 
     short_result = AutopilotPipeline(settings).run(dry_run=dry_run, video_format="short")
+    results.append(short_result)
     _print_result(short_result, settings)
 
     local_day = datetime.now(ZoneInfo(settings.schedule_timezone)).strftime("%a").lower()
     if settings.longform_enabled and local_day in settings.longform_day_set:
         long_result = AutopilotPipeline(settings).run(dry_run=dry_run, video_format="long")
+        results.append(long_result)
         _print_result(long_result, settings)
+
+    if any(result.status == "failed" for result in results):
+        raise typer.Exit(code=1)
 
 
 @app.command()
