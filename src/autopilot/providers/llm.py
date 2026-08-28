@@ -83,14 +83,44 @@ thumbnail_brief, thumbnail_text, visual_queries (array).
         raise RuntimeError("No LLM provider configured")
 
     def _gemini_json(self, prompt: str) -> dict:
-        model = self.settings.gemini_model.strip()
+        configured = self.settings.gemini_model.strip()
+        models = []
+        for model in (
+            configured,
+            "gemini-3.7-flash",
+            "gemini-3.6-flash",
+            "gemini-3.5-flash-lite",
+        ):
+            if model and model not in models:
+                models.append(model)
+
+        last_error: Exception | None = None
+        for model in models:
+            try:
+                return self._gemini_json_with_model(prompt, model)
+            except httpx.HTTPStatusError as exc:
+                last_error = exc
+                # A stale/retired model can return 404. Automatically move to the
+                # next supported Flash model so unattended runs keep working.
+                if exc.response.status_code == 404:
+                    continue
+                raise
+
+        if last_error:
+            raise last_error
+        raise RuntimeError("No Gemini model was available")
+
+    def _gemini_json_with_model(self, prompt: str, model: str) -> dict:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+        generation_config: dict[str, object] = {"responseMimeType": "application/json"}
+        # Gemini 3.x migration guidance recommends removing legacy sampling
+        # parameters. Keep temperature only for older compatible models.
+        if not model.startswith("gemini-3"):
+            generation_config["temperature"] = 0.4
+
         payload = {
             "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-            "generationConfig": {
-                "responseMimeType": "application/json",
-                "temperature": 0.4,
-            },
+            "generationConfig": generation_config,
         }
         response = httpx.post(
             url,
@@ -105,11 +135,11 @@ thumbnail_brief, thumbnail_text, visual_queries (array).
         data = response.json()
         candidates = data.get("candidates") or []
         if not candidates:
-            raise RuntimeError("Gemini returned no candidates")
+            raise RuntimeError(f"Gemini model {model} returned no candidates")
         parts = candidates[0].get("content", {}).get("parts", [])
         text = "".join(str(part.get("text", "")) for part in parts).strip()
         if not text:
-            raise RuntimeError("Gemini returned an empty response")
+            raise RuntimeError(f"Gemini model {model} returned an empty response")
         return self._json(text)
 
     def _openai_client(self) -> OpenAI:
