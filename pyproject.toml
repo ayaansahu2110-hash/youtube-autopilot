@@ -4,20 +4,25 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "youtube-autopilot"
-version = "0.1.0"
+version = "0.2.0"
 description = "Original-content YouTube automation pipeline"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
   "apscheduler>=3.10,<4",
+  "beautifulsoup4>=4.13,<5",
   "edge-tts>=7,<8",
+  "feedparser>=6.0,<7",
   "google-api-python-client>=2.170,<3",
   "google-auth-oauthlib>=1.2,<2",
+  "httpx>=0.28,<1",
   "openai>=1.100,<2",
+  "pillow>=11,<12",
   "pydantic>=2.10,<3",
   "pydantic-settings>=2.7,<3",
   "rich>=14,<15",
-  "typer>=0.16,<1"
+  "typer>=0.16,<1",
+  "tzdata>=2025.2"
 ]
 
 [project.optional-dependencies]

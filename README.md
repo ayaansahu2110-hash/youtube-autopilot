@@ -1,68 +1,56 @@
 # YouTube Autopilot
 
-A modular, automation-first pipeline for producing original faceless YouTube content.
+An automation-first system for producing **original** faceless YouTube content without copying other creators.
 
-## Goal
+## What it does
 
-Research a topic -> create an original script -> synthesize narration -> render video -> generate metadata -> upload to YouTube -> later feed analytics back into topic selection.
+`trend discovery -> multi-source research -> topic selection -> original script -> AI voice -> stock visuals -> captions -> thumbnail -> quality gate -> YouTube upload -> analytics feedback`
 
-The project starts in **safe dry-run mode**. Real YouTube uploads stay disabled until OAuth is configured and `ENABLE_UPLOADS=true` is set explicitly.
+The production schedule is **one Short every day plus one long-form video on Monday, Wednesday and Friday**. The schedule can be changed in `.env`.
 
-## Principles
+## Safety defaults
 
-- Original content only; do not clone or lightly rewrite other creators' videos.
-- Secrets never enter Git.
-- Provider adapters keep LLM, TTS, visuals, and analytics replaceable.
-- Every stage produces inspectable artifacts.
-- Uploads default to `private`.
+- Uploading is off locally unless `ENABLE_UPLOADS=true`.
+- Cloud uploads start as **private**.
+- Public publishing has a second lock: `ALLOW_PUBLIC_UPLOADS=true`.
+- Secrets and OAuth tokens stay out of Git.
+- Recent-topic history prevents repeated/repackaged videos.
+- Scripts are grounded in multiple research sources and are instructed not to imitate creators.
+- Pexels footage is attributed in the video description when used.
 
-## Quick start
+## Local commands
 
 ```bash
-python -m venv .venv
-# Windows PowerShell
-.venv\Scripts\Activate.ps1
-pip install -e .[dev]
-copy .env.example .env
 python -m autopilot.cli doctor
+python -m autopilot.cli auth-youtube
 python -m autopilot.cli run --dry-run
+python -m autopilot.cli run --render --format short
+python -m autopilot.cli daily
+python -m autopilot.cli daily --live
+python -m autopilot.cli analytics
 ```
 
-## Pipeline
+## Unattended cloud operation
 
-1. Topic discovery and scoring
-2. Fact/research pack
-3. Script + hook + shot plan
-4. Voice generation
-5. Visual sourcing/generation
-6. FFmpeg rendering and captions
-7. Title/description/tags/thumbnail brief
-8. Quality + copyright/reuse checks
-9. YouTube OAuth upload
-10. Analytics-driven feedback loop
+`.github/workflows/daily.yml` runs every day in GitHub Actions at approximately 18:00 Asia/Kolkata. It safely skips production until the required repository secrets exist, then renders/uploads the daily content and commits only non-secret topic/analytics history back to `state/history.json`.
 
-## YouTube authentication
+See [`docs/SETUP.md`](docs/SETUP.md) for the one-time account authorization steps.
 
-Use a Google Cloud OAuth **Desktop app** credential and enable the YouTube Data API v3. The app requests upload + read-only analytics scopes so a single consent flow can publish and later learn from channel performance. Keep the downloaded client JSON outside the repository and point `YOUTUBE_CLIENT_SECRETS_FILE` to it.
+## Architecture
 
-## Current status
+- `discovery.py` — fresh topic signals and repeat avoidance
+- `research.py` — multi-source research packs
+- `providers/llm.py` — original grounded script/topic planning
+- `providers/tts.py` — narration
+- `providers/visuals.py` — Pexels stock-video sourcing
+- `captions.py` — timed subtitles
+- `render.py` — FFmpeg assembly
+- `thumbnail.py` — automatic 1280x720 thumbnails
+- `quality.py` — originality/production gates
+- `youtube.py` — OAuth, resumable upload, thumbnails
+- `analytics.py` — YouTube performance feedback
+- `state.py` — persistent history and performance terms
 
-Implemented foundation plus production core:
+## Current stage
 
-- Typed `.env` configuration and secret protection
-- Persistent topic/video history
-- Automated Google News RSS trend discovery
-- Multi-source research packs
-- OpenAI-backed script planner with no-key fallback mode
-- Edge TTS narration adapter
-- Pexels stock-video provider with attribution support
-- Caption and thumbnail generators
-- Originality/quality gate
-- FFmpeg rendering adapter
-- Guarded YouTube OAuth uploader
-- YouTube Analytics feedback client
-- Dry-run and render pipeline
-- Daily scheduler CLI
-- Pytest safety tests and GitHub Actions CI
-
-Next: connect these modules into the production runner, add resilient uploads/thumbnails, cloud daily workflow, and one-time credential setup instructions.
+The code path for the complete automated workflow is implemented. The remaining blocker is account-specific: add the OpenAI/Pexels credentials, perform one YouTube OAuth consent flow, place encoded OAuth files in GitHub Actions secrets, and run the first private cloud test.

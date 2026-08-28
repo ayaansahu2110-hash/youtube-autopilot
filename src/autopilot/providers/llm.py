@@ -3,43 +3,120 @@ import json
 from openai import OpenAI
 
 from autopilot.config import Settings
-from autopilot.models import VideoPlan
+from autopilot.models import ResearchPack, TopicCandidate, VideoPlan
 
 
 class ScriptPlanner:
     def __init__(self, settings: Settings):
         self.settings = settings
 
-    def create_plan(self, topic: str, video_format: str) -> VideoPlan:
+    def choose_topic(self, candidates: list[TopicCandidate]) -> TopicCandidate:
+        if not candidates:
+            return TopicCandidate(
+                title="A useful AI workflow most people are underusing",
+                score=50,
+                reason="Fallback evergreen topic because live discovery returned no candidates.",
+            )
         if not self.settings.openai_api_key:
-            return self._fallback_plan(topic, video_format)
+            return max(candidates, key=lambda item: item.score)
 
-        client = OpenAI(api_key=self.settings.openai_api_key)
-        prompt = f"""Create an ORIGINAL YouTube {video_format} plan for the niche: {self.settings.channel_niche}.
-Topic: {topic}
-Do not imitate or paraphrase any specific creator. Return JSON only with keys:
-angle, hook, script, title, description, tags (array), thumbnail_brief.
-Make claims cautious and fact-checkable. Avoid fabricated statistics. Keep the script {'under 150 words' if video_format == 'short' else '900-1200 words'}.
-"""
-        response = client.responses.create(model=self.settings.openai_model, input=prompt)
-        data = json.loads(response.output_text)
-        return VideoPlan(topic=topic, format=video_format, **data)
-
-    def _fallback_plan(self, topic: str, video_format: str) -> VideoPlan:
-        script = (
-            f"Most people hear about {topic} after it is already everywhere. "
-            "Here is the useful part: what it is, why it matters, and one practical way to test it today. "
-            "Before trusting any claim, check the original source, pricing, privacy terms, and whether the result actually saves you time. "
-            "That simple test is more useful than hype."
+        compact = [
+            {"index": index, "title": item.title, "score": item.score, "reason": item.reason}
+            for index, item in enumerate(candidates[:12])
+        ]
+        prompt = (
+            "Choose ONE YouTube topic with the best combination of freshness, useful audience value, "
+            "click potential and ability to make an original video without copying creators. "
+            "Avoid politics, medical advice, financial promises and celebrity gossip. "
+            f"Channel niche: {self.settings.channel_niche}. Candidates: {json.dumps(compact)}. "
+            "Return JSON only: {\"index\": integer, \"angle\": string}."
         )
+        try:
+            response = self._client().responses.create(model=self.settings.openai_model, input=prompt)
+            data = self._json(response.output_text)
+            chosen = candidates[int(data["index"])]
+            chosen.angle = str(data.get("angle") or chosen.angle)
+            return chosen
+        except Exception:
+            return max(candidates, key=lambda item: item.score)
+
+    def create_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
+        if not self.settings.openai_api_key:
+            return self._fallback_plan(research, video_format)
+
+        target = "90-145 words" if video_format == "short" else "800-1200 words"
+        visual_count = "4-7" if video_format == "short" else "10-16"
+        source_text = research.research_notes[:16000]
+        prompt = f"""You are producing an ORIGINAL YouTube {video_format} for this niche: {self.settings.channel_niche}.
+Topic: {research.topic}
+Research material follows. Treat it as evidence, not prose to copy:
+{source_text}
+
+Rules:
+- Do not imitate, quote, paraphrase closely, or mention another creator's script.
+- Write a fresh explanation from the verified facts in the supplied research.
+- Do not invent statistics, dates, prices, product capabilities or quotes.
+- If evidence is uncertain, say so briefly rather than guessing.
+- Script target: {target}.
+- Open with a strong non-clickbait hook and deliver useful information immediately.
+- No fake urgency, guaranteed money claims, medical/financial advice, or unsupported superlatives.
+- visual_queries must be generic stock-footage search phrases, not copyrighted brand footage requests.
+- Generate {visual_count} visual_queries.
+- thumbnail_text must be 2-4 punchy words and not misleading.
+
+Return JSON only with keys: angle, hook, script, title, description, tags (array),
+thumbnail_brief, thumbnail_text, visual_queries (array).
+"""
+        response = self._client().responses.create(model=self.settings.openai_model, input=prompt)
+        data = self._json(response.output_text)
+        urls = [source.url for source in research.sources if source.url]
+        return VideoPlan(topic=research.topic, format=video_format, source_urls=urls, **data)
+
+    def _client(self) -> OpenAI:
+        return OpenAI(api_key=self.settings.openai_api_key)
+
+    @staticmethod
+    def _json(text: str) -> dict:
+        text = text.strip()
+        if text.startswith("```"):
+            text = text.split("\n", 1)[-1]
+            if text.endswith("```"):
+                text = text[:-3]
+        return json.loads(text.strip())
+
+    def _fallback_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
+        topic = research.topic
+        if video_format == "long":
+            script = " ".join(
+                [
+                    f"Today we are looking at {topic}, without the hype.",
+                    "The useful question is not whether a new tool sounds impressive, but what problem it actually solves, what evidence supports the claim, and what tradeoffs come with using it.",
+                    "Start by checking the original product or announcement, then compare coverage from more than one independent source. Look for concrete capabilities, limitations, pricing changes, privacy implications and who the tool is actually meant for.",
+                    "Next, test the idea on a small real task. Time the old workflow and the new workflow. If the new method saves time without reducing quality, it may be useful. If it only adds novelty, skip it.",
+                    "For students and everyday users, the biggest wins usually come from removing repetitive work, organizing information, explaining difficult material, drafting first versions and helping you discover better resources. The final judgment still needs to stay with you.",
+                    "The takeaway is simple: verify the source, test the workflow and keep only the tools that create a measurable improvement. That approach is much more useful than chasing every new launch.",
+                ]
+                * 4
+            )
+        else:
+            script = (
+                f"Everyone is talking about {topic}, but the headline is not the useful part. "
+                "Check what the original source actually says, compare it with at least one independent report, "
+                "then test the feature on one real task. Measure whether it saves time or improves quality. "
+                "If it does neither, the hype does not matter. If it does, you found a workflow worth keeping. "
+                "That simple verify-test-measure rule is the fastest way to separate useful technology from noise."
+            )
         return VideoPlan(
             topic=topic,
-            angle="Practical explainer focused on usefulness rather than hype",
+            angle="Practical explainer focused on evidence and usefulness",
             format=video_format,
-            hook=f"Before you ignore {topic}, know this.",
+            hook=f"The headline about {topic} is not the useful part.",
             script=script,
-            title=f"{topic}: What Actually Matters",
-            description=f"A concise, original explainer about {topic}. Verify tools and claims before relying on them.",
+            title=f"{topic}: What Actually Matters"[:100],
+            description=f"An original, evidence-first explainer about {topic}.",
             tags=["AI", "technology", "tools", "explainer"],
-            thumbnail_brief=f"Clean high-contrast thumbnail representing {topic}; 2-4 words maximum.",
+            thumbnail_brief=f"Clean technology thumbnail representing {topic}.",
+            thumbnail_text="WORTH THE HYPE?",
+            visual_queries=["person using laptop", "technology workspace", "student productivity", "mobile app close up"],
+            source_urls=[source.url for source in research.sources if source.url],
         )
