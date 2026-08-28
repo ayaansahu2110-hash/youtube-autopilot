@@ -1,5 +1,4 @@
 import shutil
-from pathlib import Path
 
 import typer
 from apscheduler.schedulers.blocking import BlockingScheduler
@@ -55,7 +54,8 @@ def schedule() -> None:
     scheduler = BlockingScheduler(timezone=settings.schedule_timezone)
 
     def job() -> None:
-        AutopilotPipeline(load_settings()).run(dry_run=not load_settings().enable_uploads)
+        current = load_settings()
+        AutopilotPipeline(current).run(dry_run=not current.enable_uploads)
 
     scheduler.add_job(
         job,
