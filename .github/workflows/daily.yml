@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "30 12 * * *" # 18:00 Asia/Kolkata
   workflow_dispatch:
+  # Temporary self-test trigger. This is removed after the cloud test passes.
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/daily.yml"
 
 permissions:
   contents: write
@@ -17,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
+      GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.7-flash' }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
       YOUTUBE_CLIENT_SECRETS_B64: ${{ secrets.YOUTUBE_CLIENT_SECRETS_B64 }}
