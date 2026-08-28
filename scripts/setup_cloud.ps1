@@ -110,7 +110,7 @@ Set-RepoSecret "GEMINI_API_KEY" $gemini $gh
 Set-RepoSecret "PEXELS_API_KEY" $pexels $gh
 Set-RepoSecret "YOUTUBE_CLIENT_SECRETS_B64" $clientB64 $gh
 Set-RepoSecret "YOUTUBE_TOKEN_B64" $tokenB64 $gh
-Set-RepoVariable "GEMINI_MODEL" "gemini-2.5-flash" $gh
+Set-RepoVariable "GEMINI_MODEL" "gemini-3.7-flash" $gh
 Set-RepoVariable "UPLOAD_PRIVACY_STATUS" "private" $gh
 Set-RepoVariable "ALLOW_PUBLIC_UPLOADS" "false" $gh
 
