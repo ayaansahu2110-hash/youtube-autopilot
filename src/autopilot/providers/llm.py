@@ -1,5 +1,6 @@
 import json
 
+import httpx
 from openai import OpenAI
 
 from autopilot.config import Settings
@@ -17,7 +18,7 @@ class ScriptPlanner:
                 score=50,
                 reason="Fallback evergreen topic because live discovery returned no candidates.",
             )
-        if not self.settings.openai_api_key:
+        if not self.settings.llm_configured:
             return max(candidates, key=lambda item: item.score)
 
         compact = [
@@ -32,8 +33,7 @@ class ScriptPlanner:
             "Return JSON only: {\"index\": integer, \"angle\": string}."
         )
         try:
-            response = self._client().responses.create(model=self.settings.openai_model, input=prompt)
-            data = self._json(response.output_text)
+            data = self._generate_json(prompt)
             chosen = candidates[int(data["index"])]
             chosen.angle = str(data.get("angle") or chosen.angle)
             return chosen
@@ -41,7 +41,7 @@ class ScriptPlanner:
             return max(candidates, key=lambda item: item.score)
 
     def create_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
-        if not self.settings.openai_api_key:
+        if not self.settings.llm_configured:
             return self._fallback_plan(research, video_format)
 
         target = "90-145 words" if video_format == "short" else "800-1200 words"
@@ -67,12 +67,52 @@ Rules:
 Return JSON only with keys: angle, hook, script, title, description, tags (array),
 thumbnail_brief, thumbnail_text, visual_queries (array).
 """
-        response = self._client().responses.create(model=self.settings.openai_model, input=prompt)
-        data = self._json(response.output_text)
+        data = self._generate_json(prompt)
         urls = [source.url for source in research.sources if source.url]
         return VideoPlan(topic=research.topic, format=video_format, source_urls=urls, **data)
 
-    def _client(self) -> OpenAI:
+    def _generate_json(self, prompt: str) -> dict:
+        if self.settings.gemini_api_key:
+            return self._gemini_json(prompt)
+        if self.settings.openai_api_key:
+            response = self._openai_client().responses.create(
+                model=self.settings.openai_model,
+                input=prompt,
+            )
+            return self._json(response.output_text)
+        raise RuntimeError("No LLM provider configured")
+
+    def _gemini_json(self, prompt: str) -> dict:
+        model = self.settings.gemini_model.strip()
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+        payload = {
+            "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "responseMimeType": "application/json",
+                "temperature": 0.4,
+            },
+        }
+        response = httpx.post(
+            url,
+            headers={
+                "x-goog-api-key": self.settings.gemini_api_key,
+                "Content-Type": "application/json",
+            },
+            json=payload,
+            timeout=60.0,
+        )
+        response.raise_for_status()
+        data = response.json()
+        candidates = data.get("candidates") or []
+        if not candidates:
+            raise RuntimeError("Gemini returned no candidates")
+        parts = candidates[0].get("content", {}).get("parts", [])
+        text = "".join(str(part.get("text", "")) for part in parts).strip()
+        if not text:
+            raise RuntimeError("Gemini returned an empty response")
+        return self._json(text)
+
+    def _openai_client(self) -> OpenAI:
         return OpenAI(api_key=self.settings.openai_api_key)
 
     @staticmethod
