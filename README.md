@@ -28,7 +28,7 @@ python -m autopilot.cli doctor
 python -m autopilot.cli run --dry-run
 ```
 
-## Planned pipeline
+## Pipeline
 
 1. Topic discovery and scoring
 2. Fact/research pack
@@ -47,4 +47,15 @@ Use a Google Cloud OAuth **Desktop app** credential and enable the YouTube Data 
 
 ## Current status
 
-Foundation scaffold. Dry-run pipeline, configuration, provider interfaces, YouTube uploader, renderer shell, CLI and tests are being added next.
+Implemented foundation:
+
+- Typed `.env` configuration and secret protection
+- OpenAI-backed script planner with no-key fallback mode
+- Edge TTS narration adapter
+- FFmpeg rendering adapter
+- Guarded YouTube OAuth uploader
+- Dry-run and render pipeline
+- Daily scheduler CLI
+- Pytest safety tests and GitHub Actions CI
+
+Next build phase: automated topic discovery/research, stronger visuals/captions/thumbnail generation, quality gates, analytics feedback, and deployment for unattended daily execution.
