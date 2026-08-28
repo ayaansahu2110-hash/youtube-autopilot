@@ -30,7 +30,12 @@ def doctor() -> None:
     table.add_column("Status")
     table.add_row("FFmpeg", "OK" if shutil.which(settings.ffmpeg_binary) else "MISSING")
     table.add_row("FFprobe", "OK" if shutil.which(settings.ffprobe_binary) else "MISSING")
-    table.add_row("OpenAI API", "configured" if settings.openai_api_key else "MISSING for production")
+    table.add_row("Gemini API", "configured" if settings.gemini_api_key else "not configured")
+    table.add_row("OpenAI API", "configured" if settings.openai_api_key else "optional")
+    table.add_row(
+        "AI scripting",
+        f"configured ({settings.llm_provider_name})" if settings.llm_configured else "fallback only",
+    )
     table.add_row("Pexels API", "configured" if settings.pexels_api_key else "optional; fallback visuals")
     table.add_row("YouTube OAuth client", "configured" if settings.youtube_client_secrets_file.exists() else "not configured")
     table.add_row("YouTube token", "configured" if settings.youtube_token_file.exists() else "not authorized")
