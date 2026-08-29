@@ -24,9 +24,7 @@ class PexelsVideoProvider:
         output_dir.mkdir(parents=True, exist_ok=True)
         assets: list[VisualAsset] = []
         used_ids: set[int] = set()
-        for query in queries:
-            if len(assets) >= limit:
-                break
+        for scene_index, query in enumerate(queries[:limit]):
             video = self._search_best(query, vertical=vertical, used_ids=used_ids)
             if not video:
                 continue
@@ -34,7 +32,7 @@ class PexelsVideoProvider:
             download_url = self._best_file(video, vertical=vertical)
             if not download_url:
                 continue
-            path = output_dir / f"pexels-{video['id']}.mp4"
+            path = output_dir / f"scene-{scene_index:02d}-pexels-{video['id']}.mp4"
             try:
                 with httpx.stream("GET", download_url, timeout=60, follow_redirects=True) as response:
                     response.raise_for_status()
@@ -51,6 +49,7 @@ class PexelsVideoProvider:
                     source_page_url=video.get("url"),
                     creator=user.get("name"),
                     query=query,
+                    scene_index=scene_index,
                 )
             )
         return assets
@@ -64,7 +63,7 @@ class PexelsVideoProvider:
                     "query": query,
                     "orientation": "portrait" if vertical else "landscape",
                     "size": "large",
-                    "per_page": 20,
+                    "per_page": 30,
                 },
                 timeout=20,
             )
@@ -79,8 +78,6 @@ class PexelsVideoProvider:
         if not videos:
             return None
 
-        # Prefer clips that are long enough to trim cleanly, high resolution,
-        # and actually match the requested orientation.
         def score(video: dict) -> tuple[int, int, int]:
             duration = int(video.get("duration") or 0)
             files = video.get("video_files") or []
@@ -93,7 +90,7 @@ class PexelsVideoProvider:
                     best_pixels = max(best_pixels, width * height)
                     if (height >= width) == vertical:
                         orientation_ok = True
-            duration_score = 1 if 4 <= duration <= 30 else 0
+            duration_score = 1 if 3 <= duration <= 25 else 0
             return (1 if orientation_ok else 0, duration_score, best_pixels)
 
         videos.sort(key=score, reverse=True)
