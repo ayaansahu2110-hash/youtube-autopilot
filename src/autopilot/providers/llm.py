@@ -59,7 +59,15 @@ class ScriptPlanner:
                 "exact_visual_subject", "camera_and_lighting", "generator_prompt",
             ):
                 scene[field] = str(scene.get(field) or "")
-            scene["visual_mode"] = str(scene.get("visual_mode") or "motion")
+            mode = str(scene.get("visual_mode") or "motion").strip().lower()
+            if mode not in {"ui", "motion", "stock"}:
+                combined_visual = f"{mode} {scene['visual_query']}".lower()
+                mode = (
+                    "stock"
+                    if any(term in combined_visual for term in ("cinematic", "footage", "b-roll", "real video"))
+                    else "motion"
+                )
+            scene["visual_mode"] = mode
             scenes.append(SceneBeat(**scene))
         if scenes:
             data["script"] = " ".join(
