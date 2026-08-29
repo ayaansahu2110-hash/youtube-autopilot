@@ -63,25 +63,42 @@ class FFmpegRenderer:
 
         for index, (asset, segment_seconds) in enumerate(timeline):
             segment = workdir / f"segment-{index:02d}.mp4"
-            source_duration = self.probe_duration(asset.local_path)
             safe_duration = max(1.0, segment_seconds)
             fade_out = max(0.1, safe_duration - 0.14)
-            vf = (
-                f"scale={width}:{height}:force_original_aspect_ratio=increase,"
-                f"crop={width}:{height},"
-                "eq=contrast=1.04:saturation=1.05:brightness=-0.01,"
-                f"fade=t=in:st=0:d=0.10,fade=t=out:st={fade_out:.2f}:d=0.14,"
-                "fps=30,format=yuv420p"
-            )
             command = [self.ffmpeg_binary, "-y"]
-            if source_duration < safe_duration:
-                command += ["-stream_loop", "-1"]
+
+            if asset.asset_kind == "image":
+                command += ["-loop", "1", "-i", str(asset.local_path)]
+                # Browser captures and branded cards get a slow push-in so they
+                # feel like edited video rather than a static slideshow.
+                frames = max(30, int(safe_duration * 30))
+                vf = (
+                    f"scale={width}:{height}:force_original_aspect_ratio=increase,"
+                    f"crop={width}:{height},"
+                    f"zoompan=z='min(zoom+0.00065,1.045)':"
+                    f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={frames}:"
+                    f"s={width}x{height}:fps=30,"
+                    f"fade=t=in:st=0:d=0.10,fade=t=out:st={fade_out:.2f}:d=0.14,"
+                    "format=yuv420p"
+                )
+            else:
+                source_duration = self.probe_duration(asset.local_path)
+                if source_duration < safe_duration:
+                    command += ["-stream_loop", "-1"]
+                command += ["-i", str(asset.local_path)]
+                vf = (
+                    f"scale={width}:{height}:force_original_aspect_ratio=increase,"
+                    f"crop={width}:{height},"
+                    "eq=contrast=1.04:saturation=1.05:brightness=-0.01,"
+                    f"fade=t=in:st=0:d=0.10,fade=t=out:st={fade_out:.2f}:d=0.14,"
+                    "fps=30,format=yuv420p"
+                )
+
             command += [
-                "-i", str(asset.local_path),
                 "-t", f"{safe_duration:.3f}",
                 "-an", "-vf", vf,
-                "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
-                str(segment),
+                "-c:v", "libx264", "-preset", "veryfast", "-crf", "19",
+                "-pix_fmt", "yuv420p", str(segment),
             ]
             try:
                 subprocess.run(command, check=True, capture_output=True)
@@ -90,7 +107,7 @@ class FFmpegRenderer:
                 segment.unlink(missing_ok=True)
 
         if not segments:
-            raise RuntimeError("No downloaded visual clips could be normalized by FFmpeg.")
+            raise RuntimeError("No visual scenes could be normalized by FFmpeg.")
 
         concat_file = workdir / "visuals.txt"
         lines = []
@@ -102,7 +119,7 @@ class FFmpegRenderer:
         track = workdir / "visual-track.mp4"
         command = [
             self.ffmpeg_binary, "-y", "-f", "concat", "-safe", "0", "-i", str(concat_file),
-            "-t", str(duration), "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "19",
+            "-t", str(duration), "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
             "-pix_fmt", "yuv420p", str(track),
         ]
         subprocess.run(command, check=True, capture_output=True)
