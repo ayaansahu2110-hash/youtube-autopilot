@@ -30,14 +30,12 @@ class Settings(BaseSettings):
     openai_model: str = "gpt-5-mini"
 
     pexels_api_key: str | None = None
-    # More, shorter clips create a much less repetitive edit.
     max_visual_clips_short: int = 10
-    max_visual_clips_long: int = 24
+    max_visual_clips_long: int = 34
     visual_clip_seconds: float = 2.8
     min_visual_clips_short: int = 5
-    min_visual_clips_long: int = 10
+    min_visual_clips_long: int = 20
 
-    # Andrew + subtle pacing adjustments sounds less synthetic than the old default.
     edge_tts_voice: str = "en-US-AndrewNeural"
     edge_tts_rate: str = "+2%"
     edge_tts_pitch: str = "-2Hz"
@@ -52,8 +50,10 @@ class Settings(BaseSettings):
     schedule_timezone: str = "Asia/Kolkata"
     schedule_hour: int = 18
     schedule_minute: int = 0
+    shorts_per_day: int = 2
     longform_enabled: bool = True
-    longform_days: str = "mon,wed,fri"
+    longform_every_days: int = 2
+    longform_anchor_date: str = "2026-08-29"
     analytics_lookback_days: int = 28
 
     @property
@@ -63,10 +63,6 @@ class Settings(BaseSettings):
     @property
     def discovery_region_list(self) -> list[str]:
         return [item.strip().upper() for item in self.discovery_regions.split(",") if item.strip()]
-
-    @property
-    def longform_day_set(self) -> set[str]:
-        return {item.strip().lower()[:3] for item in self.longform_days.split(",") if item.strip()}
 
     @property
     def llm_configured(self) -> bool:
