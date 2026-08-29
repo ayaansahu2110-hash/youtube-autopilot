@@ -1,3 +1,4 @@
+import re
 from difflib import SequenceMatcher
 
 from autopilot.config import Settings
@@ -52,9 +53,26 @@ class QualityGate:
             "here's the thing",
             "this changes everything",
         )
-        script_start = plan.script.strip().lower()[:120]
+        script_start = plan.script.strip().lower()[:140]
         if any(opener in script_start for opener in generic_openers):
             errors.append("Generic AI-style hook detected; regenerate with a specific opening.")
+
+        shallow_phrases = (
+            "worth the hype",
+            "the future is here",
+            "technology is changing fast",
+            "work smarter not harder",
+            "game changer",
+            "revolutionary tool",
+            "unlock your potential",
+        )
+        shallow_hits = sum(phrase in combined for phrase in shallow_phrases)
+        if shallow_hits >= 2:
+            errors.append("Script contains too much generic AI/influencer filler.")
+
+        sentences = [item.strip() for item in re.split(r"(?<=[.!?])\s+", plan.script) if item.strip()]
+        if plan.format == "short" and len(sentences) < 5:
+            errors.append("Short is too thin: fewer than 5 meaningful narration beats.")
 
         minimum_queries = 8 if plan.format == "short" else 14
         if len(plan.visual_queries) < minimum_queries:
@@ -65,5 +83,28 @@ class QualityGate:
         unique_queries = {query.lower().strip() for query in plan.visual_queries if query.strip()}
         if len(unique_queries) < minimum_queries:
             errors.append("Visual plan is too repetitive; regenerate with more distinct scene ideas.")
+
+        minimum_scenes = 8 if plan.format == "short" else 14
+        if len(plan.scenes) < minimum_scenes:
+            errors.append(f"Only {len(plan.scenes)} scene-aligned narration beats; need {minimum_scenes}.")
+        else:
+            scene_script = " ".join(scene.narration.strip() for scene in plan.scenes).strip()
+            similarity = SequenceMatcher(None, scene_script.lower(), plan.script.strip().lower()).ratio()
+            if similarity < 0.94:
+                errors.append("Scene narration and final script are not synchronized closely enough.")
+
+            generic_visual_terms = {"ai", "technology", "innovation", "future", "digital", "data"}
+            weak_queries = 0
+            for scene in plan.scenes:
+                terms = {token for token in re.findall(r"[a-z0-9]+", scene.visual_query.lower())}
+                if len(terms) < 3 or terms.issubset(generic_visual_terms):
+                    weak_queries += 1
+            if weak_queries > max(1, len(plan.scenes) // 5):
+                errors.append("Too many scene visuals are abstract or underspecified.")
+
+        if len(research.sources) >= 3:
+            warnings.append("Research depth is strong: three or more independent source pages were available.")
+        elif strict:
+            warnings.append("Only two substantive sources were available; script must remain conservative.")
 
         return QualityReport(passed=not errors, errors=errors, warnings=warnings)
