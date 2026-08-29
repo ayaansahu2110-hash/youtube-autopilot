@@ -2,13 +2,19 @@ name: Daily YouTube Autopilot
 
 on:
   schedule:
+    - cron: "30 6 * * *"  # 12:00 Asia/Kolkata
     - cron: "30 12 * * *" # 18:00 Asia/Kolkata
   workflow_dispatch:
-  # Private self-test trigger for the latest relatable demo-first ByteVexa pipeline.
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/daily.yml"
+    inputs:
+      slot:
+        description: "Production slot"
+        required: false
+        default: "evening"
+        type: choice
+        options:
+          - morning
+          - evening
+          - all
 
 permissions:
   contents: write
@@ -39,6 +45,17 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
+
+      - name: Determine production slot
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "RUN_SLOT=${{ inputs.slot }}" >> "$GITHUB_ENV"
+          elif [ "${{ github.event.schedule }}" = "30 6 * * *" ]; then
+            echo "RUN_SLOT=morning" >> "$GITHUB_ENV"
+          else
+            echo "RUN_SLOT=evening" >> "$GITHUB_ENV"
+          fi
 
       - name: Preflight secrets
         shell: bash
@@ -73,9 +90,9 @@ jobs:
           pathlib.Path('secrets/youtube_token.json').write_bytes(base64.b64decode(os.environ['YOUTUBE_TOKEN_B64']))
           PY
 
-      - name: Produce daily videos
+      - name: Produce scheduled videos
         if: env.READY == 'true'
-        run: python -m autopilot.cli daily --live
+        run: python -m autopilot.cli daily --live --slot "$RUN_SLOT"
 
       - name: Persist topic and analytics history
         if: env.READY == 'true'
