@@ -17,8 +17,9 @@ class QualityGate:
         warnings: list[str] = []
         words = len(plan.script.split())
 
-        if plan.format == "short" and not 90 <= words <= 165:
-            errors.append(f"Short script word count {words} is outside premium range 90-165.")
+        short_max = 175 if self.settings.channel_profile == "curioaxiom" else 165
+        if plan.format == "short" and not 90 <= words <= short_max:
+            errors.append(f"Short script word count {words} is outside premium range 90-{short_max}.")
         if plan.format == "long" and not 1200 <= words <= 1650:
             errors.append(f"Long script word count {words} is outside 8-12 minute target 1200-1650.")
         if len(plan.title) > 100:
