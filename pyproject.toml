@@ -47,3 +47,6 @@ target-version = "py311"
 # uses a few broad fail-safe exception boundaries and supports Python 3.11 syntax.
 [tool.ruff.lint]
 select = ["E4", "E7", "E9", "F", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/autopilot/providers/hybrid_visuals.py" = ["F841"]
