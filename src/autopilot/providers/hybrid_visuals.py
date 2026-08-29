@@ -4,8 +4,10 @@ import re
 import shutil
 import textwrap
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
+import httpx
+from bs4 import BeautifulSoup
 from PIL import Image, ImageDraw, ImageFont
 
 from autopilot.models import SceneBeat, VisualAsset
@@ -45,6 +47,7 @@ class HybridVisualDirector:
         output_dir.mkdir(parents=True, exist_ok=True)
         allowed = {url for url in allowed_source_urls if url.startswith(("http://", "https://"))}
         assets: list[VisualAsset] = []
+        used_source_media: set[str] = set()
 
         for scene_index, scene in enumerate(scenes[:limit]):
             asset: VisualAsset | None = None
@@ -59,6 +62,15 @@ class HybridVisualDirector:
                         scene_index=scene_index,
                         vertical=vertical,
                     )
+
+            if asset is None and self.facts_mode:
+                asset = self._fetch_authoritative_image(
+                    scene,
+                    sorted(allowed),
+                    output_dir / f"scene-{scene_index:02d}-source.jpg",
+                    scene_index=scene_index,
+                    used_urls=used_source_media,
+                )
 
             if asset is None and scene.visual_mode == "stock":
                 stock = []
@@ -94,6 +106,92 @@ class HybridVisualDirector:
             assets.append(asset)
 
         return assets
+
+    def _fetch_authoritative_image(
+        self,
+        scene: SceneBeat,
+        source_pages: list[str],
+        output: Path,
+        *,
+        scene_index: int,
+        used_urls: set[str],
+    ) -> VisualAsset | None:
+        """Use real media embedded by an approved primary source."""
+        requested_domain = urlparse(scene.source_url).netloc.lower().removeprefix("www.")
+        ordered = sorted(
+            source_pages,
+            key=lambda url: requested_domain not in urlparse(url).netloc.lower(),
+        )
+        terms = {
+            token
+            for token in re.findall(
+                r"[a-z0-9]+", f"{scene.visual_query} {scene.narration}".lower()
+            )
+            if len(token) >= 4
+            and token not in {"with", "from", "this", "that", "into", "footage", "cinematic"}
+        }
+
+        for page_url in ordered:
+            try:
+                response = httpx.get(
+                    page_url,
+                    timeout=20,
+                    follow_redirects=True,
+                    headers={"User-Agent": "Mozilla/5.0"},
+                )
+                response.raise_for_status()
+                soup = BeautifulSoup(response.text, "html.parser")
+            except Exception:
+                continue
+
+            candidates: list[tuple[int, str]] = []
+            og = soup.find("meta", attrs={"property": "og:image"})
+            if og and og.get("content"):
+                candidates.append((1, urljoin(page_url, str(og["content"]))))
+            for node in soup.find_all("img"):
+                raw = node.get("src") or node.get("data-src") or node.get("data-lazy-src")
+                if not raw:
+                    continue
+                media_url = urljoin(page_url, str(raw))
+                label = " ".join(
+                    str(node.get(name) or "") for name in ("alt", "title", "src")
+                ).lower()
+                candidates.append((sum(term in label for term in terms), media_url))
+
+            for _, media_url in sorted(candidates, key=lambda item: item[0], reverse=True):
+                if media_url in used_urls or media_url.lower().endswith((".svg", ".gif")):
+                    continue
+                try:
+                    media = httpx.get(
+                        media_url,
+                        timeout=30,
+                        follow_redirects=True,
+                        headers={"User-Agent": "Mozilla/5.0"},
+                    )
+                    media.raise_for_status()
+                    if not media.headers.get("content-type", "").startswith("image/"):
+                        continue
+                    output.write_bytes(media.content)
+                    with Image.open(output) as image:
+                        width, height = image.size
+                        if width < 640 or height < 360:
+                            output.unlink(missing_ok=True)
+                            continue
+                        image.convert("RGB").save(output, "JPEG", quality=94)
+                    used_urls.add(media_url)
+                    return VisualAsset(
+                        local_path=output,
+                        source_page_url=page_url,
+                        creator=urlparse(page_url).netloc,
+                        query=scene.visual_query,
+                        scene_index=scene_index,
+                        asset_kind="image",
+                        visual_mode="ui",
+                    )
+                except Exception:
+                    output.unlink(missing_ok=True)
+                    continue
+        return None
 
     def _capture_public_ui(
         self,
@@ -534,7 +632,7 @@ class HybridVisualDirector:
         for terms, query in keyword_queries:
             if any(term in text for term in terms):
                 fallbacks.append(query)
-        return list(dict.fromkeys([primary, *fallbacks, "cinematic science engineering"]))
+        return list(dict.fromkeys([primary, *fallbacks]))
 
     @staticmethod
     def _headline_from_narration(text: str) -> str:
