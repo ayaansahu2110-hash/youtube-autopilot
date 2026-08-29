@@ -4,6 +4,7 @@ from pathlib import Path
 from autopilot.captions import write_srt
 from autopilot.config import Settings
 from autopilot.discovery import TopicDiscovery
+from autopilot.editorial import ByteVexaEditorialSystem
 from autopilot.models import PipelineRun, ResearchPack, TopicCandidate
 from autopilot.providers.hybrid_visuals import HybridVisualDirector
 from autopilot.providers.llm import ScriptPlanner
@@ -26,6 +27,7 @@ class AutopilotPipeline:
         self.state = StateStore(settings.state_file)
         self.discovery = TopicDiscovery(settings, self.state)
         self.researcher = Researcher(settings)
+        self.editorial = ByteVexaEditorialSystem()
         self.planner = ScriptPlanner(settings)
         self.tts = EdgeTTSProvider(
             settings.edge_tts_voice,
@@ -50,6 +52,7 @@ class AutopilotPipeline:
         run_id = uuid.uuid4().hex[:12]
         chosen_format = video_format or self.settings.default_video_format
         candidate, research = self._candidate_with_research(topic)
+        research = self.editorial.enrich(candidate, research)
         plan = self.planner.create_plan(research, chosen_format)
         self._append_research_sources(plan, research)
         quality = self.quality.evaluate(plan, research, strict=not dry_run)
