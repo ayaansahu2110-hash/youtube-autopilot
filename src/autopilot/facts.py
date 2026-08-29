@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 
 from autopilot.config import Settings
 from autopilot.discovery import TopicDiscovery
-from autopilot.models import ResearchPack, TopicCandidate
+from autopilot.models import ResearchPack, SceneBeat, TopicCandidate, VideoPlan
 from autopilot.providers.premium_planner import PremiumScriptPlanner
 
 
@@ -117,6 +117,37 @@ class FactTopicDiscovery(TopicDiscovery):
 
 
 class FactScriptPlanner(PremiumScriptPlanner):
+    def create_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
+        plan = super().create_plan(research, video_format)
+        if video_format == "short" and len(plan.scenes) < 8:
+            scenes = list(plan.scenes)
+            while len(scenes) < 8:
+                index = max(range(len(scenes)), key=lambda item: len(scenes[item].narration.split()))
+                scene = scenes[index]
+                words = scene.narration.split()
+                if len(words) < 8:
+                    break
+                midpoint = len(words) // 2
+                left = scene.model_copy(
+                    update={
+                        "narration": " ".join(words[:midpoint]),
+                        "visual_query": scene.visual_query + " wide cinematic footage",
+                    }
+                )
+                right = SceneBeat(
+                    narration=" ".join(words[midpoint:]),
+                    visual_query=scene.visual_query + " close detail footage",
+                    purpose=scene.purpose,
+                    visual_mode=scene.visual_mode,
+                    source_url=scene.source_url,
+                    on_screen_text=scene.on_screen_text,
+                )
+                scenes[index:index + 1] = [left, right]
+            plan.scenes = scenes
+            plan.script = " ".join(scene.narration.strip() for scene in scenes)
+            plan.visual_queries = [scene.visual_query for scene in scenes]
+        return plan
+
     def choose_topic(self, candidates: list[TopicCandidate]) -> TopicCandidate:
         if not candidates or not self.settings.llm_configured:
             return super().choose_topic(candidates)
