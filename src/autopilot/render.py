@@ -57,7 +57,9 @@ class FFmpegRenderer:
         clip_seconds: float,
         scene_word_counts: list[int] | None,
     ) -> Path:
-        width, height = (1080, 1920) if vertical else (1920, 1080)
+        # Shorts stay at native 1080x1920. Long-form is rendered at 1440p so
+        # browser text and UI survive YouTube transcoding more cleanly.
+        width, height = (1080, 1920) if vertical else (2560, 1440)
         timeline = self._timeline(assets, duration, scene_word_counts, clip_seconds)
         segments: list[Path] = []
 
@@ -71,7 +73,7 @@ class FFmpegRenderer:
                 command += ["-loop", "1", "-i", str(asset.local_path)]
                 frames = max(30, int(safe_duration * 30))
                 vf = (
-                    f"scale={width}:{height}:force_original_aspect_ratio=increase,"
+                    f"scale={width}:{height}:force_original_aspect_ratio=increase:flags=lanczos,"
                     f"crop={width}:{height},"
                     f"zoompan=z='min(zoom+0.00065,1.045)':"
                     f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={frames}:"
@@ -85,7 +87,7 @@ class FFmpegRenderer:
                     command += ["-stream_loop", "-1"]
                 command += ["-i", str(asset.local_path)]
                 vf = (
-                    f"scale={width}:{height}:force_original_aspect_ratio=increase,"
+                    f"scale={width}:{height}:force_original_aspect_ratio=increase:flags=lanczos,"
                     f"crop={width}:{height},"
                     "eq=contrast=1.04:saturation=1.05:brightness=-0.01,"
                     f"fade=t=in:st=0:d=0.10,fade=t=out:st={fade_out:.2f}:d=0.14,"
@@ -95,7 +97,7 @@ class FFmpegRenderer:
             command += [
                 "-t", f"{safe_duration:.3f}",
                 "-an", "-vf", vf,
-                "-c:v", "libx264", "-preset", "veryfast", "-crf", "19",
+                "-c:v", "libx264", "-preset", "medium", "-crf", "16",
                 "-pix_fmt", "yuv420p", str(segment),
             ]
             try:
@@ -117,7 +119,7 @@ class FFmpegRenderer:
         track = workdir / "visual-track.mp4"
         command = [
             self.ffmpeg_binary, "-y", "-f", "concat", "-safe", "0", "-i", str(concat_file),
-            "-t", str(duration), "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
+            "-t", str(duration), "-an", "-c:v", "libx264", "-preset", "medium", "-crf", "16",
             "-pix_fmt", "yuv420p", str(track),
         ]
         subprocess.run(command, check=True, capture_output=True)
@@ -155,11 +157,9 @@ class FFmpegRenderer:
         return timeline
 
     def _caption_filter(self, captions_path: Path, *, vertical: bool) -> str:
-        # Shorts captions should support the visual, not cover it. Keep them
-        # compact and anchored in the lower safe zone above YouTube controls.
-        font_size = 14 if vertical else 16
-        margin = 82 if vertical else 48
-        outline = 2 if vertical else 2
+        font_size = 14 if vertical else 20
+        margin = 82 if vertical else 62
+        outline = 2
         style = (
             f"FontName=DejaVu Sans,FontSize={font_size},Bold=1,"
             "PrimaryColour=&H00FFFFFF,OutlineColour=&H00101010,"
@@ -182,7 +182,7 @@ class FFmpegRenderer:
             command += ["-vf", self._caption_filter(captions_path, vertical=vertical)]
         command += [
             "-map", "0:v:0", "-map", "1:a:0", "-shortest", "-c:v", "libx264",
-            "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "aac",
+            "-preset", "slow", "-crf", "16", "-pix_fmt", "yuv420p", "-c:a", "aac",
             "-b:a", "192k", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11",
             "-movflags", "+faststart", str(output_path),
         ]
@@ -197,7 +197,7 @@ class FFmpegRenderer:
         vertical: bool,
         captions_path: Path | None,
     ) -> None:
-        size = "1080x1920" if vertical else "1920x1080"
+        size = "1080x1920" if vertical else "2560x1440"
         command = [
             self.ffmpeg_binary, "-y", "-f", "lavfi", "-i",
             f"color=c=0x0B1020:s={size}:r=30:d={duration}", "-i", str(audio_path),
@@ -205,7 +205,7 @@ class FFmpegRenderer:
         if captions_path and captions_path.exists() and captions_path.stat().st_size:
             command += ["-vf", self._caption_filter(captions_path, vertical=vertical)]
         command += [
-            "-shortest", "-c:v", "libx264", "-preset", "medium", "-crf", "18",
+            "-shortest", "-c:v", "libx264", "-preset", "slow", "-crf", "16",
             "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
             "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-movflags", "+faststart",
             str(output_path),
