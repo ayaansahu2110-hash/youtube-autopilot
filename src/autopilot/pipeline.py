@@ -311,6 +311,24 @@ class AutopilotPipeline:
                 plan.scenes[index].visual_mode = "stock"
                 plan.scenes[index].source_url = ""
 
+        explanatory = [
+            index for index, scene in enumerate(plan.scenes)
+            if scene.visual_mode != "stock"
+        ]
+        if len(explanatory) < 2:
+            candidates = [
+                index for index, scene in enumerate(plan.scenes)
+                if scene.visual_mode == "stock"
+                and any(word in scene.purpose.lower() for word in ("mechanism", "scale", "evidence", "reveal"))
+            ]
+            candidates.extend(
+                index for index, scene in enumerate(plan.scenes)
+                if scene.visual_mode == "stock" and index not in candidates
+            )
+            for index in candidates[:2 - len(explanatory)]:
+                plan.scenes[index].visual_mode = "motion"
+                plan.scenes[index].source_url = ""
+
     @staticmethod
     def _append_section(description: str, heading: str, lines: list[str]) -> str:
         section = heading + ":\n" + "\n".join(f"- {line}" for line in lines)

@@ -146,7 +146,12 @@ class QualityGate:
                 )
                 if not any(any(word in purpose for word in evidence_beats) for purpose in purposes):
                     errors.append("Video lacks a concrete evidence or result beat.")
-                if not any(any(word in purpose for word in ("limit", "catch", "comparison", "takeaway", "decision")) for purpose in purposes):
+                ending_beats = (
+                    ("limit", "catch", "comparison", "takeaway", "decision", "caveat", "reveal", "meaning")
+                    if self.settings.channel_profile == "curioaxiom"
+                    else ("limit", "catch", "comparison", "takeaway", "decision")
+                )
+                if not any(any(word in purpose for word in ending_beats) for purpose in purposes):
                     errors.append("Video lacks a limitation/comparison/takeaway beat.")
                 source_counts = Counter(url for url in ui_sources if url)
                 repeat_limit = max(3, len(plan.scenes) // 3) if plan.format == "long" else max(3, len(plan.scenes) // 2)
