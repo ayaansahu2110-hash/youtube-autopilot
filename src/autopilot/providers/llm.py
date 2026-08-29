@@ -11,6 +11,7 @@ from autopilot.models import ResearchPack, TopicCandidate, VideoPlan
 class ScriptPlanner:
     def __init__(self, settings: Settings):
         self.settings = settings
+        self._resolved_gemini_models: list[str] | None = None
 
     def choose_topic(self, candidates: list[TopicCandidate]) -> TopicCandidate:
         if not candidates:
@@ -87,37 +88,26 @@ thumbnail_brief, thumbnail_text, visual_queries (array).
         raise RuntimeError("No LLM provider configured")
 
     def _gemini_json(self, prompt: str) -> dict:
-        configured = self.settings.gemini_model.strip()
-        models = []
-        # Prefer the current stable Flash model even if a stale repository variable
-        # still points at an older model. Keep the configured model as a fallback.
-        for model in (
-            "gemini-3.7-flash",
-            configured,
-            "gemini-3.6-flash",
-            "gemini-3.5-flash-lite",
-        ):
-            if model and model not in models:
-                models.append(model)
-
+        models = self._gemini_models()
         transient_statuses = {429, 500, 502, 503, 504}
+        retry_next_model_statuses = {403, 404}
         last_error: Exception | None = None
 
         for model in models:
             for attempt in range(3):
                 try:
-                    return self._gemini_json_with_model(prompt, model)
+                    result = self._gemini_json_with_model(prompt, model)
+                    print(f"Gemini model selected: {model}")
+                    return result
                 except httpx.HTTPStatusError as exc:
                     last_error = exc
                     status = exc.response.status_code
-                    if status == 404:
-                        # Retired/unavailable model: move immediately to the next model.
+                    if status in retry_next_model_statuses:
                         break
                     if status in transient_statuses:
                         if attempt < 2:
                             time.sleep(2**attempt)
                             continue
-                        # Repeated overload/rate-limit: try a different Flash model.
                         break
                     raise
                 except httpx.RequestError as exc:
@@ -129,13 +119,72 @@ thumbnail_brief, thumbnail_text, visual_queries (array).
 
         if last_error:
             raise last_error
-        raise RuntimeError("No Gemini model was available")
+        raise RuntimeError("No Gemini model supporting generateContent was available")
+
+    def _gemini_models(self) -> list[str]:
+        if self._resolved_gemini_models is not None:
+            return self._resolved_gemini_models
+
+        configured = self.settings.gemini_model.strip().removeprefix("models/")
+        discovered: list[str] = []
+        page_token: str | None = None
+
+        try:
+            for _ in range(5):
+                params: dict[str, str | int] = {"pageSize": 1000}
+                if page_token:
+                    params["pageToken"] = page_token
+                response = httpx.get(
+                    "https://generativelanguage.googleapis.com/v1beta/models",
+                    headers={"x-goog-api-key": self.settings.gemini_api_key},
+                    params=params,
+                    timeout=30.0,
+                )
+                response.raise_for_status()
+                payload = response.json()
+                for item in payload.get("models", []):
+                    methods = item.get("supportedGenerationMethods") or []
+                    if "generateContent" not in methods:
+                        continue
+                    name = str(item.get("name", "")).removeprefix("models/")
+                    lowered = name.lower()
+                    if (
+                        name
+                        and "gemini" in lowered
+                        and "flash" in lowered
+                        and "image" not in lowered
+                        and "tts" not in lowered
+                        and "live" not in lowered
+                    ):
+                        discovered.append(name)
+                page_token = payload.get("nextPageToken")
+                if not page_token:
+                    break
+        except (httpx.HTTPError, ValueError, TypeError):
+            # If model discovery is temporarily unavailable, fall back to known aliases.
+            discovered = []
+
+        available = list(dict.fromkeys(discovered))
+        preferred = [
+            configured,
+            "gemini-flash-latest",
+            "gemini-3.5-flash",
+            "gemini-3.1-flash-lite",
+            "gemini-2.5-flash-lite",
+            "gemini-2.5-flash",
+        ]
+        ordered = [model for model in preferred if model and model in available]
+        ordered.extend(model for model in available if model not in ordered)
+
+        if not ordered:
+            ordered = list(dict.fromkeys(model for model in preferred if model))
+
+        self._resolved_gemini_models = ordered
+        return ordered
 
     def _gemini_json_with_model(self, prompt: str, model: str) -> dict:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
         generation_config: dict[str, object] = {"responseMimeType": "application/json"}
-        # Gemini 3.x migration guidance recommends removing legacy sampling
-        # parameters. Keep temperature only for older compatible models.
         if not model.startswith("gemini-3"):
             generation_config["temperature"] = 0.4
 
