@@ -51,6 +51,17 @@ class AutopilotPipeline:
     ) -> PipelineRun:
         run_id = uuid.uuid4().hex[:12]
         chosen_format = video_format or self.settings.default_video_format
+
+        # Treat the live YouTube channel as the source of truth for duplicate protection.
+        # This runs before discovery for Shorts AND long-form, so a topic already covered
+        # in either format is blocked even if local/GitHub history was lost.
+        if self.settings.youtube_token_file.exists():
+            try:
+                self.state.sync_recent_uploads(self.uploader.recent_uploads(limit=40))
+            except Exception:
+                # Production can continue using persisted history; quality gates remain active.
+                pass
+
         candidate, research = self._candidate_with_research(topic)
         research = self.editorial.enrich(candidate, research)
         plan = self.planner.create_plan(research, chosen_format)
