@@ -85,10 +85,20 @@ class Researcher:
         publisher_key = publisher.lower()
         if publisher_key and publisher_key in seen_publishers:
             return
+
+        # Hosted CI runners are frequently blocked by publisher bot protection,
+        # especially for news pages. Prefer full page text, but preserve a
+        # substantive publisher-attributed RSS summary when the page itself is
+        # unavailable. This prevents manual/boost topics from collapsing to
+        # zero research sources while still requiring real text and independent
+        # publishers before production can pass the quality gate.
         page_text = self._extract_page_text(url)
-        snippet = self._clean(page_text or str(item.get("summary") or ""))
-        if len(snippet) < 120:
+        summary = self._clean(str(item.get("summary") or ""))
+        snippet = self._clean(page_text) if page_text else summary
+        minimum_length = 120 if page_text else 80
+        if len(snippet) < minimum_length:
             return
+
         seen_urls.add(url)
         if publisher_key:
             seen_publishers.add(publisher_key)
@@ -133,19 +143,45 @@ class Researcher:
         )
 
     def _news_entries(self, topic: str) -> list[dict]:
-        urls = [
-            f"https://news.google.com/rss/search?q={quote_plus(topic)}&hl=en-US&gl=US&ceid=US:en",
-            f"https://www.bing.com/news/search?q={quote_plus(topic)}&format=rss",
-        ]
+        # Full editorial topic sentences are poor search queries and can yield
+        # zero RSS results. Search both a compact entity/keyword query and the
+        # original wording, de-duplicating results across providers.
+        queries = self._search_queries(topic)
         entries: list[dict] = []
         seen: set[str] = set()
-        for url in urls:
-            for item in self._parse_rss(url, topic):
-                key = str(item.get("url") or "")
-                if key and key not in seen:
-                    seen.add(key)
-                    entries.append(item)
-        return entries[:15]
+        for query in queries:
+            urls = [
+                f"https://news.google.com/rss/search?q={quote_plus(query)}&hl=en-US&gl=US&ceid=US:en",
+                f"https://www.bing.com/news/search?q={quote_plus(query)}&format=rss",
+            ]
+            for url in urls:
+                for item in self._parse_rss(url, topic):
+                    key = str(item.get("url") or "")
+                    if key and key not in seen:
+                        seen.add(key)
+                        entries.append(item)
+                if len(entries) >= 20:
+                    break
+            if len(entries) >= 20:
+                break
+        return entries[:20]
+
+    @staticmethod
+    def _search_queries(topic: str) -> list[str]:
+        words = re.findall(r"[A-Za-z0-9][A-Za-z0-9.+-]*", topic)
+        stop = {
+            "about", "after", "and", "are", "could", "for", "from", "how", "its",
+            "new", "now", "plans", "the", "their", "this", "to", "users", "what",
+            "why", "with", "would", "means", "doing", "changes",
+        }
+        important = [word for word in words if len(word) >= 3 and word.lower() not in stop]
+        compact = " ".join(important[:8]).strip()
+        original = re.sub(r"\s+", " ", topic).strip()
+        queries: list[str] = []
+        for query in (compact, original):
+            if query and query not in queries:
+                queries.append(query)
+        return queries or [topic]
 
     def _parse_rss(self, url: str, topic: str) -> list[dict]:
         try:
