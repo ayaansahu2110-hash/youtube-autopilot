@@ -132,8 +132,13 @@ class QualityGate:
                 errors.append("One or more UI scenes reference a source URL that research did not approve.")
 
             if plan.format in {"short", "long"}:
-                if not any(any(word in purpose for word in ("demo", "example", "workflow", "result")) for purpose in purposes):
-                    errors.append("Video lacks a concrete demo/example/result beat.")
+                evidence_beats = (
+                    ("evidence", "mechanism", "scale", "reveal")
+                    if self.settings.channel_profile == "curioaxiom"
+                    else ("demo", "example", "workflow", "result")
+                )
+                if not any(any(word in purpose for word in evidence_beats) for purpose in purposes):
+                    errors.append("Video lacks a concrete evidence or result beat.")
                 if not any(any(word in purpose for word in ("limit", "catch", "comparison", "takeaway", "decision")) for purpose in purposes):
                     errors.append("Video lacks a limitation/comparison/takeaway beat.")
                 source_counts = Counter(url for url in ui_sources if url)

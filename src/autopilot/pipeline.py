@@ -80,6 +80,8 @@ class AutopilotPipeline:
         if self.verifier:
             research = self.verifier.verify(research)
         plan = self.planner.create_plan(research, chosen_format)
+        if self.verifier:
+            self._sanitize_fact_visual_sources(plan, research)
         self._append_research_sources(plan, research)
         quality = self.quality.evaluate(plan, research, strict=not dry_run)
         if self.verifier and not dry_run:
@@ -260,6 +262,15 @@ class AutopilotPipeline:
                 lines.append(f"{source.publisher or source.title}: {source.url}")
         if lines:
             plan.description = AutopilotPipeline._append_section(plan.description, "Research sources", lines)
+
+    @staticmethod
+    def _sanitize_fact_visual_sources(plan, research: ResearchPack) -> None:
+        """Keep documentary visuals inside the verifier's approved evidence set."""
+        approved_urls = {source.url for source in research.sources if source.url}
+        for scene in plan.scenes:
+            if scene.visual_mode == "ui" and scene.source_url not in approved_urls:
+                scene.visual_mode = "motion"
+                scene.source_url = ""
 
     @staticmethod
     def _append_section(description: str, heading: str, lines: list[str]) -> str:
