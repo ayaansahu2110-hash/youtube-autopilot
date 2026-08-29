@@ -31,10 +31,10 @@ class Settings(BaseSettings):
 
     pexels_api_key: str | None = None
     max_visual_clips_short: int = 10
-    max_visual_clips_long: int = 34
+    max_visual_clips_long: int = 42
     visual_clip_seconds: float = 2.8
     min_visual_clips_short: int = 5
-    min_visual_clips_long: int = 20
+    min_visual_clips_long: int = 28
 
     edge_tts_voice: str = "en-US-AndrewNeural"
     edge_tts_rate: str = "+2%"
