@@ -7,7 +7,7 @@ from autopilot.discovery import TopicDiscovery
 from autopilot.editorial import ByteVexaEditorialSystem
 from autopilot.models import PipelineRun, ResearchPack, TopicCandidate
 from autopilot.providers.hybrid_visuals import HybridVisualDirector
-from autopilot.providers.llm import ScriptPlanner
+from autopilot.providers.premium_planner import PremiumScriptPlanner
 from autopilot.providers.tts import EdgeTTSProvider
 from autopilot.providers.visuals import PexelsVideoProvider
 from autopilot.quality import QualityGate
@@ -28,7 +28,7 @@ class AutopilotPipeline:
         self.discovery = TopicDiscovery(settings, self.state)
         self.researcher = Researcher(settings)
         self.editorial = ByteVexaEditorialSystem()
-        self.planner = ScriptPlanner(settings)
+        self.planner = PremiumScriptPlanner(settings)
         self.tts = EdgeTTSProvider(
             settings.edge_tts_voice,
             rate=settings.edge_tts_rate,
