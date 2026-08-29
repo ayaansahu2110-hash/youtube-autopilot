@@ -119,9 +119,9 @@ class FactTopicDiscovery(TopicDiscovery):
 class FactScriptPlanner(PremiumScriptPlanner):
     def create_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
         plan = super().create_plan(research, video_format)
-        if video_format == "short" and len(plan.scenes) < 8:
+        if video_format == "short" and len(plan.scenes) < 12:
             scenes = list(plan.scenes)
-            while len(scenes) < 8:
+            while len(scenes) < 12:
                 index = max(range(len(scenes)), key=lambda item: len(scenes[item].narration.split()))
                 scene = scenes[index]
                 words = scene.narration.split()
@@ -171,7 +171,7 @@ class FactScriptPlanner(PremiumScriptPlanner):
 
     def _draft_prompt(self, research: ResearchPack, video_format: str) -> str:
         words = "95-145" if video_format == "short" else "1,200-1,650"
-        scenes = "8-12" if video_format == "short" else "28-38"
+        scenes = "12-16" if video_format == "short" else "28-38"
         return f"""You are the senior researcher, writer and visual director for CurioAxiom.
 Create an original cinematic YouTube {video_format} about: {research.topic}
 Brand promise: One fascinating question. One cinematic story. One verified answer.
@@ -186,15 +186,17 @@ RULES
 - Every factual claim must be supported by the evidence. Never invent precision.
 - Qualify estimates, debated interpretations, simulations and theoretical scenarios.
 - Open with a specific contradiction or consequence; never start with 'Did you know?' or a list.
+- For a Short, make the first sentence understandable in under two seconds and introduce a new
+  action, angle, scale, or consequence every 1.5-3 seconds. Each scene is one visual action.
 - Include two concrete verified facts, an explanation of the mechanism or cause, and a caveat.
 - End on the meaning of the answer, not generic engagement bait.
 - Choose visual_mode motion or stock (ui only for an essential authoritative source page).
-- Make 60-75% of scenes stock: real, cinematic, physically relevant footage. Write short searchable
+- Make 70-85% of scenes stock: real, cinematic, physically relevant moving footage. Write short searchable
   queries describing footage that plausibly exists, such as "space capsule reentry", "arc jet heat
   shield test" or "capsule parachute landing". Never request impossible CGI as stock footage.
 - Reserve motion for at most one third of scenes and only for diagrams, maps, scale, timelines or
   mechanisms that cannot be filmed. UI source_url must exactly match a research URL.
-- on_screen_text is 2-7 words. purpose uses hook, evidence, context, mechanism, scale, reveal,
+- on_screen_text is 2-5 punchy words that add meaning rather than repeat the narration. purpose uses hook, evidence, context, mechanism, scale, reveal,
   caveat or takeaway. Avoid repeated or generic visuals.
 
 PACKAGING

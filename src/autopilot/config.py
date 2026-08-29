@@ -84,6 +84,12 @@ class Settings(BaseSettings):
                 "counterintuitive science,history discovery,geography mystery,mathematics paradox,"
                 "space science,engineering explained,Formula 1 engineering,automotive engineering"
             )
+        if self.max_visual_clips_short == 10:
+            self.max_visual_clips_short = 16
+        if self.min_visual_clips_short == 5:
+            self.min_visual_clips_short = 10
+        if self.visual_clip_seconds == 2.8:
+            self.visual_clip_seconds = 2.2
 
     @property
     def topic_query_list(self) -> list[str]:

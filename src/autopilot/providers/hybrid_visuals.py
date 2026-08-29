@@ -63,15 +63,6 @@ class HybridVisualDirector:
                         vertical=vertical,
                     )
 
-            if asset is None and self.facts_mode:
-                asset = self._fetch_authoritative_image(
-                    scene,
-                    sorted(allowed),
-                    output_dir / f"scene-{scene_index:02d}-source.jpg",
-                    scene_index=scene_index,
-                    used_urls=used_source_media,
-                )
-
             if asset is None and scene.visual_mode == "stock":
                 stock = []
                 for query in self._stock_queries(scene):
@@ -91,6 +82,19 @@ class HybridVisualDirector:
                             "asset_kind": "video",
                         }
                     )
+
+            # Fact Shorts should move. Primary-source stills are excellent proof,
+            # but using one for every beat produces a slideshow. Prefer a tightly
+            # matched real clip for action beats and keep authority media as the
+            # evidence/fallback layer.
+            if asset is None and self.facts_mode:
+                asset = self._fetch_authoritative_image(
+                    scene,
+                    sorted(allowed),
+                    output_dir / f"scene-{scene_index:02d}-source.jpg",
+                    scene_index=scene_index,
+                    used_urls=used_source_media,
+                )
 
             if asset is None:
                 card = output_dir / f"scene-{scene_index:02d}-motion.png"

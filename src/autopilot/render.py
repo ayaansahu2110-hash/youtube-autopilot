@@ -30,6 +30,8 @@ class FFmpegRenderer:
         visual_assets: list[VisualAsset],
         clip_seconds: float = 2.8,
         scene_word_counts: list[int] | None = None,
+        scene_labels: list[str] | None = None,
+        facts_style: bool = False,
     ) -> Path:
         output_path.parent.mkdir(parents=True, exist_ok=True)
         duration = self.probe_duration(audio_path)
@@ -41,6 +43,8 @@ class FFmpegRenderer:
                 vertical=vertical,
                 clip_seconds=clip_seconds,
                 scene_word_counts=scene_word_counts,
+                scene_labels=scene_labels,
+                facts_style=facts_style,
             )
             self._mux(video_track, audio_path, output_path, captions_path=captions_path, vertical=vertical)
         else:
@@ -56,11 +60,15 @@ class FFmpegRenderer:
         vertical: bool,
         clip_seconds: float,
         scene_word_counts: list[int] | None,
+        scene_labels: list[str] | None,
+        facts_style: bool,
     ) -> Path:
         # Shorts stay at native 1080x1920. Long-form is rendered at 1440p so
         # browser text and UI survive YouTube transcoding more cleanly.
         width, height = (1080, 1920) if vertical else (2560, 1440)
         timeline = self._timeline(assets, duration, scene_word_counts, clip_seconds)
+        if facts_style:
+            timeline = self._rapid_timeline(timeline, max_seconds=2.65)
         segments: list[Path] = []
 
         for index, (asset, segment_seconds) in enumerate(timeline):
@@ -72,11 +80,13 @@ class FFmpegRenderer:
             if asset.asset_kind == "image":
                 command += ["-loop", "1", "-i", str(asset.local_path)]
                 frames = max(30, int(safe_duration * 30))
+                motion = index % 4
+                zoom = "min(zoom+0.0022,1.16)" if motion != 3 else "if(eq(on,1),1.15,max(1.0,zoom-0.0018))"
+                x = "iw/2-(iw/zoom/2)" if motion < 2 else "(iw-iw/zoom)*on/duration"
                 vf = (
                     f"scale={width}:{height}:force_original_aspect_ratio=increase:flags=lanczos,"
                     f"crop={width}:{height},"
-                    f"zoompan=z='min(zoom+0.00065,1.045)':"
-                    f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={frames}:"
+                    f"zoompan=z='{zoom}':x='{x}':y='ih/2-(ih/zoom/2)':d={frames}:"
                     f"s={width}x{height}:fps=30,"
                     f"fade=t=in:st=0:d=0.10,fade=t=out:st={fade_out:.2f}:d=0.14,"
                     "format=yuv420p"
@@ -93,6 +103,12 @@ class FFmpegRenderer:
                     f"fade=t=in:st=0:d=0.10,fade=t=out:st={fade_out:.2f}:d=0.14,"
                     "fps=30,format=yuv420p"
                 )
+
+            if facts_style:
+                label = ""
+                if scene_labels and asset.scene_index is not None and asset.scene_index < len(scene_labels):
+                    label = scene_labels[asset.scene_index]
+                vf += self._fact_overlay(label)
 
             command += [
                 "-t", f"{safe_duration:.3f}",
@@ -156,10 +172,31 @@ class FFmpegRenderer:
             timeline.append((asset, seconds))
         return timeline
 
+    @staticmethod
+    def _rapid_timeline(
+        timeline: list[tuple[VisualAsset, float]], *, max_seconds: float
+    ) -> list[tuple[VisualAsset, float]]:
+        rapid: list[tuple[VisualAsset, float]] = []
+        for asset, seconds in timeline:
+            parts = max(1, int((seconds + max_seconds - 0.001) // max_seconds))
+            for _ in range(parts):
+                rapid.append((asset, seconds / parts))
+        return rapid
+
+    @staticmethod
+    def _fact_overlay(label: str) -> str:
+        safe = (label or "VERIFIED FACT").upper().replace("\\", "\\\\").replace("'", "\\'").replace(":", "\\:")
+        safe = " ".join(safe.split())[:34]
+        return (
+            ",drawbox=x=0:y=120:w=iw:h=116:color=0xF6C90E@0.96:t=fill"
+            f",drawtext=text='{safe}':fontcolor=0x111111:fontsize=52:font='DejaVu Sans':"
+            "x=(w-text_w)/2:y=151:borderw=1:bordercolor=0x111111"
+        )
+
     def _caption_filter(self, captions_path: Path, *, vertical: bool) -> str:
-        font_size = 14 if vertical else 20
-        margin = 82 if vertical else 62
-        outline = 2
+        font_size = 21 if vertical else 20
+        margin = 310 if vertical else 62
+        outline = 3 if vertical else 2
         style = (
             f"FontName=DejaVu Sans,FontSize={font_size},Bold=1,"
             "PrimaryColour=&H00FFFFFF,OutlineColour=&H00101010,"

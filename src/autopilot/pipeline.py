@@ -127,7 +127,8 @@ class AutopilotPipeline:
                 plan.script,
                 duration,
                 run_dir / "captions.srt",
-                words_per_caption=3 if plan.format == "short" else 6,
+                words_per_caption=(2 if self.settings.channel_profile == "curioaxiom" else 3)
+                if plan.format == "short" else 6,
             )
 
             max_clips = (
@@ -202,6 +203,8 @@ class AutopilotPipeline:
                 visual_assets=assets,
                 clip_seconds=self.settings.visual_clip_seconds,
                 scene_word_counts=scene_word_counts,
+                scene_labels=[scene.on_screen_text for scene in plan.scenes] if plan.scenes else None,
+                facts_style=self.settings.channel_profile == "curioaxiom",
             )
             thumbnail_path = self.thumbnail.create(
                 plan.thumbnail_text,
