@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: "30 12 * * *" # 18:00 Asia/Kolkata
   workflow_dispatch:
-  # Temporary self-test trigger; remove after the private end-to-end test passes.
+  # Temporary private self-test trigger for the upgraded quality pipeline.
   push:
     branches: [main]
     paths:
