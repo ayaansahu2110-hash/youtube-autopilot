@@ -51,7 +51,13 @@ class ScriptPlanner:
         polished = self._improve_plan(research, video_format, draft)
         data = polished or draft
 
-        scenes = [SceneBeat(**scene) for scene in data.get("scenes", [])]
+        scenes = []
+        for raw_scene in data.get("scenes", []):
+            scene = dict(raw_scene or {})
+            for field in ("narration", "visual_query", "purpose", "source_url", "on_screen_text"):
+                scene[field] = str(scene.get(field) or "")
+            scene["visual_mode"] = str(scene.get("visual_mode") or "motion")
+            scenes.append(SceneBeat(**scene))
         if scenes:
             data["script"] = " ".join(
                 scene.narration.strip() for scene in scenes if scene.narration.strip()
