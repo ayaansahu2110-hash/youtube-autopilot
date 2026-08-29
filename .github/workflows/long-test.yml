@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: bytevexa-long-test
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   produce-long-test:
