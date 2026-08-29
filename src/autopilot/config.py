@@ -8,6 +8,9 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
     autopilot_env: str = "development"
+    channel_profile: Literal["bytevexa", "curioaxiom"] = "bytevexa"
+    channel_display_name: str = "ByteVexa"
+    expected_youtube_channel_id: str | None = None
     artifacts_dir: Path = Path("artifacts")
     state_file: Path = Path("state/history.json")
     learning_file: Path = Path("state/learning.json")
@@ -56,6 +59,31 @@ class Settings(BaseSettings):
     longform_every_days: int = 2
     longform_anchor_date: str = "2026-08-29"
     analytics_lookback_days: int = 28
+
+    def model_post_init(self, __context) -> None:
+        """Give CurioAxiom isolated defaults even when only its profile is selected."""
+        if self.channel_profile != "curioaxiom":
+            return
+        if self.channel_display_name == "ByteVexa":
+            self.channel_display_name = "CurioAxiom"
+        if self.artifacts_dir == Path("artifacts"):
+            self.artifacts_dir = Path("artifacts/curioaxiom")
+        if self.state_file == Path("state/history.json"):
+            self.state_file = Path("state/curioaxiom/history.json")
+        if self.learning_file == Path("state/learning.json"):
+            self.learning_file = Path("state/curioaxiom/learning.json")
+        if self.youtube_token_file == Path("secrets/youtube_token.json"):
+            self.youtube_token_file = Path("secrets/youtube_token_curioaxiom.json")
+        if self.channel_niche == "AI tools, technology and useful websites":
+            self.channel_niche = (
+                "verified cinematic facts across science, history, geography, mathematics, "
+                "engineering, space, Formula 1 and automobiles"
+            )
+        if self.topic_queries == "AI tools,artificial intelligence,technology,useful websites,productivity apps":
+            self.topic_queries = (
+                "counterintuitive science,history discovery,geography mystery,mathematics paradox,"
+                "space science,engineering explained,Formula 1 engineering,automotive engineering"
+            )
 
     @property
     def topic_query_list(self) -> list[str]:

@@ -51,6 +51,39 @@ See [`docs/SETUP.md`](docs/SETUP.md) for the one-time account authorization step
 - `analytics.py` — YouTube performance feedback
 - `state.py` — persistent history and performance terms
 
+## Two isolated channels
+
+The repository now supports two profiles that reuse the same production engine without sharing
+channel state or OAuth identity:
+
+- `bytevexa` — AI and technology explainers (existing default behavior)
+- `curioaxiom` — verified cinematic facts across science, history, geography, mathematics,
+  engineering, space, Formula 1 and automobiles
+
+CurioAxiom adds category routing, authoritative-source scoring, source-diversity checks,
+fact-specific editorial/planning prompts and a production confidence gate. Its default files are:
+
+```text
+state/curioaxiom/history.json
+state/curioaxiom/learning.json
+artifacts/curioaxiom/
+secrets/youtube_token_curioaxiom.json
+```
+
+The separate `CurioAxiom Facts Pipeline` GitHub workflow uses the secrets
+`CURIOAXIOM_YOUTUBE_CLIENT_SECRETS_B64` and `CURIOAXIOM_YOUTUBE_TOKEN_B64`. It also pins
+`EXPECTED_YOUTUBE_CHANNEL_ID=UCpddoAgL5DCidscCMx4WMHQ`; a mismatched OAuth token fails before
+reading or uploading. Initial CurioAxiom uploads are private until the workflow is deliberately
+promoted after review.
+
+Local planning example:
+
+```powershell
+$env:CHANNEL_PROFILE = "curioaxiom"
+$env:EXPECTED_YOUTUBE_CHANNEL_ID = "UCpddoAgL5DCidscCMx4WMHQ"
+python -m autopilot.cli run --dry-run --topic "Why Formula 1 brakes glow red" --format short
+```
+
 ## Current stage
 
 The code path for the complete automated workflow is implemented. The remaining blocker is account-specific: add the OpenAI/Pexels credentials, perform one YouTube OAuth consent flow, place encoded OAuth files in GitHub Actions secrets, and run the first private cloud test.

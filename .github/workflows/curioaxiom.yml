@@ -1,0 +1,108 @@
+name: CurioAxiom Facts Pipeline
+
+on:
+  schedule:
+    - cron: "30 6 * * *"
+    - cron: "30 12 * * *"
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: "CurioAxiom production slot"
+        required: false
+        default: "evening"
+        type: choice
+        options: [morning, evening, all]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: curioaxiom-facts-pipeline
+  cancel-in-progress: false
+
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    env:
+      CHANNEL_PROFILE: curioaxiom
+      CHANNEL_DISPLAY_NAME: CurioAxiom
+      EXPECTED_YOUTUBE_CHANNEL_ID: UCpddoAgL5DCidscCMx4WMHQ
+      ARTIFACTS_DIR: artifacts/curioaxiom
+      STATE_FILE: state/curioaxiom/history.json
+      LEARNING_FILE: state/curioaxiom/learning.json
+      CHANNEL_NICHE: verified cinematic facts across science, history, geography, mathematics, engineering, space, Formula 1 and automobiles
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_MODEL: gemini-flash-latest
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+      YOUTUBE_CLIENT_SECRETS_B64: ${{ secrets.CURIOAXIOM_YOUTUBE_CLIENT_SECRETS_B64 }}
+      YOUTUBE_TOKEN_B64: ${{ secrets.CURIOAXIOM_YOUTUBE_TOKEN_B64 }}
+      YOUTUBE_TOKEN_FILE: secrets/youtube_token_curioaxiom.json
+      ENABLE_UPLOADS: "true"
+      UPLOAD_PRIVACY_STATUS: "private"
+      ALLOW_PUBLIC_UPLOADS: "false"
+      AUTOPILOT_ENV: production
+      SCHEDULE_TIMEZONE: Asia/Kolkata
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Determine production slot
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "RUN_SLOT=${{ inputs.slot }}" >> "$GITHUB_ENV"
+          elif [ "${{ github.event.schedule }}" = "30 6 * * *" ]; then
+            echo "RUN_SLOT=morning" >> "$GITHUB_ENV"
+          else
+            echo "RUN_SLOT=evening" >> "$GITHUB_ENV"
+          fi
+      - name: Preflight isolated CurioAxiom secrets
+        shell: bash
+        run: |
+          if { [ -z "$GEMINI_API_KEY" ] && [ -z "$OPENAI_API_KEY" ]; } || [ -z "$YOUTUBE_CLIENT_SECRETS_B64" ] || [ -z "$YOUTUBE_TOKEN_B64" ]; then
+            echo "READY=false" >> "$GITHUB_ENV"
+            echo "CurioAxiom OAuth is not configured; safely skipping without touching ByteVexa."
+          else
+            echo "READY=true" >> "$GITHUB_ENV"
+          fi
+      - name: Install production dependencies
+        if: env.READY == 'true'
+        run: |
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install -e .
+          python -m playwright install --with-deps chromium
+      - name: Restore CurioAxiom OAuth only
+        if: env.READY == 'true'
+        shell: bash
+        run: |
+          mkdir -p secrets
+          python - <<'PY'
+          import base64, os, pathlib
+          pathlib.Path('secrets/client_secret.json').write_bytes(base64.b64decode(os.environ['YOUTUBE_CLIENT_SECRETS_B64']))
+          pathlib.Path('secrets/youtube_token_curioaxiom.json').write_bytes(base64.b64decode(os.environ['YOUTUBE_TOKEN_B64']))
+          PY
+      - name: Produce verified facts privately
+        if: env.READY == 'true'
+        run: python -m autopilot.cli daily --live --slot "$RUN_SLOT"
+      - name: Persist CurioAxiom state only
+        if: env.READY == 'true'
+        shell: bash
+        run: |
+          git config user.name "curioaxiom-autopilot-bot"
+          git config user.email "curioaxiom-autopilot-bot@users.noreply.github.com"
+          git add state/curioaxiom/history.json state/curioaxiom/learning.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update CurioAxiom learning state [skip ci]"
+            git push
+          fi
+      - name: Upload CurioAxiom artifacts
+        if: always() && env.READY == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: curioaxiom-${{ github.run_id }}
+          path: artifacts/curioaxiom/
+          retention-days: 7

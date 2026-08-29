@@ -38,6 +38,9 @@ def doctor() -> None:
     table = Table(title="YouTube Autopilot Doctor")
     table.add_column("Check")
     table.add_column("Status")
+    table.add_row("Channel profile", settings.channel_profile)
+    table.add_row("Channel name", settings.channel_display_name)
+    table.add_row("Isolation lock", settings.expected_youtube_channel_id or "not configured")
     table.add_row("FFmpeg", "OK" if shutil.which(settings.ffmpeg_binary) else "MISSING")
     table.add_row("FFprobe", "OK" if shutil.which(settings.ffprobe_binary) else "MISSING")
     table.add_row("Gemini API", "configured" if settings.gemini_api_key else "not configured")
@@ -102,7 +105,7 @@ def daily(
     live: bool = typer.Option(False, "--live", help="Render and publish; otherwise run planning only"),
     slot: str = typer.Option("all", "--slot", help="morning, evening, or all"),
 ) -> None:
-    """Run a scheduled ByteVexa production slot."""
+    """Run a scheduled production slot for the selected isolated channel profile."""
     settings = load_settings()
     state = StateStore(settings.state_file)
     DailyLearningLoop(settings, state).refresh()
@@ -162,7 +165,7 @@ def schedule() -> None:
         "cron",
         hour=12,
         minute=0,
-        id="bytevexa-noon-short",
+        id=f"{settings.channel_profile}-noon-short",
         replace_existing=True,
         max_instances=1,
         coalesce=True,
@@ -172,7 +175,7 @@ def schedule() -> None:
         "cron",
         hour=18,
         minute=0,
-        id="bytevexa-evening-short-long",
+        id=f"{settings.channel_profile}-evening-short-long",
         replace_existing=True,
         max_instances=1,
         coalesce=True,

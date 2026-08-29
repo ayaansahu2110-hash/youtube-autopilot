@@ -25,6 +25,9 @@ class ResearchPack(BaseModel):
     topic: str
     sources: list[ResearchSource] = Field(default_factory=list)
     research_notes: str = ""
+    category: str = "general"
+    confidence_score: float = Field(default=0, ge=0, le=100)
+    verification_notes: list[str] = Field(default_factory=list)
 
 
 class SceneBeat(BaseModel):

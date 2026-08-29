@@ -64,7 +64,22 @@ class YouTubeUploader:
         self.auth = YouTubeAuth(settings)
 
     def _service(self):
-        return build("youtube", "v3", credentials=self.auth.credentials(interactive=False))
+        service = build("youtube", "v3", credentials=self.auth.credentials(interactive=False))
+        self._assert_channel_identity(service)
+        return service
+
+    def _assert_channel_identity(self, youtube) -> None:
+        """Fail closed if an OAuth token belongs to the other managed channel."""
+        expected = (self.settings.expected_youtube_channel_id or "").strip()
+        if not expected:
+            return
+        items = youtube.channels().list(part="id,snippet", mine=True, maxResults=1).execute().get("items", [])
+        actual = str(items[0].get("id") if items else "")
+        if actual != expected:
+            raise RuntimeError(
+                f"Channel isolation lock: {self.settings.channel_display_name} expected "
+                f"YouTube channel {expected}, got {actual or 'none'}."
+            )
 
     def recent_uploads(self, limit: int = 30) -> list[dict[str, str]]:
         """Return the channel's most recent real uploads for cross-run duplicate protection."""

@@ -5,6 +5,12 @@ from autopilot.captions import write_srt
 from autopilot.config import Settings
 from autopilot.discovery import TopicDiscovery
 from autopilot.editorial import ByteVexaEditorialSystem
+from autopilot.facts import (
+    CurioAxiomEditorialSystem,
+    FactScriptPlanner,
+    FactTopicDiscovery,
+    FactVerifier,
+)
 from autopilot.models import PipelineRun, ResearchPack, TopicCandidate
 from autopilot.providers.hybrid_visuals import HybridVisualDirector
 from autopilot.providers.premium_planner import PremiumScriptPlanner
@@ -19,16 +25,23 @@ from autopilot.youtube import YouTubeUploader
 
 
 DEFAULT_TOPIC = "A useful AI workflow most people are underusing"
+DEFAULT_FACT_TOPIC = "Why airplane windows are rounded"
 
 
 class AutopilotPipeline:
     def __init__(self, settings: Settings):
         self.settings = settings
         self.state = StateStore(settings.state_file)
-        self.discovery = TopicDiscovery(settings, self.state)
+        is_facts = settings.channel_profile == "curioaxiom"
+        self.discovery = (
+            FactTopicDiscovery(settings, self.state)
+            if is_facts
+            else TopicDiscovery(settings, self.state)
+        )
         self.researcher = Researcher(settings)
-        self.editorial = ByteVexaEditorialSystem()
-        self.planner = PremiumScriptPlanner(settings)
+        self.editorial = CurioAxiomEditorialSystem() if is_facts else ByteVexaEditorialSystem()
+        self.verifier = FactVerifier() if is_facts else None
+        self.planner = FactScriptPlanner(settings) if is_facts else PremiumScriptPlanner(settings)
         self.tts = EdgeTTSProvider(
             settings.edge_tts_voice,
             rate=settings.edge_tts_rate,
@@ -64,9 +77,23 @@ class AutopilotPipeline:
 
         candidate, research = self._candidate_with_research(topic)
         research = self.editorial.enrich(candidate, research)
+        if self.verifier:
+            research = self.verifier.verify(research)
         plan = self.planner.create_plan(research, chosen_format)
         self._append_research_sources(plan, research)
         quality = self.quality.evaluate(plan, research, strict=not dry_run)
+        if self.verifier and not dry_run:
+            if research.confidence_score < 65:
+                quality.errors.append(
+                    f"Fact verification confidence {research.confidence_score:.0f}/100 is below 65."
+                )
+            authoritative = any(
+                "category-authoritative source(s)" in note and not note.startswith("0 ")
+                for note in research.verification_notes
+            )
+            if not authoritative:
+                quality.errors.append("No category-authoritative source verified the central fact.")
+            quality.passed = not quality.errors
         result = PipelineRun(run_id=run_id, plan=plan, research=research, quality=quality)
 
         run_dir = self.settings.ensure_artifacts_dir() / run_id
@@ -200,7 +227,8 @@ class AutopilotPipeline:
 
         candidates = self.discovery.discover()
         if not candidates:
-            candidate = TopicCandidate(title=DEFAULT_TOPIC, score=50, reason="Evergreen fallback.")
+            fallback = DEFAULT_FACT_TOPIC if self.settings.channel_profile == "curioaxiom" else DEFAULT_TOPIC
+            candidate = TopicCandidate(title=fallback, score=50, reason="Evergreen fallback.")
             return candidate, self.researcher.research(candidate)
 
         preferred = self.planner.choose_topic(candidates)
