@@ -34,8 +34,8 @@ jobs:
       YOUTUBE_CLIENT_SECRETS_B64: ${{ secrets.YOUTUBE_CLIENT_SECRETS_B64 }}
       YOUTUBE_TOKEN_B64: ${{ secrets.YOUTUBE_TOKEN_B64 }}
       ENABLE_UPLOADS: "true"
-      UPLOAD_PRIVACY_STATUS: ${{ vars.UPLOAD_PRIVACY_STATUS || 'private' }}
-      ALLOW_PUBLIC_UPLOADS: ${{ vars.ALLOW_PUBLIC_UPLOADS || 'false' }}
+      UPLOAD_PRIVACY_STATUS: "public"
+      ALLOW_PUBLIC_UPLOADS: "true"
       AUTOPILOT_ENV: production
       SCHEDULE_TIMEZONE: Asia/Kolkata
     steps:
