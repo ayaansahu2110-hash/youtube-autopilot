@@ -37,6 +37,9 @@ class SceneBeat(BaseModel):
     visual_mode: Literal["ui", "motion", "stock"] = "motion"
     source_url: str = ""
     on_screen_text: str = ""
+    exact_visual_subject: str = ""
+    camera_and_lighting: str = ""
+    generator_prompt: str = ""
 
 
 class VisualAsset(BaseModel):
@@ -63,6 +66,8 @@ class VideoPlan(BaseModel):
     visual_queries: list[str] = Field(default_factory=list)
     scenes: list[SceneBeat] = Field(default_factory=list)
     source_urls: list[str] = Field(default_factory=list)
+    title_options: list[str] = Field(default_factory=list)
+    direct_paste_script: str = ""
 
 
 class QualityReport(BaseModel):

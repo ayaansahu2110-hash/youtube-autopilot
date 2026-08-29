@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from autopilot.config import Settings
-from autopilot.facts import FactCategoryRouter, FactVerifier
+from autopilot.facts import FactCategoryRouter, FactScriptPlanner, FactVerifier
 from autopilot.models import ResearchPack, ResearchSource
 from autopilot.models import VisualAsset
 from autopilot.render import FFmpegRenderer
@@ -41,3 +41,17 @@ def test_fact_editing_splits_long_visual_holds() -> None:
     assert len(timeline) == 3
     assert all(seconds <= 2.65 for _, seconds in timeline)
     assert abs(sum(seconds for _, seconds in timeline) - 7.2) < 0.001
+
+
+def test_fact_prompt_requires_zero_mismatch_storyboards() -> None:
+    planner = FactScriptPlanner(Settings(channel_profile="curioaxiom"))
+    prompt = planner._draft_prompt(
+        ResearchPack(topic="Why oceans have trenches", category="geography"),
+        "short",
+    )
+    assert "ZERO-MISMATCH STORYBOARD" in prompt
+    assert "exact_visual_subject" in prompt
+    assert "camera_and_lighting" in prompt
+    assert "generator_prompt" in prompt
+    assert "direct_paste_script" in prompt
+    assert "exactly 3" in prompt

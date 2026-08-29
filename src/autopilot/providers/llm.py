@@ -54,7 +54,10 @@ class ScriptPlanner:
         scenes = []
         for raw_scene in data.get("scenes", []):
             scene = dict(raw_scene or {})
-            for field in ("narration", "visual_query", "purpose", "source_url", "on_screen_text"):
+            for field in (
+                "narration", "visual_query", "purpose", "source_url", "on_screen_text",
+                "exact_visual_subject", "camera_and_lighting", "generator_prompt",
+            ):
                 scene[field] = str(scene.get(field) or "")
             scene["visual_mode"] = str(scene.get("visual_mode") or "motion")
             scenes.append(SceneBeat(**scene))

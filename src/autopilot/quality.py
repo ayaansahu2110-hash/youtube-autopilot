@@ -102,6 +102,8 @@ class QualityGate:
             non_stock_count = 0
             missing_labels = 0
             invalid_ui_sources = 0
+            incomplete_storyboards = 0
+            mismatched_storyboards = 0
             purposes: list[str] = []
             ui_sources: list[str] = []
 
@@ -120,6 +122,23 @@ class QualityGate:
                     if scene.source_url not in approved_urls:
                         invalid_ui_sources += 1
                 purposes.append(scene.purpose.lower().strip())
+                if self.settings.channel_profile == "curioaxiom":
+                    if not all((
+                        scene.exact_visual_subject.strip(),
+                        scene.camera_and_lighting.strip(),
+                        scene.generator_prompt.strip(),
+                    )):
+                        incomplete_storyboards += 1
+                    spoken = {
+                        token for token in re.findall(r"[a-z0-9]+", scene.narration.lower())
+                        if len(token) >= 4
+                    }
+                    visual = set(re.findall(
+                        r"[a-z0-9]+",
+                        f"{scene.exact_visual_subject} {scene.generator_prompt}".lower(),
+                    ))
+                    if spoken and len(spoken & visual) < min(2, len(spoken)):
+                        mismatched_storyboards += 1
 
             if weak_queries > max(1, len(plan.scenes) // 5):
                 errors.append("Too many scene visuals are abstract or underspecified.")
@@ -137,6 +156,15 @@ class QualityGate:
                 errors.append("Too many scenes are missing useful on-screen reinforcement text.")
             if invalid_ui_sources:
                 errors.append("One or more UI scenes reference a source URL that research did not approve.")
+            if incomplete_storyboards:
+                errors.append("Every CurioAxiom scene needs a literal subject, camera/lighting plan and generator prompt.")
+            if mismatched_storyboards:
+                errors.append("One or more CurioAxiom visuals do not share enough literal detail with their narration.")
+            if self.settings.channel_profile == "curioaxiom":
+                if len(plan.title_options) != 3 or any(len(title) > 60 for title in plan.title_options):
+                    errors.append("CurioAxiom requires exactly three title options under 60 characters.")
+                if not plan.direct_paste_script.strip():
+                    errors.append("CurioAxiom requires an automation-ready script with bracketed visual cues.")
 
             if plan.format in {"short", "long"}:
                 evidence_beats = (

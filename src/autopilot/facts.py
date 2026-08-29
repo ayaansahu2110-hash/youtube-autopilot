@@ -141,6 +141,9 @@ class FactScriptPlanner(PremiumScriptPlanner):
                     visual_mode=scene.visual_mode,
                     source_url=scene.source_url,
                     on_screen_text=scene.on_screen_text,
+                    exact_visual_subject=scene.exact_visual_subject,
+                    camera_and_lighting=scene.camera_and_lighting,
+                    generator_prompt=scene.generator_prompt,
                 )
                 scenes[index:index + 1] = [left, right]
             plan.scenes = scenes
@@ -188,6 +191,9 @@ RULES
 - Open with a specific contradiction or consequence; never start with 'Did you know?' or a list.
 - For a Short, make the first sentence understandable in under two seconds and introduce a new
   action, angle, scale, or consequence every 1.5-3 seconds. Each scene is one visual action.
+- ZERO-MISMATCH STORYBOARD: every visible object/action must be justified by the exact words spoken
+  in that scene. Never use generic topical filler, decorative scientists, random laboratories,
+  unrelated rockets, landscapes, office footage or broad mood shots.
 - Include two concrete verified facts, an explanation of the mechanism or cause, and a caveat.
 - End on the meaning of the answer, not generic engagement bait.
 - Choose visual_mode motion or stock (ui only for an essential authoritative source page).
@@ -198,14 +204,22 @@ RULES
   mechanisms that cannot be filmed. UI source_url must exactly match a research URL.
 - on_screen_text is 2-5 punchy words that add meaning rather than repeat the narration. purpose uses hook, evidence, context, mechanism, scale, reveal,
   caveat or takeaway. Avoid repeated or generic visuals.
+- exact_visual_subject states the literal subject, object, action and state visible on screen.
+- camera_and_lighting specifies shot size/angle, movement, focal point and physically appropriate lighting.
+- generator_prompt is a standalone copy-pasteable prompt for an AI video generator. It must restate
+  the literal subject and action, camera direction, environment, lighting, vertical 9:16 composition,
+  realistic physics and exclusions needed to prevent mismatched objects. Do not merely say cinematic or 8K.
+- title_options contains exactly 3 truthful high-CTR alternatives under 60 characters; title is the best one.
+- direct_paste_script combines the exact narration in order with bracketed generator-ready visual cues.
 
 PACKAGING
 - Specific truthful title under 70 characters; 2-4 word thumbnail text; 6-12 relevant tags.
 - Description summarizes the answer and preserves uncertainty.
 
-Return JSON only with exactly: angle, hook, script, title, description, tags, thumbnail_brief,
-thumbnail_text, visual_queries, scenes. Each scene has exactly narration, visual_query, purpose,
-visual_mode, source_url, on_screen_text. Scenes are the source of truth.
+Return JSON only with exactly: angle, hook, script, title, title_options, description, tags,
+thumbnail_brief, thumbnail_text, visual_queries, direct_paste_script, scenes. Each scene has exactly
+narration, visual_query, purpose, visual_mode, source_url, on_screen_text, exact_visual_subject,
+camera_and_lighting, generator_prompt. Scenes are the source of truth.
 """
 
     def _improve_plan(self, research: ResearchPack, video_format: str, draft: dict) -> dict | None:
@@ -215,7 +229,9 @@ Verification: {research.confidence_score:.0f}/100; {research.verification_notes}
 Draft: {json.dumps(draft, ensure_ascii=False)}
 Remove unsupported precision, myths, generic hooks, random-list structure, repeated visuals and false certainty.
 Ensure one coherent cinematic question, two evidence beats, a mechanism/context explanation, caveat and reveal.
-Return the complete corrected JSON only with the same keys and exact scene keys.
+Reject every generic or merely topic-adjacent visual. Confirm each prompt literally depicts that scene's
+spoken nouns, action, scale and consequence. Return the complete corrected JSON only with the same keys
+and exact scene keys.
 """
         try:
             return self._generate_json(prompt)
