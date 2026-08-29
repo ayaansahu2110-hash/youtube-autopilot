@@ -26,7 +26,10 @@ class AnalyticsClient:
                 ids="channel==MINE",
                 startDate=start.isoformat(),
                 endDate=end.isoformat(),
-                metrics="views,estimatedMinutesWatched,averageViewDuration,likes,comments,shares,subscribersGained",
+                metrics=(
+                    "views,estimatedMinutesWatched,averageViewDuration,averageViewPercentage,"
+                    "likes,comments,shares,subscribersGained"
+                ),
                 dimensions="video",
                 sort="-views",
                 maxResults=200,
