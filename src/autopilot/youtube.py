@@ -4,6 +4,7 @@ from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
 
 from autopilot.config import Settings
@@ -149,8 +150,16 @@ class YouTubeUploader:
         video_id = str(response["id"])
 
         if thumbnail_path and thumbnail_path.exists():
-            youtube.thumbnails().set(
-                videoId=video_id,
-                media_body=MediaFileUpload(str(thumbnail_path), mimetype="image/jpeg", resumable=False),
-            ).execute()
+            try:
+                youtube.thumbnails().set(
+                    videoId=video_id,
+                    media_body=MediaFileUpload(str(thumbnail_path), mimetype="image/jpeg", resumable=False),
+                ).execute()
+            except HttpError as exc:
+                # New/unverified channels may upload videos but cannot set custom
+                # thumbnails yet. The video upload is still valid and YouTube
+                # provides an automatic thumbnail, so do not create a duplicate
+                # by treating this optional packaging step as an upload failure.
+                if exc.resp.status != 403:
+                    raise
         return video_id
