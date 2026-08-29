@@ -30,12 +30,56 @@ class StateStore:
         data.setdefault("topics", [])
         return data
 
+    def load(self) -> dict[str, Any]:
+        return self.data
+
     def save(self) -> None:
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.path.write_text(json.dumps(self.data, indent=2, ensure_ascii=False), encoding="utf-8")
 
     def recent_topics(self, limit: int = 60) -> list[str]:
         return [str(item.get("topic", "")) for item in self.data["topics"][-limit:] if item.get("topic")]
+
+    def sync_recent_uploads(self, uploads: list[dict[str, str]]) -> None:
+        """Seed topic memory from actual YouTube uploads, across Shorts and long-form."""
+        if not uploads:
+            return
+        known_video_ids = {str(item.get("video_id")) for item in self.data["videos"] if item.get("video_id")}
+        known_titles = {str(item.get("title", "")).strip().lower() for item in self.data["topics"] if item.get("title")}
+        now = datetime.now(timezone.utc).isoformat()
+        for upload in reversed(uploads):
+            video_id = str(upload.get("video_id") or "")
+            title = str(upload.get("title") or "").strip()
+            if not video_id or not title:
+                continue
+            if title.lower() not in known_titles:
+                self.data["topics"].append(
+                    {
+                        "topic": title,
+                        "title": title,
+                        "format": "unknown",
+                        "created_at": upload.get("published_at") or now,
+                        "source": "youtube_sync",
+                    }
+                )
+                known_titles.add(title.lower())
+            if video_id not in known_video_ids:
+                self.data["videos"].append(
+                    {
+                        "video_id": video_id,
+                        "topic": title,
+                        "title": title,
+                        "format": "unknown",
+                        "script_preview": "",
+                        "created_at": upload.get("published_at") or now,
+                        "analytics": {},
+                        "source": "youtube_sync",
+                    }
+                )
+                known_video_ids.add(video_id)
+        self.data["topics"] = self.data["topics"][-300:]
+        self.data["videos"] = self.data["videos"][-300:]
+        self.save()
 
     def record_run(self, run: PipelineRun) -> None:
         created = datetime.now(timezone.utc).isoformat()
