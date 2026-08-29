@@ -25,16 +25,24 @@ class Settings(BaseSettings):
 
     # Gemini is the preferred no-cost scripting provider. OpenAI remains an optional fallback.
     gemini_api_key: str | None = None
-    gemini_model: str = "gemini-3.7-flash"
+    gemini_model: str = "gemini-flash-latest"
     openai_api_key: str | None = None
     openai_model: str = "gpt-5-mini"
 
     pexels_api_key: str | None = None
-    max_visual_clips_short: int = 6
-    max_visual_clips_long: int = 16
-    visual_clip_seconds: float = 5.0
+    # More, shorter clips create a much less repetitive edit.
+    max_visual_clips_short: int = 10
+    max_visual_clips_long: int = 24
+    visual_clip_seconds: float = 2.8
+    min_visual_clips_short: int = 5
+    min_visual_clips_long: int = 10
 
-    edge_tts_voice: str = "en-US-GuyNeural"
+    # Andrew + subtle pacing adjustments sounds less synthetic than the old default.
+    edge_tts_voice: str = "en-US-AndrewNeural"
+    edge_tts_rate: str = "+2%"
+    edge_tts_pitch: str = "-2Hz"
+    edge_tts_volume: str = "+0%"
+
     ffmpeg_binary: str = "ffmpeg"
     ffprobe_binary: str = "ffprobe"
 
