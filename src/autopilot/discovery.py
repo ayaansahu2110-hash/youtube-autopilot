@@ -8,6 +8,7 @@ import feedparser
 import httpx
 
 from autopilot.config import Settings
+from autopilot.editorial import ByteVexaEditorialSystem
 from autopilot.models import TopicCandidate
 from autopilot.state import StateStore
 
@@ -24,13 +25,12 @@ class TopicDiscovery:
     def __init__(self, settings: Settings, state: StateStore):
         self.settings = settings
         self.state = state
+        self.editorial = ByteVexaEditorialSystem()
 
     def discover(self, max_candidates: int = 24) -> list[TopicCandidate]:
         signals: dict[str, dict] = defaultdict(lambda: {"count": 0, "urls": [], "freshness": 0.0})
         for query in self._queries():
             items = self._news_search(query)
-            # GitHub-hosted runners can occasionally be blocked by news RSS
-            # endpoints. Hacker News Algolia is a public, no-key fallback.
             if not items:
                 items = self._hacker_news(query)
             for item in items:
@@ -49,24 +49,50 @@ class TopicDiscovery:
         for key, signal in signals.items():
             if any(self._similar(key, old) for old in recent if old):
                 continue
+
             overlap = len(preferred.intersection(key.split()))
-            score = min(100.0, 52 + signal["count"] * 7 + signal["freshness"] * 25 + overlap * 4)
+            practical = self.editorial.relevance_score(signal["title"])
+            freshness_points = signal["freshness"] * 27
+            repetition_points = min(18, signal["count"] * 6)
+            score = min(100.0, 45 + repetition_points + freshness_points + overlap * 4 + practical)
             urls = [url for url in dict.fromkeys(signal["urls"]) if url]
+
+            if practical >= 8:
+                reason = (
+                    f"Fresh AI signal with strong real-life/demo potential; repeated {signal['count']} time(s)."
+                )
+            elif practical < 0:
+                reason = "Fresh signal, but practical viewer relevance is weaker."
+            else:
+                reason = f"Fresh public AI signal; repeated {signal['count']} time(s)."
+
             candidates.append(
                 TopicCandidate(
                     title=signal["title"],
                     score=score,
-                    reason=f"Fresh public signal; repeated {signal['count']} time(s).",
+                    reason=reason,
                     source_urls=urls[:5],
                 )
             )
+
         candidates.sort(key=lambda item: item.score, reverse=True)
         return candidates[:max_candidates]
 
     def _queries(self) -> list[str]:
         terms = list(self.settings.topic_query_list)
+        # Add practical discovery lanes that consistently produce relatable Shorts.
+        terms.extend(
+            [
+                "new AI tool workflow",
+                "AI app new feature",
+                "AI agent release",
+                "AI presentation tool",
+                "AI study research tool",
+                "AI browser productivity",
+            ]
+        )
         terms.extend(self.state.performance_terms(limit=6))
-        return list(dict.fromkeys(terms))[:10]
+        return list(dict.fromkeys(terms))[:14]
 
     def _news_search(self, query: str) -> list[dict]:
         items = self._rss_search(
