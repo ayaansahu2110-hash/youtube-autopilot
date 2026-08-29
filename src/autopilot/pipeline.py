@@ -224,7 +224,24 @@ class AutopilotPipeline:
 
     def _candidate_with_research(self, topic: str | None) -> tuple[TopicCandidate, ResearchPack]:
         if topic:
-            candidate = TopicCandidate(title=topic, score=60, reason="Manual topic override.")
+            source_urls: list[str] = []
+            lowered = topic.lower()
+            if (
+                self.settings.channel_profile == "curioaxiom"
+                and "heat shield" in lowered
+                and "reentry" in lowered
+            ):
+                source_urls = [
+                    "https://www.nasa.gov/ames/core-area-of-expertise-entry-systems/",
+                    "https://science.nasa.gov/science-research/science-enabling-technology/technology-highlights/protecting-future-planetary-missions-from-extreme-heat/",
+                    "https://www.esa.int/ESA_Multimedia/Images/2023/05/Origami_heat_shield_reusable_for_reentries",
+                ]
+            candidate = TopicCandidate(
+                title=topic,
+                score=60,
+                reason="Manual topic override.",
+                source_urls=source_urls,
+            )
             return candidate, self.researcher.research(candidate)
 
         candidates = self.discovery.discover()
