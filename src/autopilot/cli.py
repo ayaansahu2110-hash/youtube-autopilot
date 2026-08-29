@@ -9,6 +9,7 @@ from rich.table import Table
 
 from autopilot.analytics import AnalyticsClient
 from autopilot.config import Settings
+from autopilot.learning import DailyLearningLoop
 from autopilot.pipeline import AutopilotPipeline
 from autopilot.state import StateStore
 from autopilot.youtube import YouTubeAuth
@@ -85,6 +86,18 @@ def analytics() -> None:
 
 
 @app.command()
+def learn() -> None:
+    """Refresh competitor patterns plus ByteVexa analytics/comments."""
+    settings = load_settings()
+    state = StateStore(settings.state_file)
+    report = DailyLearningLoop(settings, state).refresh()
+    console.print(
+        f"Learning refreshed: {len(report.get('competitors', []))} competitor channels, "
+        f"{len(report.get('own_comments', []))} comments."
+    )
+
+
+@app.command()
 def daily(
     live: bool = typer.Option(False, "--live", help="Render and publish; otherwise run planning only"),
     slot: str = typer.Option("all", "--slot", help="morning, evening, or all"),
@@ -92,7 +105,7 @@ def daily(
     """Run a scheduled ByteVexa production slot."""
     settings = load_settings()
     state = StateStore(settings.state_file)
-    AnalyticsClient(settings, state).refresh()
+    DailyLearningLoop(settings, state).refresh()
     dry_run = not live
     slot = slot.strip().lower()
     if slot not in {"morning", "evening", "all"}:
@@ -124,6 +137,8 @@ def schedule() -> None:
     scheduler = BlockingScheduler(timezone=settings.schedule_timezone)
 
     def morning_job() -> None:
+        state = StateStore(settings.state_file)
+        DailyLearningLoop(settings, state).refresh()
         AutopilotPipeline(settings).run(
             dry_run=not settings.enable_uploads,
             video_format="short",
@@ -131,7 +146,7 @@ def schedule() -> None:
 
     def evening_job() -> None:
         state = StateStore(settings.state_file)
-        AnalyticsClient(settings, state).refresh()
+        DailyLearningLoop(settings, state).refresh()
         result = AutopilotPipeline(settings).run(
             dry_run=not settings.enable_uploads,
             video_format="short",
