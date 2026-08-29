@@ -243,6 +243,16 @@ class AutopilotPipeline:
                     "https://science.nasa.gov/science-research/science-enabling-technology/technology-highlights/protecting-future-planetary-missions-from-extreme-heat/",
                     "https://www.esa.int/ESA_Multimedia/Images/2023/05/Origami_heat_shield_reusable_for_reentries",
                 ]
+            elif (
+                self.settings.channel_profile == "curioaxiom"
+                and ("formula 1" in lowered or "f1" in lowered)
+                and "brake" in lowered
+            ):
+                source_urls = [
+                    "https://www.brembo.com/en/motorsport/formula1/carbon-fibers",
+                    "https://www.brembo.com/en/motorsport/formula1/ventilation-holes",
+                    "https://www.fia.com/regulations/formula-1",
+                ]
             candidate = TopicCandidate(
                 title=topic,
                 score=60,
@@ -318,7 +328,8 @@ class AutopilotPipeline:
             index for index, scene in enumerate(plan.scenes)
             if scene.visual_mode != "stock"
         ]
-        if len(explanatory) < 2:
+        minimum_explanatory = max(3, (len(plan.scenes) + 3) // 4)
+        if len(explanatory) < minimum_explanatory:
             candidates = [
                 index for index, scene in enumerate(plan.scenes)
                 if scene.visual_mode == "stock"
@@ -328,7 +339,7 @@ class AutopilotPipeline:
                 index for index, scene in enumerate(plan.scenes)
                 if scene.visual_mode == "stock" and index not in candidates
             )
-            for index in candidates[:2 - len(explanatory)]:
+            for index in candidates[:minimum_explanatory - len(explanatory)]:
                 plan.scenes[index].visual_mode = "motion"
                 plan.scenes[index].source_url = ""
 

@@ -5,6 +5,7 @@ from autopilot.facts import FactCategoryRouter, FactScriptPlanner, FactVerifier
 from autopilot.models import ResearchPack, ResearchSource
 from autopilot.models import VisualAsset
 from autopilot.render import FFmpegRenderer
+from autopilot.pipeline import AutopilotPipeline
 
 
 def test_curioaxiom_defaults_are_isolated() -> None:
@@ -55,3 +56,11 @@ def test_fact_prompt_requires_zero_mismatch_storyboards() -> None:
     assert "generator_prompt" in prompt
     assert "direct_paste_script" in prompt
     assert "exactly 3" in prompt
+
+
+def test_f1_brake_manual_topic_has_verified_source_seed(tmp_path: Path) -> None:
+    pipeline = AutopilotPipeline(Settings(channel_profile="curioaxiom", artifacts_dir=tmp_path))
+    pipeline.researcher.research = lambda candidate: ResearchPack(topic=candidate.title)
+    candidate, _ = pipeline._candidate_with_research("Why Formula 1 brakes glow red")
+    assert any("fia.com/regulations/formula-1" in url for url in candidate.source_urls)
+    assert sum("brembo.com" in url for url in candidate.source_urls) == 2

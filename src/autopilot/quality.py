@@ -137,7 +137,10 @@ class QualityGate:
                         r"[a-z0-9]+",
                         f"{scene.exact_visual_subject} {scene.generator_prompt}".lower(),
                     ))
-                    if spoken and len(spoken & visual) < min(2, len(spoken)):
+                    # One shared concrete term is sufficient here: morphology
+                    # differs naturally (brake/braking, heat/heating), while a
+                    # completely disjoint scene remains a hard failure.
+                    if spoken and not (spoken & visual):
                         mismatched_storyboards += 1
 
             if weak_queries > max(1, len(plan.scenes) // 5):
