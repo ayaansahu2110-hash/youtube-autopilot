@@ -28,9 +28,9 @@ class ScriptPlanner:
             for index, item in enumerate(candidates[:12])
         ]
         prompt = (
-            "Choose ONE YouTube topic with the best combination of freshness, useful audience value, "
-            "click potential and ability to make an original video without copying creators. "
-            "Avoid politics, medical advice, financial promises and celebrity gossip. "
+            "Choose ONE topic for a premium faceless tech channel. Prioritize a concrete viewer payoff, "
+            "freshness, curiosity, strong source support and visual explainability. Reject vague AI-news "
+            "topics, generic listicles, politics, medical advice, financial promises and celebrity gossip. "
             f"Channel niche: {self.settings.channel_niche}. Candidates: {json.dumps(compact)}. "
             "Return JSON only: {\"index\": integer, \"angle\": string}."
         )
@@ -46,31 +46,48 @@ class ScriptPlanner:
         if not self.settings.llm_configured:
             return self._fallback_plan(research, video_format)
 
-        target = "90-145 words" if video_format == "short" else "800-1200 words"
-        visual_count = "4-7" if video_format == "short" else "10-16"
-        source_text = research.research_notes[:16000]
-        prompt = f"""You are producing an ORIGINAL YouTube {video_format} for this niche: {self.settings.channel_niche}.
-Topic: {research.topic}
-Research material follows. Treat it as evidence, not prose to copy:
+        target = "105-145 words" if video_format == "short" else "850-1150 words"
+        visual_count = "9-12" if video_format == "short" else "16-22"
+        source_text = research.research_notes[:18000]
+        prompt = f"""You are the senior writer and editor for ByteVexa, a premium faceless technology channel.
+Create an ORIGINAL YouTube {video_format} about: {research.topic}
+Channel promise: useful technology explained quickly, clearly and without hype.
+
+Research material follows. It is evidence, NOT prose to copy:
 {source_text}
 
-Rules:
-- Do not imitate, quote, paraphrase closely, or mention another creator's script.
-- Write a fresh explanation from the verified facts in the supplied research.
-- Do not invent statistics, dates, prices, product capabilities or quotes.
-- Treat the topic/headline as a lead, NOT as verified evidence.
-- Never call a product 'free', 'open source', 'unlimited', 'private', or similar unless the research itself supports that exact claim and you include material restrictions or licensing conditions when relevant.
-- If sources conflict, prefer the more specific primary-source limitation and phrase the claim conservatively.
-- If evidence is uncertain, say so briefly rather than guessing.
+WRITING STANDARD
 - Script target: {target}.
-- Open with a strong non-clickbait hook and deliver useful information immediately.
-- No fake urgency, guaranteed money claims, medical/financial advice, or unsupported superlatives.
-- visual_queries must be generic stock-footage search phrases, not copyrighted brand footage requests.
-- Generate {visual_count} visual_queries.
-- thumbnail_text must be 2-4 punchy words and not misleading.
+- Write for spoken delivery, not an article. Use natural contractions and varied sentence lengths.
+- The first sentence must create curiosity through a concrete fact, problem, contrast or demonstration.
+- Never begin with 'Everyone is talking about', 'Did you know', 'In today's video', 'Imagine this', 'Here's the thing', or 'This changes everything'.
+- Give the viewer useful information within the first 2 sentences.
+- Build one clean narrative: hook -> what changed/problem -> how it works -> why it matters -> practical takeaway.
+- Avoid generic filler, motivational language, repetitive conclusions and obvious AI-writing phrases.
+- Prefer specific examples supported by the research over broad claims.
+- Do not imitate, quote, or closely paraphrase another creator.
+- Do not invent statistics, dates, prices, capabilities or quotes.
+- Treat headlines as leads, not verified evidence.
+- Never call something free, private, unlimited, open-source, best, revolutionary or game-changing unless the evidence directly supports it and relevant limitations are included.
+- If evidence is uncertain, say so briefly rather than guessing.
+- No fake urgency, guaranteed money claims, medical/financial advice or unsupported superlatives.
 
-Return JSON only with keys: angle, hook, script, title, description, tags (array),
-thumbnail_brief, thumbnail_text, visual_queries (array).
+EDITING / VISUAL STANDARD
+- Generate {visual_count} visual_queries in the SAME ORDER as the narration beats.
+- Each query must describe a concrete stock-video shot, e.g. 'close up hands typing laptop dark desk', not an abstract phrase like 'AI innovation'.
+- Vary shot types: close-up, over-shoulder, phone usage, laptop workflow, reaction, study/office environment, device detail and server/data footage only when relevant.
+- Do not request logos, copyrighted creator footage, YouTube screenshots or impossible footage.
+- Do not repeat the same laptop shot with slightly different wording.
+
+PACKAGING
+- title: specific and curiosity-driven but truthful; ideally under 65 characters.
+- description: 1-2 concise paragraphs explaining the payoff; no hype.
+- tags: 5-10 relevant tags.
+- thumbnail_text: 2-4 words, high contrast idea, not misleading.
+- thumbnail_brief: one simple focal concept, not a cluttered collage.
+
+Return JSON only with exactly these keys:
+angle, hook, script, title, description, tags (array), thumbnail_brief, thumbnail_text, visual_queries (array).
 """
         data = self._generate_json(prompt)
         urls = [source.url for source in research.sources if source.url]
@@ -161,7 +178,6 @@ thumbnail_brief, thumbnail_text, visual_queries (array).
                 if not page_token:
                     break
         except (httpx.HTTPError, ValueError, TypeError):
-            # If model discovery is temporarily unavailable, fall back to known aliases.
             discovered = []
 
         available = list(dict.fromkeys(discovered))
@@ -186,7 +202,7 @@ thumbnail_brief, thumbnail_text, visual_queries (array).
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
         generation_config: dict[str, object] = {"responseMimeType": "application/json"}
         if not model.startswith("gemini-3"):
-            generation_config["temperature"] = 0.4
+            generation_config["temperature"] = 0.55
 
         payload = {
             "contents": [{"role": "user", "parts": [{"text": prompt}]}],
@@ -229,34 +245,41 @@ thumbnail_brief, thumbnail_text, visual_queries (array).
         if video_format == "long":
             script = " ".join(
                 [
-                    f"Today we are looking at {topic}, without the hype.",
-                    "The useful question is not whether a new tool sounds impressive, but what problem it actually solves, what evidence supports the claim, and what tradeoffs come with using it.",
-                    "Start by checking the original product or announcement, then compare coverage from more than one independent source. Look for concrete capabilities, limitations, pricing changes, privacy implications and who the tool is actually meant for.",
-                    "Next, test the idea on a small real task. Time the old workflow and the new workflow. If the new method saves time without reducing quality, it may be useful. If it only adds novelty, skip it.",
-                    "For students and everyday users, the biggest wins usually come from removing repetitive work, organizing information, explaining difficult material, drafting first versions and helping you discover better resources. The final judgment still needs to stay with you.",
-                    "The takeaway is simple: verify the source, test the workflow and keep only the tools that create a measurable improvement. That approach is much more useful than chasing every new launch.",
+                    f"There is one useful question behind {topic}: what actually changes for the person using it?",
+                    "Start with the original source, then compare independent coverage and look for concrete capabilities, limitations, pricing and privacy details.",
+                    "Test the workflow on one small real task and compare the result with the old method. If it saves time without reducing quality, it may be worth keeping.",
+                    "The point is not to chase every launch. It is to find technology that makes a measurable difference in a real workflow.",
                 ]
-                * 4
+                * 6
             )
         else:
             script = (
-                f"Everyone is talking about {topic}, but the headline is not the useful part. "
-                "Check what the original source actually says, compare it with at least one independent report, "
-                "then test the feature on one real task. Measure whether it saves time or improves quality. "
-                "If it does neither, the hype does not matter. If it does, you found a workflow worth keeping. "
-                "That simple verify-test-measure rule is the fastest way to separate useful technology from noise."
+                f"The useful part of {topic} is not the headline. It is what changes in a real workflow. "
+                "Check the original source, compare one independent report, then test the feature on a small task. "
+                "Measure time saved and whether the result is actually better. If neither improves, skip the hype. "
+                "That verify, test and measure rule is a faster way to find technology worth keeping."
             )
         return VideoPlan(
             topic=topic,
             angle="Practical explainer focused on evidence and usefulness",
             format=video_format,
-            hook=f"The headline about {topic} is not the useful part.",
+            hook=f"The useful part of {topic} is not the headline.",
             script=script,
             title=f"{topic}: What Actually Matters"[:100],
             description=f"An original, evidence-first explainer about {topic}.",
             tags=["AI", "technology", "tools", "explainer"],
             thumbnail_brief=f"Clean technology thumbnail representing {topic}.",
-            thumbnail_text="WORTH THE HYPE?",
-            visual_queries=["person using laptop", "technology workspace", "student productivity", "mobile app close up"],
+            thumbnail_text="WORTH IT?",
+            visual_queries=[
+                "close up hands typing laptop dark desk",
+                "over shoulder person using laptop software",
+                "phone app close up hand scrolling",
+                "modern study desk laptop screen",
+                "person comparing information on computer",
+                "close up keyboard and monitor workspace",
+                "student using technology at desk",
+                "minimal server room data center footage",
+                "person finishing task on laptop",
+            ],
             source_urls=[source.url for source in research.sources if source.url],
         )
