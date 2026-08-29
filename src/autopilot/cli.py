@@ -13,6 +13,7 @@ from autopilot.learning import DailyLearningLoop
 from autopilot.pipeline import AutopilotPipeline
 from autopilot.state import StateStore
 from autopilot.youtube import YouTubeAuth
+from autopilot.youtube import YouTubeUploader
 
 app = typer.Typer(no_args_is_help=True, help="YouTube Autopilot control CLI")
 console = Console()
@@ -65,6 +66,18 @@ def auth_youtube() -> None:
     settings = load_settings()
     token = YouTubeAuth(settings).authorize()
     console.print(f"[bold green]YouTube authorized.[/bold green] Token saved to {token}")
+
+
+@app.command("verify-youtube")
+def verify_youtube() -> None:
+    """Verify the OAuth token belongs to the configured isolated channel."""
+    settings = load_settings()
+    uploader = YouTubeUploader(settings)
+    uploader.recent_uploads(limit=1)
+    console.print(
+        f"[bold green]Channel verified:[/bold green] {settings.channel_display_name} "
+        f"({settings.expected_youtube_channel_id or 'identity lock not configured'})"
+    )
 
 
 @app.command("run")

@@ -72,3 +72,16 @@ After you are satisfied with several private test videos and your Google API pro
 - `ALLOW_PUBLIC_UPLOADS=true`
 
 Until both are set, the code refuses public publishing.
+
+## CurioAxiom Phase 4 authorization
+
+CurioAxiom reuses the same OAuth Desktop application, but it must have a different channel token.
+After pulling the latest repository on the machine that contains `secrets/client_secret.json`, run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\setup_curioaxiom.ps1
+```
+
+Google will ask for authorization once. Select CurioAxiom. The script verifies the exact channel ID
+before it installs `CURIOAXIOM_YOUTUBE_TOKEN_B64` or starts the private test. A ByteVexa token fails
+closed and is never installed as the CurioAxiom token.
