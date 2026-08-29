@@ -69,8 +69,6 @@ class FFmpegRenderer:
 
             if asset.asset_kind == "image":
                 command += ["-loop", "1", "-i", str(asset.local_path)]
-                # Browser captures and branded cards get a slow push-in so they
-                # feel like edited video rather than a static slideshow.
                 frames = max(30, int(safe_duration * 30))
                 vf = (
                     f"scale={width}:{height}:force_original_aspect_ratio=increase,"
@@ -157,12 +155,16 @@ class FFmpegRenderer:
         return timeline
 
     def _caption_filter(self, captions_path: Path, *, vertical: bool) -> str:
-        font_size = 20 if vertical else 18
-        margin = 150 if vertical else 70
+        # Shorts captions should support the visual, not cover it. Keep them
+        # compact and anchored in the lower safe zone above YouTube controls.
+        font_size = 14 if vertical else 16
+        margin = 82 if vertical else 48
+        outline = 2 if vertical else 2
         style = (
             f"FontName=DejaVu Sans,FontSize={font_size},Bold=1,"
             "PrimaryColour=&H00FFFFFF,OutlineColour=&H00101010,"
-            f"BorderStyle=1,Outline=3,Shadow=0,Alignment=2,MarginV={margin}"
+            f"BorderStyle=1,Outline={outline},Shadow=0,Alignment=2,MarginV={margin},"
+            "MarginL=70,MarginR=70"
         )
         return f"subtitles='{self._filter_path(captions_path)}':force_style='{style}'"
 
