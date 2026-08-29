@@ -27,11 +27,18 @@ class ResearchPack(BaseModel):
     research_notes: str = ""
 
 
+class SceneBeat(BaseModel):
+    narration: str
+    visual_query: str
+    purpose: str = ""
+
+
 class VisualAsset(BaseModel):
     local_path: Path
     source_page_url: str | None = None
     creator: str | None = None
     query: str = ""
+    scene_index: int | None = None
 
 
 class VideoPlan(BaseModel):
@@ -46,6 +53,7 @@ class VideoPlan(BaseModel):
     thumbnail_brief: str
     thumbnail_text: str = ""
     visual_queries: list[str] = Field(default_factory=list)
+    scenes: list[SceneBeat] = Field(default_factory=list)
     source_urls: list[str] = Field(default_factory=list)
 
 
