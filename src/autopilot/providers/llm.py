@@ -66,6 +66,12 @@ class ScriptPlanner:
                 scene.narration.strip() for scene in scenes if scene.narration.strip()
             )
             data["visual_queries"] = [scene.visual_query for scene in scenes]
+            if not str(data.get("direct_paste_script") or "").strip():
+                data["direct_paste_script"] = "\n\n".join(
+                    f"[{scene.generator_prompt or scene.exact_visual_subject or scene.visual_query}]\n"
+                    f"{scene.narration}"
+                    for scene in scenes
+                )
         data.pop("scenes", None)
 
         urls = [source.url for source in research.sources if source.url]

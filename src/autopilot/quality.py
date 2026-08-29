@@ -137,10 +137,14 @@ class QualityGate:
                         r"[a-z0-9]+",
                         f"{scene.exact_visual_subject} {scene.generator_prompt}".lower(),
                     ))
+                    query = {
+                        token for token in re.findall(r"[a-z0-9]+", scene.visual_query.lower())
+                        if len(token) >= 4
+                    }
                     # One shared concrete term is sufficient here: morphology
                     # differs naturally (brake/braking, heat/heating), while a
                     # completely disjoint scene remains a hard failure.
-                    if spoken and not (spoken & visual):
+                    if spoken and not (spoken & visual) and not (query & visual):
                         mismatched_storyboards += 1
 
             if weak_queries > max(1, len(plan.scenes) // 5):
