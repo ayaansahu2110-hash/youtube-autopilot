@@ -53,8 +53,9 @@ class ScriptPlanner:
 
         scenes = [SceneBeat(**scene) for scene in data.get("scenes", [])]
         if scenes:
-            script = " ".join(scene.narration.strip() for scene in scenes if scene.narration.strip())
-            data["script"] = script
+            data["script"] = " ".join(
+                scene.narration.strip() for scene in scenes if scene.narration.strip()
+            )
             data["visual_queries"] = [scene.visual_query for scene in scenes]
         data.pop("scenes", None)
 
@@ -67,43 +68,60 @@ class ScriptPlanner:
             **data,
         )
 
+    def _source_catalog(self, research: ResearchPack) -> str:
+        rows = []
+        for index, source in enumerate(research.sources[:8], start=1):
+            rows.append(
+                f"SOURCE_URL_{index}: {source.url}\n"
+                f"SOURCE_TITLE_{index}: {source.title}\n"
+                f"SOURCE_PUBLISHER_{index}: {source.publisher or ''}"
+            )
+        return "\n".join(rows)
+
     def _draft_prompt(self, research: ResearchPack, video_format: str) -> str:
         target = "105-145 words" if video_format == "short" else "850-1150 words"
         scene_count = "8-11" if video_format == "short" else "14-20"
         source_text = research.research_notes[:18000]
+        source_catalog = self._source_catalog(research)
         return f"""You are the senior writer and visual editor for ByteVexa, a premium faceless technology channel.
 Create an ORIGINAL YouTube {video_format} about: {research.topic}
 Channel promise: useful technology explained quickly, clearly and without hype.
 
-Research material follows. It is evidence, NOT prose to copy:
+Research evidence:
 {source_text}
+
+Approved public source pages that may be visually captured:
+{source_catalog}
 
 CONTENT STANDARD
 - Script target: {target}.
-- Cover ONE clear idea. Do not cram several unrelated developments into one Short.
-- The viewer must learn at least 2 concrete, useful facts or actions that are supported by the research.
+- Cover ONE clear idea. Do not cram unrelated developments together.
+- The viewer must learn at least 2 concrete, useful facts or actions supported by the research.
+- Give at least one specific limitation, condition, comparison, example or practical consequence when evidence supports it.
 - The first sentence must create curiosity through a specific problem, capability, contrast or consequence.
 - Never begin with 'Everyone is talking about', 'Did you know', 'In today's video', 'Imagine this', 'Here's the thing', or 'This changes everything'.
-- Build one clean narrative: hook -> what is actually happening -> how it works -> why it matters -> practical takeaway.
-- Prefer named features, concrete user actions and specific limitations supported by the evidence.
-- Remove filler, generic praise, broad claims and repeated conclusions.
+- Build one clean narrative: hook -> what is happening -> how it works -> why it matters -> practical takeaway.
+- Prefer named features, concrete user actions and specific limitations over broad claims.
+- Remove filler, generic praise, repeated conclusions and vague advice.
 - Write for spoken delivery with contractions and natural sentence rhythm.
-- Do not imitate or closely paraphrase another creator.
-- Do not invent statistics, dates, prices, capabilities or quotes.
+- Do not imitate another creator or invent statistics, dates, prices, capabilities or quotes.
 - Treat headlines as leads, not verified evidence.
-- Never call something free, private, unlimited, open-source, best, revolutionary or game-changing unless evidence directly supports it and relevant limitations are included.
-- If evidence is uncertain, state the uncertainty briefly.
+- Never call something free, private, unlimited, open-source, best, revolutionary or game-changing unless evidence directly supports it and limitations are included.
 
-SCENE-TO-VOICE ALIGNMENT
-- Create {scene_count} scenes in exact narration order.
-- Each scene must contain narration for ONLY that beat and ONE matching Pexels-friendly visual_query.
-- The visual must literally illustrate what the narration is discussing at that moment.
-- If narration says someone is typing a prompt, show a person typing on a laptop.
-- If narration discusses a phone feature, show a phone being used.
-- If narration discusses comparing results, show side-by-side work, reviewing screens or checking information.
-- Do NOT use unrelated futuristic servers, robots, abstract AI graphics or generic office footage unless the narration specifically discusses infrastructure or offices.
-- visual_query should be 3-8 concrete searchable words. Avoid brand names because stock search often fails on them.
-- Vary framing only when it still matches the narration.
+HYBRID VISUAL DIRECTION
+Create {scene_count} scenes in exact narration order. Every scene must choose ONE visual_mode:
+1) "ui" — use when the narration refers to a specific website/app/tool/interface and an approved source URL above can visually represent it. source_url MUST be copied exactly from an approved SOURCE_URL line.
+2) "motion" — use for comparisons, concepts, steps, limitations, numbers, before/after ideas or anything stock footage would explain poorly. source_url must be empty.
+3) "stock" — use only when real-world B-roll literally matches the narration, such as typing, using a phone, studying, filming or working at a desk. source_url must be empty.
+
+Rules:
+- Prefer ui or motion over generic stock. A premium tech channel should not look like random stock footage.
+- Each scene narration should be one short sentence or clause.
+- visual_query: 3-8 concrete words describing the exact scene. For ui scenes describe the interface area; for motion scenes describe the explanatory concept; for stock scenes use Pexels-searchable real-world wording.
+- on_screen_text: 2-7 useful words that reinforce the narration; no clickbait.
+- purpose: a short label such as hook, demo, limitation, comparison, takeaway.
+- Never use robots, glowing brains, futuristic servers or abstract AI imagery unless the narration specifically discusses those things.
+- The visual must explain the exact narration beat, not merely share the same broad topic.
 
 PACKAGING
 - title: truthful, specific, curiosity-driven, ideally under 65 characters.
@@ -112,37 +130,44 @@ PACKAGING
 - thumbnail_text: 2-4 words, not misleading.
 - thumbnail_brief: one simple focal concept.
 
-Return JSON only with exactly these keys:
+Return JSON only with exactly these top-level keys:
 angle, hook, script, title, description, tags, thumbnail_brief, thumbnail_text, visual_queries, scenes.
-scenes must be an array of objects with exactly: narration, visual_query, purpose.
-The script and visual_queries should match the scenes, but scenes are the source of truth.
+Each scenes item must contain exactly:
+narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
+scenes are the source of truth for the final script and visuals.
 """
 
     def _improve_plan(self, research: ResearchPack, video_format: str, draft: dict) -> dict | None:
         source_text = research.research_notes[:15000]
-        review_prompt = f"""Act as a ruthless senior YouTube editor. Rewrite this draft only if needed so it feels specific, useful and visually coherent.
+        source_catalog = self._source_catalog(research)
+        review_prompt = f"""Act as a ruthless senior YouTube editor and visual producer for ByteVexa.
+Rewrite this draft until it is specific, informative, highly rewatchable and visually coherent.
 
 Topic: {research.topic}
 Format: {video_format}
 Research evidence:
 {source_text}
 
+Approved UI capture URLs:
+{source_catalog}
+
 Draft JSON:
 {json.dumps(draft, ensure_ascii=False)}
 
-Fix all of these problems if present:
+Fix every problem you find:
 - generic AI wording or filler
-- weak hook
-- claims not clearly supported by the research
-- narration that says little beyond the headline
-- scenes whose stock-video query does not literally match the narration beat
-- too many abstract 'AI', server, robot, code or office shots
-- repeated visual ideas
-- vague advice with no concrete user takeaway
+- weak hook or low information density
+- claims not clearly supported by evidence
+- narration that only repeats the headline
+- missing practical examples, limitations or consequences
+- scenes whose visual does not literally explain the narration beat
+- unnecessary stock footage where real UI or a motion-graphic explainer would be clearer
+- repeated laptop/office shots
+- vague advice with no concrete takeaway
 
-For Shorts, preserve a tight 105-145 word total and 8-11 scene beats. Every scene narration should usually be one short sentence or clause. Each scene visual_query must be 3-8 concrete Pexels-searchable words describing what should be on screen during that exact narration.
+For Shorts, keep 105-145 total spoken words and 8-11 scene beats. Prefer a mix dominated by real UI and ByteVexa motion graphics. Stock should normally be a minority of scenes. UI source_url values must exactly match one approved URL. If no approved page genuinely fits a scene, use motion instead of inventing a URL.
 
-Return the complete corrected JSON only, using exactly the same keys as the draft, including scenes.
+Return the complete corrected JSON only, preserving the required top-level keys and these exact scene keys: narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
 """
         try:
             return self._generate_json(review_prompt)
@@ -298,31 +323,43 @@ Return the complete corrected JSON only, using exactly the same keys as the draf
 
     def _fallback_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
         topic = research.topic
+        source_url = research.sources[0].url if research.sources else ""
         scenes = [
             SceneBeat(
                 narration=f"The useful question behind {topic} is what it changes in a real task.",
-                visual_query="person using laptop at desk",
+                visual_query="specific product idea explained",
                 purpose="hook",
+                visual_mode="motion",
+                on_screen_text="WHAT CHANGES?",
             ),
             SceneBeat(
-                narration="Start with the original source instead of the headline.",
-                visual_query="person reading website on laptop",
+                narration="Start with the original product page instead of the headline.",
+                visual_query="product website interface",
                 purpose="verify",
+                visual_mode="ui" if source_url else "motion",
+                source_url=source_url,
+                on_screen_text="CHECK THE SOURCE",
             ),
             SceneBeat(
-                narration="Then compare one independent report for limitations and context.",
-                visual_query="person comparing information on computer",
-                purpose="compare",
+                narration="Then look for the exact capability and its limitations.",
+                visual_query="features versus limitations comparison",
+                purpose="comparison",
+                visual_mode="motion",
+                on_screen_text="FEATURES vs LIMITS",
             ),
             SceneBeat(
                 narration="Test the feature on one small task you already do.",
                 visual_query="hands typing laptop workflow",
-                purpose="test",
+                purpose="demo",
+                visual_mode="stock",
+                on_screen_text="TEST ONE TASK",
             ),
             SceneBeat(
                 narration="Keep it only if it saves time or improves the result.",
-                visual_query="person reviewing finished work laptop",
+                visual_query="before after workflow comparison",
                 purpose="takeaway",
+                visual_mode="motion",
+                on_screen_text="MEASURE THE WIN",
             ),
         ]
         if video_format == "long":
