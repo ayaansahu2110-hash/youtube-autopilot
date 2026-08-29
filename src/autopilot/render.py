@@ -1,4 +1,3 @@
-import math
 import subprocess
 from pathlib import Path
 
@@ -30,12 +29,18 @@ class FFmpegRenderer:
         captions_path: Path | None,
         visual_assets: list[VisualAsset],
         clip_seconds: float = 2.8,
+        scene_word_counts: list[int] | None = None,
     ) -> Path:
         output_path.parent.mkdir(parents=True, exist_ok=True)
         duration = self.probe_duration(audio_path)
         if visual_assets:
             video_track = self._build_visual_track(
-                visual_assets, output_path.parent, duration, vertical=vertical, clip_seconds=clip_seconds
+                visual_assets,
+                output_path.parent,
+                duration,
+                vertical=vertical,
+                clip_seconds=clip_seconds,
+                scene_word_counts=scene_word_counts,
             )
             self._mux(video_track, audio_path, output_path, captions_path=captions_path, vertical=vertical)
         else:
@@ -50,24 +55,32 @@ class FFmpegRenderer:
         *,
         vertical: bool,
         clip_seconds: float,
+        scene_word_counts: list[int] | None,
     ) -> Path:
         width, height = (1080, 1920) if vertical else (1920, 1080)
+        timeline = self._timeline(assets, duration, scene_word_counts, clip_seconds)
         segments: list[Path] = []
-        fade_out = max(0.1, clip_seconds - 0.16)
-        for index, asset in enumerate(assets):
+
+        for index, (asset, segment_seconds) in enumerate(timeline):
             segment = workdir / f"segment-{index:02d}.mp4"
-            # Normalize framing, add a subtle premium grade and tiny fades so cuts
-            # feel intentional rather than like raw stock clips stitched together.
+            source_duration = self.probe_duration(asset.local_path)
+            safe_duration = max(1.0, segment_seconds)
+            fade_out = max(0.1, safe_duration - 0.14)
             vf = (
                 f"scale={width}:{height}:force_original_aspect_ratio=increase,"
                 f"crop={width}:{height},"
-                "eq=contrast=1.04:saturation=1.06:brightness=-0.01,"
-                f"fade=t=in:st=0:d=0.12,fade=t=out:st={fade_out:.2f}:d=0.16,"
+                "eq=contrast=1.04:saturation=1.05:brightness=-0.01,"
+                f"fade=t=in:st=0:d=0.10,fade=t=out:st={fade_out:.2f}:d=0.14,"
                 "fps=30,format=yuv420p"
             )
-            command = [
-                self.ffmpeg_binary, "-y", "-i", str(asset.local_path), "-t", str(clip_seconds),
-                "-an", "-vf", vf, "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
+            command = [self.ffmpeg_binary, "-y"]
+            if source_duration < safe_duration:
+                command += ["-stream_loop", "-1"]
+            command += [
+                "-i", str(asset.local_path),
+                "-t", f"{safe_duration:.3f}",
+                "-an", "-vf", vf,
+                "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
                 str(segment),
             ]
             try:
@@ -75,16 +88,15 @@ class FFmpegRenderer:
                 segments.append(segment)
             except subprocess.CalledProcessError:
                 segment.unlink(missing_ok=True)
+
         if not segments:
             raise RuntimeError("No downloaded visual clips could be normalized by FFmpeg.")
 
-        repeat = max(1, math.ceil(duration / max(1.0, len(segments) * clip_seconds)) + 1)
         concat_file = workdir / "visuals.txt"
         lines = []
-        for _ in range(repeat):
-            for segment in segments:
-                safe = segment.resolve().as_posix().replace("'", "'\\''")
-                lines.append(f"file '{safe}'")
+        for segment in segments:
+            safe = segment.resolve().as_posix().replace("'", "'\\''")
+            lines.append(f"file '{safe}'")
         concat_file.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
         track = workdir / "visual-track.mp4"
@@ -95,6 +107,37 @@ class FFmpegRenderer:
         ]
         subprocess.run(command, check=True, capture_output=True)
         return track
+
+    @staticmethod
+    def _timeline(
+        assets: list[VisualAsset],
+        duration: float,
+        scene_word_counts: list[int] | None,
+        fallback_seconds: float,
+    ) -> list[tuple[VisualAsset, float]]:
+        if not scene_word_counts:
+            return [(asset, fallback_seconds) for asset in assets]
+
+        indexed = {asset.scene_index: asset for asset in assets if asset.scene_index is not None}
+        if not indexed:
+            return [(asset, fallback_seconds) for asset in assets]
+
+        available = sorted(indexed)
+        total_words = max(1, sum(max(1, count) for count in scene_word_counts))
+        raw = [duration * max(1, count) / total_words for count in scene_word_counts]
+        minimum = 1.35
+        adjusted = [max(minimum, value) for value in raw]
+        scale = duration / max(0.1, sum(adjusted))
+        adjusted = [value * scale for value in adjusted]
+
+        timeline: list[tuple[VisualAsset, float]] = []
+        for scene_index, seconds in enumerate(adjusted):
+            asset = indexed.get(scene_index)
+            if asset is None:
+                nearest = min(available, key=lambda value: abs(value - scene_index))
+                asset = indexed[nearest]
+            timeline.append((asset, seconds))
+        return timeline
 
     def _caption_filter(self, captions_path: Path, *, vertical: bool) -> str:
         font_size = 20 if vertical else 18
