@@ -42,8 +42,7 @@ class AutopilotPipeline:
     ) -> PipelineRun:
         run_id = uuid.uuid4().hex[:12]
         chosen_format = video_format or self.settings.default_video_format
-        candidate = self._candidate(topic)
-        research = self.researcher.research(candidate)
+        candidate, research = self._candidate_with_research(topic)
         plan = self.planner.create_plan(research, chosen_format)
         self._append_research_sources(plan, research)
         quality = self.quality.evaluate(plan, research, strict=not dry_run)
@@ -52,6 +51,8 @@ class AutopilotPipeline:
         run_dir = self.settings.ensure_artifacts_dir() / run_id
         run_dir.mkdir(parents=True, exist_ok=True)
         manifest_path = run_dir / "manifest.json"
+        result.metadata["selected_topic_score"] = candidate.score
+        result.metadata["research_source_count"] = len(research.sources)
 
         if dry_run:
             result.notes.append("Dry run: research/plan completed; narration, rendering and upload skipped.")
@@ -114,13 +115,36 @@ class AutopilotPipeline:
         self._write_manifest(manifest_path, result)
         return result
 
-    def _candidate(self, topic: str | None) -> TopicCandidate:
+    def _candidate_with_research(self, topic: str | None) -> tuple[TopicCandidate, ResearchPack]:
         if topic:
-            return TopicCandidate(title=topic, score=60, reason="Manual topic override.")
+            candidate = TopicCandidate(title=topic, score=60, reason="Manual topic override.")
+            return candidate, self.researcher.research(candidate)
+
         candidates = self.discovery.discover()
         if not candidates:
-            return TopicCandidate(title=DEFAULT_TOPIC, score=50, reason="Evergreen fallback.")
-        return self.planner.choose_topic(candidates)
+            candidate = TopicCandidate(title=DEFAULT_TOPIC, score=50, reason="Evergreen fallback.")
+            return candidate, self.researcher.research(candidate)
+
+        preferred = self.planner.choose_topic(candidates)
+        ordered = [preferred]
+        ordered.extend(item for item in candidates if item.title != preferred.title)
+
+        best_candidate = preferred
+        best_research = self.researcher.research(preferred)
+        minimum = self.settings.min_research_sources
+        if len(best_research.sources) >= minimum:
+            return best_candidate, best_research
+
+        # A fresh topic can be too niche for safe production. Try other strong
+        # discovered topics rather than lowering the evidence requirement.
+        for candidate in ordered[1:8]:
+            research = self.researcher.research(candidate)
+            if len(research.sources) > len(best_research.sources):
+                best_candidate, best_research = candidate, research
+            if len(research.sources) >= minimum:
+                return candidate, research
+
+        return best_candidate, best_research
 
     @staticmethod
     def _append_research_sources(plan, research: ResearchPack) -> None:
