@@ -87,22 +87,28 @@ def analytics() -> None:
 @app.command()
 def daily(
     live: bool = typer.Option(False, "--live", help="Render and publish; otherwise run planning only"),
+    slot: str = typer.Option("all", "--slot", help="morning, evening, or all"),
 ) -> None:
-    """Create two daily Shorts and, every alternate day, one long-form video."""
+    """Run a scheduled ByteVexa production slot."""
     settings = load_settings()
     state = StateStore(settings.state_file)
     AnalyticsClient(settings, state).refresh()
     dry_run = not live
-    results = []
+    slot = slot.strip().lower()
+    if slot not in {"morning", "evening", "all"}:
+        raise typer.BadParameter("slot must be morning, evening, or all")
 
-    for _ in range(max(1, settings.shorts_per_day)):
+    results = []
+    short_count = max(1, settings.shorts_per_day) if slot == "all" else 1
+    for _ in range(short_count):
         short_result = AutopilotPipeline(settings).run(dry_run=dry_run, video_format="short")
         results.append(short_result)
         _print_result(short_result, settings)
         if short_result.status == "failed":
             break
 
-    if not any(result.status == "failed" for result in results) and _longform_due(settings):
+    should_make_long = slot in {"evening", "all"} and _longform_due(settings)
+    if not any(result.status == "failed" for result in results) and should_make_long:
         long_result = AutopilotPipeline(settings).run(dry_run=dry_run, video_format="long")
         results.append(long_result)
         _print_result(long_result, settings)
@@ -113,40 +119,50 @@ def daily(
 
 @app.command()
 def schedule() -> None:
-    """Keep a local machine running and execute the production daily command at the configured time."""
+    """Keep a local machine running and execute two daily production slots."""
     settings = load_settings()
     scheduler = BlockingScheduler(timezone=settings.schedule_timezone)
 
-    def job() -> None:
+    def morning_job() -> None:
+        AutopilotPipeline(settings).run(
+            dry_run=not settings.enable_uploads,
+            video_format="short",
+        )
+
+    def evening_job() -> None:
         state = StateStore(settings.state_file)
         AnalyticsClient(settings, state).refresh()
-        for _ in range(max(1, settings.shorts_per_day)):
-            result = AutopilotPipeline(settings).run(
-                dry_run=not settings.enable_uploads,
-                video_format="short",
-            )
-            if result.status == "failed":
-                return
-        if _longform_due(settings):
+        result = AutopilotPipeline(settings).run(
+            dry_run=not settings.enable_uploads,
+            video_format="short",
+        )
+        if result.status != "failed" and _longform_due(settings):
             AutopilotPipeline(settings).run(
                 dry_run=not settings.enable_uploads,
                 video_format="long",
             )
 
     scheduler.add_job(
-        job,
+        morning_job,
         "cron",
-        hour=settings.schedule_hour,
-        minute=settings.schedule_minute,
-        id="daily-youtube-autopilot",
+        hour=12,
+        minute=0,
+        id="bytevexa-noon-short",
         replace_existing=True,
         max_instances=1,
         coalesce=True,
     )
-    console.print(
-        f"Scheduler active: daily at {settings.schedule_hour:02d}:{settings.schedule_minute:02d} "
-        f"({settings.schedule_timezone})"
+    scheduler.add_job(
+        evening_job,
+        "cron",
+        hour=18,
+        minute=0,
+        id="bytevexa-evening-short-long",
+        replace_existing=True,
+        max_instances=1,
+        coalesce=True,
     )
+    console.print(f"Scheduler active at 12:00 and 18:00 ({settings.schedule_timezone})")
     scheduler.start()
 
 
