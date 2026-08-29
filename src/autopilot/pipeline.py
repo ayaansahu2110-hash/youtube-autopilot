@@ -58,6 +58,7 @@ class AutopilotPipeline:
         manifest_path = run_dir / "manifest.json"
         result.metadata["selected_topic_score"] = candidate.score
         result.metadata["research_source_count"] = len(research.sources)
+        result.metadata["scene_count"] = len(plan.scenes)
 
         if dry_run:
             result.notes.append("Dry run: research/plan completed; narration, rendering and upload skipped.")
@@ -79,6 +80,7 @@ class AutopilotPipeline:
                 run_dir / "captions.srt",
                 words_per_caption=3 if plan.format == "short" else 6,
             )
+
             max_clips = (
                 self.settings.max_visual_clips_short
                 if plan.format == "short"
@@ -89,15 +91,15 @@ class AutopilotPipeline:
                 if plan.format == "short"
                 else self.settings.min_visual_clips_long
             )
+            queries = [scene.visual_query for scene in plan.scenes] or plan.visual_queries
             assets = self.visuals.fetch_assets(
-                plan.visual_queries,
+                queries,
                 run_dir / "visuals",
                 vertical=plan.format == "short",
                 limit=max_clips,
             )
             result.metadata["visual_assets"] = len(assets)
 
-            # Fail closed instead of uploading a visibly repetitive/fallback video.
             if len(assets) < min_clips:
                 result.status = "failed"
                 result.notes.append(
@@ -106,9 +108,28 @@ class AutopilotPipeline:
                 self._write_manifest(manifest_path, result)
                 return result
 
+            if plan.scenes:
+                covered_scene_indexes = {
+                    asset.scene_index for asset in assets if asset.scene_index is not None
+                }
+                required_coverage = max(min_clips, int(len(plan.scenes) * 0.70))
+                if len(covered_scene_indexes) < required_coverage:
+                    result.status = "failed"
+                    result.notes.append(
+                        "Scene-match gate blocked upload: not enough narration beats have their own matching visual."
+                    )
+                    self._write_manifest(manifest_path, result)
+                    return result
+
             attribution = self.visuals.attribution_lines(assets)
             if attribution:
                 plan.description = self._append_section(plan.description, "Visual credits", attribution)
+
+            scene_word_counts = (
+                [len(scene.narration.split()) for scene in plan.scenes]
+                if plan.scenes
+                else None
+            )
             video_path = self.renderer.render(
                 audio_path,
                 run_dir / "video.mp4",
@@ -116,6 +137,7 @@ class AutopilotPipeline:
                 captions_path=captions_path,
                 visual_assets=assets,
                 clip_seconds=self.settings.visual_clip_seconds,
+                scene_word_counts=scene_word_counts,
             )
             thumbnail_path = self.thumbnail.create(plan.thumbnail_text, run_dir / "thumbnail.jpg")
             result.video_path = video_path
