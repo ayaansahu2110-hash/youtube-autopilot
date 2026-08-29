@@ -1,0 +1,122 @@
+name: Launch Day Final Boost
+
+on:
+  push:
+    paths:
+      - ".github/workflows/launch-day-final-boost.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bytevexa-launch-day-final-boost
+  cancel-in-progress: false
+
+jobs:
+  boost:
+    runs-on: ubuntu-latest
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_MODEL: gemini-flash-latest
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+      YOUTUBE_CLIENT_SECRETS_B64: ${{ secrets.YOUTUBE_CLIENT_SECRETS_B64 }}
+      YOUTUBE_TOKEN_B64: ${{ secrets.YOUTUBE_TOKEN_B64 }}
+      ENABLE_UPLOADS: "true"
+      UPLOAD_PRIVACY_STATUS: "public"
+      ALLOW_PUBLIC_UPLOADS: "true"
+      AUTOPILOT_ENV: production
+      SCHEDULE_TIMEZONE: Asia/Kolkata
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install project
+        run: python -m pip install --upgrade pip && pip install -e .
+
+      - name: Install browser capture engine
+        run: python -m playwright install --with-deps chromium
+
+      - name: Restore OAuth files
+        shell: bash
+        run: |
+          mkdir -p secrets
+          python - <<'PY'
+          import base64, os, pathlib
+          pathlib.Path('secrets/client_secret.json').write_bytes(base64.b64decode(os.environ['YOUTUBE_CLIENT_SECRETS_B64']))
+          pathlib.Path('secrets/youtube_token.json').write_bytes(base64.b64decode(os.environ['YOUTUBE_TOKEN_B64']))
+          PY
+
+      - name: Verify current channel uploads
+        run: |
+          python - <<'PY'
+          from autopilot.config import Settings
+          from autopilot.youtube import YouTubeUploader
+          uploader = YouTubeUploader(Settings())
+          uploads = uploader.recent_uploads(limit=50)
+          print(f"CURRENT_CHANNEL_UPLOAD_COUNT={len(uploads)}")
+          for item in uploads[:12]:
+              print(f"RECENT_UPLOAD: {item['title']} | {item['video_id']}")
+          PY
+
+      - name: Produce public Short 1 - Claude Academy
+        run: >-
+          python -m autopilot.cli run
+          --format short
+          --render
+          --topic "Claude Academy is now live: what the free AI learning platform teaches, how to start using it, one practical course path for beginners, and who should actually use it"
+
+      - name: Produce public Short 2 - Gemini Enterprise pricing
+        run: >-
+          python -m autopilot.cli run
+          --format short
+          --render
+          --topic "Google just added pay-as-you-go Gemini Enterprise pricing: what changed, why AI cost control matters, a real business use example, and the limitation viewers should know"
+
+      - name: Produce public Short 3 - Persistent Codex agent
+        run: >-
+          python -m autopilot.cli run
+          --format short
+          --render
+          --topic "OpenAI is testing a persistent Codex agent mode: what an always-on coding agent could do, a realistic workflow example, why it matters, and the security limitation to understand before using it"
+
+      - name: Verify uploads after boost
+        run: |
+          python - <<'PY'
+          from autopilot.config import Settings
+          from autopilot.youtube import YouTubeUploader
+          uploader = YouTubeUploader(Settings())
+          uploads = uploader.recent_uploads(limit=50)
+          print(f"POST_BOOST_CHANNEL_UPLOAD_COUNT={len(uploads)}")
+          for item in uploads[:12]:
+              print(f"POST_BOOST_UPLOAD: {item['title']} | {item['video_id']}")
+          PY
+
+      - name: Persist upload history
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "youtube-autopilot-bot"
+          git config user.email "youtube-autopilot-bot@users.noreply.github.com"
+          git add state/history.json state/learning.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: persist launch-day boost history [skip ci]"
+            git push
+          fi
+
+      - name: Upload debug artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bytevexa-launch-day-final-boost-${{ github.run_id }}
+          path: artifacts/
+          retention-days: 7
