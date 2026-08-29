@@ -159,7 +159,12 @@ class AutopilotPipeline:
                 clip_seconds=self.settings.visual_clip_seconds,
                 scene_word_counts=scene_word_counts,
             )
-            thumbnail_path = self.thumbnail.create(plan.thumbnail_text, run_dir / "thumbnail.jpg")
+            thumbnail_path = self.thumbnail.create(
+                plan.thumbnail_text,
+                run_dir / "thumbnail.jpg",
+                title=plan.title,
+                brief=plan.thumbnail_brief,
+            )
             result.video_path = video_path
             result.thumbnail_path = thumbnail_path
             result.status = "rendered"
