@@ -84,6 +84,13 @@ class AutopilotPipeline:
         if self.verifier:
             research = self.verifier.verify(research)
         plan = self.planner.create_plan(research, chosen_format)
+
+        # The LLM may occasionally return a plausible public URL that was not in
+        # the verified research set, or reuse one landing page for too many
+        # scenes. Fail closed on evidence, but do not throw away an otherwise
+        # valid video: convert those scenes to ByteVexa/CurioAxiom motion
+        # explainers before the quality gate evaluates the plan.
+        self._sanitize_visual_sources(plan, research)
         if self.verifier:
             self._sanitize_fact_visual_sources(plan, research)
         self._append_research_sources(plan, research)
@@ -298,6 +305,29 @@ class AutopilotPipeline:
                 lines.append(f"{source.publisher or source.title}: {source.url}")
         if lines:
             plan.description = AutopilotPipeline._append_section(plan.description, "Research sources", lines)
+
+    @staticmethod
+    def _sanitize_visual_sources(plan, research: ResearchPack) -> None:
+        """Keep UI footage inside approved evidence and prevent landing-page repetition."""
+        approved_urls = {source.url for source in research.sources if source.url}
+        repeat_limit = (
+            max(3, len(plan.scenes) // 3)
+            if plan.format == "long"
+            else max(3, len(plan.scenes) // 2)
+        )
+        usage: dict[str, int] = {}
+        for scene in plan.scenes:
+            if scene.visual_mode != "ui":
+                continue
+            url = scene.source_url.strip()
+            if not url or url not in approved_urls:
+                scene.visual_mode = "motion"
+                scene.source_url = ""
+                continue
+            usage[url] = usage.get(url, 0) + 1
+            if usage[url] > repeat_limit:
+                scene.visual_mode = "motion"
+                scene.source_url = ""
 
     @staticmethod
     def _sanitize_fact_visual_sources(plan, research: ResearchPack) -> None:
