@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import shutil
 import textwrap
 from pathlib import Path
 from urllib.parse import urlparse
@@ -43,7 +44,7 @@ class HybridVisualDirector:
                 if source_url:
                     asset = self._capture_public_ui(
                         source_url,
-                        output_dir / f"scene-{scene_index:02d}-ui.png",
+                        output_dir / f"scene-{scene_index:02d}-ui",
                         scene_index=scene_index,
                         vertical=vertical,
                     )
@@ -65,8 +66,6 @@ class HybridVisualDirector:
                     )
 
             if asset is None:
-                # Motion graphics are the safe default. A purposeful explainer card
-                # is better than unrelated stock footage when exact UI is unavailable.
                 card = output_dir / f"scene-{scene_index:02d}-motion.png"
                 self._make_motion_card(scene, card, vertical=vertical, scene_index=scene_index)
                 asset = VisualAsset(
@@ -84,38 +83,76 @@ class HybridVisualDirector:
     def _capture_public_ui(
         self,
         url: str,
-        output: Path,
+        output_stem: Path,
         *,
         scene_index: int,
         vertical: bool,
     ) -> VisualAsset | None:
-        raw = output.with_name(output.stem + "-raw.png")
+        """Try a real read-only browser recording, then a framed screenshot."""
+        video_output = output_stem.with_suffix(".webm")
+        screenshot_output = output_stem.with_suffix(".png")
+        raw = output_stem.with_name(output_stem.name + "-raw.png")
+        video_dir = output_stem.parent / "browser-recordings"
+        video_dir.mkdir(parents=True, exist_ok=True)
+
         try:
             from playwright.sync_api import sync_playwright
 
+            width, height = (1080, 1920) if vertical else (1920, 1080)
             with sync_playwright() as playwright:
                 browser = playwright.chromium.launch(headless=True)
-                page = browser.new_page(viewport={"width": 1440, "height": 1000})
+                context = browser.new_context(
+                    viewport={"width": width, "height": height},
+                    record_video_dir=str(video_dir),
+                    record_video_size={"width": width, "height": height},
+                )
+                page = context.new_page()
                 page.goto(url, wait_until="domcontentloaded", timeout=25000)
-                page.wait_for_timeout(1800)
+                page.wait_for_timeout(1300)
                 page.screenshot(path=str(raw), full_page=False)
+
+                # A gentle read-only scroll creates a real UI clip without clicking,
+                # logging in, submitting forms or changing anything on the site.
+                page.evaluate("window.scrollBy({top: Math.min(window.innerHeight * 0.42, 620), behavior: 'smooth'})")
+                page.wait_for_timeout(2200)
+                page.evaluate("window.scrollBy({top: Math.min(window.innerHeight * 0.28, 420), behavior: 'smooth'})")
+                page.wait_for_timeout(1600)
+                recorded_path = page.video.path() if page.video else None
+                context.close()
                 browser.close()
 
-            self._frame_browser_capture(raw, output, url=url, vertical=vertical)
-            raw.unlink(missing_ok=True)
-            return VisualAsset(
-                local_path=output,
-                source_page_url=url,
-                creator=urlparse(url).netloc,
-                query="public product interface",
-                scene_index=scene_index,
-                asset_kind="image",
-                visual_mode="ui",
-            )
+            if recorded_path and Path(recorded_path).exists():
+                shutil.copyfile(recorded_path, video_output)
+                raw.unlink(missing_ok=True)
+                return VisualAsset(
+                    local_path=video_output,
+                    source_page_url=url,
+                    creator=urlparse(url).netloc,
+                    query="public product interface recording",
+                    scene_index=scene_index,
+                    asset_kind="video",
+                    visual_mode="ui",
+                )
+
+            if raw.exists():
+                self._frame_browser_capture(raw, screenshot_output, url=url, vertical=vertical)
+                raw.unlink(missing_ok=True)
+                return VisualAsset(
+                    local_path=screenshot_output,
+                    source_page_url=url,
+                    creator=urlparse(url).netloc,
+                    query="public product interface",
+                    scene_index=scene_index,
+                    asset_kind="image",
+                    visual_mode="ui",
+                )
         except Exception:
-            raw.unlink(missing_ok=True)
-            output.unlink(missing_ok=True)
-            return None
+            pass
+
+        raw.unlink(missing_ok=True)
+        video_output.unlink(missing_ok=True)
+        screenshot_output.unlink(missing_ok=True)
+        return None
 
     def _frame_browser_capture(self, raw: Path, output: Path, *, url: str, vertical: bool) -> None:
         width, height = (1080, 1920) if vertical else (1920, 1080)
@@ -131,7 +168,6 @@ class HybridVisualDirector:
         left = (width - capture.width) // 2
         y = top + (available_h - capture.height) // 2
 
-        # Browser-style frame and soft border.
         pad = 12
         draw.rounded_rectangle(
             (left - pad, y - 56, left + capture.width + pad, y + capture.height + pad),
@@ -180,10 +216,20 @@ class HybridVisualDirector:
         number_font = self._font(30 if vertical else 28, bold=True)
 
         draw.text((margin, 65), "BYTEVEXA", font=brand_font, fill=(119, 255, 166))
-        draw.text((width - margin - 70, 65), f"{scene_index + 1:02d}", font=number_font, fill=(130, 142, 164))
+        draw.text(
+            (width - margin - 70, 65),
+            f"{scene_index + 1:02d}",
+            font=number_font,
+            fill=(130, 142, 164),
+        )
 
         purpose = self._clean(scene.purpose).upper()[:28] or "EXPLAINED"
-        draw.text((margin + 48, int(height * 0.25)), purpose, font=kicker_font, fill=(119, 255, 166))
+        draw.text(
+            (margin + 48, int(height * 0.25)),
+            purpose,
+            font=kicker_font,
+            fill=(119, 255, 166),
+        )
 
         headline = self._clean(scene.on_screen_text) or self._headline_from_narration(scene.narration)
         y = int(height * 0.33)
@@ -197,14 +243,16 @@ class HybridVisualDirector:
             draw.text((margin + 48, y), line, font=body_font, fill=(190, 199, 216))
             y += int(body_font.size * 1.35)
 
-        # Simple visual motif that animates well with a slow zoom in FFmpeg.
         motif_y = int(height * 0.70)
         start_x = margin + 52
         end_x = width - margin - 52
         draw.line((start_x, motif_y, end_x, motif_y), fill=(55, 70, 94), width=4)
         progress = start_x + int((end_x - start_x) * min(0.92, 0.25 + scene_index * 0.075))
         draw.line((start_x, motif_y, progress, motif_y), fill=(119, 255, 166), width=7)
-        draw.ellipse((progress - 10, motif_y - 10, progress + 10, motif_y + 10), fill=(119, 255, 166))
+        draw.ellipse(
+            (progress - 10, motif_y - 10, progress + 10, motif_y + 10),
+            fill=(119, 255, 166),
+        )
 
         output.parent.mkdir(parents=True, exist_ok=True)
         image.save(output, quality=95)
@@ -221,7 +269,12 @@ class HybridVisualDirector:
 
     @staticmethod
     def _wrap(text: str, width: int, *, max_lines: int) -> list[str]:
-        lines = textwrap.wrap(text, width=max(8, width), break_long_words=False, break_on_hyphens=False)
+        lines = textwrap.wrap(
+            text,
+            width=max(8, width),
+            break_long_words=False,
+            break_on_hyphens=False,
+        )
         if len(lines) > max_lines:
             lines = lines[:max_lines]
             lines[-1] = lines[-1].rstrip(" .") + "…"
