@@ -56,7 +56,8 @@ jobs:
           pathlib.Path('secrets/youtube_token.json').write_bytes(base64.b64decode(os.environ['YOUTUBE_TOKEN_B64']))
           PY
 
-      - name: Delete newest duplicate upload
+      - name: Attempt to delete newest duplicate upload
+        continue-on-error: true
         run: |
           python - <<'PY'
           from autopilot.config import Settings
@@ -67,7 +68,7 @@ jobs:
           if not uploads:
               raise RuntimeError('No channel uploads found; refusing to guess a video ID.')
           latest = uploads[0]
-          print(f"Deleting newest upload: {latest['title']} ({latest['video_id']})")
+          print(f"Attempting to delete newest upload: {latest['title']} ({latest['video_id']})")
           uploader.delete_video(latest['video_id'])
           print('Newest duplicate upload deleted successfully.')
           PY
