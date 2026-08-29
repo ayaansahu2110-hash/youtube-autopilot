@@ -79,10 +79,22 @@ class ScriptPlanner:
         return "\n".join(rows)
 
     def _draft_prompt(self, research: ResearchPack, video_format: str) -> str:
-        target = "105-145 words" if video_format == "short" else "850-1150 words"
-        scene_count = "8-11" if video_format == "short" else "14-20"
+        target = "105-145 words" if video_format == "short" else "1200-1650 words"
+        scene_count = "8-11" if video_format == "short" else "32-42"
         source_text = research.research_notes[:18000]
         source_catalog = self._source_catalog(research)
+        longform_rules = ""
+        if video_format == "long":
+            longform_rules = """
+LONG-FORM STANDARD
+- Target an actual 8-12 minute spoken video, not an extended Short.
+- Organize the story into clear invisible chapters: hook/context -> what changed -> how it works -> real demo/workflow -> best use cases -> limitations/risks -> comparison or alternatives -> verdict/takeaway.
+- Add depth through concrete examples, workflow steps, tradeoffs and evidence; never pad with repetition.
+- Include at least 3 distinct practical examples or user scenarios when the research supports them.
+- Include at least 2 meaningful limitations, conditions or caveats.
+- Re-hook the viewer naturally every 60-90 seconds with a new question, result, contrast or demonstration.
+- Vary visuals throughout the video: product UI, examples/results, motion explainers, comparisons and limited literal B-roll.
+"""
         return f"""You are the senior writer and visual editor for ByteVexa, a premium faceless technology channel.
 Create an ORIGINAL YouTube {video_format} about: {research.topic}
 Channel promise: useful technology explained quickly, clearly and without hype.
@@ -107,7 +119,7 @@ CONTENT STANDARD
 - Do not imitate another creator or invent statistics, dates, prices, capabilities or quotes.
 - Treat headlines as leads, not verified evidence.
 - Never call something free, private, unlimited, open-source, best, revolutionary or game-changing unless evidence directly supports it and limitations are included.
-
+{longform_rules}
 HYBRID VISUAL DIRECTION
 Create {scene_count} scenes in exact narration order. Every scene must choose ONE visual_mode:
 1) "ui" — use when the narration refers to a specific website/app/tool/interface and an approved source URL above can visually represent it. source_url MUST be copied exactly from an approved SOURCE_URL line.
@@ -116,7 +128,7 @@ Create {scene_count} scenes in exact narration order. Every scene must choose ON
 
 Rules:
 - Prefer ui or motion over generic stock. A premium tech channel should not look like random stock footage.
-- Each scene narration should be one short sentence or clause.
+- Each scene narration should be a compact spoken beat that can naturally hold one visual idea.
 - visual_query: 3-8 concrete words describing the exact scene. For ui scenes describe the interface area; for motion scenes describe the explanatory concept; for stock scenes use Pexels-searchable real-world wording.
 - on_screen_text: 2-7 useful words that reinforce the narration; no clickbait.
 - purpose: a short label such as hook, demo, limitation, comparison, takeaway.
@@ -140,6 +152,15 @@ scenes are the source of truth for the final script and visuals.
     def _improve_plan(self, research: ResearchPack, video_format: str, draft: dict) -> dict | None:
         source_text = research.research_notes[:15000]
         source_catalog = self._source_catalog(research)
+        format_rules = (
+            "For Shorts, keep 105-145 total spoken words and 8-11 scene beats."
+            if video_format == "short"
+            else (
+                "For long-form, keep 1200-1650 spoken words and 32-42 scene beats, targeting an actual "
+                "8-12 minute video. Preserve clear chapter progression, at least 3 practical examples, "
+                "at least 2 limitations/caveats, and periodic re-hooks without filler."
+            )
+        )
         review_prompt = f"""Act as a ruthless senior YouTube editor and visual producer for ByteVexa.
 Rewrite this draft until it is specific, informative, highly rewatchable and visually coherent.
 
@@ -165,7 +186,8 @@ Fix every problem you find:
 - repeated laptop/office shots
 - vague advice with no concrete takeaway
 
-For Shorts, keep 105-145 total spoken words and 8-11 scene beats. Prefer a mix dominated by real UI and ByteVexa motion graphics. Stock should normally be a minority of scenes. UI source_url values must exactly match one approved URL. If no approved page genuinely fits a scene, use motion instead of inventing a URL.
+{format_rules}
+Prefer a mix dominated by real UI and ByteVexa motion graphics. Stock should normally be a minority of scenes. UI source_url values must exactly match one approved URL. If no approved page genuinely fits a scene, use motion instead of inventing a URL.
 
 Return the complete corrected JSON only, preserving the required top-level keys and these exact scene keys: narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
 """
@@ -363,7 +385,7 @@ Return the complete corrected JSON only, preserving the required top-level keys 
             ),
         ]
         if video_format == "long":
-            scenes = scenes * 4
+            scenes = scenes * 8
         script = " ".join(scene.narration for scene in scenes)
         return VideoPlan(
             topic=topic,
