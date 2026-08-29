@@ -181,7 +181,7 @@ class DailyLearningLoop:
             pass
 
         formats: dict[str, str] = {}
-        data = self.state.load()
+        data = self.state.data
         videos = data.get("videos", []) if isinstance(data, dict) else []
         for item in videos:
             if isinstance(item, dict) and item.get("video_id"):
@@ -247,7 +247,7 @@ class DailyLearningLoop:
             snapshot["bottleneck"] = "shorts_reach"
 
     def _own_analytics_snapshot(self) -> list[dict]:
-        data = self.state.load()
+        data = self.state.data
         runs = data.get("videos", []) if isinstance(data, dict) else []
         rows = []
         for run in runs[-30:]:
