@@ -1,5 +1,6 @@
 import json
 
+from autopilot.learning import learning_context
 from autopilot.models import ResearchPack
 from autopilot.providers.llm import ScriptPlanner
 
@@ -13,6 +14,7 @@ class PremiumScriptPlanner(ScriptPlanner):
 
         source_text = research.research_notes[:22000]
         source_catalog = self._source_catalog(research)
+        learned = learning_context(self.settings)
         return f"""You are the senior writer, researcher and visual editor for ByteVexa, a premium faceless technology channel.
 Create an ORIGINAL 8-12 minute YouTube long-form video about: {research.topic}
 Channel promise: current AI and technology explained through useful real-world consequences, demos and honest limitations.
@@ -22,6 +24,11 @@ Research evidence:
 
 Approved public source pages that may be visually captured:
 {source_catalog}
+
+Recent channel-learning signals:
+{learned or 'No learning report is available yet.'}
+
+Use those learning signals only to improve general patterns such as hook strength, topic specificity, pacing, title clarity, useful examples and viewer objections. Never copy another creator's wording, script structure beat-for-beat, thumbnail identity, catchphrases or branding.
 
 LONG-FORM CONTENT STANDARD
 - Target 1,250-1,750 spoken words. Do not pad with filler.
@@ -74,6 +81,7 @@ scenes are the source of truth for the final script and visuals.
 
         source_text = research.research_notes[:18000]
         source_catalog = self._source_catalog(research)
+        learned = learning_context(self.settings)
         review_prompt = f"""Act as the executive editor for a premium ByteVexa 8-12 minute technology video.
 Rewrite this draft until it is informative, tightly structured, visually varied and worth watching to the end.
 
@@ -83,6 +91,9 @@ Research evidence:
 
 Approved UI capture URLs:
 {source_catalog}
+
+Recent channel-learning signals:
+{learned or 'No learning report is available yet.'}
 
 Draft JSON:
 {json.dumps(draft, ensure_ascii=False)}
@@ -95,6 +106,7 @@ REQUIRED FINAL STANDARD
 - At least one meaningful limitation/catch and one comparison/decision section.
 - No filler, repeated conclusions, unsupported claims or vague praise.
 - Make each section answer a new viewer question so the video keeps progressing.
+- Use recent learning to strengthen general audience-fit and retention patterns, but never imitate any creator or copy distinctive phrasing.
 - Prefer actual UI evidence and custom motion graphics; stock remains a minority.
 - Avoid repeating one public source page across many consecutive scenes.
 - UI source_url values must exactly match an approved URL. If evidence is not visually capturable, use motion instead of inventing a URL.
