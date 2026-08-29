@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: "30 12 * * *" # 18:00 Asia/Kolkata
   workflow_dispatch:
-  # Temporary private self-test trigger for hybrid UI + motion-graphics pipeline.
+  # Temporary private self-test trigger for final hybrid UI + motion-graphics pipeline.
   push:
     branches: [main]
     paths:
