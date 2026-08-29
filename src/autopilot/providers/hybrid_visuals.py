@@ -22,8 +22,16 @@ class HybridVisualDirector:
 
     DEMO_PROMPT = "Create a 5-slide presentation about renewable energy for students"
 
-    def __init__(self, pexels: PexelsVideoProvider):
+    def __init__(
+        self,
+        pexels: PexelsVideoProvider,
+        *,
+        brand_name: str = "ByteVexa",
+        facts_mode: bool = False,
+    ):
         self.pexels = pexels
+        self.brand_name = brand_name
+        self.facts_mode = facts_mode
 
     def build_assets(
         self,
@@ -53,12 +61,16 @@ class HybridVisualDirector:
                     )
 
             if asset is None and scene.visual_mode == "stock":
-                stock = self.pexels.fetch_assets(
-                    [scene.visual_query],
-                    output_dir / "stock",
-                    vertical=vertical,
-                    limit=1,
-                )
+                stock = []
+                for query in self._stock_queries(scene):
+                    stock = self.pexels.fetch_assets(
+                        [query],
+                        output_dir / "stock",
+                        vertical=vertical,
+                        limit=1,
+                    )
+                    if stock:
+                        break
                 if stock:
                     asset = stock[0].model_copy(
                         update={
@@ -361,6 +373,10 @@ class HybridVisualDirector:
         draw = ImageDraw.Draw(image)
         margin = int(width * 0.065)
 
+        if self.facts_mode:
+            self._make_fact_explainer(image, draw, scene, output, vertical=vertical, scene_index=scene_index)
+            return
+
         # Decorative depth so the fallback still feels like a designed tech short.
         draw.ellipse((-180, 50, 520, 750), fill=(20, 55, 70))
         draw.ellipse((width - 430, height - 720, width + 180, height - 100), fill=(34, 28, 70))
@@ -378,7 +394,7 @@ class HybridVisualDirector:
         small_font = self._font(25 if vertical else 24)
         ui_font = self._font(27 if vertical else 26, bold=True)
 
-        draw.text((margin + 40, int(height * 0.13)), "BYTEVEXA", font=brand_font, fill=(119, 255, 166))
+        draw.text((margin + 40, int(height * 0.13)), self.brand_name.upper(), font=brand_font, fill=(119, 255, 166))
         purpose = self._clean(scene.purpose).upper()[:24] or "HOW IT WORKS"
         draw.text((margin + 40, int(height * 0.18)), purpose, font=kicker_font, fill=(137, 151, 177))
 
@@ -431,6 +447,62 @@ class HybridVisualDirector:
         output.parent.mkdir(parents=True, exist_ok=True)
         image.save(output, quality=95)
 
+    def _make_fact_explainer(
+        self,
+        image: Image.Image,
+        draw: ImageDraw.ImageDraw,
+        scene: SceneBeat,
+        output: Path,
+        *,
+        vertical: bool,
+        scene_index: int,
+    ) -> None:
+        """Draw a cinematic scientific schematic, never a software-style slide."""
+        width, height = image.size
+        margin = int(width * 0.07)
+        text = f"{scene.narration} {scene.visual_query}".lower()
+
+        # Atmospheric depth and a bright physical focal point.
+        draw.ellipse((-width // 2, height // 3, width + width // 2, height + height // 2), fill=(8, 35, 62))
+        draw.arc((-width // 3, height // 4, width + width // 3, height + height // 3), 195, 345, fill=(40, 132, 190), width=10)
+        center_x, center_y = width // 2, int(height * 0.53)
+
+        if any(term in text for term in ("heat", "reentry", "plasma", "shockwave", "compression")):
+            # Blunt capsule plus detached bow shock and incoming air particles.
+            capsule = [
+                (center_x - 150, center_y - 130),
+                (center_x + 150, center_y - 130),
+                (center_x + 205, center_y + 75),
+                (center_x, center_y + 155),
+                (center_x - 205, center_y + 75),
+            ]
+            draw.polygon(capsule, fill=(203, 211, 218), outline=(255, 247, 220))
+            draw.arc((center_x - 320, center_y - 310, center_x + 320, center_y + 340), 195, 345, fill=(255, 112, 35), width=30)
+            draw.arc((center_x - 365, center_y - 350, center_x + 365, center_y + 385), 195, 345, fill=(255, 205, 74), width=8)
+            for row in range(5):
+                y = center_y - 240 + row * 95
+                draw.line((margin, y, center_x - 300, y), fill=(93, 180, 222), width=5)
+                draw.polygon([(center_x - 300, y), (center_x - 330, y - 12), (center_x - 330, y + 12)], fill=(93, 180, 222))
+        else:
+            radius = int(width * 0.20)
+            draw.ellipse((center_x - radius, center_y - radius, center_x + radius, center_y + radius), fill=(36, 104, 143), outline=(125, 220, 245), width=8)
+            for offset in (-210, -105, 105, 210):
+                draw.arc((center_x - radius - abs(offset), center_y - radius // 2 + offset, center_x + radius + abs(offset), center_y + radius // 2 + offset), 200, 340, fill=(67, 159, 196), width=5)
+
+        brand_font = self._font(27 if vertical else 30, bold=True)
+        kicker_font = self._font(24 if vertical else 25, bold=True)
+        headline_font = self._font(48 if vertical else 52, bold=True)
+        draw.text((margin, int(height * 0.07)), self.brand_name.upper(), font=brand_font, fill=(111, 224, 245))
+        draw.text((margin, int(height * 0.12)), self._clean(scene.purpose).upper()[:24], font=kicker_font, fill=(255, 166, 69))
+        headline = self._clean(scene.on_screen_text) or self._headline_from_narration(scene.narration)
+        y = int(height * 0.17)
+        for line in self._wrap(headline, 24 if vertical else 38, max_lines=2):
+            draw.text((margin, y), line, font=headline_font, fill=(247, 250, 252))
+            y += int(headline_font.size * 1.15)
+
+        output.parent.mkdir(parents=True, exist_ok=True)
+        image.save(output, quality=95)
+
     def _input_label(self, scene: SceneBeat) -> str:
         text = f"{scene.narration} {scene.visual_query}".lower()
         if "slide" in text or "presentation" in text:
@@ -442,6 +514,27 @@ class HybridVisualDirector:
         if "summar" in text or "pdf" in text:
             return "Upload document → ask for concise summary"
         return "Describe the task in one clear prompt"
+
+    def _stock_queries(self, scene: SceneBeat) -> list[str]:
+        primary = self._clean(scene.visual_query)
+        if not self.facts_mode:
+            return [primary]
+        text = f"{scene.narration} {primary}".lower()
+        fallbacks: list[str] = []
+        keyword_queries = (
+            (("reentry", "spacecraft", "capsule"), "space capsule spacecraft"),
+            (("heat", "fire", "plasma"), "extreme heat flames"),
+            (("rocket", "space"), "rocket in space"),
+            (("parachute", "landing"), "parachute landing sky"),
+            (("race", "formula", "car"), "race car track"),
+            (("engine", "automobile"), "car engine close up"),
+            (("ocean", "river"), "aerial ocean landscape"),
+            (("ancient", "history"), "ancient ruins archaeology"),
+        )
+        for terms, query in keyword_queries:
+            if any(term in text for term in terms):
+                fallbacks.append(query)
+        return list(dict.fromkeys([primary, *fallbacks, "cinematic science engineering"]))
 
     @staticmethod
     def _headline_from_narration(text: str) -> str:

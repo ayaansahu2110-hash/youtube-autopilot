@@ -122,10 +122,16 @@ class QualityGate:
 
             if weak_queries > max(1, len(plan.scenes) // 5):
                 errors.append("Too many scene visuals are abstract or underspecified.")
-            if stock_count > len(plan.scenes) // 2:
+            max_stock = int(len(plan.scenes) * (0.80 if self.settings.channel_profile == "curioaxiom" else 0.50))
+            min_non_stock = (
+                max(2, len(plan.scenes) // 5)
+                if self.settings.channel_profile == "curioaxiom"
+                else max(4, len(plan.scenes) // 2)
+            )
+            if stock_count > max_stock:
                 errors.append("Hybrid visual plan relies too heavily on stock footage.")
-            if non_stock_count < max(4, len(plan.scenes) // 2):
-                errors.append("Not enough real-UI or ByteVexa motion-graphic scenes were planned.")
+            if non_stock_count < min_non_stock:
+                errors.append("Not enough explanatory or source-grounded scenes were planned.")
             if missing_labels > max(1, len(plan.scenes) // 5):
                 errors.append("Too many scenes are missing useful on-screen reinforcement text.")
             if invalid_ui_sources:

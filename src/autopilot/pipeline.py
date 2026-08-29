@@ -49,7 +49,11 @@ class AutopilotPipeline:
             volume=settings.edge_tts_volume,
         )
         self.visuals = PexelsVideoProvider(settings.pexels_api_key)
-        self.hybrid_visuals = HybridVisualDirector(self.visuals)
+        self.hybrid_visuals = HybridVisualDirector(
+            self.visuals,
+            brand_name=settings.channel_display_name,
+            facts_mode=is_facts,
+        )
         self.renderer = FFmpegRenderer(settings.ffmpeg_binary, settings.ffprobe_binary)
         self.thumbnail = ThumbnailGenerator()
         self.quality = QualityGate(settings, self.state)
@@ -288,6 +292,24 @@ class AutopilotPipeline:
             if scene.visual_mode == "ui" and scene.source_url not in approved_urls:
                 scene.visual_mode = "motion"
                 scene.source_url = ""
+
+        # CurioAxiom is a documentary channel: motion graphics explain only the
+        # few ideas that cannot be filmed. Everything else should request real
+        # footage rather than falling back to a sequence of designed cards.
+        motion_indexes = [
+            index for index, scene in enumerate(plan.scenes)
+            if scene.visual_mode in {"motion", "ui"}
+        ]
+        keep_limit = max(2, len(plan.scenes) // 3)
+        priority = [
+            index for index in motion_indexes
+            if any(word in plan.scenes[index].purpose.lower() for word in ("mechanism", "scale", "map", "timeline"))
+        ]
+        keep = set((priority + motion_indexes)[:keep_limit])
+        for index in motion_indexes:
+            if index not in keep:
+                plan.scenes[index].visual_mode = "stock"
+                plan.scenes[index].source_url = ""
 
     @staticmethod
     def _append_section(description: str, heading: str, lines: list[str]) -> str:

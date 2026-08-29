@@ -157,8 +157,12 @@ RULES
 - Open with a specific contradiction or consequence; never start with 'Did you know?' or a list.
 - Include two concrete verified facts, an explanation of the mechanism or cause, and a caveat.
 - End on the meaning of the answer, not generic engagement bait.
-- Choose visual_mode ui, motion or stock. Prefer motion for diagrams, maps, scale, timelines,
-  mechanisms and reconstructions. UI source_url must exactly match a research URL.
+- Choose visual_mode motion or stock (ui only for an essential authoritative source page).
+- Make 60-75% of scenes stock: real, cinematic, physically relevant footage. Write short searchable
+  queries describing footage that plausibly exists, such as "space capsule reentry", "arc jet heat
+  shield test" or "capsule parachute landing". Never request impossible CGI as stock footage.
+- Reserve motion for at most one third of scenes and only for diagrams, maps, scale, timelines or
+  mechanisms that cannot be filmed. UI source_url must exactly match a research URL.
 - on_screen_text is 2-7 words. purpose uses hook, evidence, context, mechanism, scale, reveal,
   caveat or takeaway. Avoid repeated or generic visuals.
 
