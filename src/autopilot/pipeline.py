@@ -26,7 +26,12 @@ class AutopilotPipeline:
         self.discovery = TopicDiscovery(settings, self.state)
         self.researcher = Researcher(settings)
         self.planner = ScriptPlanner(settings)
-        self.tts = EdgeTTSProvider(settings.edge_tts_voice)
+        self.tts = EdgeTTSProvider(
+            settings.edge_tts_voice,
+            rate=settings.edge_tts_rate,
+            pitch=settings.edge_tts_pitch,
+            volume=settings.edge_tts_volume,
+        )
         self.visuals = PexelsVideoProvider(settings.pexels_api_key)
         self.renderer = FFmpegRenderer(settings.ffmpeg_binary, settings.ffprobe_binary)
         self.thumbnail = ThumbnailGenerator()
@@ -72,12 +77,17 @@ class AutopilotPipeline:
                 plan.script,
                 duration,
                 run_dir / "captions.srt",
-                words_per_caption=4 if plan.format == "short" else 7,
+                words_per_caption=3 if plan.format == "short" else 6,
             )
             max_clips = (
                 self.settings.max_visual_clips_short
                 if plan.format == "short"
                 else self.settings.max_visual_clips_long
+            )
+            min_clips = (
+                self.settings.min_visual_clips_short
+                if plan.format == "short"
+                else self.settings.min_visual_clips_long
             )
             assets = self.visuals.fetch_assets(
                 plan.visual_queries,
@@ -85,6 +95,17 @@ class AutopilotPipeline:
                 vertical=plan.format == "short",
                 limit=max_clips,
             )
+            result.metadata["visual_assets"] = len(assets)
+
+            # Fail closed instead of uploading a visibly repetitive/fallback video.
+            if len(assets) < min_clips:
+                result.status = "failed"
+                result.notes.append(
+                    f"Premium visual gate blocked upload: only {len(assets)} usable clips; need {min_clips}."
+                )
+                self._write_manifest(manifest_path, result)
+                return result
+
             attribution = self.visuals.attribution_lines(assets)
             if attribution:
                 plan.description = self._append_section(plan.description, "Visual credits", attribution)
@@ -100,7 +121,6 @@ class AutopilotPipeline:
             result.video_path = video_path
             result.thumbnail_path = thumbnail_path
             result.status = "rendered"
-            result.metadata["visual_assets"] = len(assets)
 
             if self.settings.enable_uploads:
                 result.youtube_video_id = self.uploader.upload(video_path, plan, thumbnail_path)
@@ -135,8 +155,6 @@ class AutopilotPipeline:
         if len(best_research.sources) >= minimum:
             return best_candidate, best_research
 
-        # A fresh topic can be too niche for safe production. Try other strong
-        # discovered topics rather than lowering the evidence requirement.
         for candidate in ordered[1:8]:
             research = self.researcher.research(candidate)
             if len(research.sources) > len(best_research.sources):
