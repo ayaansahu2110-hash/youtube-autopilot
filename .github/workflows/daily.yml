@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: "30 12 * * *" # 18:00 Asia/Kolkata
   workflow_dispatch:
-  # Temporary private self-test trigger for the upgraded quality pipeline.
+  # Temporary private self-test trigger for scene-synced retention-quality pipeline.
   push:
     branches: [main]
     paths:
