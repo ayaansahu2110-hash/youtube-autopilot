@@ -31,6 +31,9 @@ class SceneBeat(BaseModel):
     narration: str
     visual_query: str
     purpose: str = ""
+    visual_mode: Literal["ui", "motion", "stock"] = "motion"
+    source_url: str = ""
+    on_screen_text: str = ""
 
 
 class VisualAsset(BaseModel):
@@ -39,6 +42,8 @@ class VisualAsset(BaseModel):
     creator: str | None = None
     query: str = ""
     scene_index: int | None = None
+    asset_kind: Literal["video", "image"] = "video"
+    visual_mode: Literal["ui", "motion", "stock"] = "stock"
 
 
 class VideoPlan(BaseModel):
