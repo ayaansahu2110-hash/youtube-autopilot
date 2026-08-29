@@ -5,6 +5,7 @@ from autopilot.captions import write_srt
 from autopilot.config import Settings
 from autopilot.discovery import TopicDiscovery
 from autopilot.models import PipelineRun, ResearchPack, TopicCandidate
+from autopilot.providers.hybrid_visuals import HybridVisualDirector
 from autopilot.providers.llm import ScriptPlanner
 from autopilot.providers.tts import EdgeTTSProvider
 from autopilot.providers.visuals import PexelsVideoProvider
@@ -33,6 +34,7 @@ class AutopilotPipeline:
             volume=settings.edge_tts_volume,
         )
         self.visuals = PexelsVideoProvider(settings.pexels_api_key)
+        self.hybrid_visuals = HybridVisualDirector(self.visuals)
         self.renderer = FFmpegRenderer(settings.ffmpeg_binary, settings.ffprobe_binary)
         self.thumbnail = ThumbnailGenerator()
         self.quality = QualityGate(settings, self.state)
@@ -91,19 +93,33 @@ class AutopilotPipeline:
                 if plan.format == "short"
                 else self.settings.min_visual_clips_long
             )
-            queries = [scene.visual_query for scene in plan.scenes] or plan.visual_queries
-            assets = self.visuals.fetch_assets(
-                queries,
-                run_dir / "visuals",
-                vertical=plan.format == "short",
-                limit=max_clips,
-            )
+
+            if plan.scenes:
+                assets = self.hybrid_visuals.build_assets(
+                    plan.scenes,
+                    run_dir / "visuals",
+                    vertical=plan.format == "short",
+                    allowed_source_urls=plan.source_urls,
+                    limit=max_clips,
+                )
+            else:
+                assets = self.visuals.fetch_assets(
+                    plan.visual_queries,
+                    run_dir / "visuals",
+                    vertical=plan.format == "short",
+                    limit=max_clips,
+                )
+
             result.metadata["visual_assets"] = len(assets)
+            result.metadata["visual_modes"] = {
+                mode: sum(1 for asset in assets if asset.visual_mode == mode)
+                for mode in ("ui", "motion", "stock")
+            }
 
             if len(assets) < min_clips:
                 result.status = "failed"
                 result.notes.append(
-                    f"Premium visual gate blocked upload: only {len(assets)} usable clips; need {min_clips}."
+                    f"Premium visual gate blocked upload: only {len(assets)} usable scenes; need {min_clips}."
                 )
                 self._write_manifest(manifest_path, result)
                 return result
@@ -112,16 +128,17 @@ class AutopilotPipeline:
                 covered_scene_indexes = {
                     asset.scene_index for asset in assets if asset.scene_index is not None
                 }
-                required_coverage = max(min_clips, int(len(plan.scenes) * 0.70))
+                required_coverage = max(min_clips, int(len(plan.scenes) * 0.85))
                 if len(covered_scene_indexes) < required_coverage:
                     result.status = "failed"
                     result.notes.append(
-                        "Scene-match gate blocked upload: not enough narration beats have their own matching visual."
+                        "Scene-match gate blocked upload: too many narration beats lack their own visual."
                     )
                     self._write_manifest(manifest_path, result)
                     return result
 
-            attribution = self.visuals.attribution_lines(assets)
+            stock_assets = [asset for asset in assets if asset.visual_mode == "stock"]
+            attribution = self.visuals.attribution_lines(stock_assets)
             if attribution:
                 plan.description = self._append_section(plan.description, "Visual credits", attribution)
 
