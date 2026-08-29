@@ -35,7 +35,8 @@ jobs:
       GEMINI_MODEL: gemini-flash-latest
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
-      YOUTUBE_CLIENT_SECRETS_B64: ${{ secrets.CURIOAXIOM_YOUTUBE_CLIENT_SECRETS_B64 }}
+      # The OAuth application may be shared; the channel authorization token must never be shared.
+      YOUTUBE_CLIENT_SECRETS_B64: ${{ secrets.YOUTUBE_CLIENT_SECRETS_B64 }}
       YOUTUBE_TOKEN_B64: ${{ secrets.CURIOAXIOM_YOUTUBE_TOKEN_B64 }}
       YOUTUBE_TOKEN_FILE: secrets/youtube_token_curioaxiom.json
       ENABLE_UPLOADS: "true"

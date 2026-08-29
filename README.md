@@ -70,8 +70,9 @@ artifacts/curioaxiom/
 secrets/youtube_token_curioaxiom.json
 ```
 
-The separate `CurioAxiom Facts Pipeline` GitHub workflow uses the secrets
-`CURIOAXIOM_YOUTUBE_CLIENT_SECRETS_B64` and `CURIOAXIOM_YOUTUBE_TOKEN_B64`. It also pins
+The separate `CurioAxiom Facts Pipeline` GitHub workflow reuses the existing OAuth application
+secret `YOUTUBE_CLIENT_SECRETS_B64`, but requires its own channel authorization token in
+`CURIOAXIOM_YOUTUBE_TOKEN_B64`. It also pins
 `EXPECTED_YOUTUBE_CHANNEL_ID=UCpddoAgL5DCidscCMx4WMHQ`; a mismatched OAuth token fails before
 reading or uploading. Initial CurioAxiom uploads are private until the workflow is deliberately
 promoted after review.
