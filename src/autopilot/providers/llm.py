@@ -75,12 +75,22 @@ class ScriptPlanner:
                 scene.narration.strip() for scene in scenes if scene.narration.strip()
             )
             data["visual_queries"] = [scene.visual_query for scene in scenes]
+            direct_paste = data.get("direct_paste_script")
+            if isinstance(direct_paste, list):
+                data["direct_paste_script"] = "\n\n".join(
+                    str(item).strip() for item in direct_paste if str(item).strip()
+                )
+            elif direct_paste is not None and not isinstance(direct_paste, str):
+                data["direct_paste_script"] = str(direct_paste)
             if not str(data.get("direct_paste_script") or "").strip():
                 data["direct_paste_script"] = "\n\n".join(
                     f"[{scene.generator_prompt or scene.exact_visual_subject or scene.visual_query}]\n"
                     f"{scene.narration}"
                     for scene in scenes
                 )
+            raw_batch = data.get("batch_prompts")
+            if isinstance(raw_batch, list):
+                data["batch_prompts"] = [str(item).strip() for item in raw_batch if str(item).strip()]
             if not data.get("batch_prompts"):
                 aspect = "--ar 9:16" if video_format == "short" else "--ar 16:9"
                 data["batch_prompts"] = [
