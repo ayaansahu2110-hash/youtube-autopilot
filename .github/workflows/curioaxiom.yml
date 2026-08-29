@@ -12,6 +12,11 @@ on:
         default: "evening"
         type: choice
         options: [morning, evening, all]
+      topic:
+        description: "Optional commissioning-test topic override"
+        required: false
+        default: ""
+        type: string
 
 permissions:
   contents: write
@@ -88,7 +93,15 @@ jobs:
           PY
       - name: Produce verified facts privately
         if: env.READY == 'true'
-        run: python -m autopilot.cli daily --live --slot "$RUN_SLOT"
+        shell: bash
+        env:
+          TEST_TOPIC: ${{ inputs.topic }}
+        run: |
+          if [ -n "$TEST_TOPIC" ]; then
+            python -m autopilot.cli run --topic "$TEST_TOPIC" --format short --render
+          else
+            python -m autopilot.cli daily --live --slot "$RUN_SLOT"
+          fi
       - name: Persist CurioAxiom state only
         if: env.READY == 'true'
         shell: bash
