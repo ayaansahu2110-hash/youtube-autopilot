@@ -54,7 +54,11 @@ def test_fact_prompt_requires_zero_mismatch_storyboards() -> None:
     assert "exact_visual_subject" in prompt
     assert "camera_and_lighting" in prompt
     assert "generator_prompt" in prompt
+    assert "shot_type_camera_movement" in prompt
+    assert "sfx_audio_cue" in prompt
     assert "direct_paste_script" in prompt
+    assert "batch_prompts" in prompt
+    assert "ZERO-REPETITION" in prompt
     assert "exactly 3" in prompt
 
 

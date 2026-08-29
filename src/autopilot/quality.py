@@ -104,6 +104,8 @@ class QualityGate:
             invalid_ui_sources = 0
             incomplete_storyboards = 0
             mismatched_storyboards = 0
+            shot_treatments: list[str] = []
+            generator_prompts: list[str] = []
             purposes: list[str] = []
             ui_sources: list[str] = []
 
@@ -127,6 +129,8 @@ class QualityGate:
                         scene.exact_visual_subject.strip(),
                         scene.camera_and_lighting.strip(),
                         scene.generator_prompt.strip(),
+                        scene.shot_type_camera_movement.strip(),
+                        scene.sfx_audio_cue.strip(),
                     )):
                         incomplete_storyboards += 1
                     spoken = {
@@ -146,6 +150,8 @@ class QualityGate:
                     # completely disjoint scene remains a hard failure.
                     if spoken and not (spoken & visual) and not (query & visual):
                         mismatched_storyboards += 1
+                    shot_treatments.append(scene.shot_type_camera_movement.lower().strip())
+                    generator_prompts.append(scene.generator_prompt.lower().strip())
 
             if weak_queries > max(1, len(plan.scenes) // 5):
                 errors.append("Too many scene visuals are abstract or underspecified.")
@@ -168,10 +174,24 @@ class QualityGate:
             if mismatched_storyboards:
                 errors.append("One or more CurioAxiom visuals do not share enough literal detail with their narration.")
             if self.settings.channel_profile == "curioaxiom":
-                if len(plan.title_options) != 3 or any(len(title) > 60 for title in plan.title_options):
-                    errors.append("CurioAxiom requires exactly three title options under 60 characters.")
+                if len(plan.title_options) != 3 or any(len(title) >= 50 for title in plan.title_options):
+                    errors.append("CurioAxiom requires exactly three title options under 50 characters.")
+                if len(plan.thumbnail_text.split()) != 3:
+                    errors.append("CurioAxiom thumbnail text must contain exactly three words.")
                 if not plan.direct_paste_script.strip():
                     errors.append("CurioAxiom requires an automation-ready script with bracketed visual cues.")
+                if len(plan.batch_prompts) != len(plan.scenes):
+                    errors.append("CurioAxiom requires one batch-generation prompt per scene.")
+                if len(set(shot_treatments)) != len(shot_treatments):
+                    errors.append("Camera treatment repeats across CurioAxiom scenes.")
+                near_duplicate_prompts = any(
+                    SequenceMatcher(None, left, right).ratio() >= 0.84
+                    for index, left in enumerate(generator_prompts)
+                    for right in generator_prompts[index + 1:]
+                    if left and right
+                )
+                if near_duplicate_prompts:
+                    errors.append("Generator prompts repeat the same visual concept too closely.")
 
             if plan.format in {"short", "long"}:
                 evidence_beats = (

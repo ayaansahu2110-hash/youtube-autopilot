@@ -57,6 +57,7 @@ class ScriptPlanner:
             for field in (
                 "narration", "visual_query", "purpose", "source_url", "on_screen_text",
                 "exact_visual_subject", "camera_and_lighting", "generator_prompt",
+                "shot_type_camera_movement", "sfx_audio_cue",
             ):
                 scene[field] = str(scene.get(field) or "")
             mode = str(scene.get("visual_mode") or "motion").strip().lower()
@@ -80,6 +81,13 @@ class ScriptPlanner:
                     f"{scene.narration}"
                     for scene in scenes
                 )
+            if not data.get("batch_prompts"):
+                aspect = "--ar 9:16" if video_format == "short" else "--ar 16:9"
+                data["batch_prompts"] = [
+                    f"{scene.generator_prompt or scene.exact_visual_subject or scene.visual_query}, "
+                    f"{scene.camera_and_lighting}, {aspect}"
+                    for scene in scenes
+                ]
         data.pop("scenes", None)
 
         urls = [source.url for source in research.sources if source.url]

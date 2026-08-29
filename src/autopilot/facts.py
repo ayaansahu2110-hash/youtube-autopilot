@@ -144,6 +144,8 @@ class FactScriptPlanner(PremiumScriptPlanner):
                     exact_visual_subject=scene.exact_visual_subject,
                     camera_and_lighting=scene.camera_and_lighting,
                     generator_prompt=scene.generator_prompt,
+                    shot_type_camera_movement=scene.shot_type_camera_movement,
+                    sfx_audio_cue=scene.sfx_audio_cue,
                 )
                 scenes[index:index + 1] = [left, right]
             plan.scenes = scenes
@@ -194,6 +196,11 @@ RULES
 - ZERO-MISMATCH STORYBOARD: every visible object/action must be justified by the exact words spoken
   in that scene. Never use generic topical filler, decorative scientists, random laboratories,
   unrelated rockets, landscapes, office footage or broad mood shots.
+- ZERO-REPETITION: never reuse an asset, framing, scene concept, camera angle, movement, visual prompt,
+  background composition or explanatory device. Repeated subjects must change physical perspective:
+  wide environment -> macro material detail -> dynamic tracking action -> cutaway/thermal/blueprint evidence.
+- Rotate shot grammar deliberately across scenes: slow push-in -> dynamic tracking/pan -> 90-degree
+  top-down -> physically accurate 3D cross-section/cutaway, then continue with new focal lengths and axes.
 - Include two concrete verified facts, an explanation of the mechanism or cause, and a caveat.
 - End on the meaning of the answer, not generic engagement bait.
 - Choose visual_mode motion or stock (ui only for an essential authoritative source page).
@@ -206,20 +213,25 @@ RULES
   caveat or takeaway. Avoid repeated or generic visuals.
 - exact_visual_subject states the literal subject, object, action and state visible on screen.
 - camera_and_lighting specifies shot size/angle, movement, focal point and physically appropriate lighting.
+- shot_type_camera_movement gives the precise lens/framing and camera move and must be unique per scene.
+- sfx_audio_cue names one restrained transition or mechanism sound synchronized to the visible action.
 - generator_prompt is a standalone copy-pasteable prompt for an AI video generator. It must restate
   the literal subject and action, camera direction, environment, lighting, vertical 9:16 composition,
   realistic physics and exclusions needed to prevent mismatched objects. Do not merely say cinematic or 8K.
-- title_options contains exactly 3 truthful high-CTR alternatives under 60 characters; title is the best one.
+- title_options contains exactly 3 truthful high-CTR alternatives under 50 characters; title is the best one.
+- thumbnail_text is exactly 3 bold words; thumbnail_brief specifies foreground subject, focal contrast and background.
 - direct_paste_script combines the exact narration in order with bracketed generator-ready visual cues.
+- batch_prompts contains one unique prompt per scene, in order, each ending in --ar 9:16 for Shorts
+  or --ar 16:9 for long-form and including a scene-specific color grade.
 
 PACKAGING
 - Specific truthful title under 70 characters; 2-4 word thumbnail text; 6-12 relevant tags.
 - Description summarizes the answer and preserves uncertainty.
 
 Return JSON only with exactly: angle, hook, script, title, title_options, description, tags,
-thumbnail_brief, thumbnail_text, visual_queries, direct_paste_script, scenes. Each scene has exactly
+thumbnail_brief, thumbnail_text, visual_queries, direct_paste_script, batch_prompts, scenes. Each scene has exactly
 narration, visual_query, purpose, visual_mode, source_url, on_screen_text, exact_visual_subject,
-camera_and_lighting, generator_prompt. Scenes are the source of truth.
+camera_and_lighting, generator_prompt, shot_type_camera_movement, sfx_audio_cue. Scenes are the source of truth.
 """
 
     def _improve_plan(self, research: ResearchPack, video_format: str, draft: dict) -> dict | None:
@@ -230,7 +242,9 @@ Draft: {json.dumps(draft, ensure_ascii=False)}
 Remove unsupported precision, myths, generic hooks, random-list structure, repeated visuals and false certainty.
 Ensure one coherent cinematic question, two evidence beats, a mechanism/context explanation, caveat and reveal.
 Reject every generic or merely topic-adjacent visual. Confirm each prompt literally depicts that scene's
-spoken nouns, action, scale and consequence. Return the complete corrected JSON only with the same keys
+spoken nouns, action, scale and consequence. Reject repeated subjects shown from the same physical
+perspective, repeated camera moves, repeated compositions and prompts that differ only by adjectives.
+Return the complete corrected JSON only with the same keys
 and exact scene keys.
 """
         try:
