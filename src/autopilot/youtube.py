@@ -63,6 +63,46 @@ class YouTubeUploader:
         self.settings = settings
         self.auth = YouTubeAuth(settings)
 
+    def _service(self):
+        return build("youtube", "v3", credentials=self.auth.credentials(interactive=False))
+
+    def recent_uploads(self, limit: int = 30) -> list[dict[str, str]]:
+        """Return the channel's most recent real uploads for cross-run duplicate protection."""
+        youtube = self._service()
+        channel_items = youtube.channels().list(part="contentDetails", mine=True, maxResults=1).execute().get("items", [])
+        if not channel_items:
+            return []
+        uploads_playlist = (
+            channel_items[0].get("contentDetails", {}).get("relatedPlaylists", {}).get("uploads")
+        )
+        if not uploads_playlist:
+            return []
+        data = youtube.playlistItems().list(
+            part="snippet,contentDetails",
+            playlistId=uploads_playlist,
+            maxResults=max(1, min(50, limit)),
+        ).execute()
+        output: list[dict[str, str]] = []
+        for item in data.get("items", []) or []:
+            snippet = item.get("snippet", {})
+            video_id = str(item.get("contentDetails", {}).get("videoId") or "")
+            title = str(snippet.get("title") or "").strip()
+            if video_id and title:
+                output.append(
+                    {
+                        "video_id": video_id,
+                        "title": title,
+                        "published_at": str(snippet.get("publishedAt") or ""),
+                    }
+                )
+        return output
+
+    def delete_video(self, video_id: str) -> None:
+        """Delete one owned YouTube upload by ID."""
+        if not video_id:
+            raise ValueError("video_id is required")
+        self._service().videos().delete(id=video_id).execute()
+
     def upload(self, video_path: Path, plan: VideoPlan, thumbnail_path: Path | None = None) -> str:
         if not self.settings.enable_uploads:
             raise RuntimeError("Uploads are disabled. Set ENABLE_UPLOADS=true only after testing.")
@@ -71,7 +111,7 @@ class YouTubeUploader:
         if not video_path.exists():
             raise FileNotFoundError(video_path)
 
-        youtube = build("youtube", "v3", credentials=self.auth.credentials(interactive=False))
+        youtube = self._service()
         request = youtube.videos().insert(
             part="snippet,status",
             body={
