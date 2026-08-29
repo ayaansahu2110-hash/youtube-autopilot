@@ -19,8 +19,8 @@ class QualityGate:
 
         if plan.format == "short" and not 90 <= words <= 165:
             errors.append(f"Short script word count {words} is outside premium range 90-165.")
-        if plan.format == "long" and not 700 <= words <= 1400:
-            errors.append(f"Long script word count {words} is outside 700-1400.")
+        if plan.format == "long" and not 1150 <= words <= 1900:
+            errors.append(f"Long script word count {words} is outside 8-12 minute range 1150-1900.")
         if len(plan.title) > 100:
             errors.append("YouTube title exceeds 100 characters.")
         if strict and len(research.sources) < self.settings.min_research_sources:
@@ -75,7 +75,7 @@ class QualityGate:
         if plan.format == "short" and len(sentences) < 5:
             errors.append("Short is too thin: fewer than 5 meaningful narration beats.")
 
-        minimum_queries = 8 if plan.format == "short" else 14
+        minimum_queries = 8 if plan.format == "short" else 24
         if len(plan.visual_queries) < minimum_queries:
             errors.append(
                 f"Only {len(plan.visual_queries)} visual beats generated; need at least {minimum_queries}."
@@ -85,7 +85,7 @@ class QualityGate:
         if len(unique_queries) < minimum_queries:
             errors.append("Visual plan is too repetitive; regenerate with more distinct scene ideas.")
 
-        minimum_scenes = 8 if plan.format == "short" else 14
+        minimum_scenes = 8 if plan.format == "short" else 24
         if len(plan.scenes) < minimum_scenes:
             errors.append(f"Only {len(plan.scenes)} scene-aligned narration beats; need {minimum_scenes}.")
         else:
@@ -131,13 +131,14 @@ class QualityGate:
             if invalid_ui_sources:
                 errors.append("One or more UI scenes reference a source URL that research did not approve.")
 
-            if plan.format == "short":
+            if plan.format in {"short", "long"}:
                 if not any(any(word in purpose for word in ("demo", "example", "workflow", "result")) for purpose in purposes):
-                    errors.append("Short lacks a concrete demo/example/result beat.")
+                    errors.append("Video lacks a concrete demo/example/result beat.")
                 if not any(any(word in purpose for word in ("limit", "catch", "comparison", "takeaway", "decision")) for purpose in purposes):
-                    errors.append("Short lacks a limitation/comparison/takeaway beat.")
+                    errors.append("Video lacks a limitation/comparison/takeaway beat.")
                 source_counts = Counter(url for url in ui_sources if url)
-                if source_counts and max(source_counts.values()) > max(3, len(plan.scenes) // 2):
+                repeat_limit = max(3, len(plan.scenes) // 3) if plan.format == "long" else max(3, len(plan.scenes) // 2)
+                if source_counts and max(source_counts.values()) > repeat_limit:
                     errors.append("Too many scenes reuse the same product page; show more varied evidence or explanatory visuals.")
 
         if len(research.sources) >= 3:
