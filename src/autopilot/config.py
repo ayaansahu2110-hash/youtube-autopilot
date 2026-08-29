@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     autopilot_env: str = "development"
     artifacts_dir: Path = Path("artifacts")
     state_file: Path = Path("state/history.json")
+    learning_file: Path = Path("state/learning.json")
 
     channel_niche: str = "AI tools, technology and useful websites"
     default_video_format: Literal["short", "long"] = "short"
