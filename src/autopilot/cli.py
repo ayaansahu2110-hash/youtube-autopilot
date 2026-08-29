@@ -1,5 +1,5 @@
 import shutil
-from datetime import datetime
+from datetime import date, datetime
 from zoneinfo import ZoneInfo
 
 import typer
@@ -19,6 +19,15 @@ console = Console()
 
 def load_settings() -> Settings:
     return Settings()
+
+
+def _longform_due(settings: Settings) -> bool:
+    if not settings.longform_enabled:
+        return False
+    local_today = datetime.now(ZoneInfo(settings.schedule_timezone)).date()
+    anchor = date.fromisoformat(settings.longform_anchor_date)
+    interval = max(1, settings.longform_every_days)
+    return (local_today - anchor).days >= 0 and (local_today - anchor).days % interval == 0
 
 
 @app.command()
@@ -41,6 +50,8 @@ def doctor() -> None:
     table.add_row("YouTube token", "configured" if settings.youtube_token_file.exists() else "not authorized")
     table.add_row("Uploads", "ENABLED" if settings.enable_uploads else "disabled (safe default)")
     table.add_row("Upload privacy", settings.upload_privacy_status)
+    table.add_row("Shorts per day", str(settings.shorts_per_day))
+    table.add_row("Long-form cadence", f"every {settings.longform_every_days} days")
     console.print(table)
 
 
@@ -77,19 +88,21 @@ def analytics() -> None:
 def daily(
     live: bool = typer.Option(False, "--live", help="Render and publish; otherwise run planning only"),
 ) -> None:
-    """Create the daily short and, on configured days, a long-form video."""
+    """Create two daily Shorts and, every alternate day, one long-form video."""
     settings = load_settings()
     state = StateStore(settings.state_file)
     AnalyticsClient(settings, state).refresh()
     dry_run = not live
     results = []
 
-    short_result = AutopilotPipeline(settings).run(dry_run=dry_run, video_format="short")
-    results.append(short_result)
-    _print_result(short_result, settings)
+    for _ in range(max(1, settings.shorts_per_day)):
+        short_result = AutopilotPipeline(settings).run(dry_run=dry_run, video_format="short")
+        results.append(short_result)
+        _print_result(short_result, settings)
+        if short_result.status == "failed":
+            break
 
-    local_day = datetime.now(ZoneInfo(settings.schedule_timezone)).strftime("%a").lower()
-    if settings.longform_enabled and local_day in settings.longform_day_set:
+    if not any(result.status == "failed" for result in results) and _longform_due(settings):
         long_result = AutopilotPipeline(settings).run(dry_run=dry_run, video_format="long")
         results.append(long_result)
         _print_result(long_result, settings)
@@ -107,10 +120,18 @@ def schedule() -> None:
     def job() -> None:
         state = StateStore(settings.state_file)
         AnalyticsClient(settings, state).refresh()
-        AutopilotPipeline(settings).run(dry_run=not settings.enable_uploads, video_format="short")
-        local_day = datetime.now(ZoneInfo(settings.schedule_timezone)).strftime("%a").lower()
-        if settings.longform_enabled and local_day in settings.longform_day_set:
-            AutopilotPipeline(settings).run(dry_run=not settings.enable_uploads, video_format="long")
+        for _ in range(max(1, settings.shorts_per_day)):
+            result = AutopilotPipeline(settings).run(
+                dry_run=not settings.enable_uploads,
+                video_format="short",
+            )
+            if result.status == "failed":
+                return
+        if _longform_due(settings):
+            AutopilotPipeline(settings).run(
+                dry_run=not settings.enable_uploads,
+                video_format="long",
+            )
 
     scheduler.add_job(
         job,
