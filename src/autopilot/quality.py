@@ -1,4 +1,5 @@
 import re
+from collections import Counter
 from difflib import SequenceMatcher
 
 from autopilot.config import Settings
@@ -100,6 +101,8 @@ class QualityGate:
             non_stock_count = 0
             missing_labels = 0
             invalid_ui_sources = 0
+            purposes: list[str] = []
+            ui_sources: list[str] = []
 
             for scene in plan.scenes:
                 terms = {token for token in re.findall(r"[a-z0-9]+", scene.visual_query.lower())}
@@ -111,8 +114,11 @@ class QualityGate:
                     non_stock_count += 1
                 if not scene.on_screen_text.strip():
                     missing_labels += 1
-                if scene.visual_mode == "ui" and scene.source_url not in approved_urls:
-                    invalid_ui_sources += 1
+                if scene.visual_mode == "ui":
+                    ui_sources.append(scene.source_url)
+                    if scene.source_url not in approved_urls:
+                        invalid_ui_sources += 1
+                purposes.append(scene.purpose.lower().strip())
 
             if weak_queries > max(1, len(plan.scenes) // 5):
                 errors.append("Too many scene visuals are abstract or underspecified.")
@@ -124,6 +130,15 @@ class QualityGate:
                 errors.append("Too many scenes are missing useful on-screen reinforcement text.")
             if invalid_ui_sources:
                 errors.append("One or more UI scenes reference a source URL that research did not approve.")
+
+            if plan.format == "short":
+                if not any(any(word in purpose for word in ("demo", "example", "workflow", "result")) for purpose in purposes):
+                    errors.append("Short lacks a concrete demo/example/result beat.")
+                if not any(any(word in purpose for word in ("limit", "catch", "comparison", "takeaway", "decision")) for purpose in purposes):
+                    errors.append("Short lacks a limitation/comparison/takeaway beat.")
+                source_counts = Counter(url for url in ui_sources if url)
+                if source_counts and max(source_counts.values()) > max(3, len(plan.scenes) // 2):
+                    errors.append("Too many scenes reuse the same product page; show more varied evidence or explanatory visuals.")
 
         if len(research.sources) >= 3:
             warnings.append("Research depth is strong: three or more independent source pages were available.")
