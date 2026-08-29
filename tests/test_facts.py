@@ -64,4 +64,4 @@ def test_f1_brake_manual_topic_has_verified_source_seed(tmp_path: Path) -> None:
     candidate, _ = pipeline._candidate_with_research("Why Formula 1 brakes glow red")
     assert any("fia.com/regulations/formula-1" in url for url in candidate.source_urls)
     assert sum("brembo.com" in url for url in candidate.source_urls) == 2
-    assert any("formula1.com" in url for url in candidate.source_urls)
+    assert sum("formula1.com" in url for url in candidate.source_urls) == 2

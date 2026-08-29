@@ -253,6 +253,7 @@ class AutopilotPipeline:
                     "https://www.brembo.com/en/motorsport/formula1/ventilation-holes",
                     "https://www.fia.com/regulations/formula-1",
                     "https://www.formula1.com/en/latest/article/f1-explains-the-incredible-technology-behind-braking-systems-and-how-drivers.2Xsbk2ds3CEmoGbirk2HQ4.2Xsbk2ds3CEmoGbirk2HQ4",
+                    "https://www.formula1.com/en/latest/article/tech-tuesday-what-is-the-magic-brake-setting-that-cost-hamilton-in-baku-and.79Mw4XSrxksy7jen3CE8FX",
                 ]
             candidate = TopicCandidate(
                 title=topic,
