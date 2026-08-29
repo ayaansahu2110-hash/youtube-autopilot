@@ -19,8 +19,8 @@ class QualityGate:
 
         if plan.format == "short" and not 90 <= words <= 165:
             errors.append(f"Short script word count {words} is outside premium range 90-165.")
-        if plan.format == "long" and not 1150 <= words <= 1900:
-            errors.append(f"Long script word count {words} is outside 8-12 minute range 1150-1900.")
+        if plan.format == "long" and not 1200 <= words <= 1650:
+            errors.append(f"Long script word count {words} is outside 8-12 minute target 1200-1650.")
         if len(plan.title) > 100:
             errors.append("YouTube title exceeds 100 characters.")
         if strict and len(research.sources) < self.settings.min_research_sources:
@@ -75,7 +75,7 @@ class QualityGate:
         if plan.format == "short" and len(sentences) < 5:
             errors.append("Short is too thin: fewer than 5 meaningful narration beats.")
 
-        minimum_queries = 8 if plan.format == "short" else 24
+        minimum_queries = 8 if plan.format == "short" else 30
         if len(plan.visual_queries) < minimum_queries:
             errors.append(
                 f"Only {len(plan.visual_queries)} visual beats generated; need at least {minimum_queries}."
@@ -85,7 +85,7 @@ class QualityGate:
         if len(unique_queries) < minimum_queries:
             errors.append("Visual plan is too repetitive; regenerate with more distinct scene ideas.")
 
-        minimum_scenes = 8 if plan.format == "short" else 24
+        minimum_scenes = 8 if plan.format == "short" else 30
         if len(plan.scenes) < minimum_scenes:
             errors.append(f"Only {len(plan.scenes)} scene-aligned narration beats; need {minimum_scenes}.")
         else:
