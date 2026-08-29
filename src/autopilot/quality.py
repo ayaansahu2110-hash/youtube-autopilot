@@ -95,12 +95,35 @@ class QualityGate:
 
             generic_visual_terms = {"ai", "technology", "innovation", "future", "digital", "data"}
             weak_queries = 0
+            approved_urls = {source.url for source in research.sources if source.url}
+            stock_count = 0
+            non_stock_count = 0
+            missing_labels = 0
+            invalid_ui_sources = 0
+
             for scene in plan.scenes:
                 terms = {token for token in re.findall(r"[a-z0-9]+", scene.visual_query.lower())}
                 if len(terms) < 3 or terms.issubset(generic_visual_terms):
                     weak_queries += 1
+                if scene.visual_mode == "stock":
+                    stock_count += 1
+                else:
+                    non_stock_count += 1
+                if not scene.on_screen_text.strip():
+                    missing_labels += 1
+                if scene.visual_mode == "ui" and scene.source_url not in approved_urls:
+                    invalid_ui_sources += 1
+
             if weak_queries > max(1, len(plan.scenes) // 5):
                 errors.append("Too many scene visuals are abstract or underspecified.")
+            if stock_count > len(plan.scenes) // 2:
+                errors.append("Hybrid visual plan relies too heavily on stock footage.")
+            if non_stock_count < max(4, len(plan.scenes) // 2):
+                errors.append("Not enough real-UI or ByteVexa motion-graphic scenes were planned.")
+            if missing_labels > max(1, len(plan.scenes) // 5):
+                errors.append("Too many scenes are missing useful on-screen reinforcement text.")
+            if invalid_ui_sources:
+                errors.append("One or more UI scenes reference a source URL that research did not approve.")
 
         if len(research.sources) >= 3:
             warnings.append("Research depth is strong: three or more independent source pages were available.")
