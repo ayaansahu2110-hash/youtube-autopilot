@@ -71,10 +71,39 @@ class ScriptPlanner:
             scene["visual_mode"] = mode
             scenes.append(SceneBeat(**scene))
         if scenes:
+            if self.settings.channel_profile == "curioaxiom":
+                camera_cycle = (
+                    "24mm ultra-wide slow push-in from exterior three-quarter angle",
+                    "100mm extreme macro lateral slider move across the material surface",
+                    "35mm dynamic side-profile tracking shot at subject speed",
+                    "90-degree top-down locked overhead with controlled rotation",
+                    "transparent 3D cross-section, slow orbital move around the cutaway",
+                    "70mm low-angle dolly-out revealing the surrounding structure",
+                    "thermal-camera telephoto view with a precise rack focus",
+                    "orthographic engineering blueprint, measured vertical scan",
+                    "14mm interior point-of-view pull-back toward the cabin",
+                    "85mm historical artifact close-up with clockwise parallax move",
+                    "50mm frontal symmetrical shot with a rapid controlled punch-in",
+                    "isometric exploded assembly, diagonal crane movement",
+                    "200mm compressed-profile shot with a slow tilt from base to apex",
+                    "microscope-scale cutaway with a shallow-focus probe movement",
+                    "satellite-scale establishing view with a descending orbital move",
+                    "handheld documentary shoulder view with a restrained arc move",
+                )
+                used_cameras: set[str] = set()
+                for index, scene in enumerate(scenes):
+                    camera = scene.shot_type_camera_movement.lower().strip()
+                    if not camera or camera in used_cameras:
+                        scene.shot_type_camera_movement = camera_cycle[index % len(camera_cycle)]
+                        camera = scene.shot_type_camera_movement.lower()
+                    used_cameras.add(camera)
             data["script"] = " ".join(
                 scene.narration.strip() for scene in scenes if scene.narration.strip()
             )
             data["visual_queries"] = [scene.visual_query for scene in scenes]
+            if self.settings.channel_profile == "curioaxiom" and len(str(data.get("thumbnail_text") or "").split()) != 3:
+                title_words = str(data.get("title") or research.topic).replace(":", "").split()
+                data["thumbnail_text"] = " ".join((title_words + ["EXPLAINED", "NOW"])[:3]).upper()
             direct_paste = data.get("direct_paste_script")
             if isinstance(direct_paste, list):
                 data["direct_paste_script"] = "\n\n".join(
@@ -91,13 +120,12 @@ class ScriptPlanner:
             raw_batch = data.get("batch_prompts")
             if isinstance(raw_batch, list):
                 data["batch_prompts"] = [str(item).strip() for item in raw_batch if str(item).strip()]
-            if not data.get("batch_prompts"):
-                aspect = "--ar 9:16" if video_format == "short" else "--ar 16:9"
-                data["batch_prompts"] = [
-                    f"{scene.generator_prompt or scene.exact_visual_subject or scene.visual_query}, "
-                    f"{scene.camera_and_lighting}, {aspect}"
-                    for scene in scenes
-                ]
+            aspect = "--ar 9:16" if video_format == "short" else "--ar 16:9"
+            data["batch_prompts"] = [
+                f"{scene.generator_prompt or scene.exact_visual_subject or scene.visual_query}, "
+                f"{scene.shot_type_camera_movement}, {scene.camera_and_lighting}, {aspect}"
+                for scene in scenes
+            ]
         data.pop("scenes", None)
 
         urls = [source.url for source in research.sources if source.url]

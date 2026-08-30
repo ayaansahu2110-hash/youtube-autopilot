@@ -271,6 +271,7 @@ class AutopilotPipeline:
                     "https://www.faa.gov/lessons_learned/transport_airplane/accidents/G-ALYV",
                     "https://www.faa.gov/airports/resources/advisory_circulars/index.cfm/go/document.information/documentNumber/25.775-1",
                     "https://www.faa.gov/aircraft/air_cert/step/disciplines/fatigue_damage_tolerance",
+                    "https://ntrs.nasa.gov/citations/19930081173",
                     "https://www.si.edu/object/report-comet-accident-investigation-royal-aircraft-establishment-farnborough-hants%3Asiris_sil_170439",
                 ]
             candidate = TopicCandidate(

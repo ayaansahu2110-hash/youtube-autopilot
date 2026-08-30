@@ -184,11 +184,21 @@ class QualityGate:
                     errors.append("CurioAxiom requires one batch-generation prompt per scene.")
                 if len(set(shot_treatments)) != len(shot_treatments):
                     errors.append("Camera treatment repeats across CurioAxiom scenes.")
+                style_words = {
+                    "cinematic", "realistic", "vertical", "lighting", "detailed", "high",
+                    "definition", "documentary", "scene", "camera", "slow", "shot",
+                }
+                prompt_terms = [
+                    {
+                        token for token in re.findall(r"[a-z0-9]+", prompt)
+                        if len(token) >= 4 and token not in style_words
+                    }
+                    for prompt in generator_prompts
+                ]
                 near_duplicate_prompts = any(
-                    SequenceMatcher(None, left, right).ratio() >= 0.84
-                    for index, left in enumerate(generator_prompts)
-                    for right in generator_prompts[index + 1:]
-                    if left and right
+                    left and right and len(left & right) / max(1, len(left | right)) >= 0.80
+                    for index, left in enumerate(prompt_terms)
+                    for right in prompt_terms[index + 1:]
                 )
                 if near_duplicate_prompts:
                     errors.append("Generator prompts repeat the same visual concept too closely.")
