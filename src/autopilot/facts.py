@@ -146,8 +146,8 @@ class FactScriptPlanner(PremiumScriptPlanner):
 
     def create_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
         plan = super().create_plan(research, video_format)
-        if video_format == "short" and len(plan.script.split()) > 165 and plan.scenes:
-            self._fit_short_narration(plan, target_words=165)
+        if video_format == "short" and len(plan.script.split()) > 145 and plan.scenes:
+            self._fit_short_narration(plan, target_words=145)
         if video_format == "short" and len(plan.scenes) < 22:
             scenes = list(plan.scenes)
             while len(scenes) < 22:
