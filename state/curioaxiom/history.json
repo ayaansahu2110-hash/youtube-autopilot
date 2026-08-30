@@ -1,4 +1,55 @@
 {
-  "videos": [],
-  "topics": []
+  "videos": [
+    {
+      "video_id": "70mqeuWtljw",
+      "topic": "Why Formula 1 Brakes Glow Red",
+      "title": "Why Formula 1 Brakes Glow Red",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-08-30T06:36:07Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "_sd7bLRor_o",
+      "topic": "Why Airplane Windows Are Round",
+      "title": "Why Airplane Windows Are Round",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-08-30T09:29:24Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "yPUU3tQ6MTU",
+      "topic": "A Year of Surprising Science from NASA's InSight Mars Mission",
+      "title": "What Is Shaking Inside Mars?",
+      "format": "short",
+      "script_preview": "We once viewed Mars as a cold, geologically dead desert. But deep beneath the flat plains of Elysium Planitia... ...an ultra-sensitive robotic ear detected something unexpected. The ground was trembling. Not from sudden, violent asteroid impacts... ...but from continuous, gentle shudders. These mild rumbles originated hundreds of miles away. How could a world with no active plate tectonics... ...be so seismically. In its very first year of. ...the lander's SEIS instrument recorded over four hundred and fifty. Scientists determined that the vast majority are likely actual. ...rather than mere d",
+      "created_at": "2026-08-30T09:56:16.166510+00:00",
+      "analytics": {}
+    }
+  ],
+  "topics": [
+    {
+      "topic": "Why Formula 1 Brakes Glow Red",
+      "title": "Why Formula 1 Brakes Glow Red",
+      "format": "unknown",
+      "created_at": "2026-08-30T06:36:07Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Why Airplane Windows Are Round",
+      "title": "Why Airplane Windows Are Round",
+      "format": "unknown",
+      "created_at": "2026-08-30T09:29:24Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "A Year of Surprising Science from NASA's InSight Mars Mission",
+      "title": "What Is Shaking Inside Mars?",
+      "format": "short",
+      "created_at": "2026-08-30T09:56:16.166510+00:00"
+    }
+  ]
 }
