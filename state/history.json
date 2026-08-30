@@ -1,4 +1,123 @@
 {
-  "videos": [],
-  "topics": []
+  "videos": [
+    {
+      "video_id": "Acw2Uj-kyJc",
+      "topic": "Bypass 2FA Walls with Self-Hosted Browser Automation",
+      "title": "Bypass 2FA Walls with Self-Hosted Browser Automation",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-08-29T06:59:52Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "LMKSOhUQ6dI",
+      "topic": "Puppetflow: The Self-Hosted Browser Automation That Handles 2FA",
+      "title": "Puppetflow: The Self-Hosted Browser Automation That Handles 2FA",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-08-29T07:43:12Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "TX4J_dQRoHQ",
+      "topic": "Build PowerPoint Decks Locally with SlideX and MDX",
+      "title": "Build PowerPoint Decks Locally with SlideX and MDX",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-08-29T12:39:19Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "WH9XlFC_2os",
+      "topic": "Stop Pasting SQL Into AI Chatbots",
+      "title": "Stop Pasting SQL Into AI Chatbots",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-08-29T20:03:55Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "vJuJiodXx04",
+      "topic": "Stop syncing your thoughts: Local-first AI notebooks",
+      "title": "Stop syncing your thoughts: Local-first AI notebooks",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-08-30T06:43:54Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "hrPr_pqHlhQ",
+      "topic": "Query Databases Safely with Local AI Agents",
+      "title": "Query Databases Safely with Local AI Agents",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-08-30T09:37:18Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "ufaDvOU9LF8",
+      "topic": "Show HN: DataZen – a local-first client for cross-database workflows",
+      "title": "Automate Databases with AI Agents: DataZen Local Client",
+      "format": "short",
+      "script_preview": "Instead of manually exporting database tables to analyze them with AI, you can now let local agents query and chart your SQL databases directly. DataZen does this by running a built-in Model Context Protocol, or MCP, server inside a local-first desktop client. To generate a daily sales report, you safely connect your local database using AES-encrypted OS keychain credentials. DataZen's built-in MCP server exposes your schemas and EXPLAIN analyses directly to external agents like Claude or Cursor. The agent executes the query, builds visual workflow loops, and automatically outputs PNG or SVG c",
+      "created_at": "2026-08-30T12:39:38.882975+00:00",
+      "analytics": {}
+    }
+  ],
+  "topics": [
+    {
+      "topic": "Bypass 2FA Walls with Self-Hosted Browser Automation",
+      "title": "Bypass 2FA Walls with Self-Hosted Browser Automation",
+      "format": "unknown",
+      "created_at": "2026-08-29T06:59:52Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Puppetflow: The Self-Hosted Browser Automation That Handles 2FA",
+      "title": "Puppetflow: The Self-Hosted Browser Automation That Handles 2FA",
+      "format": "unknown",
+      "created_at": "2026-08-29T07:43:12Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Build PowerPoint Decks Locally with SlideX and MDX",
+      "title": "Build PowerPoint Decks Locally with SlideX and MDX",
+      "format": "unknown",
+      "created_at": "2026-08-29T12:39:19Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Stop Pasting SQL Into AI Chatbots",
+      "title": "Stop Pasting SQL Into AI Chatbots",
+      "format": "unknown",
+      "created_at": "2026-08-29T20:03:55Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Stop syncing your thoughts: Local-first AI notebooks",
+      "title": "Stop syncing your thoughts: Local-first AI notebooks",
+      "format": "unknown",
+      "created_at": "2026-08-30T06:43:54Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Query Databases Safely with Local AI Agents",
+      "title": "Query Databases Safely with Local AI Agents",
+      "format": "unknown",
+      "created_at": "2026-08-30T09:37:18Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Show HN: DataZen – a local-first client for cross-database workflows",
+      "title": "Automate Databases with AI Agents: DataZen Local Client",
+      "format": "short",
+      "created_at": "2026-08-30T12:39:38.882975+00:00"
+    }
+  ]
 }
