@@ -146,6 +146,8 @@ class FactScriptPlanner(PremiumScriptPlanner):
 
     def create_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
         plan = super().create_plan(research, video_format)
+        if video_format == "short" and len(plan.script.split()) > 165 and plan.scenes:
+            self._fit_short_narration(plan, target_words=165)
         if video_format == "short" and len(plan.scenes) < 22:
             scenes = list(plan.scenes)
             while len(scenes) < 22:
@@ -205,6 +207,38 @@ class FactScriptPlanner(PremiumScriptPlanner):
             for index, scene in enumerate(plan.scenes)
         ]
         return plan
+
+    @staticmethod
+    def _fit_short_narration(plan: VideoPlan, *, target_words: int) -> None:
+        """Keep every story beat while enforcing a predictable Shorts duration."""
+        scene_words = [scene.narration.split() for scene in plan.scenes]
+        total = sum(len(words) for words in scene_words)
+        if total <= target_words:
+            return
+        minimum = 3
+        budgets = [
+            max(minimum, int(target_words * len(words) / max(1, total)))
+            for words in scene_words
+        ]
+        while sum(budgets) < target_words:
+            index = max(
+                range(len(budgets)),
+                key=lambda item: len(scene_words[item]) - budgets[item],
+            )
+            if budgets[index] >= len(scene_words[index]):
+                break
+            budgets[index] += 1
+        while sum(budgets) > target_words:
+            index = max(range(len(budgets)), key=lambda item: budgets[item] - minimum)
+            if budgets[index] <= minimum:
+                break
+            budgets[index] -= 1
+        for scene, words, budget in zip(plan.scenes, scene_words, budgets):
+            shortened = " ".join(words[:budget]).rstrip(",;:-")
+            if shortened and shortened[-1] not in ".!?":
+                shortened += "."
+            scene.narration = shortened
+        plan.script = " ".join(scene.narration for scene in plan.scenes)
 
     def choose_topic(self, candidates: list[TopicCandidate]) -> TopicCandidate:
         if not candidates or not self.settings.llm_configured:

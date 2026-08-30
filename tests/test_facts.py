@@ -141,3 +141,25 @@ def test_scheduled_fact_selection_skips_weakly_sourced_headline(tmp_path: Path) 
     pipeline.researcher.research = research
     candidate, _ = pipeline._candidate_with_research(None)
     assert candidate.title == strong.title
+
+
+def test_fact_short_duration_guard_preserves_all_scenes() -> None:
+    scenes = [
+        SceneBeat(narration="one two three four five six seven eight nine ten", visual_query=f"shot {i}")
+        for i in range(22)
+    ]
+    plan = VideoPlan(
+        topic="Mars",
+        angle="science",
+        format="short",
+        hook="Mars moved.",
+        script=" ".join(scene.narration for scene in scenes),
+        title="What InSight Heard Inside Mars",
+        description="Test",
+        thumbnail_brief="Mars cutaway",
+        scenes=scenes,
+    )
+    FactScriptPlanner._fit_short_narration(plan, target_words=165)
+    assert len(plan.script.split()) <= 165
+    assert len(plan.scenes) == 22
+    assert all(len(scene.narration.split()) >= 3 for scene in plan.scenes)
