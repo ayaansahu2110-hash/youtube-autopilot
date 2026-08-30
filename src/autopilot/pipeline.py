@@ -262,6 +262,17 @@ class AutopilotPipeline:
                     "https://www.formula1.com/en/latest/article/f1-explains-the-incredible-technology-behind-braking-systems-and-how-drivers.2Xsbk2ds3CEmoGbirk2HQ4.2Xsbk2ds3CEmoGbirk2HQ4",
                     "https://www.formula1.com/en/latest/article/tech-tuesday-what-is-the-magic-brake-setting-that-cost-hamilton-in-baku-and.79Mw4XSrxksy7jen3CE8FX",
                 ]
+            elif (
+                self.settings.channel_profile == "curioaxiom"
+                and ("airplane" in lowered or "aircraft" in lowered)
+                and "window" in lowered
+            ):
+                source_urls = [
+                    "https://www.faa.gov/lessons_learned/transport_airplane/accidents/G-ALYV",
+                    "https://www.faa.gov/airports/resources/advisory_circulars/index.cfm/go/document.information/documentNumber/25.775-1",
+                    "https://www.faa.gov/aircraft/air_cert/step/disciplines/fatigue_damage_tolerance",
+                    "https://www.si.edu/object/report-comet-accident-investigation-royal-aircraft-establishment-farnborough-hants%3Asiris_sil_170439",
+                ]
             candidate = TopicCandidate(
                 title=topic,
                 score=60,

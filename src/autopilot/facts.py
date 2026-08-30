@@ -15,7 +15,7 @@ AUTHORITATIVE_DOMAINS = {
     "geography": ("un.org", "worldbank.org", "usgs.gov", "noaa.gov"),
     "mathematics": ("ams.org", "maa.org", "mathworld.wolfram.com", "edu"),
     "space": ("nasa.gov", "esa.int", "jpl.nasa.gov", "noirlab.edu"),
-    "engineering": ("nist.gov", "ieee.org", "asme.org", "sae.org", "edu"),
+    "engineering": ("nist.gov", "ieee.org", "asme.org", "sae.org", "faa.gov", "edu"),
     "f1_automotive": ("fia.com", "formula1.com", "sae.org", "nhtsa.gov"),
 }
 

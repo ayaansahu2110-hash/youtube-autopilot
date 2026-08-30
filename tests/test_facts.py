@@ -69,3 +69,10 @@ def test_f1_brake_manual_topic_has_verified_source_seed(tmp_path: Path) -> None:
     assert any("fia.com/regulations/formula-1" in url for url in candidate.source_urls)
     assert sum("brembo.com" in url for url in candidate.source_urls) == 2
     assert sum("formula1.com" in url for url in candidate.source_urls) == 2
+
+
+def test_airplane_window_topic_has_faa_source_seed(tmp_path: Path) -> None:
+    pipeline = AutopilotPipeline(Settings(channel_profile="curioaxiom", artifacts_dir=tmp_path))
+    pipeline.researcher.research = lambda candidate: ResearchPack(topic=candidate.title)
+    candidate, _ = pipeline._candidate_with_research("Why airplane windows are round")
+    assert sum("faa.gov" in url for url in candidate.source_urls) == 3
