@@ -85,11 +85,13 @@ class Settings(BaseSettings):
                 "space science,engineering explained,Formula 1 engineering,automotive engineering"
             )
         if self.max_visual_clips_short == 10:
-            self.max_visual_clips_short = 16
+            self.max_visual_clips_short = 24
         if self.min_visual_clips_short == 5:
-            self.min_visual_clips_short = 10
+            self.min_visual_clips_short = 20
         if self.visual_clip_seconds == 2.8:
-            self.visual_clip_seconds = 2.2
+            self.visual_clip_seconds = 2.0
+        if self.shorts_per_day == 2:
+            self.shorts_per_day = 3
 
     @property
     def topic_query_list(self) -> list[str]:

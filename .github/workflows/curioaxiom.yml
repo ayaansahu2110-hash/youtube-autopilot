@@ -2,8 +2,9 @@ name: CurioAxiom Facts Pipeline
 
 on:
   schedule:
-    - cron: "30 6 * * *"
-    - cron: "30 12 * * *"
+    - cron: "30 3 * * *"
+    - cron: "30 8 * * *"
+    - cron: "30 13 * * *"
   workflow_dispatch:
     inputs:
       slot:
@@ -11,7 +12,7 @@ on:
         required: false
         default: "evening"
         type: choice
-        options: [morning, evening, all]
+        options: [morning, midday, evening, all]
       topic:
         description: "Optional commissioning-test topic override"
         required: false
@@ -60,8 +61,10 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "RUN_SLOT=${{ inputs.slot }}" >> "$GITHUB_ENV"
-          elif [ "${{ github.event.schedule }}" = "30 6 * * *" ]; then
+          elif [ "${{ github.event.schedule }}" = "30 3 * * *" ]; then
             echo "RUN_SLOT=morning" >> "$GITHUB_ENV"
+          elif [ "${{ github.event.schedule }}" = "30 8 * * *" ]; then
+            echo "RUN_SLOT=midday" >> "$GITHUB_ENV"
           else
             echo "RUN_SLOT=evening" >> "$GITHUB_ENV"
           fi

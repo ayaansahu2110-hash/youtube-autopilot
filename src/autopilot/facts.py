@@ -134,17 +134,25 @@ class FactScriptPlanner(PremiumScriptPlanner):
         "20mm interior point-of-view rise",
         "55mm blueprint scan diagonal glide",
         "75mm high-angle counterclockwise orbit",
+        "45mm Dutch-angle corrective roll to level",
+        "105mm interior-to-exterior focus pull",
+        "26mm left-to-right jib sweep",
+        "65mm under-surface probe push",
+        "30mm doorway-frame lateral reveal",
+        "120mm edge-on material inspection tilt",
+        "38mm reverse-tracking foreground wipe",
+        "80mm static profile with subject crossing frame",
     )
 
     def create_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
         plan = super().create_plan(research, video_format)
-        if video_format == "short" and len(plan.scenes) < 12:
+        if video_format == "short" and len(plan.scenes) < 22:
             scenes = list(plan.scenes)
-            while len(scenes) < 12:
+            while len(scenes) < 22:
                 index = max(range(len(scenes)), key=lambda item: len(scenes[item].narration.split()))
                 scene = scenes[index]
                 words = scene.narration.split()
-                if len(words) < 8:
+                if len(words) < 4:
                     break
                 midpoint = len(words) // 2
                 left = scene.model_copy(
@@ -221,7 +229,7 @@ class FactScriptPlanner(PremiumScriptPlanner):
 
     def _draft_prompt(self, research: ResearchPack, video_format: str) -> str:
         words = "95-145" if video_format == "short" else "1,200-1,650"
-        scenes = "12-16" if video_format == "short" else "28-38"
+        scenes = "20-24" if video_format == "short" else "28-38"
         return f"""You are the senior researcher, writer and visual director for CurioAxiom.
 Create an original cinematic YouTube {video_format} about: {research.topic}
 Brand promise: One fascinating question. One cinematic story. One verified answer.
@@ -237,7 +245,8 @@ RULES
 - Qualify estimates, debated interpretations, simulations and theoretical scenarios.
 - Open with a specific contradiction or consequence; never start with 'Did you know?' or a list.
 - For a Short, make the first sentence understandable in under two seconds and introduce a new
-  action, angle, scale, or consequence every 1.5-3 seconds. Each scene is one visual action.
+  asset, action, angle, scale, or consequence every 1.5-2.7 seconds. Each scene is one visual action.
+- Never stretch, split, loop or reuse one image/clip to fill multiple consecutive timeline segments.
 - ZERO-MISMATCH STORYBOARD: every visible object/action must be justified by the exact words spoken
   in that scene. Never use generic topical filler, decorative scientists, random laboratories,
   unrelated rockets, landscapes, office footage or broad mood shots.

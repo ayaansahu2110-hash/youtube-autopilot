@@ -27,6 +27,13 @@ class DailyLearningLoop:
         "best AI tools workflow",
         "AI news tools explained",
     )
+    FACT_SEARCHES = (
+        "viral science facts shorts",
+        "history facts documentary shorts",
+        "engineering explained shorts",
+        "space facts cinematic documentary",
+        "Formula 1 engineering explained",
+    )
 
     def __init__(self, settings: Settings, state: StateStore):
         self.settings = settings
@@ -56,7 +63,8 @@ class DailyLearningLoop:
 
     def _competitor_snapshot(self, youtube) -> list[dict]:
         channel_ids: list[str] = []
-        for query in self.SEARCHES:
+        searches = self.FACT_SEARCHES if self.settings.channel_profile == "curioaxiom" else self.SEARCHES
+        for query in searches:
             try:
                 data = youtube.search().list(
                     part="snippet", q=query, type="channel", maxResults=5, order="relevance"

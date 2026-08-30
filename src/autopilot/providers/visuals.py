@@ -10,6 +10,7 @@ class PexelsVideoProvider:
 
     def __init__(self, api_key: str | None):
         self.api_key = api_key
+        self._used_ids: set[int] = set()
 
     def fetch_assets(
         self,
@@ -23,7 +24,7 @@ class PexelsVideoProvider:
             return []
         output_dir.mkdir(parents=True, exist_ok=True)
         assets: list[VisualAsset] = []
-        used_ids: set[int] = set()
+        used_ids = self._used_ids
         for scene_index, query in enumerate(queries[:limit]):
             video = self._search_best(query, vertical=vertical, used_ids=used_ids)
             if not video:

@@ -67,8 +67,8 @@ class FFmpegRenderer:
         # browser text and UI survive YouTube transcoding more cleanly.
         width, height = (1080, 1920) if vertical else (2560, 1440)
         timeline = self._timeline(assets, duration, scene_word_counts, clip_seconds)
-        if facts_style:
-            timeline = self._rapid_timeline(timeline, max_seconds=2.65)
+        # CurioAxiom provides one unique asset per short scene. Do not split a
+        # scene into repeated copies of the same still or clip to fill time.
         segments: list[Path] = []
 
         for index, (asset, segment_seconds) in enumerate(timeline):

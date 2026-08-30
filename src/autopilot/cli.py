@@ -116,7 +116,7 @@ def learn() -> None:
 @app.command()
 def daily(
     live: bool = typer.Option(False, "--live", help="Render and publish; otherwise run planning only"),
-    slot: str = typer.Option("all", "--slot", help="morning, evening, or all"),
+    slot: str = typer.Option("all", "--slot", help="morning, midday, evening, or all"),
 ) -> None:
     """Run a scheduled production slot for the selected isolated channel profile."""
     settings = load_settings()
@@ -124,8 +124,8 @@ def daily(
     DailyLearningLoop(settings, state).refresh()
     dry_run = not live
     slot = slot.strip().lower()
-    if slot not in {"morning", "evening", "all"}:
-        raise typer.BadParameter("slot must be morning, evening, or all")
+    if slot not in {"morning", "midday", "evening", "all"}:
+        raise typer.BadParameter("slot must be morning, midday, evening, or all")
 
     results = []
     short_count = max(1, settings.shorts_per_day) if slot == "all" else 1

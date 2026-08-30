@@ -13,9 +13,10 @@ def test_curioaxiom_defaults_are_isolated() -> None:
     assert settings.state_file == Path("state/curioaxiom/history.json")
     assert settings.learning_file == Path("state/curioaxiom/learning.json")
     assert settings.youtube_token_file == Path("secrets/youtube_token_curioaxiom.json")
-    assert settings.max_visual_clips_short == 16
-    assert settings.min_visual_clips_short == 10
-    assert settings.visual_clip_seconds == 2.2
+    assert settings.max_visual_clips_short == 24
+    assert settings.min_visual_clips_short == 20
+    assert settings.visual_clip_seconds == 2.0
+    assert settings.shorts_per_day == 3
 
 
 def test_fact_category_router_handles_f1() -> None:
@@ -110,7 +111,7 @@ def test_fact_planner_rebuilds_visual_contract_after_scene_splitting() -> None:
     )
     planner._generate_json = lambda prompt: base.model_dump()
     plan = planner.create_plan(ResearchPack(topic="Airplane windows"), "short")
-    assert len(plan.scenes) >= 10
+    assert len(plan.scenes) >= 20
     assert len({scene.shot_type_camera_movement for scene in plan.scenes}) == len(plan.scenes)
     assert len(plan.batch_prompts) == len(plan.scenes)
     assert all(prompt.endswith("--ar 9:16") for prompt in plan.batch_prompts)
