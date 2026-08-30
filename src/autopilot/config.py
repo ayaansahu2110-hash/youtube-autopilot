@@ -24,6 +24,7 @@ class Settings(BaseSettings):
     enable_uploads: bool = False
     upload_privacy_status: Literal["private", "unlisted", "public"] = "private"
     allow_public_uploads: bool = False
+    shorts_public: bool = False
     youtube_category_id: str = "28"
     youtube_made_for_kids: bool = False
 

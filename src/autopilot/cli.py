@@ -32,6 +32,14 @@ def _longform_due(settings: Settings) -> bool:
     return (local_today - anchor).days >= 0 and (local_today - anchor).days % interval == 0
 
 
+def _settings_for_format(settings: Settings, video_format: str) -> Settings:
+    if video_format == "short" and settings.shorts_public:
+        return settings.model_copy(
+            update={"upload_privacy_status": "public", "allow_public_uploads": True}
+        )
+    return settings
+
+
 @app.command()
 def doctor() -> None:
     """Check local prerequisites without exposing secrets."""
@@ -87,8 +95,12 @@ def run_once(
     dry_run: bool = typer.Option(True, "--dry-run/--render", help="Plan only or render media"),
 ) -> None:
     settings = load_settings()
-    result = AutopilotPipeline(settings).run(topic=topic, dry_run=dry_run, video_format=video_format)
-    _print_result(result, settings)
+    chosen_format = video_format or settings.default_video_format
+    production_settings = _settings_for_format(settings, chosen_format)
+    result = AutopilotPipeline(production_settings).run(
+        topic=topic, dry_run=dry_run, video_format=chosen_format
+    )
+    _print_result(result, production_settings)
     if result.status == "failed":
         raise typer.Exit(code=1)
 
@@ -129,10 +141,11 @@ def daily(
 
     results = []
     short_count = max(1, settings.shorts_per_day) if slot == "all" else 1
+    short_settings = _settings_for_format(settings, "short")
     for _ in range(short_count):
-        short_result = AutopilotPipeline(settings).run(dry_run=dry_run, video_format="short")
+        short_result = AutopilotPipeline(short_settings).run(dry_run=dry_run, video_format="short")
         results.append(short_result)
-        _print_result(short_result, settings)
+        _print_result(short_result, short_settings)
         if short_result.status == "failed":
             break
 
@@ -155,7 +168,7 @@ def schedule() -> None:
     def morning_job() -> None:
         state = StateStore(settings.state_file)
         DailyLearningLoop(settings, state).refresh()
-        AutopilotPipeline(settings).run(
+        AutopilotPipeline(_settings_for_format(settings, "short")).run(
             dry_run=not settings.enable_uploads,
             video_format="short",
         )
@@ -163,7 +176,7 @@ def schedule() -> None:
     def evening_job() -> None:
         state = StateStore(settings.state_file)
         DailyLearningLoop(settings, state).refresh()
-        result = AutopilotPipeline(settings).run(
+        result = AutopilotPipeline(_settings_for_format(settings, "short")).run(
             dry_run=not settings.enable_uploads,
             video_format="short",
         )

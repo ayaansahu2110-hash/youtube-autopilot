@@ -48,6 +48,7 @@ jobs:
       ENABLE_UPLOADS: "true"
       UPLOAD_PRIVACY_STATUS: "private"
       ALLOW_PUBLIC_UPLOADS: "false"
+      SHORTS_PUBLIC: "true"
       AUTOPILOT_ENV: production
       SCHEDULE_TIMEZONE: Asia/Kolkata
     steps:

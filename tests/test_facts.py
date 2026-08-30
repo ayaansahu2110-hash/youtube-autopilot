@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from autopilot.config import Settings
+from autopilot.cli import _settings_for_format
 from autopilot.facts import FactCategoryRouter, FactScriptPlanner, FactVerifier
 from autopilot.models import ResearchPack, ResearchSource, SceneBeat, TopicCandidate, VideoPlan
 from autopilot.models import VisualAsset
@@ -17,6 +18,16 @@ def test_curioaxiom_defaults_are_isolated() -> None:
     assert settings.min_visual_clips_short == 20
     assert settings.visual_clip_seconds == 2.0
     assert settings.shorts_per_day == 3
+
+
+def test_curioaxiom_public_short_setting_does_not_publish_long_form() -> None:
+    settings = Settings(channel_profile="curioaxiom", shorts_public=True)
+    short = _settings_for_format(settings, "short")
+    long_form = _settings_for_format(settings, "long")
+    assert short.upload_privacy_status == "public"
+    assert short.allow_public_uploads is True
+    assert long_form.upload_privacy_status == "private"
+    assert long_form.allow_public_uploads is False
 
 
 def test_fact_category_router_handles_f1() -> None:
