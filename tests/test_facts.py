@@ -2,7 +2,7 @@ from pathlib import Path
 
 from autopilot.config import Settings
 from autopilot.facts import FactCategoryRouter, FactScriptPlanner, FactVerifier
-from autopilot.models import ResearchPack, ResearchSource, SceneBeat, VideoPlan
+from autopilot.models import ResearchPack, ResearchSource, SceneBeat, TopicCandidate, VideoPlan
 from autopilot.models import VisualAsset
 from autopilot.render import FFmpegRenderer
 from autopilot.pipeline import AutopilotPipeline
@@ -115,3 +115,29 @@ def test_fact_planner_rebuilds_visual_contract_after_scene_splitting() -> None:
     assert len({scene.shot_type_camera_movement for scene in plan.scenes}) == len(plan.scenes)
     assert len(plan.batch_prompts) == len(plan.scenes)
     assert all(prompt.endswith("--ar 9:16") for prompt in plan.batch_prompts)
+
+
+def test_scheduled_fact_selection_skips_weakly_sourced_headline(tmp_path: Path) -> None:
+    pipeline = AutopilotPipeline(Settings(channel_profile="curioaxiom", artifacts_dir=tmp_path))
+    weak = TopicCandidate(title="Why an inventor hid his identity", score=90, reason="viral")
+    strong = TopicCandidate(title="Why NASA heat shields char", score=70, reason="verified")
+    pipeline.discovery.discover = lambda: [weak, strong]
+    pipeline.planner.choose_topic = lambda candidates: candidates[0]
+
+    def research(candidate: TopicCandidate) -> ResearchPack:
+        if candidate.title == weak.title:
+            return ResearchPack(
+                topic=candidate.title,
+                sources=[ResearchSource(title="Blog", url="https://example.com/a", snippet="x" * 400)],
+            )
+        return ResearchPack(
+            topic=candidate.title,
+            sources=[
+                ResearchSource(title="NASA", url="https://www.nasa.gov/a", snippet="x" * 400),
+                ResearchSource(title="ESA", url="https://www.esa.int/b", snippet="y" * 400),
+            ],
+        )
+
+    pipeline.researcher.research = research
+    candidate, _ = pipeline._candidate_with_research(None)
+    assert candidate.title == strong.title

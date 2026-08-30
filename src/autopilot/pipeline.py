@@ -299,6 +299,31 @@ class AutopilotPipeline:
         ordered = [preferred]
         ordered.extend(item for item in candidates if item.title != preferred.title)
 
+        # Facts must be sourceable before the expensive writing/rendering pass.
+        # Discovery headlines can be compelling yet lack a primary authority;
+        # skip those candidates here instead of failing the scheduled slot later.
+        if self.verifier:
+            best: tuple[float, TopicCandidate, ResearchPack] | None = None
+            for candidate in ordered[:12]:
+                research = self.researcher.research(candidate)
+                preview = self.verifier.verify(self.editorial.enrich(candidate, research))
+                authoritative = any(
+                    note.endswith("category-authoritative source(s)")
+                    and not note.startswith("0 ")
+                    for note in preview.verification_notes
+                )
+                rank = preview.confidence_score + min(10, len(research.sources))
+                if best is None or rank > best[0]:
+                    best = (rank, candidate, research)
+                if (
+                    preview.confidence_score >= 65
+                    and authoritative
+                    and len(research.sources) >= self.settings.min_research_sources
+                ):
+                    return candidate, research
+            if best:
+                return best[1], best[2]
+
         best_candidate = preferred
         best_research = self.researcher.research(preferred)
         minimum = self.settings.min_research_sources
