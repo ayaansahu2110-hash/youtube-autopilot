@@ -2,7 +2,7 @@ from pathlib import Path
 
 from autopilot.config import Settings
 from autopilot.facts import FactCategoryRouter, FactScriptPlanner, FactVerifier
-from autopilot.models import ResearchPack, ResearchSource
+from autopilot.models import ResearchPack, ResearchSource, SceneBeat, VideoPlan
 from autopilot.models import VisualAsset
 from autopilot.render import FFmpegRenderer
 from autopilot.pipeline import AutopilotPipeline
@@ -76,3 +76,41 @@ def test_airplane_window_topic_has_faa_source_seed(tmp_path: Path) -> None:
     pipeline.researcher.research = lambda candidate: ResearchPack(topic=candidate.title)
     candidate, _ = pipeline._candidate_with_research("Why airplane windows are round")
     assert sum("faa.gov" in url for url in candidate.source_urls) == 3
+
+
+def test_airplane_window_research_keeps_two_official_domains(tmp_path: Path) -> None:
+    pipeline = AutopilotPipeline(Settings(channel_profile="curioaxiom", artifacts_dir=tmp_path))
+    pipeline.researcher.research = lambda candidate: ResearchPack(topic=candidate.title)
+    _, research = pipeline._candidate_with_research("Why airplane windows are round")
+    domains = {source.url.split("/", 3)[2] for source in research.sources}
+    assert {"www.faa.gov", "ntrs.nasa.gov"} <= domains
+    assert "high stress concentrations" in research.research_notes
+
+
+def test_fact_planner_rebuilds_visual_contract_after_scene_splitting() -> None:
+    planner = FactScriptPlanner(Settings(channel_profile="curioaxiom"))
+    base = VideoPlan(
+        topic="Airplane windows",
+        angle="engineering",
+        format="short",
+        hook="Why round?",
+        script="",
+        title="Why Airplane Windows Are Round",
+        description="Test",
+        thumbnail_brief="Window against sky",
+        scenes=[
+            SceneBeat(
+                narration=("Cabin pressure pushes outward on the fuselage during every flight "
+                           "and sharp window corners concentrate that repeated structural load"),
+                visual_query="aircraft window fuselage pressure test",
+                exact_visual_subject="aircraft window in a pressurized fuselage",
+            )
+            for _ in range(6)
+        ],
+    )
+    planner._generate_json = lambda prompt: base.model_dump()
+    plan = planner.create_plan(ResearchPack(topic="Airplane windows"), "short")
+    assert len(plan.scenes) >= 10
+    assert len({scene.shot_type_camera_movement for scene in plan.scenes}) == len(plan.scenes)
+    assert len(plan.batch_prompts) == len(plan.scenes)
+    assert all(prompt.endswith("--ar 9:16") for prompt in plan.batch_prompts)

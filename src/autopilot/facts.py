@@ -117,6 +117,25 @@ class FactTopicDiscovery(TopicDiscovery):
 
 
 class FactScriptPlanner(PremiumScriptPlanner):
+    _FINAL_CAMERA_CYCLE = (
+        "24mm ultra-wide low-angle slow push-in",
+        "50mm side-profile dynamic tracking pan",
+        "35mm 90-degree top-down locked overhead",
+        "85mm macro cross-section orbit",
+        "70mm telephoto front-on slow pull-back",
+        "18mm aerial descending crane move",
+        "100mm extreme macro lateral slider",
+        "40mm three-quarter handheld follow shot",
+        "28mm ground-level tilt-up reveal",
+        "60mm cutaway dolly left",
+        "135mm compressed-profile rack focus",
+        "32mm rear-axis stabilized chase",
+        "90mm artifact detail clockwise arc",
+        "20mm interior point-of-view rise",
+        "55mm blueprint scan diagonal glide",
+        "75mm high-angle counterclockwise orbit",
+    )
+
     def create_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
         plan = super().create_plan(research, video_format)
         if video_format == "short" and len(plan.scenes) < 12:
@@ -151,6 +170,32 @@ class FactScriptPlanner(PremiumScriptPlanner):
             plan.scenes = scenes
             plan.script = " ".join(scene.narration.strip() for scene in scenes)
             plan.visual_queries = [scene.visual_query for scene in scenes]
+        # Scene splitting happens after the base planner's normalization. Rebuild all
+        # visual-directing fields from the final scene list so no child scene inherits
+        # its parent's camera treatment or prompt.
+        aspect = "9:16" if video_format == "short" else "16:9"
+        grades = ("cool steel", "warm tungsten", "neutral daylight", "deep cobalt")
+        for index, scene in enumerate(plan.scenes):
+            camera = self._FINAL_CAMERA_CYCLE[index % len(self._FINAL_CAMERA_CYCLE)]
+            scene.shot_type_camera_movement = camera
+            subject = scene.exact_visual_subject.strip() or scene.visual_query.strip()
+            scene.exact_visual_subject = subject
+            scene.generator_prompt = (
+                f"Literal depiction of: {scene.narration.strip()} Subject: {subject}. "
+                f"Visible action and context: {scene.visual_query.strip()}. Shot: {camera}. "
+                f"Lighting: {scene.camera_and_lighting.strip() or 'physically accurate documentary lighting'}. "
+                f"Vertical {aspect} composition, realistic materials and physics, no unrelated objects, "
+                "no logos, no captions, no text overlay."
+            )
+        plan.visual_queries = [scene.visual_query for scene in plan.scenes]
+        plan.direct_paste_script = "\n\n".join(
+            f"[Scene {index + 1}: {scene.generator_prompt}] {scene.narration.strip()}"
+            for index, scene in enumerate(plan.scenes)
+        )
+        plan.batch_prompts = [
+            f"{scene.generator_prompt} {grades[index % len(grades)]} documentary color grade --ar {aspect}"
+            for index, scene in enumerate(plan.scenes)
+        ]
         return plan
 
     def choose_topic(self, candidates: list[TopicCandidate]) -> TopicCandidate:
