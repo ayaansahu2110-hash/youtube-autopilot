@@ -90,12 +90,29 @@ jobs:
           pathlib.Path('secrets/youtube_token.json').write_bytes(base64.b64decode(os.environ['YOUTUBE_TOKEN_B64']))
           PY
 
-      - name: Produce scheduled videos
+      - name: Produce scheduled videos with retry
         if: env.READY == 'true'
-        run: python -m autopilot.cli daily --live --slot "$RUN_SLOT"
+        shell: bash
+        run: |
+          set +e
+          for attempt in 1 2 3; do
+            echo "Production attempt $attempt of 3 for slot: $RUN_SLOT"
+            python -m autopilot.cli daily --live --slot "$RUN_SLOT"
+            code=$?
+            if [ "$code" -eq 0 ]; then
+              echo "Production completed successfully on attempt $attempt."
+              exit 0
+            fi
+            if [ "$attempt" -lt 3 ]; then
+              echo "Attempt $attempt failed; retrying after 20 seconds with fresh model output."
+              sleep 20
+            fi
+          done
+          echo "All production attempts failed."
+          exit 1
 
       - name: Persist topic, analytics and learning history
-        if: env.READY == 'true'
+        if: always() && env.READY == 'true'
         shell: bash
         run: |
           git config user.name "youtube-autopilot-bot"
@@ -103,6 +120,7 @@ jobs:
           git add state/history.json state/learning.json 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "chore: update autopilot learning history [skip ci]"
+            git pull --rebase origin main
             git push
           fi
 
