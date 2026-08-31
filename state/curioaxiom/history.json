@@ -28,6 +28,15 @@
       "script_preview": "We once viewed Mars as a cold, geologically dead desert. But deep beneath the flat plains of Elysium Planitia... ...an ultra-sensitive robotic ear detected something unexpected. The ground was trembling. Not from sudden, violent asteroid impacts... ...but from continuous, gentle shudders. These mild rumbles originated hundreds of miles away. How could a world with no active plate tectonics... ...be so seismically. In its very first year of. ...the lander's SEIS instrument recorded over four hundred and fifty. Scientists determined that the vast majority are likely actual. ...rather than mere d",
       "created_at": "2026-08-30T09:56:16.166510+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "-WXARpXcqL4",
+      "topic": "Nancy Grace Roman Space Telescope",
+      "title": "How NASA Repurposed a Spy Satellite",
+      "format": "short",
+      "script_preview": "How did a classified Cold War-era spy satellite end up as NASA's next. In 2012, the National Reconnaissance Office gifted NASA an unused, Hubble-sized optical system sitting. NASA repurposed this defense hardware, naming it after Nancy Grace Roman, the. This new telescope will capture a field of view at least one hundred times larger than Hubble's. With this massive panoramic reach, Roman is designed to measure light from up to a billion. To find hidden worlds, its specialized internal coronagraph will block blinding starlight to. From its planned orbit one million miles from Earth, Roman will",
+      "created_at": "2026-08-31T03:45:13.165343+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -50,6 +59,12 @@
       "title": "What Is Shaking Inside Mars?",
       "format": "short",
       "created_at": "2026-08-30T09:56:16.166510+00:00"
+    },
+    {
+      "topic": "Nancy Grace Roman Space Telescope",
+      "title": "How NASA Repurposed a Spy Satellite",
+      "format": "short",
+      "created_at": "2026-08-31T03:45:13.165343+00:00"
     }
   ]
 }
