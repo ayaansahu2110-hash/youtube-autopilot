@@ -77,6 +77,15 @@
       "script_preview": "Instead of waiting minutes for an AI video render, a new model generates playable shots in three seconds. MiniMax H3 Max on fal.ai turns text prompts or reference images into 768p clips faster than real-time. You type a shot description, click generate, and the rendered clip begins playback almost instantly. For video editors, this shifts AI generation from slow batch queuing into live, interactive shot prototyping. You can test it with zero sign-up, or log in to get fifteen free video generations every day. The limitation is native output maxes out at 768p, requiring an upscaler like FlashVSR",
       "created_at": "2026-08-31T06:42:32.777474+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "tQg49m8Gfuk",
+      "topic": "Show HN: Free, Fast Screenshot App for macOS with One-Click Screenshot Sharing",
+      "title": "Stop Saving Mac Screenshots to Your Desktop",
+      "format": "short",
+      "script_preview": "If you're constantly blurring API keys, dragging arrows, and recording separate video guides for your team, your Mac's default screenshot tool is wasting your time. A new free utility called Seenshot consolidates this entire workflow into a single keyboard shortcut. Imagine you're a developer sending a bug report. Press Command-Shift-2, select the buggy UI, and use the native editor to instantly blur sensitive user data. Instead of typing instructions, you can highlight elements with step-by-step numbers or inject a webcam selfie in one click. Once you're done, Seenshot generates a secure web ",
+      "created_at": "2026-08-31T12:47:18.346367+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -133,6 +142,12 @@
       "title": "AI Video in 3 Seconds: MiniMax H3 Max Workflow",
       "format": "short",
       "created_at": "2026-08-31T06:42:32.777474+00:00"
+    },
+    {
+      "topic": "Show HN: Free, Fast Screenshot App for macOS with One-Click Screenshot Sharing",
+      "title": "Stop Saving Mac Screenshots to Your Desktop",
+      "format": "short",
+      "created_at": "2026-08-31T12:47:18.346367+00:00"
     }
   ]
 }
