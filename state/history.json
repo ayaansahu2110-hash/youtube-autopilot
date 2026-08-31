@@ -68,6 +68,15 @@
       "script_preview": "Instead of manually exporting database tables to analyze them with AI, you can now let local agents query and chart your SQL databases directly. DataZen does this by running a built-in Model Context Protocol, or MCP, server inside a local-first desktop client. To generate a daily sales report, you safely connect your local database using AES-encrypted OS keychain credentials. DataZen's built-in MCP server exposes your schemas and EXPLAIN analyses directly to external agents like Claude or Cursor. The agent executes the query, builds visual workflow loops, and automatically outputs PNG or SVG c",
       "created_at": "2026-08-30T12:39:38.882975+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "PjLuT6jX5jQ",
+      "topic": "Faster than real-time video generation with #1 quality model",
+      "title": "AI Video in 3 Seconds: MiniMax H3 Max Workflow",
+      "format": "short",
+      "script_preview": "Instead of waiting minutes for an AI video render, a new model generates playable shots in three seconds. MiniMax H3 Max on fal.ai turns text prompts or reference images into 768p clips faster than real-time. You type a shot description, click generate, and the rendered clip begins playback almost instantly. For video editors, this shifts AI generation from slow batch queuing into live, interactive shot prototyping. You can test it with zero sign-up, or log in to get fifteen free video generations every day. The limitation is native output maxes out at 768p, requiring an upscaler like FlashVSR",
+      "created_at": "2026-08-31T06:42:32.777474+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -118,6 +127,12 @@
       "title": "Automate Databases with AI Agents: DataZen Local Client",
       "format": "short",
       "created_at": "2026-08-30T12:39:38.882975+00:00"
+    },
+    {
+      "topic": "Faster than real-time video generation with #1 quality model",
+      "title": "AI Video in 3 Seconds: MiniMax H3 Max Workflow",
+      "format": "short",
+      "created_at": "2026-08-31T06:42:32.777474+00:00"
     }
   ]
 }
