@@ -7,8 +7,18 @@
       "format": "unknown",
       "script_preview": "",
       "created_at": "2026-08-30T06:36:07Z",
-      "analytics": {},
-      "source": "youtube_sync"
+      "analytics": {
+        "views": 49.0,
+        "estimatedMinutesWatched": 11.0,
+        "averageViewDuration": 17.0,
+        "averageViewPercentage": 34.37,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-09-01T13:37:56.567086+00:00"
     },
     {
       "video_id": "_sd7bLRor_o",
@@ -36,6 +46,15 @@
       "format": "short",
       "script_preview": "How did a classified Cold War-era spy satellite end up as NASA's next. In 2012, the National Reconnaissance Office gifted NASA an unused, Hubble-sized optical system sitting. NASA repurposed this defense hardware, naming it after Nancy Grace Roman, the. This new telescope will capture a field of view at least one hundred times larger than Hubble's. With this massive panoramic reach, Roman is designed to measure light from up to a billion. To find hidden worlds, its specialized internal coronagraph will block blinding starlight to. From its planned orbit one million miles from Earth, Roman will",
       "created_at": "2026-08-31T03:45:13.165343+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "EeviDSBWxZ8",
+      "topic": "Roman Science",
+      "title": "Why NASA's Next Giant Mirror Changes Everything",
+      "format": "short",
+      "script_preview": "How do you map the invisible universe... ...when our best space telescopes look through a straw? While Hubble captures tiny, highly detailed cosmic slivers. ...solving the puzzle of dark energy driving the universe's expansion... ...requires a widescreen view. Enter the Nancy Grace Roman Space Telescope. Assembled in ultra-sterile cleanrooms to protect its delicate optics. ...its primary mirror matches Hubble’s size... ...but is designed to capture a field of view one hundred times larger. To detect hidden exoplanets, Roman carries. —a highly sensitive coronagraph that blocks blinding. ...to d",
+      "created_at": "2026-09-01T13:46:02.071086+00:00",
       "analytics": {}
     }
   ],
@@ -65,6 +84,12 @@
       "title": "How NASA Repurposed a Spy Satellite",
       "format": "short",
       "created_at": "2026-08-31T03:45:13.165343+00:00"
+    },
+    {
+      "topic": "Roman Science",
+      "title": "Why NASA's Next Giant Mirror Changes Everything",
+      "format": "short",
+      "created_at": "2026-09-01T13:46:02.071086+00:00"
     }
   ]
 }
