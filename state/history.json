@@ -7,8 +7,18 @@
       "format": "unknown",
       "script_preview": "",
       "created_at": "2026-08-29T06:59:52Z",
-      "analytics": {},
-      "source": "youtube_sync"
+      "analytics": {
+        "views": 197.0,
+        "estimatedMinutesWatched": 24.0,
+        "averageViewDuration": 16.0,
+        "averageViewPercentage": 37.06,
+        "likes": 5.0,
+        "comments": 5.0,
+        "shares": 2.0,
+        "subscribersGained": 6.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-09-01T11:59:20.782174+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -17,8 +27,18 @@
       "format": "unknown",
       "script_preview": "",
       "created_at": "2026-08-29T07:43:12Z",
-      "analytics": {},
-      "source": "youtube_sync"
+      "analytics": {
+        "views": 31.0,
+        "estimatedMinutesWatched": 20.0,
+        "averageViewDuration": 61.0,
+        "averageViewPercentage": 10.64,
+        "likes": 2.0,
+        "comments": 2.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-09-01T11:59:20.782727+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -27,8 +47,18 @@
       "format": "unknown",
       "script_preview": "",
       "created_at": "2026-08-29T12:39:19Z",
-      "analytics": {},
-      "source": "youtube_sync"
+      "analytics": {
+        "views": 0.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-09-01T11:59:20.783450+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -37,8 +67,18 @@
       "format": "unknown",
       "script_preview": "",
       "created_at": "2026-08-29T20:03:55Z",
-      "analytics": {},
-      "source": "youtube_sync"
+      "analytics": {
+        "views": 5.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.18,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-09-01T11:59:20.783130+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -85,6 +125,15 @@
       "format": "short",
       "script_preview": "If you're constantly blurring API keys, dragging arrows, and recording separate video guides for your team, your Mac's default screenshot tool is wasting your time. A new free utility called Seenshot consolidates this entire workflow into a single keyboard shortcut. Imagine you're a developer sending a bug report. Press Command-Shift-2, select the buggy UI, and use the native editor to instantly blur sensitive user data. Instead of typing instructions, you can highlight elements with step-by-step numbers or inject a webcam selfie in one click. Once you're done, Seenshot generates a secure web ",
       "created_at": "2026-08-31T12:47:18.346367+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "kHhLmTEYmWM",
+      "topic": "Self-Hosting on the Dark Web",
+      "title": "How to Self-Host on the Dark Web",
+      "format": "short",
+      "script_preview": "You can host a secure site with zero public IP exposure, no registrar fees, and no SSL certificate authority. By running a local server as a Tor hidden service, your site is accessed via an address derived from its public key. To start, edit `/etc/tor/torrc` to define your dedicated hidden service path. The catch: this directory must not be your web root. Tor insists on owning this folder. Assign it to the `debian-tor` user and set `chmod 700` or Tor won't launch. Once configured, Tor generates your hostname and forwards onion port 80 traffic to your local port 8080. Next, write your Nginx blo",
+      "created_at": "2026-09-01T12:03:35.161778+00:00",
       "analytics": {}
     }
   ],
@@ -148,6 +197,12 @@
       "title": "Stop Saving Mac Screenshots to Your Desktop",
       "format": "short",
       "created_at": "2026-08-31T12:47:18.346367+00:00"
+    },
+    {
+      "topic": "Self-Hosting on the Dark Web",
+      "title": "How to Self-Host on the Dark Web",
+      "format": "short",
+      "created_at": "2026-09-01T12:03:35.161778+00:00"
     }
   ]
 }
