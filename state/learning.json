@@ -1,48 +1,48 @@
 {
-  "generated_at": "2026-09-01T16:55:42.548922+00:00",
+  "generated_at": "2026-09-02T11:37:09.712598+00:00",
   "competitors": [
     {
       "channel": "Matt Wolfe",
       "subscribers": 1000000,
-      "channel_views": 78492514,
+      "channel_views": 78526192,
       "video_count": 779,
       "high_performing_recent_videos": [
         {
           "title": "AI News: OpenAI Made a Massive Move Against NVIDIA",
-          "views": 122023,
-          "likes": 3210,
-          "comments": 419,
+          "views": 127086,
+          "likes": 3280,
+          "comments": 397,
           "published_at": "2026-08-28T15:00:09Z",
           "description_excerpt": "Here's the AI news you probably missed this week. Download the Codex app and try Sites here: https://chatgpt.com/download/?utm_source=creator&utm_campaign=youtube&utm_content=partnership-mattwolfe\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://"
         },
         {
           "title": "I Built a FREE App That Runs Your Entire Business",
-          "views": 86059,
-          "likes": 2214,
-          "comments": 166,
+          "views": 89390,
+          "likes": 2249,
+          "comments": 167,
           "published_at": "2026-08-26T22:36:30Z",
           "description_excerpt": "I vibe coded a free productivity app that keeps my entire business in one place, and I built it so anyone can download and customize it. I already use an earlier version of this dashboard every day, but this time I rebuilt it from scratch to see how far I could push Codex on a genuinely useful business tool. I used Codex inside ChatGPT for the init"
         },
         {
           "title": "This AI Creates Insane 3D Worlds",
-          "views": 20182,
-          "likes": 990,
+          "views": 20276,
+          "likes": 991,
           "comments": 43,
           "published_at": "2026-08-24T12:18:26Z",
           "description_excerpt": "This might be one of the coolest AI models I’ve seen all year.\n\nTencent’s new WorldClaw model can generate an entire editable 3D world from a prompt — not just the environment, but every individual object inside it.\n\nTrees, buildings, carts, lamp posts, terrain, they’re all generated as separate 3D assets you can actually work with.\n\nUnder the hood"
         },
         {
           "title": "This Company Will Buy Your AI Training Data",
-          "views": 15574,
-          "likes": 614,
-          "comments": 41,
+          "views": 15723,
+          "likes": 621,
+          "comments": 42,
           "published_at": "2026-08-27T13:06:18Z",
           "description_excerpt": "AI companies want your data so badly that we may be entering the era where they just start paying you for it. 👀\n\nI came across a company called Verb that lets you choose what data you’re willing to share, block certain companies, and even set your own price.\n\nAnd I think this could become a much bigger trend.\n\nAs people get more protective of their"
         },
         {
           "title": "How To EASILY Run Local AI Models",
-          "views": 14374,
-          "likes": 369,
+          "views": 14714,
+          "likes": 377,
           "comments": 13,
           "published_at": "2026-08-26T13:22:25Z",
           "description_excerpt": "You don’t need a massive GPU server to run powerful AI models locally anymore.\n\nModels like Qwen 3.8 27B can run on consumer-grade computers, and LM Studio makes the whole process ridiculously easy.\n\nYou just search for the model → choose the highest-quality quantization your computer can handle → download it → start chatting.\n\nLM Studio will even "
@@ -51,94 +51,94 @@
     },
     {
       "channel": "Nate Herk | AI Automation",
-      "subscribers": 974000,
-      "channel_views": 48487689,
-      "video_count": 492,
+      "subscribers": 976000,
+      "channel_views": 48613133,
+      "video_count": 494,
       "high_performing_recent_videos": [
         {
           "title": "Build & Sell Grok Bots (2 Hour Course)",
-          "views": 87035,
-          "likes": 1231,
-          "comments": 79,
+          "views": 106973,
+          "likes": 1439,
+          "comments": 87,
           "published_at": "2026-08-31T02:59:04Z",
           "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=grok-bot-2-hour-course&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https"
         },
         {
+          "title": "Fable 5.1 Just Dropped. It Looks Unreal.",
+          "views": 80974,
+          "likes": 935,
+          "comments": 114,
+          "published_at": "2026-09-01T18:49:57Z",
+          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=fable-5.1&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://www.hostin"
+        },
+        {
+          "title": "Every Grok Bot Concept Explained for Normal People",
+          "views": 71348,
+          "likes": 1065,
+          "comments": 72,
+          "published_at": "2026-09-01T01:57:42Z",
+          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=grok-bot-25-concepts&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https:/"
+        },
+        {
           "title": "I Tested Claude Code vs. Codex on Design. It Wasn't Even Close.",
-          "views": 64829,
-          "likes": 836,
+          "views": 67044,
+          "likes": 855,
           "comments": 128,
           "published_at": "2026-08-26T12:38:38Z",
           "description_excerpt": "Try Granola for FREE today: https://www.granola.ai/?via=nate-herk\nMy playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=claude-vs-codex-design&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get."
         },
         {
           "title": "I Cloned Calendly and Now It’s Free Forever",
-          "views": 54216,
-          "likes": 546,
-          "comments": 45,
+          "views": 55755,
+          "likes": 563,
+          "comments": 47,
           "published_at": "2026-08-28T12:50:33Z",
           "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=snagtime-app&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://www.hos"
-        },
-        {
-          "title": "Set Up a Personal Hermes in 14 Mins (no VPS or mac mini)",
-          "views": 47589,
-          "likes": 458,
-          "comments": 48,
-          "published_at": "2026-08-27T12:45:52Z",
-          "description_excerpt": "10% OFF Hermes w/ Code NATEHERK: https://hostinger.com/natehermes10\nMy playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=hermes-setup-managed&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get."
-        },
-        {
-          "title": "Every Grok Bot Concept Explained for Normal People",
-          "views": 37445,
-          "likes": 644,
-          "comments": 47,
-          "published_at": "2026-09-01T01:57:42Z",
-          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=grok-bot-25-concepts&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https:/"
         }
       ]
     },
     {
       "channel": "AI Search",
       "subscribers": 724000,
-      "channel_views": 65140067,
+      "channel_views": 65190513,
       "video_count": 477,
       "high_performing_recent_videos": [
         {
           "title": "Ox Alpha reveal, realtime Minimax, Qwen Next, Hy4, robot olympics: AI NEWS",
-          "views": 248746,
-          "likes": 4105,
-          "comments": 398,
+          "views": 256488,
+          "likes": 4169,
+          "comments": 405,
           "published_at": "2026-08-30T03:30:59Z",
           "description_excerpt": "HUGE AI NEWS: GLM 5.3 Flash, Qwen 3.8 Flash Next, Minimax FastH3, Hy4 #ai #ainews #aitools #aivideo #agi Thanks to our sponsor Luma. Try it today https://lumalabs.ai/aisearch-aug\n\nBlock 3D https://alexandertsui.github.io/block3d/\nOne Video One World https://onevideooneworld.github.io/\nFixAnything https://fix-anything.github.io/\nGoogle PPE https://r"
         },
         {
           "title": "New Deepseek, GLM 5.3, Grok 4.6, LTX 2.5, Qwen 3.8, Gemini 3.7: AI NEWS",
-          "views": 147335,
-          "likes": 5005,
-          "comments": 503,
+          "views": 147655,
+          "likes": 5006,
+          "comments": 504,
           "published_at": "2026-08-16T03:32:29Z",
           "description_excerpt": "HUGE AI NEWS: Deepseek v4 0813, Qwen 3.8 27B, GLM 5.3, Grok 4.6, LTX 2.5, GPT Ultrafast & more #ai #ainews #aitools #aivideo #agi Thanks to our sponsor Genspark. Get 10% off the Genspark SecondBrain Note: https://shop.genspark.ai/s/theaisearch @GensparkProduct \n#SecondBrain #SecondBrainNote #Genspark\n\nJoyAI video edit https://github.com/jd-opensour"
         },
         {
           "title": "The BEST local AI video generator just got BETTER!",
-          "views": 146116,
-          "likes": 5192,
+          "views": 147265,
+          "likes": 5200,
           "comments": 560,
           "published_at": "2026-08-12T03:30:34Z",
           "description_excerpt": "Minimax H3 advanced tutorial. Minimax H3 with low VRAM, turbo loras, live preview, etc. #ai #aitools #aivideo #minimax #comfyui \n\nThanks to our sponsor Higgsfield. Try it today https://higgsfield.ai/s/theaisearch-XuZcwW\n\nPart 1 Minimax H3 installation tutorial: https://youtu.be/8HutJ9W5pTg \nMinimax vs Seedance 2.5: https://youtu.be/Vpvne2istKg\n\nRes"
         },
         {
           "title": "New #1 open source AI has reached FRONTIER",
-          "views": 139984,
-          "likes": 3956,
-          "comments": 495,
+          "views": 140591,
+          "likes": 3962,
+          "comments": 496,
           "published_at": "2026-08-17T03:27:46Z",
           "description_excerpt": "GLM 5.3 review. New top open source LLM. #ai #aitools #ainews #agi \nThanks to our sponsor Hubspot. Check out the AI model sheet cheat: https://clickhubspot.com/891767 \n\nGet 10% off Z Coding: https://z.ai/subscribe?im_ref=08823wwcsxyZRplUtW2z3Wn7UkuTChQrhyqt1M0&sharedid=&irpid=4934152&irgwc=1&afsrc=1&ic=JQJSQOIM0W\n\nFull song: https://x.com/aisearchi"
         },
         {
           "title": "The FASTEST local AI video generator",
-          "views": 130248,
-          "likes": 3028,
+          "views": 131535,
+          "likes": 3042,
           "comments": 500,
           "published_at": "2026-08-18T03:30:45Z",
           "description_excerpt": "LTX 2.5 installation tutorial. Free open source AI video generator. How to use LTX 2.5 in ComfyUI #ai #aivideo #aitools #agi\n\nhttps://ltx.io/model/ltx-2-5\n\nMinimax H3 vs LTX 2.5 https://youtu.be/62HSUsS0ypo?t=880\nComfy workflow https://docs.comfy.org/tutorials/video/ltx/ltx-2-5\nLTX models https://huggingface.co/Lightricks/LTX-2.5\nMinimax + LTX upsc"
@@ -152,10 +152,10 @@
       "title": "Bypass 2FA Walls with Self-Hosted Browser Automation",
       "format": "unknown",
       "metrics": {
-        "views": 197.0,
-        "estimatedMinutesWatched": 24.0,
-        "averageViewDuration": 16.0,
-        "averageViewPercentage": 37.06,
+        "views": 213.0,
+        "estimatedMinutesWatched": 26.0,
+        "averageViewDuration": 17.0,
+        "averageViewPercentage": 38.94,
         "likes": 5.0,
         "comments": 5.0,
         "shares": 2.0,
@@ -166,10 +166,10 @@
       "title": "Puppetflow: The Self-Hosted Browser Automation That Handles 2FA",
       "format": "unknown",
       "metrics": {
-        "views": 31.0,
-        "estimatedMinutesWatched": 20.0,
-        "averageViewDuration": 61.0,
-        "averageViewPercentage": 10.64,
+        "views": 45.0,
+        "estimatedMinutesWatched": 21.0,
+        "averageViewDuration": 57.0,
+        "averageViewPercentage": 9.92,
         "likes": 2.0,
         "comments": 2.0,
         "shares": 0.0,
@@ -180,11 +180,11 @@
       "title": "Build PowerPoint Decks Locally with SlideX and MDX",
       "format": "unknown",
       "metrics": {
-        "views": 0.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 0.0,
-        "averageViewPercentage": 0.0,
-        "likes": 0.0,
+        "views": 253.0,
+        "estimatedMinutesWatched": 46.0,
+        "averageViewDuration": 32.0,
+        "averageViewPercentage": 62.41,
+        "likes": 3.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
@@ -194,10 +194,66 @@
       "title": "Stop Pasting SQL Into AI Chatbots",
       "format": "unknown",
       "metrics": {
-        "views": 5.0,
+        "views": 134.0,
+        "estimatedMinutesWatched": 14.0,
+        "averageViewDuration": 18.0,
+        "averageViewPercentage": 32.75,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Stop syncing your thoughts: Local-first AI notebooks",
+      "format": "unknown",
+      "metrics": {
+        "views": 13.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 24.0,
+        "averageViewPercentage": 45.76,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Query Databases Safely with Local AI Agents",
+      "format": "unknown",
+      "metrics": {
+        "views": 22.0,
+        "estimatedMinutesWatched": 4.0,
+        "averageViewDuration": 20.0,
+        "averageViewPercentage": 36.11,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 1.0
+      }
+    },
+    {
+      "title": "Automate Databases with AI Agents: DataZen Local Client",
+      "format": "short",
+      "metrics": {
+        "views": 9.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 16.0,
+        "averageViewPercentage": 27.02,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "AI Video in 3 Seconds: MiniMax H3 Max Workflow",
+      "format": "short",
+      "metrics": {
+        "views": 6.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 0.0,
-        "averageViewPercentage": 0.18,
+        "averageViewDuration": 9.0,
+        "averageViewPercentage": 15.810000000000002,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
