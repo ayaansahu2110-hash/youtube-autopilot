@@ -56,6 +56,15 @@
       "script_preview": "How do you map the invisible universe... ...when our best space telescopes look through a straw? While Hubble captures tiny, highly detailed cosmic slivers. ...solving the puzzle of dark energy driving the universe's expansion... ...requires a widescreen view. Enter the Nancy Grace Roman Space Telescope. Assembled in ultra-sterile cleanrooms to protect its delicate optics. ...its primary mirror matches Hubble’s size... ...but is designed to capture a field of view one hundred times larger. To detect hidden exoplanets, Roman carries. —a highly sensitive coronagraph that blocks blinding. ...to d",
       "created_at": "2026-09-01T13:46:02.071086+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "VwzE41erxjY",
+      "topic": "Why Venus is hotter than Mercury",
+      "title": "Why Venus is Hotter Than Mercury",
+      "format": "short",
+      "script_preview": "Mercury directly hugs the Sun's intense furnace. Yet, it is not our hottest planet. That title belongs to Venus, much further out. While airless Mercury lets solar heat instantly escape back into the void, Venus is wrapped in a crushing atmosphere ninety-three times heavier than Earth's. Strangely, Venus's thick sulfuric acid clouds reflect eighty percent of incoming sunlight back into space. Only ten percent of the Sun's radiation reaches the rocky surface. Once inside, that tiny fraction is completely trapped by greenhouse gases. This runaway greenhouse engine bakes the ground to a lead-melt",
+      "created_at": "2026-09-02T14:48:05.075187+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -90,6 +99,12 @@
       "title": "Why NASA's Next Giant Mirror Changes Everything",
       "format": "short",
       "created_at": "2026-09-01T13:46:02.071086+00:00"
+    },
+    {
+      "topic": "Why Venus is hotter than Mercury",
+      "title": "Why Venus is Hotter Than Mercury",
+      "format": "short",
+      "created_at": "2026-09-02T14:48:05.075187+00:00"
     }
   ]
 }
