@@ -274,6 +274,16 @@ class AutopilotPipeline:
                     "https://ntrs.nasa.gov/citations/19930081173",
                     "https://www.si.edu/object/report-comet-accident-investigation-royal-aircraft-establishment-farnborough-hants%3Asiris_sil_170439",
                 ]
+            if self.settings.channel_profile == "curioaxiom" and "venus" in lowered:
+                source_urls = [
+                    "https://science.nasa.gov/venus/venus-facts/",
+                    "https://www.esa.int/Science_Exploration/Space_Science/Venus_Express/Greenhouse_effect_clouds_and_winds",
+                ]
+            elif self.settings.channel_profile == "curioaxiom" and "astronaut" in lowered and "float" in lowered:
+                source_urls = [
+                    "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-microgravity-grades-5-8/",
+                    "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Research/Falling_upwards_how_to_create_microgravity",
+                ]
             candidate = TopicCandidate(
                 title=topic,
                 score=60,

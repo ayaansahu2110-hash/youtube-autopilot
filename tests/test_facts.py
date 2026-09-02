@@ -171,7 +171,10 @@ def test_fact_short_duration_guard_preserves_all_scenes() -> None:
         thumbnail_brief="Mars cutaway",
         scenes=scenes,
     )
-    FactScriptPlanner._fit_short_narration(plan, target_words=165)
+    planner = FactScriptPlanner(Settings(channel_profile="curioaxiom"))
+    planner._generate_json = lambda prompt: {"narrations": ["The instrument measured a seismic wave."] * 22}
+    planner._fit_short_narration(plan, target_words=145)
+    assert all(scene.narration == "The instrument measured a seismic wave." for scene in plan.scenes)
     assert len(plan.script.split()) <= 165
     assert len(plan.scenes) == 22
     assert all(len(scene.narration.split()) >= 3 for scene in plan.scenes)

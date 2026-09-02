@@ -215,37 +215,31 @@ class FactScriptPlanner(PremiumScriptPlanner):
         ]
         return plan
 
-    @staticmethod
-    def _fit_short_narration(plan: VideoPlan, *, target_words: int) -> None:
-        """Keep every story beat while enforcing a predictable Shorts duration."""
-        scene_words = [scene.narration.split() for scene in plan.scenes]
-        total = sum(len(words) for words in scene_words)
-        if total <= target_words:
+    def _fit_short_narration(self, plan: VideoPlan, *, target_words: int) -> None:
+        """Rewrite coherently; never achieve duration by cutting off sentences."""
+        original = [scene.narration for scene in plan.scenes]
+        if sum(len(line.split()) for line in original) <= target_words:
             return
-        minimum = 3
-        budgets = [
-            max(minimum, int(target_words * len(words) / max(1, total)))
-            for words in scene_words
-        ]
-        while sum(budgets) < target_words:
-            index = max(
-                range(len(budgets)),
-                key=lambda item: len(scene_words[item]) - budgets[item],
-            )
-            if budgets[index] >= len(scene_words[index]):
-                break
-            budgets[index] += 1
-        while sum(budgets) > target_words:
-            index = max(range(len(budgets)), key=lambda item: budgets[item] - minimum)
-            if budgets[index] <= minimum:
-                break
-            budgets[index] -= 1
-        for scene, words, budget in zip(plan.scenes, scene_words, budgets):
-            shortened = " ".join(words[:budget]).rstrip(",;:-")
-            if shortened and shortened[-1] not in ".!?":
-                shortened += "."
-            scene.narration = shortened
-        plan.script = " ".join(scene.narration for scene in plan.scenes)
+        prompt = (
+            f"Rewrite this narration into 95-{target_words} total spoken words. "
+            "Preserve every factual claim, qualification, scene subject and scene order. "
+            "Use grammatical sentences with coherent transitions; never truncate a thought. "
+            "A sentence may span adjacent scenes. Do not add claims. Return JSON only: "
+            '{"narrations": [one nonempty string per original scene]}. Original scenes: '
+            + json.dumps(original)
+        )
+        for attempt in range(2):
+            data = self._generate_json(prompt)
+            lines = data.get("narrations")
+            if (isinstance(lines, list) and len(lines) == len(original)
+                    and all(isinstance(line, str) and line.strip() for line in lines)
+                    and 90 <= sum(len(line.split()) for line in lines) <= target_words):
+                for scene, line in zip(plan.scenes, lines):
+                    scene.narration = line.strip()
+                plan.script = " ".join(scene.narration for scene in plan.scenes)
+                return
+            prompt += " Your previous response failed length/schema checks. Follow them exactly."
+        raise RuntimeError("Short narration rewrite failed; refusing to truncate or upload it.")
 
     def choose_topic(self, candidates: list[TopicCandidate]) -> TopicCandidate:
         if not candidates or not self.settings.llm_configured:
