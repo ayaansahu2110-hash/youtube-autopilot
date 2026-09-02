@@ -18,7 +18,7 @@
         "subscribersGained": 6.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T11:37:09.710162+00:00"
+      "analytics_updated_at": "2026-09-02T16:46:19.828466+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T11:37:09.710858+00:00"
+      "analytics_updated_at": "2026-09-02T16:46:19.829123+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T11:37:09.709560+00:00"
+      "analytics_updated_at": "2026-09-02T16:46:19.827990+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T11:37:09.710523+00:00"
+      "analytics_updated_at": "2026-09-02T16:46:19.828884+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T11:37:09.711543+00:00"
+      "analytics_updated_at": "2026-09-02T16:46:19.829955+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T11:37:09.711214+00:00"
+      "analytics_updated_at": "2026-09-02T16:46:19.829522+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -137,7 +137,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-02T11:37:09.711880+00:00"
+      "analytics_updated_at": "2026-09-02T16:46:19.830174+00:00"
     },
     {
       "video_id": "PjLuT6jX5jQ",
@@ -156,7 +156,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-02T11:37:09.712239+00:00"
+      "analytics_updated_at": "2026-09-02T16:46:19.830400+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -183,6 +183,24 @@
       "format": "short",
       "script_preview": "You can now run automated TikTok posts on physical iPhones, controlled entirely from your web browser. An open-source tool called Handler turns spare iOS devices into a self-hosted local phone farm. Once connected, you get a live interactive stream to click-to-tap, drag-to-swipe, and upload video files. The tasks are managed by a durable Docker-based Postgres queue, preserving your queue even through crashes. But note: you must compile the agent from a graphical macOS Terminal session—not a bare SSH shell. This is because the local code-signing process requires direct access to your Mac's logi",
       "created_at": "2026-09-02T11:45:35.036788+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "skv-4s_ARyo",
+      "topic": "Show HN: ToolJet – Claude Code and Codex build internal tools, no codegen",
+      "title": "Stop AI Codegen: Build Internal Tools via MCP",
+      "format": "short",
+      "script_preview": "Stop letting AI agents bloat your repo with unmaintainable code dumps for internal tools. When Claude Code or Cursor write raw scripts, you’re stuck with shadow IT that breaks on every library update. ToolJet has solved this by shipping an MCP server that bypasses raw code entirely. Instead of emitting functions, the agent calls ToolJet’s visual component contracts. You type a prompt, and the agent constructs actual application nodes, queries, and data bindings. It hooks into 100+ native databases or ToolJet's built-in Postgres table directly. Because this happens inside the platform, you inhe",
+      "created_at": "2026-09-02T16:52:30.443067+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "LrEv9cky9UI",
+      "topic": "HomeOS – A self-hosted family dashboard for a kitchen touchscreen",
+      "title": "Why Your Smart Home Needs a Kitchen Touchscreen Dashboard",
+      "format": "long",
+      "script_preview": "What if the most frustrating part of building a modern smart home isn't configuring the automation protocols or buying the right sensors, but simply getting your family to actually look at the data? While tech enthusiasts spend countless hours building complex dashboards, the vast majority of that valuable household data remains locked away on individual phone screens, completely invisible to the rest of the family. When your family's critical calendars, daily tasks, and shared grocery lists are buried inside personal app accounts and private mobile devices, basic daily coordination inevitably",
+      "created_at": "2026-09-02T17:45:47.528432+00:00",
       "analytics": {}
     }
   ],
@@ -258,6 +276,18 @@
       "title": "Build a Physical iOS Phone Farm at Home",
       "format": "short",
       "created_at": "2026-09-02T11:45:35.036788+00:00"
+    },
+    {
+      "topic": "Show HN: ToolJet – Claude Code and Codex build internal tools, no codegen",
+      "title": "Stop AI Codegen: Build Internal Tools via MCP",
+      "format": "short",
+      "created_at": "2026-09-02T16:52:30.443067+00:00"
+    },
+    {
+      "topic": "HomeOS – A self-hosted family dashboard for a kitchen touchscreen",
+      "title": "Why Your Smart Home Needs a Kitchen Touchscreen Dashboard",
+      "format": "long",
+      "created_at": "2026-09-02T17:45:47.528432+00:00"
     }
   ]
 }
