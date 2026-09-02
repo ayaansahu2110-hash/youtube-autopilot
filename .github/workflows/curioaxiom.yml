@@ -95,7 +95,10 @@ jobs:
           pathlib.Path('secrets/client_secret.json').write_bytes(base64.b64decode(os.environ['YOUTUBE_CLIENT_SECRETS_B64']))
           pathlib.Path('secrets/youtube_token_curioaxiom.json').write_bytes(base64.b64decode(os.environ['YOUTUBE_TOKEN_B64']))
           PY
-      - name: Produce verified facts privately
+      - name: Verify CurioAxiom OAuth and channel identity
+        if: env.READY == 'true'
+        run: python -m autopilot.cli verify-youtube
+      - name: Produce verified facts (public Shorts)
         if: env.READY == 'true'
         shell: bash
         env:

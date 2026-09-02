@@ -1,8 +1,9 @@
 from pathlib import Path
+import pytest
 
 from autopilot.config import Settings
 from autopilot.cli import _settings_for_format
-from autopilot.facts import FactCategoryRouter, FactScriptPlanner, FactVerifier
+from autopilot.facts import FactCategoryRouter, FactScriptPlanner, FactTopicDiscovery, FactVerifier
 from autopilot.models import ResearchPack, ResearchSource, SceneBeat, TopicCandidate, VideoPlan
 from autopilot.models import VisualAsset
 from autopilot.render import FFmpegRenderer
@@ -174,3 +175,25 @@ def test_fact_short_duration_guard_preserves_all_scenes() -> None:
     assert len(plan.script.split()) <= 165
     assert len(plan.scenes) == 22
     assert all(len(scene.narration.split()) >= 3 for scene in plan.scenes)
+
+
+def test_no_unverified_fact_fallback(tmp_path: Path) -> None:
+    pipeline = AutopilotPipeline(Settings(channel_profile="curioaxiom", artifacts_dir=tmp_path))
+    candidate = TopicCandidate(title="Prompting is Not Programming", score=90, reason="news")
+    pipeline.discovery.discover = lambda: [candidate]
+    pipeline.planner.choose_topic = lambda candidates: candidate
+    pipeline.researcher.research = lambda candidate: ResearchPack(topic=candidate.title)
+    with pytest.raises(RuntimeError, match="No eligible facts topic"):
+        pipeline._candidate_with_research(None)
+
+
+def test_facts_fallback_uses_cached_official_feed(tmp_path: Path) -> None:
+    pipeline = AutopilotPipeline(Settings(channel_profile="curioaxiom", artifacts_dir=tmp_path))
+    calls = []
+    def feed(url):
+        calls.append(url)
+        return [{"title": "NASA science"}]
+    pipeline.discovery._rss_search = feed
+    assert pipeline.discovery._hacker_news("space") == [{"title": "NASA science"}]
+    pipeline.discovery._hacker_news("engineering")
+    assert calls == ["https://www.nasa.gov/feed/"]

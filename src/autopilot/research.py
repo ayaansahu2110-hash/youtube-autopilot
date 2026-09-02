@@ -26,6 +26,12 @@ class Researcher:
         seen_urls: set[str] = set()
         seen_publishers: set[str] = set()
 
+        # Preserve primary discovery evidence before news aggregators can fill
+        # the source budget with secondary coverage.
+        if self.settings.channel_profile == "curioaxiom":
+            for url in candidate.source_urls[:5]:
+                self._append_url_source(sources, seen_urls, seen_publishers, candidate.title, url)
+
         # Search more than one public news endpoint because hosted runners can
         # occasionally be rate-limited or blocked by an individual provider.
         for item in self._news_entries(candidate.title):
@@ -59,7 +65,7 @@ class Researcher:
         # A final public no-key fallback searches Hacker News for related recent
         # stories and then reads the linked original pages. This is discovery
         # evidence, not a substitute for factual verification.
-        if len(sources) < self.settings.min_research_sources:
+        if self.settings.channel_profile != "curioaxiom" and len(sources) < self.settings.min_research_sources:
             for item in self._hacker_news_entries(candidate.title):
                 self._append_entry(sources, seen_urls, seen_publishers, item)
                 if len(sources) >= 5:

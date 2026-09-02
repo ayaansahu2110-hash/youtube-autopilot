@@ -103,6 +103,13 @@ class FactTopicDiscovery(TopicDiscovery):
         super().__init__(settings, state)
         self.editorial = CurioAxiomEditorialSystem()
 
+    def _hacker_news(self, query: str) -> list[dict]:
+        # Facts discovery must not drift into software opinion posts when a
+        # news search is unavailable. Use an official science publisher instead.
+        if not hasattr(self, "_official_feed_cache"):
+            self._official_feed_cache = self._rss_search("https://www.nasa.gov/feed/")
+        return list(self._official_feed_cache)
+
     def _queries(self) -> list[str]:
         lanes = [
             "counterintuitive science discovery", "NASA surprising science",

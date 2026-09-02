@@ -322,7 +322,11 @@ class AutopilotPipeline:
                 ):
                     return candidate, research
             if best:
-                return best[1], best[2]
+                raise RuntimeError(
+                    "No eligible facts topic passed source verification. "
+                    "Generation and upload skipped; no unverified fallback selected. "
+                    f"Best candidate: {best[1].title}"
+                )
 
         best_candidate = preferred
         best_research = self.researcher.research(preferred)
