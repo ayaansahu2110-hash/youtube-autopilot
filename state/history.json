@@ -8,17 +8,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T06:59:52Z",
       "analytics": {
-        "views": 213.0,
-        "estimatedMinutesWatched": 26.0,
-        "averageViewDuration": 17.0,
-        "averageViewPercentage": 38.94,
+        "views": 230.0,
+        "estimatedMinutesWatched": 31.0,
+        "averageViewDuration": 19.0,
+        "averageViewPercentage": 43.21,
         "likes": 5.0,
         "comments": 5.0,
         "shares": 2.0,
         "subscribersGained": 6.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T16:46:19.828466+00:00"
+      "analytics_updated_at": "2026-09-03T11:35:47.001780+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -28,17 +28,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T07:43:12Z",
       "analytics": {
-        "views": 45.0,
-        "estimatedMinutesWatched": 21.0,
-        "averageViewDuration": 57.0,
-        "averageViewPercentage": 9.92,
+        "views": 86.0,
+        "estimatedMinutesWatched": 29.0,
+        "averageViewDuration": 54.0,
+        "averageViewPercentage": 9.31,
         "likes": 2.0,
         "comments": 2.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T16:46:19.829123+00:00"
+      "analytics_updated_at": "2026-09-03T11:35:47.003059+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -48,17 +48,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T12:39:19Z",
       "analytics": {
-        "views": 253.0,
+        "views": 256.0,
         "estimatedMinutesWatched": 46.0,
         "averageViewDuration": 32.0,
-        "averageViewPercentage": 62.41,
+        "averageViewPercentage": 62.09,
         "likes": 3.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T16:46:19.827990+00:00"
+      "analytics_updated_at": "2026-09-03T11:35:47.001143+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -68,17 +68,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T20:03:55Z",
       "analytics": {
-        "views": 134.0,
-        "estimatedMinutesWatched": 14.0,
+        "views": 147.0,
+        "estimatedMinutesWatched": 15.0,
         "averageViewDuration": 18.0,
-        "averageViewPercentage": 32.75,
+        "averageViewPercentage": 32.43,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T16:46:19.828884+00:00"
+      "analytics_updated_at": "2026-09-03T11:35:47.002229+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -88,17 +88,17 @@
       "script_preview": "",
       "created_at": "2026-08-30T06:43:54Z",
       "analytics": {
-        "views": 13.0,
-        "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 24.0,
-        "averageViewPercentage": 45.76,
+        "views": 14.0,
+        "estimatedMinutesWatched": 3.0,
+        "averageViewDuration": 27.0,
+        "averageViewPercentage": 51.13999999999999,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T16:46:19.829955+00:00"
+      "analytics_updated_at": "2026-09-03T11:35:47.004106+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -108,17 +108,17 @@
       "script_preview": "",
       "created_at": "2026-08-30T09:37:18Z",
       "analytics": {
-        "views": 22.0,
-        "estimatedMinutesWatched": 4.0,
+        "views": 25.0,
+        "estimatedMinutesWatched": 5.0,
         "averageViewDuration": 20.0,
-        "averageViewPercentage": 36.11,
+        "averageViewPercentage": 35.69,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T16:46:19.829522+00:00"
+      "analytics_updated_at": "2026-09-03T11:35:47.003677+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -128,8 +128,8 @@
       "script_preview": "Instead of manually exporting database tables to analyze them with AI, you can now let local agents query and chart your SQL databases directly. DataZen does this by running a built-in Model Context Protocol, or MCP, server inside a local-first desktop client. To generate a daily sales report, you safely connect your local database using AES-encrypted OS keychain credentials. DataZen's built-in MCP server exposes your schemas and EXPLAIN analyses directly to external agents like Claude or Cursor. The agent executes the query, builds visual workflow loops, and automatically outputs PNG or SVG c",
       "created_at": "2026-08-30T12:39:38.882975+00:00",
       "analytics": {
-        "views": 9.0,
-        "estimatedMinutesWatched": 1.0,
+        "views": 12.0,
+        "estimatedMinutesWatched": 2.0,
         "averageViewDuration": 16.0,
         "averageViewPercentage": 27.02,
         "likes": 0.0,
@@ -137,7 +137,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-02T16:46:19.830174+00:00"
+      "analytics_updated_at": "2026-09-03T11:35:47.004487+00:00"
     },
     {
       "video_id": "PjLuT6jX5jQ",
@@ -147,16 +147,16 @@
       "script_preview": "Instead of waiting minutes for an AI video render, a new model generates playable shots in three seconds. MiniMax H3 Max on fal.ai turns text prompts or reference images into 768p clips faster than real-time. You type a shot description, click generate, and the rendered clip begins playback almost instantly. For video editors, this shifts AI generation from slow batch queuing into live, interactive shot prototyping. You can test it with zero sign-up, or log in to get fifteen free video generations every day. The limitation is native output maxes out at 768p, requiring an upscaler like FlashVSR",
       "created_at": "2026-08-31T06:42:32.777474+00:00",
       "analytics": {
-        "views": 6.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 9.0,
-        "averageViewPercentage": 15.810000000000002,
-        "likes": 0.0,
-        "comments": 0.0,
+        "views": 112.0,
+        "estimatedMinutesWatched": 7.0,
+        "averageViewDuration": 16.0,
+        "averageViewPercentage": 28.000000000000004,
+        "likes": 3.0,
+        "comments": 1.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-02T16:46:19.830400+00:00"
+      "analytics_updated_at": "2026-09-03T11:35:47.002632+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -201,6 +201,15 @@
       "format": "long",
       "script_preview": "What if the most frustrating part of building a modern smart home isn't configuring the automation protocols or buying the right sensors, but simply getting your family to actually look at the data? While tech enthusiasts spend countless hours building complex dashboards, the vast majority of that valuable household data remains locked away on individual phone screens, completely invisible to the rest of the family. When your family's critical calendars, daily tasks, and shared grocery lists are buried inside personal app accounts and private mobile devices, basic daily coordination inevitably",
       "created_at": "2026-09-02T17:45:47.528432+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "q3uAkhUbHPo",
+      "topic": "Build your own self-hosted P2P search stack",
+      "title": "Build a Private P2P Search Stack with Docker",
+      "format": "short",
+      "script_preview": "Stop letting corporate algorithms manipulate your search results and track your data. You can now build a self-hosted, peer-to-peer search engine using a modular GitHub blueprint. If you want to index niche web forums and search them privately, this stack does it locally. It hooks into the decentralized YaCy network, crawls targets, builds a full-text index, and hosts your private search page. Running entirely on Docker Compose, you can eventually add browser rendering, archives, and AI access. But remember: you must run 'docker compose down' before moving chapters, as they all reuse the same ",
+      "created_at": "2026-09-03T11:40:05.185345+00:00",
       "analytics": {}
     }
   ],
@@ -288,6 +297,12 @@
       "title": "Why Your Smart Home Needs a Kitchen Touchscreen Dashboard",
       "format": "long",
       "created_at": "2026-09-02T17:45:47.528432+00:00"
+    },
+    {
+      "topic": "Build your own self-hosted P2P search stack",
+      "title": "Build a Private P2P Search Stack with Docker",
+      "format": "short",
+      "created_at": "2026-09-03T11:40:05.185345+00:00"
     }
   ]
 }
