@@ -1,51 +1,51 @@
 {
-  "generated_at": "2026-09-03T11:35:47.004879+00:00",
+  "generated_at": "2026-09-03T16:36:18.831718+00:00",
   "competitors": [
     {
       "channel": "Matt Wolfe",
       "subscribers": 1000000,
       "channel_views": 78552432,
-      "video_count": 780,
+      "video_count": 781,
       "high_performing_recent_videos": [
         {
           "title": "AI News: OpenAI Made a Massive Move Against NVIDIA",
-          "views": 131162,
-          "likes": 3337,
+          "views": 131731,
+          "likes": 3341,
           "comments": 402,
           "published_at": "2026-08-28T15:00:09Z",
           "description_excerpt": "Here's the AI news you probably missed this week. Download the Codex app and try Sites here: https://chatgpt.com/download/?utm_source=creator&utm_campaign=youtube&utm_content=partnership-mattwolfe\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://"
         },
         {
           "title": "I Built a FREE App That Runs Your Entire Business",
-          "views": 92307,
-          "likes": 2287,
+          "views": 92804,
+          "likes": 2295,
           "comments": 167,
           "published_at": "2026-08-26T22:36:30Z",
           "description_excerpt": "I vibe coded a free productivity app that keeps my entire business in one place, and I built it so anyone can download and customize it. I already use an earlier version of this dashboard every day, but this time I rebuilt it from scratch to see how far I could push Codex on a genuinely useful business tool. I used Codex inside ChatGPT for the init"
         },
         {
           "title": "The Most Overhyped and Underhyped New AI Models",
-          "views": 44003,
-          "likes": 864,
-          "comments": 132,
+          "views": 61422,
+          "likes": 1136,
+          "comments": 166,
           "published_at": "2026-09-03T02:14:55Z",
           "description_excerpt": "A bunch of new models... Join the free newsletter here: https://futuretools.io/newsletter\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 L"
         },
         {
-          "title": "This AI Creates Insane 3D Worlds",
-          "views": 20335,
-          "likes": 993,
-          "comments": 43,
-          "published_at": "2026-08-24T12:18:26Z",
-          "description_excerpt": "This might be one of the coolest AI models I’ve seen all year.\n\nTencent’s new WorldClaw model can generate an entire editable 3D world from a prompt — not just the environment, but every individual object inside it.\n\nTrees, buildings, carts, lamp posts, terrain, they’re all generated as separate 3D assets you can actually work with.\n\nUnder the hood"
-        },
-        {
           "title": "This Company Will Buy Your AI Training Data",
-          "views": 15980,
-          "likes": 629,
+          "views": 16045,
+          "likes": 631,
           "comments": 43,
           "published_at": "2026-08-27T13:06:18Z",
           "description_excerpt": "AI companies want your data so badly that we may be entering the era where they just start paying you for it. 👀\n\nI came across a company called Verb that lets you choose what data you’re willing to share, block certain companies, and even set your own price.\n\nAnd I think this could become a much bigger trend.\n\nAs people get more protective of their"
+        },
+        {
+          "title": "How To EASILY Run Local AI Models",
+          "views": 15115,
+          "likes": 391,
+          "comments": 13,
+          "published_at": "2026-08-26T13:22:25Z",
+          "description_excerpt": "You don’t need a massive GPU server to run powerful AI models locally anymore.\n\nModels like Qwen 3.8 27B can run on consumer-grade computers, and LM Studio makes the whole process ridiculously easy.\n\nYou just search for the model → choose the highest-quality quantization your computer can handle → download it → start chatting.\n\nLM Studio will even "
         }
       ]
     },
@@ -57,40 +57,40 @@
       "high_performing_recent_videos": [
         {
           "title": "Fable 5.1 FINALLY Kills AI Website Slop",
-          "views": 146362,
-          "likes": 2226,
-          "comments": 124,
+          "views": 155634,
+          "likes": 2363,
+          "comments": 141,
           "published_at": "2026-09-02T02:28:02Z",
           "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nGet the FREE /scroll-craft skill: https://www.skool.com/ai-automation-society/about?el=fable-5.1-websites&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual p"
         },
         {
           "title": "Build & Sell Grok Bots (2 Hour Course)",
-          "views": 125419,
-          "likes": 1633,
-          "comments": 97,
+          "views": 129495,
+          "likes": 1684,
+          "comments": 100,
           "published_at": "2026-08-31T02:59:04Z",
           "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=grok-bot-2-hour-course&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https"
         },
         {
           "title": "Every Grok Bot Concept Explained for Normal People",
-          "views": 100982,
-          "likes": 1572,
-          "comments": 86,
+          "views": 107292,
+          "likes": 1663,
+          "comments": 96,
           "published_at": "2026-09-01T01:57:42Z",
           "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=grok-bot-25-concepts&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https:/"
         },
         {
           "title": "Fable 5.1 Just Dropped. It Looks Unreal.",
-          "views": 96213,
-          "likes": 1042,
+          "views": 97842,
+          "likes": 1055,
           "comments": 126,
           "published_at": "2026-09-01T18:49:57Z",
           "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=fable-5.1&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://www.hostin"
         },
         {
           "title": "I Cloned Calendly and Now It’s Free Forever",
-          "views": 57322,
-          "likes": 584,
+          "views": 57623,
+          "likes": 585,
           "comments": 47,
           "published_at": "2026-08-28T12:50:33Z",
           "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=snagtime-app&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://www.hos"
@@ -98,50 +98,50 @@
       ]
     },
     {
-      "channel": "Runway",
-      "subscribers": 135000,
-      "channel_views": 13029455,
-      "video_count": 174,
+      "channel": "AI News & Strategy Daily | Nate B Jones",
+      "subscribers": 319000,
+      "channel_views": 25620279,
+      "video_count": 1140,
       "high_performing_recent_videos": [
         {
-          "title": "Introducing Solaris our first Interface World Model | Runway",
-          "views": 42773,
-          "likes": 865,
-          "comments": 103,
-          "published_at": "2026-08-31T16:36:02Z",
-          "description_excerpt": "Learn more: https://runway.com/news/research/introducing-solaris\n\nSolaris is a new kind of operating system that generates interactive interfaces frame by frame, in real time, with no code. We find that Solaris outperforms frontier LLMs when generating new interfaces, across structural similarity and information retention. Read more and request ear"
+          "title": "Apple's New Mac Line is Built Around Local AI. The Bet Is You'd Rather Own Than Rent.",
+          "views": 204315,
+          "likes": 2845,
+          "comments": 637,
+          "published_at": "2026-08-31T14:00:08Z",
+          "description_excerpt": "Apple rebuilt the entire desktop Mac line around local AI, and the price ladder tells you exactly who it is for. Here is what the M6 and M5 chip split means for running local models, keeping agents alive on your desk, and deciding how much AI compute is worth owning.\n\nMy Links 🔗\n👉🏻 Newsletter: https://natesnewsletter.substack.com/\n👉🏻 X: https://x.c"
         },
         {
-          "title": "Rules of Horse... for Dummies  | Runway",
-          "views": 7099,
-          "likes": 119,
-          "comments": 24,
-          "published_at": "2026-08-27T13:48:31Z",
-          "description_excerpt": "Try Runway today: https://app.runwayml.com\n\nNo single model made this film. It took the best model for every shot: video, image, editing and audio. All available directly inside of Runway and via Runway Dev.\n\nEvery model you need to make anything you want."
+          "title": "OpenAI, NVIDIA And Anthropic Just Split. Here's How I'd Spend $20, $60 Or $200.",
+          "views": 64931,
+          "likes": 989,
+          "comments": 165,
+          "published_at": "2026-09-02T14:00:38Z",
+          "description_excerpt": "OpenAI's Jalapeño chip, the Cursor cutoff, and Jensen Huang's answer on NVIDIA's earnings call reveal three different plans for controlling AI. I break down how the OpenAI, NVIDIA, and Anthropic camps actually work, and how I spend $20, $60, or $200 a month without letting one provider hold my memory and my files.\n\nFull post with the Provider Indep"
         },
         {
-          "title": "Getting Started with Runway Ruby | Runway",
-          "views": 5315,
-          "likes": 99,
-          "comments": 16,
-          "published_at": "2026-08-24T15:21:26Z",
-          "description_excerpt": "Try Runway: https://app.runwayml.com\n\nIntroducing Runway Ruby, a new way to generate or convert videos into 16-bit EXR sequences or 10-bit and 12-bit ProRes and HEVC files from any video model inside Runway. We break down what separates real HDR from SDR in a costume — bit depth, BT.2020 color and the transfer function — and when to reach for PQ ve"
+          "title": "How I Fight AI Brain Rot. Friction Maxxing With Codex, Grok And Claude.",
+          "views": 45494,
+          "likes": 594,
+          "comments": 96,
+          "published_at": "2026-08-28T14:00:21Z",
+          "description_excerpt": "AI brain rot is everywhere right now, and most of the advice is to use AI less. I do the opposite. I add friction on purpose, and this is how that works in practice across Codex, Grok and Claude.\n\nFull post:\nhttps://natesnewsletter.substack.com/p/fight-ai-brain-rot?r=1z4sm5&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true\n\nMy Links 🔗\n- 👉🏻 N"
         },
         {
-          "title": "Introducing Runway Ruby | Runway",
-          "views": 5305,
-          "likes": 129,
-          "comments": 20,
-          "published_at": "2026-08-21T20:47:21Z",
-          "description_excerpt": "Try Runway Ruby today: https://app.runwayml.com\n\nRunway Ruby is a new model that generates 16-bit HDR ProRes and EXR sequences, or converts your existing clips and generations into them. Compatible with Gen-4.5, Seedance 2.5, MiniMax H3 and every other video model."
+          "title": "Runable Raised $21 Million On Agents That Finish. Nobody Told Yours What Done Means.",
+          "views": 34688,
+          "likes": 365,
+          "comments": 35,
+          "published_at": "2026-08-30T17:00:37Z",
+          "description_excerpt": "AI agents can find zero-day vulnerabilities and ship software end to end, and still leave your business exactly where it was. Here is how to tell whether an agent is installed or just connected.\n\nFull post:\nhttps://natesnewsletter.substack.com/p/ai-agents-get-work-done?r=1z4sm5&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true\n\nMy Links 🔗\n👉🏻"
         },
         {
-          "title": "Machine Intelligence for the Physical World | Runway AI Summit 2026",
-          "views": 901,
-          "likes": 33,
-          "comments": 7,
-          "published_at": "2026-08-12T23:27:58Z",
-          "description_excerpt": "World models: from AI video generation to simulation\n\nTry Runway: https://app.runwayml.com\n\nRunway co-founder and co-CEO Anastasis Germanidis traces media from capturing the world to generating it to simulating it. Recorded at the Runway's 2026 AI Summit, this talk covers Gen-1 through Gen-4.5, a real-time version of Gen-4.5 built with NVIDIA that "
+          "title": "These are the people AI can't replace #AI #futureofwork",
+          "views": 7816,
+          "likes": 266,
+          "comments": 9,
+          "published_at": "2026-08-27T03:00:25Z",
+          "description_excerpt": "Here is the part of the AI coding story that gets missed in all the doom. When building something stops being the hard part, the hard part does not disappear. It moves. It moves to judgment. Knowing what to build, for whom, and whether it should exist at all. That was always the more interesting question, and it was always the thing that made certa"
         }
       ]
     }

@@ -18,7 +18,7 @@
         "subscribersGained": 6.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-03T11:35:47.001780+00:00"
+      "analytics_updated_at": "2026-09-03T16:36:18.768936+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-03T11:35:47.003059+00:00"
+      "analytics_updated_at": "2026-09-03T16:36:18.830437+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-03T11:35:47.001143+00:00"
+      "analytics_updated_at": "2026-09-03T16:36:18.767347+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-03T11:35:47.002229+00:00"
+      "analytics_updated_at": "2026-09-03T16:36:18.771808+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-03T11:35:47.004106+00:00"
+      "analytics_updated_at": "2026-09-03T16:36:18.831102+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-03T11:35:47.003677+00:00"
+      "analytics_updated_at": "2026-09-03T16:36:18.830788+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -137,7 +137,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-03T11:35:47.004487+00:00"
+      "analytics_updated_at": "2026-09-03T16:36:18.831405+00:00"
     },
     {
       "video_id": "PjLuT6jX5jQ",
@@ -156,7 +156,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-03T11:35:47.002632+00:00"
+      "analytics_updated_at": "2026-09-03T16:36:18.830028+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -210,6 +210,15 @@
       "format": "short",
       "script_preview": "Stop letting corporate algorithms manipulate your search results and track your data. You can now build a self-hosted, peer-to-peer search engine using a modular GitHub blueprint. If you want to index niche web forums and search them privately, this stack does it locally. It hooks into the decentralized YaCy network, crawls targets, builds a full-text index, and hosts your private search page. Running entirely on Docker Compose, you can eventually add browser rendering, archives, and AI access. But remember: you must run 'docker compose down' before moving chapters, as they all reuse the same ",
       "created_at": "2026-09-03T11:40:05.185345+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "EhZ05TtKw4w",
+      "topic": "Show HN: Ardent, a code-first agent for non-engineering work",
+      "title": "Why Code-First AI Agents Beat Raw Prompting",
+      "format": "short",
+      "script_preview": "Your highest-value client, Xenon Electronics, is sixty days from renewal with unresolved feedback, but your account team has no idea. Ardent automates this by writing sandboxed code to execute non-engineering tasks, bypassing slow, expensive raw data loads into LLMs. You feed Ardent your customer satisfaction logs and upcoming contract renewal dates. The agent instantly runs a secure script, isolates Xenon's high-revenue risk, and drafts a targeted outreach email. With one click, you publish this sequence as a shared 'ability' for your entire workspace to reuse. This bypasses custom infrastruc",
+      "created_at": "2026-09-03T16:41:45.071040+00:00",
       "analytics": {}
     }
   ],
@@ -303,6 +312,12 @@
       "title": "Build a Private P2P Search Stack with Docker",
       "format": "short",
       "created_at": "2026-09-03T11:40:05.185345+00:00"
+    },
+    {
+      "topic": "Show HN: Ardent, a code-first agent for non-engineering work",
+      "title": "Why Code-First AI Agents Beat Raw Prompting",
+      "format": "short",
+      "created_at": "2026-09-03T16:41:45.071040+00:00"
     }
   ]
 }
