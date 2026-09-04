@@ -18,7 +18,7 @@
         "subscribersGained": 6.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-04T11:44:51.512004+00:00"
+      "analytics_updated_at": "2026-09-04T16:41:09.723109+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-04T11:44:51.513286+00:00"
+      "analytics_updated_at": "2026-09-04T16:41:09.724659+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-04T11:44:51.511383+00:00"
+      "analytics_updated_at": "2026-09-04T16:41:09.722328+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-04T11:44:51.512428+00:00"
+      "analytics_updated_at": "2026-09-04T16:41:09.723618+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-04T11:44:51.514741+00:00"
+      "analytics_updated_at": "2026-09-04T16:41:09.726450+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-04T11:44:51.514009+00:00"
+      "analytics_updated_at": "2026-09-04T16:41:09.725556+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -137,7 +137,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-04T11:44:51.515478+00:00"
+      "analytics_updated_at": "2026-09-04T16:41:09.726880+00:00"
     },
     {
       "video_id": "PjLuT6jX5jQ",
@@ -156,7 +156,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-04T11:44:51.512901+00:00"
+      "analytics_updated_at": "2026-09-04T16:41:09.724188+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -175,7 +175,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-04T11:44:51.514386+00:00"
+      "analytics_updated_at": "2026-09-04T16:41:09.726001+00:00"
     },
     {
       "video_id": "kHhLmTEYmWM",
@@ -194,7 +194,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-04T11:44:51.513650+00:00"
+      "analytics_updated_at": "2026-09-04T16:41:09.725097+00:00"
     },
     {
       "video_id": "-P5Gzq7jUxM",
@@ -248,6 +248,15 @@
       "format": "short",
       "script_preview": "If your server's clock drifts by just five minutes, your self-hosted Claude Code runner will completely lock you out. Anthropic now lets teams execute terminal agents inside private networks instead of exposing codebases to external clouds. To set this up, a workspace Owner must toggle self-hosting on the Cloud environments admin page. This yields a secret key, letting your runner boot sessions without giving developers direct Claude.ai admin roles. Your host machine needs outbound HTTPS access to Anthropic, but developer workstations require zero local tools. But host limits are strict: nativ",
       "created_at": "2026-09-04T11:51:22.727068+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "k50LMAYBUew",
+      "topic": "Nvidia launches free tool that links idle computers into personal AI datacenter",
+      "title": "Turn Your Idle Computers Into A Free AI Datacenter",
+      "format": "short",
+      "script_preview": "You can now run complex local AI agents across your spare household computers... ...without lagging your main gaming rig. Nvidia's new free, open-source software called PAIR—Personal AI Router—makes this possible. It turns your idle home laptops and desktops into a synchronized parallel processing network. When you input a massive prompt into LM Studio or Ollama... ...PAIR breaks the task down, routing work to any connected machine that isn't busy. If you launch a game on one machine, PAIR instantly steps aside to avoid system lag. The catch? Your systems must have an RTX 20-series or newer, o",
+      "created_at": "2026-09-04T16:47:00.499432+00:00",
       "analytics": {}
     }
   ],
@@ -353,6 +362,12 @@
       "title": "Claude Code Self-Hosted: Don't Make This Setup Error",
       "format": "short",
       "created_at": "2026-09-04T11:51:22.727068+00:00"
+    },
+    {
+      "topic": "Nvidia launches free tool that links idle computers into personal AI datacenter",
+      "title": "Turn Your Idle Computers Into A Free AI Datacenter",
+      "format": "short",
+      "created_at": "2026-09-04T16:47:00.499432+00:00"
     }
   ]
 }
