@@ -8,17 +8,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T06:59:52Z",
       "analytics": {
-        "views": 230.0,
-        "estimatedMinutesWatched": 31.0,
+        "views": 233.0,
+        "estimatedMinutesWatched": 32.0,
         "averageViewDuration": 19.0,
-        "averageViewPercentage": 43.21,
+        "averageViewPercentage": 43.85,
         "likes": 5.0,
         "comments": 5.0,
         "shares": 2.0,
         "subscribersGained": 6.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-03T16:36:18.768936+00:00"
+      "analytics_updated_at": "2026-09-04T11:44:51.512004+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -28,17 +28,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T07:43:12Z",
       "analytics": {
-        "views": 86.0,
-        "estimatedMinutesWatched": 29.0,
-        "averageViewDuration": 54.0,
-        "averageViewPercentage": 9.31,
+        "views": 93.0,
+        "estimatedMinutesWatched": 30.0,
+        "averageViewDuration": 51.0,
+        "averageViewPercentage": 8.9,
         "likes": 2.0,
         "comments": 2.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-03T16:36:18.830437+00:00"
+      "analytics_updated_at": "2026-09-04T11:44:51.513286+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-03T16:36:18.767347+00:00"
+      "analytics_updated_at": "2026-09-04T11:44:51.511383+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -68,17 +68,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T20:03:55Z",
       "analytics": {
-        "views": 147.0,
+        "views": 149.0,
         "estimatedMinutesWatched": 15.0,
-        "averageViewDuration": 18.0,
-        "averageViewPercentage": 32.43,
+        "averageViewDuration": 17.0,
+        "averageViewPercentage": 31.730000000000004,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-03T16:36:18.771808+00:00"
+      "analytics_updated_at": "2026-09-04T11:44:51.512428+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-03T16:36:18.831102+00:00"
+      "analytics_updated_at": "2026-09-04T11:44:51.514741+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-03T16:36:18.830788+00:00"
+      "analytics_updated_at": "2026-09-04T11:44:51.514009+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -137,7 +137,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-03T16:36:18.831405+00:00"
+      "analytics_updated_at": "2026-09-04T11:44:51.515478+00:00"
     },
     {
       "video_id": "PjLuT6jX5jQ",
@@ -147,16 +147,16 @@
       "script_preview": "Instead of waiting minutes for an AI video render, a new model generates playable shots in three seconds. MiniMax H3 Max on fal.ai turns text prompts or reference images into 768p clips faster than real-time. You type a shot description, click generate, and the rendered clip begins playback almost instantly. For video editors, this shifts AI generation from slow batch queuing into live, interactive shot prototyping. You can test it with zero sign-up, or log in to get fifteen free video generations every day. The limitation is native output maxes out at 768p, requiring an upscaler like FlashVSR",
       "created_at": "2026-08-31T06:42:32.777474+00:00",
       "analytics": {
-        "views": 112.0,
-        "estimatedMinutesWatched": 7.0,
-        "averageViewDuration": 16.0,
-        "averageViewPercentage": 28.000000000000004,
+        "views": 138.0,
+        "estimatedMinutesWatched": 8.0,
+        "averageViewDuration": 15.0,
+        "averageViewPercentage": 26.899999999999995,
         "likes": 3.0,
         "comments": 1.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-03T16:36:18.830028+00:00"
+      "analytics_updated_at": "2026-09-04T11:44:51.512901+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -165,7 +165,17 @@
       "format": "short",
       "script_preview": "If you're constantly blurring API keys, dragging arrows, and recording separate video guides for your team, your Mac's default screenshot tool is wasting your time. A new free utility called Seenshot consolidates this entire workflow into a single keyboard shortcut. Imagine you're a developer sending a bug report. Press Command-Shift-2, select the buggy UI, and use the native editor to instantly blur sensitive user data. Instead of typing instructions, you can highlight elements with step-by-step numbers or inject a webcam selfie in one click. Once you're done, Seenshot generates a secure web ",
       "created_at": "2026-08-31T12:47:18.346367+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 17.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 10.0,
+        "averageViewPercentage": 19.65,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-09-04T11:44:51.514386+00:00"
     },
     {
       "video_id": "kHhLmTEYmWM",
@@ -174,7 +184,17 @@
       "format": "short",
       "script_preview": "You can host a secure site with zero public IP exposure, no registrar fees, and no SSL certificate authority. By running a local server as a Tor hidden service, your site is accessed via an address derived from its public key. To start, edit `/etc/tor/torrc` to define your dedicated hidden service path. The catch: this directory must not be your web root. Tor insists on owning this folder. Assign it to the `debian-tor` user and set `chmod 700` or Tor won't launch. Once configured, Tor generates your hostname and forwards onion port 80 traffic to your local port 8080. Next, write your Nginx blo",
       "created_at": "2026-09-01T12:03:35.161778+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 47.0,
+        "estimatedMinutesWatched": 5.0,
+        "averageViewDuration": 21.0,
+        "averageViewPercentage": 35.01,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-09-04T11:44:51.513650+00:00"
     },
     {
       "video_id": "-P5Gzq7jUxM",
@@ -219,6 +239,15 @@
       "format": "short",
       "script_preview": "Your highest-value client, Xenon Electronics, is sixty days from renewal with unresolved feedback, but your account team has no idea. Ardent automates this by writing sandboxed code to execute non-engineering tasks, bypassing slow, expensive raw data loads into LLMs. You feed Ardent your customer satisfaction logs and upcoming contract renewal dates. The agent instantly runs a secure script, isolates Xenon's high-revenue risk, and drafts a targeted outreach email. With one click, you publish this sequence as a shared 'ability' for your entire workspace to reuse. This bypasses custom infrastruc",
       "created_at": "2026-09-03T16:41:45.071040+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "q75Bf7pvU2E",
+      "topic": "Claude Code: Self-Hosted Environments",
+      "title": "Claude Code Self-Hosted: Don't Make This Setup Error",
+      "format": "short",
+      "script_preview": "If your server's clock drifts by just five minutes, your self-hosted Claude Code runner will completely lock you out. Anthropic now lets teams execute terminal agents inside private networks instead of exposing codebases to external clouds. To set this up, a workspace Owner must toggle self-hosting on the Cloud environments admin page. This yields a secret key, letting your runner boot sessions without giving developers direct Claude.ai admin roles. Your host machine needs outbound HTTPS access to Anthropic, but developer workstations require zero local tools. But host limits are strict: nativ",
+      "created_at": "2026-09-04T11:51:22.727068+00:00",
       "analytics": {}
     }
   ],
@@ -318,6 +347,12 @@
       "title": "Why Code-First AI Agents Beat Raw Prompting",
       "format": "short",
       "created_at": "2026-09-03T16:41:45.071040+00:00"
+    },
+    {
+      "topic": "Claude Code: Self-Hosted Environments",
+      "title": "Claude Code Self-Hosted: Don't Make This Setup Error",
+      "format": "short",
+      "created_at": "2026-09-04T11:51:22.727068+00:00"
     }
   ]
 }
