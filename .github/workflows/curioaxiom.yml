@@ -2,9 +2,10 @@ name: CurioAxiom Facts Pipeline
 
 on:
   schedule:
-    - cron: "30 3 * * *"
-    - cron: "30 8 * * *"
-    - cron: "30 13 * * *"
+    # 12:00 and 18:00 Asia/Kolkata: exactly two Shorts each day.
+    # The evening run additionally creates the long-form video when it is due.
+    - cron: "30 6 * * *"
+    - cron: "30 12 * * *"
   workflow_dispatch:
     inputs:
       slot:
@@ -12,7 +13,7 @@ on:
         required: false
         default: "evening"
         type: choice
-        options: [morning, midday, evening, all]
+        options: [morning, evening, all]
       topic:
         description: "Optional commissioning-test topic override"
         required: false
@@ -46,8 +47,9 @@ jobs:
       YOUTUBE_TOKEN_B64: ${{ secrets.CURIOAXIOM_YOUTUBE_TOKEN_B64 }}
       YOUTUBE_TOKEN_FILE: secrets/youtube_token_curioaxiom.json
       ENABLE_UPLOADS: "true"
-      UPLOAD_PRIVACY_STATUS: "private"
-      ALLOW_PUBLIC_UPLOADS: "false"
+      # User-approved production publishing: successful verified videos go public.
+      UPLOAD_PRIVACY_STATUS: "public"
+      ALLOW_PUBLIC_UPLOADS: "true"
       SHORTS_PUBLIC: "true"
       AUTOPILOT_ENV: production
       SCHEDULE_TIMEZONE: Asia/Kolkata
@@ -62,10 +64,8 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "RUN_SLOT=${{ inputs.slot }}" >> "$GITHUB_ENV"
-          elif [ "${{ github.event.schedule }}" = "30 3 * * *" ]; then
+          elif [ "${{ github.event.schedule }}" = "30 6 * * *" ]; then
             echo "RUN_SLOT=morning" >> "$GITHUB_ENV"
-          elif [ "${{ github.event.schedule }}" = "30 8 * * *" ]; then
-            echo "RUN_SLOT=midday" >> "$GITHUB_ENV"
           else
             echo "RUN_SLOT=evening" >> "$GITHUB_ENV"
           fi
