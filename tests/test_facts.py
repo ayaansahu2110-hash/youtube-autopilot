@@ -67,6 +67,9 @@ def test_verified_curio_seed_is_authoritative_and_never_reuses_an_excluded_topic
     next_seed = verified_curio_seed(excluded_topics=[candidate.title])
     assert next_seed is not None
     assert next_seed[0].title != candidate.title
+    semantic_next_seed = verified_curio_seed(excluded_topics=["The Physics of Falling Forever"])
+    assert semantic_next_seed is not None
+    assert semantic_next_seed[0].title != candidate.title
 
 
 def test_fact_editing_splits_long_visual_holds() -> None:
