@@ -3,7 +3,7 @@ import pytest
 
 from autopilot.config import Settings
 from autopilot.cli import _settings_for_format
-from autopilot.facts import FactCategoryRouter, FactScriptPlanner, FactTopicDiscovery, FactVerifier
+from autopilot.facts import FactCategoryRouter, FactScriptPlanner, FactTopicDiscovery, FactVerifier, verified_curio_seed
 from autopilot.models import ResearchPack, ResearchSource, SceneBeat, TopicCandidate, VideoPlan
 from autopilot.models import VisualAsset
 from autopilot.render import FFmpegRenderer
@@ -55,6 +55,18 @@ def test_fact_verifier_rewards_authoritative_diverse_sources() -> None:
     verified = FactVerifier().verify(research)
     assert verified.confidence_score >= 65
     assert any(note.startswith("2 category-authoritative") for note in verified.verification_notes)
+
+
+def test_verified_curio_seed_is_authoritative_and_never_reuses_an_excluded_topic() -> None:
+    first = verified_curio_seed()
+    assert first is not None
+    candidate, research = first
+    verified = FactVerifier().verify(research)
+    assert candidate.title == "Why Astronauts Float in Orbit"
+    assert verified.confidence_score >= 65
+    next_seed = verified_curio_seed(excluded_topics=[candidate.title])
+    assert next_seed is not None
+    assert next_seed[0].title != candidate.title
 
 
 def test_fact_editing_splits_long_visual_holds() -> None:
