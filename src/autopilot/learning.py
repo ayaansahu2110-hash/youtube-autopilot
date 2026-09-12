@@ -47,6 +47,7 @@ class DailyLearningLoop:
             "competitors": [],
             "own_comments": [],
             "own_analytics": self._own_analytics_snapshot(),
+            "own_winners": self._own_winners_snapshot(),
             "monetization": {},
         }
         if not self.settings.youtube_token_file.exists():
@@ -272,6 +273,16 @@ class DailyLearningLoop:
                 )
         return rows[-20:]
 
+    def _own_winners_snapshot(self) -> list[dict]:
+        return [
+            {
+                "title": item.get("title", ""),
+                "format": item.get("format", "unknown"),
+                "metrics": item.get("analytics") or {},
+            }
+            for item in self.state.top_performers(limit=5)
+        ]
+
     def _write(self, report: dict) -> dict:
         path = self.settings.learning_file
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -308,9 +319,14 @@ def learning_context(settings: Settings, max_chars: int = 9000) -> str:
         )
         for video in item.get("high_performing_recent_videos", [])[:4]:
             lines.append(f"- {video.get('views', 0)} views: {video.get('title', '')}")
+    winners = data.get("own_winners", [])[:5]
+    if winners:
+        lines.append("Our best-performing baselines — reuse only the winning topic, hook, pacing and retention patterns; never copy wording:")
+        for item in winners:
+            lines.append(f"- {item.get('title', '')} ({item.get('format', 'unknown')}): {json.dumps(item.get('metrics', {}), ensure_ascii=False)}")
     analytics = data.get("own_analytics", [])[-10:]
     if analytics:
-        lines.append("ByteVexa recent performance:")
+        lines.append(f"{settings.channel_display_name} recent performance:")
         for item in analytics:
             lines.append(f"- {item.get('title', '')}: {json.dumps(item.get('metrics', {}), ensure_ascii=False)}")
     comments = data.get("own_comments", [])[:15]
