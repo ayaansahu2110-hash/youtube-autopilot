@@ -39,6 +39,7 @@ def verified_curio_seed(
             "Why Astronauts Float in Orbit",
             "space",
             "Astronauts and their spacecraft are continually falling around Earth, not beyond gravity.",
+            ("astronaut float", "microgravity", "falling forever", "physics of falling"),
             (
                 ResearchSource(
                     title="What is microgravity?",
@@ -70,6 +71,7 @@ def verified_curio_seed(
             "Why Ocean Water Is Salty",
             "geography",
             "Most ocean salt ultimately comes from dissolved minerals carried from land, then concentrated as water cycles away.",
+            ("ocean water salty", "why ocean is salty", "seawater salinity"),
             (
                 ResearchSource(
                     title="Why is the ocean salty?",
@@ -101,6 +103,7 @@ def verified_curio_seed(
             "Why Heat Shields Burn on Purpose",
             "science",
             "Ablative heat shields sacrifice material to carry heat away from a spacecraft during atmospheric entry.",
+            ("heat shield burn", "heat shield reentry", "ablative reentry"),
             (
                 ResearchSource(
                     title="Entry systems",
@@ -129,9 +132,12 @@ def verified_curio_seed(
             ),
         ),
     )
-    for title, category, reason, sources in seeds:
+    for title, category, reason, concept_aliases, sources in seeds:
         normalised = _normalise_topic(title)
         if normalised in excluded:
+            continue
+        aliases = {_normalise_topic(alias) for alias in concept_aliases}
+        if any(alias and alias in previous for alias in aliases for previous in excluded):
             continue
         if requested and requested != normalised:
             continue
