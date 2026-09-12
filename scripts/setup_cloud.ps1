@@ -102,12 +102,14 @@ Write-Host "GitHub authorized." -ForegroundColor Green
 
 Step "Reading local credentials without displaying them"
 $gemini = Read-DotEnvValue "GEMINI_API_KEY"
+$openai = Read-DotEnvValue "OPENAI_API_KEY"
 $pexels = Read-DotEnvValue "PEXELS_API_KEY"
 $clientPath = "secrets/client_secret.json"
 $tokenPath = "secrets/youtube_token.json"
 
-if ([string]::IsNullOrWhiteSpace($gemini)) { throw "GEMINI_API_KEY is missing from .env." }
-if ([string]::IsNullOrWhiteSpace($pexels)) { throw "PEXELS_API_KEY is missing from .env." }
+if ([string]::IsNullOrWhiteSpace($gemini) -and [string]::IsNullOrWhiteSpace($openai)) {
+    throw "Neither GEMINI_API_KEY nor OPENAI_API_KEY is present in .env. Add one AI provider key before continuing."
+}
 if (-not (Test-Path $clientPath)) { throw "$clientPath is missing." }
 if (-not (Test-Path $tokenPath)) { throw "$tokenPath is missing." }
 
@@ -124,8 +126,9 @@ $clientB64 = [Convert]::ToBase64String([IO.File]::ReadAllBytes((Resolve-Path $cl
 $tokenB64 = [Convert]::ToBase64String([IO.File]::ReadAllBytes((Resolve-Path $tokenPath)))
 
 Step "Securely configuring GitHub Actions"
-Set-RepoSecret "GEMINI_API_KEY" $gemini $gh
-Set-RepoSecret "PEXELS_API_KEY" $pexels $gh
+if (-not [string]::IsNullOrWhiteSpace($gemini)) { Set-RepoSecret "GEMINI_API_KEY" $gemini $gh }
+if (-not [string]::IsNullOrWhiteSpace($openai)) { Set-RepoSecret "OPENAI_API_KEY" $openai $gh }
+if (-not [string]::IsNullOrWhiteSpace($pexels)) { Set-RepoSecret "PEXELS_API_KEY" $pexels $gh }
 Set-RepoSecret "YOUTUBE_CLIENT_SECRETS_B64" $clientB64 $gh
 Set-RepoSecret "YOUTUBE_TOKEN_B64" $tokenB64 $gh
 Set-RepoVariable "GEMINI_MODEL" "gemini-3.7-flash" $gh
