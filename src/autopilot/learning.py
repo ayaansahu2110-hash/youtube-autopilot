@@ -319,19 +319,73 @@ def learning_context(settings: Settings, max_chars: int = 9000) -> str:
         )
         for video in item.get("high_performing_recent_videos", [])[:4]:
             lines.append(f"- {video.get('views', 0)} views: {video.get('title', '')}")
+    analytics = data.get("own_analytics", [])[-20:]
+    eligible = [
+        item for item in analytics
+        if float((item.get("metrics") or {}).get("views", 0) or 0) >= 20
+    ]
+    if eligible:
+        retention_winner = max(
+            eligible,
+            key=lambda item: float((item.get("metrics") or {}).get("averageViewPercentage", 0) or 0),
+        )
+        retention_metrics = retention_winner.get("metrics") or {}
+        lines.append(
+            "Own retention baseline: "
+            f"{retention_winner.get('title', '')} at "
+            f"{float(retention_metrics.get('averageViewPercentage', 0) or 0):.1f}% average viewed. "
+            "Preserve its specificity and pace, but create a new structure and wording."
+        )
+
+        conversion_winner = max(
+            eligible,
+            key=lambda item: (
+                100 * float((item.get("metrics") or {}).get("subscribersGained", 0) or 0)
+                / max(1, float((item.get("metrics") or {}).get("views", 0) or 0))
+            ),
+        )
+        conversion_metrics = conversion_winner.get("metrics") or {}
+        conversion_rate = (
+            100 * float(conversion_metrics.get("subscribersGained", 0) or 0)
+            / max(1, float(conversion_metrics.get("views", 0) or 0))
+        )
+        if conversion_rate > 0:
+            lines.append(
+                "Own subscriber-conversion baseline: "
+                f"{conversion_winner.get('title', '')} at {conversion_rate:.2f} subscribers per 100 views. "
+                "Reuse the pattern of a concrete pain point, useful mechanism and honest catch; never reuse its wording."
+            )
+
+        long_rows = [item for item in eligible if item.get("format") == "long"]
+        if long_rows:
+            weighted_views = sum(float((item.get("metrics") or {}).get("views", 0) or 0) for item in long_rows)
+            weighted_retention = sum(
+                float((item.get("metrics") or {}).get("views", 0) or 0)
+                * float((item.get("metrics") or {}).get("averageViewPercentage", 0) or 0)
+                for item in long_rows
+            ) / max(1, weighted_views)
+            if weighted_retention < 30:
+                lines.append(
+                    f"Long-form intervention: tracked weighted retention is only {weighted_retention:.1f}%. "
+                    "Lead with the visible result, deliver proof/demo inside 30 seconds, cut history/setup preambles, "
+                    "and introduce a fresh proof, example, comparison, limitation or decision every 30-45 seconds."
+                )
+
     winners = data.get("own_winners", [])[:5]
     if winners:
         lines.append("Our best-performing baselines — reuse only the winning topic, hook, pacing and retention patterns; never copy wording:")
         for item in winners:
             lines.append(f"- {item.get('title', '')} ({item.get('format', 'unknown')}): {json.dumps(item.get('metrics', {}), ensure_ascii=False)}")
-    analytics = data.get("own_analytics", [])[-10:]
-    if analytics:
+    recent_analytics = analytics[-10:]
+    if recent_analytics:
         lines.append(f"{settings.channel_display_name} recent performance:")
-        for item in analytics:
+        for item in recent_analytics:
             lines.append(f"- {item.get('title', '')}: {json.dumps(item.get('metrics', {}), ensure_ascii=False)}")
     comments = data.get("own_comments", [])[:15]
     if comments:
         lines.append("Viewer feedback themes from our comments:")
         for item in comments:
             lines.append(f"- {item.get('text', '')}")
+    else:
+        lines.append("No usable viewer-comment text is available yet; do not invent comment-derived preferences.")
     return "\n".join(lines)[:max_chars]

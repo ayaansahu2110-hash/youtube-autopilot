@@ -2,7 +2,7 @@ from pathlib import Path
 
 from autopilot.captions import write_srt
 from autopilot.config import Settings
-from autopilot.models import PipelineRun, ResearchPack, ResearchSource, VideoPlan
+from autopilot.models import PipelineRun, ResearchPack, ResearchSource, SceneBeat, VideoPlan
 from autopilot.quality import QualityGate
 from autopilot.state import StateStore
 
@@ -44,3 +44,40 @@ def test_quality_rejects_recent_duplicate(tmp_path: Path) -> None:
 def test_public_upload_requires_explicit_unlock() -> None:
     settings = Settings(upload_privacy_status="public")
     assert settings.allow_public_uploads is False
+
+
+def test_bytevexa_longform_requires_early_proof(tmp_path: Path) -> None:
+    purposes = ["hook", "context", "explanation", "feature"] + ["demo"] * 25 + ["takeaway"]
+    scenes = []
+    for index, purpose in enumerate(purposes):
+        narration = " ".join(f"useful{index}_{word}" for word in range(40))
+        scenes.append(
+            SceneBeat(
+                narration=narration,
+                visual_query=f"specific interface workflow {index}",
+                purpose=purpose,
+                visual_mode="motion",
+                on_screen_text=f"STEP {index}",
+            )
+        )
+    plan = VideoPlan(
+        topic="A specific AI workflow",
+        angle="Practical test",
+        format="long",
+        hook="See the result first",
+        script=" ".join(scene.narration for scene in scenes),
+        title="A Specific AI Workflow Tested",
+        description="A researched practical test.",
+        tags=["AI"],
+        thumbnail_brief="One result and one interface",
+        thumbnail_text="REAL RESULT",
+        visual_queries=[scene.visual_query for scene in scenes],
+        scenes=scenes,
+    )
+    settings = Settings(state_file=tmp_path / "state.json")
+    report = QualityGate(settings, StateStore(settings.state_file)).evaluate(
+        plan,
+        ResearchPack(topic=plan.topic),
+        strict=False,
+    )
+    assert any("first four scenes" in error.lower() for error in report.errors)

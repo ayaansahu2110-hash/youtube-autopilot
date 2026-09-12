@@ -223,6 +223,37 @@ class QualityGate:
                 if source_counts and max(source_counts.values()) > repeat_limit:
                     errors.append("Too many scenes reuse the same product page; show more varied evidence or explanatory visuals.")
 
+            if plan.format == "long" and self.settings.channel_profile == "bytevexa":
+                opening_labels = ("hook", "problem", "outcome", "consequence", "result", "demo", "proof")
+                if not any(label in purposes[0] for label in opening_labels):
+                    errors.append("ByteVexa long-form must open on a concrete hook, problem, outcome or proof beat.")
+
+                proof_labels = ("proof", "demo", "result", "workflow", "evidence")
+                if not any(
+                    any(label in purpose for label in proof_labels)
+                    for purpose in purposes[:4]
+                ):
+                    errors.append("ByteVexa long-form must show proof, a demo action or a result within its first four scenes.")
+
+                reset_labels = (
+                    "proof", "demo", "example", "result", "comparison",
+                    "limitation", "catch", "decision", "takeaway",
+                )
+                reset_count = sum(
+                    any(label in purpose for label in reset_labels)
+                    for purpose in purposes
+                )
+                minimum_resets = max(5, len(purposes) // 6)
+                if reset_count < minimum_resets:
+                    errors.append(
+                        f"ByteVexa long-form has only {reset_count} retention-reset scenes; need at least {minimum_resets}."
+                    )
+
+                if len(plan.title) > 70:
+                    errors.append("ByteVexa long-form title must stay under 70 characters.")
+                if not 2 <= len(plan.thumbnail_text.split()) <= 4:
+                    errors.append("ByteVexa long-form thumbnail text must contain 2-4 words.")
+
         if len(research.sources) >= 3:
             warnings.append("Research depth is strong: three or more independent source pages were available.")
         elif strict:

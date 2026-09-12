@@ -31,15 +31,17 @@ Recent channel-learning signals:
 Use those learning signals only to improve general patterns such as hook strength, topic specificity, pacing, title clarity, useful examples and viewer objections. Never copy another creator's wording, script structure beat-for-beat, thumbnail identity, catchphrases or branding.
 
 LONG-FORM CONTENT STANDARD
-- Target 1,250-1,750 spoken words. Do not pad with filler.
+- Target 1,200-1,650 spoken words. Do not pad with filler.
 - Cover one coherent topic deeply enough that a viewer finishes understanding what changed, how it works, where it helps, where it fails and whether it matters to them.
-- Open with a specific real-world consequence or surprising capability in the first 15 seconds.
+- State one concrete outcome, problem or surprising capability in the first 5 seconds. Do not begin with channel branding, history or broad context.
+- Show proof of the promised result, a real demo step or decisive evidence within the first 30 seconds, before explaining the full setup.
 - Structure the narrative: hook -> context -> what changed -> real workflow/demo -> concrete examples/results -> comparison -> limitations/catch -> who should use it -> practical takeaway.
 - Include at least 5 concrete facts/actions/examples that are supported by research.
 - Include at least one realistic use case for a normal person, student, creator, developer or knowledge worker when relevant.
 - Explain jargon in plain English.
 - Use transitions that create forward momentum without fake suspense.
-- Every 30-60 seconds, introduce a new useful question, example, comparison, result or limitation so retention does not flatten.
+- Every 30-45 seconds, reset attention with a useful question, visual proof, demo action, example, result, comparison, limitation or decision. Never stack more than five context/explanation scenes without one of these beats.
+- Write for natural voiceover: vary sentence length, expand ambiguous acronyms on first use, avoid long comma-heavy lists, and use short transitions that sound conversational aloud.
 - Never invent prices, dates, benchmarks, capabilities, quotes or statistics.
 - Treat headlines as leads, not verified evidence.
 - Do not imitate another creator's wording, pacing, catchphrases, graphics or brand identity.
@@ -62,7 +64,7 @@ Visual rules:
 - The visual must explain that exact narration beat.
 
 PACKAGING
-- title: truthful, specific and curiosity-driven, ideally under 65 characters.
+- title: truthful, specific and curiosity-driven, under 70 characters, promising one concrete outcome, test or decision.
 - description: useful summary with no hype.
 - tags: 6-12 relevant tags.
 - thumbnail_text: 2-4 words.
@@ -99,13 +101,15 @@ Draft JSON:
 {json.dumps(draft, ensure_ascii=False)}
 
 REQUIRED FINAL STANDARD
-- 1,250-1,750 spoken words and 26-34 scene beats.
-- Strong real-world hook, not a generic introduction.
+- 1,200-1,650 spoken words and 26-34 scene beats.
+- A concrete outcome/problem in the first 5 seconds, with no channel intro or history preamble.
+- Visual proof, a real demo action, a result or decisive evidence within the first 30 seconds and first four scenes.
 - At least 5 concrete researched facts/actions/examples.
 - At least one workflow/demo sequence and one result/example sequence.
 - At least one meaningful limitation/catch and one comparison/decision section.
 - No filler, repeated conclusions, unsupported claims or vague praise.
-- Make each section answer a new viewer question so the video keeps progressing.
+- Make each section answer a new viewer question so the video keeps progressing; add a proof/demo/example/result/comparison/limitation/decision reset at least every five scenes.
+- Make the narration conversational aloud: varied sentence length, clear acronym pronunciation and no long comma-heavy lists.
 - Use recent learning to strengthen general audience-fit and retention patterns, but never imitate any creator or copy distinctive phrasing.
 - Prefer actual UI evidence and custom motion graphics; stock remains a minority.
 - Avoid repeating one public source page across many consecutive scenes.
