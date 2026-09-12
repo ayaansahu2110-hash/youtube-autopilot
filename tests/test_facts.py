@@ -1,6 +1,4 @@
 from pathlib import Path
-import pytest
-
 from autopilot.config import Settings
 from autopilot.cli import _settings_for_format
 from autopilot.facts import FactCategoryRouter, FactScriptPlanner, FactVerifier, verified_curio_seed
@@ -203,14 +201,17 @@ def test_fact_short_duration_guard_preserves_all_scenes() -> None:
     assert all(len(scene.narration.split()) >= 3 for scene in plan.scenes)
 
 
-def test_no_unverified_fact_fallback(tmp_path: Path) -> None:
+def test_failed_live_research_uses_only_verified_fact_reserve(tmp_path: Path) -> None:
     pipeline = AutopilotPipeline(Settings(channel_profile="curioaxiom", artifacts_dir=tmp_path))
     candidate = TopicCandidate(title="Prompting is Not Programming", score=90, reason="news")
     pipeline.discovery.discover = lambda: [candidate]
     pipeline.planner.choose_topic = lambda candidates: candidate
     pipeline.researcher.research = lambda candidate: ResearchPack(topic=candidate.title)
-    with pytest.raises(RuntimeError, match="No eligible facts topic"):
-        pipeline._candidate_with_research(None)
+    fallback_candidate, fallback_research = pipeline._candidate_with_research(None)
+    assert fallback_candidate.title == "Why Astronauts Float in Orbit"
+    verified = FactVerifier().verify(fallback_research)
+    assert verified.confidence_score >= 65
+    assert len(fallback_research.sources) >= pipeline.settings.min_research_sources
 
 
 def test_facts_fallback_uses_cached_official_feed(tmp_path: Path) -> None:
