@@ -3,7 +3,7 @@ import pytest
 
 from autopilot.config import Settings
 from autopilot.cli import _settings_for_format
-from autopilot.facts import FactCategoryRouter, FactScriptPlanner, FactTopicDiscovery, FactVerifier, verified_curio_seed
+from autopilot.facts import FactCategoryRouter, FactScriptPlanner, FactVerifier, verified_curio_seed
 from autopilot.models import ResearchPack, ResearchSource, SceneBeat, TopicCandidate, VideoPlan
 from autopilot.models import VisualAsset
 from autopilot.render import FFmpegRenderer

@@ -364,13 +364,13 @@ class FactScriptPlanner(PremiumScriptPlanner):
             '{"narrations": [one nonempty string per original scene]}. Original scenes: '
             + json.dumps(original)
         )
-        for attempt in range(2):
+        for _attempt in range(2):
             data = self._generate_json(prompt)
             lines = data.get("narrations")
             if (isinstance(lines, list) and len(lines) == len(original)
                     and all(isinstance(line, str) and line.strip() for line in lines)
                     and 90 <= sum(len(line.split()) for line in lines) <= target_words):
-                for scene, line in zip(plan.scenes, lines):
+                for scene, line in zip(plan.scenes, lines, strict=True):
                     scene.narration = line.strip()
                 plan.script = " ".join(scene.narration for scene in plan.scenes)
                 return
