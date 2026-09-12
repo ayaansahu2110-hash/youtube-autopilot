@@ -1,3 +1,5 @@
+import json
+from datetime import date
 from pathlib import Path
 
 from autopilot.captions import write_srt
@@ -81,3 +83,43 @@ def test_bytevexa_longform_requires_early_proof(tmp_path: Path) -> None:
         strict=False,
     )
     assert any("first four scenes" in error.lower() for error in report.errors)
+
+
+def test_upload_count_uses_channel_local_date_and_format(tmp_path: Path) -> None:
+    state_file = tmp_path / "state.json"
+    state_file.write_text(
+        json.dumps(
+            {
+                "topics": [],
+                "videos": [
+                    {
+                        "video_id": "short-a",
+                        "format": "short",
+                        "created_at": "2026-09-11T20:00:00+00:00",
+                    },
+                    {
+                        "video_id": "long-a",
+                        "format": "long",
+                        "created_at": "2026-09-12T10:00:00+00:00",
+                    },
+                    {
+                        "video_id": "short-old",
+                        "format": "short",
+                        "created_at": "2026-09-11T10:00:00+00:00",
+                    },
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    state = StateStore(state_file)
+    assert state.upload_count_on_date(
+        date(2026, 9, 12),
+        timezone_name="Asia/Kolkata",
+        video_format="short",
+    ) == 1
+    assert state.upload_count_on_date(
+        date(2026, 9, 12),
+        timezone_name="Asia/Kolkata",
+        video_format="long",
+    ) == 1

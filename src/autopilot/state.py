@@ -1,9 +1,10 @@
 import json
 import re
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 from autopilot.models import PipelineRun
 
@@ -112,6 +113,32 @@ class StateStore:
 
     def video_ids(self, limit: int = 100) -> list[str]:
         return [str(item["video_id"]) for item in self.data["videos"][-limit:] if item.get("video_id")]
+
+    def upload_count_on_date(
+        self,
+        target_date: date,
+        *,
+        timezone_name: str,
+        video_format: str,
+    ) -> int:
+        """Count completed uploads on a channel-local date, including synced videos."""
+        count = 0
+        local_zone = ZoneInfo(timezone_name)
+        for item in self.data["videos"]:
+            if item.get("format") != video_format or not item.get("video_id"):
+                continue
+            created_at = str(item.get("created_at") or "").strip()
+            if not created_at:
+                continue
+            try:
+                created = datetime.fromisoformat(created_at.replace("Z", "+00:00"))
+            except ValueError:
+                continue
+            if created.tzinfo is None:
+                created = created.replace(tzinfo=timezone.utc)
+            if created.astimezone(local_zone).date() == target_date:
+                count += 1
+        return count
 
     def update_analytics(self, video_id: str, metrics: dict[str, float]) -> None:
         for item in self.data["videos"]:

@@ -140,7 +140,19 @@ def daily(
         raise typer.BadParameter("slot must be morning, midday, evening, or all")
 
     results = []
-    short_count = max(1, settings.shorts_per_day) if slot == "all" else 1
+    local_today = datetime.now(ZoneInfo(settings.schedule_timezone)).date()
+    uploaded_shorts = state.upload_count_on_date(
+        local_today,
+        timezone_name=settings.schedule_timezone,
+        video_format="short",
+    )
+    remaining_shorts = max(0, max(1, settings.shorts_per_day) - uploaded_shorts)
+    short_count = remaining_shorts if slot == "all" else min(1, remaining_shorts)
+    if short_count == 0:
+        console.print(
+            f"Daily Shorts target already met ({uploaded_shorts}/{settings.shorts_per_day}); "
+            "skipping duplicate publication."
+        )
     short_settings = _settings_for_format(settings, "short")
     for _ in range(short_count):
         short_result = AutopilotPipeline(short_settings).run(dry_run=dry_run, video_format="short")
@@ -149,7 +161,18 @@ def daily(
         if short_result.status == "failed":
             break
 
-    should_make_long = slot in {"evening", "all"} and _longform_due(settings)
+    uploaded_longs = state.upload_count_on_date(
+        local_today,
+        timezone_name=settings.schedule_timezone,
+        video_format="long",
+    )
+    should_make_long = (
+        slot in {"evening", "all"}
+        and _longform_due(settings)
+        and uploaded_longs == 0
+    )
+    if slot in {"evening", "all"} and _longform_due(settings) and uploaded_longs:
+        console.print("Today's long-form upload already exists; skipping duplicate publication.")
     if not any(result.status == "failed" for result in results) and should_make_long:
         long_result = AutopilotPipeline(settings).run(dry_run=dry_run, video_format="long")
         results.append(long_result)
