@@ -90,6 +90,10 @@ jobs:
           pathlib.Path('secrets/youtube_token.json').write_bytes(base64.b64decode(os.environ['YOUTUBE_TOKEN_B64']))
           PY
 
+      - name: Verify ByteVexa OAuth before production
+        if: env.READY == 'true'
+        run: python -m autopilot.cli verify-youtube
+
       - name: Produce scheduled videos with retry
         if: env.READY == 'true'
         shell: bash
