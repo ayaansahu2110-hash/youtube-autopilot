@@ -110,7 +110,7 @@ jobs:
             python -m autopilot.cli daily --live --slot "$RUN_SLOT"
           fi
       - name: Persist CurioAxiom state only
-        if: env.READY == 'true'
+        if: always() && env.READY == 'true'
         shell: bash
         run: |
           git config user.name "curioaxiom-autopilot-bot"
