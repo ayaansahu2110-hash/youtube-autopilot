@@ -4,31 +4,41 @@
       "video_id": "70mqeuWtljw",
       "topic": "Why Formula 1 Brakes Glow Red",
       "title": "Why Formula 1 Brakes Glow Red",
-      "format": "unknown",
+      "format": "short",
       "script_preview": "",
       "created_at": "2026-08-30T06:36:07Z",
       "analytics": {
-        "views": 49.0,
-        "estimatedMinutesWatched": 11.0,
-        "averageViewDuration": 17.0,
-        "averageViewPercentage": 34.37,
-        "likes": 0.0,
+        "views": 1321.0,
+        "estimatedMinutesWatched": 300.0,
+        "averageViewDuration": 21.0,
+        "averageViewPercentage": 41.96,
+        "likes": 19.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-01T13:37:56.567086+00:00"
+      "analytics_updated_at": "2026-09-12T09:42:55.898124+00:00"
     },
     {
       "video_id": "_sd7bLRor_o",
       "topic": "Why Airplane Windows Are Round",
       "title": "Why Airplane Windows Are Round",
-      "format": "unknown",
+      "format": "short",
       "script_preview": "",
       "created_at": "2026-08-30T09:29:24Z",
-      "analytics": {},
-      "source": "youtube_sync"
+      "analytics": {
+        "views": 1066.0,
+        "estimatedMinutesWatched": 278.0,
+        "averageViewDuration": 29.0,
+        "averageViewPercentage": 52.61,
+        "likes": 14.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-09-12T09:42:55.898600+00:00"
     },
     {
       "video_id": "yPUU3tQ6MTU",
@@ -37,7 +47,17 @@
       "format": "short",
       "script_preview": "We once viewed Mars as a cold, geologically dead desert. But deep beneath the flat plains of Elysium Planitia... ...an ultra-sensitive robotic ear detected something unexpected. The ground was trembling. Not from sudden, violent asteroid impacts... ...but from continuous, gentle shudders. These mild rumbles originated hundreds of miles away. How could a world with no active plate tectonics... ...be so seismically. In its very first year of. ...the lander's SEIS instrument recorded over four hundred and fifty. Scientists determined that the vast majority are likely actual. ...rather than mere d",
       "created_at": "2026-08-30T09:56:16.166510+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 234.0,
+        "estimatedMinutesWatched": 61.0,
+        "averageViewDuration": 41.0,
+        "averageViewPercentage": 65.43,
+        "likes": 5.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-09-12T09:42:55.899245+00:00"
     },
     {
       "video_id": "-WXARpXcqL4",
@@ -46,7 +66,17 @@
       "format": "short",
       "script_preview": "How did a classified Cold War-era spy satellite end up as NASA's next. In 2012, the National Reconnaissance Office gifted NASA an unused, Hubble-sized optical system sitting. NASA repurposed this defense hardware, naming it after Nancy Grace Roman, the. This new telescope will capture a field of view at least one hundred times larger than Hubble's. With this massive panoramic reach, Roman is designed to measure light from up to a billion. To find hidden worlds, its specialized internal coronagraph will block blinding starlight to. From its planned orbit one million miles from Earth, Roman will",
       "created_at": "2026-08-31T03:45:13.165343+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 969.0,
+        "estimatedMinutesWatched": 339.0,
+        "averageViewDuration": 36.0,
+        "averageViewPercentage": 63.01,
+        "likes": 14.0,
+        "comments": 1.0,
+        "shares": 1.0,
+        "subscribersGained": 2.0
+      },
+      "analytics_updated_at": "2026-09-12T09:42:55.898932+00:00"
     },
     {
       "video_id": "EeviDSBWxZ8",
@@ -55,7 +85,17 @@
       "format": "short",
       "script_preview": "How do you map the invisible universe... ...when our best space telescopes look through a straw? While Hubble captures tiny, highly detailed cosmic slivers. ...solving the puzzle of dark energy driving the universe's expansion... ...requires a widescreen view. Enter the Nancy Grace Roman Space Telescope. Assembled in ultra-sterile cleanrooms to protect its delicate optics. ...its primary mirror matches Hubble’s size... ...but is designed to capture a field of view one hundred times larger. To detect hidden exoplanets, Roman carries. —a highly sensitive coronagraph that blocks blinding. ...to d",
       "created_at": "2026-09-01T13:46:02.071086+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 166.0,
+        "estimatedMinutesWatched": 41.0,
+        "averageViewDuration": 32.0,
+        "averageViewPercentage": 54.78999999999999,
+        "likes": 7.0,
+        "comments": 1.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-09-12T09:42:55.899694+00:00"
     },
     {
       "video_id": "VwzE41erxjY",
@@ -64,6 +104,35 @@
       "format": "short",
       "script_preview": "Mercury directly hugs the Sun's intense furnace. Yet, it is not our hottest planet. That title belongs to Venus, much further out. While airless Mercury lets solar heat instantly escape back into the void, Venus is wrapped in a crushing atmosphere ninety-three times heavier than Earth's. Strangely, Venus's thick sulfuric acid clouds reflect eighty percent of incoming sunlight back into space. Only ten percent of the Sun's radiation reaches the rocky surface. Once inside, that tiny fraction is completely trapped by greenhouse gases. This runaway greenhouse engine bakes the ground to a lead-melt",
       "created_at": "2026-09-02T14:48:05.075187+00:00",
+      "analytics": {
+        "views": 101.0,
+        "estimatedMinutesWatched": 21.0,
+        "averageViewDuration": 27.0,
+        "averageViewPercentage": 48.1,
+        "likes": 2.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-09-12T09:42:55.900022+00:00"
+    },
+    {
+      "video_id": "N1fheI9ReKQ",
+      "topic": "The Physics of Falling Forever",
+      "title": "The Physics of Falling Forever",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-09-02T15:50:44Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "tXzKJN-Sxds",
+      "topic": "Why Astronauts Float in Orbit",
+      "title": "Why Astronauts Never Stop Falling",
+      "format": "short",
+      "script_preview": "Why do astronauts float in space? It is not because gravity has disappeared. At the altitude of the Space Station, Earth's gravity is still strongly pulling everything down. In fact, the station and everyone inside are in a non-stop plunge toward the ground. But they never crash, because they are also moving sideways at extreme speeds. As they fall downward, their massive forward velocity curves their path around the planet. The Earth literally curves away beneath them at the exact same rate they fall. Because the spacecraft and the crew are falling together, there is no supporting floor to pu",
+      "created_at": "2026-09-12T09:48:50.246520+00:00",
       "analytics": {}
     }
   ],
@@ -71,14 +140,14 @@
     {
       "topic": "Why Formula 1 Brakes Glow Red",
       "title": "Why Formula 1 Brakes Glow Red",
-      "format": "unknown",
+      "format": "short",
       "created_at": "2026-08-30T06:36:07Z",
       "source": "youtube_sync"
     },
     {
       "topic": "Why Airplane Windows Are Round",
       "title": "Why Airplane Windows Are Round",
-      "format": "unknown",
+      "format": "short",
       "created_at": "2026-08-30T09:29:24Z",
       "source": "youtube_sync"
     },
@@ -105,6 +174,19 @@
       "title": "Why Venus is Hotter Than Mercury",
       "format": "short",
       "created_at": "2026-09-02T14:48:05.075187+00:00"
+    },
+    {
+      "topic": "The Physics of Falling Forever",
+      "title": "The Physics of Falling Forever",
+      "format": "short",
+      "created_at": "2026-09-02T15:50:44Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Why Astronauts Float in Orbit",
+      "title": "Why Astronauts Never Stop Falling",
+      "format": "short",
+      "created_at": "2026-09-12T09:48:50.246520+00:00"
     }
   ]
 }
