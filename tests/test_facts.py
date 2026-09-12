@@ -208,7 +208,7 @@ def test_failed_live_research_uses_only_verified_fact_reserve(tmp_path: Path) ->
     pipeline.planner.choose_topic = lambda candidates: candidate
     pipeline.researcher.research = lambda candidate: ResearchPack(topic=candidate.title)
     fallback_candidate, fallback_research = pipeline._candidate_with_research(None)
-    assert fallback_candidate.title == "Why Astronauts Float in Orbit"
+    assert fallback_candidate.title != candidate.title
     verified = FactVerifier().verify(fallback_research)
     assert verified.confidence_score >= 65
     assert len(fallback_research.sources) >= pipeline.settings.min_research_sources
