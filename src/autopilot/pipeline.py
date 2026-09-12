@@ -10,6 +10,7 @@ from autopilot.facts import (
     FactScriptPlanner,
     FactTopicDiscovery,
     FactVerifier,
+    verified_curio_seed,
 )
 from autopilot.models import PipelineRun, ResearchPack, ResearchSource, TopicCandidate
 from autopilot.providers.hybrid_visuals import HybridVisualDirector
@@ -25,7 +26,6 @@ from autopilot.youtube import YouTubeUploader
 
 
 DEFAULT_TOPIC = "A useful AI workflow most people are underusing"
-DEFAULT_FACT_TOPIC = "Why airplane windows are rounded"
 
 
 class AutopilotPipeline:
@@ -130,6 +130,11 @@ class AutopilotPipeline:
         try:
             audio_path = self.tts.synthesize(plan.script, run_dir / "voice.mp3")
             duration = self.renderer.probe_duration(audio_path)
+            self._validate_voice_track(plan, duration)
+            result.metadata["voice_duration_seconds"] = round(duration, 2)
+            result.metadata["voice_words_per_minute"] = round(
+                len(plan.script.split()) * 60 / max(duration, 1), 1
+            )
             captions_path = write_srt(
                 plan.script,
                 duration,
@@ -218,6 +223,9 @@ class AutopilotPipeline:
                 run_dir / "thumbnail.jpg",
                 title=plan.title,
                 brief=plan.thumbnail_brief,
+                brand_name=self.settings.channel_display_name,
+                facts_mode=self.settings.channel_profile == "curioaxiom",
+                feature_image=assets[0].local_path if assets else None,
             )
             result.video_path = video_path
             result.thumbnail_path = thumbnail_path
@@ -238,6 +246,10 @@ class AutopilotPipeline:
 
     def _candidate_with_research(self, topic: str | None) -> tuple[TopicCandidate, ResearchPack]:
         if topic:
+            if self.settings.channel_profile == "curioaxiom":
+                seeded = self._verified_fact_seed(topic)
+                if seeded:
+                    return seeded
             source_urls: list[str] = []
             lowered = topic.lower()
             if (
@@ -301,8 +313,12 @@ class AutopilotPipeline:
 
         candidates = self.discovery.discover()
         if not candidates:
-            fallback = DEFAULT_FACT_TOPIC if self.settings.channel_profile == "curioaxiom" else DEFAULT_TOPIC
-            candidate = TopicCandidate(title=fallback, score=50, reason="Evergreen fallback.")
+            if self.settings.channel_profile == "curioaxiom":
+                seeded = self._verified_fact_seed()
+                if seeded:
+                    return seeded
+                raise RuntimeError("No unused verified CurioAxiom research reserve is available.")
+            candidate = TopicCandidate(title=DEFAULT_TOPIC, score=50, reason="Evergreen fallback.")
             return candidate, self.researcher.research(candidate)
 
         preferred = self.planner.choose_topic(candidates)
@@ -331,6 +347,9 @@ class AutopilotPipeline:
                     and len(research.sources) >= self.settings.min_research_sources
                 ):
                     return candidate, research
+            seeded = self._verified_fact_seed()
+            if seeded:
+                return seeded
             if best:
                 raise RuntimeError(
                     "No eligible facts topic passed source verification. "
@@ -352,6 +371,33 @@ class AutopilotPipeline:
                 return candidate, research
 
         return best_candidate, best_research
+
+    def _verified_fact_seed(self, requested_topic: str | None = None) -> tuple[TopicCandidate, ResearchPack] | None:
+        """Use a unique, pre-verified reserve only when normal fact research cannot pass."""
+        return verified_curio_seed(
+            excluded_topics=self.state.recent_topics(limit=120),
+            requested_topic=requested_topic,
+        )
+
+    @staticmethod
+    def _validate_voice_track(plan, duration: float) -> None:
+        """Block synthetic narration that would feel rushed, sluggish, or cut short."""
+        words = len(plan.script.split())
+        words_per_minute = words * 60 / max(duration, 1)
+        if plan.format == "short":
+            if not 28 <= duration <= 65:
+                raise RuntimeError(f"Short voice track is {duration:.1f}s; expected 28-65 seconds.")
+            if not 120 <= words_per_minute <= 210:
+                raise RuntimeError(
+                    f"Short narration pace is {words_per_minute:.0f} WPM; expected 120-210 WPM."
+                )
+            return
+        if not 7.5 * 60 <= duration <= 13 * 60:
+            raise RuntimeError(f"Long-form voice track is {duration / 60:.1f} minutes; expected 7.5-13 minutes.")
+        if not 115 <= words_per_minute <= 185:
+            raise RuntimeError(
+                f"Long-form narration pace is {words_per_minute:.0f} WPM; expected 115-185 WPM."
+            )
 
     @staticmethod
     def _ensure_airplane_window_sources(research: ResearchPack) -> ResearchPack:
