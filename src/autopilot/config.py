@@ -91,8 +91,6 @@ class Settings(BaseSettings):
             self.min_visual_clips_short = 20
         if self.visual_clip_seconds == 2.8:
             self.visual_clip_seconds = 2.0
-        if self.shorts_per_day == 2:
-            self.shorts_per_day = 3
 
     @property
     def topic_query_list(self) -> list[str]:
