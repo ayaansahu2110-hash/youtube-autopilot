@@ -8,6 +8,7 @@ from autopilot.models import ResearchPack, ResearchSource, SceneBeat, TopicCandi
 from autopilot.models import VisualAsset
 from autopilot.render import FFmpegRenderer
 from autopilot.pipeline import AutopilotPipeline
+from autopilot.youtube import YouTubeUploader
 
 
 def test_curioaxiom_defaults_are_isolated() -> None:
@@ -18,7 +19,7 @@ def test_curioaxiom_defaults_are_isolated() -> None:
     assert settings.max_visual_clips_short == 24
     assert settings.min_visual_clips_short == 20
     assert settings.visual_clip_seconds == 2.0
-    assert settings.shorts_per_day == 3
+    assert settings.shorts_per_day == 2
 
 
 def test_curioaxiom_public_short_setting_does_not_publish_long_form() -> None:
@@ -29,6 +30,13 @@ def test_curioaxiom_public_short_setting_does_not_publish_long_form() -> None:
     assert short.allow_public_uploads is True
     assert long_form.upload_privacy_status == "private"
     assert long_form.allow_public_uploads is False
+
+
+def test_youtube_duration_parser_supports_short_and_long_videos() -> None:
+    assert YouTubeUploader._duration_seconds("PT59S") == 59
+    assert YouTubeUploader._duration_seconds("PT1M1S") == 61
+    assert YouTubeUploader._duration_seconds("PT1H2M3S") == 3723
+    assert YouTubeUploader._duration_seconds("not-a-duration") == 0
 
 
 def test_fact_category_router_handles_f1() -> None:
