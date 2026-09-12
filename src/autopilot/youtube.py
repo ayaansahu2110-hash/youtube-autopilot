@@ -1,6 +1,8 @@
 from pathlib import Path
+import re
 
 from google.auth.transport.requests import Request
+from google.auth.exceptions import RefreshError
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
@@ -34,7 +36,20 @@ class YouTubeAuth:
         if credentials and not credentials.has_scopes(YOUTUBE_SCOPES):
             credentials = None
         if credentials and credentials.expired and credentials.refresh_token:
-            credentials.refresh(Request())
+            try:
+                credentials.refresh(Request())
+            except RefreshError as exc:
+                # A revoked refresh token is recoverable only through the browser
+                # OAuth flow.  In interactive mode, deliberately discard it and
+                # continue to that flow instead of trapping the user in a stale
+                # token error.  Non-interactive cloud runs receive a concise
+                # failure that the workflow can surface before production starts.
+                if interactive:
+                    credentials = None
+                else:
+                    raise RuntimeError(
+                        "YouTube authorization has expired or was revoked; run the channel setup script to re-authorize it."
+                    ) from exc
         if credentials and credentials.valid:
             token_path.parent.mkdir(parents=True, exist_ok=True)
             token_path.write_text(credentials.to_json(), encoding="utf-8")
@@ -98,8 +113,23 @@ class YouTubeUploader:
             playlistId=uploads_playlist,
             maxResults=max(1, min(50, limit)),
         ).execute()
+        items = data.get("items", []) or []
+        video_ids = [
+            str(item.get("contentDetails", {}).get("videoId") or "")
+            for item in items
+            if item.get("contentDetails", {}).get("videoId")
+        ]
+        durations: dict[str, int] = {}
+        if video_ids:
+            details = youtube.videos().list(
+                part="contentDetails", id=",".join(video_ids)
+            ).execute().get("items", [])
+            for video in details:
+                seconds = self._duration_seconds(str(video.get("contentDetails", {}).get("duration") or ""))
+                durations[str(video.get("id") or "")] = seconds
+
         output: list[dict[str, str]] = []
-        for item in data.get("items", []) or []:
+        for item in items:
             snippet = item.get("snippet", {})
             video_id = str(item.get("contentDetails", {}).get("videoId") or "")
             title = str(snippet.get("title") or "").strip()
@@ -109,9 +139,25 @@ class YouTubeUploader:
                         "video_id": video_id,
                         "title": title,
                         "published_at": str(snippet.get("publishedAt") or ""),
+                        # Conservative classification keeps long-form watch-hour
+                        # reporting honest. Videos beyond a minute are treated as
+                        # long-form unless their own production record says otherwise.
+                        "format": (
+                            "short" if 0 < durations.get(video_id, 0) <= 60
+                            else "long" if durations.get(video_id, 0) > 60
+                            else "unknown"
+                        ),
                     }
                 )
         return output
+
+    @staticmethod
+    def _duration_seconds(iso_duration: str) -> int:
+        match = re.fullmatch(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", iso_duration)
+        if not match:
+            return 0
+        hours, minutes, seconds = (int(value or 0) for value in match.groups())
+        return hours * 3600 + minutes * 60 + seconds
 
     def delete_video(self, video_id: str) -> None:
         """Delete one owned YouTube upload by ID."""
