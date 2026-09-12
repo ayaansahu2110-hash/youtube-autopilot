@@ -23,6 +23,14 @@ function Find-Gh {
     return $null
 }
 
+function Find-Python {
+    $venvPython = Join-Path (Get-Location) ".venv\Scripts\python.exe"
+    if (Test-Path $venvPython) { return $venvPython }
+    $command = Get-Command python -ErrorAction SilentlyContinue
+    if ($command) { return $command.Source }
+    throw "Python is unavailable. Create the project .venv first."
+}
+
 function Read-DotEnvValue([string]$Name) {
     if (-not (Test-Path ".env")) { return $null }
     $escaped = [regex]::Escape($Name)
@@ -61,6 +69,7 @@ if (-not (Test-Path ".git")) {
 
 Step "Checking GitHub CLI"
 $gh = Find-Gh
+$python = Find-Python
 if (-not $gh) {
     Write-Host "GitHub CLI is not installed. Installing it now..."
     $winget = Get-Command winget -ErrorAction SilentlyContinue
@@ -102,6 +111,15 @@ if ([string]::IsNullOrWhiteSpace($pexels)) { throw "PEXELS_API_KEY is missing fr
 if (-not (Test-Path $clientPath)) { throw "$clientPath is missing." }
 if (-not (Test-Path $tokenPath)) { throw "$tokenPath is missing." }
 
+Step "Refreshing ByteVexa YouTube authorization"
+Write-Host "Choose the Google account that manages ByteVexa, then authorize the ByteVexa channel." -ForegroundColor Yellow
+$env:CHANNEL_PROFILE = "bytevexa"
+$env:CHANNEL_DISPLAY_NAME = "ByteVexa"
+& $python -m autopilot.cli auth-youtube
+if ($LASTEXITCODE -ne 0) { throw "Google authorization was not completed." }
+& $python -m autopilot.cli verify-youtube
+if ($LASTEXITCODE -ne 0) { throw "ByteVexa channel verification failed; the token was not uploaded." }
+
 $clientB64 = [Convert]::ToBase64String([IO.File]::ReadAllBytes((Resolve-Path $clientPath)))
 $tokenB64 = [Convert]::ToBase64String([IO.File]::ReadAllBytes((Resolve-Path $tokenPath)))
 
@@ -111,16 +129,16 @@ Set-RepoSecret "PEXELS_API_KEY" $pexels $gh
 Set-RepoSecret "YOUTUBE_CLIENT_SECRETS_B64" $clientB64 $gh
 Set-RepoSecret "YOUTUBE_TOKEN_B64" $tokenB64 $gh
 Set-RepoVariable "GEMINI_MODEL" "gemini-3.7-flash" $gh
-Set-RepoVariable "UPLOAD_PRIVACY_STATUS" "private" $gh
-Set-RepoVariable "ALLOW_PUBLIC_UPLOADS" "false" $gh
+Set-RepoVariable "UPLOAD_PRIVACY_STATUS" "public" $gh
+Set-RepoVariable "ALLOW_PUBLIC_UPLOADS" "true" $gh
 
-Step "Starting the first private cloud test"
+Step "Starting the verified ByteVexa production run"
 & $gh workflow run daily.yml --repo $Repo
 if ($LASTEXITCODE -ne 0) {
     throw "Secrets were configured, but the first workflow could not be started."
 }
 
 Write-Host "`nByteVexa cloud automation is configured." -ForegroundColor Green
-Write-Host "The first test has been started with PRIVATE YouTube visibility." -ForegroundColor Green
+Write-Host "The first verified production run has been started with PUBLIC YouTube visibility." -ForegroundColor Green
 Write-Host "Your PC can be switched off after this command finishes." -ForegroundColor Green
 Write-Host "The scheduled workflow will run daily in GitHub Actions." -ForegroundColor Green
