@@ -327,7 +327,14 @@ def learning_context(settings: Settings, max_chars: int = 9000) -> str:
     if eligible:
         retention_winner = max(
             eligible,
-            key=lambda item: float((item.get("metrics") or {}).get("averageViewPercentage", 0) or 0),
+            key=lambda item: (
+                min(
+                    100,
+                    float((item.get("metrics") or {}).get("averageViewPercentage", 0) or 0),
+                )
+                * min(1, float((item.get("metrics") or {}).get("views", 0) or 0) / 100),
+                float((item.get("metrics") or {}).get("views", 0) or 0),
+            ),
         )
         retention_metrics = retention_winner.get("metrics") or {}
         lines.append(
@@ -337,8 +344,12 @@ def learning_context(settings: Settings, max_chars: int = 9000) -> str:
             "Preserve its specificity and pace, but create a new structure and wording."
         )
 
+        conversion_candidates = [
+            item for item in eligible
+            if float((item.get("metrics") or {}).get("views", 0) or 0) >= 75
+        ] or eligible
         conversion_winner = max(
-            eligible,
+            conversion_candidates,
             key=lambda item: (
                 100 * float((item.get("metrics") or {}).get("subscribersGained", 0) or 0)
                 / max(1, float((item.get("metrics") or {}).get("views", 0) or 0))

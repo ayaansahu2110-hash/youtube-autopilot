@@ -5,6 +5,7 @@ from pathlib import Path
 from autopilot.captions import write_srt
 from autopilot.cli import _longform_due
 from autopilot.config import Settings
+from autopilot.learning import learning_context
 from autopilot.models import PipelineRun, ResearchPack, ResearchSource, SceneBeat, VideoPlan
 from autopilot.quality import QualityGate
 from autopilot.state import StateStore
@@ -193,3 +194,38 @@ def test_bytevexa_accepts_concrete_flow_output_as_evidence(tmp_path: Path) -> No
         strict=False,
     )
     assert not any("concrete evidence" in error.lower() for error in report.errors)
+
+
+def test_learning_baselines_do_not_overfit_tiny_samples(tmp_path: Path) -> None:
+    learning_file = tmp_path / "learning.json"
+    learning_file.write_text(
+        json.dumps(
+            {
+                "own_analytics": [
+                    {
+                        "title": "Tiny Looping Sample",
+                        "format": "short",
+                        "metrics": {
+                            "views": 25,
+                            "averageViewPercentage": 180,
+                            "subscribersGained": 1,
+                        },
+                    },
+                    {
+                        "title": "Reliable Retention Baseline",
+                        "format": "short",
+                        "metrics": {
+                            "views": 180,
+                            "averageViewPercentage": 80,
+                            "subscribersGained": 3,
+                        },
+                    },
+                ],
+                "own_comments": [],
+            }
+        ),
+        encoding="utf-8",
+    )
+    context = learning_context(Settings(learning_file=learning_file))
+    assert "Own retention baseline: Reliable Retention Baseline" in context
+    assert "Own subscriber-conversion baseline: Reliable Retention Baseline" in context
