@@ -207,7 +207,7 @@ class QualityGate:
                 evidence_beats = (
                     ("evidence", "mechanism", "scale", "reveal")
                     if self.settings.channel_profile == "curioaxiom"
-                    else ("demo", "example", "workflow", "result")
+                    else ("demo", "example", "workflow", "result", "proof", "flow", "output")
                 )
                 if not any(any(word in purpose for word in evidence_beats) for purpose in purposes):
                     errors.append("Video lacks a concrete evidence or result beat.")

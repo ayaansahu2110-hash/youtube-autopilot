@@ -49,7 +49,7 @@ LONG-FORM CONTENT STANDARD
 - End with a concrete decision framework or action, not a generic subscribe-style conclusion.
 
 LONG-FORM VISUAL DIRECTION
-Create 26-34 scenes in exact narration order. Every scene must choose ONE visual_mode:
+Create exactly 32 scenes in exact narration order. Every scene must choose ONE visual_mode:
 1) "ui" — real public product/interface evidence using an approved SOURCE_URL exactly.
 2) "motion" — ByteVexa explanatory graphics for comparisons, concepts, steps, numbers, timelines, pros/cons, before/after and summaries.
 3) "stock" — only literal real-world B-roll that directly matches the narration.
@@ -57,7 +57,7 @@ Create 26-34 scenes in exact narration order. Every scene must choose ONE visual
 Visual rules:
 - Prefer real UI + motion graphics; stock should remain a minority.
 - Do not show the same landing-page state repeatedly. For product coverage, vary hero, feature section, examples/templates, input/demo, result/preview and limitation/support evidence when available.
-- Each scene narration should normally be 25-60 spoken words so visuals change regularly without becoming frantic.
+- Each scene narration should be 38-50 spoken words, keeping the complete script inside 1,200-1,650 words while visuals change regularly.
 - visual_query must describe the exact visual evidence needed.
 - on_screen_text should be 2-7 useful words.
 - purpose should use clear labels such as hook, context, feature, workflow, demo, example, result, comparison, limitation, decision, takeaway.
@@ -101,7 +101,7 @@ Draft JSON:
 {json.dumps(draft, ensure_ascii=False)}
 
 REQUIRED FINAL STANDARD
-- 1,200-1,650 spoken words and 26-34 scene beats.
+- 1,200-1,650 spoken words and exactly 32 scene beats; each scene should contain 38-50 spoken words.
 - A concrete outcome/problem in the first 5 seconds, with no channel intro or history preamble.
 - Visual proof, a real demo action, a result or decisive evidence within the first 30 seconds and first four scenes.
 - At least 5 concrete researched facts/actions/examples.

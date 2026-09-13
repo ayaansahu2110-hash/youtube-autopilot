@@ -23,10 +23,21 @@ def load_settings() -> Settings:
     return Settings()
 
 
-def _longform_due(settings: Settings) -> bool:
+def _longform_due(
+    settings: Settings,
+    state: StateStore | None = None,
+    local_today: date | None = None,
+) -> bool:
     if not settings.longform_enabled:
         return False
-    local_today = datetime.now(ZoneInfo(settings.schedule_timezone)).date()
+    local_today = local_today or datetime.now(ZoneInfo(settings.schedule_timezone)).date()
+    if state is not None:
+        latest_long = state.latest_upload_date(
+            timezone_name=settings.schedule_timezone,
+            video_format="long",
+        )
+        if latest_long is not None:
+            return (local_today - latest_long).days >= max(1, settings.longform_every_days)
     anchor = date.fromisoformat(settings.longform_anchor_date)
     interval = max(1, settings.longform_every_days)
     return (local_today - anchor).days >= 0 and (local_today - anchor).days % interval == 0
@@ -147,7 +158,7 @@ def daily(
         video_format="short",
     )
     remaining_shorts = max(0, max(1, settings.shorts_per_day) - uploaded_shorts)
-    short_count = remaining_shorts if slot == "all" else min(1, remaining_shorts)
+    short_count = remaining_shorts if slot in {"evening", "all"} else min(1, remaining_shorts)
     if short_count == 0:
         console.print(
             f"Daily Shorts target already met ({uploaded_shorts}/{settings.shorts_per_day}); "
@@ -166,12 +177,13 @@ def daily(
         timezone_name=settings.schedule_timezone,
         video_format="long",
     )
+    long_due = _longform_due(settings, state, local_today)
     should_make_long = (
         slot in {"evening", "all"}
-        and _longform_due(settings)
+        and long_due
         and uploaded_longs == 0
     )
-    if slot in {"evening", "all"} and _longform_due(settings) and uploaded_longs:
+    if slot in {"evening", "all"} and long_due and uploaded_longs:
         console.print("Today's long-form upload already exists; skipping duplicate publication.")
     if not any(result.status == "failed" for result in results) and should_make_long:
         long_result = AutopilotPipeline(settings).run(dry_run=dry_run, video_format="long")
@@ -203,7 +215,7 @@ def schedule() -> None:
             dry_run=not settings.enable_uploads,
             video_format="short",
         )
-        if result.status != "failed" and _longform_due(settings):
+        if result.status != "failed" and _longform_due(settings, state):
             AutopilotPipeline(settings).run(
                 dry_run=not settings.enable_uploads,
                 video_format="long",

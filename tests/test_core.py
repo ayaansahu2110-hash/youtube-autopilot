@@ -3,6 +3,7 @@ from datetime import date
 from pathlib import Path
 
 from autopilot.captions import write_srt
+from autopilot.cli import _longform_due
 from autopilot.config import Settings
 from autopilot.models import PipelineRun, ResearchPack, ResearchSource, SceneBeat, VideoPlan
 from autopilot.quality import QualityGate
@@ -123,3 +124,72 @@ def test_upload_count_uses_channel_local_date_and_format(tmp_path: Path) -> None
         timezone_name="Asia/Kolkata",
         video_format="long",
     ) == 1
+    assert state.latest_upload_date(
+        timezone_name="Asia/Kolkata",
+        video_format="long",
+    ) == date(2026, 9, 12)
+
+
+def test_missed_longform_becomes_due_without_bulk_catchup(tmp_path: Path) -> None:
+    state_file = tmp_path / "state.json"
+    state_file.write_text(
+        json.dumps(
+            {
+                "topics": [],
+                "videos": [
+                    {
+                        "video_id": "long-old",
+                        "format": "long",
+                        "created_at": "2026-09-10T12:00:00+00:00",
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    settings = Settings(
+        state_file=state_file,
+        longform_every_days=2,
+        schedule_timezone="Asia/Kolkata",
+    )
+    state = StateStore(state_file)
+    assert _longform_due(settings, state, date(2026, 9, 12)) is True
+    assert _longform_due(settings, state, date(2026, 9, 11)) is False
+
+
+def test_bytevexa_accepts_concrete_flow_output_as_evidence(tmp_path: Path) -> None:
+    purposes = ["hook", "flow_input", "flow_action", "flow_output", "limitation", "takeaway"]
+    purposes += ["demo"] * 24
+    scenes = []
+    for index, purpose in enumerate(purposes):
+        narration = " ".join(f"specific{index}_{word}" for word in range(40))
+        scenes.append(
+            SceneBeat(
+                narration=narration,
+                visual_query=f"specific workflow evidence {index}",
+                purpose=purpose,
+                visual_mode="motion",
+                on_screen_text=f"PROOF {index}",
+            )
+        )
+    plan = VideoPlan(
+        topic="A verified browser workflow",
+        angle="Proof first",
+        format="long",
+        hook="See the output",
+        script=" ".join(scene.narration for scene in scenes),
+        title="A Verified Browser Workflow",
+        description="A researched workflow.",
+        tags=["AI"],
+        thumbnail_brief="One visible output",
+        thumbnail_text="REAL OUTPUT",
+        visual_queries=[scene.visual_query for scene in scenes],
+        scenes=scenes,
+    )
+    settings = Settings(state_file=tmp_path / "evidence-state.json")
+    report = QualityGate(settings, StateStore(settings.state_file)).evaluate(
+        plan,
+        ResearchPack(topic=plan.topic),
+        strict=False,
+    )
+    assert not any("concrete evidence" in error.lower() for error in report.errors)

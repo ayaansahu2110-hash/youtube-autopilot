@@ -140,6 +140,27 @@ class StateStore:
                 count += 1
         return count
 
+    def latest_upload_date(self, *, timezone_name: str, video_format: str) -> date | None:
+        """Return the newest completed upload date in the channel timezone."""
+        latest: date | None = None
+        local_zone = ZoneInfo(timezone_name)
+        for item in self.data["videos"]:
+            if item.get("format") != video_format or not item.get("video_id"):
+                continue
+            created_at = str(item.get("created_at") or "").strip()
+            if not created_at:
+                continue
+            try:
+                created = datetime.fromisoformat(created_at.replace("Z", "+00:00"))
+            except ValueError:
+                continue
+            if created.tzinfo is None:
+                created = created.replace(tzinfo=timezone.utc)
+            local_date = created.astimezone(local_zone).date()
+            if latest is None or local_date > latest:
+                latest = local_date
+        return latest
+
     def update_analytics(self, video_id: str, metrics: dict[str, float]) -> None:
         for item in self.data["videos"]:
             if item.get("video_id") == video_id:
