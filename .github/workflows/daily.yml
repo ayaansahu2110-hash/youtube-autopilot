@@ -1,9 +1,6 @@
 name: Daily YouTube Autopilot
 
 on:
-  push:
-    paths:
-      - ".github/workflows/daily.yml"
   schedule:
     - cron: "30 6 * * *"  # 12:00 Asia/Kolkata
     - cron: "30 12 * * *" # 18:00 Asia/Kolkata
@@ -41,8 +38,6 @@ jobs:
       UPLOAD_PRIVACY_STATUS: "public"
       ALLOW_PUBLIC_UPLOADS: "true"
       AUTOPILOT_ENV: production
-      MANUAL_TOPIC_SOURCES: "https://www.photopea.com/,https://www.photopea.com/,https://www.photopea.com/learn/"
-      MANUAL_TOPIC_EVIDENCE: "Photopea’s official website says it is a free online photo editor that runs in the browser without downloads, keeps files on the device, and includes layers, masks, cropping, resizing, blending, adjustments and filters. It says users can start editing without spending money. Do not claim features, prices, or account requirements beyond these statements."
       SCHEDULE_TIMEZONE: Asia/Kolkata
     steps:
       - uses: actions/checkout@v4
@@ -100,17 +95,17 @@ jobs:
         if: env.READY == 'true'
         run: python -m autopilot.cli verify-youtube
 
-      - name: Produce one verified Photopea walkthrough with retry
+      - name: Produce scheduled videos with retry
         if: env.READY == 'true'
         shell: bash
         run: |
           set +e
           for attempt in 1 2 3; do
-            echo "Photopea walkthrough attempt $attempt of 3"
-            python -m autopilot.cli run --render --format short --topic "Photopea: create a browser project without an account"
+            echo "Production attempt $attempt of 3 for slot: $RUN_SLOT"
+            python -m autopilot.cli daily --live --slot "$RUN_SLOT"
             code=$?
             if [ "$code" -eq 0 ]; then
-              echo "One verified walkthrough published successfully on attempt $attempt."
+              echo "Production completed successfully on attempt $attempt."
               exit 0
             fi
             if [ "$attempt" -lt 3 ]; then
@@ -118,7 +113,7 @@ jobs:
               sleep 20
             fi
           done
-          echo "All walkthrough attempts failed."
+          echo "All production attempts failed."
           exit 1
 
       - name: Persist topic, analytics and learning history
