@@ -536,17 +536,21 @@ class AutopilotPipeline:
     @staticmethod
     def _require_captured_product_walkthrough(plan, assets, result: PipelineRun) -> None:
         """Fail closed if a claimed software review lacks real public product proof."""
-        required_stages = {"signup", "main", "feature", "workflow", "output", "pricing"}
         captured_stages = {
             asset.capture_stage
             for asset in assets
             if asset.visual_mode == "ui" and asset.capture_stage
         }
-        # A tool with no listed price may use an evidence-backed availability
-        # scene, but it still cannot skip every access/pricing decision.
-        if "availability" in captured_stages:
-            captured_stages.add("pricing")
+        # A browser app can legitimately be free and direct-access, with no
+        # signup screen or paid plan.  Its verified availability surface is
+        # enough for both decisions; the actual product, workflow and output
+        # are still mandatory.
+        required_stages = {"main", "feature", "workflow", "output"}
         missing = sorted(required_stages - captured_stages)
+        if not ({"signup", "availability"} & captured_stages):
+            missing.append("signup/access")
+        if not ({"pricing", "availability"} & captured_stages):
+            missing.append("pricing/free availability")
         if missing:
             result.status = "failed"
             result.notes.append(

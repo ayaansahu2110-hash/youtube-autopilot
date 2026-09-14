@@ -7,6 +7,7 @@ from autopilot.cli import _longform_due
 from autopilot.config import Settings
 from autopilot.learning import learning_context
 from autopilot.models import PipelineRun, ResearchPack, ResearchSource, SceneBeat, VideoPlan
+from autopilot.pipeline import AutopilotPipeline
 from autopilot.providers.hybrid_visuals import HybridVisualDirector
 from autopilot.quality import QualityGate
 from autopilot.state import StateStore
@@ -113,6 +114,25 @@ def test_tool_review_requires_complete_public_walkthrough(tmp_path: Path) -> Non
         strict=False,
     )
     assert report.passed
+
+
+def test_direct_access_product_can_use_verified_availability(tmp_path: Path) -> None:
+    plan = _plan("A direct-access editor")
+    plan.content_mode = "tool_review"
+    result = PipelineRun(run_id="direct", plan=plan)
+    # Build plain assets rather than relying on a real browser in the unit test.
+    from autopilot.models import VisualAsset
+
+    assets = [
+        VisualAsset(
+            local_path=tmp_path / f"{stage}.webm",
+            visual_mode="ui",
+            capture_stage=stage,
+        )
+        for stage in ("availability", "main", "feature", "workflow", "output")
+    ]
+    AutopilotPipeline._require_captured_product_walkthrough(plan, assets, result)
+    assert result.status != "failed"
 
 
 def test_quality_rejects_recent_duplicate(tmp_path: Path) -> None:

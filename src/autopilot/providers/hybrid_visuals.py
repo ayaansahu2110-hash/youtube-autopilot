@@ -291,6 +291,11 @@ class HybridVisualDirector:
 
     @staticmethod
     def _capture_stage(scene: SceneBeat) -> str:
+        # Some genuinely public browser apps (for example an editor that opens
+        # without an account) have no signup screen.  Keep that distinction
+        # explicit rather than pretending an access page is an account flow.
+        if "availability" in scene.purpose.lower() or "no signup" in scene.on_screen_text.lower():
+            return "availability"
         text = f"{scene.purpose} {scene.on_screen_text} {scene.visual_query}".lower()
         stages = (
             ("signup", ("signup", "sign up", "get started", "access")),
@@ -304,6 +309,8 @@ class HybridVisualDirector:
 
     def _capture_stage_surface(self, page, scene: SceneBeat, stage: str) -> str:
         """Focus one public stage and return it only when the stage is visible."""
+        if self._is_photopea(page):
+            return self._capture_photopea_surface(page, stage)
         if stage == "signup":
             return "signup" if self._show_public_surface(
                 page, ("Sign up", "Get started", "Start free", "Try for free"), navigate=False
@@ -340,6 +347,94 @@ class HybridVisualDirector:
             self._show_examples_or_results(page)
             return ""
         return ""
+
+    @staticmethod
+    def _is_photopea(page) -> bool:
+        """Photopea is a public in-browser editor suitable for a real demo."""
+        try:
+            return "photopea.com" in page.url.lower()
+        except Exception:
+            return False
+
+    def _capture_photopea_surface(self, page, stage: str) -> str:
+        """Show a real Photopea session without login, upload, or export.
+
+        Photopea deliberately has no account-creation wall for its core editor.
+        The capture opens the public editor and creates only an empty local
+        canvas, which gives the viewer an honest view of the working software
+        while leaving the user's files and any external account untouched.
+        """
+        if stage in {"signup", "availability", "pricing"}:
+            if self._page_contains(page, ("free online photo editor", "without spending a dime")):
+                return "availability"
+            return ""
+
+        if not self._open_photopea_editor(page):
+            return ""
+        if stage == "main":
+            return "main"
+        if stage == "feature":
+            try:
+                image_menu = page.get_by_role("button", name=re.compile(r"^Image$", re.I)).first
+                if image_menu.count() and image_menu.is_visible():
+                    image_menu.click(timeout=1500)
+                    page.wait_for_timeout(500)
+                    return "feature"
+            except Exception:
+                pass
+            return ""
+        if stage in {"workflow", "output"}:
+            return stage if self._photopea_new_canvas(page) else ""
+        return ""
+
+    @staticmethod
+    def _page_contains(page, phrases: tuple[str, ...]) -> bool:
+        try:
+            body = page.locator("body").inner_text(timeout=1200).lower()
+        except Exception:
+            return False
+        return any(phrase in body for phrase in phrases)
+
+    @staticmethod
+    def _photopea_editor_ready(page) -> bool:
+        try:
+            file_menu = page.get_by_role("button", name=re.compile(r"^File$", re.I)).first
+            return file_menu.count() > 0 and file_menu.is_visible()
+        except Exception:
+            return False
+
+    def _open_photopea_editor(self, page) -> bool:
+        if self._photopea_editor_ready(page):
+            return True
+        try:
+            start = page.get_by_role("button", name=re.compile(r"^Start using Photopea$", re.I)).first
+            if not start.count() or not start.is_visible():
+                return False
+            start.click(timeout=1800)
+            page.wait_for_timeout(1400)
+        except Exception:
+            return False
+        return self._photopea_editor_ready(page)
+
+    def _photopea_new_canvas(self, page) -> bool:
+        """Create a blank local document as observable workflow/output proof."""
+        if not self._photopea_editor_ready(page):
+            return False
+        try:
+            new_project = page.get_by_text("New Project", exact=True).first
+            if new_project.count() and new_project.is_visible():
+                new_project.click(timeout=1600)
+                page.wait_for_timeout(350)
+            create = page.get_by_role("button", name=re.compile(r"^Create$", re.I)).first
+            if create.count() and create.is_visible():
+                create.click(timeout=1800)
+                page.wait_for_timeout(1100)
+            # The canvas workspace exposes the Layers panel after a document
+            # is created.  It is product output, not a static landing page.
+            layers = page.get_by_text("Layers", exact=True).first
+            return layers.count() > 0 and layers.is_visible()
+        except Exception:
+            return False
 
     def _show_public_surface(self, page, hints: tuple[str, ...], *, navigate: bool) -> bool:
         """Focus public navigation/section text without ever signing in or buying."""
