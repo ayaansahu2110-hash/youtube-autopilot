@@ -28,9 +28,16 @@ class Researcher:
 
         # Preserve primary discovery evidence before news aggregators can fill
         # the source budget with secondary coverage.
-        if self.settings.channel_profile == "curioaxiom":
+        if self.settings.channel_profile == "curioaxiom" or candidate.reason == "Manual topic override.":
             for url in candidate.source_urls[:5]:
-                self._append_url_source(sources, seen_urls, seen_publishers, candidate.title, url)
+                self._append_url_source(
+                    sources,
+                    seen_urls,
+                    seen_publishers,
+                    candidate.title,
+                    url,
+                    allow_same_publisher=candidate.reason == "Manual topic override.",
+                )
 
         # Search more than one public news endpoint because hosted runners can
         # occasionally be rate-limited or blocked by an individual provider.
@@ -125,13 +132,15 @@ class Researcher:
         seen_publishers: set[str],
         title: str,
         url: str,
+        *,
+        allow_same_publisher: bool = False,
     ) -> None:
         url = str(url or "").strip()
         if not url or url in seen_urls:
             return
         publisher = urlparse(url).netloc.strip()
         publisher_key = publisher.lower()
-        if publisher_key and publisher_key in seen_publishers:
+        if publisher_key and publisher_key in seen_publishers and not allow_same_publisher:
             return
         snippet = self._clean(self._extract_page_text(url))
         if len(snippet) < 120:

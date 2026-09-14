@@ -259,7 +259,7 @@ class AutopilotPipeline:
                 seeded = self._verified_fact_seed(topic)
                 if seeded:
                     return seeded
-            source_urls: list[str] = []
+            source_urls: list[str] = list(self.settings.manual_topic_source_list)
             lowered = topic.lower()
             if (
                 self.settings.channel_profile == "curioaxiom"

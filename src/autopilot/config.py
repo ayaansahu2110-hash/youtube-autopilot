@@ -18,6 +18,10 @@ class Settings(BaseSettings):
     channel_niche: str = "AI tools, technology and useful websites"
     default_video_format: Literal["short", "long"] = "short"
     topic_queries: str = "AI tools,artificial intelligence,technology,useful websites,productivity apps"
+    # Optional, comma-separated primary sources used only for an explicitly
+    # requested manual topic. This keeps one-off public software reviews inside
+    # verified product pages rather than relying on a search headline.
+    manual_topic_sources: str = ""
     discovery_regions: str = "US,IN,GB"
     min_research_sources: int = 2
 
@@ -99,6 +103,14 @@ class Settings(BaseSettings):
     @property
     def discovery_region_list(self) -> list[str]:
         return [item.strip().upper() for item in self.discovery_regions.split(",") if item.strip()]
+
+    @property
+    def manual_topic_source_list(self) -> list[str]:
+        return [
+            item.strip()
+            for item in self.manual_topic_sources.split(",")
+            if item.strip().startswith(("https://", "http://"))
+        ]
 
     @property
     def llm_configured(self) -> bool:

@@ -313,9 +313,14 @@ class HybridVisualDirector:
                 page, ("Pricing", "Plans", "Free", "Trial"), navigate=True
             ) else ""
         if stage == "main":
-            return "main" if self._show_public_surface(
+            if self._show_public_surface(
                 page, ("Dashboard", "Workspace", "Editor", "Product", "App"), navigate=False
-            ) else ""
+            ):
+                return "main"
+            # Some useful products, such as public answer/search engines, open
+            # directly into their primary workspace. A visible non-sensitive
+            # input is real main-product evidence; a marketing hero is not.
+            return "main" if self._find_public_input(page) is not None else ""
         if stage == "feature":
             return "feature" if self._show_relevant_section(page, scene) else ""
         if stage == "workflow":
@@ -396,25 +401,11 @@ class HybridVisualDirector:
             "input[placeholder*='topic' i]",
             "input[placeholder*='presentation' i]",
             "input[placeholder*='slide' i]",
+            "input[placeholder*='ask' i]",
+            "input[placeholder*='search' i]",
             "[contenteditable='true']",
         ]
-        field = None
-        for selector in candidates:
-            try:
-                locator = page.locator(selector)
-                for index in range(min(locator.count(), 4)):
-                    item = locator.nth(index)
-                    if not item.is_visible():
-                        continue
-                    input_type = (item.get_attribute("type") or "").lower()
-                    if input_type in {"password", "email", "tel", "number"}:
-                        continue
-                    field = item
-                    break
-            except Exception:
-                continue
-            if field is not None:
-                break
+        field = self._find_public_input(page, candidates)
         if field is None:
             return False
 
@@ -437,7 +428,7 @@ class HybridVisualDirector:
         # Click only an obvious generation/creation button, never login/buy/save.
         button_patterns = [
             r"^generate$", r"^create$", r"generate slides", r"create presentation",
-            r"make slides", r"generate presentation", r"^go$", r"^submit$",
+            r"make slides", r"generate presentation", r"^go$", r"^submit$", r"^search$", r"^ask$",
         ]
         for pattern in button_patterns:
             try:
@@ -450,11 +441,49 @@ class HybridVisualDirector:
                     return True
             except Exception:
                 continue
-        return False
+        # Public answer engines often use an icon-only submit control. Enter is
+        # safe here because the typed prompt is generic and non-personal.
+        try:
+            field.press("Enter")
+            page.wait_for_timeout(800)
+            return True
+        except Exception:
+            return False
+
+    @staticmethod
+    def _find_public_input(page, selectors: list[str] | None = None):
+        selectors = selectors or [
+            "textarea",
+            "input[placeholder*='prompt' i]",
+            "input[placeholder*='describe' i]",
+            "input[placeholder*='topic' i]",
+            "input[placeholder*='presentation' i]",
+            "input[placeholder*='slide' i]",
+            "input[placeholder*='ask' i]",
+            "input[placeholder*='search' i]",
+            "[contenteditable='true']",
+        ]
+        for selector in selectors:
+            try:
+                locator = page.locator(selector)
+                for index in range(min(locator.count(), 4)):
+                    item = locator.nth(index)
+                    if not item.is_visible():
+                        continue
+                    input_type = (item.get_attribute("type") or "").lower()
+                    if input_type in {"password", "email", "tel", "number"}:
+                        continue
+                    return item
+            except Exception:
+                continue
+        return None
 
     @staticmethod
     def _show_result_area(page) -> bool:
-        for hint in ("Result", "Preview", "Generated", "Presentation", "Slides", "Output"):
+        for hint in (
+            "Result", "Preview", "Generated", "Presentation", "Slides", "Output",
+            "Answer", "Sources", "Citations", "Related",
+        ):
             try:
                 target = page.get_by_text(re.compile(hint, re.I)).first
                 if target.count() and target.is_visible():
