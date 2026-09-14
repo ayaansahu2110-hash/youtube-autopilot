@@ -78,6 +78,43 @@ def test_bytevexa_visual_label_stays_compact() -> None:
     assert HybridVisualDirector._visual_label(scene) == "THIS SHOULD BECOME A"
 
 
+def test_tool_review_requires_complete_public_walkthrough(tmp_path: Path) -> None:
+    purposes = ["hook", "signup", "main", "feature", "workflow", "output", "pricing", "pros_cons", "takeaway"]
+    scenes = [
+        SceneBeat(
+            narration=f"Verified product walkthrough beat {index} with one concrete viewer decision today clearly.",
+            visual_query=f"specific product interface surface {index}",
+            purpose=purpose,
+            visual_mode="ui" if purpose != "pros_cons" else "motion",
+            source_url="https://example.com" if purpose != "pros_cons" else "",
+            on_screen_text=purpose.upper(),
+        )
+        for index, purpose in enumerate(purposes)
+    ]
+    plan = VideoPlan(
+        topic="A real product review",
+        angle="Hands-on public test",
+        format="short",
+        hook="See the proof",
+        script=" ".join(scene.narration for scene in scenes),
+        title="A Real Product Review",
+        description="Software / website:\n- https://example.com",
+        tags=["AI"],
+        thumbnail_brief="Real product UI",
+        thumbnail_text="TESTED LIVE",
+        visual_queries=[scene.visual_query for scene in scenes],
+        scenes=scenes,
+        content_mode="tool_review",
+    )
+    settings = Settings(state_file=tmp_path / "tool-review-state.json", min_research_sources=1)
+    report = QualityGate(settings, StateStore(settings.state_file)).evaluate(
+        plan,
+        ResearchPack(topic=plan.topic, sources=[ResearchSource(title="Source", url="https://example.com")]),
+        strict=False,
+    )
+    assert report.passed
+
+
 def test_quality_rejects_recent_duplicate(tmp_path: Path) -> None:
     settings = Settings(state_file=tmp_path / "state.json", min_research_sources=1)
     state = StateStore(settings.state_file)

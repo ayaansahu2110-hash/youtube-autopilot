@@ -206,7 +206,12 @@ class HybridVisualDirector:
         scene_index: int,
         vertical: bool,
     ) -> VisualAsset | None:
-        """Record a richer public UI sequence, then fall back to a framed screenshot."""
+        """Record a specific public product surface, never an authenticated session.
+
+        Each tool-review stage is captured separately.  This produces a real
+        guided walkthrough rather than replaying the hero section as a generic
+        slide background.
+        """
         video_output = output_stem.with_suffix(".webm")
         screenshot_output = output_stem.with_suffix(".png")
         raw = output_stem.with_name(output_stem.name + "-raw.png")
@@ -228,32 +233,9 @@ class HybridVisualDirector:
                 page.goto(url, wait_until="domcontentloaded", timeout=30000)
                 page.wait_for_timeout(1200)
                 self._dismiss_cookie_banner(page)
+                capture_stage = self._capture_stage(scene)
+                captured_stage = self._capture_stage_surface(page, scene, capture_stage)
                 page.screenshot(path=str(raw), full_page=False)
-
-                # 1) Start with the actual product page.
-                page.wait_for_timeout(700)
-
-                # 2) Show a relevant feature/examples/how-it-works section instead
-                # of repeating only the hero landing page.
-                if not self._show_relevant_section(page, scene):
-                    page.evaluate(
-                        "window.scrollBy({top: Math.min(window.innerHeight * 0.65, 850), behavior: 'smooth'})"
-                    )
-                    page.wait_for_timeout(1200)
-
-                # 3) When a public no-login input exists, demonstrate a harmless
-                # generic prompt. This creates real typing footage for tools like
-                # slide generators without using private information.
-                demo_started = self._try_public_demo(page, scene)
-                if demo_started:
-                    page.wait_for_timeout(4500)
-                    self._show_result_area(page)
-                    page.wait_for_timeout(1800)
-                else:
-                    # 4) If no interactive demo is available, deliberately show
-                    # examples/templates/results rather than another hero shot.
-                    self._show_examples_or_results(page)
-                    page.wait_for_timeout(1600)
 
                 recorded_path = page.video.path() if page.video else None
                 context.close()
@@ -270,6 +252,7 @@ class HybridVisualDirector:
                     scene_index=scene_index,
                     asset_kind="video",
                     visual_mode="ui",
+                    capture_stage=captured_stage,
                 )
 
             if raw.exists():
@@ -283,6 +266,7 @@ class HybridVisualDirector:
                     scene_index=scene_index,
                     asset_kind="image",
                     visual_mode="ui",
+                    capture_stage=captured_stage,
                 )
         except Exception:
             pass
@@ -304,6 +288,73 @@ class HybridVisualDirector:
                     return
             except Exception:
                 continue
+
+    @staticmethod
+    def _capture_stage(scene: SceneBeat) -> str:
+        text = f"{scene.purpose} {scene.on_screen_text} {scene.visual_query}".lower()
+        stages = (
+            ("signup", ("signup", "sign up", "get started", "access")),
+            ("pricing", ("pricing", "price", "free", "trial", "plan", "availability")),
+            ("output", ("output", "result", "generated", "preview")),
+            ("workflow", ("workflow", "demo", "flow", "input", "action")),
+            ("main", ("main", "dashboard", "workspace", "editor", "product")),
+            ("feature", ("feature", "how it works", "capability")),
+        )
+        return next((stage for stage, terms in stages if any(term in text for term in terms)), "feature")
+
+    def _capture_stage_surface(self, page, scene: SceneBeat, stage: str) -> str:
+        """Focus one public stage and return it only when the stage is visible."""
+        if stage == "signup":
+            return "signup" if self._show_public_surface(
+                page, ("Sign up", "Get started", "Start free", "Try for free"), navigate=False
+            ) else ""
+        if stage == "pricing":
+            return "pricing" if self._show_public_surface(
+                page, ("Pricing", "Plans", "Free", "Trial"), navigate=True
+            ) else ""
+        if stage == "main":
+            return "main" if self._show_public_surface(
+                page, ("Dashboard", "Workspace", "Editor", "Product", "App"), navigate=False
+            ) else ""
+        if stage == "feature":
+            return "feature" if self._show_relevant_section(page, scene) else ""
+        if stage == "workflow":
+            self._show_relevant_section(page, scene)
+            if self._try_public_demo(page, scene):
+                page.wait_for_timeout(4500)
+                return "workflow"
+            return ""
+        if stage == "output":
+            self._show_relevant_section(page, scene)
+            if self._try_public_demo(page, scene):
+                page.wait_for_timeout(4500)
+                return "output" if self._show_result_area(page) else ""
+            # A template gallery is useful supporting footage, but it is not a
+            # live output.  Keep the tool-review gate honest by refusing to
+            # count it as one.
+            self._show_examples_or_results(page)
+            return ""
+        return ""
+
+    def _show_public_surface(self, page, hints: tuple[str, ...], *, navigate: bool) -> bool:
+        """Focus public navigation/section text without ever signing in or buying."""
+        for hint in hints:
+            for role in ("link", "button"):
+                try:
+                    target = page.get_by_role(role, name=re.compile(rf"{re.escape(hint)}", re.I)).first
+                    if not target.count() or not target.is_visible():
+                        continue
+                    target.scroll_into_view_if_needed(timeout=1200)
+                    if navigate and role == "link":
+                        href = target.get_attribute("href") or ""
+                        if href and not any(term in hint.lower() for term in ("sign", "start", "free")):
+                            target.click(timeout=1500)
+                            page.wait_for_timeout(1100)
+                    page.wait_for_timeout(800)
+                    return True
+                except Exception:
+                    continue
+        return False
 
     def _show_relevant_section(self, page, scene: SceneBeat) -> bool:
         hints = []
@@ -402,30 +453,32 @@ class HybridVisualDirector:
         return False
 
     @staticmethod
-    def _show_result_area(page) -> None:
+    def _show_result_area(page) -> bool:
         for hint in ("Result", "Preview", "Generated", "Presentation", "Slides", "Output"):
             try:
                 target = page.get_by_text(re.compile(hint, re.I)).first
                 if target.count() and target.is_visible():
                     target.scroll_into_view_if_needed(timeout=1000)
-                    return
+                    return True
             except Exception:
                 continue
+        return False
 
     @staticmethod
-    def _show_examples_or_results(page) -> None:
+    def _show_examples_or_results(page) -> bool:
         for hint in ("Examples", "Templates", "Gallery", "Showcase", "Results", "Preview"):
             try:
                 target = page.get_by_text(re.compile(hint, re.I)).first
                 if target.count() and target.is_visible():
                     target.scroll_into_view_if_needed(timeout=1100)
-                    return
+                    return True
             except Exception:
                 continue
         try:
             page.evaluate("window.scrollBy({top: Math.min(window.innerHeight * 0.75, 950), behavior: 'smooth'})")
         except Exception:
-            pass
+            return False
+        return False
 
     def _frame_browser_capture(self, raw: Path, output: Path, *, url: str, vertical: bool) -> None:
         width, height = (1080, 1920) if vertical else (1920, 1080)
@@ -580,7 +633,7 @@ class HybridVisualDirector:
     ) -> tuple[str, tuple[tuple[int, int, int], ...]]:
         """Return a purposeful visual role and a non-repeating colour theme."""
         purpose = self._clean(scene.purpose).lower()
-        if any(word in purpose for word in ("comparison", "versus", "decision", "alternative")):
+        if any(word in purpose for word in ("comparison", "versus", "decision", "alternative", "pros", "cons")):
             role = "comparison"
         elif any(word in purpose for word in ("limit", "catch", "risk", "warning", "caveat")):
             role = "limitation"
@@ -666,6 +719,16 @@ class HybridVisualDirector:
             x = left + index * (card_width + gap)
             draw.rounded_rectangle((x, top, x + card_width, bottom), radius=42, fill=panel, outline=colour, width=5)
             draw.rounded_rectangle((x + 30, top + 34, x + card_width - 30, top + 55), radius=10, fill=colour)
+            heading = "PROS" if index == 0 else "CONS"
+            heading_font = self._font(34, bold=True)
+            heading_box = draw.textbbox((0, 0), heading, font=heading_font)
+            heading_width = heading_box[2] - heading_box[0]
+            draw.text(
+                (x + (card_width - heading_width) // 2, top + 78),
+                heading,
+                font=heading_font,
+                fill=text,
+            )
             circle_y = top + int((bottom - top) * 0.33)
             draw.ellipse((x + card_width // 2 - 74, circle_y - 74, x + card_width // 2 + 74, circle_y + 74), fill=dim_panel, outline=colour, width=5)
             if index == 0:

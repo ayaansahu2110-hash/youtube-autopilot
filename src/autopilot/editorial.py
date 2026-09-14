@@ -47,9 +47,10 @@ class ByteVexaEditorialSystem:
                 "Connect it to one realistic user and task.",
                 "Show or illustrate an input -> action -> output flow.",
                 "Include at least one concrete feature, workflow step, limitation, comparison, or availability condition supported by evidence.",
+                "For a software review, show public signup/access, the actual product surface, a feature, a public workflow and its output; show price/free availability only from the official page, then give a compact pros/cons decision.",
                 "State the catch or who should care when relevant.",
                 "End with a clear practical takeaway instead of generic filler.",
-                "Avoid a sequence made mostly of landing pages or plain text cards.",
+                "Avoid a sequence made mostly of landing pages or plain text cards. Do not call an unlogged-in marketing page a live test.",
             ),
         )
 

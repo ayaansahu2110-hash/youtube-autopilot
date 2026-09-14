@@ -52,6 +52,10 @@ class VisualAsset(BaseModel):
     scene_index: int | None = None
     asset_kind: Literal["video", "image"] = "video"
     visual_mode: Literal["ui", "motion", "stock"] = "stock"
+    # UI captures record which public product surface was actually shown.  This
+    # lets the pipeline reject a supposed hands-on review that only captured a
+    # landing page.
+    capture_stage: str = ""
 
 
 class VideoPlan(BaseModel):
@@ -71,6 +75,9 @@ class VideoPlan(BaseModel):
     title_options: list[str] = Field(default_factory=list)
     direct_paste_script: str = ""
     batch_prompts: list[str] = Field(default_factory=list)
+    # A tool review has a stricter, evidence-backed visual contract than a
+    # general technology explainer.
+    content_mode: Literal["tool_review", "news_explainer", "general_explainer"] = "general_explainer"
 
 
 class QualityReport(BaseModel):

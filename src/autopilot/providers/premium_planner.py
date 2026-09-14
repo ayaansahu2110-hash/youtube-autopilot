@@ -63,6 +63,11 @@ Visual rules:
 - purpose should use clear labels such as hook, context, feature, workflow, demo, example, result, comparison, limitation, decision, takeaway.
 - The visual must explain that exact narration beat.
 
+PRODUCT WALKTHROUGH MODE
+- Return content_mode "tool_review" only when an approved official product page can honestly support a public walkthrough. Otherwise use "news_explainer" or "general_explainer"; do not turn a landing page into a fake hands-on test.
+- For tool_review, include and visibly label: signup/access, main product surface, feature, public workflow/input, visible output, official pricing/free availability, one compact pros_cons comparison, and takeaway. Signup/main/feature/workflow/output/pricing-or-availability must use real UI with the exact approved official URL.
+- Do not create accounts, pass login walls, use paid credits or state a price/free tier without primary-source evidence. If a usable public workflow cannot be shown, choose an explainer instead of claiming a test.
+
 PACKAGING
 - title: truthful, specific and curiosity-driven, under 70 characters, promising one concrete outcome, test or decision.
 - description: useful summary with no hype.
@@ -71,7 +76,7 @@ PACKAGING
 - thumbnail_brief: one strong focal idea suitable for a premium tech thumbnail.
 
 Return JSON only with exactly these top-level keys:
-angle, hook, script, title, description, tags, thumbnail_brief, thumbnail_text, visual_queries, scenes.
+angle, content_mode, hook, script, title, description, tags, thumbnail_brief, thumbnail_text, visual_queries, scenes.
 Each scenes item must contain exactly:
 narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
 scenes are the source of truth for the final script and visuals.
@@ -115,8 +120,9 @@ REQUIRED FINAL STANDARD
 - Avoid repeating one public source page across many consecutive scenes.
 - UI source_url values must exactly match an approved URL. If evidence is not visually capturable, use motion instead of inventing a URL.
 - Preserve ByteVexa's original voice; do not imitate any specific creator.
+- Keep content_mode as tool_review only if the final plan visibly covers signup/access, main product, feature, public workflow, output, official pricing/free availability and pros_cons with public UI evidence. Otherwise return news_explainer or general_explainer.
 
-Return the complete corrected JSON only, preserving the required top-level keys and exact scene keys: narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
+Return the complete corrected JSON only, preserving the required top-level keys including content_mode and exact scene keys: narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
 """
         try:
             return self._generate_json(review_prompt)

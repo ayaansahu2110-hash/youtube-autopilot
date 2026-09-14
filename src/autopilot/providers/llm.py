@@ -127,6 +127,10 @@ class ScriptPlanner:
                 for scene in scenes
             ]
         data.pop("scenes", None)
+        content_mode = str(data.get("content_mode") or "general_explainer").strip().lower()
+        if content_mode not in {"tool_review", "news_explainer", "general_explainer"}:
+            content_mode = "general_explainer"
+        data["content_mode"] = content_mode
 
         urls = [source.url for source in research.sources if source.url]
         return VideoPlan(
@@ -194,6 +198,13 @@ SHORT-FORM RETENTION AND DESIGN
 - Each beat must have one focal visual. Change the visual treatment every 2-4 seconds: product UI, an interactive-looking workflow, a result, a comparison, or a constraint.
 - Use colour to communicate meaning: fresh/result, contrast/comparison, and caution/limitation. Do not specify a persistent banner, repeated full-screen text card, or a blue information strip.
 - on_screen_text is a 1-4 word emphasis only, not a subtitle or sentence. The renderer adds separate spoken captions.
+
+PRODUCT WALKTHROUGH MODE
+- Return content_mode "tool_review" ONLY when the approved sources include the actual public product site and its public experience can honestly show the workflow. Otherwise return "news_explainer" or "general_explainer"; never pretend a landing page is a hands-on test.
+- A tool_review needs this scene progression: hook/result, signup or access surface, main product surface, key feature, public workflow/input, visible output/result, pricing/free availability, an honest pros-vs-cons comparison, and a clear verdict. Use precise purpose labels: hook, signup, main, feature, workflow, output, pricing (or availability), pros_cons, takeaway.
+- For tool_review, make signup/main/feature/workflow/output/pricing-or-availability scenes "ui" and use the exact approved official product URL. The pros_cons scene may be one compact two-column motion comparison; it must not become a recurring card style.
+- Only show a workflow or output after a public no-login demo actually supports it. Never create an account, enter personal data, use a paywall, or imply access to a private dashboard. If price, free tier, or trial is not documented on the approved product page, say it is not verified instead of inventing it.
+- The description link is added by the pipeline from the verified UI source. Do not invent a product URL.
 HYBRID VISUAL DIRECTION
 Create {scene_count} scenes in exact narration order. Every scene must choose ONE visual_mode:
 1) "ui" — use when the narration refers to a specific website/app/tool/interface and an approved source URL above can visually represent it. source_url MUST be copied exactly from an approved SOURCE_URL line.
@@ -217,7 +228,7 @@ PACKAGING
 - thumbnail_brief: one simple focal concept.
 
 Return JSON only with exactly these top-level keys:
-angle, hook, script, title, description, tags, thumbnail_brief, thumbnail_text, visual_queries, scenes.
+angle, content_mode, hook, script, title, description, tags, thumbnail_brief, thumbnail_text, visual_queries, scenes.
 Each scenes item must contain exactly:
 narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
 scenes are the source of truth for the final script and visuals.
@@ -260,12 +271,14 @@ Fix every problem you find:
 - repeated laptop/office shots
 - vague advice with no concrete takeaway
 - on-screen text that reads like a transcript, repeats branding, or would become a persistent banner
+- a claimed software test that does not visibly show signup/access, the main product, a feature, a public workflow, an output, price/free availability, and a compact pros/cons decision
 
 {format_rules}
 Prefer a mix dominated by real UI and ByteVexa motion graphics. Stock should normally be a minority of scenes. UI source_url values must exactly match one approved URL. If no approved page genuinely fits a scene, use motion instead of inventing a URL.
+Use content_mode "tool_review" only for an honestly capturable public product walkthrough. A tool_review must use the exact purpose sequence signup, main, feature, workflow, output, pricing (or availability), pros_cons and takeaway; its signup/main/feature/workflow/output/pricing scenes must be UI. A private dashboard, login wall, price guess, or generic landing-page montage is not a product test.
 For Shorts, start with the concrete payoff in the first 1.5 seconds; use a visual switch every 2-4 seconds; and keep on_screen_text to a 1-4 word emphasis only. Never imitate another channel's scripts, graphics, wording, or branding.
 
-Return the complete corrected JSON only, preserving the required top-level keys and these exact scene keys: narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
+Return the complete corrected JSON only, preserving the required top-level keys including content_mode and these exact scene keys: narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
 """
         try:
             return self._generate_json(review_prompt)

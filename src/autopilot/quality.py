@@ -227,9 +227,56 @@ class QualityGate:
                 if not any(any(word in purpose for word in ending_beats) for purpose in purposes):
                     errors.append("Video lacks a limitation/comparison/takeaway beat.")
                 source_counts = Counter(url for url in ui_sources if url)
-                repeat_limit = max(3, len(plan.scenes) // 3) if plan.format == "long" else max(3, len(plan.scenes) // 2)
+                repeat_limit = (
+                    len(plan.scenes)
+                    if plan.content_mode == "tool_review"
+                    else max(3, len(plan.scenes) // 3)
+                    if plan.format == "long"
+                    else max(3, len(plan.scenes) // 2)
+                )
                 if source_counts and max(source_counts.values()) > repeat_limit:
                     errors.append("Too many scenes reuse the same product page; show more varied evidence or explanatory visuals.")
+
+                if self.settings.channel_profile == "bytevexa" and plan.content_mode == "tool_review":
+                    required_purposes = {
+                        "signup": ("signup", "sign up", "access"),
+                        "main": ("main", "product", "dashboard", "workspace"),
+                        "feature": ("feature",),
+                        "workflow": ("workflow", "demo", "flow"),
+                        "output": ("output", "result"),
+                        "pricing": ("pricing", "price", "free", "availability"),
+                        "pros_cons": ("pros", "cons", "comparison", "limitation"),
+                    }
+                    missing_walkthrough = [
+                        stage
+                        for stage, labels in required_purposes.items()
+                        if not any(any(label in purpose for label in labels) for purpose in purposes)
+                    ]
+                    ui_stages = {"signup", "main", "feature", "workflow", "output", "pricing"}
+                    non_ui_walkthrough = []
+                    for stage, labels in required_purposes.items():
+                        if stage not in ui_stages:
+                            continue
+                        if not any(
+                            scene.visual_mode == "ui"
+                            and any(label in scene.purpose.lower() for label in labels)
+                            for scene in plan.scenes
+                        ):
+                            non_ui_walkthrough.append(stage)
+                    if missing_walkthrough:
+                        errors.append(
+                            "Tool review is missing required viewer decision beats: "
+                            + ", ".join(missing_walkthrough)
+                            + "."
+                        )
+                    if non_ui_walkthrough:
+                        errors.append(
+                            "Tool review must use verified product UI for: "
+                            + ", ".join(non_ui_walkthrough)
+                            + "."
+                        )
+                    if "Software / website:" not in plan.description:
+                        errors.append("Tool review description must include the verified software / website link.")
 
             if plan.format == "long" and self.settings.channel_profile == "bytevexa":
                 opening_labels = ("hook", "problem", "outcome", "consequence", "result", "demo", "proof")
