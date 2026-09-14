@@ -101,6 +101,7 @@ class QualityGate:
             stock_count = 0
             non_stock_count = 0
             missing_labels = 0
+            oversized_labels = 0
             invalid_ui_sources = 0
             incomplete_storyboards = 0
             mismatched_storyboards = 0
@@ -119,6 +120,11 @@ class QualityGate:
                     non_stock_count += 1
                 if not scene.on_screen_text.strip():
                     missing_labels += 1
+                if (
+                    self.settings.channel_profile == "bytevexa"
+                    and len(scene.on_screen_text.split()) > 5
+                ):
+                    oversized_labels += 1
                 if scene.visual_mode == "ui":
                     ui_sources.append(scene.source_url)
                     if scene.source_url not in approved_urls:
@@ -167,6 +173,8 @@ class QualityGate:
                 errors.append("Not enough explanatory or source-grounded scenes were planned.")
             if missing_labels > max(1, len(plan.scenes) // 5):
                 errors.append("Too many scenes are missing useful on-screen reinforcement text.")
+            if oversized_labels > max(1, len(plan.scenes) // 5):
+                errors.append("Too many ByteVexa on-screen labels read like subtitles instead of visual emphasis.")
             if invalid_ui_sources:
                 errors.append("One or more UI scenes reference a source URL that research did not approve.")
             if incomplete_storyboards:

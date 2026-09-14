@@ -139,7 +139,9 @@ class AutopilotPipeline:
                 plan.script,
                 duration,
                 run_dir / "captions.srt",
-                words_per_caption=(2 if self.settings.channel_profile == "curioaxiom" else 3)
+                # Keep ByteVexa captions brief; the visual canvas should carry
+                # the demo instead of becoming a text-heavy screen.
+                words_per_caption=2
                 if plan.format == "short" else 6,
             )
 

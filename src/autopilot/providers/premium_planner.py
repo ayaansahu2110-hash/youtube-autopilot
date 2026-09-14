@@ -59,7 +59,7 @@ Visual rules:
 - Do not show the same landing-page state repeatedly. For product coverage, vary hero, feature section, examples/templates, input/demo, result/preview and limitation/support evidence when available.
 - Each scene narration should be 38-50 spoken words, keeping the complete script inside 1,200-1,650 words while visuals change regularly.
 - visual_query must describe the exact visual evidence needed.
-- on_screen_text should be 2-7 useful words.
+- on_screen_text should be a 1-5 word visual emphasis, never a sentence, transcript or persistent banner.
 - purpose should use clear labels such as hook, context, feature, workflow, demo, example, result, comparison, limitation, decision, takeaway.
 - The visual must explain that exact narration beat.
 

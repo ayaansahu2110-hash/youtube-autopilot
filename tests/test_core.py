@@ -7,6 +7,7 @@ from autopilot.cli import _longform_due
 from autopilot.config import Settings
 from autopilot.learning import learning_context
 from autopilot.models import PipelineRun, ResearchPack, ResearchSource, SceneBeat, VideoPlan
+from autopilot.providers.hybrid_visuals import HybridVisualDirector
 from autopilot.quality import QualityGate
 from autopilot.state import StateStore
 
@@ -32,6 +33,49 @@ def test_captions_are_generated(tmp_path: Path) -> None:
     text = output.read_text(encoding="utf-8")
     assert "00:00:00,000 -->" in text
     assert "one two three four" in text
+
+
+def test_bytevexa_rejects_text_heavy_visual_overlays(tmp_path: Path) -> None:
+    scenes = [
+        SceneBeat(
+            narration=f"Concrete visual proof {index}.",
+            visual_query=f"specific product result {index}",
+            purpose="proof" if index == 0 else "takeaway",
+            visual_mode="motion",
+            on_screen_text="THIS IS A FULL SENTENCE NOT A VISUAL LABEL",
+        )
+        for index in range(8)
+    ]
+    plan = VideoPlan(
+        topic="A specific product test",
+        angle="Visual proof",
+        format="short",
+        hook="See the result",
+        script=" ".join(scene.narration for scene in scenes),
+        title="A Specific Product Test",
+        description="A concise, researched test.",
+        tags=["AI"],
+        thumbnail_brief="One clear result",
+        thumbnail_text="REAL RESULT",
+        visual_queries=[scene.visual_query for scene in scenes],
+        scenes=scenes,
+    )
+    settings = Settings(state_file=tmp_path / "visual-label-state.json", min_research_sources=1)
+    report = QualityGate(settings, StateStore(settings.state_file)).evaluate(
+        plan,
+        ResearchPack(topic=plan.topic, sources=[ResearchSource(title="Source", url="https://example.com")]),
+        strict=False,
+    )
+    assert any("visual emphasis" in error.lower() for error in report.errors)
+
+
+def test_bytevexa_visual_label_stays_compact() -> None:
+    scene = SceneBeat(
+        narration="A long spoken explanation should not become a banner on the visual.",
+        visual_query="specific product output",
+        on_screen_text="THIS SHOULD BECOME A COMPACT VISUAL EMPHASIS ONLY",
+    )
+    assert HybridVisualDirector._visual_label(scene) == "THIS SHOULD BECOME A"
 
 
 def test_quality_rejects_recent_duplicate(tmp_path: Path) -> None:

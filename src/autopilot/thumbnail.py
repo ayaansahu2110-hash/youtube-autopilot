@@ -26,12 +26,13 @@ class ThumbnailGenerator:
                 feature_image=feature_image,
             )
         width, height = 1280, 720
+        primary, secondary = self._bytevexa_theme(f"{title} {brief} {text}")
 
         image = Image.new("RGB", (width, height), (8, 11, 20))
         glow = Image.new("RGBA", (width, height), (0, 0, 0, 0))
         glow_draw = ImageDraw.Draw(glow)
-        glow_draw.ellipse((790, -120, 1390, 500), fill=(76, 235, 148, 95))
-        glow_draw.ellipse((-230, 330, 430, 980), fill=(72, 92, 255, 72))
+        glow_draw.ellipse((790, -120, 1390, 500), fill=(*primary, 105))
+        glow_draw.ellipse((-230, 330, 430, 980), fill=(*secondary, 82))
         glow = glow.filter(ImageFilter.GaussianBlur(90))
         image = Image.alpha_composite(image.convert("RGBA"), glow).convert("RGB")
         draw = ImageDraw.Draw(image)
@@ -39,7 +40,7 @@ class ThumbnailGenerator:
         # Small brand tag: recognizable, but never competes with the hook.
         brand_font = self._font(25)
         draw.rounded_rectangle((64, 50, 250, 96), radius=18, fill=(20, 30, 43))
-        draw.text((84, 61), brand_name.upper()[:16], font=brand_font, fill=(116, 255, 165))
+        draw.text((84, 61), brand_name.upper()[:16], font=brand_font, fill=primary)
 
         display = (text or "WORTH TRYING?").upper().strip()[:34]
         lines = self._split_display(display)
@@ -59,7 +60,7 @@ class ThumbnailGenerator:
 
         # Topic-aware right-side visual: a large premium mock AI/product window.
         panel = (790, 130, 1218, 600)
-        draw.rounded_rectangle(panel, radius=34, fill=(18, 24, 38), outline=(90, 108, 140), width=3)
+        draw.rounded_rectangle(panel, radius=34, fill=(18, 24, 38), outline=primary, width=3)
         draw.rounded_rectangle((818, 163, 1190, 209), radius=15, fill=(31, 39, 57))
         for cx, colour in ((842, (255, 96, 94)), (870, (255, 190, 55)), (898, (64, 218, 126))):
             draw.ellipse((cx - 7, 179, cx + 7, 193), fill=colour)
@@ -75,12 +76,24 @@ class ThumbnailGenerator:
             self._draw_ai_mock(draw)
 
         # Curiosity cue and separation line make the composition read instantly on mobile.
-        draw.rounded_rectangle((742, 306, 797, 366), radius=20, fill=(116, 255, 165))
+        draw.rounded_rectangle((742, 306, 797, 366), radius=20, fill=primary)
         arrow_font = self._font(38)
         draw.text((753, 310), "→", font=arrow_font, fill=(8, 13, 22))
 
         image.save(output_path, quality=96, optimize=True)
         return output_path
+
+    @staticmethod
+    def _bytevexa_theme(topic: str) -> tuple[tuple[int, int, int], tuple[int, int, int]]:
+        """Give each thumbnail a topic-relevant accent instead of one generic look."""
+        subject = topic.lower()
+        if any(word in subject for word in ("security", "privacy", "scam", "risk", "hack")):
+            return (255, 177, 63), (255, 88, 104)
+        if any(word in subject for word in ("video", "image", "design", "creative", "animation")):
+            return (250, 112, 187), (255, 190, 79)
+        if any(word in subject for word in ("code", "developer", "coding", "agent", "mcp")):
+            return (171, 124, 255), (105, 245, 191)
+        return (116, 255, 165), (94, 181, 255)
 
     def _create_fact_thumbnail(
         self,

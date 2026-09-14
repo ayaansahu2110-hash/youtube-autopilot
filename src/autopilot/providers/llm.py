@@ -189,6 +189,11 @@ CONTENT STANDARD
 - Treat headlines as leads, not verified evidence.
 - Never call something free, private, unlimited, open-source, best, revolutionary or game-changing unless evidence directly supports it and limitations are included.
 {longform_rules}
+SHORT-FORM RETENTION AND DESIGN
+- For a Short, make the first 1.5 seconds show the outcome, proof, or a sharp before/after contrast. Do not warm up with branding or a broad definition.
+- Each beat must have one focal visual. Change the visual treatment every 2-4 seconds: product UI, an interactive-looking workflow, a result, a comparison, or a constraint.
+- Use colour to communicate meaning: fresh/result, contrast/comparison, and caution/limitation. Do not specify a persistent banner, repeated full-screen text card, or a blue information strip.
+- on_screen_text is a 1-4 word emphasis only, not a subtitle or sentence. The renderer adds separate spoken captions.
 HYBRID VISUAL DIRECTION
 Create {scene_count} scenes in exact narration order. Every scene must choose ONE visual_mode:
 1) "ui" — use when the narration refers to a specific website/app/tool/interface and an approved source URL above can visually represent it. source_url MUST be copied exactly from an approved SOURCE_URL line.
@@ -199,7 +204,7 @@ Rules:
 - Prefer ui or motion over generic stock. A premium tech channel should not look like random stock footage.
 - Each scene narration should be a compact spoken beat that can naturally hold one visual idea.
 - visual_query: 3-8 concrete words describing the exact scene. For ui scenes describe the interface area; for motion scenes describe the explanatory concept; for stock scenes use Pexels-searchable real-world wording.
-- on_screen_text: 2-7 useful words that reinforce the narration; no clickbait.
+- on_screen_text: 1-4 useful words that reinforce the narration; no clickbait, sentences, or repeated branding.
 - purpose: a short label such as hook, demo, limitation, comparison, takeaway.
 - Never use robots, glowing brains, futuristic servers or abstract AI imagery unless the narration specifically discusses those things.
 - The visual must explain the exact narration beat, not merely share the same broad topic.
@@ -254,9 +259,11 @@ Fix every problem you find:
 - unnecessary stock footage where real UI or a motion-graphic explainer would be clearer
 - repeated laptop/office shots
 - vague advice with no concrete takeaway
+- on-screen text that reads like a transcript, repeats branding, or would become a persistent banner
 
 {format_rules}
 Prefer a mix dominated by real UI and ByteVexa motion graphics. Stock should normally be a minority of scenes. UI source_url values must exactly match one approved URL. If no approved page genuinely fits a scene, use motion instead of inventing a URL.
+For Shorts, start with the concrete payoff in the first 1.5 seconds; use a visual switch every 2-4 seconds; and keep on_screen_text to a 1-4 word emphasis only. Never imitate another channel's scripts, graphics, wording, or branding.
 
 Return the complete corrected JSON only, preserving the required top-level keys and these exact scene keys: narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
 """

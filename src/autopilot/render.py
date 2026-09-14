@@ -194,14 +194,14 @@ class FFmpegRenderer:
         )
 
     def _caption_filter(self, captions_path: Path, *, vertical: bool) -> str:
-        font_size = 21 if vertical else 20
+        font_size = 27 if vertical else 20
         margin = 310 if vertical else 62
-        outline = 3 if vertical else 2
+        outline = 4 if vertical else 2
         style = (
             f"FontName=DejaVu Sans,FontSize={font_size},Bold=1,"
-            "PrimaryColour=&H00FFFFFF,OutlineColour=&H00101010,"
-            f"BorderStyle=1,Outline={outline},Shadow=0,Alignment=2,MarginV={margin},"
-            "MarginL=70,MarginR=70"
+            "PrimaryColour=&H00F8FAFF,OutlineColour=&H00101010,"
+            f"BorderStyle=1,Outline={outline},Shadow=1,Alignment=2,MarginV={margin},"
+            "MarginL=84,MarginR=84,Spacing=1"
         )
         return f"subtitles='{self._filter_path(captions_path)}':force_style='{style}'"
 
