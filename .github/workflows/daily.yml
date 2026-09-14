@@ -1,6 +1,9 @@
 name: Daily YouTube Autopilot
 
 on:
+  push:
+    paths:
+      - ".github/workflows/daily.yml"
   schedule:
     - cron: "30 6 * * *"  # 12:00 Asia/Kolkata
     - cron: "30 12 * * *" # 18:00 Asia/Kolkata
@@ -39,6 +42,8 @@ jobs:
       ALLOW_PUBLIC_UPLOADS: "true"
       AUTOPILOT_ENV: production
       SCHEDULE_TIMEZONE: Asia/Kolkata
+      REVIEW_TOPIC: "Perplexity: test a public cited answer workflow"
+      MANUAL_TOPIC_SOURCES: "https://www.perplexity.ai/,https://www.perplexity.ai/hub,https://www.perplexity.ai/pro,https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you"
     steps:
       - uses: actions/checkout@v4
 
@@ -52,6 +57,8 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "RUN_SLOT=${{ inputs.slot }}" >> "$GITHUB_ENV"
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            echo "RUN_SLOT=one_time_review" >> "$GITHUB_ENV"
           elif [ "${{ github.event.schedule }}" = "30 6 * * *" ]; then
             echo "RUN_SLOT=morning" >> "$GITHUB_ENV"
           else
@@ -102,7 +109,11 @@ jobs:
           set +e
           for attempt in 1 2 3; do
             echo "Production attempt $attempt of 3 for slot: $RUN_SLOT"
-            python -m autopilot.cli daily --live --slot "$RUN_SLOT"
+            if [ "$RUN_SLOT" = "one_time_review" ]; then
+              python -m autopilot.cli run --render --format short --topic "$REVIEW_TOPIC"
+            else
+              python -m autopilot.cli daily --live --slot "$RUN_SLOT"
+            fi
             code=$?
             if [ "$code" -eq 0 ]; then
               echo "Production completed successfully on attempt $attempt."
