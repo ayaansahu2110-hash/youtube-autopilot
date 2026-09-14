@@ -1,9 +1,6 @@
 name: CurioAxiom Facts Pipeline
 
 on:
-  push:
-    paths:
-      - ".github/workflows/curioaxiom.yml"
   schedule:
     # 12:00 and 18:00 Asia/Kolkata: exactly two Shorts each day.
     # The evening run additionally creates the long-form video when it is due.
@@ -101,12 +98,17 @@ jobs:
       - name: Verify CurioAxiom OAuth and channel identity
         if: env.READY == 'true'
         run: python -m autopilot.cli verify-youtube
-      - name: Produce two verified CurioAxiom Shorts
+      - name: Produce verified facts (public Shorts)
         if: env.READY == 'true'
         shell: bash
+        env:
+          TEST_TOPIC: ${{ inputs.topic }}
         run: |
-          python -m autopilot.cli run --topic "Why Ocean Water Is Salty" --format short --render
-          python -m autopilot.cli run --topic "Why Heat Shields Burn on Purpose" --format short --render
+          if [ -n "$TEST_TOPIC" ]; then
+            python -m autopilot.cli run --topic "$TEST_TOPIC" --format short --render
+          else
+            python -m autopilot.cli daily --live --slot "$RUN_SLOT"
+          fi
       - name: Persist CurioAxiom state only
         if: always() && env.READY == 'true'
         shell: bash
