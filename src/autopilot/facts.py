@@ -333,6 +333,12 @@ class FactScriptPlanner(PremiumScriptPlanner):
             scene.shot_type_camera_movement = camera
             subject = scene.exact_visual_subject.strip() or scene.visual_query.strip()
             scene.exact_visual_subject = subject
+            # A literal visual subject is already part of CurioAxiom's contract.
+            # Reuse it as the search query only when the model omitted the
+            # query field; never let a detailed, valid storyboard fail into an
+            # abstract slide simply because one optional string was blank.
+            if not scene.visual_query.strip():
+                scene.visual_query = subject
             scene.generator_prompt = (
                 f"Literal depiction of: {scene.narration.strip()} Subject: {subject}. "
                 f"Visible action and context: {scene.visual_query.strip()}. Shot: {camera}. "
