@@ -91,6 +91,7 @@ class AutopilotPipeline:
         # valid video: convert those scenes to ByteVexa/CurioAxiom motion
         # explainers before the quality gate evaluates the plan.
         self._sanitize_visual_sources(plan, research)
+        self._anchor_manual_tool_review_sources(plan)
         if self.verifier:
             self._sanitize_fact_visual_sources(plan, research)
         self._append_product_link(plan)
@@ -459,6 +460,28 @@ class AutopilotPipeline:
                 lines.append(f"{source.publisher or source.title}: {source.url}")
         if lines:
             plan.description = AutopilotPipeline._append_section(plan.description, "Research sources", lines)
+
+    def _anchor_manual_tool_review_sources(self, plan) -> None:
+        """Keep a commissioned public review on real, appropriate product surfaces."""
+        if plan.content_mode != "tool_review":
+            return
+        sources = self.settings.manual_topic_source_list
+        if not sources:
+            return
+        primary = sources[0]
+        feature = sources[1] if len(sources) > 1 else primary
+        pricing = sources[2] if len(sources) > 2 else primary
+        for scene in plan.scenes:
+            purpose = scene.purpose.lower()
+            if any(label in purpose for label in ("signup", "sign up", "main", "workflow", "demo", "output", "result")):
+                scene.visual_mode = "ui"
+                scene.source_url = primary
+            elif "feature" in purpose:
+                scene.visual_mode = "ui"
+                scene.source_url = feature
+            elif any(label in purpose for label in ("pricing", "price", "free", "availability")):
+                scene.visual_mode = "ui"
+                scene.source_url = pricing
 
     @staticmethod
     def _append_product_link(plan) -> None:

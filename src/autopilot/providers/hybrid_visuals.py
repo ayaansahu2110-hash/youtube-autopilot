@@ -367,8 +367,8 @@ class HybridVisualDirector:
         if any(word in joined for word in ("result", "output", "example", "template")):
             hints += ["Examples", "Templates", "Results", "Gallery", "Showcase"]
         if any(word in joined for word in ("feature", "work", "how", "create", "generate")):
-            hints += ["How it works", "Features", "Create", "Generate", "Demo"]
-        hints += ["Features", "How it works", "Examples", "Templates"]
+            hints += ["How it works", "Features", "Create", "Generate", "Demo", "Search", "Research", "Products"]
+        hints += ["Features", "How it works", "Examples", "Templates", "Search", "Research", "Products"]
 
         for hint in dict.fromkeys(hints):
             try:

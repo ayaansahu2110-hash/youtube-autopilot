@@ -78,6 +78,33 @@ class Researcher:
                 if len(sources) >= 5:
                     break
 
+        # A product owner can legitimately block CI/datacenter extraction even
+        # while its public help/pricing pages are readable in a normal browser.
+        # For an explicitly requested manual review only, retain the supplied
+        # verbatim primary-source notes with their exact official URLs. This is
+        # a narrow fallback, not a way to turn an unverified headline into a
+        # source-backed video.
+        manual_evidence = self.settings.manual_topic_evidence.strip()
+        if (
+            candidate.reason == "Manual topic override."
+            and manual_evidence
+            and len(sources) < self.settings.min_research_sources
+        ):
+            for url in candidate.source_urls[:5]:
+                parsed = urlparse(url)
+                if not parsed.scheme or not parsed.netloc or any(source.url == url for source in sources):
+                    continue
+                sources.append(
+                    ResearchSource(
+                        title=f"{candidate.title} — official product source",
+                        url=url,
+                        publisher=parsed.netloc,
+                        snippet=manual_evidence[:5000],
+                    )
+                )
+                if len(sources) >= 5:
+                    break
+
         notes = "\n\n".join(
             f"SOURCE {index + 1}: {source.publisher or 'Unknown'} — {source.title}\n{source.snippet[:1500]}"
             for index, source in enumerate(sources)

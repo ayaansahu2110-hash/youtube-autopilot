@@ -22,6 +22,11 @@ class Settings(BaseSettings):
     # requested manual topic. This keeps one-off public software reviews inside
     # verified product pages rather than relying on a search headline.
     manual_topic_sources: str = ""
+    # Short primary-source notes may be supplied with a one-off manual review
+    # when an official site blocks server-side extraction. They are preserved
+    # verbatim as research evidence; the model must not treat them as a reason
+    # to invent any additional claim.
+    manual_topic_evidence: str = ""
     discovery_regions: str = "US,IN,GB"
     min_research_sources: int = 2
 
