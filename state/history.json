@@ -382,6 +382,15 @@
       "script_preview": "Every silent prompt cache miss in your developer agent is a re-billed invoice line you shouldn't be paying. Replay is a zero-telemetry local Go tool that audits your developer logs to find exactly why your cache broke. If your cache expires or your mid-session tool list shifts, your prompt state is lost. Simply run `replay diff` against your local on-disk transcripts. It pinpoint-isolates the exact conversation turn where your cache sharded and lists the tokens re-billed at full write prices. Run `replay advise` to generate structural prompt optimization fixes based on your historical patterns",
       "created_at": "2026-09-14T06:38:35.900651+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "v1IppFKA6Ok",
+      "topic": "Photopea: create a browser project without an account",
+      "title": "The Best Free Web Photoshop Alternative",
+      "format": "short",
+      "script_preview": "Skip the Adobe subscription. You can edit complex PSD files directly in your web browser with zero signups or accounts. Just head to Photopea dot com. It loads a professional workspace that runs entirely on your local CPU and GPU. It fully supports industry-standard PSDs, Illustrator, Figma, and PDF formats without losing your layer structures. Drag in any image to apply advanced non-destructive adjustments like vector curves, layer masks, or Gaussian blurs. Export your project directly back to your local drive as a PSD, high-quality PNG, or PDF. This complete workspace is entirely free to use",
+      "created_at": "2026-09-14T12:47:25.311705+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -528,6 +537,12 @@
       "title": "Fix the Silent Cache Misses Costing You Double on AI Agents",
       "format": "short",
       "created_at": "2026-09-14T06:38:35.900651+00:00"
+    },
+    {
+      "topic": "Photopea: create a browser project without an account",
+      "title": "The Best Free Web Photoshop Alternative",
+      "format": "short",
+      "created_at": "2026-09-14T12:47:25.311705+00:00"
     }
   ]
 }
