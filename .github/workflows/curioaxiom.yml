@@ -1,9 +1,6 @@
 name: CurioAxiom Facts Pipeline
 
 on:
-  push:
-    paths:
-      - ".github/workflows/curioaxiom.yml"
   schedule:
     # 12:00 and 18:00 Asia/Kolkata: exactly two Shorts each day.
     # The evening run additionally creates the long-form video when it is due.
