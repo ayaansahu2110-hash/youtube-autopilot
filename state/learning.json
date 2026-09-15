@@ -1,96 +1,96 @@
 {
-  "generated_at": "2026-09-14T18:08:17.688396+00:00",
+  "generated_at": "2026-09-15T12:09:06.404731+00:00",
   "competitors": [
     {
       "channel": "Dan Martell",
       "subscribers": 3070000,
-      "channel_views": 401119194,
-      "video_count": 3694,
+      "channel_views": 401543543,
+      "video_count": 3696,
       "high_performing_recent_videos": [
         {
           "title": "How well do you ACTUALLY know business?",
-          "views": 73254,
-          "likes": 3224,
-          "comments": 38,
+          "views": 78460,
+          "likes": 3380,
+          "comments": 40,
           "published_at": "2026-09-12T21:01:27Z",
           "description_excerpt": "How well do you ACTUALLY know business?"
         },
         {
-          "title": "AI tools for every task",
-          "views": 31400,
-          "likes": 1607,
-          "comments": 19,
-          "published_at": "2026-09-12T15:03:56Z",
-          "description_excerpt": "AI tools for every task"
-        },
-        {
-          "title": "You should take a 2 week vacation as an entrepreneur",
-          "views": 19602,
-          "likes": 1041,
-          "comments": 9,
-          "published_at": "2026-09-12T01:01:03Z",
-          "description_excerpt": "You should take a 2 week vacation as an entrepreneur"
-        },
-        {
           "title": "Should you use AI, an Assistant, or yourself for these tasks?",
-          "views": 17880,
-          "likes": 990,
-          "comments": 44,
+          "views": 22364,
+          "likes": 1242,
+          "comments": 54,
           "published_at": "2026-09-13T01:01:13Z",
           "description_excerpt": "Should you use AI, an Assistant, or yourself for these tasks?"
         },
         {
+          "title": "My rules for a successful life - the last one is my fav ;)",
+          "views": 19067,
+          "likes": 1284,
+          "comments": 13,
+          "published_at": "2026-09-14T01:01:01Z",
+          "description_excerpt": "My rules for a successful life - the last one is my fav ;)"
+        },
+        {
           "title": "How to set up an AI agent",
-          "views": 13309,
-          "likes": 830,
-          "comments": 54,
+          "views": 18018,
+          "likes": 976,
+          "comments": 62,
           "published_at": "2026-09-13T21:01:26Z",
           "description_excerpt": "How to set up an AI agent"
+        },
+        {
+          "title": "What are the best ways to get more clients? (RANKED)",
+          "views": 11901,
+          "likes": 506,
+          "comments": 8,
+          "published_at": "2026-09-13T15:01:35Z",
+          "description_excerpt": "What are the best ways to get more clients? (RANKED)"
         }
       ]
     },
     {
       "channel": "Matt Wolfe",
       "subscribers": 1010000,
-      "channel_views": 79771778,
+      "channel_views": 79803890,
       "video_count": 789,
       "high_performing_recent_videos": [
         {
           "title": "GPT-6 Astra Is Finally Here (And It’s REALLY Good)",
-          "views": 489440,
-          "likes": 6872,
+          "views": 490565,
+          "likes": 6879,
           "comments": 535,
           "published_at": "2026-09-03T22:45:47Z",
           "description_excerpt": "Here's my first look at GPT-6-Astra after spending some time using it myself.\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: htt"
         },
         {
           "title": "AI News: The AI World is REALLY Scared Right Now",
-          "views": 180181,
-          "likes": 2996,
-          "comments": 650,
+          "views": 188915,
+          "likes": 3082,
+          "comments": 666,
           "published_at": "2026-09-11T15:00:00Z",
           "description_excerpt": "Here's the AI News you might have missed this week. See what Optimizely’s Virtual Teammates can automate for you at https://optimizely.com/mattwolfe\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.co"
         },
         {
           "title": "AI News: The Most Insane Week So Far This Year!",
-          "views": 162548,
-          "likes": 3176,
-          "comments": 256,
+          "views": 163251,
+          "likes": 3183,
+          "comments": 258,
           "published_at": "2026-09-04T15:00:34Z",
           "description_excerpt": "Here's the AI News you probably missed this week. Try AI Flows with Artlist Unlimited here 👉 https://artlist.io/?artlist_aid=Mattwolfe_4110&utm_source=affiliate_p&utm_medium=Mattwolfe_4110&utm_campaign=Mattwolfe_4110\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n"
         },
         {
-          "title": "I Built A Tool To Detect AI Slop (You Can Have It)",
-          "views": 57259,
-          "likes": 914,
+          "title": "I Asked GPT-6 Astra to Build an AI Slop Detector",
+          "views": 57511,
+          "likes": 921,
           "comments": 160,
           "published_at": "2026-09-09T22:18:17Z",
           "description_excerpt": "AI video is getting REALLY hard to spot… So I tried to build a tool that could detect it for me. Want to run it yourself? Here's the GitHub link: https://github.com/mreflow/ai-slop-detector\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/m"
         },
         {
           "title": "This AI Turns Insane Ideas Into 3D Objects",
-          "views": 28056,
-          "likes": 909,
+          "views": 28125,
+          "likes": 912,
           "comments": 64,
           "published_at": "2026-09-07T16:06:22Z",
           "description_excerpt": "This was just a picture… and now it’s a 3D-printable object. \n\nA new AI model called Tripo 2.0 can take almost any image and turn it into a full 3D model you can export to Blender, Unreal Engine, or a 3D printer.\n\nThe possibilities are wild: custom game characters, collectibles, animation assets, product prototypes, or literally anything you can im"
@@ -100,46 +100,46 @@
     {
       "channel": "Nate Herk | AI Automation",
       "subscribers": 1010000,
-      "channel_views": 53021503,
+      "channel_views": 53316931,
       "video_count": 510,
       "high_performing_recent_videos": [
         {
           "title": "I Turned GPT-6 Astra Into a 24/7 Stock Trader (tutorial)",
-          "views": 353404,
-          "likes": 4302,
-          "comments": 224,
+          "views": 367020,
+          "likes": 4437,
+          "comments": 227,
           "published_at": "2026-09-07T17:33:50Z",
           "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=astra-6-trader&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://www.h"
         },
         {
           "title": "GPT-6 Astra Finally Solves AI Video Editing (full guide)",
-          "views": 264484,
-          "likes": 3497,
-          "comments": 191,
+          "views": 273339,
+          "likes": 3567,
+          "comments": 195,
           "published_at": "2026-09-08T22:11:53Z",
           "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=astra-6-video-edit&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://w"
         },
         {
           "title": "I Turned GPT-6 Astra Into the Ultimate AI Second Brain",
-          "views": 182822,
-          "likes": 2205,
-          "comments": 204,
+          "views": 185950,
+          "likes": 2240,
+          "comments": 207,
           "published_at": "2026-09-07T02:00:02Z",
           "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=astra-6-ai-os&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://www.ho"
         },
         {
           "title": "Anthropic Engineer Explains: What to Build Instead of AI Agents",
-          "views": 124969,
-          "likes": 1510,
-          "comments": 97,
+          "views": 157677,
+          "likes": 1852,
+          "comments": 114,
           "published_at": "2026-09-13T13:55:05Z",
           "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=what_to_build_instead_of_ai_agents&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual "
         },
         {
           "title": "How to Actually Choose the Right AI Agent",
-          "views": 58386,
-          "likes": 597,
-          "comments": 97,
+          "views": 60729,
+          "likes": 620,
+          "comments": 101,
           "published_at": "2026-09-11T21:19:02Z",
           "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=mark-pod-agent-harnesses&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): htt"
         }
@@ -250,7 +250,7 @@
       "title": "AI Video in 3 Seconds: MiniMax H3 Max Workflow",
       "format": "short",
       "metrics": {
-        "views": 247.0,
+        "views": 241.0,
         "estimatedMinutesWatched": 22.0,
         "averageViewDuration": 27.0,
         "averageViewPercentage": 47.57,
@@ -278,7 +278,7 @@
       "title": "How to Self-Host on the Dark Web",
       "format": "short",
       "metrics": {
-        "views": 114.0,
+        "views": 113.0,
         "estimatedMinutesWatched": 20.0,
         "averageViewDuration": 27.0,
         "averageViewPercentage": 46.28,
@@ -292,7 +292,7 @@
       "title": "Build a Physical iOS Phone Farm at Home",
       "format": "short",
       "metrics": {
-        "views": 42.0,
+        "views": 41.0,
         "estimatedMinutesWatched": 7.0,
         "averageViewDuration": 26.0,
         "averageViewPercentage": 52.67000000000001,
@@ -306,7 +306,7 @@
       "title": "Stop AI Codegen: Build Internal Tools via MCP",
       "format": "short",
       "metrics": {
-        "views": 181.0,
+        "views": 179.0,
         "estimatedMinutesWatched": 39.0,
         "averageViewDuration": 42.0,
         "averageViewPercentage": 80.8,
@@ -334,7 +334,7 @@
       "title": "Build a Private P2P Search Stack with Docker",
       "format": "short",
       "metrics": {
-        "views": 56.0,
+        "views": 55.0,
         "estimatedMinutesWatched": 16.0,
         "averageViewDuration": 83.0,
         "averageViewPercentage": 167.42,
@@ -348,21 +348,21 @@
       "title": "Why Code-First AI Agents Beat Raw Prompting",
       "format": "short",
       "metrics": {
-        "views": 105.0,
+        "views": 97.0,
         "estimatedMinutesWatched": 10.0,
         "averageViewDuration": 17.0,
         "averageViewPercentage": 29.37,
         "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
-        "subscribersGained": 0.0
+        "subscribersGained": 1.0
       }
     },
     {
       "title": "Claude Code Self-Hosted: Don't Make This Setup Error",
       "format": "short",
       "metrics": {
-        "views": 303.0,
+        "views": 295.0,
         "estimatedMinutesWatched": 24.0,
         "averageViewDuration": 16.0,
         "averageViewPercentage": 29.969999999999995,
@@ -376,10 +376,38 @@
       "title": "Turn Your Idle Computers Into A Free AI Datacenter",
       "format": "short",
       "metrics": {
-        "views": 73.0,
+        "views": 72.0,
         "estimatedMinutesWatched": 7.0,
         "averageViewDuration": 19.0,
         "averageViewPercentage": 41.6,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Self-Host This AI Google Maps Lead Scraper (No SaaS Fees)",
+      "format": "short",
+      "metrics": {
+        "views": 64.0,
+        "estimatedMinutesWatched": 8.0,
+        "averageViewDuration": 33.0,
+        "averageViewPercentage": 66.01,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 2.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Spiteware: Apps Built Out of Pure Spite",
+      "format": "short",
+      "metrics": {
+        "views": 6.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 6.0,
+        "averageViewPercentage": 13.449999999999998,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -406,7 +434,7 @@
       "title": "Claude Code Self-Hosted: Don't Make This Setup Error",
       "format": "short",
       "metrics": {
-        "views": 303.0,
+        "views": 295.0,
         "estimatedMinutesWatched": 24.0,
         "averageViewDuration": 16.0,
         "averageViewPercentage": 29.969999999999995,
@@ -434,7 +462,7 @@
       "title": "AI Video in 3 Seconds: MiniMax H3 Max Workflow",
       "format": "short",
       "metrics": {
-        "views": 247.0,
+        "views": 241.0,
         "estimatedMinutesWatched": 22.0,
         "averageViewDuration": 27.0,
         "averageViewPercentage": 47.57,
@@ -448,7 +476,7 @@
       "title": "Stop AI Codegen: Build Internal Tools via MCP",
       "format": "short",
       "metrics": {
-        "views": 181.0,
+        "views": 179.0,
         "estimatedMinutesWatched": 39.0,
         "averageViewDuration": 42.0,
         "averageViewPercentage": 80.8,
