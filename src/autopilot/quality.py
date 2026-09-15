@@ -239,7 +239,7 @@ class QualityGate:
 
                 if self.settings.channel_profile == "bytevexa" and plan.content_mode == "tool_review":
                     required_purposes = {
-                        "signup": ("signup", "sign up", "access"),
+                        "signup": ("signup", "sign up", "access", "availability", "no signup"),
                         "main": ("main", "product", "dashboard", "workspace"),
                         "feature": ("feature",),
                         "workflow": ("workflow", "demo", "flow"),

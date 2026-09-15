@@ -118,6 +118,7 @@ jobs:
           git add state/curioaxiom/history.json state/curioaxiom/learning.json 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "chore: update CurioAxiom learning state [skip ci]"
+            git pull --rebase origin main
             git push
           fi
       - name: Upload CurioAxiom artifacts

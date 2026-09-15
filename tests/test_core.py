@@ -116,6 +116,43 @@ def test_tool_review_requires_complete_public_walkthrough(tmp_path: Path) -> Non
     assert report.passed
 
 
+def test_tool_review_quality_accepts_no_signup_availability(tmp_path: Path) -> None:
+    purposes = ["hook", "availability", "main", "feature", "workflow", "output", "pricing", "pros_cons", "takeaway"]
+    scenes = [
+        SceneBeat(
+            narration=f"Verified direct-access walkthrough beat {index} with a concrete viewer decision clearly explained.",
+            visual_query=f"specific direct-access product interface {index}",
+            purpose=purpose,
+            visual_mode="ui" if purpose != "pros_cons" else "motion",
+            source_url="https://example.com" if purpose != "pros_cons" else "",
+            on_screen_text=purpose.upper(),
+        )
+        for index, purpose in enumerate(purposes)
+    ]
+    plan = VideoPlan(
+        topic="A direct-access product review",
+        angle="Hands-on public test",
+        format="short",
+        hook="See the proof",
+        script=" ".join(scene.narration for scene in scenes),
+        title="A Direct Access Product Review",
+        description="Software / website:\n- https://example.com",
+        tags=["AI"],
+        thumbnail_brief="Real product UI",
+        thumbnail_text="TESTED LIVE",
+        visual_queries=[scene.visual_query for scene in scenes],
+        scenes=scenes,
+        content_mode="tool_review",
+    )
+    settings = Settings(state_file=tmp_path / "direct-access-quality-state.json", min_research_sources=1)
+    report = QualityGate(settings, StateStore(settings.state_file)).evaluate(
+        plan,
+        ResearchPack(topic=plan.topic, sources=[ResearchSource(title="Source", url="https://example.com")]),
+        strict=False,
+    )
+    assert report.passed
+
+
 def test_direct_access_product_can_use_verified_availability(tmp_path: Path) -> None:
     plan = _plan("A direct-access editor")
     plan.content_mode = "tool_review"
