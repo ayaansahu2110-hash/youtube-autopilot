@@ -381,7 +381,12 @@ class FactScriptPlanner(PremiumScriptPlanner):
                 plan.script = " ".join(scene.narration for scene in plan.scenes)
                 return
             prompt += " Your previous response failed length/schema checks. Follow them exactly."
-        raise RuntimeError("Short narration rewrite failed; refusing to truncate or upload it.")
+        # Preserve the complete original narration when the model repeatedly
+        # misses the compact rewrite schema. The normal word-count and duration
+        # quality gates still decide whether it is safe to upload; never crash
+        # the whole daily slot or cut a sentence merely to force 60 seconds.
+        plan.script = " ".join(scene.narration.strip() for scene in plan.scenes)
+        return
 
     def choose_topic(self, candidates: list[TopicCandidate]) -> TopicCandidate:
         if not candidates or not self.settings.llm_configured:

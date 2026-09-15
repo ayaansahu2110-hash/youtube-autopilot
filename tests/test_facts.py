@@ -201,6 +201,32 @@ def test_fact_short_duration_guard_preserves_all_scenes() -> None:
     assert all(len(scene.narration.split()) >= 3 for scene in plan.scenes)
 
 
+def test_fact_short_rewrite_failure_preserves_original_for_quality_gate() -> None:
+    scenes = [
+        SceneBeat(narration="one two three four five six seven eight", visual_query=f"literal shot {i}")
+        for i in range(22)
+    ]
+    plan = VideoPlan(
+        topic="Ocean salt",
+        angle="science",
+        format="short",
+        hook="Why salty?",
+        script=" ".join(scene.narration for scene in scenes),
+        title="Why Is The Ocean Salty?",
+        description="Test",
+        thumbnail_brief="Ocean cross-section",
+        scenes=scenes,
+    )
+    original = [scene.narration for scene in plan.scenes]
+    planner = FactScriptPlanner(Settings(channel_profile="curioaxiom"))
+    planner._generate_json = lambda prompt: {"narrations": ["too short"]}
+
+    planner._fit_short_narration(plan, target_words=145)
+
+    assert [scene.narration for scene in plan.scenes] == original
+    assert plan.script == " ".join(original)
+
+
 def test_failed_live_research_uses_only_verified_fact_reserve(tmp_path: Path) -> None:
     pipeline = AutopilotPipeline(Settings(channel_profile="curioaxiom", artifacts_dir=tmp_path))
     candidate = TopicCandidate(title="Prompting is Not Programming", score=90, reason="news")
