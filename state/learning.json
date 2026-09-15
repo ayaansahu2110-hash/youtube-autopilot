@@ -1,79 +1,23 @@
 {
-  "generated_at": "2026-09-15T12:09:06.404731+00:00",
+  "generated_at": "2026-09-15T15:08:50.759307+00:00",
   "competitors": [
-    {
-      "channel": "Dan Martell",
-      "subscribers": 3070000,
-      "channel_views": 401543543,
-      "video_count": 3696,
-      "high_performing_recent_videos": [
-        {
-          "title": "How well do you ACTUALLY know business?",
-          "views": 78460,
-          "likes": 3380,
-          "comments": 40,
-          "published_at": "2026-09-12T21:01:27Z",
-          "description_excerpt": "How well do you ACTUALLY know business?"
-        },
-        {
-          "title": "Should you use AI, an Assistant, or yourself for these tasks?",
-          "views": 22364,
-          "likes": 1242,
-          "comments": 54,
-          "published_at": "2026-09-13T01:01:13Z",
-          "description_excerpt": "Should you use AI, an Assistant, or yourself for these tasks?"
-        },
-        {
-          "title": "My rules for a successful life - the last one is my fav ;)",
-          "views": 19067,
-          "likes": 1284,
-          "comments": 13,
-          "published_at": "2026-09-14T01:01:01Z",
-          "description_excerpt": "My rules for a successful life - the last one is my fav ;)"
-        },
-        {
-          "title": "How to set up an AI agent",
-          "views": 18018,
-          "likes": 976,
-          "comments": 62,
-          "published_at": "2026-09-13T21:01:26Z",
-          "description_excerpt": "How to set up an AI agent"
-        },
-        {
-          "title": "What are the best ways to get more clients? (RANKED)",
-          "views": 11901,
-          "likes": 506,
-          "comments": 8,
-          "published_at": "2026-09-13T15:01:35Z",
-          "description_excerpt": "What are the best ways to get more clients? (RANKED)"
-        }
-      ]
-    },
     {
       "channel": "Matt Wolfe",
       "subscribers": 1010000,
       "channel_views": 79803890,
-      "video_count": 789,
+      "video_count": 790,
       "high_performing_recent_videos": [
         {
-          "title": "GPT-6 Astra Is Finally Here (And It’s REALLY Good)",
-          "views": 490565,
-          "likes": 6879,
-          "comments": 535,
-          "published_at": "2026-09-03T22:45:47Z",
-          "description_excerpt": "Here's my first look at GPT-6-Astra after spending some time using it myself.\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: htt"
-        },
-        {
           "title": "AI News: The AI World is REALLY Scared Right Now",
-          "views": 188915,
-          "likes": 3082,
-          "comments": 666,
+          "views": 190750,
+          "likes": 3101,
+          "comments": 675,
           "published_at": "2026-09-11T15:00:00Z",
           "description_excerpt": "Here's the AI News you might have missed this week. See what Optimizely’s Virtual Teammates can automate for you at https://optimizely.com/mattwolfe\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.co"
         },
         {
           "title": "AI News: The Most Insane Week So Far This Year!",
-          "views": 163251,
+          "views": 163354,
           "likes": 3183,
           "comments": 258,
           "published_at": "2026-09-04T15:00:34Z",
@@ -81,7 +25,7 @@
         },
         {
           "title": "I Asked GPT-6 Astra to Build an AI Slop Detector",
-          "views": 57511,
+          "views": 57544,
           "likes": 921,
           "comments": 160,
           "published_at": "2026-09-09T22:18:17Z",
@@ -89,59 +33,115 @@
         },
         {
           "title": "This AI Turns Insane Ideas Into 3D Objects",
-          "views": 28125,
+          "views": 28137,
           "likes": 912,
           "comments": 64,
           "published_at": "2026-09-07T16:06:22Z",
           "description_excerpt": "This was just a picture… and now it’s a 3D-printable object. \n\nA new AI model called Tripo 2.0 can take almost any image and turn it into a full 3D model you can export to Blender, Unreal Engine, or a 3D printer.\n\nThe possibilities are wild: custom game characters, collectibles, animation assets, product prototypes, or literally anything you can im"
+        },
+        {
+          "title": "3 Big ChatGPT Updates You Need to Know",
+          "views": 16031,
+          "likes": 400,
+          "comments": 17,
+          "published_at": "2026-09-08T15:55:26Z",
+          "description_excerpt": "ChatGPT just got 3 seriously useful upgrades 👀\n\nYou can now automate tasks that are triggered from Gmail, Slack, and GitHub, securely sign into websites without exposing your password, and use GPT-5.6 Sol for 20% less.\n\nWhich update would you use most?\n\nAns follow for more AI news, updates, and future tech. \n\n#ChatGPT #OpenAI #AI #AITools #AInews"
         }
       ]
     },
     {
-      "channel": "Nate Herk | AI Automation",
-      "subscribers": 1010000,
-      "channel_views": 53316931,
-      "video_count": 510,
+      "channel": "The AI Daily Brief: Artificial Intelligence News",
+      "subscribers": 586000,
+      "channel_views": 12391950,
+      "video_count": 1494,
       "high_performing_recent_videos": [
         {
-          "title": "I Turned GPT-6 Astra Into a 24/7 Stock Trader (tutorial)",
-          "views": 367020,
-          "likes": 4437,
-          "comments": 227,
-          "published_at": "2026-09-07T17:33:50Z",
-          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=astra-6-trader&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://www.h"
+          "title": "Why Astra Is the Most Significant and Confounding Model in a Very Long Time",
+          "views": 15982,
+          "likes": 195,
+          "comments": 12,
+          "published_at": "2026-09-09T14:28:11Z",
+          "description_excerpt": "GPT-6 Astra lands with a viral launch video and wildly mixed first impressions, topping computer use and 3D benchmarks while trailing Fable 5.1 on front-end design and general intelligence indexes. NLW argues the disconnect comes from judging an opportunity model by efficiency-model standards, since Astra expands what becomes possible rather than i"
         },
         {
-          "title": "GPT-6 Astra Finally Solves AI Video Editing (full guide)",
-          "views": 273339,
-          "likes": 3567,
-          "comments": 195,
-          "published_at": "2026-09-08T22:11:53Z",
-          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=astra-6-video-edit&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://w"
+          "title": "How to Build an AI-Native Company Today",
+          "views": 12503,
+          "likes": 203,
+          "comments": 12,
+          "published_at": "2026-09-06T11:52:51Z",
+          "description_excerpt": "What does it actually take to build an AI-native company? NLW breaks down Alex Lieberman’s 30 features of AI-native organizations, from shared context and agent skills to self-improving workflows, token efficiency, and making every employee a builder. The episode explores how companies can redesign work around agents, where human judgment belongs, "
         },
         {
-          "title": "I Turned GPT-6 Astra Into the Ultimate AI Second Brain",
-          "views": 185950,
-          "likes": 2240,
-          "comments": 207,
-          "published_at": "2026-09-07T02:00:02Z",
-          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=astra-6-ai-os&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://www.ho"
+          "title": "What to Use the Latest AI Tools For",
+          "views": 10336,
+          "likes": 112,
+          "comments": 7,
+          "published_at": "2026-09-12T13:06:36Z",
+          "description_excerpt": "Eight new product launches land in a single week, from OpenAI's GPT Live voice API to Cognition's Swe-2 model to persistent projects in Cursor. NLW goes through each one with a practical read on who should actually use it and what for, plus why voice control and cost-optimized model stacks are the two trends running underneath all of them. In the h"
         },
         {
-          "title": "Anthropic Engineer Explains: What to Build Instead of AI Agents",
-          "views": 157677,
-          "likes": 1852,
-          "comments": 114,
-          "published_at": "2026-09-13T13:55:05Z",
-          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=what_to_build_instead_of_ai_agents&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual "
+          "title": "Anthropic Researcher Says 10% Chance AI Kills All Humans",
+          "views": 9623,
+          "likes": 130,
+          "comments": 49,
+          "published_at": "2026-09-11T12:13:41Z",
+          "description_excerpt": "An Anthropic researcher resigned publicly saying both his former labs are gambling with our lives, a colleague still there put the odds of extinction above 10%, and the posts pulled nearly 200 million views plus responses from two dozen elected officials. NLW examines why this particular X-risk message landed now when years of similar warnings didn"
         },
         {
-          "title": "How to Actually Choose the Right AI Agent",
-          "views": 60729,
-          "likes": 620,
-          "comments": 101,
-          "published_at": "2026-09-11T21:19:02Z",
-          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=mark-pod-agent-harnesses&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): htt"
+          "title": "The Multiplayer AI Sprint: Build Your Team’s First Shared Agent",
+          "views": 8559,
+          "likes": 110,
+          "comments": 8,
+          "published_at": "2026-09-07T12:05:51Z",
+          "description_excerpt": "AI agents have transformed how individuals work, but the next leap is moving them into the shared spaces where teams actually collaborate. In this episode, NLW explores how Anthropic, Every, OpenClaw and others are shifting from single-player AI to shared agents—and launches the Multiplayer AI Sprint for Teams, the latest free AIDB learning program"
+        }
+      ]
+    },
+    {
+      "channel": "ICOR with Tom | AI Productivity",
+      "subscribers": 113000,
+      "channel_views": 14138856,
+      "video_count": 600,
+      "high_performing_recent_videos": [
+        {
+          "title": "Obsidian replaced the app I built. ICOR for Life is free.",
+          "views": 43827,
+          "likes": 459,
+          "comments": 110,
+          "published_at": "2026-08-30T21:07:19Z",
+          "description_excerpt": "I built my own AI note-taking app. Then I replaced it with Obsidian and Claude.\n👉 The folder behind all of this is free inside myICOR: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=GLO1voinujQ&utm_content=description\n🚨Thanks for all your questions in this comment seciton! We answered most of them, and showed the tools on "
+        },
+        {
+          "title": "Obsidian is the tool I teach in. Keep the one you have.",
+          "views": 12426,
+          "likes": 106,
+          "comments": 30,
+          "published_at": "2026-09-10T20:45:26Z",
+          "description_excerpt": "I did not move to Obsidian. I replaced the interface on a folder that never changed.\n👉 The folder in this video is free inside myICOR: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=UMItyF00isg&utm_content=description\n\nWATCH THIS NEXT\nThe full deep dive with Paco, where we answer the same questions for over forty minutes:\n"
+        },
+        {
+          "title": "Claude sucks. And here is why.",
+          "views": 7587,
+          "likes": 157,
+          "comments": 12,
+          "published_at": "2026-08-15T20:47:05Z",
+          "description_excerpt": "Claude did not get worse overnight. One of four things changed.\n👉 The myPKA folder from this video is free inside myICOR: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=mfEjyTvBWIo&utm_content=description\n\nWATCH THIS NEXT\nI switched Claude's memory off completely and let the folder carry the context instead:\nhttps://youtu."
+        },
+        {
+          "title": "I built my own interface for Claude. It only reads my folder.",
+          "views": 6978,
+          "likes": 159,
+          "comments": 24,
+          "published_at": "2026-07-31T18:58:15Z",
+          "description_excerpt": "AI finished the work. The decision I made with it is gone.\n👉 The folder that I used to build this is free inside myICOR: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=OOL7ILbiLdU&utm_content=description\n\nWATCH THIS NEXT\nThe full tour of the folder this runs on. One folder of plain text, and Claude runs my whole life and b"
+        },
+        {
+          "title": "Claude is all I need to build my own Grok Bot / Buzz that runs local",
+          "views": 6819,
+          "likes": 148,
+          "comments": 20,
+          "published_at": "2026-08-14T21:26:24Z",
+          "description_excerpt": "I built my own Buzz / Grok Bot alternative in a local folder, just using Claude.\n👉 The myPKA folder from this video is free inside myICOR: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=HASt0AAQop4&utm_content=description\n\nWATCH THIS NEXT\nClaude injecting prompts into other running sessions, so one session can drive the re"
         }
       ]
     }
