@@ -1,4 +1,5 @@
 import subprocess
+import tempfile
 from pathlib import Path
 
 from autopilot.models import VisualAsset
@@ -19,6 +20,51 @@ class FFmpegRenderer:
         ]
         result = subprocess.run(command, check=True, capture_output=True, text=True)
         return max(0.1, float(result.stdout.strip()))
+
+    def normalize_short_voice_duration(
+        self,
+        audio_path: Path,
+        duration: float,
+        *,
+        max_seconds: float = 65.0,
+        max_speedup: float = 1.15,
+    ) -> float:
+        """Apply a mild tempo correction instead of discarding good narration."""
+        if duration <= max_seconds:
+            return duration
+        speed = duration / max_seconds
+        if speed > max_speedup:
+            return duration
+
+        with tempfile.NamedTemporaryFile(
+            suffix=audio_path.suffix,
+            dir=audio_path.parent,
+            delete=False,
+        ) as handle:
+            normalized_path = Path(handle.name)
+        try:
+            subprocess.run(
+                [
+                    self.ffmpeg_binary,
+                    "-y",
+                    "-i",
+                    str(audio_path),
+                    "-filter:a",
+                    f"atempo={speed:.6f}",
+                    "-vn",
+                    "-codec:a",
+                    "libmp3lame",
+                    "-q:a",
+                    "2",
+                    str(normalized_path),
+                ],
+                check=True,
+                capture_output=True,
+            )
+            normalized_path.replace(audio_path)
+        finally:
+            normalized_path.unlink(missing_ok=True)
+        return self.probe_duration(audio_path)
 
     def render(
         self,

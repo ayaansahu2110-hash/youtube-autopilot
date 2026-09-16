@@ -132,6 +132,8 @@ class AutopilotPipeline:
         try:
             audio_path = self.tts.synthesize(plan.script, run_dir / "voice.mp3")
             duration = self.renderer.probe_duration(audio_path)
+            if plan.format == "short":
+                duration = self.renderer.normalize_short_voice_duration(audio_path, duration)
             self._validate_voice_track(plan, duration)
             result.metadata["voice_duration_seconds"] = round(duration, 2)
             result.metadata["voice_words_per_minute"] = round(
