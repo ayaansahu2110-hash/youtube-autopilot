@@ -1,195 +1,153 @@
 {
-  "generated_at": "2026-09-15T17:17:18.629727+00:00",
+  "generated_at": "2026-09-16T12:13:13.870106+00:00",
   "competitors": [
+    {
+      "channel": "Dan Martell",
+      "subscribers": 3070000,
+      "channel_views": 402025600,
+      "video_count": 3699,
+      "high_performing_recent_videos": [
+        {
+          "title": "Are you keeping or cutting these AI tools in 2027?",
+          "views": 74178,
+          "likes": 1387,
+          "comments": 105,
+          "published_at": "2026-09-15T15:03:00Z",
+          "description_excerpt": "Are you keeping or cutting these AI tools in 2027?"
+        },
+        {
+          "title": "My rules for a successful life - the last one is my fav ;)",
+          "views": 23605,
+          "likes": 1546,
+          "comments": 13,
+          "published_at": "2026-09-14T01:01:01Z",
+          "description_excerpt": "My rules for a successful life - the last one is my fav ;)"
+        },
+        {
+          "title": "How to set up an AI agent",
+          "views": 20982,
+          "likes": 1135,
+          "comments": 73,
+          "published_at": "2026-09-13T21:01:26Z",
+          "description_excerpt": "How to set up an AI agent"
+        },
+        {
+          "title": "5 books to read if you're done settling",
+          "views": 17397,
+          "likes": 1209,
+          "comments": 7,
+          "published_at": "2026-09-15T21:02:15Z",
+          "description_excerpt": "5 books to read if you're done settling"
+        },
+        {
+          "title": "Jobs ranked by the emotional damage they cause",
+          "views": 16122,
+          "likes": 495,
+          "comments": 10,
+          "published_at": "2026-09-14T21:01:02Z",
+          "description_excerpt": "Jobs ranked by the emotional damage they cause"
+        }
+      ]
+    },
+    {
+      "channel": "Jeff Su",
+      "subscribers": 1890000,
+      "channel_views": 103327037,
+      "video_count": 314,
+      "high_performing_recent_videos": [
+        {
+          "title": "How I'd Learn AI From Scratch in 2026 (skip the useless 80%)",
+          "views": 361461,
+          "likes": 9415,
+          "comments": 459,
+          "published_at": "2026-06-09T13:00:37Z",
+          "description_excerpt": "✅ Grab my free Google Gemini Pro Tips cheatsheet - https://clickhubspot.com/d1af92\n\n⏭️ Want to skip ahead? Grab my entire Cowork system: https://coworkacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=v205\n\nThis is my practical roadmap for getting good at AI: how to pick one model and go deep, why the right context beats memorizing promp"
+        },
+        {
+          "title": "Learn 95% of ChatGPT Work in Under 20 Minutes",
+          "views": 232966,
+          "likes": 3171,
+          "comments": 259,
+          "published_at": "2026-08-25T13:00:23Z",
+          "description_excerpt": "📚 Grab HubSpot's free Guide to #ChatGPT Work: https://clickhubspot.com/8f3780\n\nMost people open #ChatGPT Work, type a question, and end up using it exactly like the regular chatbot. In this tutorial I show you the one thing that changes that: a folder you mount, with a plain-English rulebook inside that ChatGPT Work reads before every single task.\n"
+        },
+        {
+          "title": "Claude Design is Insanely Easy (even for beginners)",
+          "views": 221386,
+          "likes": 4874,
+          "comments": 271,
+          "published_at": "2026-07-21T13:00:15Z",
+          "description_excerpt": "✅ Grab my free Cowork Toolkit - https://coworkacademy.ai/toolkit?utm_source=youtube&utm_medium=video&utm_campaign=v207\n\n⏭️ Want to skip ahead? Grab my entire Cowork system: https://coworkacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=v207\n\nMost #Claude Design tutorials tell you to pick a template and start prompting, which is exactly "
+        },
+        {
+          "title": "Gemini Spark: Google’s Most Powerful Personal Agent",
+          "views": 204977,
+          "likes": 3811,
+          "comments": 275,
+          "published_at": "2026-06-30T13:00:21Z",
+          "description_excerpt": "✅ Try Wispr Flow Pro free - https://ref.wisprflow.ai/jeff-su-yt\n\nGemini Spark is Google's new always-on AI agent, and this beginner's guide breaks down what it actually does and when to use it.\n\nYou'll see the four capabilities that matter most: connecting context across your Google apps, following your templates, building reusable Skills, and auto"
+        },
+        {
+          "title": "My AI Remembers Everything",
+          "views": 72516,
+          "likes": 1680,
+          "comments": 177,
+          "published_at": "2026-08-12T13:15:33Z",
+          "description_excerpt": "📝 Get 100% off Granola for your first month - https://go.granola.ai/jeff-su\n\n⏭️ Want to skip ahead? Grab my entire Cowork system: https://coworkacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=v208\n\nThere’s a reason why #ChatGPT can remember your writing style and yet still forget the project decision you made yesterday. In this video I"
+        }
+      ]
+    },
     {
       "channel": "Matt Wolfe",
       "subscribers": 1010000,
-      "channel_views": 79803890,
+      "channel_views": 79836366,
       "video_count": 790,
       "high_performing_recent_videos": [
         {
           "title": "AI News: The AI World is REALLY Scared Right Now",
-          "views": 191588,
-          "likes": 3109,
-          "comments": 675,
+          "views": 197849,
+          "likes": 3167,
+          "comments": 682,
           "published_at": "2026-09-11T15:00:00Z",
           "description_excerpt": "Here's the AI News you might have missed this week. See what Optimizely’s Virtual Teammates can automate for you at https://optimizely.com/mattwolfe\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.co"
         },
         {
           "title": "AI News: The Most Insane Week So Far This Year!",
-          "views": 163435,
-          "likes": 3184,
+          "views": 164146,
+          "likes": 3187,
           "comments": 258,
           "published_at": "2026-09-04T15:00:34Z",
           "description_excerpt": "Here's the AI News you probably missed this week. Try AI Flows with Artlist Unlimited here 👉 https://artlist.io/?artlist_aid=Mattwolfe_4110&utm_source=affiliate_p&utm_medium=Mattwolfe_4110&utm_campaign=Mattwolfe_4110\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n"
         },
         {
           "title": "I Asked GPT-6 Astra to Build an AI Slop Detector",
-          "views": 57645,
-          "likes": 921,
-          "comments": 160,
+          "views": 58554,
+          "likes": 928,
+          "comments": 163,
           "published_at": "2026-09-09T22:18:17Z",
           "description_excerpt": "AI video is getting REALLY hard to spot… So I tried to build a tool that could detect it for me. Want to run it yourself? Here's the GitHub link: https://github.com/mreflow/ai-slop-detector\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/m"
         },
         {
           "title": "This AI Turns Insane Ideas Into 3D Objects",
-          "views": 28166,
-          "likes": 912,
+          "views": 28317,
+          "likes": 916,
           "comments": 64,
           "published_at": "2026-09-07T16:06:22Z",
           "description_excerpt": "This was just a picture… and now it’s a 3D-printable object. \n\nA new AI model called Tripo 2.0 can take almost any image and turn it into a full 3D model you can export to Blender, Unreal Engine, or a 3D printer.\n\nThe possibilities are wild: custom game characters, collectibles, animation assets, product prototypes, or literally anything you can im"
         },
         {
           "title": "3 Big ChatGPT Updates You Need to Know",
-          "views": 16065,
-          "likes": 403,
+          "views": 16644,
+          "likes": 411,
           "comments": 17,
           "published_at": "2026-09-08T15:55:26Z",
           "description_excerpt": "ChatGPT just got 3 seriously useful upgrades 👀\n\nYou can now automate tasks that are triggered from Gmail, Slack, and GitHub, securely sign into websites without exposing your password, and use GPT-5.6 Sol for 20% less.\n\nWhich update would you use most?\n\nAns follow for more AI news, updates, and future tech. \n\n#ChatGPT #OpenAI #AI #AITools #AInews"
-        }
-      ]
-    },
-    {
-      "channel": "Nate Herk | AI Automation",
-      "subscribers": 1010000,
-      "channel_views": 53316931,
-      "video_count": 510,
-      "high_performing_recent_videos": [
-        {
-          "title": "I Turned GPT-6 Astra Into a 24/7 Stock Trader (tutorial)",
-          "views": 370828,
-          "likes": 4489,
-          "comments": 227,
-          "published_at": "2026-09-07T17:33:50Z",
-          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=astra-6-trader&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://www.h"
-        },
-        {
-          "title": "GPT-6 Astra Finally Solves AI Video Editing (full guide)",
-          "views": 275554,
-          "likes": 3585,
-          "comments": 196,
-          "published_at": "2026-09-08T22:11:53Z",
-          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=astra-6-video-edit&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://w"
-        },
-        {
-          "title": "I Turned GPT-6 Astra Into the Ultimate AI Second Brain",
-          "views": 186771,
-          "likes": 2246,
-          "comments": 207,
-          "published_at": "2026-09-07T02:00:02Z",
-          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=astra-6-ai-os&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://www.ho"
-        },
-        {
-          "title": "Anthropic Engineer Explains: What to Build Instead of AI Agents",
-          "views": 168029,
-          "likes": 2001,
-          "comments": 117,
-          "published_at": "2026-09-13T13:55:05Z",
-          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=what_to_build_instead_of_ai_agents&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual "
-        },
-        {
-          "title": "How to Actually Choose the Right AI Agent",
-          "views": 61239,
-          "likes": 625,
-          "comments": 101,
-          "published_at": "2026-09-11T21:19:02Z",
-          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=mark-pod-agent-harnesses&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): htt"
-        }
-      ]
-    },
-    {
-      "channel": "The AI Daily Brief: Artificial Intelligence News",
-      "subscribers": 586000,
-      "channel_views": 12391950,
-      "video_count": 1494,
-      "high_performing_recent_videos": [
-        {
-          "title": "Why Astra Is the Most Significant and Confounding Model in a Very Long Time",
-          "views": 16033,
-          "likes": 195,
-          "comments": 12,
-          "published_at": "2026-09-09T14:28:11Z",
-          "description_excerpt": "GPT-6 Astra lands with a viral launch video and wildly mixed first impressions, topping computer use and 3D benchmarks while trailing Fable 5.1 on front-end design and general intelligence indexes. NLW argues the disconnect comes from judging an opportunity model by efficiency-model standards, since Astra expands what becomes possible rather than i"
-        },
-        {
-          "title": "How to Build an AI-Native Company Today",
-          "views": 12510,
-          "likes": 203,
-          "comments": 12,
-          "published_at": "2026-09-06T11:52:51Z",
-          "description_excerpt": "What does it actually take to build an AI-native company? NLW breaks down Alex Lieberman’s 30 features of AI-native organizations, from shared context and agent skills to self-improving workflows, token efficiency, and making every employee a builder. The episode explores how companies can redesign work around agents, where human judgment belongs, "
-        },
-        {
-          "title": "What to Use the Latest AI Tools For",
-          "views": 10396,
-          "likes": 113,
-          "comments": 7,
-          "published_at": "2026-09-12T13:06:36Z",
-          "description_excerpt": "Eight new product launches land in a single week, from OpenAI's GPT Live voice API to Cognition's Swe-2 model to persistent projects in Cursor. NLW goes through each one with a practical read on who should actually use it and what for, plus why voice control and cost-optimized model stacks are the two trends running underneath all of them. In the h"
-        },
-        {
-          "title": "Anthropic Researcher Says 10% Chance AI Kills All Humans",
-          "views": 9694,
-          "likes": 131,
-          "comments": 49,
-          "published_at": "2026-09-11T12:13:41Z",
-          "description_excerpt": "An Anthropic researcher resigned publicly saying both his former labs are gambling with our lives, a colleague still there put the odds of extinction above 10%, and the posts pulled nearly 200 million views plus responses from two dozen elected officials. NLW examines why this particular X-risk message landed now when years of similar warnings didn"
-        },
-        {
-          "title": "The Multiplayer AI Sprint: Build Your Team’s First Shared Agent",
-          "views": 8572,
-          "likes": 110,
-          "comments": 8,
-          "published_at": "2026-09-07T12:05:51Z",
-          "description_excerpt": "AI agents have transformed how individuals work, but the next leap is moving them into the shared spaces where teams actually collaborate. In this episode, NLW explores how Anthropic, Every, OpenClaw and others are shifting from single-player AI to shared agents—and launches the Multiplayer AI Sprint for Teams, the latest free AIDB learning program"
         }
       ]
     }
   ],
   "own_comments": [],
   "own_analytics": [
-    {
-      "title": "Bypass 2FA Walls with Self-Hosted Browser Automation",
-      "format": "short",
-      "metrics": {
-        "views": 257.0,
-        "estimatedMinutesWatched": 33.0,
-        "averageViewDuration": 18.0,
-        "averageViewPercentage": 42.61,
-        "likes": 5.0,
-        "comments": 5.0,
-        "shares": 2.0,
-        "subscribersGained": 6.0
-      }
-    },
-    {
-      "title": "Puppetflow: The Self-Hosted Browser Automation That Handles 2FA",
-      "format": "long",
-      "metrics": {
-        "views": 96.0,
-        "estimatedMinutesWatched": 38.0,
-        "averageViewDuration": 63.0,
-        "averageViewPercentage": 10.99,
-        "likes": 2.0,
-        "comments": 2.0,
-        "shares": 0.0,
-        "subscribersGained": 1.0
-      }
-    },
-    {
-      "title": "Build PowerPoint Decks Locally with SlideX and MDX",
-      "format": "short",
-      "metrics": {
-        "views": 260.0,
-        "estimatedMinutesWatched": 47.0,
-        "averageViewDuration": 33.0,
-        "averageViewPercentage": 63.800000000000004,
-        "likes": 4.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
     {
       "title": "Stop Pasting SQL Into AI Chatbots",
       "format": "short",
@@ -250,7 +208,7 @@
       "title": "AI Video in 3 Seconds: MiniMax H3 Max Workflow",
       "format": "short",
       "metrics": {
-        "views": 241.0,
+        "views": 251.0,
         "estimatedMinutesWatched": 22.0,
         "averageViewDuration": 27.0,
         "averageViewPercentage": 47.57,
@@ -278,7 +236,7 @@
       "title": "How to Self-Host on the Dark Web",
       "format": "short",
       "metrics": {
-        "views": 113.0,
+        "views": 114.0,
         "estimatedMinutesWatched": 20.0,
         "averageViewDuration": 27.0,
         "averageViewPercentage": 46.28,
@@ -292,7 +250,7 @@
       "title": "Build a Physical iOS Phone Farm at Home",
       "format": "short",
       "metrics": {
-        "views": 41.0,
+        "views": 42.0,
         "estimatedMinutesWatched": 7.0,
         "averageViewDuration": 26.0,
         "averageViewPercentage": 52.67000000000001,
@@ -306,7 +264,7 @@
       "title": "Stop AI Codegen: Build Internal Tools via MCP",
       "format": "short",
       "metrics": {
-        "views": 179.0,
+        "views": 181.0,
         "estimatedMinutesWatched": 39.0,
         "averageViewDuration": 42.0,
         "averageViewPercentage": 80.8,
@@ -334,7 +292,7 @@
       "title": "Build a Private P2P Search Stack with Docker",
       "format": "short",
       "metrics": {
-        "views": 55.0,
+        "views": 57.0,
         "estimatedMinutesWatched": 16.0,
         "averageViewDuration": 83.0,
         "averageViewPercentage": 167.42,
@@ -348,21 +306,21 @@
       "title": "Why Code-First AI Agents Beat Raw Prompting",
       "format": "short",
       "metrics": {
-        "views": 97.0,
+        "views": 105.0,
         "estimatedMinutesWatched": 10.0,
         "averageViewDuration": 17.0,
         "averageViewPercentage": 29.37,
         "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
-        "subscribersGained": 1.0
+        "subscribersGained": 0.0
       }
     },
     {
       "title": "Claude Code Self-Hosted: Don't Make This Setup Error",
       "format": "short",
       "metrics": {
-        "views": 295.0,
+        "views": 305.0,
         "estimatedMinutesWatched": 24.0,
         "averageViewDuration": 16.0,
         "averageViewPercentage": 29.969999999999995,
@@ -376,7 +334,7 @@
       "title": "Turn Your Idle Computers Into A Free AI Datacenter",
       "format": "short",
       "metrics": {
-        "views": 72.0,
+        "views": 73.0,
         "estimatedMinutesWatched": 7.0,
         "averageViewDuration": 19.0,
         "averageViewPercentage": 41.6,
@@ -390,10 +348,10 @@
       "title": "Self-Host This AI Google Maps Lead Scraper (No SaaS Fees)",
       "format": "short",
       "metrics": {
-        "views": 64.0,
-        "estimatedMinutesWatched": 8.0,
-        "averageViewDuration": 33.0,
-        "averageViewPercentage": 66.01,
+        "views": 117.0,
+        "estimatedMinutesWatched": 15.0,
+        "averageViewDuration": 24.0,
+        "averageViewPercentage": 49.55,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 2.0,
@@ -404,10 +362,66 @@
       "title": "Spiteware: Apps Built Out of Pure Spite",
       "format": "short",
       "metrics": {
-        "views": 6.0,
+        "views": 8.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 6.0,
-        "averageViewPercentage": 13.449999999999998,
+        "averageViewDuration": 9.0,
+        "averageViewPercentage": 18.72,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Code Your Product Demo Videos Instead of Editing Them",
+      "format": "short",
+      "metrics": {
+        "views": 17.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 9.0,
+        "averageViewPercentage": 18.56,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Local AI Just Hacked Your Terminal (In a Good Way)",
+      "format": "short",
+      "metrics": {
+        "views": 119.0,
+        "estimatedMinutesWatched": 6.0,
+        "averageViewDuration": 10.0,
+        "averageViewPercentage": 17.81,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "I Built a Local Knowledge Graph From My AI Agent's Code",
+      "format": "long",
+      "metrics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.07,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Fix the Silent Cache Misses Costing You Double on AI Agents",
+      "format": "short",
+      "metrics": {
+        "views": 8.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 48.0,
+        "averageViewPercentage": 88.21,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -434,7 +448,7 @@
       "title": "Claude Code Self-Hosted: Don't Make This Setup Error",
       "format": "short",
       "metrics": {
-        "views": 295.0,
+        "views": 305.0,
         "estimatedMinutesWatched": 24.0,
         "averageViewDuration": 16.0,
         "averageViewPercentage": 29.969999999999995,
@@ -462,7 +476,7 @@
       "title": "AI Video in 3 Seconds: MiniMax H3 Max Workflow",
       "format": "short",
       "metrics": {
-        "views": 241.0,
+        "views": 251.0,
         "estimatedMinutesWatched": 22.0,
         "averageViewDuration": 27.0,
         "averageViewPercentage": 47.57,
@@ -476,7 +490,7 @@
       "title": "Stop AI Codegen: Build Internal Tools via MCP",
       "format": "short",
       "metrics": {
-        "views": 179.0,
+        "views": 181.0,
         "estimatedMinutesWatched": 39.0,
         "averageViewDuration": 42.0,
         "averageViewPercentage": 80.8,
