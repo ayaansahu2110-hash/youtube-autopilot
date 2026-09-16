@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-16T11:58:36.148916+00:00"
+      "analytics_updated_at": "2026-09-16T14:37:35.161982+00:00"
     },
     {
       "video_id": "_sd7bLRor_o",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-16T11:58:36.149501+00:00"
+      "analytics_updated_at": "2026-09-16T14:37:35.162667+00:00"
     },
     {
       "video_id": "yPUU3tQ6MTU",
@@ -57,7 +57,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-16T11:58:36.218517+00:00"
+      "analytics_updated_at": "2026-09-16T14:37:35.164395+00:00"
     },
     {
       "video_id": "-WXARpXcqL4",
@@ -76,7 +76,7 @@
         "shares": 1.0,
         "subscribersGained": 2.0
       },
-      "analytics_updated_at": "2026-09-16T11:58:36.217044+00:00"
+      "analytics_updated_at": "2026-09-16T14:37:35.163137+00:00"
     },
     {
       "video_id": "EeviDSBWxZ8",
@@ -95,7 +95,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-16T11:58:36.219870+00:00"
+      "analytics_updated_at": "2026-09-16T14:37:35.164806+00:00"
     },
     {
       "video_id": "VwzE41erxjY",
@@ -114,7 +114,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-16T11:58:36.220243+00:00"
+      "analytics_updated_at": "2026-09-16T14:37:35.165209+00:00"
     },
     {
       "video_id": "N1fheI9ReKQ",
@@ -134,7 +134,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-16T11:58:36.217856+00:00"
+      "analytics_updated_at": "2026-09-16T14:37:35.163981+00:00"
     },
     {
       "video_id": "tXzKJN-Sxds",
@@ -153,7 +153,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-16T11:58:36.217560+00:00"
+      "analytics_updated_at": "2026-09-16T14:37:35.163557+00:00"
     },
     {
       "video_id": "gXh8hCzY7Vg",
@@ -222,6 +222,15 @@
       "format": "short",
       "script_preview": "Raindrops strike exposed mountain bedrock, dissolving tiny amounts of mineral material. Rivers carry these dissolved ions across the landscape toward the sea. NOAA reports rain and rivers dissolve rock minerals and carry ions to the ocean. Water leaves the ocean through evaporation while dissolved salts remain behind. Ocean circulation slowly mixes and concentrates these elements over vast periods. Seafloor hydrothermal activity adds further dissolved material into the deep basins. Chemical processes and sediments remove some ions to balance the composition. The USGS notes water cycles move li",
       "created_at": "2026-09-15T15:22:38.583859+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "yFb4e4FzPrk",
+      "topic": "Why Heat Shields Burn on Purpose",
+      "title": "Why Heat Shields Burn on Purpose",
+      "format": "short",
+      "script_preview": "Why design a spacecraft that’s meant to burn up? As a vehicle screams back into Earth's atmosphere, it compresses air into a superheated plasma. Temperatures spike into the thousands of degrees. Instead of fighting this, engineers embrace the fire. They use ablative materials on the heat shield. These materials are designed to char, melt, and erode in a controlled cycle. This phase change physically carries intense heat away from the craft, acting as a sacrificial barrier. It’s an engineered self-destruction. The underlying structure remains shielded, protected by the very material that is van",
+      "created_at": "2026-09-16T14:46:15.466236+00:00",
       "analytics": {}
     }
   ],
@@ -303,6 +312,12 @@
       "title": "Why Ocean Water Is Salty",
       "format": "short",
       "created_at": "2026-09-15T15:22:38.583859+00:00"
+    },
+    {
+      "topic": "Why Heat Shields Burn on Purpose",
+      "title": "Why Heat Shields Burn on Purpose",
+      "format": "short",
+      "created_at": "2026-09-16T14:46:15.466236+00:00"
     }
   ]
 }
