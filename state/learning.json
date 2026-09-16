@@ -1,99 +1,51 @@
 {
-  "generated_at": "2026-09-16T12:13:13.870106+00:00",
+  "generated_at": "2026-09-16T14:43:45.244360+00:00",
   "competitors": [
     {
       "channel": "Dan Martell",
       "subscribers": 3070000,
       "channel_views": 402025600,
-      "video_count": 3699,
+      "video_count": 3700,
       "high_performing_recent_videos": [
         {
           "title": "Are you keeping or cutting these AI tools in 2027?",
-          "views": 74178,
-          "likes": 1387,
-          "comments": 105,
+          "views": 79256,
+          "likes": 1449,
+          "comments": 111,
           "published_at": "2026-09-15T15:03:00Z",
           "description_excerpt": "Are you keeping or cutting these AI tools in 2027?"
         },
         {
           "title": "My rules for a successful life - the last one is my fav ;)",
-          "views": 23605,
-          "likes": 1546,
-          "comments": 13,
+          "views": 23823,
+          "likes": 1569,
+          "comments": 14,
           "published_at": "2026-09-14T01:01:01Z",
           "description_excerpt": "My rules for a successful life - the last one is my fav ;)"
         },
         {
-          "title": "How to set up an AI agent",
-          "views": 20982,
-          "likes": 1135,
-          "comments": 73,
-          "published_at": "2026-09-13T21:01:26Z",
-          "description_excerpt": "How to set up an AI agent"
-        },
-        {
           "title": "5 books to read if you're done settling",
-          "views": 17397,
-          "likes": 1209,
-          "comments": 7,
+          "views": 20067,
+          "likes": 1400,
+          "comments": 8,
           "published_at": "2026-09-15T21:02:15Z",
           "description_excerpt": "5 books to read if you're done settling"
         },
         {
           "title": "Jobs ranked by the emotional damage they cause",
-          "views": 16122,
-          "likes": 495,
+          "views": 16286,
+          "likes": 502,
           "comments": 10,
           "published_at": "2026-09-14T21:01:02Z",
           "description_excerpt": "Jobs ranked by the emotional damage they cause"
-        }
-      ]
-    },
-    {
-      "channel": "Jeff Su",
-      "subscribers": 1890000,
-      "channel_views": 103327037,
-      "video_count": 314,
-      "high_performing_recent_videos": [
-        {
-          "title": "How I'd Learn AI From Scratch in 2026 (skip the useless 80%)",
-          "views": 361461,
-          "likes": 9415,
-          "comments": 459,
-          "published_at": "2026-06-09T13:00:37Z",
-          "description_excerpt": "✅ Grab my free Google Gemini Pro Tips cheatsheet - https://clickhubspot.com/d1af92\n\n⏭️ Want to skip ahead? Grab my entire Cowork system: https://coworkacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=v205\n\nThis is my practical roadmap for getting good at AI: how to pick one model and go deep, why the right context beats memorizing promp"
         },
         {
-          "title": "Learn 95% of ChatGPT Work in Under 20 Minutes",
-          "views": 232966,
-          "likes": 3171,
-          "comments": 259,
-          "published_at": "2026-08-25T13:00:23Z",
-          "description_excerpt": "📚 Grab HubSpot's free Guide to #ChatGPT Work: https://clickhubspot.com/8f3780\n\nMost people open #ChatGPT Work, type a question, and end up using it exactly like the regular chatbot. In this tutorial I show you the one thing that changes that: a folder you mount, with a plain-English rulebook inside that ChatGPT Work reads before every single task.\n"
-        },
-        {
-          "title": "Claude Design is Insanely Easy (even for beginners)",
-          "views": 221386,
-          "likes": 4874,
-          "comments": 271,
-          "published_at": "2026-07-21T13:00:15Z",
-          "description_excerpt": "✅ Grab my free Cowork Toolkit - https://coworkacademy.ai/toolkit?utm_source=youtube&utm_medium=video&utm_campaign=v207\n\n⏭️ Want to skip ahead? Grab my entire Cowork system: https://coworkacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=v207\n\nMost #Claude Design tutorials tell you to pick a template and start prompting, which is exactly "
-        },
-        {
-          "title": "Gemini Spark: Google’s Most Powerful Personal Agent",
-          "views": 204977,
-          "likes": 3811,
-          "comments": 275,
-          "published_at": "2026-06-30T13:00:21Z",
-          "description_excerpt": "✅ Try Wispr Flow Pro free - https://ref.wisprflow.ai/jeff-su-yt\n\nGemini Spark is Google's new always-on AI agent, and this beginner's guide breaks down what it actually does and when to use it.\n\nYou'll see the four capabilities that matter most: connecting context across your Google apps, following your templates, building reusable Skills, and auto"
-        },
-        {
-          "title": "My AI Remembers Everything",
-          "views": 72516,
-          "likes": 1680,
-          "comments": 177,
-          "published_at": "2026-08-12T13:15:33Z",
-          "description_excerpt": "📝 Get 100% off Granola for your first month - https://go.granola.ai/jeff-su\n\n⏭️ Want to skip ahead? Grab my entire Cowork system: https://coworkacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=v208\n\nThere’s a reason why #ChatGPT can remember your writing style and yet still forget the project decision you made yesterday. In this video I"
+          "title": "Difference between being a boss and being a leader",
+          "views": 13506,
+          "likes": 770,
+          "comments": 7,
+          "published_at": "2026-09-14T15:04:27Z",
+          "description_excerpt": "Difference between being a boss and being a leader"
         }
       ]
     },
@@ -101,27 +53,19 @@
       "channel": "Matt Wolfe",
       "subscribers": 1010000,
       "channel_views": 79836366,
-      "video_count": 790,
+      "video_count": 791,
       "high_performing_recent_videos": [
         {
           "title": "AI News: The AI World is REALLY Scared Right Now",
-          "views": 197849,
-          "likes": 3167,
+          "views": 198555,
+          "likes": 3174,
           "comments": 682,
           "published_at": "2026-09-11T15:00:00Z",
           "description_excerpt": "Here's the AI News you might have missed this week. See what Optimizely’s Virtual Teammates can automate for you at https://optimizely.com/mattwolfe\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.co"
         },
         {
-          "title": "AI News: The Most Insane Week So Far This Year!",
-          "views": 164146,
-          "likes": 3187,
-          "comments": 258,
-          "published_at": "2026-09-04T15:00:34Z",
-          "description_excerpt": "Here's the AI News you probably missed this week. Try AI Flows with Artlist Unlimited here 👉 https://artlist.io/?artlist_aid=Mattwolfe_4110&utm_source=affiliate_p&utm_medium=Mattwolfe_4110&utm_campaign=Mattwolfe_4110\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n"
-        },
-        {
           "title": "I Asked GPT-6 Astra to Build an AI Slop Detector",
-          "views": 58554,
+          "views": 58718,
           "likes": 928,
           "comments": 163,
           "published_at": "2026-09-09T22:18:17Z",
@@ -129,7 +73,7 @@
         },
         {
           "title": "This AI Turns Insane Ideas Into 3D Objects",
-          "views": 28317,
+          "views": 28319,
           "likes": 916,
           "comments": 64,
           "published_at": "2026-09-07T16:06:22Z",
@@ -137,11 +81,67 @@
         },
         {
           "title": "3 Big ChatGPT Updates You Need to Know",
-          "views": 16644,
-          "likes": 411,
+          "views": 16663,
+          "likes": 412,
           "comments": 17,
           "published_at": "2026-09-08T15:55:26Z",
           "description_excerpt": "ChatGPT just got 3 seriously useful upgrades 👀\n\nYou can now automate tasks that are triggered from Gmail, Slack, and GitHub, securely sign into websites without exposing your password, and use GPT-5.6 Sol for 20% less.\n\nWhich update would you use most?\n\nAns follow for more AI news, updates, and future tech. \n\n#ChatGPT #OpenAI #AI #AITools #AInews"
+        },
+        {
+          "title": "This AI Makes Any Photo 3D",
+          "views": 15918,
+          "likes": 481,
+          "comments": 23,
+          "published_at": "2026-09-09T12:26:29Z",
+          "description_excerpt": "World Labs’ new Atlas model can reconstruct an entire 3D environment from just one photo, then let you control the camera and explore it from completely new angles.\n\nWhat you're seeing IS NOT an AI video, it’s an entire fully explorable world.\n\nYou can also give it multiple images and it can combine them into one larger, navigable scene.\n\nWhat woul"
+        }
+      ]
+    },
+    {
+      "channel": "Nate Herk | AI Automation",
+      "subscribers": 1010000,
+      "channel_views": 53525030,
+      "video_count": 511,
+      "high_performing_recent_videos": [
+        {
+          "title": "I Turned GPT-6 Astra Into a 24/7 Stock Trader (tutorial)",
+          "views": 386099,
+          "likes": 4612,
+          "comments": 230,
+          "published_at": "2026-09-07T17:33:50Z",
+          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=astra-6-trader&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://www.h"
+        },
+        {
+          "title": "GPT-6 Astra Finally Solves AI Video Editing (full guide)",
+          "views": 284737,
+          "likes": 3676,
+          "comments": 201,
+          "published_at": "2026-09-08T22:11:53Z",
+          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=astra-6-video-edit&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://w"
+        },
+        {
+          "title": "Anthropic Engineer Explains: What to Build Instead of AI Agents",
+          "views": 203075,
+          "likes": 2445,
+          "comments": 129,
+          "published_at": "2026-09-13T13:55:05Z",
+          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=what_to_build_instead_of_ai_agents&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual "
+        },
+        {
+          "title": "How to Actually Choose the Right AI Agent",
+          "views": 63276,
+          "likes": 643,
+          "comments": 103,
+          "published_at": "2026-09-11T21:19:02Z",
+          "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=mark-pod-agent-harnesses&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): htt"
+        },
+        {
+          "title": "Thank You for 1M Subscribers",
+          "views": 35236,
+          "likes": 1263,
+          "comments": 350,
+          "published_at": "2026-09-09T17:47:52Z",
+          "description_excerpt": "I just hit 1 million subscribers today.\n\nI posted my first video 720 days ago. I was a fresh college grad who had moved from Illinois to Salt Lake City, and I had no idea what I was in for.\n\nI remember filming with a $30 webcam and no microphone. People in the comments were begging me to upgrade both. \n\nI even kept a towel under my keyboard so you "
         }
       ]
     }
