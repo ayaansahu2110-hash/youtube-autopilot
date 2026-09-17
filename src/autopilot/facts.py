@@ -316,7 +316,14 @@ class CurioAxiomEditorialSystem:
         return max(-12.0, min(18.0, surprise * 3 + visual * 2 - penalty * 6))
 
     def enrich(self, candidate: TopicCandidate, research: ResearchPack) -> ResearchPack:
-        category = self.router.route(f"{candidate.title} {research.research_notes}")
+        # Curated reserves already carry an editor-verified category. Preserve
+        # it so incidental words such as NASA or Sun cannot reroute an
+        # atmospheric-science story into the space authority list.
+        category = (
+            research.category
+            if research.category and research.category != "general"
+            else self.router.route(f"{candidate.title} {research.research_notes}")
+        )
         brief = (
             "CURIOAXIOM EDITORIAL BRIEF\n"
             f"CATEGORY: {category}\n"

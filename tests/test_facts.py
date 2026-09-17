@@ -1,7 +1,13 @@
 from pathlib import Path
 from autopilot.config import Settings
 from autopilot.cli import _settings_for_format
-from autopilot.facts import FactCategoryRouter, FactScriptPlanner, FactVerifier, verified_curio_seed
+from autopilot.facts import (
+    CurioAxiomEditorialSystem,
+    FactCategoryRouter,
+    FactScriptPlanner,
+    FactVerifier,
+    verified_curio_seed,
+)
 from autopilot.models import ResearchPack, ResearchSource, SceneBeat, TopicCandidate, VideoPlan
 from autopilot.models import VisualAsset
 from autopilot.render import FFmpegRenderer
@@ -83,6 +89,21 @@ def test_verified_curio_reserve_continues_after_original_topics_are_used() -> No
     assert candidate.title == "Why the Sky Is Blue but Sunsets Are Red"
     assert len(research.sources) == 2
     assert FactVerifier().verify(research).confidence_score >= 65
+
+
+def test_curated_fact_category_survives_editorial_enrichment() -> None:
+    seeded = verified_curio_seed(
+        excluded_topics=[
+            "Why Astronauts Float in Orbit",
+            "Why Ocean Water Is Salty",
+            "Why Heat Shields Burn on Purpose",
+        ]
+    )
+    assert seeded is not None
+    candidate, research = seeded
+    enriched = CurioAxiomEditorialSystem().enrich(candidate, research)
+    assert enriched.category == "science"
+    assert FactVerifier().verify(enriched).confidence_score >= 65
 
 
 def test_fact_editing_splits_long_visual_holds() -> None:
