@@ -14,7 +14,7 @@ AUTHORITATIVE_DOMAINS = {
         "nasa.gov", "noaa.gov", "weather.gov", "esa.int", "nih.gov", "nature.com", "science.org"
     ),
     "history": ("si.edu", "loc.gov", "archives.gov", "britishmuseum.org"),
-    "geography": ("un.org", "worldbank.org", "usgs.gov", "noaa.gov"),
+    "geography": ("un.org", "worldbank.org", "usgs.gov", "noaa.gov", "whoi.edu"),
     "mathematics": ("ams.org", "maa.org", "mathworld.wolfram.com", "edu"),
     # NOAA is authoritative for Earth-Moon tide interactions that cross the
     # space and ocean-science lanes.
