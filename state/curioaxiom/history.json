@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-17T14:11:49.038999+00:00"
+      "analytics_updated_at": "2026-09-17T14:20:46.076153+00:00"
     },
     {
       "video_id": "_sd7bLRor_o",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-17T14:11:49.039674+00:00"
+      "analytics_updated_at": "2026-09-17T14:20:46.076860+00:00"
     },
     {
       "video_id": "yPUU3tQ6MTU",
@@ -57,7 +57,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-17T14:11:49.042531+00:00"
+      "analytics_updated_at": "2026-09-17T14:20:46.079205+00:00"
     },
     {
       "video_id": "-WXARpXcqL4",
@@ -76,7 +76,7 @@
         "shares": 1.0,
         "subscribersGained": 2.0
       },
-      "analytics_updated_at": "2026-09-17T14:11:49.040168+00:00"
+      "analytics_updated_at": "2026-09-17T14:20:46.077332+00:00"
     },
     {
       "video_id": "EeviDSBWxZ8",
@@ -95,7 +95,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-17T14:11:49.042992+00:00"
+      "analytics_updated_at": "2026-09-17T14:20:46.079550+00:00"
     },
     {
       "video_id": "VwzE41erxjY",
@@ -114,7 +114,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-17T14:11:49.045488+00:00"
+      "analytics_updated_at": "2026-09-17T14:20:46.082081+00:00"
     },
     {
       "video_id": "N1fheI9ReKQ",
@@ -134,7 +134,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-17T14:11:49.041154+00:00"
+      "analytics_updated_at": "2026-09-17T14:20:46.078132+00:00"
     },
     {
       "video_id": "tXzKJN-Sxds",
@@ -153,7 +153,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-17T14:11:49.040622+00:00"
+      "analytics_updated_at": "2026-09-17T14:20:46.077726+00:00"
     },
     {
       "video_id": "gXh8hCzY7Vg",
@@ -173,7 +173,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-17T14:11:49.045957+00:00"
+      "analytics_updated_at": "2026-09-17T14:20:46.082451+00:00"
     },
     {
       "video_id": "rOXhektjpHg",
@@ -193,7 +193,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-17T14:11:49.041604+00:00"
+      "analytics_updated_at": "2026-09-17T14:20:46.078495+00:00"
     },
     {
       "video_id": "bT9UdwBKLks",
@@ -213,7 +213,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-17T14:11:49.043425+00:00"
+      "analytics_updated_at": "2026-09-17T14:20:46.079896+00:00"
     },
     {
       "video_id": "wDtG3Hpjs6s",
@@ -233,7 +233,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-17T14:11:49.042079+00:00"
+      "analytics_updated_at": "2026-09-17T14:20:46.078843+00:00"
     },
     {
       "video_id": "RurypNkFZeY",
@@ -253,7 +253,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-17T14:11:49.045026+00:00"
+      "analytics_updated_at": "2026-09-17T14:20:46.081638+00:00"
     },
     {
       "video_id": "EiZc33RD3Rg",
@@ -281,6 +281,15 @@
       "format": "short",
       "script_preview": "Why design a spacecraft that’s meant to burn up? As a vehicle screams back into Earth's atmosphere, it compresses air into a superheated plasma. Temperatures spike into the thousands of degrees. Instead of fighting this, engineers embrace the fire. They use ablative materials on the heat shield. These materials are designed to char, melt, and erode in a controlled cycle. This phase change physically carries intense heat away from the craft, acting as a sacrificial barrier. It’s an engineered self-destruction. The underlying structure remains shielded, protected by the very material that is van",
       "created_at": "2026-09-16T14:46:15.466236+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "BaavNS7Uw_4",
+      "topic": "Why the Sky Is Blue but Sunsets Are Red",
+      "title": "Why the Sky Changes Color",
+      "format": "short",
+      "script_preview": "The sky overhead is brilliantly blue, but as the sun dips low, that same air ignites into deep crimson. Why does the same atmosphere paint two completely opposite colors? Sunlight appears white to our eyes, but it holds every color of the visible spectrum. As this light hits Earth's upper atmosphere, tiny nitrogen and oxygen molecules scatter the shorter, high-energy blue wavelengths in every direction across the sky. This process is known as Rayleigh scattering. But near sunrise and sunset, sunlight must travel a much longer path through a thicker layer of the atmosphere. This extreme distanc",
+      "created_at": "2026-09-17T14:32:11.016421+00:00",
       "analytics": {}
     }
   ],
@@ -368,6 +377,12 @@
       "title": "Why Heat Shields Burn on Purpose",
       "format": "short",
       "created_at": "2026-09-16T14:46:15.466236+00:00"
+    },
+    {
+      "topic": "Why the Sky Is Blue but Sunsets Are Red",
+      "title": "Why the Sky Changes Color",
+      "format": "short",
+      "created_at": "2026-09-17T14:32:11.016421+00:00"
     }
   ]
 }
