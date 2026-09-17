@@ -10,7 +10,9 @@ from autopilot.providers.premium_planner import PremiumScriptPlanner
 
 
 AUTHORITATIVE_DOMAINS = {
-    "science": ("nasa.gov", "noaa.gov", "esa.int", "nih.gov", "nature.com", "science.org"),
+    "science": (
+        "nasa.gov", "noaa.gov", "weather.gov", "esa.int", "nih.gov", "nature.com", "science.org"
+    ),
     "history": ("si.edu", "loc.gov", "archives.gov", "britishmuseum.org"),
     "geography": ("un.org", "worldbank.org", "usgs.gov", "noaa.gov"),
     "mathematics": ("ams.org", "maa.org", "mathworld.wolfram.com", "edu"),
@@ -127,6 +129,128 @@ def verified_curio_seed(
                         "their temperature, mass, and return profile; some systems insulate while ablative "
                         "systems deliberately consume surface material. The engineering objective is to keep "
                         "the spacecraft's internal structure and instruments within safe temperatures."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why the Sky Is Blue but Sunsets Are Red",
+            "science",
+            "Air molecules scatter shorter blue wavelengths more strongly; at sunset the longer path removes more blue light before sunlight reaches an observer.",
+            ("sky blue sunset red", "rayleigh scattering", "red sunset"),
+            (
+                ResearchSource(
+                    title="Why is the sky blue?",
+                    publisher="NASA Space Place",
+                    url="https://spaceplace.nasa.gov/blue-sky/en/",
+                    snippet=(
+                        "NASA explains that white sunlight contains many wavelengths. Tiny molecules in "
+                        "Earth's atmosphere scatter shorter blue wavelengths more strongly than red ones, "
+                        "so blue light arrives from across the daytime sky. Near sunset, sunlight travels "
+                        "through much more atmosphere; much of the blue is scattered out of the direct path, "
+                        "leaving more red and yellow light to reach an observer."
+                    ),
+                ),
+                ResearchSource(
+                    title="Why is the sky blue?",
+                    publisher="NOAA SciJinks",
+                    url="https://www.noaa.gov/jetstream/color-of-sky",
+                    snippet=(
+                        "NOAA's educational material describes Rayleigh scattering: atmospheric molecules "
+                        "scatter shorter visible wavelengths more efficiently. The longer atmospheric path "
+                        "at sunrise and sunset scatters much of the blue light away, while longer orange and "
+                        "red wavelengths continue toward the viewer. Dust and aerosols can change the colors, "
+                        "so not every sunset has the same intensity."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why the Deep Ocean Can Crush a Submarine",
+            "geography",
+            "Water pressure increases with depth because every deeper surface supports a taller column of water above it.",
+            ("deep ocean pressure", "submarine crushed", "hadal pressure"),
+            (
+                ResearchSource(
+                    title="How does pressure impact animals in the ocean?",
+                    publisher="NOAA Ocean Exploration",
+                    url="https://oceanexplorer.noaa.gov/facts/pressure.html",
+                    snippet=(
+                        "NOAA explains that ocean pressure rises steadily with depth as the weight of the "
+                        "overlying water increases. At the deepest trenches, pressures exceed one thousand "
+                        "times the pressure at sea level. Deep-sea organisms and engineered vehicles survive "
+                        "only when their structures avoid vulnerable air spaces or resist the pressure difference."
+                    ),
+                ),
+                ResearchSource(
+                    title="Hadal zone",
+                    publisher="Woods Hole Oceanographic Institution",
+                    url="https://www.whoi.edu/ocean-learning-hub/ocean-topics/how-the-ocean-works/ocean-zones/hadal-zone/",
+                    snippet=(
+                        "WHOI defines the hadal zone as the deepest ocean trenches, roughly six to eleven "
+                        "kilometres below the surface. It reports pressures greater than one thousand times "
+                        "surface pressure and describes pressure-resistant autonomous vehicles built with "
+                        "NASA's Jet Propulsion Laboratory to explore those environments."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why Lightning Is Hotter Than the Sun's Surface",
+            "science",
+            "A lightning channel can briefly heat air to roughly five times the Sun's visible-surface temperature, but it contains vastly less total energy than the Sun.",
+            ("lightning hotter sun", "lightning temperature", "thunder shockwave"),
+            (
+                ResearchSource(
+                    title="How hot is lightning?",
+                    publisher="National Weather Service",
+                    url="https://www.weather.gov/safety/lightning-temperature",
+                    snippet=(
+                        "The National Weather Service explains that the air in a lightning channel can be "
+                        "heated to around fifty thousand degrees Fahrenheit, about five times hotter than "
+                        "the Sun's visible surface. The heating is extremely brief and confined to a narrow "
+                        "channel; it does not mean a lightning bolt contains more total energy than the Sun."
+                    ),
+                ),
+                ResearchSource(
+                    title="Lightning facts",
+                    publisher="NOAA National Severe Storms Laboratory",
+                    url="https://www.nssl.noaa.gov/education/svrwx101/lightning/faq/",
+                    snippet=(
+                        "NOAA describes lightning as a powerful electrical discharge that rapidly heats the "
+                        "surrounding air. The sudden expansion creates a shock wave heard as thunder. Channel "
+                        "temperature estimates are tens of thousands of degrees, but the event lasts only a "
+                        "fraction of a second and varies along the discharge."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why the Moon Moves Earth's Oceans",
+            "space",
+            "Tides arise mainly from differences in the Moon's gravitational pull across Earth, with the Sun modifying their strength.",
+            ("moon moves ocean", "moon causes tides", "tidal bulge"),
+            (
+                ResearchSource(
+                    title="What causes tides?",
+                    publisher="NOAA Ocean Service",
+                    url="https://oceanservice.noaa.gov/education/tutorial_tides/tides02_cause.html",
+                    snippet=(
+                        "NOAA explains that tides are driven primarily by the Moon's gravity and the "
+                        "Earth-Moon system's motion. The pull differs across Earth, producing tidal bulges, "
+                        "while coastlines, ocean depth, and basin shape determine the local timing and height. "
+                        "The Sun also contributes and strengthens or weakens tides depending on alignment."
+                    ),
+                ),
+                ResearchSource(
+                    title="Tides and the Moon",
+                    publisher="NASA Science",
+                    url="https://science.nasa.gov/moon/tides/",
+                    snippet=(
+                        "NASA describes the Moon's gravity as the main driver of Earth's ocean tides. Because "
+                        "the lunar pull is stronger on the near side than the far side, water is redistributed "
+                        "into broad bulges as Earth rotates. Solar gravity modifies this pattern, creating "
+                        "larger spring tides and smaller neap tides during different alignments."
                     ),
                 ),
             ),

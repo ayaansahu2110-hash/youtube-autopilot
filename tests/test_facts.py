@@ -70,6 +70,21 @@ def test_verified_curio_seed_is_authoritative_and_never_reuses_an_excluded_topic
     assert semantic_next_seed[0].title != candidate.title
 
 
+def test_verified_curio_reserve_continues_after_original_topics_are_used() -> None:
+    seeded = verified_curio_seed(
+        excluded_topics=[
+            "Why Astronauts Float in Orbit",
+            "Why Ocean Water Is Salty",
+            "Why Heat Shields Burn on Purpose",
+        ]
+    )
+    assert seeded is not None
+    candidate, research = seeded
+    assert candidate.title == "Why the Sky Is Blue but Sunsets Are Red"
+    assert len(research.sources) == 2
+    assert FactVerifier().verify(research).confidence_score >= 65
+
+
 def test_fact_editing_splits_long_visual_holds() -> None:
     asset = VisualAsset(local_path=Path("proof.jpg"), asset_kind="image", scene_index=0)
     timeline = FFmpegRenderer._rapid_timeline([(asset, 7.2)], max_seconds=2.65)
