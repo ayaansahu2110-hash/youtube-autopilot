@@ -185,7 +185,9 @@ def daily(
     )
     if slot in {"evening", "all"} and long_due and uploaded_longs:
         console.print("Today's long-form upload already exists; skipping duplicate publication.")
-    if not any(result.status == "failed" for result in results) and should_make_long:
+    # Treat Shorts and long-form as independent quality-controlled slots. A
+    # rejected Short must not starve an otherwise-due long video for days.
+    if should_make_long:
         long_result = AutopilotPipeline(settings).run(dry_run=dry_run, video_format="long")
         results.append(long_result)
         _print_result(long_result, settings)
