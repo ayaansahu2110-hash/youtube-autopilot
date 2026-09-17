@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T14:27:08.766711+00:00",
+  "generated_at": "2026-09-17T14:49:58.769194+00:00",
   "competitors": [
     {
       "channel": "Matt Wolfe",
@@ -9,31 +9,31 @@
       "high_performing_recent_videos": [
         {
           "title": "AI News: The AI World is REALLY Scared Right Now",
-          "views": 204669,
-          "likes": 1280,
+          "views": 204753,
+          "likes": 1282,
           "comments": 695,
           "published_at": "2026-09-11T15:00:00Z",
           "description_excerpt": "Here's the AI News you might have missed this week. See what Optimizely’s Virtual Teammates can automate for you at https://optimizely.com/mattwolfe\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.co"
         },
         {
           "title": "He Built The Ultimate Spy Tool (Free and Open-Source)",
-          "views": 81341,
-          "likes": 1803,
-          "comments": 152,
+          "views": 82627,
+          "likes": 1822,
+          "comments": 154,
           "published_at": "2026-09-16T20:57:15Z",
           "description_excerpt": "Check out God's Eye View:\nhttps://github.com/bilawalsidhu/gods-eye-view\nhttps://www.spatialintelligence.ai/\n\nWhat if you could turn your computer into a spy movie command center using real-world data? I sat down with Bilawal Sidhu to explore God's Eye View, his open-source tool that brings flights, satellites, ships, traffic, and more into one inte"
         },
         {
           "title": "I Asked GPT-6 Astra to Build an AI Slop Detector",
-          "views": 59693,
-          "likes": 881,
+          "views": 59756,
+          "likes": 882,
           "comments": 167,
           "published_at": "2026-09-09T22:18:17Z",
           "description_excerpt": "AI video is getting REALLY hard to spot… So I tried to build a tool that could detect it for me. Want to run it yourself? Here's the GitHub link: https://github.com/mreflow/ai-slop-detector\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/m"
         },
         {
           "title": "3 Big ChatGPT Updates You Need to Know",
-          "views": 17143,
+          "views": 17153,
           "likes": 403,
           "comments": 17,
           "published_at": "2026-09-08T15:55:26Z",
@@ -57,7 +57,7 @@
       "high_performing_recent_videos": [
         {
           "title": "GPT-6 Astra Finally Solves AI Video Editing (full guide)",
-          "views": 292583,
+          "views": 292669,
           "likes": 3544,
           "comments": 201,
           "published_at": "2026-09-08T22:11:53Z",
@@ -65,15 +65,15 @@
         },
         {
           "title": "Anthropic Engineer Explains: What to Build Instead of AI Agents",
-          "views": 242268,
-          "likes": 2816,
+          "views": 242746,
+          "likes": 2822,
           "comments": 140,
           "published_at": "2026-09-13T13:55:05Z",
           "description_excerpt": "My playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=what_to_build_instead_of_ai_agents&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual "
         },
         {
           "title": "How to Actually Choose the Right AI Agent",
-          "views": 65077,
+          "views": 65106,
           "likes": 391,
           "comments": 105,
           "published_at": "2026-09-11T21:19:02Z",
@@ -81,15 +81,15 @@
         },
         {
           "title": "How to Build GPT-6 Astra Automations (that don’t eat your usage limit)",
-          "views": 39949,
-          "likes": 385,
+          "views": 40560,
+          "likes": 392,
           "comments": 24,
           "published_at": "2026-09-16T22:56:45Z",
           "description_excerpt": "Get FREE Hyperagent credits here: https://www.hyperagent.com/nate100\nFREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://www.hostinger.com/vps/claude-code-hosting\n\nCodex can build scheduled and event-tr"
         },
         {
           "title": "AI News in 10 mins: 10% chance AI kills all humans",
-          "views": 36306,
+          "views": 36325,
           "likes": 381,
           "comments": 46,
           "published_at": "2026-09-13T21:48:03Z",
@@ -121,8 +121,8 @@
         },
         {
           "title": "Anthropic Researcher Says 10% Chance AI Kills All Humans",
-          "views": 10342,
-          "likes": 132,
+          "views": 10351,
+          "likes": 42,
           "comments": 50,
           "published_at": "2026-09-11T12:13:41Z",
           "description_excerpt": "An Anthropic researcher resigned publicly saying both his former labs are gambling with our lives, a colleague still there put the odds of extinction above 10%, and the posts pulled nearly 200 million views plus responses from two dozen elected officials. NLW examines why this particular X-risk message landed now when years of similar warnings didn"
