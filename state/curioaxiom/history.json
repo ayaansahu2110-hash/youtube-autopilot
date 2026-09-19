@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-18T16:39:12.754689+00:00"
+      "analytics_updated_at": "2026-09-19T15:37:51.221977+00:00"
     },
     {
       "video_id": "_sd7bLRor_o",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-18T16:39:12.756160+00:00"
+      "analytics_updated_at": "2026-09-19T15:37:51.223126+00:00"
     },
     {
       "video_id": "yPUU3tQ6MTU",
@@ -57,7 +57,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-18T16:39:12.759268+00:00"
+      "analytics_updated_at": "2026-09-19T15:37:51.246681+00:00"
     },
     {
       "video_id": "-WXARpXcqL4",
@@ -76,7 +76,7 @@
         "shares": 1.0,
         "subscribersGained": 2.0
       },
-      "analytics_updated_at": "2026-09-18T16:39:12.756702+00:00"
+      "analytics_updated_at": "2026-09-19T15:37:51.223588+00:00"
     },
     {
       "video_id": "EeviDSBWxZ8",
@@ -95,7 +95,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-18T16:39:12.759836+00:00"
+      "analytics_updated_at": "2026-09-19T15:37:51.248276+00:00"
     },
     {
       "video_id": "VwzE41erxjY",
@@ -114,7 +114,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-18T16:39:12.762592+00:00"
+      "analytics_updated_at": "2026-09-19T15:37:51.249534+00:00"
     },
     {
       "video_id": "N1fheI9ReKQ",
@@ -134,7 +134,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-18T16:39:12.757743+00:00"
+      "analytics_updated_at": "2026-09-19T15:37:51.245465+00:00"
     },
     {
       "video_id": "tXzKJN-Sxds",
@@ -153,7 +153,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-18T16:39:12.757216+00:00"
+      "analytics_updated_at": "2026-09-19T15:37:51.244975+00:00"
     },
     {
       "video_id": "gXh8hCzY7Vg",
@@ -163,17 +163,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T13:07:52Z",
       "analytics": {
-        "views": 61.0,
-        "estimatedMinutesWatched": 12.0,
-        "averageViewDuration": 28.0,
-        "averageViewPercentage": 54.37,
-        "likes": 3.0,
+        "views": 75.0,
+        "estimatedMinutesWatched": 23.0,
+        "averageViewDuration": 43.0,
+        "averageViewPercentage": 83.37,
+        "likes": 4.0,
         "comments": 0.0,
-        "shares": 0.0,
+        "shares": 1.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-18T16:39:12.763094+00:00"
+      "analytics_updated_at": "2026-09-19T15:37:51.249932+00:00"
     },
     {
       "video_id": "rOXhektjpHg",
@@ -183,7 +183,7 @@
       "script_preview": "",
       "created_at": "2026-09-14T13:17:46Z",
       "analytics": {
-        "views": 457.0,
+        "views": 458.0,
         "estimatedMinutesWatched": 92.0,
         "averageViewDuration": 24.0,
         "averageViewPercentage": 55.97,
@@ -193,7 +193,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-18T16:39:12.758242+00:00"
+      "analytics_updated_at": "2026-09-19T15:37:51.245868+00:00"
     },
     {
       "video_id": "bT9UdwBKLks",
@@ -213,7 +213,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-18T16:39:12.761558+00:00"
+      "analytics_updated_at": "2026-09-19T15:37:51.248702+00:00"
     },
     {
       "video_id": "wDtG3Hpjs6s",
@@ -223,17 +223,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T18:16:27Z",
       "analytics": {
-        "views": 339.0,
+        "views": 341.0,
         "estimatedMinutesWatched": 74.0,
         "averageViewDuration": 28.0,
-        "averageViewPercentage": 69.8,
+        "averageViewPercentage": 69.61,
         "likes": 9.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-18T16:39:12.758772+00:00"
+      "analytics_updated_at": "2026-09-19T15:37:51.246265+00:00"
     },
     {
       "video_id": "RurypNkFZeY",
@@ -243,17 +243,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T18:21:55Z",
       "analytics": {
-        "views": 117.0,
+        "views": 119.0,
         "estimatedMinutesWatched": 16.0,
         "averageViewDuration": 14.0,
-        "averageViewPercentage": 29.32,
+        "averageViewPercentage": 29.580000000000002,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-18T16:39:12.762069+00:00"
+      "analytics_updated_at": "2026-09-19T15:37:51.249098+00:00"
     },
     {
       "video_id": "EiZc33RD3Rg",
@@ -263,17 +263,17 @@
       "script_preview": "",
       "created_at": "2026-09-15T12:14:11Z",
       "analytics": {
-        "views": 1309.0,
+        "views": 1311.0,
         "estimatedMinutesWatched": 673.0,
         "averageViewDuration": 50.0,
-        "averageViewPercentage": 77.64,
+        "averageViewPercentage": 77.49,
         "likes": 67.0,
         "comments": 0.0,
         "shares": 1.0,
         "subscribersGained": 4.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-18T16:39:12.755571+00:00"
+      "analytics_updated_at": "2026-09-19T15:37:51.222691+00:00"
     },
     {
       "video_id": "5R3YR8lO-hQ",
@@ -283,16 +283,16 @@
       "script_preview": "Raindrops strike exposed mountain bedrock, dissolving tiny amounts of mineral material. Rivers carry these dissolved ions across the landscape toward the sea. NOAA reports rain and rivers dissolve rock minerals and carry ions to the ocean. Water leaves the ocean through evaporation while dissolved salts remain behind. Ocean circulation slowly mixes and concentrates these elements over vast periods. Seafloor hydrothermal activity adds further dissolved material into the deep basins. Chemical processes and sediments remove some ions to balance the composition. The USGS notes water cycles move li",
       "created_at": "2026-09-15T15:22:38.583859+00:00",
       "analytics": {
-        "views": 47.0,
-        "estimatedMinutesWatched": 8.0,
-        "averageViewDuration": 18.0,
-        "averageViewPercentage": 35.18,
+        "views": 57.0,
+        "estimatedMinutesWatched": 10.0,
+        "averageViewDuration": 19.0,
+        "averageViewPercentage": 37.37,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-18T16:39:12.763640+00:00"
+      "analytics_updated_at": "2026-09-19T15:37:51.250333+00:00"
     },
     {
       "video_id": "yFb4e4FzPrk",
@@ -301,7 +301,17 @@
       "format": "short",
       "script_preview": "Why design a spacecraft that’s meant to burn up? As a vehicle screams back into Earth's atmosphere, it compresses air into a superheated plasma. Temperatures spike into the thousands of degrees. Instead of fighting this, engineers embrace the fire. They use ablative materials on the heat shield. These materials are designed to char, melt, and erode in a controlled cycle. This phase change physically carries intense heat away from the craft, acting as a sacrificial barrier. It’s an engineered self-destruction. The underlying structure remains shielded, protected by the very material that is van",
       "created_at": "2026-09-16T14:46:15.466236+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 57.0,
+        "estimatedMinutesWatched": 5.0,
+        "averageViewDuration": 20.0,
+        "averageViewPercentage": 45.25,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-09-19T15:37:51.250725+00:00"
     },
     {
       "video_id": "BaavNS7Uw_4",
