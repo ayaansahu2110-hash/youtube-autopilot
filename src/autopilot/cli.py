@@ -151,6 +151,7 @@ def daily(
         raise typer.BadParameter("slot must be morning, midday, evening, or all")
 
     results = []
+    slot_errors = []
     local_today = datetime.now(ZoneInfo(settings.schedule_timezone)).date()
     uploaded_shorts = state.upload_count_on_date(
         local_today,
@@ -166,7 +167,12 @@ def daily(
         )
     short_settings = _settings_for_format(settings, "short")
     for _ in range(short_count):
-        short_result = AutopilotPipeline(short_settings).run(dry_run=dry_run, video_format="short")
+        try:
+            short_result = AutopilotPipeline(short_settings).run(dry_run=dry_run, video_format="short")
+        except Exception as exc:
+            slot_errors.append(type(exc).__name__)
+            console.print(f"Short production stopped before rendering: {type(exc).__name__}: {exc}")
+            break
         results.append(short_result)
         _print_result(short_result, short_settings)
         if short_result.status == "failed":
@@ -188,11 +194,16 @@ def daily(
     # Treat Shorts and long-form as independent quality-controlled slots. A
     # rejected Short must not starve an otherwise-due long video for days.
     if should_make_long:
-        long_result = AutopilotPipeline(settings).run(dry_run=dry_run, video_format="long")
-        results.append(long_result)
-        _print_result(long_result, settings)
+        try:
+            long_result = AutopilotPipeline(settings).run(dry_run=dry_run, video_format="long")
+        except Exception as exc:
+            slot_errors.append(type(exc).__name__)
+            console.print(f"Long production stopped before rendering: {type(exc).__name__}: {exc}")
+        else:
+            results.append(long_result)
+            _print_result(long_result, settings)
 
-    if any(result.status == "failed" for result in results):
+    if slot_errors or any(result.status == "failed" for result in results):
         raise typer.Exit(code=1)
 
 

@@ -382,7 +382,10 @@ class AutopilotPipeline:
             if len(research.sources) >= minimum:
                 return candidate, research
 
-        return best_candidate, best_research
+        raise RuntimeError(
+            f"No topic has the required {minimum} research sources; "
+            "skipping script generation until adequate evidence is available."
+        )
 
     def _verified_fact_seed(self, requested_topic: str | None = None) -> tuple[TopicCandidate, ResearchPack] | None:
         """Use a unique, pre-verified reserve only when normal fact research cannot pass."""

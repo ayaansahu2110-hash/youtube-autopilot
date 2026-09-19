@@ -258,6 +258,37 @@ def verified_curio_seed(
             ),
         ),
     )
+    # Reviewed 2026-09-19. Two NASA publications, not independent publishers.
+    seeds += ((
+        "Why the Moon Changes Shape Without Changing Its Shape",
+        "space",
+        "Lunar phases are changing views of the sunlit hemisphere, not Earth's shadow.",
+        ("moon phases", "moon changes shape", "lunar phases"),
+        (
+            ResearchSource(
+                title="Moon Facts", publisher="NASA Science",
+                url="https://science.nasa.gov/moon/facts/",
+                snippet=(
+                    "The Moon spins once per orbit, keeping its near hemisphere toward Earth. "
+                    "Sunlight illuminates different regions as it orbits. At full Moon the visible "
+                    "hemisphere is illuminated; at new Moon its far hemisphere receives sunlight. "
+                    "The far side is therefore not permanently dark. Rotation and changing illumination "
+                    "are different effects; a fixed face does not imply a fixed phase."
+                ),
+            ),
+            ResearchSource(
+                title="What Are the Moon's Phases?", publisher="NASA Space Place",
+                url="https://spaceplace.nasa.gov/moon-phases/en/",
+                snippet=(
+                    "Moonlight is reflected sunlight. Half of the Moon is illuminated by the Sun, "
+                    "while an observer on Earth sees different fractions of that illuminated half "
+                    "as the Moon travels around Earth. These views produce the sequence of lunar "
+                    "phases. The Moon remains a sphere throughout the cycle; ordinary phases do not "
+                    "mean that Earth is casting its shadow over the lunar surface."
+                ),
+            ),
+        ),
+    ),)
     for title, category, reason, concept_aliases, sources in seeds:
         normalised = _normalise_topic(title)
         if normalised in excluded:

@@ -111,12 +111,13 @@ if ([string]::IsNullOrWhiteSpace($gemini) -and [string]::IsNullOrWhiteSpace($ope
     throw "Neither GEMINI_API_KEY nor OPENAI_API_KEY is present in .env. Add one AI provider key before continuing."
 }
 if (-not (Test-Path $clientPath)) { throw "$clientPath is missing." }
-if (-not (Test-Path $tokenPath)) { throw "$tokenPath is missing." }
 
 Step "Refreshing ByteVexa YouTube authorization"
 Write-Host "Choose the Google account that manages ByteVexa, then authorize the ByteVexa channel." -ForegroundColor Yellow
 $env:CHANNEL_PROFILE = "bytevexa"
 $env:CHANNEL_DISPLAY_NAME = "ByteVexa"
+$env:YOUTUBE_TOKEN_FILE = $tokenPath
+$env:EXPECTED_YOUTUBE_CHANNEL_ID = "UC09G9D1CBuQBBWa7ZY8fRnQ"
 & $python -m autopilot.cli auth-youtube
 if ($LASTEXITCODE -ne 0) { throw "Google authorization was not completed." }
 & $python -m autopilot.cli verify-youtube
