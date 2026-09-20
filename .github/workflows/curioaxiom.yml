@@ -3,7 +3,7 @@ name: CurioAxiom Facts Pipeline
 on:
   push:
     branches: [main]
-    paths: ["src/autopilot/facts.py"]
+    paths: ["src/autopilot/facts.py", "src/autopilot/discovery.py", "src/autopilot/research.py"]
   schedule:
     # 12:00 and 18:00 Asia/Kolkata: exactly two Shorts each day.
     # The evening run additionally creates the long-form video when it is due.

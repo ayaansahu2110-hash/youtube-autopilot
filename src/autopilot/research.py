@@ -234,9 +234,9 @@ class Researcher:
                 headers=_BROWSER_HEADERS,
             )
             response.raise_for_status()
-            parsed = feedparser.loads(response.text)
-        except Exception:
+        except httpx.HTTPError:
             return []
+        parsed = feedparser.parse(response.text)
 
         entries = []
         for entry in parsed.entries[:10]:

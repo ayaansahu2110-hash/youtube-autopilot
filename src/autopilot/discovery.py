@@ -117,9 +117,9 @@ class TopicDiscovery:
         try:
             response = httpx.get(url, timeout=15, follow_redirects=True, headers=_BROWSER_HEADERS)
             response.raise_for_status()
-            parsed = feedparser.loads(response.text)
-        except Exception:
+        except httpx.HTTPError:
             return []
+        parsed = feedparser.parse(response.text)
 
         now = datetime.now(timezone.utc)
         items = []
