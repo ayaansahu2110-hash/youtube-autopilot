@@ -18,7 +18,7 @@
         "subscribersGained": 6.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-19T16:09:56.990026+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.929659+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-19T16:09:56.993798+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.937084+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-19T16:09:56.989619+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.928875+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-19T16:09:56.991196+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.931976+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-19T16:09:56.996905+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.944040+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-19T16:09:56.996129+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.941700+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -137,7 +137,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.996517+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.943262+00:00"
     },
     {
       "video_id": "PjLuT6jX5jQ",
@@ -156,7 +156,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.989191+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.928063+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -175,7 +175,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.995745+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.940926+00:00"
     },
     {
       "video_id": "kHhLmTEYmWM",
@@ -194,7 +194,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.992582+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.934744+00:00"
     },
     {
       "video_id": "-P5Gzq7jUxM",
@@ -213,7 +213,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.995351+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.940163+00:00"
     },
     {
       "video_id": "skv-4s_ARyo",
@@ -232,7 +232,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.990812+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.931201+00:00"
     },
     {
       "video_id": "LrEv9cky9UI",
@@ -251,7 +251,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.997294+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.944818+00:00"
     },
     {
       "video_id": "q3uAkhUbHPo",
@@ -270,7 +270,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.994968+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.939416+00:00"
     },
     {
       "video_id": "EhZ05TtKw4w",
@@ -289,7 +289,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.992989+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.935536+00:00"
     },
     {
       "video_id": "q75Bf7pvU2E",
@@ -299,7 +299,7 @@
       "script_preview": "If your server's clock drifts by just five minutes, your self-hosted Claude Code runner will completely lock you out. Anthropic now lets teams execute terminal agents inside private networks instead of exposing codebases to external clouds. To set this up, a workspace Owner must toggle self-hosting on the Cloud environments admin page. This yields a secret key, letting your runner boot sessions without giving developers direct Claude.ai admin roles. Your host machine needs outbound HTTPS access to Anthropic, but developer workstations require zero local tools. But host limits are strict: nativ",
       "created_at": "2026-09-04T11:51:22.727068+00:00",
       "analytics": {
-        "views": 307.0,
+        "views": 308.0,
         "estimatedMinutesWatched": 24.0,
         "averageViewDuration": 16.0,
         "averageViewPercentage": 29.969999999999995,
@@ -308,7 +308,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.988712+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.927266+00:00"
     },
     {
       "video_id": "k50LMAYBUew",
@@ -327,7 +327,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.994185+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.937861+00:00"
     },
     {
       "video_id": "W3VAYdcvxMw",
@@ -346,7 +346,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.991592+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.932749+00:00"
     },
     {
       "video_id": "aaz3N_iNvvs",
@@ -365,7 +365,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.997696+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.945605+00:00"
     },
     {
       "video_id": "zdCyNi2qD-E",
@@ -375,8 +375,8 @@
       "script_preview": "Your next product demo video shouldn't require opening Premiere or After Effects just to sync a few UI animations. Rendly lets you generate MP4s directly from plain-text files using a lightweight Domain Specific Language. Imagine you're a developer needing to showcase a new button animation on GitHub. Instead of dragging frames, you write simple text commands defining content and timing. You separate your scenes with exactly two empty lines to define transitions. Rendly hosts a local server on port 3000, instantly hot-reloading your visual preview as you type. The catch? There's zero drag-and-",
       "created_at": "2026-09-13T16:36:28.412195+00:00",
       "analytics": {
-        "views": 67.0,
-        "estimatedMinutesWatched": 7.0,
+        "views": 70.0,
+        "estimatedMinutesWatched": 8.0,
         "averageViewDuration": 24.0,
         "averageViewPercentage": 47.43,
         "likes": 1.0,
@@ -384,7 +384,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.994586+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.938637+00:00"
     },
     {
       "video_id": "4ZbRI7IbnE0",
@@ -394,7 +394,7 @@
       "script_preview": "Stop copying terminal errors into ChatGPT. AI agents can now open terminal panes and fix their own broken code. The shift is driven by the Model Context Protocol, letting local tools give AI agents direct command-line access. Using gPTY, a terminal multiplexer, an agent can automatically spawn panes, inject commands, and inspect execution outputs. It uses a JSON-RPC socket, bypassing text-scraping so the model interacts directly with Godot and Rust-based terminals. The catch? gPTY's binaries aren't code-signed, meaning you're granting terminal execution rights to unsigned local software. For a",
       "created_at": "2026-09-13T16:40:12.850796+00:00",
       "analytics": {
-        "views": 196.0,
+        "views": 197.0,
         "estimatedMinutesWatched": 12.0,
         "averageViewDuration": 12.0,
         "averageViewPercentage": 21.36,
@@ -403,7 +403,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.990414+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.930439+00:00"
     },
     {
       "video_id": "qS421OvLSmk",
@@ -413,7 +413,7 @@
       "script_preview": "You hit enter, your AI coding agent spits out 200 lines of working code, but you have no idea how it works. You get the app, but you get dumber while the machine gets smarter. This is the AI-assisted developer paradox: building software without ever actually building your brain. What if a background process mapped the programming concepts you picked up every time an agent wrote code? This is a live knowledge graph built from terminal outputs. It highlights new skills with green sprout icons. It turns automated code generation into a deliberate, interactive, and permanent learning process. Plat",
       "created_at": "2026-09-13T17:11:37.576868+00:00",
       "analytics": {
-        "views": 3.0,
+        "views": 5.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 15.0,
         "averageViewPercentage": 2.56,
@@ -422,7 +422,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.998077+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.946380+00:00"
     },
     {
       "video_id": "amYfRRyQdPg",
@@ -441,7 +441,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.988105+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.926090+00:00"
     },
     {
       "video_id": "v1IppFKA6Ok",
@@ -460,7 +460,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-19T16:09:56.993380+00:00"
+      "analytics_updated_at": "2026-09-20T06:09:47.936329+00:00"
     },
     {
       "video_id": "yzQMH5qHSgY",
@@ -469,7 +469,17 @@
       "format": "short",
       "script_preview": "Stop hosting AI agents in clunky Zoom rooms or custom web widgets. You can now route real-time WebRTC agents directly into Apple's FaceTime network. An open-source CLI called Chert FaceTime makes this possible without an official Apple API. It bypasses Apple's restrictions by driving Chrome programmatically and bridging audio and video through physical loopback machines. To run it, you need Node.js 22, Google Chrome, and a running LiveKit agent. You spin up the CLI, feed it a short-lived LiveKit room token, then generate a FaceTime link from your iPhone to admit the browser guest. The catch? Y",
       "created_at": "2026-09-17T14:18:36.688044+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 22.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 19.0,
+        "averageViewPercentage": 38.43,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-09-20T06:09:47.942479+00:00"
     },
     {
       "video_id": "QimgLY2VUhk",
@@ -487,6 +497,15 @@
       "format": "long",
       "script_preview": "What happens when you force a 1982 home computer to do deep learning? A stock Commodore 64, with its puny one megahertz CPU, is now identifying handwritten digits with over 99 percent accuracy. This isn't a stream—it is local processing, proving that massive compute is not always the answer. To understand this feat, you have to look at the hardware limitations. The MOS 6502 processor inside this machine lacks a multiplication instruction entirely. Every calculation has to be broken down into individual bits. This project succeeds by stripping away the standard, heavy math required by modern AI",
       "created_at": "2026-09-19T16:35:43.290567+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "TyhfJ6HJnYQ",
+      "topic": "Stanford Researchers Release Paper2Agent: Turning Research Papers Into AI Agents That Reproduce Results and Run on New Data",
+      "title": "Stanford's Paper2Agent Turns PDFs Into Working Code",
+      "format": "short",
+      "script_preview": "Instead of spending weeks manually coding a machine learning model from a research paper, you can now generate a working AI agent directly from the PDF. Stanford researchers just released Paper2Agent, a system that automatically translates static academic papers into deployable, interactive AI agents. Here is how it works for a researcher. You upload a paper, like a clinical study. The system extracts the scientific methodology, builds a code pipeline, and reproduces the paper's original results on a completely new dataset. These agents can even communicate with other agents to merge different",
+      "created_at": "2026-09-20T06:12:30.156655+00:00",
       "analytics": {}
     }
   ],
@@ -658,6 +677,12 @@
       "title": "Running AI on a 1982 Commodore 64: A 99.5% Accuracy Case Study",
       "format": "long",
       "created_at": "2026-09-19T16:35:43.290567+00:00"
+    },
+    {
+      "topic": "Stanford Researchers Release Paper2Agent: Turning Research Papers Into AI Agents That Reproduce Results and Run on New Data",
+      "title": "Stanford's Paper2Agent Turns PDFs Into Working Code",
+      "format": "short",
+      "created_at": "2026-09-20T06:12:30.156655+00:00"
     }
   ]
 }
