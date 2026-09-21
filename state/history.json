@@ -8,7 +8,7 @@
       "script_preview": "",
       "created_at": "2026-08-29T06:59:52Z",
       "analytics": {
-        "views": 263.0,
+        "views": 265.0,
         "estimatedMinutesWatched": 34.0,
         "averageViewDuration": 18.0,
         "averageViewPercentage": 42.38,
@@ -18,7 +18,7 @@
         "subscribersGained": 6.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-20T16:21:50.326442+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.385907+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-20T16:21:50.335268+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.395084+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-20T16:21:50.325584+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.386714+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-20T16:21:50.329856+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.389936+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-20T16:21:50.344968+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.402206+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-20T16:21:50.342392+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.400651+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -128,16 +128,16 @@
       "script_preview": "Instead of manually exporting database tables to analyze them with AI, you can now let local agents query and chart your SQL databases directly. DataZen does this by running a built-in Model Context Protocol, or MCP, server inside a local-first desktop client. To generate a daily sales report, you safely connect your local database using AES-encrypted OS keychain credentials. DataZen's built-in MCP server exposes your schemas and EXPLAIN analyses directly to external agents like Claude or Cursor. The agent executes the query, builds visual workflow loops, and automatically outputs PNG or SVG c",
       "created_at": "2026-08-30T12:39:38.882975+00:00",
       "analytics": {
-        "views": 21.0,
+        "views": 22.0,
         "estimatedMinutesWatched": 3.0,
-        "averageViewDuration": 19.0,
-        "averageViewPercentage": 32.73,
+        "averageViewDuration": 20.0,
+        "averageViewPercentage": 32.89,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.344105+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.401446+00:00"
     },
     {
       "video_id": "PjLuT6jX5jQ",
@@ -147,16 +147,16 @@
       "script_preview": "Instead of waiting minutes for an AI video render, a new model generates playable shots in three seconds. MiniMax H3 Max on fal.ai turns text prompts or reference images into 768p clips faster than real-time. You type a shot description, click generate, and the rendered clip begins playback almost instantly. For video editors, this shifts AI generation from slow batch queuing into live, interactive shot prototyping. You can test it with zero sign-up, or log in to get fifteen free video generations every day. The limitation is native output maxes out at 768p, requiring an upscaler like FlashVSR",
       "created_at": "2026-08-31T06:42:32.777474+00:00",
       "analytics": {
-        "views": 259.0,
+        "views": 260.0,
         "estimatedMinutesWatched": 23.0,
         "averageViewDuration": 28.0,
-        "averageViewPercentage": 48.92,
+        "averageViewPercentage": 48.42,
         "likes": 3.0,
         "comments": 1.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.327296+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.387516+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -166,7 +166,7 @@
       "script_preview": "If you're constantly blurring API keys, dragging arrows, and recording separate video guides for your team, your Mac's default screenshot tool is wasting your time. A new free utility called Seenshot consolidates this entire workflow into a single keyboard shortcut. Imagine you're a developer sending a bug report. Press Command-Shift-2, select the buggy UI, and use the native editor to instantly blur sensitive user data. Instead of typing instructions, you can highlight elements with step-by-step numbers or inject a webcam selfie in one click. Once you're done, Seenshot generates a secure web ",
       "created_at": "2026-08-31T12:47:18.346367+00:00",
       "analytics": {
-        "views": 39.0,
+        "views": 40.0,
         "estimatedMinutesWatched": 3.0,
         "averageViewDuration": 18.0,
         "averageViewPercentage": 35.53,
@@ -175,7 +175,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.341549+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.399854+00:00"
     },
     {
       "video_id": "kHhLmTEYmWM",
@@ -194,7 +194,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.332718+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.392691+00:00"
     },
     {
       "video_id": "-P5Gzq7jUxM",
@@ -213,7 +213,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.339704+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.398276+00:00"
     },
     {
       "video_id": "skv-4s_ARyo",
@@ -223,7 +223,7 @@
       "script_preview": "Stop letting AI agents bloat your repo with unmaintainable code dumps for internal tools. When Claude Code or Cursor write raw scripts, you’re stuck with shadow IT that breaks on every library update. ToolJet has solved this by shipping an MCP server that bypasses raw code entirely. Instead of emitting functions, the agent calls ToolJet’s visual component contracts. You type a prompt, and the agent constructs actual application nodes, queries, and data bindings. It hooks into 100+ native databases or ToolJet's built-in Postgres table directly. Because this happens inside the platform, you inhe",
       "created_at": "2026-09-02T16:52:30.443067+00:00",
       "analytics": {
-        "views": 182.0,
+        "views": 183.0,
         "estimatedMinutesWatched": 39.0,
         "averageViewDuration": 42.0,
         "averageViewPercentage": 80.8,
@@ -232,7 +232,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.329017+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.389110+00:00"
     },
     {
       "video_id": "LrEv9cky9UI",
@@ -251,7 +251,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.345818+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.403791+00:00"
     },
     {
       "video_id": "q3uAkhUbHPo",
@@ -263,14 +263,14 @@
       "analytics": {
         "views": 59.0,
         "estimatedMinutesWatched": 16.0,
-        "averageViewDuration": 77.0,
-        "averageViewPercentage": 154.17,
+        "averageViewDuration": 72.0,
+        "averageViewPercentage": 144.0,
         "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.337805+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.397486+00:00"
     },
     {
       "video_id": "EhZ05TtKw4w",
@@ -289,7 +289,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.334418+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.393506+00:00"
     },
     {
       "video_id": "q75Bf7pvU2E",
@@ -308,7 +308,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.324707+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.385086+00:00"
     },
     {
       "video_id": "k50LMAYBUew",
@@ -327,7 +327,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.336114+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.395882+00:00"
     },
     {
       "video_id": "W3VAYdcvxMw",
@@ -337,7 +337,7 @@
       "script_preview": "Instead of paying hundreds of dollars a month for a proprietary lead scraper, you can spin up your own open-source pipeline using Locus. It searches Google Maps for a location and category to pull raw business listings. Then, Locus runs each lead through an AI pipeline to enrich them with verified email addresses. Best of all, you can export the results directly to a CSV or push them to a webhook. The catch? There is no hosted version. You must run Docker Compose to deploy the stack, which includes Next.js, Postgres, Redis, and a BullMQ background worker. Plus, automated scraping violates Goog",
       "created_at": "2026-09-12T09:31:19.268243+00:00",
       "analytics": {
-        "views": 150.0,
+        "views": 147.0,
         "estimatedMinutesWatched": 18.0,
         "averageViewDuration": 25.0,
         "averageViewPercentage": 50.66,
@@ -346,7 +346,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.330687+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.390722+00:00"
     },
     {
       "video_id": "aaz3N_iNvvs",
@@ -356,16 +356,16 @@
       "script_preview": "Stop paying a 'contact sales' premium for simple features. A new directory called Spiteware.ai catalogs free, lightweight apps built by developers out of pure spite. The catalog was created after a popular notes app jacked up its prices, triggering single-file replacements. If you 'vibe-coded' an alternative to bypass a credit card wall, you can submit your app to their hall of petty fame. To get listed, you must declare exactly what overpriced tool your app replaces and what it costs. The platform operates as a static site, hosting its strict submission rules publicly on GitHub. Every morning",
       "created_at": "2026-09-12T11:13:26.717116+00:00",
       "analytics": {
-        "views": 11.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 9.0,
-        "averageViewPercentage": 18.72,
-        "likes": 1.0,
+        "views": 16.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 13.0,
+        "averageViewPercentage": 27.140000000000004,
+        "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.346666+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.403005+00:00"
     },
     {
       "video_id": "zdCyNi2qD-E",
@@ -375,16 +375,16 @@
       "script_preview": "Your next product demo video shouldn't require opening Premiere or After Effects just to sync a few UI animations. Rendly lets you generate MP4s directly from plain-text files using a lightweight Domain Specific Language. Imagine you're a developer needing to showcase a new button animation on GitHub. Instead of dragging frames, you write simple text commands defining content and timing. You separate your scenes with exactly two empty lines to define transitions. Rendly hosts a local server on port 3000, instantly hot-reloading your visual preview as you type. The catch? There's zero drag-and-",
       "created_at": "2026-09-13T16:36:28.412195+00:00",
       "analytics": {
-        "views": 70.0,
-        "estimatedMinutesWatched": 8.0,
+        "views": 63.0,
+        "estimatedMinutesWatched": 7.0,
         "averageViewDuration": 22.0,
-        "averageViewPercentage": 43.23,
+        "averageViewPercentage": 43.44,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.336961+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.396684+00:00"
     },
     {
       "video_id": "4ZbRI7IbnE0",
@@ -394,7 +394,7 @@
       "script_preview": "Stop copying terminal errors into ChatGPT. AI agents can now open terminal panes and fix their own broken code. The shift is driven by the Model Context Protocol, letting local tools give AI agents direct command-line access. Using gPTY, a terminal multiplexer, an agent can automatically spawn panes, inject commands, and inspect execution outputs. It uses a JSON-RPC socket, bypassing text-scraping so the model interacts directly with Godot and Rust-based terminals. The catch? gPTY's binaries aren't code-signed, meaning you're granting terminal execution rights to unsigned local software. For a",
       "created_at": "2026-09-13T16:40:12.850796+00:00",
       "analytics": {
-        "views": 197.0,
+        "views": 195.0,
         "estimatedMinutesWatched": 12.0,
         "averageViewDuration": 12.0,
         "averageViewPercentage": 21.36,
@@ -403,7 +403,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.328163+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.388320+00:00"
     },
     {
       "video_id": "qS421OvLSmk",
@@ -413,16 +413,16 @@
       "script_preview": "You hit enter, your AI coding agent spits out 200 lines of working code, but you have no idea how it works. You get the app, but you get dumber while the machine gets smarter. This is the AI-assisted developer paradox: building software without ever actually building your brain. What if a background process mapped the programming concepts you picked up every time an agent wrote code? This is a live knowledge graph built from terminal outputs. It highlights new skills with green sprout icons. It turns automated code generation into a deliberate, interactive, and permanent learning process. Plat",
       "created_at": "2026-09-13T17:11:37.576868+00:00",
       "analytics": {
-        "views": 5.0,
+        "views": 8.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 15.0,
-        "averageViewPercentage": 2.56,
+        "averageViewDuration": 12.0,
+        "averageViewPercentage": 2.1,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.347495+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.404585+00:00"
     },
     {
       "video_id": "amYfRRyQdPg",
@@ -432,16 +432,16 @@
       "script_preview": "Every silent prompt cache miss in your developer agent is a re-billed invoice line you shouldn't be paying. Replay is a zero-telemetry local Go tool that audits your developer logs to find exactly why your cache broke. If your cache expires or your mid-session tool list shifts, your prompt state is lost. Simply run `replay diff` against your local on-disk transcripts. It pinpoint-isolates the exact conversation turn where your cache sharded and lists the tokens re-billed at full write prices. Run `replay advise` to generate structural prompt optimization fixes based on your historical patterns",
       "created_at": "2026-09-14T06:38:35.900651+00:00",
       "analytics": {
-        "views": 381.0,
-        "estimatedMinutesWatched": 25.0,
+        "views": 350.0,
+        "estimatedMinutesWatched": 18.0,
         "averageViewDuration": 13.0,
-        "averageViewPercentage": 24.53,
+        "averageViewPercentage": 24.77,
         "likes": 3.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.323363+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.383981+00:00"
     },
     {
       "video_id": "v1IppFKA6Ok",
@@ -451,16 +451,16 @@
       "script_preview": "Skip the Adobe subscription. You can edit complex PSD files directly in your web browser with zero signups or accounts. Just head to Photopea dot com. It loads a professional workspace that runs entirely on your local CPU and GPU. It fully supports industry-standard PSDs, Illustrator, Figma, and PDF formats without losing your layer structures. Drag in any image to apply advanced non-destructive adjustments like vector curves, layer masks, or Gaussian blurs. Export your project directly back to your local drive as a PSD, high-quality PNG, or PDF. This complete workspace is entirely free to use",
       "created_at": "2026-09-14T12:47:25.311705+00:00",
       "analytics": {
-        "views": 106.0,
-        "estimatedMinutesWatched": 10.0,
-        "averageViewDuration": 17.0,
-        "averageViewPercentage": 29.439999999999998,
+        "views": 98.0,
+        "estimatedMinutesWatched": 11.0,
+        "averageViewDuration": 18.0,
+        "averageViewPercentage": 31.540000000000003,
         "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.333567+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.394310+00:00"
     },
     {
       "video_id": "yzQMH5qHSgY",
@@ -470,16 +470,16 @@
       "script_preview": "Stop hosting AI agents in clunky Zoom rooms or custom web widgets. You can now route real-time WebRTC agents directly into Apple's FaceTime network. An open-source CLI called Chert FaceTime makes this possible without an official Apple API. It bypasses Apple's restrictions by driving Chrome programmatically and bridging audio and video through physical loopback machines. To run it, you need Node.js 22, Google Chrome, and a running LiveKit agent. You spin up the CLI, feed it a short-lived LiveKit room token, then generate a FaceTime link from your iPhone to admit the browser guest. The catch? Y",
       "created_at": "2026-09-17T14:18:36.688044+00:00",
       "analytics": {
-        "views": 22.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 19.0,
-        "averageViewPercentage": 38.43,
+        "views": 42.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 21.0,
+        "averageViewPercentage": 42.45,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-20T16:21:50.343254+00:00"
+      "analytics_updated_at": "2026-09-21T13:19:48.399053+00:00"
     },
     {
       "video_id": "QimgLY2VUhk",
