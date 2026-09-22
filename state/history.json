@@ -18,7 +18,7 @@
         "subscribersGained": 6.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-21T18:31:58.368073+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.770955+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-21T18:31:58.377028+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.780734+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-21T18:31:58.368916+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.771811+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-21T18:31:58.372277+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.775219+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-21T18:31:58.385237+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.788150+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-21T18:31:58.383613+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.786493+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -128,7 +128,7 @@
       "script_preview": "Instead of manually exporting database tables to analyze them with AI, you can now let local agents query and chart your SQL databases directly. DataZen does this by running a built-in Model Context Protocol, or MCP, server inside a local-first desktop client. To generate a daily sales report, you safely connect your local database using AES-encrypted OS keychain credentials. DataZen's built-in MCP server exposes your schemas and EXPLAIN analyses directly to external agents like Claude or Cursor. The agent executes the query, builds visual workflow loops, and automatically outputs PNG or SVG c",
       "created_at": "2026-08-30T12:39:38.882975+00:00",
       "analytics": {
-        "views": 22.0,
+        "views": 23.0,
         "estimatedMinutesWatched": 3.0,
         "averageViewDuration": 20.0,
         "averageViewPercentage": 32.89,
@@ -137,7 +137,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.384430+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.787329+00:00"
     },
     {
       "video_id": "PjLuT6jX5jQ",
@@ -147,7 +147,7 @@
       "script_preview": "Instead of waiting minutes for an AI video render, a new model generates playable shots in three seconds. MiniMax H3 Max on fal.ai turns text prompts or reference images into 768p clips faster than real-time. You type a shot description, click generate, and the rendered clip begins playback almost instantly. For video editors, this shifts AI generation from slow batch queuing into live, interactive shot prototyping. You can test it with zero sign-up, or log in to get fifteen free video generations every day. The limitation is native output maxes out at 768p, requiring an upscaler like FlashVSR",
       "created_at": "2026-08-31T06:42:32.777474+00:00",
       "analytics": {
-        "views": 260.0,
+        "views": 261.0,
         "estimatedMinutesWatched": 23.0,
         "averageViewDuration": 28.0,
         "averageViewPercentage": 48.42,
@@ -156,7 +156,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.369740+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.772659+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -175,7 +175,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.381946+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.785663+00:00"
     },
     {
       "video_id": "kHhLmTEYmWM",
@@ -194,7 +194,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.375417+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.778214+00:00"
     },
     {
       "video_id": "-P5Gzq7jUxM",
@@ -213,7 +213,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.381140+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.784840+00:00"
     },
     {
       "video_id": "skv-4s_ARyo",
@@ -232,7 +232,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.371425+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.774357+00:00"
     },
     {
       "video_id": "LrEv9cky9UI",
@@ -251,7 +251,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.387700+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.789774+00:00"
     },
     {
       "video_id": "q3uAkhUbHPo",
@@ -261,16 +261,16 @@
       "script_preview": "Stop letting corporate algorithms manipulate your search results and track your data. You can now build a self-hosted, peer-to-peer search engine using a modular GitHub blueprint. If you want to index niche web forums and search them privately, this stack does it locally. It hooks into the decentralized YaCy network, crawls targets, builds a full-text index, and hosts your private search page. Running entirely on Docker Compose, you can eventually add browser rendering, archives, and AI access. But remember: you must run 'docker compose down' before moving chapters, as they all reuse the same ",
       "created_at": "2026-09-03T11:40:05.185345+00:00",
       "analytics": {
-        "views": 59.0,
+        "views": 60.0,
         "estimatedMinutesWatched": 16.0,
-        "averageViewDuration": 72.0,
-        "averageViewPercentage": 144.0,
+        "averageViewDuration": 66.0,
+        "averageViewPercentage": 133.99,
         "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.380351+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.784020+00:00"
     },
     {
       "video_id": "EhZ05TtKw4w",
@@ -289,7 +289,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.376243+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.779058+00:00"
     },
     {
       "video_id": "q75Bf7pvU2E",
@@ -299,16 +299,16 @@
       "script_preview": "If your server's clock drifts by just five minutes, your self-hosted Claude Code runner will completely lock you out. Anthropic now lets teams execute terminal agents inside private networks instead of exposing codebases to external clouds. To set this up, a workspace Owner must toggle self-hosting on the Cloud environments admin page. This yields a secret key, letting your runner boot sessions without giving developers direct Claude.ai admin roles. Your host machine needs outbound HTTPS access to Anthropic, but developer workstations require zero local tools. But host limits are strict: nativ",
       "created_at": "2026-09-04T11:51:22.727068+00:00",
       "analytics": {
-        "views": 297.0,
+        "views": 298.0,
         "estimatedMinutesWatched": 24.0,
-        "averageViewDuration": 16.0,
-        "averageViewPercentage": 29.969999999999995,
+        "averageViewDuration": 17.0,
+        "averageViewPercentage": 30.37,
         "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.367121+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.770057+00:00"
     },
     {
       "video_id": "k50LMAYBUew",
@@ -327,7 +327,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.378660+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.781562+00:00"
     },
     {
       "video_id": "W3VAYdcvxMw",
@@ -346,7 +346,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.373081+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.776028+00:00"
     },
     {
       "video_id": "aaz3N_iNvvs",
@@ -365,7 +365,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.386031+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.788957+00:00"
     },
     {
       "video_id": "zdCyNi2qD-E",
@@ -384,7 +384,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.379526+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.783216+00:00"
     },
     {
       "video_id": "4ZbRI7IbnE0",
@@ -403,7 +403,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.370563+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.773514+00:00"
     },
     {
       "video_id": "qS421OvLSmk",
@@ -422,7 +422,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.388513+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.790589+00:00"
     },
     {
       "video_id": "amYfRRyQdPg",
@@ -441,7 +441,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.365639+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.768804+00:00"
     },
     {
       "video_id": "v1IppFKA6Ok",
@@ -451,7 +451,7 @@
       "script_preview": "Skip the Adobe subscription. You can edit complex PSD files directly in your web browser with zero signups or accounts. Just head to Photopea dot com. It loads a professional workspace that runs entirely on your local CPU and GPU. It fully supports industry-standard PSDs, Illustrator, Figma, and PDF formats without losing your layer structures. Drag in any image to apply advanced non-destructive adjustments like vector curves, layer masks, or Gaussian blurs. Export your project directly back to your local drive as a PSD, high-quality PNG, or PDF. This complete workspace is entirely free to use",
       "created_at": "2026-09-14T12:47:25.311705+00:00",
       "analytics": {
-        "views": 98.0,
+        "views": 99.0,
         "estimatedMinutesWatched": 11.0,
         "averageViewDuration": 18.0,
         "averageViewPercentage": 31.540000000000003,
@@ -460,7 +460,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.377843+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.779895+00:00"
     },
     {
       "video_id": "yzQMH5qHSgY",
@@ -470,16 +470,16 @@
       "script_preview": "Stop hosting AI agents in clunky Zoom rooms or custom web widgets. You can now route real-time WebRTC agents directly into Apple's FaceTime network. An open-source CLI called Chert FaceTime makes this possible without an official Apple API. It bypasses Apple's restrictions by driving Chrome programmatically and bridging audio and video through physical loopback machines. To run it, you need Node.js 22, Google Chrome, and a running LiveKit agent. You spin up the CLI, feed it a short-lived LiveKit room token, then generate a FaceTime link from your iPhone to admit the browser guest. The catch? Y",
       "created_at": "2026-09-17T14:18:36.688044+00:00",
       "analytics": {
-        "views": 36.0,
-        "estimatedMinutesWatched": 2.0,
+        "views": 65.0,
+        "estimatedMinutesWatched": 6.0,
         "averageViewDuration": 21.0,
-        "averageViewPercentage": 42.45,
+        "averageViewPercentage": 41.95,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-21T18:31:58.382772+00:00"
+      "analytics_updated_at": "2026-09-22T12:02:39.782391+00:00"
     },
     {
       "video_id": "QimgLY2VUhk",
@@ -488,7 +488,17 @@
       "format": "short",
       "script_preview": "You can now run user session replays without streaming sensitive customer telemetry to third-party cloud analytics. TraceUX packages session recording, feedback collection, and release tracking into a single self-hosted Go binary. Instead of recording heavy video files, it listens for active DOM events inside your web app. The system bundles those raw clicks and mutations into compact JSON payloads stored directly in SQLite. During playback, the engine re-renders the DOM dynamically, reconstructing the exact bug without bloated media storage. It also bundles contextual feedback widgets, announ",
       "created_at": "2026-09-19T15:38:59.021172+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 7.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 14.0,
+        "averageViewPercentage": 25.33,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-09-22T12:02:39.791421+00:00"
     },
     {
       "video_id": "e2ltwbdZZsI",
@@ -497,7 +507,17 @@
       "format": "long",
       "script_preview": "What happens when you force a 1982 home computer to do deep learning? A stock Commodore 64, with its puny one megahertz CPU, is now identifying handwritten digits with over 99 percent accuracy. This isn't a stream—it is local processing, proving that massive compute is not always the answer. To understand this feat, you have to look at the hardware limitations. The MOS 6502 processor inside this machine lacks a multiplication instruction entirely. Every calculation has to be broken down into individual bits. This project succeeds by stripping away the standard, heavy math required by modern AI",
       "created_at": "2026-09-19T16:35:43.290567+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 1.0,
+        "averageViewPercentage": 0.32,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-09-22T12:02:39.793051+00:00"
     },
     {
       "video_id": "TyhfJ6HJnYQ",
@@ -506,7 +526,17 @@
       "format": "short",
       "script_preview": "Instead of spending weeks manually coding a machine learning model from a research paper, you can now generate a working AI agent directly from the PDF. Stanford researchers just released Paper2Agent, a system that automatically translates static academic papers into deployable, interactive AI agents. Here is how it works for a researcher. You upload a paper, like a clinical study. The system extracts the scientific methodology, builds a code pipeline, and reproduces the paper's original results on a completely new dataset. These agents can even communicate with other agents to merge different",
       "created_at": "2026-09-20T06:12:30.156655+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 2.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 6.0,
+        "averageViewPercentage": 13.140000000000002,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-09-22T12:02:39.792243+00:00"
     },
     {
       "video_id": "tUPTEapaLYw",
@@ -524,6 +554,15 @@
       "format": "short",
       "script_preview": "Ditch your standalone desktop apps to reclaim gigabytes of system memory. Modern browsers now support persistent sidebars and workspace profiles that render local apps obsolete. Instead of opening endless tabs, you can consolidate your routine workflow into a single sidebar. For instance, running Gemini in a dedicated side panel keeps your research context entirely in view. This shift bypasses the constant window switching that fractures your daily attention span. Browsers like Arc or Vivaldi now challenge Chrome by building these split-screen layouts natively. But beware: economists warn that",
       "created_at": "2026-09-21T18:22:47.761530+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "9v_limHjc9k",
+      "topic": "A New Tool Found Malware That’s Guided by an AI Hive Mind—No Humans in Sight",
+      "title": "Malware With A Hive Mind: How To Detect It",
+      "format": "short",
+      "script_preview": "Your antivirus just became obsolete because malware is now using a 'hive mind' of four AI models to plan attacks without a human. This new tool, CLOSEDQUORUM, polls multiple LLMs to decide its next move. To stop it, Cisco Talos released CAIRN. It identifies the unique digital fingerprints left when AI interacts with code. Instead of matching file names, it maps autonomous behavior. You can grab this open-source framework right now from the Cisco Talos repository to test your own network logs. The catch: it's not plug-and-play; you need a security background to interpret these AI behavior maps.",
+      "created_at": "2026-09-22T12:05:51.118575+00:00",
       "analytics": {}
     }
   ],
@@ -713,6 +752,12 @@
       "title": "Turn Your Browser Into an App Killer",
       "format": "short",
       "created_at": "2026-09-21T18:22:47.761530+00:00"
+    },
+    {
+      "topic": "A New Tool Found Malware That’s Guided by an AI Hive Mind—No Humans in Sight",
+      "title": "Malware With A Hive Mind: How To Detect It",
+      "format": "short",
+      "created_at": "2026-09-22T12:05:51.118575+00:00"
     }
   ]
 }
