@@ -106,6 +106,27 @@ def test_curated_fact_category_survives_editorial_enrichment() -> None:
     assert FactVerifier().verify(enriched).confidence_score >= 65
 
 
+def test_curated_reserve_recovers_after_previous_topics_are_exhausted() -> None:
+    used = [
+        "Why Astronauts Float in Orbit",
+        "Why Ocean Water Is Salty",
+        "Why Heat Shields Burn on Purpose",
+        "Why the Sky Is Blue but Sunsets Are Red",
+        "Why the Deep Ocean Can Crush a Submarine",
+        "Why Lightning Is Hotter Than the Sun's Surface",
+        "Why the Moon Moves Earth's Oceans",
+        "Why the Moon Changes Shape Without Changing Its Shape",
+    ]
+    first = verified_curio_seed(excluded_topics=used)
+    assert first is not None
+    assert first[0].title == "Why Jet Trails Sometimes Linger for Hours"
+    assert FactVerifier().verify(first[1]).confidence_score >= 65
+    second = verified_curio_seed(excluded_topics=[*used, first[0].title])
+    assert second is not None
+    assert second[0].title == "Why a Hurricane Has a Calm Eye"
+    assert FactVerifier().verify(second[1]).confidence_score >= 65
+
+
 def test_fact_editing_splits_long_visual_holds() -> None:
     asset = VisualAsset(local_path=Path("proof.jpg"), asset_kind="image", scene_index=0)
     timeline = FFmpegRenderer._rapid_timeline([(asset, 7.2)], max_seconds=2.65)
