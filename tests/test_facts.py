@@ -320,6 +320,34 @@ def test_fact_short_rewrite_failure_preserves_original_for_quality_gate() -> Non
     assert plan.script == " ".join(original)
 
 
+def test_fact_short_rewrite_expands_underlength_narration_without_new_scenes() -> None:
+    scenes = [
+        SceneBeat(narration="Ice crystals linger.", visual_query=f"distinct cloud shot {i}")
+        for i in range(22)
+    ]
+    plan = VideoPlan(
+        topic="Contrails",
+        angle="science",
+        format="short",
+        hook="Why linger?",
+        script=" ".join(scene.narration for scene in scenes),
+        title="Why Jet Trails Linger",
+        description="Test",
+        thumbnail_brief="Cloud close-up",
+        scenes=scenes,
+    )
+    planner = FactScriptPlanner(Settings(channel_profile="curioaxiom"))
+    planner._generate_json = lambda prompt: {
+        "narrations": ["Humid air lets ice crystals linger."] * 22
+    }
+
+    planner._fit_short_narration(plan, target_words=145)
+
+    assert len(plan.scenes) == 22
+    assert len(plan.script.split()) == 132
+    assert all(scene.narration == "Humid air lets ice crystals linger." for scene in plan.scenes)
+
+
 def test_failed_live_research_uses_only_verified_fact_reserve(tmp_path: Path) -> None:
     pipeline = AutopilotPipeline(Settings(channel_profile="curioaxiom", artifacts_dir=tmp_path))
     candidate = TopicCandidate(title="Prompting is Not Programming", score=90, reason="news")
