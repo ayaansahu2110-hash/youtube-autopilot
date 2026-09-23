@@ -524,7 +524,8 @@ class FactScriptPlanner(PremiumScriptPlanner):
 
     def create_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
         plan = super().create_plan(research, video_format)
-        if video_format == "short" and len(plan.script.split()) > 145 and plan.scenes:
+        if (video_format == "short" and plan.scenes
+                and not 95 <= len(plan.script.split()) <= 145):
             self._fit_short_narration(plan, target_words=145)
         if video_format == "short" and len(plan.scenes) < 22:
             scenes = list(plan.scenes)
@@ -595,7 +596,7 @@ class FactScriptPlanner(PremiumScriptPlanner):
     def _fit_short_narration(self, plan: VideoPlan, *, target_words: int) -> None:
         """Rewrite coherently; never achieve duration by cutting off sentences."""
         original = [scene.narration for scene in plan.scenes]
-        if sum(len(line.split()) for line in original) <= target_words:
+        if 95 <= sum(len(line.split()) for line in original) <= target_words:
             return
         prompt = (
             f"Rewrite this narration into 95-{target_words} total spoken words. "
