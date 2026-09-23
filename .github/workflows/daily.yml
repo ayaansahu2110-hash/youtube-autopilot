@@ -3,7 +3,7 @@ name: Daily YouTube Autopilot
 on:
   push:
     branches: [main]
-    paths: ["src/autopilot/discovery.py", "src/autopilot/research.py"]
+    paths: [".github/workflows/daily.yml", "src/autopilot/discovery.py", "src/autopilot/research.py", "src/autopilot/providers/llm.py"]
   schedule:
     - cron: "30 6 * * *"  # 12:00 Asia/Kolkata
     - cron: "30 12 * * *" # 18:00 Asia/Kolkata
