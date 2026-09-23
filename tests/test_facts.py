@@ -149,12 +149,26 @@ def test_short_voice_normalization_only_allows_mild_speedup(tmp_path, monkeypatc
     monkeypatch.setattr(renderer, "probe_duration", lambda path: 64.9)
 
     assert renderer.normalize_short_voice_duration(audio, 71.5) == 64.9
-    assert any("atempo=1.100000" in part for part in calls[0])
+    assert any("atempo=1.108527" in part for part in calls[0])
     assert audio.read_bytes() == b"normalized"
 
     calls.clear()
     assert renderer.normalize_short_voice_duration(audio, 80.0) == 80.0
     assert calls == []
+
+
+def test_short_voice_at_old_boundary_keeps_padding_margin(tmp_path, monkeypatch) -> None:
+    renderer = FFmpegRenderer()
+    audio = tmp_path / "voice.mp3"
+    audio.write_bytes(b"original")
+
+    def fake_run(command, **kwargs):
+        assert any("atempo=1.007752" in part for part in command)
+        Path(command[-1]).write_bytes(b"normalized")
+
+    monkeypatch.setattr("autopilot.render.subprocess.run", fake_run)
+    monkeypatch.setattr(renderer, "probe_duration", lambda path: 64.6)
+    assert renderer.normalize_short_voice_duration(audio, 65.0) == 64.6
 
 
 def test_fact_prompt_requires_zero_mismatch_storyboards() -> None:
