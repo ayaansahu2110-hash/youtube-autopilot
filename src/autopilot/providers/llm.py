@@ -50,6 +50,29 @@ class ScriptPlanner:
         draft = self._generate_json(self._draft_prompt(research, video_format))
         polished = self._improve_plan(research, video_format, draft)
         data = polished or draft
+        if (self.settings.channel_profile != "curioaxiom" and video_format == "short"
+                and len(data.get("scenes", [])) < 8):
+            # A compact editor pass can accidentally collapse a visual story
+            # into five or six cards. Ask for new distinct evidence beats;
+            # keep the normal quality gate as the final authority.
+            correction = (
+                "Repair this ByteVexa Short storyboard using only the supplied research. "
+                "Return the complete JSON with 8-11 genuinely different scenes, 105-145 "
+                "spoken words total, and a concrete evidence or result beat. Each scene needs "
+                "a distinct visual subject/action that literally explains its narration; do not "
+                "pad by splitting one repeated slide or inventing a demo. Keep official UI URLs "
+                "exactly as supplied, otherwise use a truthful motion explanation. "
+                f"Research: {research.research_notes[:12000]}\n"
+                f"Approved URLs: {self._source_catalog(research)}\n"
+                f"Draft JSON: {json.dumps(data, ensure_ascii=False)}\n"
+                "Return corrected JSON only with the same keys and scene fields."
+            )
+            try:
+                repaired = self._generate_json(correction)
+                if isinstance(repaired.get("scenes"), list) and 8 <= len(repaired["scenes"]) <= 11:
+                    data = repaired
+            except Exception:
+                pass
 
         scenes = []
         for raw_scene in data.get("scenes", []):
