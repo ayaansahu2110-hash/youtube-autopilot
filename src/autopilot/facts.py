@@ -289,6 +289,77 @@ def verified_curio_seed(
             ),
         ),
     ),)
+    # Reviewed 2026-09-23 against separate NASA and NOAA explanations.
+    seeds += (
+        (
+            "Why Jet Trails Sometimes Linger for Hours",
+            "science",
+            "Aircraft exhaust adds water vapor that freezes into ice crystals high in the atmosphere; surrounding humidity controls how long the cloud persists.",
+            ("contrail", "jet trails", "airplane trails", "condensation trails"),
+            (
+                ResearchSource(
+                    title="Contrail Simulation",
+                    publisher="NOAA NESDIS",
+                    url="https://www.nesdis.noaa.gov/about/k-12-education/atmosphere/contrail-simulation",
+                    snippet=(
+                        "NOAA explains that water vapor from aircraft exhaust condenses and freezes "
+                        "in the cold air at cruising altitude, making a visible cloud of tiny ice "
+                        "crystals. Its interactive simulation varies atmospheric temperature and "
+                        "humidity: more humid air slows the disappearance of the trail, while wind "
+                        "spreads it. The visible white streak is primarily ice rather than a stream "
+                        "of smoke, though the aircraft still emits other exhaust constituents."
+                    ),
+                ),
+                ResearchSource(
+                    title="The Evolution of a Contrail",
+                    publisher="NASA Earth Observatory",
+                    url="https://science.nasa.gov/earth/earth-observatory/the-evolution-of-a-contrail-78154/",
+                    snippet=(
+                        "NASA compares satellite images of aircraft trails off Newfoundland taken "
+                        "nearly two hours apart. The young narrow lines had spread into wispy "
+                        "cirrus-like clouds as winds moved them. Dry air can dissipate a trail in "
+                        "seconds or minutes; sufficiently humid air can let it persist and spread "
+                        "for hours. This is an atmospheric condition, not evidence that the airplane "
+                        "changed its purpose or released a different visible substance."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why a Hurricane Has a Calm Eye",
+            "science",
+            "Air sinks and warms in the center, clearing clouds, while the surrounding eyewall holds the strongest rising thunderstorms and winds.",
+            ("hurricane eye", "calm eye", "eye of a hurricane", "eyewall"),
+            (
+                ResearchSource(
+                    title="Hurricanes: The Greatest Storms on Earth",
+                    publisher="NASA Science",
+                    url="https://science.nasa.gov/earth/natural-disasters/hurricanes-typhoons/hurricanes-the-greatest-storms-on-earth/",
+                    snippet=(
+                        "NASA describes the hurricane eye as a relatively calm center where air "
+                        "sinks, compresses, and warms, leaving fewer clouds and less precipitation. "
+                        "Surrounding it is the eyewall, a ring of intense thunderstorms, rising "
+                        "moist air, heavy rain, and strong winds. A calm passage through the eye "
+                        "does not mean the hurricane has ended; dangerous eyewall conditions "
+                        "return on the other side."
+                    ),
+                ),
+                ResearchSource(
+                    title="A Guide to Understanding Satellite Images of Hurricanes",
+                    publisher="NOAA NESDIS",
+                    url="https://www.nesdis.noaa.gov/news/guide-understanding-satellite-images-of-hurricanes",
+                    snippet=(
+                        "NOAA explains that air flows inward near the ocean surface, rises in "
+                        "the eyewall, and spreads outward aloft. As a mature storm strengthens, "
+                        "air also sinks in the center and the sinking motion clears clouds from "
+                        "the eye. The eye is the calmest part of the storm, while the wall of deep "
+                        "clouds around it carries deadly winds. An eye is not always clearly "
+                        "visible in ordinary satellite imagery."
+                    ),
+                ),
+            ),
+        ),
+    )
     for title, category, reason, concept_aliases, sources in seeds:
         normalised = _normalise_topic(title)
         if normalised in excluded:
