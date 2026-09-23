@@ -18,7 +18,7 @@
         "subscribersGained": 6.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-22T17:18:08.565007+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.000822+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-22T17:18:08.574611+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.012226+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-22T17:18:08.565877+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.001711+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-22T17:18:08.569316+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.005539+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -88,17 +88,17 @@
       "script_preview": "",
       "created_at": "2026-08-30T06:43:54Z",
       "analytics": {
-        "views": 21.0,
-        "estimatedMinutesWatched": 4.0,
-        "averageViewDuration": 26.0,
-        "averageViewPercentage": 49.28,
+        "views": 24.0,
+        "estimatedMinutesWatched": 5.0,
+        "averageViewDuration": 27.0,
+        "averageViewPercentage": 50.51,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-22T17:18:08.582274+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.019881+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-22T17:18:08.580575+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.018983+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -137,7 +137,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.581424+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.020718+00:00"
     },
     {
       "video_id": "PjLuT6jX5jQ",
@@ -147,7 +147,7 @@
       "script_preview": "Instead of waiting minutes for an AI video render, a new model generates playable shots in three seconds. MiniMax H3 Max on fal.ai turns text prompts or reference images into 768p clips faster than real-time. You type a shot description, click generate, and the rendered clip begins playback almost instantly. For video editors, this shifts AI generation from slow batch queuing into live, interactive shot prototyping. You can test it with zero sign-up, or log in to get fifteen free video generations every day. The limitation is native output maxes out at 768p, requiring an upscaler like FlashVSR",
       "created_at": "2026-08-31T06:42:32.777474+00:00",
       "analytics": {
-        "views": 261.0,
+        "views": 262.0,
         "estimatedMinutesWatched": 23.0,
         "averageViewDuration": 28.0,
         "averageViewPercentage": 48.42,
@@ -156,7 +156,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.566747+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.002592+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -166,7 +166,7 @@
       "script_preview": "If you're constantly blurring API keys, dragging arrows, and recording separate video guides for your team, your Mac's default screenshot tool is wasting your time. A new free utility called Seenshot consolidates this entire workflow into a single keyboard shortcut. Imagine you're a developer sending a bug report. Press Command-Shift-2, select the buggy UI, and use the native editor to instantly blur sensitive user data. Instead of typing instructions, you can highlight elements with step-by-step numbers or inject a webcam selfie in one click. Once you're done, Seenshot generates a secure web ",
       "created_at": "2026-08-31T12:47:18.346367+00:00",
       "analytics": {
-        "views": 40.0,
+        "views": 39.0,
         "estimatedMinutesWatched": 3.0,
         "averageViewDuration": 18.0,
         "averageViewPercentage": 35.53,
@@ -175,7 +175,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.579734+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.017265+00:00"
     },
     {
       "video_id": "kHhLmTEYmWM",
@@ -194,7 +194,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.572040+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.009630+00:00"
     },
     {
       "video_id": "-P5Gzq7jUxM",
@@ -213,7 +213,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.578880+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.016444+00:00"
     },
     {
       "video_id": "skv-4s_ARyo",
@@ -232,7 +232,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.568453+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.004620+00:00"
     },
     {
       "video_id": "LrEv9cky9UI",
@@ -251,7 +251,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.583981+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.023278+00:00"
     },
     {
       "video_id": "q3uAkhUbHPo",
@@ -270,7 +270,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.578028+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.014774+00:00"
     },
     {
       "video_id": "EhZ05TtKw4w",
@@ -289,7 +289,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.572903+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.011371+00:00"
     },
     {
       "video_id": "q75Bf7pvU2E",
@@ -308,7 +308,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.564122+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:44.999896+00:00"
     },
     {
       "video_id": "k50LMAYBUew",
@@ -327,7 +327,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.575463+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.013073+00:00"
     },
     {
       "video_id": "W3VAYdcvxMw",
@@ -346,7 +346,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.570166+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.006407+00:00"
     },
     {
       "video_id": "aaz3N_iNvvs",
@@ -356,7 +356,7 @@
       "script_preview": "Stop paying a 'contact sales' premium for simple features. A new directory called Spiteware.ai catalogs free, lightweight apps built by developers out of pure spite. The catalog was created after a popular notes app jacked up its prices, triggering single-file replacements. If you 'vibe-coded' an alternative to bypass a credit card wall, you can submit your app to their hall of petty fame. To get listed, you must declare exactly what overpriced tool your app replaces and what it costs. The platform operates as a static site, hosting its strict submission rules publicly on GitHub. Every morning",
       "created_at": "2026-09-12T11:13:26.717116+00:00",
       "analytics": {
-        "views": 16.0,
+        "views": 17.0,
         "estimatedMinutesWatched": 2.0,
         "averageViewDuration": 13.0,
         "averageViewPercentage": 27.140000000000004,
@@ -365,7 +365,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.583125+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.022417+00:00"
     },
     {
       "video_id": "zdCyNi2qD-E",
@@ -384,7 +384,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.577174+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.013944+00:00"
     },
     {
       "video_id": "4ZbRI7IbnE0",
@@ -403,7 +403,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.567585+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.003647+00:00"
     },
     {
       "video_id": "qS421OvLSmk",
@@ -413,7 +413,7 @@
       "script_preview": "You hit enter, your AI coding agent spits out 200 lines of working code, but you have no idea how it works. You get the app, but you get dumber while the machine gets smarter. This is the AI-assisted developer paradox: building software without ever actually building your brain. What if a background process mapped the programming concepts you picked up every time an agent wrote code? This is a live knowledge graph built from terminal outputs. It highlights new skills with green sprout icons. It turns automated code generation into a deliberate, interactive, and permanent learning process. Plat",
       "created_at": "2026-09-13T17:11:37.576868+00:00",
       "analytics": {
-        "views": 8.0,
+        "views": 10.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 12.0,
         "averageViewPercentage": 2.1,
@@ -422,7 +422,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.584834+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.024104+00:00"
     },
     {
       "video_id": "amYfRRyQdPg",
@@ -441,7 +441,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.563017+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:44.998594+00:00"
     },
     {
       "video_id": "v1IppFKA6Ok",
@@ -460,7 +460,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.573771+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.010504+00:00"
     },
     {
       "video_id": "yzQMH5qHSgY",
@@ -470,7 +470,7 @@
       "script_preview": "Stop hosting AI agents in clunky Zoom rooms or custom web widgets. You can now route real-time WebRTC agents directly into Apple's FaceTime network. An open-source CLI called Chert FaceTime makes this possible without an official Apple API. It bypasses Apple's restrictions by driving Chrome programmatically and bridging audio and video through physical loopback machines. To run it, you need Node.js 22, Google Chrome, and a running LiveKit agent. You spin up the CLI, feed it a short-lived LiveKit room token, then generate a FaceTime link from your iPhone to admit the browser guest. The catch? Y",
       "created_at": "2026-09-17T14:18:36.688044+00:00",
       "analytics": {
-        "views": 65.0,
+        "views": 59.0,
         "estimatedMinutesWatched": 6.0,
         "averageViewDuration": 21.0,
         "averageViewPercentage": 41.95,
@@ -479,7 +479,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.576320+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.015595+00:00"
     },
     {
       "video_id": "QimgLY2VUhk",
@@ -489,16 +489,16 @@
       "script_preview": "You can now run user session replays without streaming sensitive customer telemetry to third-party cloud analytics. TraceUX packages session recording, feedback collection, and release tracking into a single self-hosted Go binary. Instead of recording heavy video files, it listens for active DOM events inside your web app. The system bundles those raw clicks and mutations into compact JSON payloads stored directly in SQLite. During playback, the engine re-renders the DOM dynamically, reconstructing the exact bug without bloated media storage. It also bundles contextual feedback widgets, announ",
       "created_at": "2026-09-19T15:38:59.021172+00:00",
       "analytics": {
-        "views": 7.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 14.0,
-        "averageViewPercentage": 25.33,
-        "likes": 0.0,
+        "views": 21.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 18.0,
+        "averageViewPercentage": 32.15,
+        "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.585663+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.021562+00:00"
     },
     {
       "video_id": "e2ltwbdZZsI",
@@ -508,16 +508,16 @@
       "script_preview": "What happens when you force a 1982 home computer to do deep learning? A stock Commodore 64, with its puny one megahertz CPU, is now identifying handwritten digits with over 99 percent accuracy. This isn't a stream—it is local processing, proving that massive compute is not always the answer. To understand this feat, you have to look at the hardware limitations. The MOS 6502 processor inside this machine lacks a multiplication instruction entirely. Every calculation has to be broken down into individual bits. This project succeeds by stripping away the standard, heavy math required by modern AI",
       "created_at": "2026-09-19T16:35:43.290567+00:00",
       "analytics": {
-        "views": 1.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 1.0,
-        "averageViewPercentage": 0.32,
+        "views": 4.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 21.0,
+        "averageViewPercentage": 3.91,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.587373+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.024930+00:00"
     },
     {
       "video_id": "TyhfJ6HJnYQ",
@@ -527,16 +527,16 @@
       "script_preview": "Instead of spending weeks manually coding a machine learning model from a research paper, you can now generate a working AI agent directly from the PDF. Stanford researchers just released Paper2Agent, a system that automatically translates static academic papers into deployable, interactive AI agents. Here is how it works for a researcher. You upload a paper, like a clinical study. The system extracts the scientific methodology, builds a code pipeline, and reproduces the paper's original results on a completely new dataset. These agents can even communicate with other agents to merge different",
       "created_at": "2026-09-20T06:12:30.156655+00:00",
       "analytics": {
-        "views": 2.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 6.0,
-        "averageViewPercentage": 13.140000000000002,
-        "likes": 0.0,
+        "views": 143.0,
+        "estimatedMinutesWatched": 30.0,
+        "averageViewDuration": 33.0,
+        "averageViewPercentage": 68.05,
+        "likes": 5.0,
         "comments": 0.0,
         "shares": 0.0,
-        "subscribersGained": 0.0
+        "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-22T17:18:08.586520+00:00"
+      "analytics_updated_at": "2026-09-23T12:04:45.008688+00:00"
     },
     {
       "video_id": "tUPTEapaLYw",
@@ -545,7 +545,17 @@
       "format": "short",
       "script_preview": "If your AI agent writes and runs code, a rogue python script can wipe your database. To stop this, developers are deploying self-hosted sandboxes inside transient AWS Lambda microVMs. Imagine a data-analyst agent running custom code to clean user CSVs safely. The LLM generates raw python, which your core app routes to a secure Lambda function. The code executes inside a short-lived Firecracker microVM, isolated from your main servers. Major clouds are racing here, but AWS, Azure, Google, and Cloudflare all build these sandboxes differently. The catch? Lambda imposes strict memory limits and co",
       "created_at": "2026-09-20T11:48:42.106964+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 37.0,
+        "estimatedMinutesWatched": 3.0,
+        "averageViewDuration": 13.0,
+        "averageViewPercentage": 25.629999999999995,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-09-23T12:04:45.018096+00:00"
     },
     {
       "video_id": "yknAuovRzH8",
