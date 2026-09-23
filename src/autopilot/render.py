@@ -26,10 +26,10 @@ class FFmpegRenderer:
         audio_path: Path,
         duration: float,
         *,
-        max_seconds: float = 65.0,
+        max_seconds: float = 64.5,
         max_speedup: float = 1.15,
     ) -> float:
-        """Apply a mild tempo correction instead of discarding good narration."""
+        """Apply a mild tempo correction with room for MP3 encoder padding."""
         if duration <= max_seconds:
             return duration
         speed = duration / max_seconds
