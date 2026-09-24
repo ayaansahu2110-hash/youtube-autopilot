@@ -8,17 +8,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T06:59:52Z",
       "analytics": {
-        "views": 265.0,
-        "estimatedMinutesWatched": 34.0,
-        "averageViewDuration": 18.0,
-        "averageViewPercentage": 42.38,
+        "views": 266.0,
+        "estimatedMinutesWatched": 35.0,
+        "averageViewDuration": 19.0,
+        "averageViewPercentage": 43.23,
         "likes": 5.0,
         "comments": 5.0,
         "shares": 2.0,
         "subscribersGained": 6.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-23T17:38:31.940143+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.286524+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-23T17:38:31.951177+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.297578+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-23T17:38:31.941037+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.287420+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-23T17:38:31.944574+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.291898+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-23T17:38:31.959118+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.306424+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-23T17:38:31.958218+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.304637+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -137,7 +137,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.960017+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.307306+00:00"
     },
     {
       "video_id": "PjLuT6jX5jQ",
@@ -147,7 +147,7 @@
       "script_preview": "Instead of waiting minutes for an AI video render, a new model generates playable shots in three seconds. MiniMax H3 Max on fal.ai turns text prompts or reference images into 768p clips faster than real-time. You type a shot description, click generate, and the rendered clip begins playback almost instantly. For video editors, this shifts AI generation from slow batch queuing into live, interactive shot prototyping. You can test it with zero sign-up, or log in to get fifteen free video generations every day. The limitation is native output maxes out at 768p, requiring an upscaler like FlashVSR",
       "created_at": "2026-08-31T06:42:32.777474+00:00",
       "analytics": {
-        "views": 262.0,
+        "views": 263.0,
         "estimatedMinutesWatched": 23.0,
         "averageViewDuration": 28.0,
         "averageViewPercentage": 48.42,
@@ -156,7 +156,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.941919+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.288306+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -175,7 +175,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.956429+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.303756+00:00"
     },
     {
       "video_id": "kHhLmTEYmWM",
@@ -194,7 +194,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.948566+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.294917+00:00"
     },
     {
       "video_id": "-P5Gzq7jUxM",
@@ -204,16 +204,16 @@
       "script_preview": "You can now run automated TikTok posts on physical iPhones, controlled entirely from your web browser. An open-source tool called Handler turns spare iOS devices into a self-hosted local phone farm. Once connected, you get a live interactive stream to click-to-tap, drag-to-swipe, and upload video files. The tasks are managed by a durable Docker-based Postgres queue, preserving your queue even through crashes. But note: you must compile the agent from a graphical macOS Terminal session—not a bare SSH shell. This is because the local code-signing process requires direct access to your Mac's logi",
       "created_at": "2026-09-02T11:45:35.036788+00:00",
       "analytics": {
-        "views": 48.0,
+        "views": 49.0,
         "estimatedMinutesWatched": 13.0,
-        "averageViewDuration": 45.0,
-        "averageViewPercentage": 90.13,
+        "averageViewDuration": 43.0,
+        "averageViewPercentage": 86.57,
         "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.955576+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.301995+00:00"
     },
     {
       "video_id": "skv-4s_ARyo",
@@ -232,7 +232,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.943707+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.290168+00:00"
     },
     {
       "video_id": "LrEv9cky9UI",
@@ -251,7 +251,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.962702+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.309916+00:00"
     },
     {
       "video_id": "q3uAkhUbHPo",
@@ -270,7 +270,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.953824+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.301114+00:00"
     },
     {
       "video_id": "EhZ05TtKw4w",
@@ -289,7 +289,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.949429+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.296694+00:00"
     },
     {
       "video_id": "q75Bf7pvU2E",
@@ -308,7 +308,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.939197+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.285599+00:00"
     },
     {
       "video_id": "k50LMAYBUew",
@@ -327,7 +327,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.952045+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.298480+00:00"
     },
     {
       "video_id": "W3VAYdcvxMw",
@@ -346,7 +346,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.945420+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.294034+00:00"
     },
     {
       "video_id": "aaz3N_iNvvs",
@@ -365,7 +365,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.961827+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.309069+00:00"
     },
     {
       "video_id": "zdCyNi2qD-E",
@@ -384,7 +384,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.952921+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.299363+00:00"
     },
     {
       "video_id": "4ZbRI7IbnE0",
@@ -403,7 +403,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.942806+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.289199+00:00"
     },
     {
       "video_id": "qS421OvLSmk",
@@ -420,9 +420,9 @@
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
-        "subscribersGained": 0.0
+        "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.963575+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.310796+00:00"
     },
     {
       "video_id": "amYfRRyQdPg",
@@ -441,7 +441,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.937787+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.284276+00:00"
     },
     {
       "video_id": "v1IppFKA6Ok",
@@ -460,7 +460,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.950309+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.295802+00:00"
     },
     {
       "video_id": "yzQMH5qHSgY",
@@ -470,7 +470,7 @@
       "script_preview": "Stop hosting AI agents in clunky Zoom rooms or custom web widgets. You can now route real-time WebRTC agents directly into Apple's FaceTime network. An open-source CLI called Chert FaceTime makes this possible without an official Apple API. It bypasses Apple's restrictions by driving Chrome programmatically and bridging audio and video through physical loopback machines. To run it, you need Node.js 22, Google Chrome, and a running LiveKit agent. You spin up the CLI, feed it a short-lived LiveKit room token, then generate a FaceTime link from your iPhone to admit the browser guest. The catch? Y",
       "created_at": "2026-09-17T14:18:36.688044+00:00",
       "analytics": {
-        "views": 59.0,
+        "views": 60.0,
         "estimatedMinutesWatched": 6.0,
         "averageViewDuration": 21.0,
         "averageViewPercentage": 41.95,
@@ -479,7 +479,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.954701+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.300241+00:00"
     },
     {
       "video_id": "QimgLY2VUhk",
@@ -489,7 +489,7 @@
       "script_preview": "You can now run user session replays without streaming sensitive customer telemetry to third-party cloud analytics. TraceUX packages session recording, feedback collection, and release tracking into a single self-hosted Go binary. Instead of recording heavy video files, it listens for active DOM events inside your web app. The system bundles those raw clicks and mutations into compact JSON payloads stored directly in SQLite. During playback, the engine re-renders the DOM dynamically, reconstructing the exact bug without bloated media storage. It also bundles contextual feedback widgets, announ",
       "created_at": "2026-09-19T15:38:59.021172+00:00",
       "analytics": {
-        "views": 21.0,
+        "views": 24.0,
         "estimatedMinutesWatched": 1.0,
         "averageViewDuration": 18.0,
         "averageViewPercentage": 32.15,
@@ -498,7 +498,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.960935+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.305532+00:00"
     },
     {
       "video_id": "e2ltwbdZZsI",
@@ -517,7 +517,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.964439+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.311681+00:00"
     },
     {
       "video_id": "TyhfJ6HJnYQ",
@@ -527,16 +527,16 @@
       "script_preview": "Instead of spending weeks manually coding a machine learning model from a research paper, you can now generate a working AI agent directly from the PDF. Stanford researchers just released Paper2Agent, a system that automatically translates static academic papers into deployable, interactive AI agents. Here is how it works for a researcher. You upload a paper, like a clinical study. The system extracts the scientific methodology, builds a code pipeline, and reproduces the paper's original results on a completely new dataset. These agents can even communicate with other agents to merge different",
       "created_at": "2026-09-20T06:12:30.156655+00:00",
       "analytics": {
-        "views": 143.0,
-        "estimatedMinutesWatched": 30.0,
-        "averageViewDuration": 33.0,
-        "averageViewPercentage": 68.05,
+        "views": 162.0,
+        "estimatedMinutesWatched": 33.0,
+        "averageViewDuration": 31.0,
+        "averageViewPercentage": 64.77,
         "likes": 5.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.947666+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.291044+00:00"
     },
     {
       "video_id": "tUPTEapaLYw",
@@ -546,16 +546,16 @@
       "script_preview": "If your AI agent writes and runs code, a rogue python script can wipe your database. To stop this, developers are deploying self-hosted sandboxes inside transient AWS Lambda microVMs. Imagine a data-analyst agent running custom code to clean user CSVs safely. The LLM generates raw python, which your core app routes to a secure Lambda function. The code executes inside a short-lived Firecracker microVM, isolated from your main servers. Major clouds are racing here, but AWS, Azure, Google, and Cloudflare all build these sandboxes differently. The catch? Lambda imposes strict memory limits and co",
       "created_at": "2026-09-20T11:48:42.106964+00:00",
       "analytics": {
-        "views": 37.0,
-        "estimatedMinutesWatched": 3.0,
-        "averageViewDuration": 13.0,
-        "averageViewPercentage": 25.629999999999995,
+        "views": 45.0,
+        "estimatedMinutesWatched": 4.0,
+        "averageViewDuration": 12.0,
+        "averageViewPercentage": 24.9,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-23T17:38:31.957325+00:00"
+      "analytics_updated_at": "2026-09-24T12:09:25.302864+00:00"
     },
     {
       "video_id": "yknAuovRzH8",
@@ -564,7 +564,17 @@
       "format": "short",
       "script_preview": "Ditch your standalone desktop apps to reclaim gigabytes of system memory. Modern browsers now support persistent sidebars and workspace profiles that render local apps obsolete. Instead of opening endless tabs, you can consolidate your routine workflow into a single sidebar. For instance, running Gemini in a dedicated side panel keeps your research context entirely in view. This shift bypasses the constant window switching that fractures your daily attention span. Browsers like Arc or Vivaldi now challenge Chrome by building these split-screen layouts natively. But beware: economists warn that",
       "created_at": "2026-09-21T18:22:47.761530+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 21.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 19.0,
+        "averageViewPercentage": 38.48,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-09-24T12:09:25.308188+00:00"
     },
     {
       "video_id": "9v_limHjc9k",
@@ -582,6 +592,15 @@
       "format": "short",
       "script_preview": "Your enterprise AI agent is lying to customers because its memory is trapped in a basic text search box. Oracle just solved this with AI Agent Memory 26.6 inside the Oracle AI Database. It combines vector search, keyword matching, and hybrid indexes so agents pull exact enterprise facts without external network hops. You get full CRUD management across threads and messages, complete with cascading record cleanup. Schema-level time-to-live settings automatically purge stale data relative to storage or usage. The catch? You are locked entirely into Oracle's database infrastructure. Always config",
       "created_at": "2026-09-23T17:27:43.425227+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "oKfY9UTZVw8",
+      "topic": "A Leaked GitLab Issue Email Address Lets Anyone Push Code and Run CI Jobs as You",
+      "title": "GitLab Security Alert: Permanent Token Vulnerability",
+      "format": "short",
+      "script_preview": "An attacker with your GitLab issue email address can bypass branch protections and commit malicious code as you. Here is the threat: GitLab issues are tied to a unique, permanent token in that email address. Because this token is identical across all your projects and GitLab doesn't verify the sender, any external email can trigger a merge request. This allows attackers to push code or trigger CI/CD pipelines under your specific account permissions. This means your private repos aren't safe if that address leaks. Even deleting a project won't revoke the token, as it is linked to your account, ",
+      "created_at": "2026-09-24T12:12:47.053060+00:00",
       "analytics": {}
     }
   ],
@@ -783,6 +802,12 @@
       "title": "What's New in Oracle AI Agent Memory 26.6",
       "format": "short",
       "created_at": "2026-09-23T17:27:43.425227+00:00"
+    },
+    {
+      "topic": "A Leaked GitLab Issue Email Address Lets Anyone Push Code and Run CI Jobs as You",
+      "title": "GitLab Security Alert: Permanent Token Vulnerability",
+      "format": "short",
+      "created_at": "2026-09-24T12:12:47.053060+00:00"
     }
   ]
 }
