@@ -1,99 +1,51 @@
 {
-  "generated_at": "2026-09-24T12:09:25.312561+00:00",
+  "generated_at": "2026-09-24T17:39:35.207794+00:00",
   "competitors": [
     {
       "channel": "Dan Martell",
       "subscribers": 3090000,
       "channel_views": 406349544,
-      "video_count": 3726,
+      "video_count": 3727,
       "high_performing_recent_videos": [
         {
           "title": "These Are the Best AI Tools in 2026",
-          "views": 121026,
-          "likes": 2146,
-          "comments": 222,
+          "views": 136164,
+          "likes": 2398,
+          "comments": 245,
           "published_at": "2026-09-23T13:00:30Z",
           "description_excerpt": "✅ Get Your FREE AI Company Operating System here: https://go.danmartell.com/4cU2T0M\n\n🔥 Join the waitlist for Apex: https://go.danmartell.com/4h71EOh\n\n👥 Are you building an AI software company? Partner with me: https://go.danmartell.com/4dszH0Y\n\nEvery month a new model drops and everybody argues about which one is best. Meanwhile most people keep st"
         },
         {
           "title": "What ACTUALLY matters when you're using AI?",
-          "views": 19435,
-          "likes": 642,
-          "comments": 9,
+          "views": 20068,
+          "likes": 659,
+          "comments": 10,
           "published_at": "2026-09-22T17:05:08Z",
           "description_excerpt": "What ACTUALLY matters when you're using AI?"
         },
         {
           "title": "What would you do with $500? (How to invest)",
-          "views": 13654,
-          "likes": 709,
-          "comments": 11,
+          "views": 15675,
+          "likes": 869,
+          "comments": 15,
           "published_at": "2026-09-22T22:03:14Z",
           "description_excerpt": "What would you do with $500? (How to invest)"
         },
         {
           "title": "Your language matters in marketing/sales",
-          "views": 13454,
-          "likes": 753,
-          "comments": 7,
+          "views": 15459,
+          "likes": 829,
+          "comments": 6,
           "published_at": "2026-09-23T17:02:52Z",
           "description_excerpt": "Your language matters in marketing/sales"
         },
         {
           "title": "\"Why do you wear a $500,000 watch?\" It's not what you think.",
-          "views": 9709,
-          "likes": 394,
-          "comments": 2,
+          "views": 13962,
+          "likes": 574,
+          "comments": 9,
           "published_at": "2026-09-23T22:03:07Z",
           "description_excerpt": "\"Why do you wear a $500,000 watch?\" It's not what you think."
-        }
-      ]
-    },
-    {
-      "channel": "Jeff Su",
-      "subscribers": 1900000,
-      "channel_views": 104070112,
-      "video_count": 314,
-      "high_performing_recent_videos": [
-        {
-          "title": "How I'd Learn AI From Scratch in 2026 (skip the useless 80%)",
-          "views": 377948,
-          "likes": 9624,
-          "comments": 464,
-          "published_at": "2026-06-09T13:00:37Z",
-          "description_excerpt": "✅ Grab my free Google Gemini Pro Tips cheatsheet - https://clickhubspot.com/d1af92\n\n⏭️ Want to skip ahead? Grab my entire Cowork system: https://coworkacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=v205\n\nThis is my practical roadmap for getting good at AI: how to pick one model and go deep, why the right context beats memorizing promp"
-        },
-        {
-          "title": "Learn 95% of ChatGPT Work in Under 20 Minutes",
-          "views": 288558,
-          "likes": 3731,
-          "comments": 279,
-          "published_at": "2026-08-25T13:00:23Z",
-          "description_excerpt": "📚 Grab HubSpot's free Guide to #ChatGPT Work: https://clickhubspot.com/8f3780\n\nMost people open #ChatGPT Work, type a question, and end up using it exactly like the regular chatbot. In this tutorial I show you the one thing that changes that: a folder you mount, with a plain-English rulebook inside that ChatGPT Work reads before every single task.\n"
-        },
-        {
-          "title": "Claude Design is Insanely Easy (even for beginners)",
-          "views": 239149,
-          "likes": 5027,
-          "comments": 281,
-          "published_at": "2026-07-21T13:00:15Z",
-          "description_excerpt": "✅ Grab my free Cowork Toolkit - https://coworkacademy.ai/toolkit?utm_source=youtube&utm_medium=video&utm_campaign=v207\n\n⏭️ Want to skip ahead? Grab my entire Cowork system: https://coworkacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=v207\n\nMost #Claude Design tutorials tell you to pick a template and start prompting, which is exactly "
-        },
-        {
-          "title": "Gemini Spark: Google’s Most Powerful Personal Agent",
-          "views": 218514,
-          "likes": 3934,
-          "comments": 277,
-          "published_at": "2026-06-30T13:00:21Z",
-          "description_excerpt": "✅ Try Wispr Flow Pro free - https://ref.wisprflow.ai/jeff-su-yt\n\nGemini Spark is Google's new always-on AI agent, and this beginner's guide breaks down what it actually does and when to use it.\n\nYou'll see the four capabilities that matter most: connecting context across your Google apps, following your templates, building reusable Skills, and auto"
-        },
-        {
-          "title": "Write a Killer Résumé in the AI Era: 5 New Rules!",
-          "views": 83642,
-          "likes": 1299,
-          "comments": 75,
-          "published_at": "2026-09-15T13:00:20Z",
-          "description_excerpt": "📨 Get 1% better at AI every week - https://www.jeffsu.org/newsletter/?utm_source=youtube&utm_medium=video&utm_campaign=v210\n\nFinding reliable #résumé advice was already hard enough, and now employers use #AI to screen applications. I break down research covering more than 4,000 hiring managers and nearly 2 million applications to show which résumé "
         }
       ]
     },
@@ -105,43 +57,91 @@
       "high_performing_recent_videos": [
         {
           "title": "I Tested Jev on 12 Real Use Cases. My Honest Thoughts.",
-          "views": 308303,
-          "likes": 3358,
-          "comments": 199,
+          "views": 311891,
+          "likes": 3389,
+          "comments": 200,
           "published_at": "2026-09-19T17:25:09Z",
           "description_excerpt": "FREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=jev-12-real-use-cases&sl=yt_jev-12-real-use-cases\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=higgsfield-api&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to t"
         },
         {
           "title": "I Tested Opus 5.5 vs. GPT-6 Sol on 10 Real Use Cases",
-          "views": 162336,
-          "likes": 2234,
-          "comments": 289,
+          "views": 166633,
+          "likes": 2274,
+          "comments": 293,
           "published_at": "2026-09-23T04:15:57Z",
           "description_excerpt": "FREE Scrollcraft website skill: https://app.aiautomationsociety.ai/optin/scrollcraft/?utm_source=youtube&utm_medium=organic&utm_content=opus-vs-sol-real-use-cases&sl=yt_opus-vs-sol-real-use-cases\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=higgsfield-api&hcategory=youtube-videos&utm_campaign=free-group\nOctober AIS Live: "
         },
         {
           "title": "Anthropic’s CEO: How to Build a 1 Person Business with Claude",
-          "views": 150433,
-          "likes": 1683,
+          "views": 151727,
+          "likes": 1692,
           "comments": 81,
           "published_at": "2026-09-18T13:01:25Z",
           "description_excerpt": "Get qualified and enriched leads with Clay: https://makes.clay.com/go/nate-herk/find-companies-that-fit-your-icp?via=nate-herk-int2\nMy roadmap for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=how-to-build-a-1-person-business-with-claude\n\nMy Tools💻\n"
         },
         {
-          "title": "Build & Sell with Codex (5+ Hour Course)",
-          "views": 56388,
-          "likes": 922,
-          "comments": 52,
-          "published_at": "2026-09-21T12:31:48Z",
-          "description_excerpt": "My FREE Resources: https://www.skool.com/ai-automation-society/about?el=codex-5-hour-course&hcategory=youtube-videos&utm_campaign=free-group\nFREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=build-sell-codex-course&sl=yt_build-sell-codex-course\nMy playbook for growing"
-        },
-        {
           "title": "I Tested Opus 5.5 vs. GPT-6 Astra on 12 Real Use Cases",
-          "views": 54151,
-          "likes": 624,
-          "comments": 75,
+          "views": 68869,
+          "likes": 789,
+          "comments": 95,
           "published_at": "2026-09-23T23:33:40Z",
           "description_excerpt": "FREE Scrollcraft Website Design Skill: https://app.aiautomationsociety.ai/optin/scrollcraft/?utm_source=youtube&utm_medium=organic&utm_content=astra-6-vs-opus-5.5&sl=yt_astra-6-vs-opus-5.5\nMy FREE AI OS Course: https://www.skool.com/ai-automation-society/about?el=higgsfield-api&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH "
+        },
+        {
+          "title": "Build & Sell with Codex (5+ Hour Course)",
+          "views": 57872,
+          "likes": 953,
+          "comments": 54,
+          "published_at": "2026-09-21T12:31:48Z",
+          "description_excerpt": "My FREE Resources: https://www.skool.com/ai-automation-society/about?el=codex-5-hour-course&hcategory=youtube-videos&utm_campaign=free-group\nFREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=build-sell-codex-course&sl=yt_build-sell-codex-course\nMy playbook for growing"
+        }
+      ]
+    },
+    {
+      "channel": "Matt Wolfe",
+      "subscribers": 1010000,
+      "channel_views": 80416133,
+      "video_count": 796,
+      "high_performing_recent_videos": [
+        {
+          "title": "Opus 5.5 Is Crazy Good and GPT-6-Sol Launched Too",
+          "views": 182664,
+          "likes": 2273,
+          "comments": 202,
+          "published_at": "2026-09-22T22:30:04Z",
+          "description_excerpt": "Two new models in the same day?? Claude and ChatGPT.\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/"
+        },
+        {
+          "title": "He Built The Ultimate Spy Tool (Free and Open-Source)",
+          "views": 176734,
+          "likes": 3071,
+          "comments": 218,
+          "published_at": "2026-09-16T20:57:15Z",
+          "description_excerpt": "Check out God's Eye View:\nhttps://github.com/bilawalsidhu/gods-eye-view\nhttps://www.spatialintelligence.ai/\n\nWhat if you could turn your computer into a spy movie command center using real-world data? I sat down with Bilawal Sidhu to explore God's Eye View, his open-source tool that brings flights, satellites, ships, traffic, and more into one inte"
+        },
+        {
+          "title": "AI News: The AI Slowdown: What You Need to Know",
+          "views": 113024,
+          "likes": 2209,
+          "comments": 300,
+          "published_at": "2026-09-18T15:12:55Z",
+          "description_excerpt": "Here's the AI News you probably missed from this week.\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/i"
+        },
+        {
+          "title": "This Robot Looks DEMONIC... On Purpose?",
+          "views": 11825,
+          "likes": 298,
+          "comments": 51,
+          "published_at": "2026-09-21T12:43:38Z",
+          "description_excerpt": "This robot looks straight up like a fantasy movie villain, but it was designed like that on purpose.\n\nDespite how it looks, the Threehalves robot's design actually makes perfect sense: four legs for stability, tools that attach directly to its wrists, and horns that house cameras for a remote operator.\n\nThe goal is to let skilled workers tackle dan"
+        },
+        {
+          "title": "I Was Shocked How Easy This Agent Was To Use",
+          "views": 9435,
+          "likes": 222,
+          "comments": 17,
+          "published_at": "2026-09-15T12:26:35Z",
+          "description_excerpt": "Is this the easiest AI agent to use?\n\nI connected Meta's new AI Agent Muse to my email and asked it to audit my subscriptions to see how much I’m spending on AI tools. \n\nBut what impressed me most wasn’t just the audit, it was how easy the agent was to use. It feels like a normal messaging app, runs tasks inside a secure virtual machine, and sugges"
         }
       ]
     }
