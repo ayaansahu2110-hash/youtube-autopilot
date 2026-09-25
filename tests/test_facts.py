@@ -127,6 +127,41 @@ def test_curated_reserve_recovers_after_previous_topics_are_exhausted() -> None:
     assert FactVerifier().verify(second[1]).confidence_score >= 65
 
 
+def test_fact_planner_repairs_missing_title_options_without_changing_story(monkeypatch) -> None:
+    narration = "Sinking air clears the eye."
+    plan = VideoPlan(
+        topic="Hurricane eye",
+        angle="science",
+        format="short",
+        hook="The calm is temporary.",
+        script=" ".join([narration] * 22),
+        title="Why a Hurricane Has a Calm Eye",
+        title_options=["Why a Hurricane Has a Calm Eye"],
+        description="Test",
+        thumbnail_brief="Storm eye from above",
+        scenes=[SceneBeat(narration=narration, visual_query="hurricane eye") for _ in range(22)],
+    )
+    monkeypatch.setattr(
+        "autopilot.providers.premium_planner.PremiumScriptPlanner.create_plan",
+        lambda self, research, video_format: plan,
+    )
+    planner = FactScriptPlanner(Settings(channel_profile="curioaxiom"))
+    planner._generate_json = lambda prompt: {
+        "titles": [
+            "What Happens Inside a Hurricane Eye?",
+            "The Calm Center of a Hurricane",
+            "Why a Hurricane Has a Calm Eye",
+        ]
+    }
+
+    result = planner.create_plan(ResearchPack(topic="Hurricane eye"), "short")
+
+    assert len(result.title_options) == 3
+    assert all(len(title) < 50 for title in result.title_options)
+    assert result.title == "Why a Hurricane Has a Calm Eye"
+    assert result.script == " ".join([narration] * 22)
+
+
 def test_fact_editing_splits_long_visual_holds() -> None:
     asset = VisualAsset(local_path=Path("proof.jpg"), asset_kind="image", scene_index=0)
     timeline = FFmpegRenderer._rapid_timeline([(asset, 7.2)], max_seconds=2.65)
