@@ -524,6 +524,30 @@ class FactScriptPlanner(PremiumScriptPlanner):
 
     def create_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
         plan = super().create_plan(research, video_format)
+        titles = list(dict.fromkeys(
+            title.strip() for title in plan.title_options
+            if isinstance(title, str) and title.strip() and len(title.strip()) < 50
+        ))
+        if len(titles) < 3:
+            prompt = (
+                "Provide exactly three distinct, truthful YouTube title options under 50 "
+                "characters each. Keep the central fact and any uncertainty supported by "
+                "the research; do not add claims. Return JSON only: "
+                '{"titles": ["title one", "title two", "title three"]}. '
+                f"Selected title: {plan.title}. Research: {research.research_notes[:5000]}"
+            )
+            try:
+                suggested = self._generate_json(prompt).get("titles", [])
+                if not isinstance(suggested, list):
+                    suggested = []
+                titles = list(dict.fromkeys(
+                    title.strip() for title in [*titles, *suggested]
+                    if isinstance(title, str) and title.strip() and len(title.strip()) < 50
+                ))
+            except Exception:
+                pass
+        if len(titles) >= 3:
+            plan.title_options = titles[:3]
         if (video_format == "short" and plan.scenes
                 and not 95 <= len(plan.script.split()) <= 145):
             self._fit_short_narration(plan, target_words=145)
