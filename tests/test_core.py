@@ -1,11 +1,15 @@
 import json
 from datetime import date
 from pathlib import Path
+from unittest.mock import MagicMock
+
+from googleapiclient.errors import HttpError
+from httplib2 import Response
 
 from autopilot.captions import write_srt
 from autopilot.cli import _longform_due
 from autopilot.config import Settings
-from autopilot.learning import learning_context
+from autopilot.learning import DailyLearningLoop, learning_context
 from autopilot.models import PipelineRun, ResearchPack, ResearchSource, SceneBeat, VideoPlan
 from autopilot.pipeline import AutopilotPipeline
 from autopilot.providers.hybrid_visuals import HybridVisualDirector
@@ -367,3 +371,23 @@ def test_learning_baselines_do_not_overfit_tiny_samples(tmp_path: Path) -> None:
     context = learning_context(Settings(learning_file=learning_file))
     assert "Own retention baseline: Reliable Retention Baseline" in context
     assert "Own subscriber-conversion baseline: Reliable Retention Baseline" in context
+
+
+def test_learning_does_not_report_zero_watch_hours_when_analytics_is_unavailable(tmp_path: Path, monkeypatch) -> None:
+    state = StateStore(tmp_path / "history.json")
+    state.data["videos"] = [{"video_id": "short123", "format": "short"}]
+    channel = MagicMock()
+    channel.channels.return_value.list.return_value.execute.return_value = {
+        "items": [{"statistics": {"subscriberCount": "12"}}]
+    }
+
+    def unavailable_analytics(*args, **kwargs):
+        raise HttpError(Response({"status": 403}), b"Analytics unavailable")
+
+    monkeypatch.setattr("autopilot.learning.build", unavailable_analytics)
+    report = DailyLearningLoop(Settings(learning_file=tmp_path / "learning.json"), state)
+    snapshot = report._monetization_snapshot(channel, credentials=object())
+    assert snapshot["subscribers"] == 12
+    assert snapshot["estimated_long_watch_hours_365d"] is None
+    assert snapshot["estimated_shorts_views_90d"] is None
+    assert snapshot["bottleneck"] == "unknown"
