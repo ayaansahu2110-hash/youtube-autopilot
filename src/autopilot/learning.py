@@ -300,6 +300,14 @@ def learning_context(settings: Settings, max_chars: int = 9000) -> str:
         return ""
 
     lines = ["DAILY CHANNEL LEARNING — use patterns only; never copy wording or creator identity."]
+    lines.append(
+        "Editorial experiment: open each Short with a concrete visual question or surprising result, "
+        "show the evidence or mechanism before the viewer has to wait through an introduction, "
+        "and end with the truthful answer. Keep the next video original; do not lengthen a weak idea "
+        "to meet a posting target. Review Studio's 'stayed to watch' and video retention after publishing "
+        "before repeating a format. Those metrics are not available in this stored report, so do not "
+        "claim an experiment improved them without fresh data."
+    )
     monetization = data.get("monetization") or {}
     if monetization:
         lines.append(
