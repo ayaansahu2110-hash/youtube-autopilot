@@ -384,7 +384,12 @@ def test_fact_short_rewrite_expands_underlength_narration_without_new_scenes() -
 
 
 def test_failed_live_research_uses_only_verified_fact_reserve(tmp_path: Path) -> None:
-    pipeline = AutopilotPipeline(Settings(channel_profile="curioaxiom", artifacts_dir=tmp_path))
+    pipeline = AutopilotPipeline(Settings(
+        channel_profile="curioaxiom",
+        artifacts_dir=tmp_path,
+        state_file=tmp_path / "history.json",
+        learning_file=tmp_path / "learning.json",
+    ))
     candidate = TopicCandidate(title="Prompting is Not Programming", score=90, reason="news")
     pipeline.discovery.discover = lambda: [candidate]
     pipeline.planner.choose_topic = lambda candidates: candidate
