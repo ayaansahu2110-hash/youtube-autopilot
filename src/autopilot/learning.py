@@ -174,11 +174,11 @@ class DailyLearningLoop:
         snapshot = {
             "subscribers": 0,
             "subscriber_target": 1000,
-            "estimated_long_watch_hours_365d": 0.0,
+            "estimated_long_watch_hours_365d": None,
             "watch_hour_target": 4000,
-            "estimated_shorts_views_90d": 0.0,
+            "estimated_shorts_views_90d": None,
             "shorts_view_target": 10_000_000,
-            "bottleneck": "subscribers",
+            "bottleneck": "unknown",
             "note": "Directional estimate; YouTube Studio Earn tab is authoritative.",
         }
         try:
@@ -196,7 +196,6 @@ class DailyLearningLoop:
             if isinstance(item, dict) and item.get("video_id"):
                 formats[str(item["video_id"])] = str(item.get("format") or "")
         if not formats:
-            self._set_bottleneck(snapshot)
             return snapshot
 
         try:
@@ -238,7 +237,8 @@ class DailyLearningLoop:
         except HttpError:
             pass
 
-        self._set_bottleneck(snapshot)
+        if snapshot["estimated_long_watch_hours_365d"] is not None and snapshot["estimated_shorts_views_90d"] is not None:
+            self._set_bottleneck(snapshot)
         return snapshot
 
     @staticmethod
@@ -313,8 +313,8 @@ def learning_context(settings: Settings, max_chars: int = 9000) -> str:
         lines.append(
             "YPP growth estimate: "
             f"subs={monetization.get('subscribers', 0)}/1000; "
-            f"long_watch_hours≈{monetization.get('estimated_long_watch_hours_365d', 0)}/4000; "
-            f"shorts_views_90d≈{monetization.get('estimated_shorts_views_90d', 0)}/10000000; "
+            f"long_watch_hours≈{monetization.get('estimated_long_watch_hours_365d') if monetization.get('estimated_long_watch_hours_365d') is not None else 'unknown'}/4000; "
+            f"shorts_views_90d≈{monetization.get('estimated_shorts_views_90d') if monetization.get('estimated_shorts_views_90d') is not None else 'unknown'}/10000000; "
             f"current bottleneck={monetization.get('bottleneck', 'unknown')}."
         )
         lines.append(
