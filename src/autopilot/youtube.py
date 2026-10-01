@@ -89,7 +89,7 @@ class YouTubeUploader:
         expected = (self.settings.expected_youtube_channel_id or "").strip()
         if not expected:
             return
-        items = youtube.channels().list(part="id,snippet", mine=True, maxResults=1).execute().get("items", [])
+        items = youtube.channels().list(part="id,snippet", mine=True, maxResults=1).execute(num_retries=3).get("items", [])
         actual = str(items[0].get("id") if items else "")
         if actual != expected:
             raise RuntimeError(
@@ -97,10 +97,14 @@ class YouTubeUploader:
                 f"YouTube channel {expected}, got {actual or 'none'}."
             )
 
+    def verify_channel(self) -> None:
+        """Check the OAuth token and channel lock without querying individual videos."""
+        self._service()
+
     def recent_uploads(self, limit: int = 30) -> list[dict[str, str]]:
         """Return the channel's most recent real uploads for cross-run duplicate protection."""
         youtube = self._service()
-        channel_items = youtube.channels().list(part="contentDetails", mine=True, maxResults=1).execute().get("items", [])
+        channel_items = youtube.channels().list(part="contentDetails", mine=True, maxResults=1).execute(num_retries=3).get("items", [])
         if not channel_items:
             return []
         uploads_playlist = (
@@ -112,7 +116,7 @@ class YouTubeUploader:
             part="snippet,contentDetails",
             playlistId=uploads_playlist,
             maxResults=max(1, min(50, limit)),
-        ).execute()
+        ).execute(num_retries=3)
         items = data.get("items", []) or []
         video_ids = [
             str(item.get("contentDetails", {}).get("videoId") or "")
@@ -123,7 +127,7 @@ class YouTubeUploader:
         if video_ids:
             details = youtube.videos().list(
                 part="contentDetails", id=",".join(video_ids)
-            ).execute().get("items", [])
+            ).execute(num_retries=3).get("items", [])
             for video in details:
                 seconds = self._duration_seconds(str(video.get("contentDetails", {}).get("duration") or ""))
                 durations[str(video.get("id") or "")] = seconds
