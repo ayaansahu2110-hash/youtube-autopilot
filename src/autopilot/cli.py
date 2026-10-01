@@ -92,7 +92,7 @@ def verify_youtube() -> None:
     """Verify the OAuth token belongs to the configured isolated channel."""
     settings = load_settings()
     uploader = YouTubeUploader(settings)
-    uploader.recent_uploads(limit=1)
+    uploader.verify_channel()
     console.print(
         f"[bold green]Channel verified:[/bold green] {settings.channel_display_name} "
         f"({settings.expected_youtube_channel_id or 'identity lock not configured'})"
