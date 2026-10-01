@@ -8,17 +8,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T06:59:52Z",
       "analytics": {
-        "views": 36.0,
-        "estimatedMinutesWatched": 3.0,
-        "averageViewDuration": 17.0,
-        "averageViewPercentage": 39.46,
+        "views": 26.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 28.0,
+        "averageViewPercentage": 64.15,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-30T18:04:18.546595+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.075284+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -28,17 +28,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T07:43:12Z",
       "analytics": {
-        "views": 6.0,
-        "estimatedMinutesWatched": 8.0,
-        "averageViewDuration": 239.0,
-        "averageViewPercentage": 41.38,
+        "views": 4.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 16.0,
+        "averageViewPercentage": 2.81,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
-        "subscribersGained": 1.0
+        "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-30T18:04:18.561264+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.088930+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -48,17 +48,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T12:39:19Z",
       "analytics": {
-        "views": 12.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 33.0,
-        "averageViewPercentage": 64.68,
+        "views": 9.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 9.0,
+        "averageViewPercentage": 18.6,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-30T18:04:18.557878+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.084333+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -68,17 +68,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T20:03:55Z",
       "analytics": {
-        "views": 10.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 51.0,
-        "averageViewPercentage": 92.65,
+        "views": 9.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 50.0,
+        "averageViewPercentage": 89.95,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-30T18:04:18.560154+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.083209+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -88,17 +88,17 @@
       "script_preview": "",
       "created_at": "2026-08-30T06:43:54Z",
       "analytics": {
-        "views": 11.0,
-        "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 23.0,
-        "averageViewPercentage": 43.32,
+        "views": 9.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 18.0,
+        "averageViewPercentage": 34.26,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-30T18:04:18.559030+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.086584+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -108,17 +108,17 @@
       "script_preview": "",
       "created_at": "2026-08-30T09:37:18Z",
       "analytics": {
-        "views": 5.0,
+        "views": 4.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 4.0,
-        "averageViewPercentage": 7.02,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-30T18:04:18.562375+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.087686+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -128,16 +128,16 @@
       "script_preview": "Instead of manually exporting database tables to analyze them with AI, you can now let local agents query and chart your SQL databases directly. DataZen does this by running a built-in Model Context Protocol, or MCP, server inside a local-first desktop client. To generate a daily sales report, you safely connect your local database using AES-encrypted OS keychain credentials. DataZen's built-in MCP server exposes your schemas and EXPLAIN analyses directly to external agents like Claude or Cursor. The agent executes the query, builds visual workflow loops, and automatically outputs PNG or SVG c",
       "created_at": "2026-08-30T12:39:38.882975+00:00",
       "analytics": {
-        "views": 14.0,
+        "views": 12.0,
         "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 26.0,
-        "averageViewPercentage": 43.15,
+        "averageViewDuration": 28.0,
+        "averageViewPercentage": 46.15,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.554441+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.082105+00:00"
     },
     {
       "video_id": "PjLuT6jX5jQ",
@@ -147,16 +147,16 @@
       "script_preview": "Instead of waiting minutes for an AI video render, a new model generates playable shots in three seconds. MiniMax H3 Max on fal.ai turns text prompts or reference images into 768p clips faster than real-time. You type a shot description, click generate, and the rendered clip begins playback almost instantly. For video editors, this shifts AI generation from slow batch queuing into live, interactive shot prototyping. You can test it with zero sign-up, or log in to get fifteen free video generations every day. The limitation is native output maxes out at 768p, requiring an upscaler like FlashVSR",
       "created_at": "2026-08-31T06:42:32.777474+00:00",
       "analytics": {
-        "views": 127.0,
-        "estimatedMinutesWatched": 14.0,
-        "averageViewDuration": 49.0,
-        "averageViewPercentage": 85.72,
+        "views": 99.0,
+        "estimatedMinutesWatched": 8.0,
+        "averageViewDuration": 31.0,
+        "averageViewPercentage": 54.18999999999999,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.529719+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.058477+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -166,16 +166,16 @@
       "script_preview": "If you're constantly blurring API keys, dragging arrows, and recording separate video guides for your team, your Mac's default screenshot tool is wasting your time. A new free utility called Seenshot consolidates this entire workflow into a single keyboard shortcut. Imagine you're a developer sending a bug report. Press Command-Shift-2, select the buggy UI, and use the native editor to instantly blur sensitive user data. Instead of typing instructions, you can highlight elements with step-by-step numbers or inject a webcam selfie in one click. Once you're done, Seenshot generates a secure web ",
       "created_at": "2026-08-31T12:47:18.346367+00:00",
       "analytics": {
-        "views": 22.0,
-        "estimatedMinutesWatched": 3.0,
-        "averageViewDuration": 20.0,
-        "averageViewPercentage": 39.5,
+        "views": 15.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 23.0,
+        "averageViewPercentage": 44.06,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.551120+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.079783+00:00"
     },
     {
       "video_id": "kHhLmTEYmWM",
@@ -185,16 +185,16 @@
       "script_preview": "You can host a secure site with zero public IP exposure, no registrar fees, and no SSL certificate authority. By running a local server as a Tor hidden service, your site is accessed via an address derived from its public key. To start, edit `/etc/tor/torrc` to define your dedicated hidden service path. The catch: this directory must not be your web root. Tor insists on owning this folder. Assign it to the `debian-tor` user and set `chmod 700` or Tor won't launch. Once configured, Tor generates your hostname and forwards onion port 80 traffic to your local port 8080. Next, write your Nginx blo",
       "created_at": "2026-09-01T12:03:35.161778+00:00",
       "analytics": {
-        "views": 68.0,
-        "estimatedMinutesWatched": 14.0,
-        "averageViewDuration": 31.0,
-        "averageViewPercentage": 52.12,
-        "likes": 2.0,
+        "views": 27.0,
+        "estimatedMinutesWatched": 5.0,
+        "averageViewDuration": 29.0,
+        "averageViewPercentage": 49.01,
+        "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.535408+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.073044+00:00"
     },
     {
       "video_id": "-P5Gzq7jUxM",
@@ -204,16 +204,16 @@
       "script_preview": "You can now run automated TikTok posts on physical iPhones, controlled entirely from your web browser. An open-source tool called Handler turns spare iOS devices into a self-hosted local phone farm. Once connected, you get a live interactive stream to click-to-tap, drag-to-swipe, and upload video files. The tasks are managed by a durable Docker-based Postgres queue, preserving your queue even through crashes. But note: you must compile the agent from a graphical macOS Terminal session—not a bare SSH shell. This is because the local code-signing process requires direct access to your Mac's logi",
       "created_at": "2026-09-02T11:45:35.036788+00:00",
       "analytics": {
-        "views": 50.0,
-        "estimatedMinutesWatched": 13.0,
-        "averageViewDuration": 43.0,
-        "averageViewPercentage": 86.57,
+        "views": 38.0,
+        "estimatedMinutesWatched": 11.0,
+        "averageViewDuration": 42.0,
+        "averageViewPercentage": 85.38,
         "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.540984+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.070835+00:00"
     },
     {
       "video_id": "skv-4s_ARyo",
@@ -223,16 +223,16 @@
       "script_preview": "Stop letting AI agents bloat your repo with unmaintainable code dumps for internal tools. When Claude Code or Cursor write raw scripts, you’re stuck with shadow IT that breaks on every library update. ToolJet has solved this by shipping an MCP server that bypasses raw code entirely. Instead of emitting functions, the agent calls ToolJet’s visual component contracts. You type a prompt, and the agent constructs actual application nodes, queries, and data bindings. It hooks into 100+ native databases or ToolJet's built-in Postgres table directly. Because this happens inside the platform, you inhe",
       "created_at": "2026-09-02T16:52:30.443067+00:00",
       "analytics": {
-        "views": 183.0,
-        "estimatedMinutesWatched": 39.0,
-        "averageViewDuration": 42.0,
-        "averageViewPercentage": 80.8,
-        "likes": 2.0,
+        "views": 101.0,
+        "estimatedMinutesWatched": 27.0,
+        "averageViewDuration": 75.0,
+        "averageViewPercentage": 142.57,
+        "likes": 1.0,
         "comments": 0.0,
-        "shares": 2.0,
+        "shares": 1.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.526353+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.055131+00:00"
     },
     {
       "video_id": "LrEv9cky9UI",
@@ -242,16 +242,16 @@
       "script_preview": "What if the most frustrating part of building a modern smart home isn't configuring the automation protocols or buying the right sensors, but simply getting your family to actually look at the data? While tech enthusiasts spend countless hours building complex dashboards, the vast majority of that valuable household data remains locked away on individual phone screens, completely invisible to the rest of the family. When your family's critical calendars, daily tasks, and shared grocery lists are buried inside personal app accounts and private mobile devices, basic daily coordination inevitably",
       "created_at": "2026-09-02T17:45:47.528432+00:00",
       "analytics": {
-        "views": 13.0,
-        "estimatedMinutesWatched": 14.0,
-        "averageViewDuration": 119.0,
-        "averageViewPercentage": 19.57,
+        "views": 9.0,
+        "estimatedMinutesWatched": 5.0,
+        "averageViewDuration": 75.0,
+        "averageViewPercentage": 12.4,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.556749+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.085470+00:00"
     },
     {
       "video_id": "q3uAkhUbHPo",
@@ -261,16 +261,16 @@
       "script_preview": "Stop letting corporate algorithms manipulate your search results and track your data. You can now build a self-hosted, peer-to-peer search engine using a modular GitHub blueprint. If you want to index niche web forums and search them privately, this stack does it locally. It hooks into the decentralized YaCy network, crawls targets, builds a full-text index, and hosts your private search page. Running entirely on Docker Compose, you can eventually add browser rendering, archives, and AI access. But remember: you must run 'docker compose down' before moving chapters, as they all reuse the same ",
       "created_at": "2026-09-03T11:40:05.185345+00:00",
       "analytics": {
-        "views": 61.0,
+        "views": 62.0,
         "estimatedMinutesWatched": 16.0,
-        "averageViewDuration": 66.0,
-        "averageViewPercentage": 133.99,
+        "averageViewDuration": 63.0,
+        "averageViewPercentage": 126.77000000000001,
         "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.539880+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.064103+00:00"
     },
     {
       "video_id": "EhZ05TtKw4w",
@@ -289,7 +289,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.533158+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.059609+00:00"
     },
     {
       "video_id": "q75Bf7pvU2E",
@@ -308,7 +308,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.522887+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.049348+00:00"
     },
     {
       "video_id": "k50LMAYBUew",
@@ -327,7 +327,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.534272+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.060731+00:00"
     },
     {
       "video_id": "W3VAYdcvxMw",
@@ -346,7 +346,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.528610+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.054015+00:00"
     },
     {
       "video_id": "aaz3N_iNvvs",
@@ -365,7 +365,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.552220+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.077560+00:00"
     },
     {
       "video_id": "zdCyNi2qD-E",
@@ -384,7 +384,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.537643+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.062988+00:00"
     },
     {
       "video_id": "4ZbRI7IbnE0",
@@ -403,7 +403,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.524081+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.050538+00:00"
     },
     {
       "video_id": "qS421OvLSmk",
@@ -422,7 +422,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.553320+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.078674+00:00"
     },
     {
       "video_id": "amYfRRyQdPg",
@@ -441,7 +441,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.521233+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.047843+00:00"
     },
     {
       "video_id": "v1IppFKA6Ok",
@@ -460,7 +460,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.532053+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.056250+00:00"
     },
     {
       "video_id": "yzQMH5qHSgY",
@@ -479,7 +479,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.538754+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.065217+00:00"
     },
     {
       "video_id": "QimgLY2VUhk",
@@ -498,7 +498,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.548862+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.076434+00:00"
     },
     {
       "video_id": "e2ltwbdZZsI",
@@ -508,7 +508,7 @@
       "script_preview": "What happens when you force a 1982 home computer to do deep learning? A stock Commodore 64, with its puny one megahertz CPU, is now identifying handwritten digits with over 99 percent accuracy. This isn't a stream—it is local processing, proving that massive compute is not always the answer. To understand this feat, you have to look at the hardware limitations. The MOS 6502 processor inside this machine lacks a multiplication instruction entirely. Every calculation has to be broken down into individual bits. This project succeeds by stripping away the standard, heavy math required by modern AI",
       "created_at": "2026-09-19T16:35:43.290567+00:00",
       "analytics": {
-        "views": 13.0,
+        "views": 14.0,
         "estimatedMinutesWatched": 3.0,
         "averageViewDuration": 42.0,
         "averageViewPercentage": 7.68,
@@ -517,7 +517,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.555638+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.080892+00:00"
     },
     {
       "video_id": "TyhfJ6HJnYQ",
@@ -536,7 +536,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.527497+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.052848+00:00"
     },
     {
       "video_id": "tUPTEapaLYw",
@@ -555,7 +555,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.536523+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.061876+00:00"
     },
     {
       "video_id": "yknAuovRzH8",
@@ -574,7 +574,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.542133+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.066387+00:00"
     },
     {
       "video_id": "9v_limHjc9k",
@@ -593,7 +593,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.547760+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.071937+00:00"
     },
     {
       "video_id": "k855X4ygCpc",
@@ -603,7 +603,7 @@
       "script_preview": "Your enterprise AI agent is lying to customers because its memory is trapped in a basic text search box. Oracle just solved this with AI Agent Memory 26.6 inside the Oracle AI Database. It combines vector search, keyword matching, and hybrid indexes so agents pull exact enterprise facts without external network hops. You get full CRUD management across threads and messages, complete with cascading record cleanup. Schema-level time-to-live settings automatically purge stale data relative to storage or usage. The catch? You are locked entirely into Oracle's database infrastructure. Always config",
       "created_at": "2026-09-23T17:27:43.425227+00:00",
       "analytics": {
-        "views": 45.0,
+        "views": 46.0,
         "estimatedMinutesWatched": 3.0,
         "averageViewDuration": 14.0,
         "averageViewPercentage": 30.620000000000005,
@@ -612,7 +612,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.544378+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.067484+00:00"
     },
     {
       "video_id": "oKfY9UTZVw8",
@@ -622,7 +622,7 @@
       "script_preview": "An attacker with your GitLab issue email address can bypass branch protections and commit malicious code as you. Here is the threat: GitLab issues are tied to a unique, permanent token in that email address. Because this token is identical across all your projects and GitLab doesn't verify the sender, any external email can trigger a merge request. This allows attackers to push code or trigger CI/CD pipelines under your specific account permissions. This means your private repos aren't safe if that address leaks. Even deleting a project won't revoke the token, as it is linked to your account, ",
       "created_at": "2026-09-24T12:12:47.053060+00:00",
       "analytics": {
-        "views": 24.0,
+        "views": 26.0,
         "estimatedMinutesWatched": 1.0,
         "averageViewDuration": 13.0,
         "averageViewPercentage": 24.68,
@@ -631,7 +631,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.549968+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.074180+00:00"
     },
     {
       "video_id": "2sOeY_bE8Mc",
@@ -650,7 +650,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.545482+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.069732+00:00"
     },
     {
       "video_id": "_j3f3AzEGrs",
@@ -669,7 +669,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.543267+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.068603+00:00"
     },
     {
       "video_id": "Sc-f2DrS4Js",
@@ -679,7 +679,7 @@
       "script_preview": "Instead of copying prompts between chat windows and code editors, one desktop workspace now runs your scripts and cross-app tasks together. Microsoft unified Copilot into three dedicated operational modes: Home, Code, and Autopilot. Home pulls meeting recaps, active docs, and emails into a single live dashboard before your workday starts. Switch to Code, paste an API error, and it refactors the script directly inside the native interface. Autopilot takes multi-step automation further, letting you trigger chains of desktop actions without nursing every step. CNBC notes Microsoft packaged these ",
       "created_at": "2026-09-26T11:45:53.679535+00:00",
       "analytics": {
-        "views": 192.0,
+        "views": 193.0,
         "estimatedMinutesWatched": 24.0,
         "averageViewDuration": 17.0,
         "averageViewPercentage": 30.870000000000005,
@@ -688,7 +688,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-30T18:04:18.525216+00:00"
+      "analytics_updated_at": "2026-10-01T13:47:59.051690+00:00"
     },
     {
       "video_id": "R2cvIjrKgno",
@@ -715,6 +715,15 @@
       "format": "long",
       "script_preview": "Small business owners lose fifteen hours weekly moving customer data between Shopify, QuickBooks, and their CRM. What if your CRM could actually see into those apps using a new AI layer? Meta’s new Muse integration with HighLevel aims to solve this persistent data silo problem starting right now. We are looking at a fundamental shift in how business platforms manage external data. HighLevel has officially connected with Muse, an AI product from Meta, designed to bridge the gaps between fragmented software ecosystems. This isn't just a chatbot; it is a structural connection for your core busine",
       "created_at": "2026-09-30T18:50:03.840673+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "9K4y8o4qSyY",
+      "topic": "HydraFusion in VS Code and the GitHub Copilot app",
+      "title": "VS Code 1.140: Run Parallel Worktrees with HydraFusion AI",
+      "format": "short",
+      "script_preview": "Stop stashing your git progress just to test an alternate fix. VS Code 1.140 orchestrates isolated parallel agent worktrees using GitHub's HydraFusion multi-model system. Imagine you are writing a backend API in Repo A, but need to patch a frontend client in Repo B simultaneously. With multi-folder sessions, you open dual peer chats directly inside the Copilot panel. Agent one updates your DB schema in an isolated worktree. Agent two tests a component in its own sandbox. Each chat runs a separate terminal, tracks separate file changes, and commits independent pull requests. The catch? This Hyd",
+      "created_at": "2026-10-01T13:52:14.033772+00:00",
       "analytics": {}
     }
   ],
@@ -958,6 +967,12 @@
       "title": "Meta’s New AI ‘Muse’ Integrates with HighLevel: Does It Actually Work?",
       "format": "long",
       "created_at": "2026-09-30T18:50:03.840673+00:00"
+    },
+    {
+      "topic": "HydraFusion in VS Code and the GitHub Copilot app",
+      "title": "VS Code 1.140: Run Parallel Worktrees with HydraFusion AI",
+      "format": "short",
+      "created_at": "2026-10-01T13:52:14.033772+00:00"
     }
   ]
 }
