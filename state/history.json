@@ -8,7 +8,7 @@
       "script_preview": "",
       "created_at": "2026-08-29T06:59:52Z",
       "analytics": {
-        "views": 26.0,
+        "views": 20.0,
         "estimatedMinutesWatched": 2.0,
         "averageViewDuration": 28.0,
         "averageViewPercentage": 64.15,
@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-01T18:36:34.020043+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.350980+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-01T18:36:34.035132+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.358576+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -48,17 +48,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T12:39:19Z",
       "analytics": {
-        "views": 9.0,
+        "views": 6.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 9.0,
         "averageViewPercentage": 18.6,
-        "likes": 1.0,
+        "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-01T18:36:34.030532+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.357888+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -68,17 +68,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T20:03:55Z",
       "analytics": {
-        "views": 9.0,
+        "views": 7.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 50.0,
         "averageViewPercentage": 89.95,
-        "likes": 1.0,
+        "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-01T18:36:34.029300+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.356532+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -88,17 +88,17 @@
       "script_preview": "",
       "created_at": "2026-08-30T06:43:54Z",
       "analytics": {
-        "views": 9.0,
+        "views": 7.0,
         "estimatedMinutesWatched": 1.0,
         "averageViewDuration": 18.0,
         "averageViewPercentage": 34.26,
-        "likes": 1.0,
+        "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-01T18:36:34.032845+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.357220+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -108,17 +108,17 @@
       "script_preview": "",
       "created_at": "2026-08-30T09:37:18Z",
       "analytics": {
-        "views": 4.0,
+        "views": 2.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 0.0,
         "averageViewPercentage": 0.0,
-        "likes": 1.0,
+        "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-01T18:36:34.034008+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.359248+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -128,7 +128,7 @@
       "script_preview": "Instead of manually exporting database tables to analyze them with AI, you can now let local agents query and chart your SQL databases directly. DataZen does this by running a built-in Model Context Protocol, or MCP, server inside a local-first desktop client. To generate a daily sales report, you safely connect your local database using AES-encrypted OS keychain credentials. DataZen's built-in MCP server exposes your schemas and EXPLAIN analyses directly to external agents like Claude or Cursor. The agent executes the query, builds visual workflow loops, and automatically outputs PNG or SVG c",
       "created_at": "2026-08-30T12:39:38.882975+00:00",
       "analytics": {
-        "views": 12.0,
+        "views": 13.0,
         "estimatedMinutesWatched": 1.0,
         "averageViewDuration": 28.0,
         "averageViewPercentage": 46.15,
@@ -137,7 +137,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.028146+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.354422+00:00"
     },
     {
       "video_id": "PjLuT6jX5jQ",
@@ -147,16 +147,16 @@
       "script_preview": "Instead of waiting minutes for an AI video render, a new model generates playable shots in three seconds. MiniMax H3 Max on fal.ai turns text prompts or reference images into 768p clips faster than real-time. You type a shot description, click generate, and the rendered clip begins playback almost instantly. For video editors, this shifts AI generation from slow batch queuing into live, interactive shot prototyping. You can test it with zero sign-up, or log in to get fifteen free video generations every day. The limitation is native output maxes out at 768p, requiring an upscaler like FlashVSR",
       "created_at": "2026-08-31T06:42:32.777474+00:00",
       "analytics": {
-        "views": 99.0,
+        "views": 89.0,
         "estimatedMinutesWatched": 8.0,
-        "averageViewDuration": 31.0,
-        "averageViewPercentage": 54.18999999999999,
+        "averageViewDuration": 33.0,
+        "averageViewPercentage": 57.81,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.003707+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.338739+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -175,7 +175,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.025691+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.353045+00:00"
     },
     {
       "video_id": "kHhLmTEYmWM",
@@ -185,16 +185,16 @@
       "script_preview": "You can host a secure site with zero public IP exposure, no registrar fees, and no SSL certificate authority. By running a local server as a Tor hidden service, your site is accessed via an address derived from its public key. To start, edit `/etc/tor/torrc` to define your dedicated hidden service path. The catch: this directory must not be your web root. Tor insists on owning this folder. Assign it to the `debian-tor` user and set `chmod 700` or Tor won't launch. Once configured, Tor generates your hostname and forwards onion port 80 traffic to your local port 8080. Next, write your Nginx blo",
       "created_at": "2026-09-01T12:03:35.161778+00:00",
       "analytics": {
-        "views": 27.0,
-        "estimatedMinutesWatched": 5.0,
-        "averageViewDuration": 29.0,
-        "averageViewPercentage": 49.01,
+        "views": 11.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 31.0,
+        "averageViewPercentage": 51.78,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.018841+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.355158+00:00"
     },
     {
       "video_id": "-P5Gzq7jUxM",
@@ -204,16 +204,16 @@
       "script_preview": "You can now run automated TikTok posts on physical iPhones, controlled entirely from your web browser. An open-source tool called Handler turns spare iOS devices into a self-hosted local phone farm. Once connected, you get a live interactive stream to click-to-tap, drag-to-swipe, and upload video files. The tasks are managed by a durable Docker-based Postgres queue, preserving your queue even through crashes. But note: you must compile the agent from a graphical macOS Terminal session—not a bare SSH shell. This is because the local code-signing process requires direct access to your Mac's logi",
       "created_at": "2026-09-02T11:45:35.036788+00:00",
       "analytics": {
-        "views": 38.0,
-        "estimatedMinutesWatched": 11.0,
-        "averageViewDuration": 42.0,
-        "averageViewPercentage": 85.38,
-        "likes": 2.0,
+        "views": 24.0,
+        "estimatedMinutesWatched": 8.0,
+        "averageViewDuration": 58.0,
+        "averageViewPercentage": 116.45999999999998,
+        "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.015439+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.348897+00:00"
     },
     {
       "video_id": "skv-4s_ARyo",
@@ -223,16 +223,16 @@
       "script_preview": "Stop letting AI agents bloat your repo with unmaintainable code dumps for internal tools. When Claude Code or Cursor write raw scripts, you’re stuck with shadow IT that breaks on every library update. ToolJet has solved this by shipping an MCP server that bypasses raw code entirely. Instead of emitting functions, the agent calls ToolJet’s visual component contracts. You type a prompt, and the agent constructs actual application nodes, queries, and data bindings. It hooks into 100+ native databases or ToolJet's built-in Postgres table directly. Because this happens inside the platform, you inhe",
       "created_at": "2026-09-02T16:52:30.443067+00:00",
       "analytics": {
-        "views": 101.0,
-        "estimatedMinutesWatched": 27.0,
-        "averageViewDuration": 75.0,
-        "averageViewPercentage": 142.57,
-        "likes": 1.0,
+        "views": 25.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 26.0,
+        "averageViewPercentage": 50.29,
+        "likes": 0.0,
         "comments": 0.0,
-        "shares": 1.0,
+        "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.000016+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.348178+00:00"
     },
     {
       "video_id": "LrEv9cky9UI",
@@ -242,7 +242,7 @@
       "script_preview": "What if the most frustrating part of building a modern smart home isn't configuring the automation protocols or buying the right sensors, but simply getting your family to actually look at the data? While tech enthusiasts spend countless hours building complex dashboards, the vast majority of that valuable household data remains locked away on individual phone screens, completely invisible to the rest of the family. When your family's critical calendars, daily tasks, and shared grocery lists are buried inside personal app accounts and private mobile devices, basic daily coordination inevitably",
       "created_at": "2026-09-02T17:45:47.528432+00:00",
       "analytics": {
-        "views": 9.0,
+        "views": 8.0,
         "estimatedMinutesWatched": 5.0,
         "averageViewDuration": 75.0,
         "averageViewPercentage": 12.4,
@@ -251,7 +251,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.031715+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.355850+00:00"
     },
     {
       "video_id": "q3uAkhUbHPo",
@@ -261,16 +261,16 @@
       "script_preview": "Stop letting corporate algorithms manipulate your search results and track your data. You can now build a self-hosted, peer-to-peer search engine using a modular GitHub blueprint. If you want to index niche web forums and search them privately, this stack does it locally. It hooks into the decentralized YaCy network, crawls targets, builds a full-text index, and hosts your private search page. Running entirely on Docker Compose, you can eventually add browser rendering, archives, and AI access. But remember: you must run 'docker compose down' before moving chapters, as they all reuse the same ",
       "created_at": "2026-09-03T11:40:05.185345+00:00",
       "analytics": {
-        "views": 62.0,
-        "estimatedMinutesWatched": 16.0,
-        "averageViewDuration": 63.0,
-        "averageViewPercentage": 126.77000000000001,
-        "likes": 2.0,
+        "views": 23.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 7.0,
+        "averageViewPercentage": 14.99,
+        "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.009688+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.349591+00:00"
     },
     {
       "video_id": "EhZ05TtKw4w",
@@ -280,16 +280,16 @@
       "script_preview": "Your highest-value client, Xenon Electronics, is sixty days from renewal with unresolved feedback, but your account team has no idea. Ardent automates this by writing sandboxed code to execute non-engineering tasks, bypassing slow, expensive raw data loads into LLMs. You feed Ardent your customer satisfaction logs and upcoming contract renewal dates. The agent instantly runs a secure script, isolates Xenon's high-revenue risk, and drafts a targeted outreach email. With one click, you publish this sequence as a shared 'ability' for your entire workspace to reuse. This bypasses custom infrastruc",
       "created_at": "2026-09-03T16:41:45.071040+00:00",
       "analytics": {
-        "views": 99.0,
-        "estimatedMinutesWatched": 10.0,
-        "averageViewDuration": 17.0,
-        "averageViewPercentage": 29.37,
-        "likes": 2.0,
+        "views": 21.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 6.0,
+        "averageViewPercentage": 11.15,
+        "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
-        "subscribersGained": 1.0
+        "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.004930+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.350297+00:00"
     },
     {
       "video_id": "q75Bf7pvU2E",
@@ -308,7 +308,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:33.993569+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.334293+00:00"
     },
     {
       "video_id": "k50LMAYBUew",
@@ -327,7 +327,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.006140+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.340616+00:00"
     },
     {
       "video_id": "W3VAYdcvxMw",
@@ -346,7 +346,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:33.998721+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.337285+00:00"
     },
     {
       "video_id": "aaz3N_iNvvs",
@@ -365,7 +365,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.023495+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.351668+00:00"
     },
     {
       "video_id": "zdCyNi2qD-E",
@@ -384,7 +384,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.008454+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.342010+00:00"
     },
     {
       "video_id": "4ZbRI7IbnE0",
@@ -403,7 +403,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:33.995220+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.335100+00:00"
     },
     {
       "video_id": "qS421OvLSmk",
@@ -422,7 +422,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.024600+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.352353+00:00"
     },
     {
       "video_id": "amYfRRyQdPg",
@@ -441,7 +441,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:33.988755+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.333107+00:00"
     },
     {
       "video_id": "v1IppFKA6Ok",
@@ -460,7 +460,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.001180+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.338022+00:00"
     },
     {
       "video_id": "yzQMH5qHSgY",
@@ -479,7 +479,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.010861+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.342704+00:00"
     },
     {
       "video_id": "QimgLY2VUhk",
@@ -498,7 +498,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.021225+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.347453+00:00"
     },
     {
       "video_id": "e2ltwbdZZsI",
@@ -517,7 +517,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.026870+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.353743+00:00"
     },
     {
       "video_id": "TyhfJ6HJnYQ",
@@ -527,7 +527,7 @@
       "script_preview": "Instead of spending weeks manually coding a machine learning model from a research paper, you can now generate a working AI agent directly from the PDF. Stanford researchers just released Paper2Agent, a system that automatically translates static academic papers into deployable, interactive AI agents. Here is how it works for a researcher. You upload a paper, like a clinical study. The system extracts the scientific methodology, builds a code pipeline, and reproduces the paper's original results on a completely new dataset. These agents can even communicate with other agents to merge different",
       "created_at": "2026-09-20T06:12:30.156655+00:00",
       "analytics": {
-        "views": 173.0,
+        "views": 174.0,
         "estimatedMinutesWatched": 34.0,
         "averageViewDuration": 31.0,
         "averageViewPercentage": 63.690000000000005,
@@ -536,7 +536,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:33.997558+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.336561+00:00"
     },
     {
       "video_id": "tUPTEapaLYw",
@@ -555,7 +555,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.007309+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.341315+00:00"
     },
     {
       "video_id": "yknAuovRzH8",
@@ -565,16 +565,16 @@
       "script_preview": "Ditch your standalone desktop apps to reclaim gigabytes of system memory. Modern browsers now support persistent sidebars and workspace profiles that render local apps obsolete. Instead of opening endless tabs, you can consolidate your routine workflow into a single sidebar. For instance, running Gemini in a dedicated side panel keeps your research context entirely in view. This shift bypasses the constant window switching that fractures your daily attention span. Browsers like Arc or Vivaldi now challenge Chrome by building these split-screen layouts natively. But beware: economists warn that",
       "created_at": "2026-09-21T18:22:47.761530+00:00",
       "analytics": {
-        "views": 49.0,
+        "views": 51.0,
         "estimatedMinutesWatched": 4.0,
-        "averageViewDuration": 15.0,
-        "averageViewPercentage": 31.370000000000005,
+        "averageViewDuration": 14.0,
+        "averageViewPercentage": 29.39,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.011981+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.343387+00:00"
     },
     {
       "video_id": "9v_limHjc9k",
@@ -593,7 +593,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.017732+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.346118+00:00"
     },
     {
       "video_id": "k855X4ygCpc",
@@ -612,7 +612,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.013147+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.344076+00:00"
     },
     {
       "video_id": "oKfY9UTZVw8",
@@ -622,7 +622,7 @@
       "script_preview": "An attacker with your GitLab issue email address can bypass branch protections and commit malicious code as you. Here is the threat: GitLab issues are tied to a unique, permanent token in that email address. Because this token is identical across all your projects and GitLab doesn't verify the sender, any external email can trigger a merge request. This allows attackers to push code or trigger CI/CD pipelines under your specific account permissions. This means your private repos aren't safe if that address leaks. Even deleting a project won't revoke the token, as it is linked to your account, ",
       "created_at": "2026-09-24T12:12:47.053060+00:00",
       "analytics": {
-        "views": 25.0,
+        "views": 26.0,
         "estimatedMinutesWatched": 1.0,
         "averageViewDuration": 13.0,
         "averageViewPercentage": 24.68,
@@ -631,7 +631,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.022396+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.346788+00:00"
     },
     {
       "video_id": "2sOeY_bE8Mc",
@@ -650,7 +650,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.016631+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.345437+00:00"
     },
     {
       "video_id": "_j3f3AzEGrs",
@@ -669,7 +669,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:34.014258+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.344764+00:00"
     },
     {
       "video_id": "Sc-f2DrS4Js",
@@ -688,7 +688,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-01T18:36:33.996401+00:00"
+      "analytics_updated_at": "2026-10-02T13:02:13.335828+00:00"
     },
     {
       "video_id": "R2cvIjrKgno",
@@ -733,6 +733,15 @@
       "format": "short",
       "script_preview": "Autonomous AI just attempted to breach a Canadian government server without human guidance. Cybersecurity researchers confirmed that self-directed agents systematically targeted the Library and Archives Canada website. Unlike scripts of the past, these bots performed reconnaissance, scanned for vulnerabilities, and attempted SQL injections independently. This isn't just a nuisance; it's a paradigm shift where AI identifies and probes system weaknesses at machine speed. Standard firewalls relying on static attack signatures are failing to catch these adaptive, behavior-based probes. The takeawa",
       "created_at": "2026-10-01T18:35:24.249811+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "e8TfuFfpb6I",
+      "topic": "I Ditched Claude’s Chatbot for Claude Code for 3 Important Reasons",
+      "title": "Why I Ditched Claude's Chatbot for Claude Code",
+      "format": "short",
+      "script_preview": "Running terminal commands directly saves hours compared to copying snippets out of web chat. Claude Code puts the exact same AI model into a command-line agent that edits files directly. Instead of pasting script errors into a browser, a developer points Claude Code at their repo. You type an objective, the agent inspects directory files, and it applies working patches on disk. The implementation eliminates conversational chat fluff, delivering compact execution logs and direct syntax checks. It is lightweight enough that engineers are running portable coding agents right on Google Pixel phone",
+      "created_at": "2026-10-02T13:05:48.131245+00:00",
       "analytics": {}
     }
   ],
@@ -988,6 +997,12 @@
       "title": "AI Agents Are Now Launching Autonomous Cyberattacks",
       "format": "short",
       "created_at": "2026-10-01T18:35:24.249811+00:00"
+    },
+    {
+      "topic": "I Ditched Claude’s Chatbot for Claude Code for 3 Important Reasons",
+      "title": "Why I Ditched Claude's Chatbot for Claude Code",
+      "format": "short",
+      "created_at": "2026-10-02T13:05:48.131245+00:00"
     }
   ]
 }
