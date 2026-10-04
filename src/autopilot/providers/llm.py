@@ -453,7 +453,15 @@ Return the complete corrected JSON only, preserving the required top-level keys 
             text = text.split("\n", 1)[-1]
             if text.endswith("```"):
                 text = text[:-3]
-        return json.loads(text.strip())
+        data = json.loads(text.strip())
+        # Models occasionally wrap the requested object in a one-item JSON
+        # array. Accept that harmless shape variation, but fail explicitly for
+        # every other non-object response instead of crashing later on `.get`.
+        if isinstance(data, list) and len(data) == 1 and isinstance(data[0], dict):
+            data = data[0]
+        if not isinstance(data, dict):
+            raise ValueError("LLM JSON response must be an object")
+        return data
 
     def _fallback_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
         topic = research.topic
