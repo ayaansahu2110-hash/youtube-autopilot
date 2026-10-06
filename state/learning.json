@@ -1,147 +1,147 @@
 {
-  "generated_at": "2026-10-05T20:47:30.795377+00:00",
+  "generated_at": "2026-10-06T13:41:11.671204+00:00",
   "competitors": [
-    {
-      "channel": "Dan Martell",
-      "subscribers": 3110000,
-      "channel_views": 412161291,
-      "video_count": 3762,
-      "high_performing_recent_videos": [
-        {
-          "title": "3 Skills You Need to Get Rich",
-          "views": 49929,
-          "likes": 3213,
-          "comments": 24,
-          "published_at": "2026-10-03T22:02:18Z",
-          "description_excerpt": "There are only 3 skills you need to get rich"
-        },
-        {
-          "title": "Should you train or fire these employees (from a +$100M CEO perspective)",
-          "views": 30620,
-          "likes": 937,
-          "comments": 13,
-          "published_at": "2026-10-03T11:01:54Z",
-          "description_excerpt": "Should you train or fire these employees (from a +$100M CEO perspective)"
-        },
-        {
-          "title": "How do you build a successful company?",
-          "views": 24986,
-          "likes": 1229,
-          "comments": 9,
-          "published_at": "2026-10-04T17:02:44Z",
-          "description_excerpt": "How do you build a successful company?"
-        },
-        {
-          "title": "Don't start a business for the money",
-          "views": 8031,
-          "likes": 532,
-          "comments": 8,
-          "published_at": "2026-10-05T11:01:54Z",
-          "description_excerpt": "Don't start a business for the money"
-        },
-        {
-          "title": "Should you start an AI automation business?",
-          "views": 6253,
-          "likes": 262,
-          "comments": 11,
-          "published_at": "2026-10-04T22:01:56Z",
-          "description_excerpt": "Should you start an AI automation business?"
-        }
-      ]
-    },
-    {
-      "channel": "Jeff Su",
-      "subscribers": 1920000,
-      "channel_views": 105090264,
-      "video_count": 316,
-      "high_performing_recent_videos": [
-        {
-          "title": "Learn 95% of ChatGPT Work in Under 20 Minutes",
-          "views": 355347,
-          "likes": 4376,
-          "comments": 310,
-          "published_at": "2026-08-25T13:00:23Z",
-          "description_excerpt": "📚 Grab HubSpot's free Guide to #ChatGPT Work: https://clickhubspot.com/8f3780\n\nMost people open #ChatGPT Work, type a question, and end up using it exactly like the regular chatbot. In this tutorial I show you the one thing that changes that: a folder you mount, with a plain-English rulebook inside that ChatGPT Work reads before every single task.\n"
-        },
-        {
-          "title": "Claude Design is Insanely Easy - Become a Pro in 14 Minutes!",
-          "views": 267042,
-          "likes": 5273,
-          "comments": 284,
-          "published_at": "2026-07-21T13:00:15Z",
-          "description_excerpt": "✅ Grab my free Cowork Toolkit - https://coworkacademy.ai/toolkit?utm_source=youtube&utm_medium=video&utm_campaign=v207\n\n⏭️ Want to skip ahead? Grab my entire Cowork system: https://coworkacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=v207\n\nMost #Claude Design tutorials tell you to pick a template and start prompting, which is exactly "
-        },
-        {
-          "title": "Gemini Spark: Google’s Most Powerful Personal Agent",
-          "views": 238046,
-          "likes": 4124,
-          "comments": 278,
-          "published_at": "2026-06-30T13:00:21Z",
-          "description_excerpt": "✅ Try Wispr Flow Pro free - https://ref.wisprflow.ai/jeff-su-yt\n\nGemini Spark is Google's new always-on AI agent, and this beginner's guide breaks down what it actually does and when to use it.\n\nYou'll see the four capabilities that matter most: connecting context across your Google apps, following your templates, building reusable Skills, and auto"
-        },
-        {
-          "title": "Stop Organizing Files Yourself.",
-          "views": 122201,
-          "likes": 1456,
-          "comments": 106,
-          "published_at": "2026-09-29T13:00:30Z",
-          "description_excerpt": "📦 Try Dropbox in ChatGPT with your team: https://bit.ly/jeffsudropbox \n\nEvery downloaded PDF becomes another file to rename and another folder to choose. In this video, I show you how to give #AI a file management rulebook so it can name and organize your files using the folder structure and preferences that make sense to you.\n\nSpecifically, you’ll"
-        },
-        {
-          "title": "Write a Killer Résumé in the AI Era: 5 New Rules!",
-          "views": 105749,
-          "likes": 1660,
-          "comments": 89,
-          "published_at": "2026-09-15T13:00:20Z",
-          "description_excerpt": "📨 Get 1% better at AI every week - https://www.jeffsu.org/newsletter/?utm_source=youtube&utm_medium=video&utm_campaign=v210\n\nFinding reliable #résumé advice was already hard enough, and now employers use #AI to screen applications. I break down research covering more than 4,000 hiring managers and nearly 2 million applications to show which résumé "
-        }
-      ]
-    },
     {
       "channel": "Nate Herk | AI Automation",
       "subscribers": 1050000,
-      "channel_views": 58593487,
+      "channel_views": 58628052,
       "video_count": 536,
       "high_performing_recent_videos": [
         {
           "title": "Claude Code Mods Are Game Changers. Set Up These 5 NOW.",
-          "views": 157181,
-          "likes": 1695,
-          "comments": 82,
+          "views": 170020,
+          "likes": 1828,
+          "comments": 85,
           "published_at": "2026-10-02T21:59:19Z",
           "description_excerpt": "How I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-5-mods&hcategory=youtube-videos&utm_campaign=plus-group\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=claude-5-mods&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to te"
         },
         {
           "title": "How to Actually Build & Sell Software with AI as a Non-Techie",
-          "views": 61740,
-          "likes": 683,
-          "comments": 48,
+          "views": 66002,
+          "likes": 725,
+          "comments": 50,
           "published_at": "2026-10-02T18:43:22Z",
           "description_excerpt": "FREE 14 day CodeRabbit trial: https://coderabbit.link/ad-nate-herk-001\nFREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=dave-podcast-oct-2&sl=yt_dave-podcast-oct-2\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual "
         },
         {
           "title": "Every Codex Concept Explained for Non-Coders",
-          "views": 49476,
-          "likes": 610,
-          "comments": 45,
+          "views": 52051,
+          "likes": 645,
+          "comments": 49,
           "published_at": "2026-10-03T15:53:20Z",
           "description_excerpt": "How I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=codex-18-concepts&hcategory=youtube-videos&utm_campaign=plus-group\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=codex-18-concepts&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voi"
         },
         {
-          "title": "I Tested Codex's $500/mo Ultrafast. What You Need to Know.",
-          "views": 38958,
-          "likes": 372,
-          "comments": 60,
-          "published_at": "2026-10-01T17:33:07Z",
-          "description_excerpt": "FREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=ultrafast-gpt-6-astra&sl=yt_ultrafast-gpt-6-astra\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=ultrafast-gpt-6-astra&hcategory=youtube-videos&ut"
+          "title": "I Built Another Andrej Karpathy Using Claude",
+          "views": 47230,
+          "likes": 522,
+          "comments": 22,
+          "published_at": "2026-10-05T12:43:22Z",
+          "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=claude-karpathy-agent&sl=yt_claude-karpathy-agent\nMy playbook for growing a $1M AI agency: https://app.aiautomationsociety.ai/opaa-ads-optin\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=I-built-another-an"
         },
         {
-          "title": "Claude Code Mods Are Game Changers. This One Saves Me Money.",
-          "views": 31198,
-          "likes": 892,
-          "comments": 19,
-          "published_at": "2026-10-03T03:43:11Z",
-          "description_excerpt": ""
+          "title": "I Tested Codex's $500/mo Ultrafast. What You Need to Know.",
+          "views": 39614,
+          "likes": 376,
+          "comments": 72,
+          "published_at": "2026-10-01T17:33:07Z",
+          "description_excerpt": "FREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=ultrafast-gpt-6-astra&sl=yt_ultrafast-gpt-6-astra\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=ultrafast-gpt-6-astra&hcategory=youtube-videos&ut"
+        }
+      ]
+    },
+    {
+      "channel": "Matt Wolfe",
+      "subscribers": 1020000,
+      "channel_views": 81049963,
+      "video_count": 801,
+      "high_performing_recent_videos": [
+        {
+          "title": "Claude Opus 5.5 Didn’t Need to Go This Hard",
+          "views": 221384,
+          "likes": 2609,
+          "comments": 231,
+          "published_at": "2026-09-22T22:30:04Z",
+          "description_excerpt": "Two new models in the same day?? Claude and ChatGPT.\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/"
+        },
+        {
+          "title": "AI News: Opus 5.5, GPT-6 Sol, Jev, Muse and More!",
+          "views": 196903,
+          "likes": 3181,
+          "comments": 274,
+          "published_at": "2026-09-26T02:37:49Z",
+          "description_excerpt": "Here's the AI News you probably missed this week. Learn more about GPT-Live 1 and the Agent API here: https://developers.openai.com/api/docs/guides/live\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagra"
+        },
+        {
+          "title": "AI News: Dots, GPT-6.1 Sol, Sonnet 5.5, Gemini 4, and everything you need to know",
+          "views": 136948,
+          "likes": 2535,
+          "comments": 231,
+          "published_at": "2026-10-02T15:00:16Z",
+          "description_excerpt": "Here's the AI News you probably missed this week. See what Optimizely’s Virtual Teammates can automate for you at https://optimizely.com/mattwolfe \n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com"
+        },
+        {
+          "title": "5 ChatGPT Prompts To Try Right Now!",
+          "views": 15539,
+          "likes": 341,
+          "comments": 14,
+          "published_at": "2026-09-24T21:27:54Z",
+          "description_excerpt": "Here are 5 new ways to use ChatGPT’s 5 new features 👇\n\n1. Use GPT-6’s upgraded computer use to turn you workspace into a digital diorama in Blender.\n2. Use GPT Image 2.5 to redesign one corner of a room while preserving the rest.\n3. Use ChatGPT Work’s cloud browser to check your AI subscriptions across websites you’re signed into and build a dashbo"
+        },
+        {
+          "title": "This Robot Looks DEMONIC... On Purpose?",
+          "views": 14902,
+          "likes": 371,
+          "comments": 58,
+          "published_at": "2026-09-21T12:43:38Z",
+          "description_excerpt": "This robot looks straight up like a fantasy movie villain, but it was designed like that on purpose.\n\nDespite how it looks, the Threehalves robot's design actually makes perfect sense: four legs for stability, tools that attach directly to its wrists, and horns that house cameras for a remote operator.\n\nThe goal is to let skilled workers tackle dan"
+        }
+      ]
+    },
+    {
+      "channel": "AI Search",
+      "subscribers": 753000,
+      "channel_views": 72336521,
+      "video_count": 490,
+      "high_performing_recent_videos": [
+        {
+          "title": "Claude Opus 5.5 is ridiculous",
+          "views": 920024,
+          "likes": 9000,
+          "comments": 1004,
+          "published_at": "2026-09-24T03:25:26Z",
+          "description_excerpt": "Claude Opus 5.5 review. #ai #ainews #llm #agi #singularity Thanks to our sponsor Higgsfield. Try it today https://higgsfield.ai/s/theaisearch-dkHOlY\n\n\nClaude Opus 5.5 release page https://www.anthropic.com/claude-opus-5-5 \nAlso see GPT 6 Astra review https://youtu.be/Ji4amrxrzVM \n\n00:00 Claude Opus 5.5 intro\n00:49 Recaptcha puzzles\n03:49 Ray tracin"
+        },
+        {
+          "title": "Deepseek just did the impossible",
+          "views": 794261,
+          "likes": 12490,
+          "comments": 1247,
+          "published_at": "2026-09-18T03:24:05Z",
+          "description_excerpt": "Deepseek V4.1 Flash explained #ai #llm #ainews #agi #singularity Thanks to our sponsor Luma. Try it today https://lumalabs.ai/aisearch-sep3\n\nDeepseek V4.1 Flash tech report https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/blob/main/DeepSeek_V41_Tech_Report.pdf\n\nAlso see:\nHow AI models work: https://youtu.be/U2hZFMVNSE0\nDSpark https://youtu.be"
+        },
+        {
+          "title": "OpenAI hacked, Jev, Google’s RSI, Qwen 3.8 Omni, Bonsai 2, new Gemini Live: AI NEWS",
+          "views": 471556,
+          "likes": 6657,
+          "comments": 539,
+          "published_at": "2026-09-20T03:28:57Z",
+          "description_excerpt": "HUGE AI NEWS: Jev, Laya, Bonsai 2 27B, Dream RSI, Gemini 3.8 Live, Qwen 3.8 Live & more #ai #ainews #aitools #aivideo #agi Thanks to our sponsor Runway. Try it today https://runwayml.com/aisearch-sept \nUse code MKTG50 for 50% off any paid plan for the 1st month\n\n#ai #aitools #ainews #agi #singularity \n\nMeridian https://huggingface.co/Viggle/Meridia"
+        },
+        {
+          "title": "Waifus incoming, GPT 6 Sol, Grok 4.7, Opus 5.5, Mimo 2.6, Step 5, OpenMuse: AI NEWS",
+          "views": 422385,
+          "likes": 6116,
+          "comments": 560,
+          "published_at": "2026-09-27T03:24:32Z",
+          "description_excerpt": "HUGE AI NEWS: GPT 6 Sol, Gemini 3.8 TTS, Grok 4.7, Opus 5.5, Mimo 2.6 & more. Thanks to our sponsor Luma. Try it today https://lumalabs.ai/aisearch-sep5\n\n#ai #ainews #aitools #aivideo #agi #singularity \n\nWorldCrafter https://drexubery.github.io/WorldCrafter/\nMing Image https://huggingface.co/inclusionAI/Ming-Image-0.1-Design\nMira Scene  https://vas"
+        },
+        {
+          "title": "Gemini 4, GPT 6.1, Dots, Claude Sonnet 5.5, Ideogram 4.5, Flux 3: AI NEWS",
+          "views": 331274,
+          "likes": 5217,
+          "comments": 554,
+          "published_at": "2026-10-04T03:28:38Z",
+          "description_excerpt": "HUGE AI NEWS: Gemini 4 Argon, GPT 6.1 Sol, Dots, Claude Sonnet 5.5, Flux 3, Elevenlabs V4 & more. Thanks to our sponsor Luma. Try it today https://lumalabs.ai/aisearch-oct1\n\n#ai #ainews #aitools #aivideo #agi #singularity \n\nInspatio World 1.5 https://inspatio.github.io/inspatio-world-1.5/\nSol Refiner https://nvlabs.github.io/Sana/Sol-Refiner/\nWhist"
         }
       ]
     }
@@ -280,8 +280,8 @@
       "metrics": {
         "views": 37.0,
         "estimatedMinutesWatched": 6.0,
-        "averageViewDuration": 39.0,
-        "averageViewPercentage": 67.39,
+        "averageViewDuration": 46.0,
+        "averageViewPercentage": 79.44,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -309,7 +309,7 @@
         "views": 199.0,
         "estimatedMinutesWatched": 23.0,
         "averageViewDuration": 17.0,
-        "averageViewPercentage": 30.870000000000005,
+        "averageViewPercentage": 30.879999999999995,
         "likes": 3.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -479,7 +479,7 @@
         "views": 199.0,
         "estimatedMinutesWatched": 23.0,
         "averageViewDuration": 17.0,
-        "averageViewPercentage": 30.870000000000005,
+        "averageViewPercentage": 30.879999999999995,
         "likes": 3.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -502,7 +502,7 @@
     }
   ],
   "monetization": {
-    "subscribers": 15,
+    "subscribers": 16,
     "subscriber_target": 1000,
     "estimated_long_watch_hours_365d": null,
     "watch_hour_target": 4000,

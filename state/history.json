@@ -8,8 +8,8 @@
       "script_preview": "",
       "created_at": "2026-08-29T06:59:52Z",
       "analytics": {
-        "views": 14.0,
-        "estimatedMinutesWatched": 2.0,
+        "views": 13.0,
+        "estimatedMinutesWatched": 1.0,
         "averageViewDuration": 19.0,
         "averageViewPercentage": 43.42,
         "likes": 0.0,
@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-05T20:47:30.775550+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.647208+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-05T20:47:30.789677+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.663175+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-05T20:47:30.787428+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.660548+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-05T20:47:30.791931+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.667143+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-05T20:47:30.785186+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.655204+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-05T20:47:30.793048+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.668473+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -128,7 +128,7 @@
       "script_preview": "Instead of manually exporting database tables to analyze them with AI, you can now let local agents query and chart your SQL databases directly. DataZen does this by running a built-in Model Context Protocol, or MCP, server inside a local-first desktop client. To generate a daily sales report, you safely connect your local database using AES-encrypted OS keychain credentials. DataZen's built-in MCP server exposes your schemas and EXPLAIN analyses directly to external agents like Claude or Cursor. The agent executes the query, builds visual workflow loops, and automatically outputs PNG or SVG c",
       "created_at": "2026-08-30T12:39:38.882975+00:00",
       "analytics": {
-        "views": 10.0,
+        "views": 8.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 21.0,
         "averageViewPercentage": 34.43,
@@ -137,7 +137,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.781234+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.653867+00:00"
     },
     {
       "video_id": "PjLuT6jX5jQ",
@@ -147,16 +147,16 @@
       "script_preview": "Instead of waiting minutes for an AI video render, a new model generates playable shots in three seconds. MiniMax H3 Max on fal.ai turns text prompts or reference images into 768p clips faster than real-time. You type a shot description, click generate, and the rendered clip begins playback almost instantly. For video editors, this shifts AI generation from slow batch queuing into live, interactive shot prototyping. You can test it with zero sign-up, or log in to get fifteen free video generations every day. The limitation is native output maxes out at 768p, requiring an upscaler like FlashVSR",
       "created_at": "2026-08-31T06:42:32.777474+00:00",
       "analytics": {
-        "views": 41.0,
+        "views": 35.0,
         "estimatedMinutesWatched": 3.0,
-        "averageViewDuration": 33.0,
-        "averageViewPercentage": 57.330000000000005,
+        "averageViewDuration": 38.0,
+        "averageViewPercentage": 67.13,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.761975+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.634044+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -166,16 +166,16 @@
       "script_preview": "If you're constantly blurring API keys, dragging arrows, and recording separate video guides for your team, your Mac's default screenshot tool is wasting your time. A new free utility called Seenshot consolidates this entire workflow into a single keyboard shortcut. Imagine you're a developer sending a bug report. Press Command-Shift-2, select the buggy UI, and use the native editor to instantly blur sensitive user data. Instead of typing instructions, you can highlight elements with step-by-step numbers or inject a webcam selfie in one click. Once you're done, Seenshot generates a secure web ",
       "created_at": "2026-08-31T12:47:18.346367+00:00",
       "analytics": {
-        "views": 10.0,
-        "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 40.0,
-        "averageViewPercentage": 75.62,
+        "views": 6.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 32.0,
+        "averageViewPercentage": 61.529999999999994,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.780117+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.659227+00:00"
     },
     {
       "video_id": "kHhLmTEYmWM",
@@ -185,16 +185,16 @@
       "script_preview": "You can host a secure site with zero public IP exposure, no registrar fees, and no SSL certificate authority. By running a local server as a Tor hidden service, your site is accessed via an address derived from its public key. To start, edit `/etc/tor/torrc` to define your dedicated hidden service path. The catch: this directory must not be your web root. Tor insists on owning this folder. Assign it to the `debian-tor` user and set `chmod 700` or Tor won't launch. Once configured, Tor generates your hostname and forwards onion port 80 traffic to your local port 8080. Next, write your Nginx blo",
       "created_at": "2026-09-01T12:03:35.161778+00:00",
       "analytics": {
-        "views": 8.0,
-        "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 39.0,
-        "averageViewPercentage": 65.21,
+        "views": 5.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 12.0,
+        "averageViewPercentage": 21.34,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.784052+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.664500+00:00"
     },
     {
       "video_id": "-P5Gzq7jUxM",
@@ -204,16 +204,16 @@
       "script_preview": "You can now run automated TikTok posts on physical iPhones, controlled entirely from your web browser. An open-source tool called Handler turns spare iOS devices into a self-hosted local phone farm. Once connected, you get a live interactive stream to click-to-tap, drag-to-swipe, and upload video files. The tasks are managed by a durable Docker-based Postgres queue, preserving your queue even through crashes. But note: you must compile the agent from a graphical macOS Terminal session—not a bare SSH shell. This is because the local code-signing process requires direct access to your Mac's logi",
       "created_at": "2026-09-02T11:45:35.036788+00:00",
       "analytics": {
-        "views": 18.0,
+        "views": 13.0,
         "estimatedMinutesWatched": 6.0,
-        "averageViewDuration": 80.0,
-        "averageViewPercentage": 161.38,
+        "averageViewDuration": 178.0,
+        "averageViewPercentage": 357.78,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.769940+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.648548+00:00"
     },
     {
       "video_id": "skv-4s_ARyo",
@@ -223,7 +223,7 @@
       "script_preview": "Stop letting AI agents bloat your repo with unmaintainable code dumps for internal tools. When Claude Code or Cursor write raw scripts, you’re stuck with shadow IT that breaks on every library update. ToolJet has solved this by shipping an MCP server that bypasses raw code entirely. Instead of emitting functions, the agent calls ToolJet’s visual component contracts. You type a prompt, and the agent constructs actual application nodes, queries, and data bindings. It hooks into 100+ native databases or ToolJet's built-in Postgres table directly. Because this happens inside the platform, you inhe",
       "created_at": "2026-09-02T16:52:30.443067+00:00",
       "analytics": {
-        "views": 14.0,
+        "views": 11.0,
         "estimatedMinutesWatched": 1.0,
         "averageViewDuration": 34.0,
         "averageViewPercentage": 64.56,
@@ -232,7 +232,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.776707+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.651204+00:00"
     },
     {
       "video_id": "LrEv9cky9UI",
@@ -251,7 +251,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.786318+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.657888+00:00"
     },
     {
       "video_id": "q3uAkhUbHPo",
@@ -270,7 +270,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.768821+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.640658+00:00"
     },
     {
       "video_id": "EhZ05TtKw4w",
@@ -289,7 +289,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.790817+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.665822+00:00"
     },
     {
       "video_id": "q75Bf7pvU2E",
@@ -299,7 +299,7 @@
       "script_preview": "If your server's clock drifts by just five minutes, your self-hosted Claude Code runner will completely lock you out. Anthropic now lets teams execute terminal agents inside private networks instead of exposing codebases to external clouds. To set this up, a workspace Owner must toggle self-hosting on the Cloud environments admin page. This yields a secret key, letting your runner boot sessions without giving developers direct Claude.ai admin roles. Your host machine needs outbound HTTPS access to Anthropic, but developer workstations require zero local tools. But host limits are strict: nativ",
       "created_at": "2026-09-04T11:51:22.727068+00:00",
       "analytics": {
-        "views": 18.0,
+        "views": 17.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 22.0,
         "averageViewPercentage": 39.87,
@@ -308,7 +308,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.771073+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.644594+00:00"
     },
     {
       "video_id": "k50LMAYBUew",
@@ -318,16 +318,16 @@
       "script_preview": "You can now run complex local AI agents across your spare household computers... ...without lagging your main gaming rig. Nvidia's new free, open-source software called PAIR—Personal AI Router—makes this possible. It turns your idle home laptops and desktops into a synchronized parallel processing network. When you input a massive prompt into LM Studio or Ollama... ...PAIR breaks the task down, routing work to any connected machine that isn't busy. If you launch a game on one machine, PAIR instantly steps aside to avoid system lag. The catch? Your systems must have an RTX 20-series or newer, o",
       "created_at": "2026-09-04T16:47:00.499432+00:00",
       "analytics": {
-        "views": 8.0,
+        "views": 6.0,
         "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 23.0,
-        "averageViewPercentage": 50.4,
+        "averageViewDuration": 32.0,
+        "averageViewPercentage": 71.09,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.782938+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.656541+00:00"
     },
     {
       "video_id": "W3VAYdcvxMw",
@@ -346,7 +346,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.750665+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.619671+00:00"
     },
     {
       "video_id": "aaz3N_iNvvs",
@@ -365,7 +365,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.772208+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.641964+00:00"
     },
     {
       "video_id": "zdCyNi2qD-E",
@@ -384,7 +384,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.755208+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.624897+00:00"
     },
     {
       "video_id": "4ZbRI7IbnE0",
@@ -403,7 +403,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.748355+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.617008+00:00"
     },
     {
       "video_id": "qS421OvLSmk",
@@ -422,7 +422,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.773326+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.643273+00:00"
     },
     {
       "video_id": "amYfRRyQdPg",
@@ -441,7 +441,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.744490+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.612620+00:00"
     },
     {
       "video_id": "v1IppFKA6Ok",
@@ -460,7 +460,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.751790+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.620966+00:00"
     },
     {
       "video_id": "yzQMH5qHSgY",
@@ -479,7 +479,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.756344+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.626204+00:00"
     },
     {
       "video_id": "QimgLY2VUhk",
@@ -498,7 +498,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.765394+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.636664+00:00"
     },
     {
       "video_id": "e2ltwbdZZsI",
@@ -517,7 +517,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.774440+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.645891+00:00"
     },
     {
       "video_id": "TyhfJ6HJnYQ",
@@ -536,7 +536,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.749515+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.618332+00:00"
     },
     {
       "video_id": "tUPTEapaLYw",
@@ -555,7 +555,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.754072+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.623582+00:00"
     },
     {
       "video_id": "yknAuovRzH8",
@@ -574,7 +574,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.758586+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.628838+00:00"
     },
     {
       "video_id": "9v_limHjc9k",
@@ -593,7 +593,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.764274+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.635355+00:00"
     },
     {
       "video_id": "k855X4ygCpc",
@@ -612,7 +612,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.759700+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.630126+00:00"
     },
     {
       "video_id": "oKfY9UTZVw8",
@@ -631,7 +631,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.766519+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.637958+00:00"
     },
     {
       "video_id": "2sOeY_bE8Mc",
@@ -643,14 +643,14 @@
       "analytics": {
         "views": 37.0,
         "estimatedMinutesWatched": 6.0,
-        "averageViewDuration": 39.0,
-        "averageViewPercentage": 67.39,
+        "averageViewDuration": 46.0,
+        "averageViewPercentage": 79.44,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.763125+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.632753+00:00"
     },
     {
       "video_id": "_j3f3AzEGrs",
@@ -669,7 +669,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.760842+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.631452+00:00"
     },
     {
       "video_id": "Sc-f2DrS4Js",
@@ -682,13 +682,13 @@
         "views": 199.0,
         "estimatedMinutesWatched": 23.0,
         "averageViewDuration": 17.0,
-        "averageViewPercentage": 30.870000000000005,
+        "averageViewPercentage": 30.879999999999995,
         "likes": 3.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.747198+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.615699+00:00"
     },
     {
       "video_id": "R2cvIjrKgno",
@@ -707,7 +707,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.794231+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.669878+00:00"
     },
     {
       "video_id": "LsZ6IFyKi5Q",
@@ -726,7 +726,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.752933+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.622264+00:00"
     },
     {
       "video_id": "dtRk6_TtdNU",
@@ -745,7 +745,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.777846+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.649881+00:00"
     },
     {
       "video_id": "9K4y8o4qSyY",
@@ -764,7 +764,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.746027+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.614346+00:00"
     },
     {
       "video_id": "SM2_ai8JuuE",
@@ -783,7 +783,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.788548+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.661860+00:00"
     },
     {
       "video_id": "e8TfuFfpb6I",
@@ -802,7 +802,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.767636+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.639258+00:00"
     },
     {
       "video_id": "_Kj6V65jogc",
@@ -821,7 +821,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.778980+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.652546+00:00"
     },
     {
       "video_id": "_3Qhf4F0r2Y",
@@ -840,7 +840,7 @@
         "shares": 1.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-10-05T20:47:30.757453+00:00"
+      "analytics_updated_at": "2026-10-06T13:41:11.627525+00:00"
     },
     {
       "video_id": "0UqXZiNdc0A",
