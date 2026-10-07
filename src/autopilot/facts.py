@@ -427,6 +427,38 @@ def verified_curio_seed(
                 ),
             ),
         ),
+        (
+            "Why Glacier Ice Looks Blue",
+            "geography",
+            "Thick, compact glacier ice absorbs more red light while blue wavelengths can travel and scatter back toward an observer; trapped air makes fresh snow look white.",
+            ("glacier ice blue", "why glaciers blue"),
+            (
+                ResearchSource(
+                    title="Why are glaciers blue?", publisher="U.S. Geological Survey",
+                    url="https://www.usgs.gov/media/audio/why-are-glaciers-blue",
+                    snippet=(
+                        "USGS explains the blue appearance of glacier ice through the interaction of "
+                        "light and a thick path of ice. Longer red wavelengths are absorbed more "
+                        "strongly, while shorter blue light is transmitted and scattered toward the "
+                        "viewer. A thin piece of clear ice does not necessarily look vividly blue; "
+                        "the color becomes noticeable where light passes through enough compact ice. "
+                        "This is an optical explanation, not a claim that the ice contains blue dye."
+                    ),
+                ),
+                ResearchSource(
+                    title="Why is the Ice Blue? In Glacier Bay", publisher="U.S. National Park Service",
+                    url="https://www.nps.gov/places/why-is-the-ice-blue-in-glacier-bay.htm",
+                    snippet=(
+                        "NPS describes deep blue glacier ice as compact ice with relatively few air "
+                        "bubbles after long compression. Fresh snow has many small air spaces that "
+                        "scatter visible light and make it look white. A visual story can compare "
+                        "snow, compact ice, and the longer light path through a glacier, then show "
+                        "red light absorbed more readily than blue. The exact shade changes with "
+                        "the thickness, lighting and impurities, so a glacier need not look blue everywhere."
+                    ),
+                ),
+            ),
+        ),
     )
     for title, category, reason, concept_aliases, sources in seeds:
         normalised = _normalise_topic(title)
