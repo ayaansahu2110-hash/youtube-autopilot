@@ -54,7 +54,10 @@ def test_rejected_draft_rotates_topic_and_recovers_slot(monkeypatch, tmp_path):
 
 
 def test_new_fact_reserve_is_independently_authoritative():
-    for title in ("Why Venus Is Hotter Than Mercury", "Why Rivers Carve S-Bends"):
+    for title in (
+        "Why Venus Is Hotter Than Mercury", "Why Rivers Carve S-Bends",
+        "Why Glacier Ice Looks Blue",
+    ):
         seed = verified_curio_seed(requested_topic=title)
         assert seed is not None
         assert len({source.url.split("/")[2] for source in seed[1].sources}) == 2
