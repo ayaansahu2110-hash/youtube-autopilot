@@ -25,6 +25,18 @@ class EditorialBrief:
 
 
 class ByteVexaEditorialSystem:
+    @staticmethod
+    def is_relevant_topic(title: str) -> bool:
+        """Require an explicit technology subject for ByteVexa news."""
+        return bool(re.search(
+            r"\b(?:AI|artificial intelligence|LLM|agent|GPT|OpenAI|Claude|Gemini|"
+            r"software|app|browser|computer|coding|developer|programming|cybersecurity|"
+            r"malware|ransomware|vulnerability|spreadsheet|LibreOffice|OpenOffice|"
+            r"cloud|microchip|processor|robot|machine learning|neural network|"
+            r"digital|internet|website|data center|smartphone|GPU|API|automation)\b",
+            title, re.IGNORECASE,
+        ))
+
     def enrich(self, candidate: TopicCandidate, research: ResearchPack) -> ResearchPack:
         brief = self.brief_for(candidate, research)
         notes = research.research_notes.strip()
