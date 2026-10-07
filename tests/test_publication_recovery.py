@@ -6,6 +6,7 @@ from typer.testing import CliRunner
 from autopilot import cli
 from autopilot.config import Settings
 from autopilot.editorial import ByteVexaEditorialSystem
+from autopilot.facts import FactVerifier, verified_curio_seed
 from scripts.persist_state import merge_history
 
 
@@ -37,3 +38,10 @@ def test_bytevexa_blocks_off_niche_local_news():
     assert not editorial.is_relevant_topic("STL County Issues Condemnation Threat to Local Apartment Complex")
     assert editorial.is_relevant_topic("AI Coding Agents Running Local Commands")
     assert editorial.is_relevant_topic("LibreOffice Spreadsheet Security Update")
+
+
+def test_aurora_reserve_uses_two_authoritative_agencies():
+    seed = verified_curio_seed(requested_topic="Why Auroras Glow in Different Colors")
+    assert seed is not None
+    assert {source.publisher for source in seed[1].sources} == {"NASA Science", "NOAA NESDIS"}
+    assert FactVerifier().verify(seed[1]).confidence_score >= 65
