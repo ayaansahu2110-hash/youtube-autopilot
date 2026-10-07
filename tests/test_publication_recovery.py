@@ -1,5 +1,4 @@
 from datetime import datetime
-from types import SimpleNamespace
 from zoneinfo import ZoneInfo
 
 from typer.testing import CliRunner
