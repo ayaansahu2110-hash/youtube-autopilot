@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T12:58:20.976356+00:00"
+      "analytics_updated_at": "2026-10-07T14:52:43.506735+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T12:58:20.996225+00:00"
+      "analytics_updated_at": "2026-10-07T14:52:43.527245+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T12:58:20.989586+00:00"
+      "analytics_updated_at": "2026-10-07T14:52:43.520341+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T12:58:21.001507+00:00"
+      "analytics_updated_at": "2026-10-07T14:52:43.530112+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T12:58:20.985600+00:00"
+      "analytics_updated_at": "2026-10-07T14:52:43.516244+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T12:58:21.002856+00:00"
+      "analytics_updated_at": "2026-10-07T14:52:43.531485+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -925,6 +925,16 @@
       "script_preview": "A St. Louis County apartment complex has just been given a two-week deadline to pay its mounting gas bill and resolve severe code violations, or officials will officially shut the building down. This situation highlights a critical breakdown in housing maintenance that threatens the safety and habitability of residents. The Northern Village apartments are now at the center of a major public safety intervention. Residents have been reporting a harrowing list of conditions, including collapsed ceilings, a complete lack of heat, no running hot water, and the presence of raw sewage in their living",
       "created_at": "2026-10-07T13:50:58.555645+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "djvAoNZtVnc",
+      "topic": "Spreadsheet Security Alert: LibreOffice vs OpenOffice",
+      "title": "Spreadsheet Security Alert: LibreOffice vs OpenOffice",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-10-07T13:59:06Z",
+      "analytics": {},
+      "source": "youtube_sync"
     }
   ],
   "topics": [
@@ -1233,6 +1243,13 @@
       "title": "STL County Issues Condemnation Threat to Local Apartment Complex",
       "format": "long",
       "created_at": "2026-10-07T13:50:58.555645+00:00"
+    },
+    {
+      "topic": "Spreadsheet Security Alert: LibreOffice vs OpenOffice",
+      "title": "Spreadsheet Security Alert: LibreOffice vs OpenOffice",
+      "format": "short",
+      "created_at": "2026-10-07T13:59:06Z",
+      "source": "youtube_sync"
     }
   ]
 }
