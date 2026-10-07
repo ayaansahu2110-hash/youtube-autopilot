@@ -153,6 +153,10 @@ def daily(
     results = []
     slot_errors = []
     local_today = datetime.now(ZoneInfo(settings.schedule_timezone)).date()
+    if live:
+        # A queued run can check out old history; consult the actual channel first.
+        uploader = YouTubeUploader(settings)
+        state.sync_recent_uploads(uploader.recent_uploads(limit=50))
     uploaded_shorts = state.upload_count_on_date(
         local_today,
         timezone_name=settings.schedule_timezone,
@@ -169,6 +173,10 @@ def daily(
     rejected_topics: list[str] = []
     short_failed = False
     for _ in range(short_count):
+        if live:
+            state.sync_recent_uploads(uploader.recent_uploads(limit=50))
+            if state.upload_count_on_date(local_today, timezone_name=settings.schedule_timezone, video_format="short") >= settings.shorts_per_day:
+                break
         for attempt in range(3):
             try:
                 short_result = AutopilotPipeline(short_settings).run(

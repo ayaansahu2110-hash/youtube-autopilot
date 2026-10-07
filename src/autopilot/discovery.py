@@ -47,6 +47,8 @@ class TopicDiscovery:
         preferred = set(self.state.performance_terms())
         candidates: list[TopicCandidate] = []
         for key, signal in signals.items():
+            if self.settings.channel_profile != "curioaxiom" and not self.editorial.is_relevant_topic(signal["title"]):
+                continue
             if any(self._similar(key, old) for old in recent if old):
                 continue
 

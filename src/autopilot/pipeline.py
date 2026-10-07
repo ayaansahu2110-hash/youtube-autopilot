@@ -262,6 +262,8 @@ class AutopilotPipeline:
         self, topic: str | None, excluded_topics: tuple[str, ...] = ()
     ) -> tuple[TopicCandidate, ResearchPack]:
         if topic:
+            if self.settings.channel_profile != "curioaxiom" and not self.editorial.is_relevant_topic(topic):
+                raise ValueError("ByteVexa topic must have an explicit AI or technology subject.")
             if self.settings.channel_profile == "curioaxiom":
                 seeded = self._verified_fact_seed(topic)
                 if seeded:
@@ -328,6 +330,8 @@ class AutopilotPipeline:
             return candidate, research
 
         candidates = self.discovery.discover()
+        if self.settings.channel_profile != "curioaxiom":
+            candidates = [candidate for candidate in candidates if self.editorial.is_relevant_topic(candidate.title)]
         if excluded_topics:
             # A failed quality plan must not be selected again for the next
             # production attempt. Similar headline rewrites count as the same
