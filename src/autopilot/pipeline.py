@@ -1,4 +1,5 @@
 import uuid
+from difflib import SequenceMatcher
 from pathlib import Path
 
 from autopilot.captions import write_srt
@@ -65,6 +66,7 @@ class AutopilotPipeline:
         topic: str | None = None,
         dry_run: bool = True,
         video_format: str | None = None,
+        excluded_topics: tuple[str, ...] = (),
     ) -> PipelineRun:
         run_id = uuid.uuid4().hex[:12]
         chosen_format = video_format or self.settings.default_video_format
@@ -79,7 +81,7 @@ class AutopilotPipeline:
                 # Production can continue using persisted history; quality gates remain active.
                 pass
 
-        candidate, research = self._candidate_with_research(topic)
+        candidate, research = self._candidate_with_research(topic, excluded_topics)
         research = self.editorial.enrich(candidate, research)
         if self.verifier:
             research = self.verifier.verify(research)
@@ -256,7 +258,9 @@ class AutopilotPipeline:
         self._write_manifest(manifest_path, result)
         return result
 
-    def _candidate_with_research(self, topic: str | None) -> tuple[TopicCandidate, ResearchPack]:
+    def _candidate_with_research(
+        self, topic: str | None, excluded_topics: tuple[str, ...] = ()
+    ) -> tuple[TopicCandidate, ResearchPack]:
         if topic:
             if self.settings.channel_profile == "curioaxiom":
                 seeded = self._verified_fact_seed(topic)
@@ -324,12 +328,26 @@ class AutopilotPipeline:
             return candidate, research
 
         candidates = self.discovery.discover()
+        if excluded_topics:
+            # A failed quality plan must not be selected again for the next
+            # production attempt. Similar headline rewrites count as the same
+            # story; the existing research and quality checks still apply.
+            def distinct(candidate: TopicCandidate) -> bool:
+                title = candidate.title.lower().strip()
+                return all(
+                    SequenceMatcher(None, title, previous.lower().strip()).ratio() < 0.70
+                    for previous in excluded_topics
+                )
+
+            candidates = [candidate for candidate in candidates if distinct(candidate)]
         if not candidates:
             if self.settings.channel_profile == "curioaxiom":
-                seeded = self._verified_fact_seed()
+                seeded = self._verified_fact_seed(excluded_topics=excluded_topics)
                 if seeded:
                     return seeded
                 raise RuntimeError("No unused verified CurioAxiom research reserve is available.")
+            if excluded_topics:
+                raise RuntimeError("No distinct researched topic remains after rejected drafts.")
             candidate = TopicCandidate(title=DEFAULT_TOPIC, score=50, reason="Evergreen fallback.")
             return candidate, self.researcher.research(candidate)
 
@@ -359,7 +377,7 @@ class AutopilotPipeline:
                     and len(research.sources) >= self.settings.min_research_sources
                 ):
                     return candidate, research
-            seeded = self._verified_fact_seed()
+            seeded = self._verified_fact_seed(excluded_topics=excluded_topics)
             if seeded:
                 return seeded
             if best:
@@ -387,10 +405,12 @@ class AutopilotPipeline:
             "skipping script generation until adequate evidence is available."
         )
 
-    def _verified_fact_seed(self, requested_topic: str | None = None) -> tuple[TopicCandidate, ResearchPack] | None:
+    def _verified_fact_seed(
+        self, requested_topic: str | None = None, excluded_topics: tuple[str, ...] = ()
+    ) -> tuple[TopicCandidate, ResearchPack] | None:
         """Use a unique, pre-verified reserve only when normal fact research cannot pass."""
         return verified_curio_seed(
-            excluded_topics=self.state.recent_topics(limit=120),
+            excluded_topics=[*self.state.recent_topics(limit=120), *excluded_topics],
             requested_topic=requested_topic,
         )
 
