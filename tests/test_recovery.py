@@ -20,6 +20,7 @@ def test_short_discovery_exception_does_not_block_due_long(monkeypatch, tmp_path
     settings = Settings(state_file=tmp_path / "history.json")
     monkeypatch.setattr(cli, "load_settings", lambda: settings)
     monkeypatch.setattr(cli.DailyLearningLoop, "refresh", lambda self: {})
+    monkeypatch.setattr(cli.YouTubeUploader, "recent_uploads", lambda self, limit: [])
     monkeypatch.setattr(cli, "_longform_due", lambda *args: True)
     formats = []
 
@@ -37,6 +38,7 @@ def test_rejected_draft_rotates_topic_and_recovers_slot(monkeypatch, tmp_path):
     settings = Settings(state_file=tmp_path / "history.json", shorts_per_day=1)
     monkeypatch.setattr(cli, "load_settings", lambda: settings)
     monkeypatch.setattr(cli.DailyLearningLoop, "refresh", lambda self: {})
+    monkeypatch.setattr(cli.YouTubeUploader, "recent_uploads", lambda self, limit: [])
     monkeypatch.setattr(cli, "_longform_due", lambda *args: False)
     monkeypatch.setattr(cli, "_print_result", lambda *args: None)
     calls = []
