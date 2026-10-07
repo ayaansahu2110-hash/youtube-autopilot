@@ -460,6 +460,40 @@ def verified_curio_seed(
             ),
         ),
     )
+    seeds += (
+        (
+            "Why Auroras Glow in Different Colors",
+            "space",
+            "Energetic particles excite oxygen and nitrogen in the upper atmosphere; the gas and altitude determine the light's colors.",
+            ("aurora colors", "northern lights colors", "oxygen nitrogen aurora"),
+            (
+                ResearchSource(
+                    title="Auroras", publisher="NASA Science",
+                    url="https://science.nasa.gov/sun/auroras/",
+                    snippet=(
+                        "NASA explains that energetic particles guided into Earth's upper atmosphere "
+                        "transfer energy to oxygen and nitrogen. As those atoms and molecules release "
+                        "energy, they emit visible light. Oxygen can appear green around 100 to 200 km "
+                        "and red higher than about 200 km. Nitrogen can appear blue or pink, and mixtures "
+                        "of emissions can look purple or white. The color is tied to both the atmospheric "
+                        "gas and the altitude, rather than a different color of sunlight."
+                    ),
+                ),
+                ResearchSource(
+                    title="What is an Aurora?", publisher="NOAA NESDIS",
+                    url="https://www.nesdis.noaa.gov/about/k-12-education/optical-phenomena/what-aurora",
+                    snippet=(
+                        "NOAA describes solar particles and energy reaching polar regions along Earth's "
+                        "magnetic field and interacting with atmospheric gases. Excited oxygen emits "
+                        "green and red light, while nitrogen produces blue and purple hues. Auroras "
+                        "are seen at night but their energy comes from solar activity; the magnetic "
+                        "field steers particles toward the polar atmosphere. A visual explanation "
+                        "can separate the Sun, magnetic field, atmosphere and emitted colors."
+                    ),
+                ),
+            ),
+        ),
+    )
     for title, category, reason, concept_aliases, sources in seeds:
         normalised = _normalise_topic(title)
         if normalised in excluded:
