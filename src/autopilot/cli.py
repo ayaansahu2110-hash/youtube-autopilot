@@ -166,16 +166,27 @@ def daily(
             "skipping duplicate publication."
         )
     short_settings = _settings_for_format(settings, "short")
+    rejected_topics: list[str] = []
+    short_failed = False
     for _ in range(short_count):
-        try:
-            short_result = AutopilotPipeline(short_settings).run(dry_run=dry_run, video_format="short")
-        except Exception as exc:
-            slot_errors.append(type(exc).__name__)
-            console.print(f"Short production stopped before rendering: {type(exc).__name__}: {exc}")
-            break
-        results.append(short_result)
-        _print_result(short_result, short_settings)
-        if short_result.status == "failed":
+        for attempt in range(3):
+            try:
+                short_result = AutopilotPipeline(short_settings).run(
+                    dry_run=dry_run, video_format="short", excluded_topics=tuple(rejected_topics)
+                )
+            except Exception as exc:
+                slot_errors.append(type(exc).__name__)
+                console.print(f"Short production stopped before rendering: {type(exc).__name__}: {exc}")
+                break
+            results.append(short_result)
+            _print_result(short_result, short_settings)
+            if short_result.status != "failed":
+                break
+            rejected_topics.append(short_result.plan.topic)
+            if attempt < 2:
+                console.print("Rejected draft; trying a distinct researched topic.")
+        if slot_errors or short_result.status == "failed":
+            short_failed = True
             break
 
     uploaded_longs = state.upload_count_on_date(
@@ -193,17 +204,28 @@ def daily(
         console.print("Today's long-form upload already exists; skipping duplicate publication.")
     # Treat Shorts and long-form as independent quality-controlled slots. A
     # rejected Short must not starve an otherwise-due long video for days.
+    long_failed = False
     if should_make_long:
-        try:
-            long_result = AutopilotPipeline(settings).run(dry_run=dry_run, video_format="long")
-        except Exception as exc:
-            slot_errors.append(type(exc).__name__)
-            console.print(f"Long production stopped before rendering: {type(exc).__name__}: {exc}")
-        else:
+        for attempt in range(3):
+            try:
+                long_result = AutopilotPipeline(settings).run(
+                    dry_run=dry_run, video_format="long", excluded_topics=tuple(rejected_topics)
+                )
+            except Exception as exc:
+                slot_errors.append(type(exc).__name__)
+                console.print(f"Long production stopped before rendering: {type(exc).__name__}: {exc}")
+                break
             results.append(long_result)
             _print_result(long_result, settings)
+            if long_result.status != "failed":
+                break
+            rejected_topics.append(long_result.plan.topic)
+            if attempt < 2:
+                console.print("Rejected long draft; trying a distinct researched topic.")
+        if not slot_errors and long_result.status == "failed":
+            long_failed = True
 
-    if slot_errors or any(result.status == "failed" for result in results):
+    if slot_errors or short_failed or long_failed:
         raise typer.Exit(code=1)
 
 
