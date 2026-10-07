@@ -14,7 +14,7 @@ AUTHORITATIVE_DOMAINS = {
         "nasa.gov", "noaa.gov", "weather.gov", "esa.int", "nih.gov", "nature.com", "science.org"
     ),
     "history": ("si.edu", "loc.gov", "archives.gov", "britishmuseum.org"),
-    "geography": ("un.org", "worldbank.org", "usgs.gov", "noaa.gov", "whoi.edu"),
+    "geography": ("un.org", "worldbank.org", "usgs.gov", "noaa.gov", "whoi.edu", "nps.gov"),
     "mathematics": ("ams.org", "maa.org", "mathworld.wolfram.com", "edu"),
     # NOAA is authoritative for Earth-Moon tide interactions that cross the
     # space and ocean-science lanes.
@@ -355,6 +355,74 @@ def verified_curio_seed(
                         "the eye. The eye is the calmest part of the storm, while the wall of deep "
                         "clouds around it carries deadly winds. An eye is not always clearly "
                         "visible in ordinary satellite imagery."
+                    ),
+                ),
+            ),
+        ),
+    )
+    # Reviewed 2026-10-07 against separate primary science/education agencies.
+    # Keep a small reserve for source outages without recycling old uploads.
+    seeds += (
+        (
+            "Why Venus Is Hotter Than Mercury",
+            "space",
+            "Venus has a hotter average surface than Mercury because its dense carbon-dioxide atmosphere traps heat, although Mercury is closer to the Sun.",
+            ("venus hotter than mercury", "venus greenhouse atmosphere"),
+            (
+                ResearchSource(
+                    title="Venus Facts", publisher="NASA Science",
+                    url="https://science.nasa.gov/venus/venus-facts/",
+                    snippet=(
+                        "NASA identifies Venus as the hottest planet even though Mercury orbits closer "
+                        "to the Sun. A thick atmosphere dominated by carbon dioxide traps outgoing heat "
+                        "through an extreme greenhouse effect. The resulting mean surface temperature is "
+                        "about 467 degrees Celsius. This comparison is about sustained surface conditions, "
+                        "not a claim that Venus receives more sunlight or that every location on Mercury "
+                        "is cooler at every instant."
+                    ),
+                ),
+                ResearchSource(
+                    title="Greenhouse effect, clouds and winds", publisher="European Space Agency",
+                    url="https://www.esa.int/Science_Exploration/Space_Science/Venus_Express/Greenhouse_effect_clouds_and_winds",
+                    snippet=(
+                        "ESA explains that Venus has the Solar System's strongest planetary greenhouse "
+                        "effect. Its clouds reflect much of the incoming sunlight, yet the dense lower "
+                        "atmosphere retains heat efficiently; the heat balance makes the surface intensely "
+                        "hot. A Venus story should distinguish the sunlight reaching the planet from the "
+                        "heat trapped below its clouds and avoid presenting a made-up surface experiment "
+                        "or an exact temperature unsupported by the chosen source."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why Rivers Carve S-Bends",
+            "geography",
+            "Faster water erodes the outside of a river bend while slower water deposits sediment on the inside; bends can migrate and sometimes become oxbow lakes.",
+            ("river meander", "river s bends", "oxbow lake"),
+            (
+                ResearchSource(
+                    title="Find-A-Feature: Meander", publisher="U.S. Geological Survey",
+                    url="https://www.usgs.gov/educational-resources/find-feature-meander",
+                    snippet=(
+                        "USGS describes a meander as a bend in a river whose shape changes through "
+                        "erosion on the outside of the bend and deposition on the inside. The flow "
+                        "moves sediment instead of carving a fixed decorative curve. A visual explanation "
+                        "can mark the outside cut bank and the inner deposit, then show the channel "
+                        "shifting sideways with time. The pace depends on flow and local ground, "
+                        "so the video should avoid claiming that every river bends at one rate."
+                    ),
+                ),
+                ResearchSource(
+                    title="Fluvial Features: Meandering Stream", publisher="U.S. National Park Service",
+                    url="https://www.nps.gov/articles/meandering-stream.htm",
+                    snippet=(
+                        "NPS explains that the fastest part of a meandering stream shifts toward "
+                        "the outside of a bend. The outer bank erodes while sediment builds a point "
+                        "bar on the inner bank, producing sideways migration. If neighboring bends "
+                        "eventually meet and the stream takes a shorter course, the abandoned loop "
+                        "can become an oxbow lake. This process is a useful animated cross-section "
+                        "story, not a claim that all river curves must cut off."
                     ),
                 ),
             ),
