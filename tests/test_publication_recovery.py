@@ -1,3 +1,5 @@
+import importlib.util
+from pathlib import Path
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -7,7 +9,11 @@ from autopilot import cli
 from autopilot.config import Settings
 from autopilot.editorial import ByteVexaEditorialSystem
 from autopilot.facts import FactVerifier, verified_curio_seed
-from scripts.persist_state import merge_history
+_spec = importlib.util.spec_from_file_location("persist_state", Path(__file__).parents[1] / "scripts" / "persist_state.py")
+assert _spec is not None and _spec.loader is not None
+_module = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_module)
+merge_history = _module.merge_history
 
 
 def test_live_slot_counts_actual_uploads_before_publishing(monkeypatch, tmp_path):
