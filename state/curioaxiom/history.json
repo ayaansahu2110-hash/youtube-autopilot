@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T15:20:06.811065+00:00"
+      "analytics_updated_at": "2026-10-10T16:57:52.522004+00:00"
     },
     {
       "video_id": "_sd7bLRor_o",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T15:20:06.812582+00:00"
+      "analytics_updated_at": "2026-10-10T16:57:52.524656+00:00"
     },
     {
       "video_id": "yPUU3tQ6MTU",
@@ -124,17 +124,17 @@
       "script_preview": "",
       "created_at": "2026-09-02T15:50:44Z",
       "analytics": {
-        "views": 5.0,
+        "views": 4.0,
         "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 51.0,
-        "averageViewPercentage": 109.35999999999999,
+        "averageViewDuration": 63.0,
+        "averageViewPercentage": 135.42,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T15:20:06.810028+00:00"
+      "analytics_updated_at": "2026-10-10T16:57:52.522661+00:00"
     },
     {
       "video_id": "tXzKJN-Sxds",
@@ -173,7 +173,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T15:20:06.808516+00:00"
+      "analytics_updated_at": "2026-10-10T16:57:52.518703+00:00"
     },
     {
       "video_id": "rOXhektjpHg",
@@ -193,7 +193,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T15:20:06.802486+00:00"
+      "analytics_updated_at": "2026-10-10T16:57:52.510864+00:00"
     },
     {
       "video_id": "bT9UdwBKLks",
@@ -213,7 +213,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T15:20:06.806150+00:00"
+      "analytics_updated_at": "2026-10-10T16:57:52.515459+00:00"
     },
     {
       "video_id": "wDtG3Hpjs6s",
@@ -233,7 +233,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T15:20:06.803579+00:00"
+      "analytics_updated_at": "2026-10-10T16:57:52.512215+00:00"
     },
     {
       "video_id": "RurypNkFZeY",
@@ -253,7 +253,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T15:20:06.807033+00:00"
+      "analytics_updated_at": "2026-10-10T16:57:52.516105+00:00"
     },
     {
       "video_id": "EiZc33RD3Rg",
@@ -273,7 +273,7 @@
         "subscribersGained": 4.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T15:20:06.799783+00:00"
+      "analytics_updated_at": "2026-10-10T16:57:52.509052+00:00"
     },
     {
       "video_id": "5R3YR8lO-hQ",
@@ -453,7 +453,8 @@
       "format": "short",
       "script_preview": "Why do flat-plain rivers rarely flow straight? Even dug, perfectly straight channels eventually bend. The slightest bed or bank irregularity disrupts uniform flow, pushing the fastest current aside. This erodes a steep outer cut bank, while slower inner water deposits sediment into a shallow point bar. This forces the channel to migrate sideways. Over decades, gentle curves become dramatic S-bends. Eventually, neighboring bends leave only a narrow neck of land. During heavy floods, high-volume water cuts straight through, taking the shorter, straighter course, abandoning the loop as an isolate",
       "created_at": "2026-10-07T12:56:42.200016+00:00",
-      "analytics": {}
+      "analytics": {},
+      "analytics_updated_at": "2026-10-10T16:57:52.520643+00:00"
     },
     {
       "video_id": "Rylu0UCrO4w",
@@ -462,7 +463,8 @@
       "format": "short",
       "script_preview": "Snow falls blindingly white. Yet deep within a glacier, the ice glows deep blue. Break a piece off, and it is clear. There is no pigment here. How does ice transform light? It requires centuries of compression. Fresh snow traps millions of air pockets, scattering all visible light to reflect white. But immense weight forces that air out, creating a dense crystal lattice. When sunlight enters this path, water molecules absorb the longer red wavelengths. The shorter blue light survives, scattering through the ice back to your eyes. This color is a record of ancient pressure—a fragile phenomenon ",
       "created_at": "2026-10-07T13:03:45.615839+00:00",
-      "analytics": {}
+      "analytics": {},
+      "analytics_updated_at": "2026-10-10T16:57:52.517390+00:00"
     }
   ],
   "topics": [
