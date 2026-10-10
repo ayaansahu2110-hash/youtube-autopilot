@@ -72,6 +72,11 @@ jobs:
           else
             echo "RUN_SLOT=evening" >> "$GITHUB_ENV"
           fi
+          # User-approved October 10 recovery; normal daily limits resume afterward.
+          if [ "$(TZ=Asia/Kolkata date +%F)" = "2026-10-10" ]; then
+            echo "SHORTS_PER_DAY=4" >> "$GITHUB_ENV"
+            echo "RUN_SLOT=all" >> "$GITHUB_ENV"
+          fi
       - name: Preflight isolated CurioAxiom secrets
         shell: bash
         run: |
