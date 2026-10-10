@@ -66,6 +66,16 @@ jobs:
             echo "RUN_SLOT=all" >> "$GITHUB_ENV"
           fi
 
+      - name: Bound the remaining October 10 recovery
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          if [ "$(TZ=Asia/Kolkata date +%F)" = "2026-10-11" ]; then
+            # Three Shorts and the long video are already recorded for Oct 10.
+            # Only one additional Short is needed to finish that commission.
+            echo "SHORTS_PER_DAY=1" >> "$GITHUB_ENV"
+          fi
+
       - name: Preflight secrets
         shell: bash
         run: |
