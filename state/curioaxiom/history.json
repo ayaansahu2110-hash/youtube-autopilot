@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T16:57:52.522004+00:00"
+      "analytics_updated_at": "2026-10-10T17:10:33.875838+00:00"
     },
     {
       "video_id": "_sd7bLRor_o",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T16:57:52.524656+00:00"
+      "analytics_updated_at": "2026-10-10T17:10:33.879034+00:00"
     },
     {
       "video_id": "yPUU3tQ6MTU",
@@ -134,7 +134,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T16:57:52.522661+00:00"
+      "analytics_updated_at": "2026-10-10T17:10:33.876627+00:00"
     },
     {
       "video_id": "tXzKJN-Sxds",
@@ -173,7 +173,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T16:57:52.518703+00:00"
+      "analytics_updated_at": "2026-10-10T17:10:33.872061+00:00"
     },
     {
       "video_id": "rOXhektjpHg",
@@ -193,7 +193,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T16:57:52.510864+00:00"
+      "analytics_updated_at": "2026-10-10T17:10:33.861338+00:00"
     },
     {
       "video_id": "bT9UdwBKLks",
@@ -213,7 +213,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T16:57:52.515459+00:00"
+      "analytics_updated_at": "2026-10-10T17:10:33.866624+00:00"
     },
     {
       "video_id": "wDtG3Hpjs6s",
@@ -233,7 +233,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T16:57:52.512215+00:00"
+      "analytics_updated_at": "2026-10-10T17:10:33.862836+00:00"
     },
     {
       "video_id": "RurypNkFZeY",
@@ -253,7 +253,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T16:57:52.516105+00:00"
+      "analytics_updated_at": "2026-10-10T17:10:33.869038+00:00"
     },
     {
       "video_id": "EiZc33RD3Rg",
@@ -273,7 +273,7 @@
         "subscribersGained": 4.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T16:57:52.509052+00:00"
+      "analytics_updated_at": "2026-10-10T17:10:33.859168+00:00"
     },
     {
       "video_id": "5R3YR8lO-hQ",
@@ -465,6 +465,26 @@
       "created_at": "2026-10-07T13:03:45.615839+00:00",
       "analytics": {},
       "analytics_updated_at": "2026-10-10T16:57:52.517390+00:00"
+    },
+    {
+      "video_id": "lxeeZUi6oEg",
+      "topic": "The Physics of Aurora Colors",
+      "title": "The Physics of Aurora Colors",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-10-10T17:18:44Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "SN6_j-wBvuE",
+      "topic": "The Chemistry of Aurora Colors",
+      "title": "The Chemistry of Aurora Colors",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-10-10T17:26:25Z",
+      "analytics": {},
+      "source": "youtube_sync"
     }
   ],
   "topics": [
@@ -605,6 +625,20 @@
       "title": "Why Glacier Ice Is Deep Blue",
       "format": "short",
       "created_at": "2026-10-07T13:03:45.615839+00:00"
+    },
+    {
+      "topic": "The Physics of Aurora Colors",
+      "title": "The Physics of Aurora Colors",
+      "format": "short",
+      "created_at": "2026-10-10T17:18:44Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "The Chemistry of Aurora Colors",
+      "title": "The Chemistry of Aurora Colors",
+      "format": "short",
+      "created_at": "2026-10-10T17:26:25Z",
+      "source": "youtube_sync"
     }
   ]
 }
