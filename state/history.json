@@ -8,8 +8,8 @@
       "script_preview": "",
       "created_at": "2026-08-29T06:59:52Z",
       "analytics": {
-        "views": 13.0,
-        "estimatedMinutesWatched": 1.0,
+        "views": 16.0,
+        "estimatedMinutesWatched": 2.0,
         "averageViewDuration": 19.0,
         "averageViewPercentage": 43.42,
         "likes": 0.0,
@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T14:52:43.506735+00:00"
+      "analytics_updated_at": "2026-10-10T17:22:58.922930+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T14:52:43.527245+00:00"
+      "analytics_updated_at": "2026-10-10T17:22:58.938125+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -48,7 +48,7 @@
       "script_preview": "",
       "created_at": "2026-08-29T12:39:19Z",
       "analytics": {
-        "views": 5.0,
+        "views": 6.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 9.0,
         "averageViewPercentage": 18.6,
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T14:52:43.520341+00:00"
+      "analytics_updated_at": "2026-10-10T17:22:58.936962+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -68,17 +68,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T20:03:55Z",
       "analytics": {
-        "views": 3.0,
+        "views": 2.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 50.0,
-        "averageViewPercentage": 89.95,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T14:52:43.530112+00:00"
+      "analytics_updated_at": "2026-10-10T17:22:58.944043+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -88,17 +88,17 @@
       "script_preview": "",
       "created_at": "2026-08-30T06:43:54Z",
       "analytics": {
-        "views": 7.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 26.0,
-        "averageViewPercentage": 49.33,
+        "views": 9.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 32.0,
+        "averageViewPercentage": 59.68,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T14:52:43.516244+00:00"
+      "analytics_updated_at": "2026-10-10T17:22:58.928790+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-07T14:52:43.531485+00:00"
+      "analytics_updated_at": "2026-10-10T17:22:58.945205+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -906,7 +906,8 @@
       "format": "short",
       "script_preview": "Your AI code editor isn't just autocompleting anymore—it is executing terminal commands directly on your local machine. Top tools like Cursor and Devin now run the code they write to test if it actually works. In practice, you prompt a feature, and the agent modifies files and boots up local servers. It analyzes errors in real-time, rewriting its own broken code until the application compiles successfully. But granting local execution power exposes critical security vulnerabilities. Researchers warned that prompt injections in untrusted code can escape Cursor’s sandbox to execute unauthorized ",
       "created_at": "2026-10-07T12:48:26.583463+00:00",
-      "analytics": {}
+      "analytics": {},
+      "analytics_updated_at": "2026-10-10T17:22:58.934616+00:00"
     },
     {
       "video_id": "mUs6u5Ur7yg",
@@ -915,7 +916,8 @@
       "format": "short",
       "script_preview": "Instead of paying hundreds for specialized audio plugins, you can now prompt-engineer your own custom DSP tools directly inside your browser. Google's Flow Music has introduced vibe coding, translating plain English instructions directly into functional music production tools. Imagine a bedroom producer who needs a custom tape-saturation effect with a high-pass filter. They type 'warm tape saturation with a 150 Hertz cutoff knob' into the prompt box. The AI instantly generates and compiles the backend code in real-time, outputting a working, downloadable audio plugin file for their DAW. MusicR",
       "created_at": "2026-10-07T12:52:49.270945+00:00",
-      "analytics": {}
+      "analytics": {},
+      "analytics_updated_at": "2026-10-10T17:22:58.895428+00:00"
     },
     {
       "video_id": "WDTWgea0I78",
@@ -933,8 +935,46 @@
       "format": "short",
       "script_preview": "",
       "created_at": "2026-10-07T13:59:06Z",
+      "analytics": {
+        "views": 6.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 12.0,
+        "averageViewPercentage": 24.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-10-10T17:22:58.933449+00:00"
+    },
+    {
+      "video_id": "KVFqKsYLfW0",
+      "topic": "Why AI Coding Agents Don't Ship More Software",
+      "title": "Why AI Coding Agents Don't Ship More Software",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-10-10T17:02:06Z",
       "analytics": {},
       "source": "youtube_sync"
+    },
+    {
+      "video_id": "yBRO_fFCfXs",
+      "topic": "AI coding agents generate more code, but not more software",
+      "title": "Why AI Coding Agents Don't Ship More Software",
+      "format": "short",
+      "script_preview": "Ninety percent of developers now run AI coding agents, but teams are not shipping finished software any faster. Writing syntax is now effortless, but as Gabriel Martinez highlights, code generation is cheap while code review is expensive. Prompt an agent for checkout logic, and it delivers eight hundred lines of plausible code in seconds. Then human engineers spend three hours verifying edge cases, auth boundaries, and untested error handling. This triggers the eighty percent problem: agents ship fast initially, but stack up hidden technical debt. In monorepos, VentureBeat reports that broader",
+      "created_at": "2026-10-10T17:09:15.347820+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "Kf6vZN5CHAA",
+      "topic": "Data Storytelling With AI Presentation Tools: Turning Dashboards Into Decisions",
+      "title": "Stop Building Dashboards: How to Use AI for Data Storytelling",
+      "format": "long",
+      "script_preview": "Stop wasting time on charts that no one understands; I will show you how to use AI to turn your complex data dashboards into a persuasive, decision-ready narrative in minutes. Most dashboards currently fail because they simply show cold facts rather than telling a clear, compelling business story. The human brain craves context and meaning, but your typical spreadsheet just offers rows of raw, uninterpreted numbers. When you present data, your primary goal is not to dump information; it is to lead a conversation toward a specific, measurable business decision, which is where AI comes in. This ",
+      "created_at": "2026-10-10T17:59:23.199767+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -1250,6 +1290,18 @@
       "format": "short",
       "created_at": "2026-10-07T13:59:06Z",
       "source": "youtube_sync"
+    },
+    {
+      "topic": "AI coding agents generate more code, but not more software",
+      "title": "Why AI Coding Agents Don't Ship More Software",
+      "format": "short",
+      "created_at": "2026-10-10T17:09:15.347820+00:00"
+    },
+    {
+      "topic": "Data Storytelling With AI Presentation Tools: Turning Dashboards Into Decisions",
+      "title": "Stop Building Dashboards: How to Use AI for Data Storytelling",
+      "format": "long",
+      "created_at": "2026-10-10T17:59:23.199767+00:00"
     }
   ]
 }
