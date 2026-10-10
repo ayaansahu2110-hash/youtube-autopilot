@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T17:22:58.922930+00:00"
+      "analytics_updated_at": "2026-10-10T18:11:56.859561+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T17:22:58.938125+00:00"
+      "analytics_updated_at": "2026-10-10T18:11:56.878739+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T17:22:58.936962+00:00"
+      "analytics_updated_at": "2026-10-10T18:11:56.877289+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T17:22:58.944043+00:00"
+      "analytics_updated_at": "2026-10-10T18:11:56.886068+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T17:22:58.928790+00:00"
+      "analytics_updated_at": "2026-10-10T18:11:56.866946+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T17:22:58.945205+00:00"
+      "analytics_updated_at": "2026-10-10T18:11:56.887535+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -946,7 +946,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-10T17:22:58.933449+00:00"
+      "analytics_updated_at": "2026-10-10T18:11:56.872847+00:00"
     },
     {
       "video_id": "KVFqKsYLfW0",
@@ -965,7 +965,8 @@
       "format": "short",
       "script_preview": "Ninety percent of developers now run AI coding agents, but teams are not shipping finished software any faster. Writing syntax is now effortless, but as Gabriel Martinez highlights, code generation is cheap while code review is expensive. Prompt an agent for checkout logic, and it delivers eight hundred lines of plausible code in seconds. Then human engineers spend three hours verifying edge cases, auth boundaries, and untested error handling. This triggers the eighty percent problem: agents ship fast initially, but stack up hidden technical debt. In monorepos, VentureBeat reports that broader",
       "created_at": "2026-10-10T17:09:15.347820+00:00",
-      "analytics": {}
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "Kf6vZN5CHAA",
@@ -974,7 +975,18 @@
       "format": "long",
       "script_preview": "Stop wasting time on charts that no one understands; I will show you how to use AI to turn your complex data dashboards into a persuasive, decision-ready narrative in minutes. Most dashboards currently fail because they simply show cold facts rather than telling a clear, compelling business story. The human brain craves context and meaning, but your typical spreadsheet just offers rows of raw, uninterpreted numbers. When you present data, your primary goal is not to dump information; it is to lead a conversation toward a specific, measurable business decision, which is where AI comes in. This ",
       "created_at": "2026-10-10T17:59:23.199767+00:00",
-      "analytics": {}
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "xecd0eVo1fk",
+      "topic": "Why AI Coding Agents Kill Productivity",
+      "title": "Why AI Coding Agents Kill Productivity",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-10-10T18:08:18Z",
+      "analytics": {},
+      "source": "youtube_sync"
     }
   ],
   "topics": [
@@ -1292,6 +1304,13 @@
       "source": "youtube_sync"
     },
     {
+      "topic": "Why AI Coding Agents Don't Ship More Software",
+      "title": "Why AI Coding Agents Don't Ship More Software",
+      "format": "short",
+      "created_at": "2026-10-10T17:02:06Z",
+      "source": "youtube_sync"
+    },
+    {
       "topic": "AI coding agents generate more code, but not more software",
       "title": "Why AI Coding Agents Don't Ship More Software",
       "format": "short",
@@ -1302,6 +1321,20 @@
       "title": "Stop Building Dashboards: How to Use AI for Data Storytelling",
       "format": "long",
       "created_at": "2026-10-10T17:59:23.199767+00:00"
+    },
+    {
+      "topic": "Stop Building Dashboards: How to Use AI for Data Storytelling",
+      "title": "Stop Building Dashboards: How to Use AI for Data Storytelling",
+      "format": "long",
+      "created_at": "2026-10-10T18:00:16Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Why AI Coding Agents Kill Productivity",
+      "title": "Why AI Coding Agents Kill Productivity",
+      "format": "short",
+      "created_at": "2026-10-10T18:08:18Z",
+      "source": "youtube_sync"
     }
   ]
 }
