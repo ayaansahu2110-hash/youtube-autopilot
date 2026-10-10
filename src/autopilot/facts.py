@@ -493,6 +493,48 @@ def verified_curio_seed(
                 ),
             ),
         ),
+        (
+            "Why Geysers Erupt Instead of Flowing Steadily",
+            "geography",
+            "A pressure drop allows hot underground water to flash into steam through a constricted conduit.",
+            ("geyser", "underground pressure",),
+            (
+                ResearchSource(title="Yellowstone active hydrothermal system", publisher="USGS",
+                               url="https://www.usgs.gov/volcanoes/yellowstone/science/yellowstones-active-hydrothermal-system",
+                               snippet="USGS identifies two essentials for a geyser: an underground hot-water reservoir and a constriction that focuses the outflow. Initial water ejection reduces pressure, allowing the remaining water to become an expanding steam-water mixture. Eruptions may be regular or unpredictable because underground plumbing changes. Rain and snow feed groundwater heated by rocks above Yellowstone's magma storage region."),
+                ResearchSource(title="How a geyser works", publisher="National Park Service",
+                               url="https://www.nps.gov/features/yell/ofvec/exhibits/treasures/thermals/geysers/geyser2.htm",
+                               snippet="NPS describes pressure holding hot water below its boiling threshold until steam bubbles accumulate behind a narrow section. Escaping water lowers pressure and triggers rapid steam formation that expels more water. The eruption ends when the reservoir drains or cools. This is a hydrothermal water-and-steam process; do not depict molten lava erupting from the geyser vent."),
+            ),
+        ),
+        (
+            "Why a Compass Does Not Point to True North",
+            "geography",
+            "A compass follows the local magnetic field; declination is the difference from geographic north.",
+            ("compass", "magnetic declination",),
+            (
+                ResearchSource(title="What is declination?", publisher="USGS",
+                               url="https://www.usgs.gov/faqs/what-declination?items_per_page=6&page=1",
+                               snippet="USGS defines magnetic declination as the angle between a compass direction and geographic north. This angle depends on location and date because Earth's magnetic field is complex and not perfectly aligned with the rotation axis. Topographic maps state a declination and its reference year. At high latitudes compass behavior can become counterintuitive, so a compass is not simply a pointer aimed directly at a fixed geographic pole."),
+                ResearchSource(title="World Magnetic Model navigation", publisher="NOAA NCEI",
+                               url="https://www.ncei.noaa.gov/products/world-magnetic-model",
+                               snippet="NOAA explains that compasses align with magnetic force at the observer's location. Geographic north is generally a different direction. Magnetic models provide the declination correction, which changes with location and time; WMM updates support ships, aircraft, and consumer devices. Magnetic headings complement GPS position measurements. Avoid claiming any single correction works worldwide or indefinitely."),
+            ),
+        ),
+        (
+            "Why Cooling Lava Forms Stone Columns",
+            "geography",
+            "Cooling contraction creates fractures that often form approximately hexagonal columns.",
+            ("basalt column", "stone column", "columnar joint",),
+            (
+                ResearchSource(title="Columnar jointing and cooling history", publisher="USGS",
+                               url="https://www.usgs.gov/observatories/hvo/news/volcano-watch-columnar-jointing-provides-clues-cooling-history-lava-flows",
+                               snippet="USGS explains that cooling lava solidifies from its boundaries inward and contracts, generating thermal stress relieved by fractures. Cracks progress toward the hotter interior perpendicular to cooling boundaries. Slower cooling can form thick regular colonnades, while faster cooling produces less regular entablature. Many columns show overall hexagonal symmetry, but individual columns can have other shapes."),
+                ResearchSource(title="Columnar Jointing", publisher="National Park Service",
+                               url="https://www.nps.gov/subjects/volcanoes/columnar-jointing.htm",
+                               snippet="NPS describes parallel fractures made by contraction as hot igneous rock cools. Columns are commonly six-sided but may have three to seven sides; they stand perpendicular to the principal cooling surfaces rather than necessarily vertical. Intersecting cracks near 120 degrees efficiently relieve contractional stress. Devils Postpile and Devils Tower illustrate this natural geological pattern, which also occurs outside basalt lava flows."),
+            ),
+        ),
     )
     for title, category, reason, concept_aliases, sources in seeds:
         normalised = _normalise_topic(title)
