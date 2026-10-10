@@ -174,6 +174,9 @@ def daily(
     short_failed = False
     for _ in range(short_count):
         if live:
+            # Each pipeline instance records its canonical topic to disk. Reload
+            # before syncing so the slot does not overwrite that fresh memory.
+            state = StateStore(settings.state_file)
             state.sync_recent_uploads(uploader.recent_uploads(limit=50))
             if state.upload_count_on_date(local_today, timezone_name=settings.schedule_timezone, video_format="short") >= settings.shorts_per_day:
                 break
@@ -197,6 +200,7 @@ def daily(
             short_failed = True
             break
 
+    state = StateStore(settings.state_file)
     uploaded_longs = state.upload_count_on_date(
         local_today,
         timezone_name=settings.schedule_timezone,
@@ -295,6 +299,10 @@ def _print_result(result, settings: Settings) -> None:
     if result.quality and result.quality.errors:
         for error in result.quality.errors:
             console.print(f"[red]- {error}[/red]")
+    if result.status == "failed":
+        for note in result.notes:
+            if not result.quality or note not in result.quality.errors:
+                console.print(f"[red]- {note}[/red]")
     console.print(f"Artifacts: {settings.artifacts_dir / result.run_id}")
 
 

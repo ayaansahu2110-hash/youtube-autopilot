@@ -51,3 +51,51 @@ def test_aurora_reserve_uses_two_authoritative_agencies():
     assert seed is not None
     assert {source.publisher for source in seed[1].sources} == {"NASA Science", "NOAA NESDIS"}
     assert FactVerifier().verify(seed[1]).confidence_score >= 65
+
+
+def test_daily_keeps_canonical_topics_written_by_each_pipeline(monkeypatch, tmp_path):
+    from types import SimpleNamespace
+    from autopilot.state import StateStore
+
+    settings = Settings(state_file=tmp_path / "history.json", shorts_per_day=2)
+    monkeypatch.setattr(cli, "load_settings", lambda: settings)
+    monkeypatch.setattr(cli.DailyLearningLoop, "refresh", lambda self: {})
+    monkeypatch.setattr(cli, "_longform_due", lambda *args: False)
+    monkeypatch.setattr(cli, "_print_result", lambda *args: None)
+    uploads = []
+    monkeypatch.setattr(cli.YouTubeUploader, "recent_uploads", lambda self, limit: list(uploads))
+
+    def publish(self, **kwargs):
+        state = StateStore(settings.state_file)
+        number = len(uploads) + 1
+        topic = f"Canonical research subject {number}"
+        result = SimpleNamespace(
+            plan=SimpleNamespace(topic=topic, title=f"Published headline {number}",
+                                 format="short", script="Distinct verified narration"),
+            youtube_video_id=f"video-{number}", status="uploaded",
+        )
+        state.record_run(result)
+        uploads.append({"video_id": result.youtube_video_id, "title": result.plan.title,
+                        "format": "short", "published_at": datetime.now(ZoneInfo(settings.schedule_timezone)).isoformat()})
+        return result
+
+    monkeypatch.setattr(cli.AutopilotPipeline, "run", publish)
+    result = CliRunner().invoke(cli.app, ["daily", "--live", "--slot", "all"])
+    assert result.exit_code == 0, result.output
+    saved = StateStore(settings.state_file)
+    assert {"Canonical research subject 1", "Canonical research subject 2"} <= set(saved.recent_topics())
+    assert len(saved.load()["videos"]) == 2
+
+
+def test_new_geology_reserves_are_verified_and_not_recycled():
+    titles = [
+        "Why Geysers Erupt Instead of Flowing Steadily",
+        "Why a Compass Does Not Point to True North",
+        "Why Cooling Lava Forms Stone Columns",
+    ]
+    for title in titles:
+        seed = verified_curio_seed(requested_topic=title)
+        assert seed is not None
+        assert len({source.url.split("/")[2] for source in seed[1].sources}) == 2
+        assert FactVerifier().verify(seed[1]).confidence_score >= 65
+        assert verified_curio_seed(requested_topic=title, excluded_topics=[title]) is None

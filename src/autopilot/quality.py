@@ -38,6 +38,18 @@ class QualityGate:
                 errors.append(f"Topic is too similar to a recent topic ({similarity:.0%}).")
                 break
 
+        # A headline rewrite cannot make a published narration a new story.
+        for old in self.state.load()["videos"][-80:]:
+            if str(old.get("title", "")).strip().lower() == plan.title.strip().lower():
+                errors.append("Title duplicates an already published video.")
+                break
+            preview = str(old.get("script_preview") or "").strip().lower()
+            if len(preview.split()) >= 60:
+                current = plan.script[:600].strip().lower()
+                if SequenceMatcher(None, current, preview).ratio() >= 0.90:
+                    errors.append("Narration duplicates an already published video.")
+                    break
+
         combined = f"{plan.title} {plan.script}".lower()
         risky_terms = {
             "guaranteed profit", "get rich quick", "medical cure", "diagnose yourself",
