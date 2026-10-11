@@ -907,7 +907,13 @@ camera_and_lighting, generator_prompt, shot_type_camera_movement, sfx_audio_cue.
 """
 
     def _improve_plan(self, research: ResearchPack, video_format: str, draft: dict) -> dict | None:
+        words = "95-145" if video_format == "short" else "1,200-1,650"
+        scenes = "20-24" if video_format == "short" else "30-38"
         prompt = f"""Act as CurioAxiom's fact-checking executive editor. Rewrite the draft JSON.
+FINAL FORMAT: {video_format}. Preserve {words} spoken words and {scenes} distinct scenes.
+The scenes are the source of truth: their complete narration must match the script.
+Do not replace a long documentary with a Short, summary, outline, or truncated draft.
+Develop each section using supported research, mechanisms and caveats; never pad or invent facts.
 Research: {research.research_notes[:18000]}
 Verification: {research.confidence_score:.0f}/100; {research.verification_notes}
 Draft: {json.dumps(draft, ensure_ascii=False)}
