@@ -411,3 +411,16 @@ def test_facts_fallback_uses_cached_official_feed(tmp_path: Path) -> None:
     assert pipeline.discovery._hacker_news("space") == [{"title": "NASA science"}]
     pipeline.discovery._hacker_news("engineering")
     assert calls == ["https://www.nasa.gov/feed/"]
+
+
+def test_fact_editor_preserves_short_and_long_length_contract():
+    planner = FactScriptPlanner(Settings(channel_profile="curioaxiom"))
+    prompts = []
+    planner._generate_json = lambda prompt: prompts.append(prompt) or {}
+    research = ResearchPack(topic="Cooling lava", category="geography")
+    planner._improve_plan(research, "long", {})
+    planner._improve_plan(research, "short", {})
+    assert "FINAL FORMAT: long" in prompts[0]
+    assert "1,200-1,650 spoken words and 30-38 distinct scenes" in prompts[0]
+    assert "FINAL FORMAT: short" in prompts[1]
+    assert "95-145 spoken words and 20-24 distinct scenes" in prompts[1]
