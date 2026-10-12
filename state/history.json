@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-11T17:45:09.170602+00:00"
+      "analytics_updated_at": "2026-10-12T14:43:52.798956+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-11T17:45:09.189642+00:00"
+      "analytics_updated_at": "2026-10-12T14:43:52.809968+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-11T17:45:09.188230+00:00"
+      "analytics_updated_at": "2026-10-12T14:43:52.808132+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-11T17:45:09.197205+00:00"
+      "analytics_updated_at": "2026-10-12T14:43:52.815635+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -88,17 +88,17 @@
       "script_preview": "",
       "created_at": "2026-08-30T06:43:54Z",
       "analytics": {
-        "views": 17.0,
+        "views": 18.0,
         "estimatedMinutesWatched": 3.0,
-        "averageViewDuration": 25.0,
-        "averageViewPercentage": 46.63,
+        "averageViewDuration": 22.0,
+        "averageViewPercentage": 41.94,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-11T17:45:09.169102+00:00"
+      "analytics_updated_at": "2026-10-12T14:43:52.798039+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-11T17:45:09.198667+00:00"
+      "analytics_updated_at": "2026-10-12T14:43:52.816548+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -926,7 +926,8 @@
       "format": "long",
       "script_preview": "A St. Louis County apartment complex has just been given a two-week deadline to pay its mounting gas bill and resolve severe code violations, or officials will officially shut the building down. This situation highlights a critical breakdown in housing maintenance that threatens the safety and habitability of residents. The Northern Village apartments are now at the center of a major public safety intervention. Residents have been reporting a harrowing list of conditions, including collapsed ceilings, a complete lack of heat, no running hot water, and the presence of raw sewage in their living",
       "created_at": "2026-10-07T13:50:58.555645+00:00",
-      "analytics": {}
+      "analytics": {},
+      "analytics_updated_at": "2026-10-12T14:43:52.818345+00:00"
     },
     {
       "video_id": "djvAoNZtVnc",
@@ -936,17 +937,17 @@
       "script_preview": "",
       "created_at": "2026-10-07T13:59:06Z",
       "analytics": {
-        "views": 14.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 14.0,
-        "averageViewPercentage": 28.21,
+        "views": 28.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 22.0,
+        "averageViewPercentage": 44.85,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-11T17:45:09.173658+00:00"
+      "analytics_updated_at": "2026-10-12T14:43:52.792574+00:00"
     },
     {
       "video_id": "KVFqKsYLfW0",
