@@ -12,6 +12,7 @@ from autopilot.models import ResearchPack, ResearchSource, SceneBeat, TopicCandi
 from autopilot.models import VisualAsset
 from autopilot.render import FFmpegRenderer
 from autopilot.pipeline import AutopilotPipeline
+from autopilot.providers.llm import ScriptPlanner
 from autopilot.youtube import YouTubeUploader
 
 
@@ -424,3 +425,24 @@ def test_fact_editor_preserves_short_and_long_length_contract():
     assert "1,200-1,650 spoken words and 30-38 distinct scenes" in prompts[0]
     assert "FINAL FORMAT: short" in prompts[1]
     assert "95-145 spoken words and 20-24 distinct scenes" in prompts[1]
+
+
+def test_curio_long_contract_counts_scene_narration() -> None:
+    valid = {
+        "scenes": [
+            {"narration": " ".join(["verified"] * 40)}
+            for _ in range(30)
+        ]
+    }
+    assert ScriptPlanner._curio_long_contract_ok(valid)
+
+    too_short = {"scenes": valid["scenes"][:-1]}
+    assert not ScriptPlanner._curio_long_contract_ok(too_short)
+
+    thin = {
+        "scenes": [
+            {"narration": " ".join(["verified"] * 10)}
+            for _ in range(30)
+        ]
+    }
+    assert not ScriptPlanner._curio_long_contract_ok(thin)
