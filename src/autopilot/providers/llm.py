@@ -43,6 +43,18 @@ class ScriptPlanner:
         except Exception:
             return max(candidates, key=lambda item: item.score)
 
+    @staticmethod
+    def _curio_long_contract_ok(data: dict) -> bool:
+        scenes = data.get("scenes", [])
+        if not isinstance(scenes, list) or not 30 <= len(scenes) <= 38:
+            return False
+        words = sum(
+            len(str(scene.get("narration") or "").split())
+            for scene in scenes
+            if isinstance(scene, dict)
+        )
+        return 1200 <= words <= 1650
+
     def create_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
         if not self.settings.llm_configured:
             return self._fallback_plan(research, video_format)
@@ -50,6 +62,34 @@ class ScriptPlanner:
         draft = self._generate_json(self._draft_prompt(research, video_format))
         polished = self._improve_plan(research, video_format, draft)
         data = polished or draft
+        if (self.settings.channel_profile == "curioaxiom" and video_format == "long"
+                and not self._curio_long_contract_ok(data)):
+            # Gemini can compress an editor pass into a Short even when the draft
+            # requested a documentary. Retry the complete JSON here, before model
+            # parsing and quality validation, without weakening either threshold.
+            correction = (
+                "Rebuild this CurioAxiom long documentary as COMPLETE JSON, not an "
+                "outline or summary. Use only the verified research. The scenes array "
+                "must contain 30-38 distinct scenes and the combined scene narration "
+                "must contain 1,200-1,650 spoken words. Develop mechanisms, evidence, "
+                "examples and caveats instead of repeating or inventing facts. Preserve "
+                "all top-level keys and every scene key from the draft schema. "
+                f"Verified research: {research.research_notes[:18000]}\\n"
+                f"Current undersized JSON: {json.dumps(data, ensure_ascii=False)}\\n"
+                "Return corrected JSON only."
+            )
+            for attempt in range(2):
+                try:
+                    repaired = self._generate_json(correction)
+                except Exception:
+                    repaired = {}
+                if self._curio_long_contract_ok(repaired):
+                    data = repaired
+                    break
+                correction += (
+                    f" Attempt {attempt + 1} still failed the exact word/scene contract. "
+                    "Return the entire expanded JSON and count scene narration before responding."
+                )
         if (self.settings.channel_profile != "curioaxiom" and video_format == "short"
                 and len(data.get("scenes", [])) < 8):
             # A compact editor pass can accidentally collapse a visual story
