@@ -5,10 +5,10 @@ on:
     branches: [main]
     paths: [".github/workflows/curioaxiom.yml", "src/autopilot/facts.py", "src/autopilot/pipeline.py", "src/autopilot/cli.py", "src/autopilot/discovery.py", "src/autopilot/research.py", "src/autopilot/render.py"]
   schedule:
-    # 12:00 and 18:00 Asia/Kolkata: exactly two Shorts each day.
+    # 12:11 and 18:11 Asia/Kolkata: exactly two Shorts each day.
     # The evening run additionally creates the long-form video when it is due.
-    - cron: "30 6 * * *"
-    - cron: "30 12 * * *"
+    - cron: "41 6 * * *"
+    - cron: "41 12 * * *"
   workflow_dispatch:
     inputs:
       slot:
@@ -67,7 +67,7 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "RUN_SLOT=${{ inputs.slot }}" >> "$GITHUB_ENV"
-          elif [ "${{ github.event.schedule }}" = "30 6 * * *" ]; then
+          elif [ "${{ github.event.schedule }}" = "41 6 * * *" ]; then
             echo "RUN_SLOT=morning" >> "$GITHUB_ENV"
           else
             echo "RUN_SLOT=evening" >> "$GITHUB_ENV"
