@@ -124,17 +124,17 @@
       "script_preview": "",
       "created_at": "2026-09-02T15:50:44Z",
       "analytics": {
-        "views": 4.0,
-        "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 63.0,
-        "averageViewPercentage": 135.42,
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 31.0,
+        "averageViewPercentage": 67.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-11T17:45:51.401968+00:00"
+      "analytics_updated_at": "2026-10-12T14:00:52.037063+00:00"
     },
     {
       "video_id": "tXzKJN-Sxds",
@@ -173,7 +173,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-11T17:45:51.398034+00:00"
+      "analytics_updated_at": "2026-10-12T14:00:52.034224+00:00"
     },
     {
       "video_id": "rOXhektjpHg",
@@ -193,7 +193,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-11T17:45:51.386936+00:00"
+      "analytics_updated_at": "2026-10-12T14:00:52.024928+00:00"
     },
     {
       "video_id": "bT9UdwBKLks",
@@ -213,7 +213,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-11T17:45:51.394117+00:00"
+      "analytics_updated_at": "2026-10-12T14:00:52.030800+00:00"
     },
     {
       "video_id": "wDtG3Hpjs6s",
@@ -233,7 +233,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-11T17:45:51.388661+00:00"
+      "analytics_updated_at": "2026-10-12T14:00:52.026523+00:00"
     },
     {
       "video_id": "RurypNkFZeY",
@@ -253,7 +253,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-11T17:45:51.394876+00:00"
+      "analytics_updated_at": "2026-10-12T14:00:52.031470+00:00"
     },
     {
       "video_id": "EiZc33RD3Rg",
@@ -273,7 +273,7 @@
         "subscribersGained": 4.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-11T17:45:51.385805+00:00"
+      "analytics_updated_at": "2026-10-12T14:00:52.023821+00:00"
     },
     {
       "video_id": "5R3YR8lO-hQ",
