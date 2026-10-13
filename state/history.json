@@ -8,17 +8,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T06:59:52Z",
       "analytics": {
-        "views": 15.0,
-        "estimatedMinutesWatched": 1.0,
+        "views": 18.0,
+        "estimatedMinutesWatched": 2.0,
         "averageViewDuration": 21.0,
-        "averageViewPercentage": 47.96,
+        "averageViewPercentage": 48.1,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T14:48:24.726269+00:00"
+      "analytics_updated_at": "2026-10-13T19:20:53.013477+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T14:48:24.742647+00:00"
+      "analytics_updated_at": "2026-10-13T19:20:53.039353+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T14:48:24.741394+00:00"
+      "analytics_updated_at": "2026-10-13T19:20:53.036148+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T14:48:24.751704+00:00"
+      "analytics_updated_at": "2026-10-13T19:20:53.050636+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T14:48:24.706101+00:00"
+      "analytics_updated_at": "2026-10-13T19:20:53.016796+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T14:48:24.752971+00:00"
+      "analytics_updated_at": "2026-10-13T19:20:53.052233+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -947,7 +947,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T14:48:24.690897+00:00"
+      "analytics_updated_at": "2026-10-13T19:20:52.994305+00:00"
     },
     {
       "video_id": "KVFqKsYLfW0",
@@ -957,17 +957,17 @@
       "script_preview": "",
       "created_at": "2026-10-10T17:02:06Z",
       "analytics": {
-        "views": 22.0,
+        "views": 27.0,
         "estimatedMinutesWatched": 3.0,
-        "averageViewDuration": 33.0,
-        "averageViewPercentage": 55.58,
-        "likes": 0.0,
+        "averageViewDuration": 29.0,
+        "averageViewPercentage": 48.72,
+        "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T14:48:24.695903+00:00"
+      "analytics_updated_at": "2026-10-13T19:20:52.999167+00:00"
     },
     {
       "video_id": "yBRO_fFCfXs",
@@ -999,17 +999,17 @@
       "script_preview": "",
       "created_at": "2026-10-10T18:08:18Z",
       "analytics": {
-        "views": 18.0,
+        "views": 20.0,
         "estimatedMinutesWatched": 5.0,
         "averageViewDuration": 81.0,
         "averageViewPercentage": 162.18,
-        "likes": 0.0,
+        "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T14:48:24.704843+00:00"
+      "analytics_updated_at": "2026-10-13T19:20:53.010337+00:00"
     },
     {
       "video_id": "ReHy3vKUNFU",
@@ -1018,7 +1018,8 @@
       "format": "short",
       "script_preview": "A forty-person company building occasional slide decks no longer needs forty monthly licenses just to enforce corporate branding. Presentations.ai launched an unlimited-seat Team plan for seven hundred twenty dollars annually, challenging per-user models like Beautiful.ai. Instead of manual layout work, a sales lead uploads a raw spreadsheet, text prompt, or source document. Its creation agent generates structured slides while automatic Brand Sync applies company logos, fonts, and colors. You get an editable Microsoft PowerPoint export, with a patented Presentation Refresh tool for updating re",
       "created_at": "2026-10-11T13:26:28.799250+00:00",
-      "analytics": {}
+      "analytics": {},
+      "analytics_updated_at": "2026-10-13T19:20:53.053855+00:00"
     },
     {
       "video_id": "lFKeJjlac_4",
@@ -1027,7 +1028,8 @@
       "format": "short",
       "script_preview": "Stop accepting the 'no-refund' policy; AI agents are now scanning terms of service to force companies to pay you back. Platforms rely on you giving up when customer support makes a claim difficult. Now, agents are moving in. They scan your email for receipts, cross-reference policy fine print, and draft professional, legally-backed demand letters. When a service is delayed or a price drops, the agent flags it, hunts down the specific clause, and auto-formats the formal request. This destroys the 'friction' companies build to keep your money. The catch? Merchants are fighting back, deploying bo",
       "created_at": "2026-10-11T17:48:58.441546+00:00",
-      "analytics": {}
+      "analytics": {},
+      "analytics_updated_at": "2026-10-13T19:20:53.047376+00:00"
     },
     {
       "video_id": "S4ArTcIkF_o",
@@ -1058,6 +1060,24 @@
       "created_at": "2026-10-13T14:46:33.697958+00:00",
       "analytics": {},
       "source": "youtube_sync"
+    },
+    {
+      "video_id": "VqUrtS3l9D4",
+      "topic": "Epic Games Tells Devs \"No More Hand-Written Code\" to Adopt an \"AI-First\" Production Model",
+      "title": "Epic Games' 'AI-First' Mandate Explained",
+      "format": "short",
+      "script_preview": "Epic Games is officially mandating an 'AI-first' workflow, effectively moving away from traditional hand-written code. Developers are now prompted to use AI for core logic generation. This massive internal shift has reportedly caused delays for high-profile projects, including a planned Disney shooter. The benefit is supposed to be rapid iteration, but the catch is a steep learning curve and the constant risk of AI hallucinations. If you are a developer, stop viewing AI as just a search tool; start treating it as a junior teammate. Your primary job is shifting from manual coding to rigorous au",
+      "created_at": "2026-10-13T19:25:11.457712+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "rflVIZ6Wxz8",
+      "topic": "Netsujo Releases Agent Role Contracts v0.5.0 for AI-Agent Workflow Checks",
+      "title": "Netsujo 0.5.0: Stop Rogue AI Agents",
+      "format": "short",
+      "script_preview": "Your AI agent just cost your company an unauthorized $10,000 because your prompt wasn't a policy. Netsujo just dropped Agent Role Contracts v0.5.0 to kill this problem. Instead of trusting LLMs to 'follow instructions,' this update forces agents to operate under explicit, logic-bound contracts. Think of it as a circuit breaker for your automation. In a procurement workflow, for instance, you define an approval threshold as a hard code constraint, not a suggestion. The workflow check happens at the system level, blocking any action that violates the specific role logic. The catch? It requires m",
+      "created_at": "2026-10-13T19:28:12.915294+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -1457,6 +1477,18 @@
       "format": "long",
       "created_at": "2026-10-13T14:47:12Z",
       "source": "youtube_sync"
+    },
+    {
+      "topic": "Epic Games Tells Devs \"No More Hand-Written Code\" to Adopt an \"AI-First\" Production Model",
+      "title": "Epic Games' 'AI-First' Mandate Explained",
+      "format": "short",
+      "created_at": "2026-10-13T19:25:11.457712+00:00"
+    },
+    {
+      "topic": "Netsujo Releases Agent Role Contracts v0.5.0 for AI-Agent Workflow Checks",
+      "title": "Netsujo 0.5.0: Stop Rogue AI Agents",
+      "format": "short",
+      "created_at": "2026-10-13T19:28:12.915294+00:00"
     }
   ]
 }
