@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T13:52:46.954998+00:00"
+      "analytics_updated_at": "2026-10-13T14:48:24.726269+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T13:52:46.974562+00:00"
+      "analytics_updated_at": "2026-10-13T14:48:24.742647+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T13:52:46.973025+00:00"
+      "analytics_updated_at": "2026-10-13T14:48:24.741394+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T13:52:46.985376+00:00"
+      "analytics_updated_at": "2026-10-13T14:48:24.751704+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T13:52:46.952015+00:00"
+      "analytics_updated_at": "2026-10-13T14:48:24.706101+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T13:52:46.986912+00:00"
+      "analytics_updated_at": "2026-10-13T14:48:24.752971+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -947,7 +947,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T13:52:46.934023+00:00"
+      "analytics_updated_at": "2026-10-13T14:48:24.690897+00:00"
     },
     {
       "video_id": "KVFqKsYLfW0",
@@ -967,7 +967,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T13:52:46.939961+00:00"
+      "analytics_updated_at": "2026-10-13T14:48:24.695903+00:00"
     },
     {
       "video_id": "yBRO_fFCfXs",
@@ -1009,7 +1009,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T13:52:46.950515+00:00"
+      "analytics_updated_at": "2026-10-13T14:48:24.704843+00:00"
     },
     {
       "video_id": "ReHy3vKUNFU",
@@ -1036,7 +1036,8 @@
       "format": "short",
       "script_preview": "Your enterprise AI agent just lost its architects. Microsoft is cutting fifty roles in the team building Copilot Studio, the backbone of their autonomous business bots. Here is the paradox: as companies like Microsoft and Monday.com force-push 'AI agent' strategies, they are simultaneously dismantling the specialized R&D teams required to maintain them. You are likely using these agents to auto-summarize weekly emails or sync CRM data. But when the core developers behind these tools are replaced by restructuring, technical debt accumulates in the platform itself. If your workflow relies on a C",
       "created_at": "2026-10-13T13:58:49.858025+00:00",
-      "analytics": {}
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "32SAXoj_OXo",
@@ -1045,7 +1046,8 @@
       "format": "short",
       "script_preview": "Microsoft is gutting AI features in the new Outlook for Windows because users simply aren't engaging with them. The company is officially retiring 'Themes by Copilot,' ending the experiment that allowed users to generate backgrounds via prompt. This change follows a broader trend where Windows 11 users remain unimpressed with aggressive AI integration. Even with new features like in-app browser support for Copilot, user pushback against unnecessary UI clutter remains high. The reality is that AI is often forced into interfaces where it adds cognitive friction instead of actual workflow speed. ",
       "created_at": "2026-10-13T14:05:50.985295+00:00",
-      "analytics": {}
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "U0fuwALpesI",
@@ -1054,7 +1056,8 @@
       "format": "long",
       "script_preview": "Spotify’s engineering team has achieved a massive milestone: they have more than doubled their monthly code changes. This jump in velocity is the direct result of integrating AI-assisted coding tools throughout their development lifecycle. For software teams, doubling your output is a metric for celebration, but here, the consequences are complex. When we look at the raw data, this surge represents a fundamental shift in how developers interact with their codebase. Instead of manually writing every function from scratch, engineers now act as curators for AI-generated suggestions. The speed inc",
       "created_at": "2026-10-13T14:46:33.697958+00:00",
-      "analytics": {}
+      "analytics": {},
+      "source": "youtube_sync"
     }
   ],
   "topics": [
@@ -1423,16 +1426,37 @@
       "created_at": "2026-10-13T13:58:49.858025+00:00"
     },
     {
+      "topic": "Microsoft Copilot Team Cuts: What This Means for Your AI Agents",
+      "title": "Microsoft Copilot Team Cuts: What This Means for Your AI Agents",
+      "format": "short",
+      "created_at": "2026-10-13T13:59:14Z",
+      "source": "youtube_sync"
+    },
+    {
       "topic": "Users keep rejecting Copilot, and now Microsoft is killing its AI themes in Outlook (New) for Windows",
       "title": "Microsoft Kills Outlook AI Themes",
       "format": "short",
       "created_at": "2026-10-13T14:05:50.985295+00:00"
     },
     {
+      "topic": "Microsoft Kills Outlook AI Themes",
+      "title": "Microsoft Kills Outlook AI Themes",
+      "format": "short",
+      "created_at": "2026-10-13T14:06:16Z",
+      "source": "youtube_sync"
+    },
+    {
       "topic": "Spotify More Than Doubled Monthly Code Changes as AI Accelerated Development",
       "title": "Why Spotify's AI Coding Surge is a Double-Edged Sword",
       "format": "long",
       "created_at": "2026-10-13T14:46:33.697958+00:00"
+    },
+    {
+      "topic": "Why Spotify's AI Coding Surge is a Double-Edged Sword",
+      "title": "Why Spotify's AI Coding Surge is a Double-Edged Sword",
+      "format": "long",
+      "created_at": "2026-10-13T14:47:12Z",
+      "source": "youtube_sync"
     }
   ]
 }
