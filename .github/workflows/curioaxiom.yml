@@ -3,12 +3,14 @@ name: CurioAxiom Facts Pipeline
 on:
   push:
     branches: [main]
-    paths: [".github/workflows/curioaxiom.yml", "src/autopilot/facts.py", "src/autopilot/pipeline.py", "src/autopilot/cli.py", "src/autopilot/discovery.py", "src/autopilot/research.py", "src/autopilot/render.py"]
+    paths: [".github/workflows/curioaxiom.yml", "src/autopilot/facts.py", "src/autopilot/pipeline.py", "src/autopilot/cli.py", "src/autopilot/discovery.py", "src/autopilot/research.py", "src/autopilot/render.py", "src/autopilot/providers/tts.py"]
   schedule:
     # 12:11 and 18:11 Asia/Kolkata: exactly two Shorts each day.
     # The evening run additionally creates the long-form video when it is due.
-    - cron: "41 6 * * *"
-    - cron: "41 12 * * *"
+    - cron: "41 6 * * *"  # primary morning
+    - cron: "19 7 * * *"  # backup morning; daily quota prevents duplicates
+    - cron: "41 12 * * *" # primary evening
+    - cron: "19 13 * * *" # backup evening; daily quota prevents duplicates
   workflow_dispatch:
     inputs:
       slot:
@@ -67,7 +69,7 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "RUN_SLOT=${{ inputs.slot }}" >> "$GITHUB_ENV"
-          elif [ "${{ github.event.schedule }}" = "41 6 * * *" ]; then
+          elif [ "${{ github.event.schedule }}" = "41 6 * * *" ] || [ "${{ github.event.schedule }}" = "19 7 * * *" ]; then
             echo "RUN_SLOT=morning" >> "$GITHUB_ENV"
           else
             echo "RUN_SLOT=evening" >> "$GITHUB_ENV"
