@@ -134,7 +134,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-12T14:00:52.037063+00:00"
+      "analytics_updated_at": "2026-10-13T13:52:42.769159+00:00"
     },
     {
       "video_id": "tXzKJN-Sxds",
@@ -163,17 +163,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T13:07:52Z",
       "analytics": {
-        "views": 73.0,
-        "estimatedMinutesWatched": 24.0,
-        "averageViewDuration": 42.0,
-        "averageViewPercentage": 81.47,
-        "likes": 4.0,
+        "views": 24.0,
+        "estimatedMinutesWatched": 14.0,
+        "averageViewDuration": 71.0,
+        "averageViewPercentage": 137.58,
+        "likes": 2.0,
         "comments": 0.0,
         "shares": 1.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-12T14:00:52.034224+00:00"
+      "analytics_updated_at": "2026-10-13T13:52:42.765755+00:00"
     },
     {
       "video_id": "rOXhektjpHg",
@@ -183,17 +183,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T13:17:46Z",
       "analytics": {
-        "views": 459.0,
-        "estimatedMinutesWatched": 96.0,
-        "averageViewDuration": 24.0,
-        "averageViewPercentage": 56.05,
-        "likes": 8.0,
+        "views": 20.0,
+        "estimatedMinutesWatched": 4.0,
+        "averageViewDuration": 27.0,
+        "averageViewPercentage": 62.16,
+        "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-12T14:00:52.024928+00:00"
+      "analytics_updated_at": "2026-10-13T13:52:42.766466+00:00"
     },
     {
       "video_id": "bT9UdwBKLks",
@@ -203,17 +203,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T13:28:06Z",
       "analytics": {
-        "views": 119.0,
-        "estimatedMinutesWatched": 14.0,
-        "averageViewDuration": 19.0,
-        "averageViewPercentage": 42.52,
-        "likes": 5.0,
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-12T14:00:52.030800+00:00"
+      "analytics_updated_at": "2026-10-13T13:52:42.769997+00:00"
     },
     {
       "video_id": "wDtG3Hpjs6s",
@@ -223,17 +223,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T18:16:27Z",
       "analytics": {
-        "views": 330.0,
-        "estimatedMinutesWatched": 73.0,
-        "averageViewDuration": 28.0,
-        "averageViewPercentage": 69.87,
-        "likes": 9.0,
+        "views": 8.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 29.0,
+        "averageViewPercentage": 72.72,
+        "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-12T14:00:52.026523+00:00"
+      "analytics_updated_at": "2026-10-13T13:52:42.767975+00:00"
     },
     {
       "video_id": "RurypNkFZeY",
@@ -243,17 +243,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T18:21:55Z",
       "analytics": {
-        "views": 114.0,
-        "estimatedMinutesWatched": 16.0,
-        "averageViewDuration": 14.0,
-        "averageViewPercentage": 29.580000000000002,
+        "views": 8.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 27.0,
+        "averageViewPercentage": 55.74,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-12T14:00:52.031470+00:00"
+      "analytics_updated_at": "2026-10-13T13:52:42.767218+00:00"
     },
     {
       "video_id": "EiZc33RD3Rg",
@@ -273,7 +273,7 @@
         "subscribersGained": 4.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-12T14:00:52.023821+00:00"
+      "analytics_updated_at": "2026-10-13T13:52:42.750918+00:00"
     },
     {
       "video_id": "5R3YR8lO-hQ",
@@ -473,8 +473,18 @@
       "format": "short",
       "script_preview": "",
       "created_at": "2026-10-10T17:18:44Z",
-      "analytics": {},
-      "source": "youtube_sync"
+      "analytics": {
+        "views": 307.0,
+        "estimatedMinutesWatched": 74.0,
+        "averageViewDuration": 27.0,
+        "averageViewPercentage": 59.41,
+        "likes": 8.0,
+        "comments": 0.0,
+        "shares": 3.0,
+        "subscribersGained": 1.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-10-13T13:52:42.756119+00:00"
     },
     {
       "video_id": "SN6_j-wBvuE",
@@ -483,8 +493,18 @@
       "format": "short",
       "script_preview": "",
       "created_at": "2026-10-10T17:26:25Z",
-      "analytics": {},
-      "source": "youtube_sync"
+      "analytics": {
+        "views": 182.0,
+        "estimatedMinutesWatched": 34.0,
+        "averageViewDuration": 21.0,
+        "averageViewPercentage": 39.33,
+        "likes": 4.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-10-13T13:52:42.759432+00:00"
     },
     {
       "video_id": "OhnIA4OlnXs",
@@ -493,7 +513,8 @@
       "format": "short",
       "script_preview": "Why does groundwater in Yellowstone transform from a quiet pool into a violent explosion? The answer lies not in volcanic magma reaching the surface, but in the internal architecture of the earth. Two conditions are required: a reservoir of groundwater heated by magma-warmed rock and a narrow, constricting vent. This constriction acts as a plumbing trap, forcing hot water to sustain extreme pressure. Once a small amount of water escapes, the internal pressure drops, causing water to flash into steam. The resulting expansion forces the column upward in a rhythmic eruption. However, because thes",
       "created_at": "2026-10-10T19:03:27.781541+00:00",
-      "analytics": {}
+      "analytics": {},
+      "analytics_updated_at": "2026-10-13T13:52:42.752260+00:00"
     },
     {
       "video_id": "kvotNIjf1Y8",
@@ -502,7 +523,8 @@
       "format": "short",
       "script_preview": "Why does your compass point to a destination that doesn't technically exist? If you rely on the needle for true geographic heading, you may drift miles off course. The needle does not track Earth's rotational axis; it aligns with local magnetic force lines generated by the flow of molten iron deep within the planet. This angular difference is magnetic declination. Because Earth’s interior is in constant, dynamic motion, this declination is not fixed—it varies significantly based on your specific global coordinates and the current date. Global magnetic models must be updated continuously to acc",
       "created_at": "2026-10-10T19:09:51.873485+00:00",
-      "analytics": {}
+      "analytics": {},
+      "analytics_updated_at": "2026-10-13T13:52:42.754079+00:00"
     }
   ],
   "topics": [
