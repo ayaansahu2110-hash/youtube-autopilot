@@ -48,6 +48,8 @@ class AutopilotPipeline:
             rate=settings.edge_tts_rate,
             pitch=settings.edge_tts_pitch,
             volume=settings.edge_tts_volume,
+            gemini_api_key=settings.gemini_api_key,
+            ffmpeg_binary=settings.ffmpeg_binary,
         )
         self.visuals = PexelsVideoProvider(settings.pexels_api_key)
         self.hybrid_visuals = HybridVisualDirector(
