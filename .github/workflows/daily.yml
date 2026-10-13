@@ -3,10 +3,12 @@ name: Daily YouTube Autopilot
 on:
   push:
     branches: [main]
-    paths: [".github/workflows/daily.yml", "src/autopilot/pipeline.py", "src/autopilot/cli.py", "src/autopilot/discovery.py", "src/autopilot/research.py", "src/autopilot/providers/llm.py", "src/autopilot/editorial.py"]
+    paths: [".github/workflows/daily.yml", "src/autopilot/pipeline.py", "src/autopilot/cli.py", "src/autopilot/discovery.py", "src/autopilot/research.py", "src/autopilot/providers/llm.py", "src/autopilot/providers/tts.py", "src/autopilot/editorial.py"]
   schedule:
-    - cron: "23 6 * * *"  # 11:53 Asia/Kolkata; staggered to reduce scheduler contention
-    - cron: "23 12 * * *" # 17:53 Asia/Kolkata
+    - cron: "23 6 * * *"  # 11:53 Asia/Kolkata primary morning
+    - cron: "7 7 * * *"   # 12:37 Asia/Kolkata backup; daily quota prevents duplicates
+    - cron: "23 12 * * *" # 17:53 Asia/Kolkata primary evening
+    - cron: "7 13 * * *"  # 18:37 Asia/Kolkata backup; daily quota prevents duplicates
   workflow_dispatch:
     inputs:
       slot:
@@ -55,7 +57,7 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "RUN_SLOT=${{ inputs.slot }}" >> "$GITHUB_ENV"
-          elif [ "${{ github.event.schedule }}" = "23 6 * * *" ]; then
+          elif [ "${{ github.event.schedule }}" = "23 6 * * *" ] || [ "${{ github.event.schedule }}" = "7 7 * * *" ]; then
             echo "RUN_SLOT=morning" >> "$GITHUB_ENV"
           else
             echo "RUN_SLOT=evening" >> "$GITHUB_ENV"
