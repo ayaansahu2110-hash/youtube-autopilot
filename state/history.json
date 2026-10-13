@@ -8,17 +8,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T06:59:52Z",
       "analytics": {
-        "views": 16.0,
-        "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 19.0,
-        "averageViewPercentage": 43.42,
+        "views": 15.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 21.0,
+        "averageViewPercentage": 47.96,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-12T14:43:52.798956+00:00"
+      "analytics_updated_at": "2026-10-13T13:52:46.954998+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-12T14:43:52.809968+00:00"
+      "analytics_updated_at": "2026-10-13T13:52:46.974562+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -48,7 +48,7 @@
       "script_preview": "",
       "created_at": "2026-08-29T12:39:19Z",
       "analytics": {
-        "views": 6.0,
+        "views": 5.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 9.0,
         "averageViewPercentage": 18.6,
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-12T14:43:52.808132+00:00"
+      "analytics_updated_at": "2026-10-13T13:52:46.973025+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -68,7 +68,7 @@
       "script_preview": "",
       "created_at": "2026-08-29T20:03:55Z",
       "analytics": {
-        "views": 2.0,
+        "views": 1.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 0.0,
         "averageViewPercentage": 0.0,
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-12T14:43:52.815635+00:00"
+      "analytics_updated_at": "2026-10-13T13:52:46.985376+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -88,7 +88,7 @@
       "script_preview": "",
       "created_at": "2026-08-30T06:43:54Z",
       "analytics": {
-        "views": 18.0,
+        "views": 17.0,
         "estimatedMinutesWatched": 3.0,
         "averageViewDuration": 22.0,
         "averageViewPercentage": 41.94,
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-12T14:43:52.798039+00:00"
+      "analytics_updated_at": "2026-10-13T13:52:46.952015+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -108,7 +108,7 @@
       "script_preview": "",
       "created_at": "2026-08-30T09:37:18Z",
       "analytics": {
-        "views": 2.0,
+        "views": 1.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 0.0,
         "averageViewPercentage": 0.0,
@@ -118,7 +118,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-12T14:43:52.816548+00:00"
+      "analytics_updated_at": "2026-10-13T13:52:46.986912+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -937,7 +937,7 @@
       "script_preview": "",
       "created_at": "2026-10-07T13:59:06Z",
       "analytics": {
-        "views": 28.0,
+        "views": 30.0,
         "estimatedMinutesWatched": 2.0,
         "averageViewDuration": 22.0,
         "averageViewPercentage": 44.85,
@@ -947,7 +947,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-12T14:43:52.792574+00:00"
+      "analytics_updated_at": "2026-10-13T13:52:46.934023+00:00"
     },
     {
       "video_id": "KVFqKsYLfW0",
@@ -956,8 +956,18 @@
       "format": "short",
       "script_preview": "",
       "created_at": "2026-10-10T17:02:06Z",
-      "analytics": {},
-      "source": "youtube_sync"
+      "analytics": {
+        "views": 22.0,
+        "estimatedMinutesWatched": 3.0,
+        "averageViewDuration": 33.0,
+        "averageViewPercentage": 55.58,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-10-13T13:52:46.939961+00:00"
     },
     {
       "video_id": "yBRO_fFCfXs",
@@ -967,7 +977,8 @@
       "script_preview": "Ninety percent of developers now run AI coding agents, but teams are not shipping finished software any faster. Writing syntax is now effortless, but as Gabriel Martinez highlights, code generation is cheap while code review is expensive. Prompt an agent for checkout logic, and it delivers eight hundred lines of plausible code in seconds. Then human engineers spend three hours verifying edge cases, auth boundaries, and untested error handling. This triggers the eighty percent problem: agents ship fast initially, but stack up hidden technical debt. In monorepos, VentureBeat reports that broader",
       "created_at": "2026-10-10T17:09:15.347820+00:00",
       "analytics": {},
-      "source": "youtube_sync"
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-10-13T13:52:46.922199+00:00"
     },
     {
       "video_id": "Kf6vZN5CHAA",
@@ -977,7 +988,8 @@
       "script_preview": "Stop wasting time on charts that no one understands; I will show you how to use AI to turn your complex data dashboards into a persuasive, decision-ready narrative in minutes. Most dashboards currently fail because they simply show cold facts rather than telling a clear, compelling business story. The human brain craves context and meaning, but your typical spreadsheet just offers rows of raw, uninterpreted numbers. When you present data, your primary goal is not to dump information; it is to lead a conversation toward a specific, measurable business decision, which is where AI comes in. This ",
       "created_at": "2026-10-10T17:59:23.199767+00:00",
       "analytics": {},
-      "source": "youtube_sync"
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-10-13T13:52:46.966975+00:00"
     },
     {
       "video_id": "xecd0eVo1fk",
@@ -986,8 +998,18 @@
       "format": "short",
       "script_preview": "",
       "created_at": "2026-10-10T18:08:18Z",
-      "analytics": {},
-      "source": "youtube_sync"
+      "analytics": {
+        "views": 18.0,
+        "estimatedMinutesWatched": 5.0,
+        "averageViewDuration": 81.0,
+        "averageViewPercentage": 162.18,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-10-13T13:52:46.950515+00:00"
     },
     {
       "video_id": "ReHy3vKUNFU",
@@ -1005,6 +1027,33 @@
       "format": "short",
       "script_preview": "Stop accepting the 'no-refund' policy; AI agents are now scanning terms of service to force companies to pay you back. Platforms rely on you giving up when customer support makes a claim difficult. Now, agents are moving in. They scan your email for receipts, cross-reference policy fine print, and draft professional, legally-backed demand letters. When a service is delayed or a price drops, the agent flags it, hunts down the specific clause, and auto-formats the formal request. This destroys the 'friction' companies build to keep your money. The catch? Merchants are fighting back, deploying bo",
       "created_at": "2026-10-11T17:48:58.441546+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "S4ArTcIkF_o",
+      "topic": "Microsoft Israel cuts hit AI agent team, with 50 Copilot Studio employees summoned to pre-dismissal hearings",
+      "title": "Microsoft Copilot Team Cuts: What This Means for Your AI Agents",
+      "format": "short",
+      "script_preview": "Your enterprise AI agent just lost its architects. Microsoft is cutting fifty roles in the team building Copilot Studio, the backbone of their autonomous business bots. Here is the paradox: as companies like Microsoft and Monday.com force-push 'AI agent' strategies, they are simultaneously dismantling the specialized R&D teams required to maintain them. You are likely using these agents to auto-summarize weekly emails or sync CRM data. But when the core developers behind these tools are replaced by restructuring, technical debt accumulates in the platform itself. If your workflow relies on a C",
+      "created_at": "2026-10-13T13:58:49.858025+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "32SAXoj_OXo",
+      "topic": "Users keep rejecting Copilot, and now Microsoft is killing its AI themes in Outlook (New) for Windows",
+      "title": "Microsoft Kills Outlook AI Themes",
+      "format": "short",
+      "script_preview": "Microsoft is gutting AI features in the new Outlook for Windows because users simply aren't engaging with them. The company is officially retiring 'Themes by Copilot,' ending the experiment that allowed users to generate backgrounds via prompt. This change follows a broader trend where Windows 11 users remain unimpressed with aggressive AI integration. Even with new features like in-app browser support for Copilot, user pushback against unnecessary UI clutter remains high. The reality is that AI is often forced into interfaces where it adds cognitive friction instead of actual workflow speed. ",
+      "created_at": "2026-10-13T14:05:50.985295+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "U0fuwALpesI",
+      "topic": "Spotify More Than Doubled Monthly Code Changes as AI Accelerated Development",
+      "title": "Why Spotify's AI Coding Surge is a Double-Edged Sword",
+      "format": "long",
+      "script_preview": "Spotify’s engineering team has achieved a massive milestone: they have more than doubled their monthly code changes. This jump in velocity is the direct result of integrating AI-assisted coding tools throughout their development lifecycle. For software teams, doubling your output is a metric for celebration, but here, the consequences are complex. When we look at the raw data, this surge represents a fundamental shift in how developers interact with their codebase. Instead of manually writing every function from scratch, engineers now act as curators for AI-generated suggestions. The speed inc",
+      "created_at": "2026-10-13T14:46:33.697958+00:00",
       "analytics": {}
     }
   ],
@@ -1366,6 +1415,24 @@
       "title": "Your AI Agent Wants Your Money Back",
       "format": "short",
       "created_at": "2026-10-11T17:48:58.441546+00:00"
+    },
+    {
+      "topic": "Microsoft Israel cuts hit AI agent team, with 50 Copilot Studio employees summoned to pre-dismissal hearings",
+      "title": "Microsoft Copilot Team Cuts: What This Means for Your AI Agents",
+      "format": "short",
+      "created_at": "2026-10-13T13:58:49.858025+00:00"
+    },
+    {
+      "topic": "Users keep rejecting Copilot, and now Microsoft is killing its AI themes in Outlook (New) for Windows",
+      "title": "Microsoft Kills Outlook AI Themes",
+      "format": "short",
+      "created_at": "2026-10-13T14:05:50.985295+00:00"
+    },
+    {
+      "topic": "Spotify More Than Doubled Monthly Code Changes as AI Accelerated Development",
+      "title": "Why Spotify's AI Coding Surge is a Double-Edged Sword",
+      "format": "long",
+      "created_at": "2026-10-13T14:46:33.697958+00:00"
     }
   ]
 }
