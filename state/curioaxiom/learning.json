@@ -1,47 +1,47 @@
 {
-  "generated_at": "2026-10-13T14:34:11.991187+00:00",
+  "generated_at": "2026-10-13T20:34:49.673684+00:00",
   "competitors": [
     {
       "channel": "Timeline - World History Documentaries",
       "subscribers": 5900000,
-      "channel_views": 1079003102,
+      "channel_views": 1079629347,
       "video_count": 1489,
       "high_performing_recent_videos": [
         {
           "title": "1942: The Complete Story Of The Battle Of Stalingrad",
-          "views": 222304,
-          "likes": 1047,
-          "comments": 82,
+          "views": 224281,
+          "likes": 1061,
+          "comments": 83,
           "published_at": "2026-10-03T21:00:35Z",
           "description_excerpt": "In the autumn of 1942, Hitler’s Sixth Army clashed with the Red Army at Stalingrad in the bloodiest battle in human history. From house-to-house fighting in frozen ruins to catastrophic encirclement, this epic documentary details the turning points of world warfare. Explore how military genius, strategic miscalculation, and brutal winter conditions"
         },
         {
           "title": "Archeologists Unearth A Crashed WW2 Bomber",
-          "views": 126897,
-          "likes": 804,
-          "comments": 39,
+          "views": 136112,
+          "likes": 854,
+          "comments": 40,
           "published_at": "2026-10-08T21:00:03Z",
           "description_excerpt": "In November 1944, two brand-new American A26 Invader bombers took off from Warton Air Base bound for France. Minutes later, both aircraft crashed into coastal marshland, killing all three crew members. For decades, official reports left the cause unknown. In this episode, archaeologists and aviation crash investigators excavate the buried wreckage,"
         },
         {
           "title": "1945 - 1961: The Complete Story Of The Early Cold War",
-          "views": 96846,
-          "likes": 463,
-          "comments": 51,
+          "views": 100866,
+          "likes": 483,
+          "comments": 52,
           "published_at": "2026-10-10T21:00:02Z",
           "description_excerpt": "Explore the origins and escalation of the Cold War in this documentary. Following the end of WW2 and the atomic bombings of Hiroshima and Nagasaki, two superpowers emerged: the USA and the USSR. Track the descent into global rivalry, from Churchill's Iron Curtain speech and the Berlin Airlift to the Korean War, atomic espionage, the Space Race, and"
         },
         {
           "title": "The Assassination Of Michael Collins: How The IRA’s Mastermind Was Brought Down",
-          "views": 40719,
-          "likes": 287,
+          "views": 41655,
+          "likes": 294,
           "comments": 22,
           "published_at": "2026-10-06T21:00:24Z",
           "description_excerpt": "On August 22, 1922, Michael Collins, leader of the new Irish Free State, was struck down by a single fatal gunshot during an ambush at Béal na Bláth in County Cork. His sudden death deprived Ireland of the one leader who might have brought the Irish Civil War to a swift end. Was it a tragic military accident, an execution ordered by Éamon de Valera"
         },
         {
           "title": "1066-1707: The Complete Story Of The Formation Of The United Kingdom",
-          "views": 21684,
+          "views": 21738,
           "likes": 173,
           "comments": 9,
           "published_at": "2026-10-05T21:00:29Z",
@@ -50,98 +50,98 @@
       ]
     },
     {
-      "channel": "The Engineering Mindset",
-      "subscribers": 4480000,
-      "channel_views": 349154630,
-      "video_count": 318,
-      "high_performing_recent_videos": [
-        {
-          "title": "MOSFET vs Transistor vs Relay: Most People Get This Wrong",
-          "views": 703651,
-          "likes": 15823,
-          "comments": 487,
-          "published_at": "2026-06-15T18:41:01Z",
-          "description_excerpt": "MOSFET V Transistors Try Brilliant 👉  http://brilliant.org/TheEngineeringMindset Plus our viewers 20% off an annual Premium subscription.\n\nLearn the key differences between MOSFETs, transistors and relays. This beginner-friendly electronics tutorial explains how BJTs and MOSFETs work, why they are used for switching and amplification, and how to ch"
-        },
-        {
-          "title": "The 1.25V Trick That Gives You Any Voltage You Want",
-          "views": 351430,
-          "likes": 9097,
-          "comments": 333,
-          "published_at": "2026-06-01T17:04:21Z",
-          "description_excerpt": "Learn how voltage regulators actually work and how to design and build one. \nCheck out PCBWAY➡️ https://www.pcbway.com/ for PCB's, 3D printing and CNC at expectational value and design PCB's with Altium ➡️ http://altium.com/yt/engineeringmindset\nLearn how an LM317 adjustable voltage regulator turns unregulated DC into a smooth, stable output for el"
-        },
-        {
-          "title": "Why 3 Phase Power Is So Much Better",
-          "views": 347982,
-          "likes": 3325,
-          "comments": 83,
-          "published_at": "2026-09-15T15:00:01Z",
-          "description_excerpt": "Why 3 phases? Get a 30 day free trial and 20% off an annual subscription.🎁 Click here: https://brilliant.org/TheEngineeringMindset \n\nWhat is 3 phase electricity and how does three phase power work, learn Wye Delta loads and neutral currents, how and where three phase electricity is used, why 3 phases, how the generator works to produce 3 phase sine"
-        },
-        {
-          "title": "How a CPU Turns 1s and 0s Into Everything You See",
-          "views": 227608,
-          "likes": 3976,
-          "comments": 138,
-          "published_at": "2026-10-05T15:00:22Z",
-          "description_excerpt": "How do CPUs actually work? Design PCB's with Altium:  http://altium.com/yt/engineeringmindset\nHow does a CPU use billions of microscopic transistors to perform calculations and run software? In this video, we work from individual MOSFETs through logic gates, binary arithmetic and full adders to the ALU and CPU core.\nSee how processors fetch and exe"
-        },
-        {
-          "title": "The Truth About Three-Phase Power: Why It Became the Standard",
-          "views": 179747,
-          "likes": 6580,
-          "comments": 623,
-          "published_at": "2026-07-28T17:13:17Z",
-          "description_excerpt": "Why Not 2 Phase Power? Try Brilliant 👉  http://brilliant.org/TheEngineeringMindset Plus our viewers 20% off an annual Premium subscription.\n\nDownload your Excel sheets here ➡️ https://tinyurl.com/2-Phase-Excel\nTry Brilliant Tutor for free 👉  http://brilliant.org/TheEngineeringMindset\nGet your engineers mug here:➡️ https://engineeringmindset.store/p"
-        }
-      ]
-    },
-    {
       "channel": "Engineering Explained",
       "subscribers": 4230000,
-      "channel_views": 1065748657,
+      "channel_views": 1065969075,
       "video_count": 1072,
       "high_performing_recent_videos": [
         {
           "title": "Porsche's 6-Stroke Engine Is Fascinating – More Power!",
-          "views": 960049,
-          "likes": 40012,
+          "views": 960140,
+          "likes": 40015,
           "comments": 805,
           "published_at": "2026-07-31T14:00:15Z",
           "description_excerpt": "Porsche patented a 6-stroke engine, yes, two more strokes than you’d commonly see for a combustion engine, and most excitingly, one of those additional strokes is a power-stroke! We now have two power strokes per cylinder within the full six-stroke cycle. The way it works is through Porsche’s genius hypocycloidal design which the crankshaft follows"
         },
         {
           "title": "Are You Buying The Wrong Tires?",
-          "views": 787967,
-          "likes": 12217,
+          "views": 789867,
+          "likes": 12241,
           "comments": 1131,
           "published_at": "2026-09-25T14:00:36Z",
           "description_excerpt": "Summer, All-Season, All-Weather, Winter, All-Terrain – What Tires Should You Buy?\nFind the right tires for your car: https://continentaltire.com/tire-search\nBig thanks to Continental for sponsoring this video! \n\nNothing impacts the performance of your car more than tires. But when you’re buying tires, it can be overwhelming trying to figure out wha"
         },
         {
           "title": "Lucid Bought My Car Back, So I Bought A Mach-E",
-          "views": 606288,
-          "likes": 16909,
-          "comments": 3173,
+          "views": 618233,
+          "likes": 17146,
+          "comments": 3201,
           "published_at": "2026-10-09T14:00:42Z",
           "description_excerpt": "Lucid bought back my Air, so I bought a Ford Mustang Mach-E GT\nCheck out Continental's ECS02 Tires! - https://bit.ly/3Ulidu1\nSponsored by Continental \n\nGenuinely this was some of the most fun I’ve ever had car shopping because the criteria was very open: pretty much anything electric, except for three brands. I’ve already had a long term Nissan Lea"
         },
         {
           "title": "How To Easily Ruin Your Turbocharged Car",
-          "views": 483463,
-          "likes": 14971,
+          "views": 483585,
+          "likes": 14974,
           "comments": 594,
           "published_at": "2026-09-11T14:00:36Z",
           "description_excerpt": "If you want to ruin your turbocharged car, it’s easy. All you have to do is drive your car hard, then immediately shut it off. You see, turbos are one of the hottest parts of your car, since all of the exhaust gases are routed through it. To help enable high turbo speeds, and to help cool it, engine oil pass through the insides of the turbocharger,"
         },
         {
           "title": "20 Innovations That Changed Cars Forever – Part 1",
-          "views": 379959,
-          "likes": 6933,
+          "views": 380074,
+          "likes": 6935,
           "comments": 405,
           "published_at": "2026-08-07T14:00:05Z",
           "description_excerpt": "The 20 Most Important Automotive Innovations of the Past Century\nCheck out Part 2 of the trip here! - https://youtu.be/Zx-22h3YMgw\nSponsored by Bosch Wiper Blades - https://youtu.be/1-SzPD-CTgQ\n\nCars are infinitely complex, and that’s exactly why I am so obsessed with them. They are the most complicated consumer product you can buy, and that comple"
+        }
+      ]
+    },
+    {
+      "channel": "Absolute History",
+      "subscribers": 3700000,
+      "channel_views": 1317214179,
+      "video_count": 1128,
+      "high_performing_recent_videos": [
+        {
+          "title": "Even More Crazy Facts About British Kings & Queens!",
+          "views": 685874,
+          "likes": 22172,
+          "comments": 66,
+          "published_at": "2026-10-08T16:30:39Z",
+          "description_excerpt": "To find out more about the insanely dramatic history of the Tudor dynasty, watch 'How The Tudors Lost Their Heads' on National Geographic, also streaming on Disney+\nhttps://www.natgeotv.com/uk/special/how-the-tudors-lost-their-heads\n\n💚 Join the Absolute History club to get access to exclusive member benefits! \n👉 https://bit.ly/3qTE0NR\n\n📺 You can no"
+        },
+        {
+          "title": "More Bizarre British Monarchy Facts!",
+          "views": 214679,
+          "likes": 7888,
+          "comments": 42,
+          "published_at": "2026-10-01T16:30:01Z",
+          "description_excerpt": "To find out more about the insanely dramatic history of the Tudor dynasty, watch 'How The Tudors Lost Their Heads' on National Geographic, also streaming on Disney+\nhttps://www.natgeotv.com/uk/special/how-the-tudors-lost-their-heads\n\n💚 Join the Absolute History club to get access to exclusive member benefits! \n👉 https://bit.ly/3qTE0NR\n\n📺 You can no"
+        },
+        {
+          "title": "Operation Barbarossa: Uncovering Hitler's Fatal Obsession",
+          "views": 116333,
+          "likes": 334,
+          "comments": 54,
+          "published_at": "2026-10-09T21:00:26Z",
+          "description_excerpt": "In June 1941, Adolf Hitler launched Operation Barbarossa, tearing up the non-aggression pact with Joseph Stalin and unleashing the largest military invasion in human history. Believing rapid Blitzkrieg tactics and racial ideology would force a swift Soviet collapse, the German army advanced across a thousand-mile front. However, fierce resistance, "
+        },
+        {
+          "title": "Inside The Private Lives Of The Next Royal Generation: Beatrice, Eugenie & Catherine",
+          "views": 28481,
+          "likes": 76,
+          "comments": 23,
+          "published_at": "2026-10-02T21:00:24Z",
+          "description_excerpt": "As the British monarchy enters a new era under King Charles III, a new generation stands at the intersection of tradition and modernity. From Princess Beatrice and Princess Eugenie navigating personal careers alongside royal duties to Princess Catherine's pivotal role as the future Queen Consort, this documentary explores how these figures are resh"
+        },
+        {
+          "title": "Romanticism After 1789: Géricault's Raft, Delacroix's Liberty, Turner and Goya",
+          "views": 20499,
+          "likes": 80,
+          "comments": 3,
+          "published_at": "2026-10-04T16:00:31Z",
+          "description_excerpt": "1789 shattered old certainties and ignited Romantic art. This episode traces how revolution, the sublime, and the individual reshaped painting across Europe.\n\nFrom the fall of the Bastille, Western artists challenged neoclassical rules and elevated private feeling, nature, and the heroic or tragic individual. We unpack Edmund Burke's pairing of bea"
         }
       ]
     }
@@ -320,7 +320,7 @@
       "title": "The Physics of Persistent Contrails",
       "format": "short",
       "metrics": {
-        "views": 434.0,
+        "views": 435.0,
         "estimatedMinutesWatched": 102.0,
         "averageViewDuration": 28.0,
         "averageViewPercentage": 59.14,
@@ -376,11 +376,11 @@
       "title": "The Physics of Aurora Colors",
       "format": "short",
       "metrics": {
-        "views": 307.0,
-        "estimatedMinutesWatched": 74.0,
+        "views": 328.0,
+        "estimatedMinutesWatched": 76.0,
         "averageViewDuration": 27.0,
-        "averageViewPercentage": 59.41,
-        "likes": 8.0,
+        "averageViewPercentage": 57.97,
+        "likes": 9.0,
         "comments": 0.0,
         "shares": 3.0,
         "subscribersGained": 1.0
@@ -390,11 +390,11 @@
       "title": "The Chemistry of Aurora Colors",
       "format": "short",
       "metrics": {
-        "views": 182.0,
-        "estimatedMinutesWatched": 34.0,
+        "views": 198.0,
+        "estimatedMinutesWatched": 36.0,
         "averageViewDuration": 21.0,
-        "averageViewPercentage": 39.33,
-        "likes": 4.0,
+        "averageViewPercentage": 38.55,
+        "likes": 6.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
@@ -404,11 +404,11 @@
       "title": "The Physics of Geyser Eruptions",
       "format": "short",
       "metrics": {
-        "views": 1210.0,
-        "estimatedMinutesWatched": 227.0,
+        "views": 1229.0,
+        "estimatedMinutesWatched": 231.0,
         "averageViewDuration": 21.0,
-        "averageViewPercentage": 48.5,
-        "likes": 23.0,
+        "averageViewPercentage": 48.56,
+        "likes": 22.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
@@ -418,10 +418,10 @@
       "title": "The Compass Paradox",
       "format": "short",
       "metrics": {
-        "views": 456.0,
-        "estimatedMinutesWatched": 60.0,
-        "averageViewDuration": 17.0,
-        "averageViewPercentage": 38.75,
+        "views": 544.0,
+        "estimatedMinutesWatched": 64.0,
+        "averageViewDuration": 16.0,
+        "averageViewPercentage": 38.55,
         "likes": 5.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -448,11 +448,25 @@
       "title": "The Physics of Geyser Eruptions",
       "format": "short",
       "metrics": {
-        "views": 1210.0,
-        "estimatedMinutesWatched": 227.0,
+        "views": 1229.0,
+        "estimatedMinutesWatched": 231.0,
         "averageViewDuration": 21.0,
-        "averageViewPercentage": 48.5,
-        "likes": 23.0,
+        "averageViewPercentage": 48.56,
+        "likes": 22.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "The Compass Paradox",
+      "format": "short",
+      "metrics": {
+        "views": 544.0,
+        "estimatedMinutesWatched": 64.0,
+        "averageViewDuration": 16.0,
+        "averageViewPercentage": 38.55,
+        "likes": 5.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
@@ -462,7 +476,7 @@
       "title": "The Physics of Persistent Contrails",
       "format": "short",
       "metrics": {
-        "views": 434.0,
+        "views": 435.0,
         "estimatedMinutesWatched": 102.0,
         "averageViewDuration": 28.0,
         "averageViewPercentage": 59.14,
@@ -473,28 +487,14 @@
       }
     },
     {
-      "title": "The Compass Paradox",
-      "format": "short",
-      "metrics": {
-        "views": 456.0,
-        "estimatedMinutesWatched": 60.0,
-        "averageViewDuration": 17.0,
-        "averageViewPercentage": 38.75,
-        "likes": 5.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
       "title": "The Physics of Aurora Colors",
       "format": "short",
       "metrics": {
-        "views": 307.0,
-        "estimatedMinutesWatched": 74.0,
+        "views": 328.0,
+        "estimatedMinutesWatched": 76.0,
         "averageViewDuration": 27.0,
-        "averageViewPercentage": 59.41,
-        "likes": 8.0,
+        "averageViewPercentage": 57.97,
+        "likes": 9.0,
         "comments": 0.0,
         "shares": 3.0,
         "subscribersGained": 1.0
