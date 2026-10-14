@@ -194,6 +194,12 @@ class ScriptPlanner:
         if content_mode not in {"tool_review", "news_explainer", "general_explainer"}:
             content_mode = "general_explainer"
         data["content_mode"] = content_mode
+        # Provider/editor retries occasionally preserve every scene but omit this
+        # required summary field. Derive a truthful label from existing plan data
+        # instead of discarding an otherwise quality-gated documentary.
+        data["angle"] = str(
+            data.get("angle") or data.get("hook") or research.topic
+        ).strip()
 
         urls = [source.url for source in research.sources if source.url]
         return VideoPlan(
