@@ -256,6 +256,46 @@ def test_short_voice_at_old_boundary_keeps_padding_margin(tmp_path, monkeypatch)
     assert renderer.normalize_short_voice_duration(audio, 65.0) == 64.6
 
 
+def test_planner_recovers_when_provider_omits_angle() -> None:
+    planner = ScriptPlanner(Settings(channel_profile="curioaxiom", gemini_api_key="test"))
+    research = ResearchPack(topic="Why Glaciers Carve U-Shaped Valleys")
+    scenes = [
+        {
+            "narration": " ".join([f"supported{index}"] * 40),
+            "visual_query": f"glacier valley evidence {index}",
+            "purpose": "evidence",
+            "visual_mode": "stock",
+            "source_url": "",
+            "on_screen_text": "ICE CARVES ROCK",
+            "exact_visual_subject": f"moving glacier and valley wall {index}",
+            "camera_and_lighting": "documentary daylight",
+            "generator_prompt": f"real glacier erosion scene {index}",
+            "shot_type_camera_movement": f"distinct camera move {index}",
+            "sfx_audio_cue": "restrained ice movement",
+        }
+        for index in range(30)
+    ]
+    provider_json = {
+        "hook": "Moving ice can widen an entire valley.",
+        "script": "",
+        "title": "How Ice Carves a Valley",
+        "description": "A sourced explanation of glacial erosion.",
+        "tags": ["glaciers", "geology"],
+        "thumbnail_brief": "Glacier above a U-shaped valley",
+        "thumbnail_text": "ICE CARVES VALLEYS",
+        "visual_queries": [],
+        "scenes": scenes,
+    }
+    planner._generate_json = lambda prompt: provider_json.copy()
+    planner._improve_plan = lambda research, video_format, draft: draft
+
+    plan = planner.create_plan(research, "long")
+
+    assert plan.angle == provider_json["hook"]
+    assert plan.topic == research.topic
+    assert len(plan.scenes) == 30
+
+
 def test_fact_prompt_requires_zero_mismatch_storyboards() -> None:
     planner = FactScriptPlanner(Settings(channel_profile="curioaxiom"))
     prompt = planner._draft_prompt(
