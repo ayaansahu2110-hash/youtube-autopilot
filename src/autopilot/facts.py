@@ -14,7 +14,7 @@ AUTHORITATIVE_DOMAINS = {
         "nasa.gov", "noaa.gov", "weather.gov", "esa.int", "nih.gov", "nature.com", "science.org"
     ),
     "history": ("si.edu", "loc.gov", "archives.gov", "britishmuseum.org"),
-    "geography": ("un.org", "worldbank.org", "usgs.gov", "noaa.gov", "whoi.edu", "nps.gov"),
+    "geography": ("un.org", "worldbank.org", "usgs.gov", "noaa.gov", "whoi.edu", "nps.gov", "fs.usda.gov"),
     "mathematics": ("ams.org", "maa.org", "mathworld.wolfram.com", "edu"),
     # NOAA is authoritative for Earth-Moon tide interactions that cross the
     # space and ocean-science lanes.
@@ -533,6 +533,78 @@ def verified_curio_seed(
                 ResearchSource(title="Columnar Jointing", publisher="National Park Service",
                                url="https://www.nps.gov/subjects/volcanoes/columnar-jointing.htm",
                                snippet="NPS describes parallel fractures made by contraction as hot igneous rock cools. Columns are commonly six-sided but may have three to seven sides; they stand perpendicular to the principal cooling surfaces rather than necessarily vertical. Intersecting cracks near 120 degrees efficiently relieve contractional stress. Devils Postpile and Devils Tower illustrate this natural geological pattern, which also occurs outside basalt lava flows."),
+            ),
+        ),
+    )
+    # Reviewed 2026-10-14 against independent NOAA/NPS and USDA/NPS sources.
+    # These are editorial reserves for source outages; history exclusions prevent reuse.
+    seeds += (
+        (
+            "Why Fog Hugs the Ground",
+            "geography",
+            "Fog is a cloud at ground level: humid air cools to its dew point and water condenses near the surface, while terrain and light winds can keep it pooled in low places.",
+            ("fog ground", "ground cloud", "valley fog"),
+            (
+                ResearchSource(
+                    title="What's the Difference Between Fog and Clouds?",
+                    publisher="NOAA NESDIS",
+                    url="https://www.nesdis.noaa.gov/about/k-12-education/atmosphere/whats-the-difference-between-fog-and-clouds",
+                    snippet=(
+                        "NOAA explains that clouds and fog both form when water vapor condenses or "
+                        "freezes into tiny droplets or ice crystals, but fog is defined by forming at "
+                        "ground level. Cooling humid air toward its dew point allows condensation near "
+                        "the surface. Wind, temperature, moisture and terrain determine whether the "
+                        "droplets remain as a shallow ground-level layer or mix into higher cloud. "
+                        "A visual explanation should show real condensation and terrain, not smoke."
+                    ),
+                ),
+                ResearchSource(
+                    title="Clouds and Fog",
+                    publisher="Rocky Mountain National Park",
+                    url="https://www.nps.gov/romo/clouds_and_fog.htm",
+                    snippet=(
+                        "The National Park Service describes mountain and valley fog forming where "
+                        "moist air cools enough for water to condense. Air forced up a slope cools as "
+                        "pressure drops, while clear nights can cool valley air near the ground and "
+                        "produce shallow fog when moisture is available. Terrain can therefore make "
+                        "fog look as if it hugs a slope or pools in a basin, but the effect still "
+                        "depends on humidity, temperature and airflow rather than gravity pulling clouds down."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why Autumn Leaves Reveal Hidden Colors",
+            "geography",
+            "Shorter days and cooler conditions slow chlorophyll production; as green chlorophyll breaks down, yellow and orange pigments become visible, while some leaves also make red pigments.",
+            ("leaves change color", "autumn leaf color", "chlorophyll fall"),
+            (
+                ResearchSource(
+                    title="Why Leaves Change Color",
+                    publisher="USDA Forest Service",
+                    url="https://www.fs.usda.gov/Internet/FSE_DOCUMENTS/stelprd3817419.pdf",
+                    snippet=(
+                        "The USDA Forest Service explains that chlorophyll gives growing leaves their "
+                        "green appearance during spring and summer. As autumn days shorten and temperatures "
+                        "change, chlorophyll production slows and the existing pigment breaks down. Yellow "
+                        "and orange carotenoid colors that were already present become visible, while "
+                        "chemical changes can also produce red anthocyanin pigments. Weather and tree "
+                        "species affect the display, so every leaf does not follow one identical color path."
+                    ),
+                ),
+                ResearchSource(
+                    title="Learn About Fall Colors",
+                    publisher="Rocky Mountain National Park",
+                    url="https://home.nps.gov/romo/learn/nature/learn-about-fall-colors.htm",
+                    snippet=(
+                        "The National Park Service describes green chlorophyll as the pigment supporting "
+                        "photosynthesis through the growing season. With shorter daylight and changing "
+                        "autumn conditions, trees stop replacing chlorophyll and the green color fades, "
+                        "revealing other pigments in the leaf. Some leaves also form red or purple "
+                        "anthocyanins. Light, temperature, moisture and species influence the final color, "
+                        "so the explanation should not promise a single date or shade for every tree."
+                    ),
+                ),
             ),
         ),
     )
