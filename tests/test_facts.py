@@ -128,6 +128,45 @@ def test_curated_reserve_recovers_after_previous_topics_are_exhausted() -> None:
     assert FactVerifier().verify(second[1]).confidence_score >= 65
 
 
+def test_curated_reserve_extends_with_independent_october_sources() -> None:
+    used = [
+        "Why Astronauts Float in Orbit",
+        "Why Ocean Water Is Salty",
+        "Why Heat Shields Burn on Purpose",
+        "Why the Sky Is Blue but Sunsets Are Red",
+        "Why the Deep Ocean Can Crush a Submarine",
+        "Why Lightning Is Hotter Than the Sun's Surface",
+        "Why the Moon Moves Earth's Oceans",
+        "Why the Moon Changes Shape Without Changing Its Shape",
+        "Why Jet Trails Sometimes Linger for Hours",
+        "Why a Hurricane Has a Calm Eye",
+        "Why Venus Is Hotter Than Mercury",
+        "Why Rivers Carve S-Bends",
+        "Why Glacier Ice Looks Blue",
+        "Why Auroras Glow in Different Colors",
+        "Why Geysers Erupt Instead of Flowing Steadily",
+        "Why a Compass Does Not Point to True North",
+        "Why Cooling Lava Forms Stone Columns",
+    ]
+    fog = verified_curio_seed(excluded_topics=used)
+    assert fog is not None
+    assert fog[0].title == "Why Fog Hugs the Ground"
+    assert {source.publisher for source in fog[1].sources} == {
+        "NOAA NESDIS",
+        "Rocky Mountain National Park",
+    }
+    assert FactVerifier().verify(fog[1]).confidence_score >= 65
+
+    leaves = verified_curio_seed(excluded_topics=[*used, fog[0].title])
+    assert leaves is not None
+    assert leaves[0].title == "Why Autumn Leaves Reveal Hidden Colors"
+    assert {source.publisher for source in leaves[1].sources} == {
+        "USDA Forest Service",
+        "Rocky Mountain National Park",
+    }
+    assert FactVerifier().verify(leaves[1]).confidence_score >= 65
+
+
 def test_fact_planner_repairs_missing_title_options_without_changing_story(monkeypatch) -> None:
     narration = "Sinking air clears the eye."
     plan = VideoPlan(
