@@ -157,7 +157,17 @@ def test_curated_reserve_extends_with_independent_october_sources() -> None:
     }
     assert FactVerifier().verify(fog[1]).confidence_score >= 65
 
-    leaves = verified_curio_seed(excluded_topics=[*used, fog[0].title])
+    glacier = verified_curio_seed(excluded_topics=[*used, fog[0].title])
+    assert glacier is not None
+    assert glacier[0].title == "Why Glaciers Carve U-Shaped Valleys"
+    assert len(glacier[1].sources) == 4
+    assert {source.publisher for source in glacier[1].sources} == {
+        "U.S. Geological Survey",
+        "U.S. National Park Service",
+    }
+    assert FactVerifier().verify(glacier[1]).confidence_score >= 65
+
+    leaves = verified_curio_seed(excluded_topics=[*used, fog[0].title, glacier[0].title])
     assert leaves is not None
     assert leaves[0].title == "Why Autumn Leaves Reveal Hidden Colors"
     assert {source.publisher for source in leaves[1].sources} == {
