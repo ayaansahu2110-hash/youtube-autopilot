@@ -134,7 +134,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T20:34:49.670175+00:00"
+      "analytics_updated_at": "2026-10-14T12:21:11.485794+00:00"
     },
     {
       "video_id": "tXzKJN-Sxds",
@@ -163,17 +163,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T13:07:52Z",
       "analytics": {
-        "views": 24.0,
-        "estimatedMinutesWatched": 14.0,
-        "averageViewDuration": 71.0,
-        "averageViewPercentage": 137.58,
-        "likes": 2.0,
+        "views": 15.0,
+        "estimatedMinutesWatched": 11.0,
+        "averageViewDuration": 95.0,
+        "averageViewPercentage": 182.8,
+        "likes": 1.0,
         "comments": 0.0,
         "shares": 1.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T20:34:49.666729+00:00"
+      "analytics_updated_at": "2026-10-14T12:21:11.483096+00:00"
     },
     {
       "video_id": "rOXhektjpHg",
@@ -183,17 +183,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T13:17:46Z",
       "analytics": {
-        "views": 20.0,
+        "views": 15.0,
         "estimatedMinutesWatched": 4.0,
-        "averageViewDuration": 27.0,
-        "averageViewPercentage": 62.16,
+        "averageViewDuration": 30.0,
+        "averageViewPercentage": 70.43,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T20:34:49.667594+00:00"
+      "analytics_updated_at": "2026-10-14T12:21:11.483611+00:00"
     },
     {
       "video_id": "bT9UdwBKLks",
@@ -203,7 +203,7 @@
       "script_preview": "",
       "created_at": "2026-09-14T13:28:06Z",
       "analytics": {
-        "views": 1.0,
+        "views": 0.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 0.0,
         "averageViewPercentage": 0.0,
@@ -213,7 +213,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T20:34:49.671048+00:00"
+      "analytics_updated_at": "2026-10-14T12:21:11.487415+00:00"
     },
     {
       "video_id": "wDtG3Hpjs6s",
@@ -223,17 +223,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T18:16:27Z",
       "analytics": {
-        "views": 8.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 29.0,
-        "averageViewPercentage": 72.72,
+        "views": 2.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 16.0,
+        "averageViewPercentage": 41.22,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T20:34:49.669294+00:00"
+      "analytics_updated_at": "2026-10-14T12:21:11.485280+00:00"
     },
     {
       "video_id": "RurypNkFZeY",
@@ -243,17 +243,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T18:21:55Z",
       "analytics": {
-        "views": 8.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 27.0,
-        "averageViewPercentage": 55.74,
+        "views": 2.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 22.0,
+        "averageViewPercentage": 45.51,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T20:34:49.668444+00:00"
+      "analytics_updated_at": "2026-10-14T12:21:11.484729+00:00"
     },
     {
       "video_id": "EiZc33RD3Rg",
@@ -263,17 +263,17 @@
       "script_preview": "",
       "created_at": "2026-09-15T12:14:11Z",
       "analytics": {
-        "views": 1321.0,
-        "estimatedMinutesWatched": 680.0,
-        "averageViewDuration": 50.0,
-        "averageViewPercentage": 77.4,
-        "likes": 67.0,
+        "views": 19.0,
+        "estimatedMinutesWatched": 7.0,
+        "averageViewDuration": 39.0,
+        "averageViewPercentage": 60.38,
+        "likes": 0.0,
         "comments": 0.0,
-        "shares": 1.0,
-        "subscribersGained": 4.0
+        "shares": 0.0,
+        "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T20:34:49.652469+00:00"
+      "analytics_updated_at": "2026-10-14T12:21:11.482559+00:00"
     },
     {
       "video_id": "5R3YR8lO-hQ",
@@ -484,7 +484,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T20:34:49.656373+00:00"
+      "analytics_updated_at": "2026-10-14T12:21:11.476654+00:00"
     },
     {
       "video_id": "SN6_j-wBvuE",
@@ -504,7 +504,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-13T20:34:49.659825+00:00"
+      "analytics_updated_at": "2026-10-14T12:21:11.478791+00:00"
     },
     {
       "video_id": "OhnIA4OlnXs",
@@ -525,6 +525,15 @@
       "created_at": "2026-10-10T19:09:51.873485+00:00",
       "analytics": {},
       "analytics_updated_at": "2026-10-13T13:52:42.754079+00:00"
+    },
+    {
+      "video_id": "a70qCFSCLbs",
+      "topic": "Why Cooling Lava Forms Stone Columns",
+      "title": "Why Lava Forms Perfect Stone Columns",
+      "format": "short",
+      "script_preview": "Nature doesn't carve these monoliths; it shrinks them into existence. Look at the jagged giants of Devils Postpile. How does molten chaos freeze into perfect geometric symmetry? As lava flows cool, they solidify from their boundaries inward, generating massive thermal stress. To relieve this tension, the cooling rock fractures. These cracks propagate deep into the flow, meeting at 120-degree angles to maximize efficiency. This creates a network of polygonal columns. While most form hexagonal patterns, individual columns can display three to seven sides depending on cooling rates. It is not int",
+      "created_at": "2026-10-14T12:35:20.052493+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -691,6 +700,12 @@
       "title": "The Compass Paradox",
       "format": "short",
       "created_at": "2026-10-10T19:09:51.873485+00:00"
+    },
+    {
+      "topic": "Why Cooling Lava Forms Stone Columns",
+      "title": "Why Lava Forms Perfect Stone Columns",
+      "format": "short",
+      "created_at": "2026-10-14T12:35:20.052493+00:00"
     }
   ]
 }
