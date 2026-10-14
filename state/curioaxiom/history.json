@@ -134,7 +134,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T12:54:36.176558+00:00"
+      "analytics_updated_at": "2026-10-14T13:56:46.211821+00:00"
     },
     {
       "video_id": "tXzKJN-Sxds",
@@ -173,7 +173,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T12:54:36.169400+00:00"
+      "analytics_updated_at": "2026-10-14T13:56:46.207365+00:00"
     },
     {
       "video_id": "rOXhektjpHg",
@@ -193,7 +193,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T12:54:36.170240+00:00"
+      "analytics_updated_at": "2026-10-14T13:56:46.208244+00:00"
     },
     {
       "video_id": "bT9UdwBKLks",
@@ -213,7 +213,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T12:54:36.179227+00:00"
+      "analytics_updated_at": "2026-10-14T13:56:46.214436+00:00"
     },
     {
       "video_id": "wDtG3Hpjs6s",
@@ -233,7 +233,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T12:54:36.173160+00:00"
+      "analytics_updated_at": "2026-10-14T13:56:46.210958+00:00"
     },
     {
       "video_id": "RurypNkFZeY",
@@ -253,7 +253,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T12:54:36.172024+00:00"
+      "analytics_updated_at": "2026-10-14T13:56:46.210013+00:00"
     },
     {
       "video_id": "EiZc33RD3Rg",
@@ -273,7 +273,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T12:54:36.168549+00:00"
+      "analytics_updated_at": "2026-10-14T13:56:46.206470+00:00"
     },
     {
       "video_id": "5R3YR8lO-hQ",
@@ -484,7 +484,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T12:54:36.158322+00:00"
+      "analytics_updated_at": "2026-10-14T13:56:46.196747+00:00"
     },
     {
       "video_id": "SN6_j-wBvuE",
@@ -504,7 +504,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T12:54:36.162113+00:00"
+      "analytics_updated_at": "2026-10-14T13:56:46.200321+00:00"
     },
     {
       "video_id": "OhnIA4OlnXs",
@@ -533,6 +533,15 @@
       "format": "short",
       "script_preview": "Nature doesn't carve these monoliths; it shrinks them into existence. Look at the jagged giants of Devils Postpile. How does molten chaos freeze into perfect geometric symmetry? As lava flows cool, they solidify from their boundaries inward, generating massive thermal stress. To relieve this tension, the cooling rock fractures. These cracks propagate deep into the flow, meeting at 120-degree angles to maximize efficiency. This creates a network of polygonal columns. While most form hexagonal patterns, individual columns can display three to seven sides depending on cooling rates. It is not int",
       "created_at": "2026-10-14T12:35:20.052493+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "NOj4lQEiw1c",
+      "topic": "Why Fog Hugs the Ground",
+      "title": "Why Fog Hugs The Ground",
+      "format": "short",
+      "script_preview": "Why does a cloud sometimes drift at our feet instead of floating in the sky? It is not gravity pulling vapor down. Fog is simply a cloud with no elevation. When humid air hits its dew point at ground level, water vapor condenses into visible droplets. On clear nights, heat radiates from the earth into space, cooling the air until it can no longer hold moisture. Terrain dictates the shape. Basins trap this cold, dense air, while slopes force it to rise and cool. It is a delicate balance of temperature, humidity, and airflow. If conditions shift, it dissipates. We are not walking through a super",
+      "created_at": "2026-10-14T14:03:44.558225+00:00",
       "analytics": {}
     }
   ],
@@ -706,6 +715,12 @@
       "title": "Why Lava Forms Perfect Stone Columns",
       "format": "short",
       "created_at": "2026-10-14T12:35:20.052493+00:00"
+    },
+    {
+      "topic": "Why Fog Hugs the Ground",
+      "title": "Why Fog Hugs The Ground",
+      "format": "short",
+      "created_at": "2026-10-14T14:03:44.558225+00:00"
     }
   ]
 }
