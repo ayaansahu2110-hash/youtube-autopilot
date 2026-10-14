@@ -574,6 +574,65 @@ def verified_curio_seed(
             ),
         ),
         (
+            "Why Glaciers Carve U-Shaped Valleys",
+            "geography",
+            "Moving glacier ice abrades and plucks rock across a valley floor and walls, widening a narrow river-cut V into a broad U-shaped valley while tributary glaciers can leave hanging valleys.",
+            ("glacier u shaped valley", "glacial valley", "hanging valley"),
+            (
+                ResearchSource(
+                    title="Geology of Rocky Mountain National Park",
+                    publisher="U.S. Geological Survey",
+                    url="https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-rocky-mountain-national-park",
+                    snippet=(
+                        "USGS describes glaciers as moving masses whose immense weight and embedded rock "
+                        "fragments crack, scrape and transport material from the landscape. In Rocky Mountain "
+                        "National Park, that erosion helped produce broad U-shaped valleys rather than the "
+                        "narrow V-shaped canyons normally cut by streams. The ice acts over long periods and "
+                        "also leaves till and other deposits, so the finished landscape records both erosion "
+                        "and deposition rather than a single instant of carving."
+                    ),
+                ),
+                ResearchSource(
+                    title="U-Shaped Valleys, Fjords, and Hanging Valleys",
+                    publisher="U.S. National Park Service",
+                    url="https://www.nps.gov/articles/ushapedvalleysfjordshangingvalleys.htm",
+                    snippet=(
+                        "NPS explains that a valley glacier widens, deepens and straightens an existing "
+                        "stream valley, creating steep walls and a comparatively broad floor. When a main "
+                        "glacier erodes more deeply than a smaller tributary glacier, the tributary floor can "
+                        "remain perched above the main valley after the ice retreats, producing a hanging "
+                        "valley and often a waterfall. A glacial valley flooded by the sea is called a fjord."
+                    ),
+                ),
+                ResearchSource(
+                    title="Geology of Glacier National Park",
+                    publisher="U.S. Geological Survey",
+                    url="https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-glacier-national-park",
+                    snippet=(
+                        "USGS inventories a connected family of glacial landforms at Glacier National Park: "
+                        "U-shaped and hanging valleys, cirques, sharp arêtes and horns, moraines, tarns and "
+                        "chains of paternoster lakes. It explains that smaller tributary glaciers may erode "
+                        "less deeply than the main glacier, leaving hanging valleys after retreat. These "
+                        "features let a documentary move from the mechanics of flowing ice to multiple pieces "
+                        "of real landscape evidence without claiming that every U-shaped valley has one history."
+                    ),
+                ),
+                ResearchSource(
+                    title="Glaciers and Glacial Landforms",
+                    publisher="U.S. National Park Service",
+                    url="https://www.nps.gov/subjects/geology/glacial-landforms.htm",
+                    snippet=(
+                        "NPS describes glaciers as flowing ice that transports rock and reshapes terrain "
+                        "through erosion and deposition. Valley glaciers can excavate U-shaped valleys, while "
+                        "ice moving in different directions can leave cirques, arêtes and horns. Retreating "
+                        "ice deposits moraines and can leave lake basins. The source distinguishes a glacier's "
+                        "active movement and erosion from the later retreat that reveals the landforms, an "
+                        "important timeline for accurate visuals and narration."
+                    ),
+                ),
+            ),
+        ),
+        (
             "Why Autumn Leaves Reveal Hidden Colors",
             "geography",
             "Shorter days and cooler conditions slow chlorophyll production; as green chlorophyll breaks down, yellow and orange pigments become visible, while some leaves also make red pigments.",
