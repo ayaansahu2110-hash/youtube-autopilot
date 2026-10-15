@@ -134,7 +134,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T18:04:34.116055+00:00"
+      "analytics_updated_at": "2026-10-15T12:05:23.056196+00:00"
     },
     {
       "video_id": "tXzKJN-Sxds",
@@ -163,17 +163,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T13:07:52Z",
       "analytics": {
-        "views": 15.0,
-        "estimatedMinutesWatched": 11.0,
-        "averageViewDuration": 95.0,
-        "averageViewPercentage": 182.8,
-        "likes": 1.0,
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
         "comments": 0.0,
-        "shares": 1.0,
+        "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T18:04:34.100420+00:00"
+      "analytics_updated_at": "2026-10-15T12:05:23.057205+00:00"
     },
     {
       "video_id": "rOXhektjpHg",
@@ -193,7 +193,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T18:04:34.112935+00:00"
+      "analytics_updated_at": "2026-10-15T12:05:23.054395+00:00"
     },
     {
       "video_id": "bT9UdwBKLks",
@@ -213,7 +213,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T18:04:34.118335+00:00"
+      "analytics_updated_at": "2026-10-15T12:05:23.059877+00:00"
     },
     {
       "video_id": "wDtG3Hpjs6s",
@@ -223,17 +223,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T18:16:27Z",
       "analytics": {
-        "views": 2.0,
+        "views": 0.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 16.0,
-        "averageViewPercentage": 41.22,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T18:04:34.115328+00:00"
+      "analytics_updated_at": "2026-10-15T12:05:23.061665+00:00"
     },
     {
       "video_id": "RurypNkFZeY",
@@ -243,17 +243,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T18:21:55Z",
       "analytics": {
-        "views": 2.0,
+        "views": 0.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 22.0,
-        "averageViewPercentage": 45.51,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T18:04:34.114597+00:00"
+      "analytics_updated_at": "2026-10-15T12:05:23.058997+00:00"
     },
     {
       "video_id": "EiZc33RD3Rg",
@@ -263,17 +263,17 @@
       "script_preview": "",
       "created_at": "2026-09-15T12:14:11Z",
       "analytics": {
-        "views": 19.0,
-        "estimatedMinutesWatched": 7.0,
-        "averageViewDuration": 39.0,
-        "averageViewPercentage": 60.38,
+        "views": 18.0,
+        "estimatedMinutesWatched": 8.0,
+        "averageViewDuration": 47.0,
+        "averageViewPercentage": 72.88,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T18:04:34.099647+00:00"
+      "analytics_updated_at": "2026-10-15T12:05:23.053513+00:00"
     },
     {
       "video_id": "5R3YR8lO-hQ",
@@ -474,17 +474,17 @@
       "script_preview": "",
       "created_at": "2026-10-10T17:18:44Z",
       "analytics": {
-        "views": 328.0,
-        "estimatedMinutesWatched": 76.0,
+        "views": 331.0,
+        "estimatedMinutesWatched": 77.0,
         "averageViewDuration": 27.0,
-        "averageViewPercentage": 57.97,
+        "averageViewPercentage": 57.50999999999999,
         "likes": 9.0,
         "comments": 0.0,
         "shares": 3.0,
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T18:04:34.091283+00:00"
+      "analytics_updated_at": "2026-10-15T12:05:23.042404+00:00"
     },
     {
       "video_id": "SN6_j-wBvuE",
@@ -494,17 +494,17 @@
       "script_preview": "",
       "created_at": "2026-10-10T17:26:25Z",
       "analytics": {
-        "views": 198.0,
-        "estimatedMinutesWatched": 36.0,
-        "averageViewDuration": 21.0,
-        "averageViewPercentage": 38.55,
+        "views": 201.0,
+        "estimatedMinutesWatched": 37.0,
+        "averageViewDuration": 20.0,
+        "averageViewPercentage": 38.03,
         "likes": 6.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-14T18:04:34.094318+00:00"
+      "analytics_updated_at": "2026-10-15T12:05:23.045954+00:00"
     },
     {
       "video_id": "OhnIA4OlnXs",
@@ -542,6 +542,15 @@
       "format": "short",
       "script_preview": "Why does a cloud sometimes drift at our feet instead of floating in the sky? It is not gravity pulling vapor down. Fog is simply a cloud with no elevation. When humid air hits its dew point at ground level, water vapor condenses into visible droplets. On clear nights, heat radiates from the earth into space, cooling the air until it can no longer hold moisture. Terrain dictates the shape. Basins trap this cold, dense air, while slopes force it to rise and cool. It is a delicate balance of temperature, humidity, and airflow. If conditions shift, it dissipates. We are not walking through a super",
       "created_at": "2026-10-14T14:03:44.558225+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "wueMOwf3mik",
+      "topic": "Why Glaciers Carve U-Shaped Valleys",
+      "title": "Why Glaciers Carve U-Shaped Valleys",
+      "format": "short",
+      "script_preview": "Rivers are surgical, focusing energy to cut narrow V-shaped canyons. Glaciers act differently. They are heavy, broad, and blunt, using embedded rock fragments like industrial sandpaper to grind bedrock. While rivers cut downward, glaciers excavate both the floor and the steep valley walls, straightening the path into a wide trough. But geologists advise caution; not every valley is purely the work of ice. Many represent a composite memory, where initial stream-carved terrain was later aggressively modified by glaciers. By observing features like moraines and hanging valleys, we see a layered h",
+      "created_at": "2026-10-15T12:13:02.798898+00:00",
       "analytics": {}
     }
   ],
@@ -721,6 +730,12 @@
       "title": "Why Fog Hugs The Ground",
       "format": "short",
       "created_at": "2026-10-14T14:03:44.558225+00:00"
+    },
+    {
+      "topic": "Why Glaciers Carve U-Shaped Valleys",
+      "title": "Why Glaciers Carve U-Shaped Valleys",
+      "format": "short",
+      "created_at": "2026-10-15T12:13:02.798898+00:00"
     }
   ]
 }
