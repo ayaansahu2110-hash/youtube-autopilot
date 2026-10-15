@@ -176,6 +176,20 @@ def test_curated_reserve_extends_with_independent_october_sources() -> None:
     }
     assert FactVerifier().verify(leaves[1]).confidence_score >= 65
 
+    mars = verified_curio_seed(
+        excluded_topics=[*used, fog[0].title, glacier[0].title, leaves[0].title]
+    )
+    assert mars is not None
+    assert mars[0].title == "Why Mars Has Blue Sunsets"
+    assert len(mars[1].sources) == 4
+    assert {source.publisher for source in mars[1].sources} == {
+        "NASA Science",
+        "NASA Jet Propulsion Laboratory",
+        "Smithsonian National Air and Space Museum",
+        "European Space Agency",
+    }
+    assert FactVerifier().verify(mars[1]).confidence_score >= 65
+
 
 def test_fact_planner_repairs_missing_title_options_without_changing_story(monkeypatch) -> None:
     narration = "Sinking air clears the eye."
