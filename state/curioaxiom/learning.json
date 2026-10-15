@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T12:41:22.799970+00:00",
+  "generated_at": "2026-10-15T13:51:47.760438+00:00",
   "competitors": [
     {
       "channel": "Timeline - World History Documentaries",
@@ -9,23 +9,23 @@
       "high_performing_recent_videos": [
         {
           "title": "Archeologists Unearth A Crashed WW2 Bomber",
-          "views": 169346,
-          "likes": 1005,
+          "views": 169728,
+          "likes": 1009,
           "comments": 48,
           "published_at": "2026-10-08T21:00:03Z",
           "description_excerpt": "In November 1944, two brand-new American A26 Invader bombers took off from Warton Air Base bound for France. Minutes later, both aircraft crashed into coastal marshland, killing all three crew members. For decades, official reports left the cause unknown. In this episode, archaeologists and aviation crash investigators excavate the buried wreckage,"
         },
         {
           "title": "1945 - 1961: The Complete Story Of The Early Cold War",
-          "views": 145270,
-          "likes": 615,
+          "views": 145984,
+          "likes": 617,
           "comments": 64,
           "published_at": "2026-10-10T21:00:02Z",
           "description_excerpt": "Explore the origins and escalation of the Cold War in this documentary. Following the end of WW2 and the atomic bombings of Hiroshima and Nagasaki, two superpowers emerged: the USA and the USSR. Track the descent into global rivalry, from Churchill's Iron Curtain speech and the Berlin Airlift to the Korean War, atomic espionage, the Space Race, and"
         },
         {
           "title": "The Assassination Of Michael Collins: How The IRA’s Mastermind Was Brought Down",
-          "views": 48161,
+          "views": 48157,
           "likes": 329,
           "comments": 23,
           "published_at": "2026-10-06T21:00:24Z",
@@ -41,59 +41,11 @@
         },
         {
           "title": "The Complete Story Of The Spanish Civil War And Franco’s Rise",
-          "views": 21145,
-          "likes": 103,
+          "views": 21150,
+          "likes": 104,
           "comments": 13,
           "published_at": "2026-10-04T21:00:31Z",
           "description_excerpt": "In 1936, a violent coup plunged Spain into a bloody civil war, paving the way for General Francisco Franco’s brutal 36-year dictatorship. Supported by Hitler and Mussolini, Franco imposed an authoritarian regime whose scars remain visible today. From the terror bombing of Guernica and the pulverized ruins of Belchite to secret Pyrenean bunkers and "
-        }
-      ]
-    },
-    {
-      "channel": "The Engineering Mindset",
-      "subscribers": 4480000,
-      "channel_views": 349558613,
-      "video_count": 318,
-      "high_performing_recent_videos": [
-        {
-          "title": "MOSFET vs Transistor vs Relay: Most People Get This Wrong",
-          "views": 711448,
-          "likes": 15917,
-          "comments": 489,
-          "published_at": "2026-06-15T18:41:01Z",
-          "description_excerpt": "MOSFET V Transistors Try Brilliant 👉  http://brilliant.org/TheEngineeringMindset Plus our viewers 20% off an annual Premium subscription.\n\nLearn the key differences between MOSFETs, transistors and relays. This beginner-friendly electronics tutorial explains how BJTs and MOSFETs work, why they are used for switching and amplification, and how to ch"
-        },
-        {
-          "title": "Why 3 Phase Power Is So Much Better",
-          "views": 354162,
-          "likes": 3380,
-          "comments": 84,
-          "published_at": "2026-09-15T15:00:01Z",
-          "description_excerpt": "Why 3 phases? Get a 30 day free trial and 20% off an annual subscription.🎁 Click here: https://brilliant.org/TheEngineeringMindset \n\nWhat is 3 phase electricity and how does three phase power work, learn Wye Delta loads and neutral currents, how and where three phase electricity is used, why 3 phases, how the generator works to produce 3 phase sine"
-        },
-        {
-          "title": "The 1.25V Trick That Gives You Any Voltage You Want",
-          "views": 353187,
-          "likes": 9115,
-          "comments": 334,
-          "published_at": "2026-06-01T17:04:21Z",
-          "description_excerpt": "Learn how voltage regulators actually work and how to design and build one. \nCheck out PCBWAY➡️ https://www.pcbway.com/ for PCB's, 3D printing and CNC at expectational value and design PCB's with Altium ➡️ http://altium.com/yt/engineeringmindset\nLearn how an LM317 adjustable voltage regulator turns unregulated DC into a smooth, stable output for el"
-        },
-        {
-          "title": "How a CPU Turns 1s and 0s Into Everything You See",
-          "views": 254291,
-          "likes": 4318,
-          "comments": 137,
-          "published_at": "2026-10-05T15:00:22Z",
-          "description_excerpt": "How do CPUs actually work? Design PCB's with Altium:  http://altium.com/yt/engineeringmindset\nHow does a CPU use billions of microscopic transistors to perform calculations and run software? In this video, we work from individual MOSFETs through logic gates, binary arithmetic and full adders to the ALU and CPU core.\nSee how processors fetch and exe"
-        },
-        {
-          "title": "The Truth About Three-Phase Power: Why It Became the Standard",
-          "views": 180176,
-          "likes": 6585,
-          "comments": 623,
-          "published_at": "2026-07-28T17:13:17Z",
-          "description_excerpt": "Why Not 2 Phase Power? Try Brilliant 👉  http://brilliant.org/TheEngineeringMindset Plus our viewers 20% off an annual Premium subscription.\n\nDownload your Excel sheets here ➡️ https://tinyurl.com/2-Phase-Excel\nTry Brilliant Tutor for free 👉  http://brilliant.org/TheEngineeringMindset\nGet your engineers mug here:➡️ https://engineeringmindset.store/p"
         }
       ]
     },
@@ -105,43 +57,91 @@
       "high_performing_recent_videos": [
         {
           "title": "Porsche's 6-Stroke Engine Is Fascinating – More Power!",
-          "views": 960614,
-          "likes": 40025,
+          "views": 960623,
+          "likes": 40026,
           "comments": 805,
           "published_at": "2026-07-31T14:00:15Z",
           "description_excerpt": "Porsche patented a 6-stroke engine, yes, two more strokes than you’d commonly see for a combustion engine, and most excitingly, one of those additional strokes is a power-stroke! We now have two power strokes per cylinder within the full six-stroke cycle. The way it works is through Porsche’s genius hypocycloidal design which the crankshaft follows"
         },
         {
           "title": "Are You Buying The Wrong Tires?",
-          "views": 798243,
-          "likes": 12349,
+          "views": 798511,
+          "likes": 12354,
           "comments": 1140,
           "published_at": "2026-09-25T14:00:36Z",
           "description_excerpt": "Summer, All-Season, All-Weather, Winter, All-Terrain – What Tires Should You Buy?\nFind the right tires for your car: https://continentaltire.com/tire-search\nBig thanks to Continental for sponsoring this video! \n\nNothing impacts the performance of your car more than tires. But when you’re buying tires, it can be overwhelming trying to figure out wha"
         },
         {
           "title": "Lucid Bought My Car Back, So I Bought A Mach-E",
-          "views": 668265,
-          "likes": 18072,
-          "comments": 3286,
+          "views": 669524,
+          "likes": 18090,
+          "comments": 3288,
           "published_at": "2026-10-09T14:00:42Z",
           "description_excerpt": "Lucid bought back my Air, so I bought a Ford Mustang Mach-E GT\nCheck out Continental's ECS02 Tires! - https://bit.ly/3Ulidu1\nSponsored by Continental \n\nGenuinely this was some of the most fun I’ve ever had car shopping because the criteria was very open: pretty much anything electric, except for three brands. I’ve already had a long term Nissan Lea"
         },
         {
           "title": "How To Easily Ruin Your Turbocharged Car",
-          "views": 484199,
-          "likes": 14981,
+          "views": 484222,
+          "likes": 14983,
           "comments": 594,
           "published_at": "2026-09-11T14:00:36Z",
           "description_excerpt": "If you want to ruin your turbocharged car, it’s easy. All you have to do is drive your car hard, then immediately shut it off. You see, turbos are one of the hottest parts of your car, since all of the exhaust gases are routed through it. To help enable high turbo speeds, and to help cool it, engine oil pass through the insides of the turbocharger,"
         },
         {
           "title": "20 Innovations That Changed Cars Forever – Part 1",
-          "views": 380544,
+          "views": 380561,
           "likes": 6940,
           "comments": 406,
           "published_at": "2026-08-07T14:00:05Z",
           "description_excerpt": "The 20 Most Important Automotive Innovations of the Past Century\nCheck out Part 2 of the trip here! - https://youtu.be/Zx-22h3YMgw\nSponsored by Bosch Wiper Blades - https://youtu.be/1-SzPD-CTgQ\n\nCars are infinitely complex, and that’s exactly why I am so obsessed with them. They are the most complicated consumer product you can buy, and that comple"
+        }
+      ]
+    },
+    {
+      "channel": "Absolute History",
+      "subscribers": 3700000,
+      "channel_views": 1318539639,
+      "video_count": 1129,
+      "high_performing_recent_videos": [
+        {
+          "title": "Even More Crazy Facts About British Kings & Queens!",
+          "views": 798100,
+          "likes": 24930,
+          "comments": 73,
+          "published_at": "2026-10-08T16:30:39Z",
+          "description_excerpt": "To find out more about the insanely dramatic history of the Tudor dynasty, watch 'How The Tudors Lost Their Heads' on National Geographic, also streaming on Disney+\nhttps://www.natgeotv.com/uk/special/how-the-tudors-lost-their-heads\n\n💚 Join the Absolute History club to get access to exclusive member benefits! \n👉 https://bit.ly/3qTE0NR\n\n📺 You can no"
+        },
+        {
+          "title": "More Bizarre British Monarchy Facts!",
+          "views": 219558,
+          "likes": 8038,
+          "comments": 43,
+          "published_at": "2026-10-01T16:30:01Z",
+          "description_excerpt": "To find out more about the insanely dramatic history of the Tudor dynasty, watch 'How The Tudors Lost Their Heads' on National Geographic, also streaming on Disney+\nhttps://www.natgeotv.com/uk/special/how-the-tudors-lost-their-heads\n\n💚 Join the Absolute History club to get access to exclusive member benefits! \n👉 https://bit.ly/3qTE0NR\n\n📺 You can no"
+        },
+        {
+          "title": "Operation Barbarossa: Uncovering Hitler's Fatal Obsession",
+          "views": 158407,
+          "likes": 403,
+          "comments": 63,
+          "published_at": "2026-10-09T21:00:26Z",
+          "description_excerpt": "In June 1941, Adolf Hitler launched Operation Barbarossa, tearing up the non-aggression pact with Joseph Stalin and unleashing the largest military invasion in human history. Believing rapid Blitzkrieg tactics and racial ideology would force a swift Soviet collapse, the German army advanced across a thousand-mile front. However, fierce resistance, "
+        },
+        {
+          "title": "Inside The Private Lives Of The Next Royal Generation: Beatrice, Eugenie & Catherine",
+          "views": 28984,
+          "likes": 76,
+          "comments": 22,
+          "published_at": "2026-10-02T21:00:24Z",
+          "description_excerpt": "As the British monarchy enters a new era under King Charles III, a new generation stands at the intersection of tradition and modernity. From Princess Beatrice and Princess Eugenie navigating personal careers alongside royal duties to Princess Catherine's pivotal role as the future Queen Consort, this documentary explores how these figures are resh"
+        },
+        {
+          "title": "Romanticism After 1789: Géricault's Raft, Delacroix's Liberty, Turner and Goya",
+          "views": 20884,
+          "likes": 84,
+          "comments": 3,
+          "published_at": "2026-10-04T16:00:31Z",
+          "description_excerpt": "1789 shattered old certainties and ignited Romantic art. This episode traces how revolution, the sublime, and the individual reshaped painting across Europe.\n\nFrom the fall of the Bastille, Western artists challenged neoclassical rules and elevated private feeling, nature, and the heroic or tragic individual. We unpack Edmund Burke's pairing of bea"
         }
       ]
     }
