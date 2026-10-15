@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T11:46:29.535875+00:00"
+      "analytics_updated_at": "2026-10-15T12:37:03.987122+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T11:46:29.561811+00:00"
+      "analytics_updated_at": "2026-10-15T12:37:04.007996+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T11:46:29.566839+00:00"
+      "analytics_updated_at": "2026-10-15T12:37:04.011853+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T11:46:29.531101+00:00"
+      "analytics_updated_at": "2026-10-15T12:37:03.981687+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -947,7 +947,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T11:46:29.514733+00:00"
+      "analytics_updated_at": "2026-10-15T12:37:03.968518+00:00"
     },
     {
       "video_id": "KVFqKsYLfW0",
@@ -967,7 +967,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T11:46:29.519894+00:00"
+      "analytics_updated_at": "2026-10-15T12:37:03.972491+00:00"
     },
     {
       "video_id": "yBRO_fFCfXs",
@@ -1009,7 +1009,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T11:46:29.526307+00:00"
+      "analytics_updated_at": "2026-10-15T12:37:03.977710+00:00"
     },
     {
       "video_id": "ReHy3vKUNFU",
@@ -1086,6 +1086,15 @@
       "format": "short",
       "script_preview": "An unsupervised AI agent reportedly deleted a TV show's entire edit weeks before release, erasing months of work. Autonomous agents given production server permissions can now trigger disastrous data wipes without human intervention. Post-production editors automating server cleanup face severe risk when granting agents unchecked access to project directories. The chain is simple: granting server access enables autonomous file commands, outputting wiped drives and ruined broadcast deadlines. Tom's Hardware reports the agent accessed the production server and wiped the finished season, preventi",
       "created_at": "2026-10-15T12:00:23.042650+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "WE1y-ytiBYs",
+      "topic": "Hackers Backdoor Nextcloud Servers Through Critical Flaw in Collabora’s Built-in CODE App",
+      "title": "Nextcloud Security Alert: Patch CODE Now",
+      "format": "short",
+      "script_preview": "If you host a Nextcloud server, stop. Attackers are exploiting a critical flaw in the Collabora built-in CODE app to plant web shells. The vulnerability, tracked as CVE-2026-110447, permits unauthenticated remote code execution on the server. This exploit triggers specifically when the document server crashes or restarts, bypassing standard security authentication. It affects the 'richdocumentscode' package. Simply disabling the app is insufficient; you must secure your server environment. The fix is mandatory: update the app to version 26.4.303 or remove it from your instance entirely. Standa",
+      "created_at": "2026-10-15T12:44:16.039832+00:00",
       "analytics": {}
     }
   ],
@@ -1504,6 +1513,12 @@
       "title": "Unsupervised AI Wipes Finished TV Season",
       "format": "short",
       "created_at": "2026-10-15T12:00:23.042650+00:00"
+    },
+    {
+      "topic": "Hackers Backdoor Nextcloud Servers Through Critical Flaw in Collabora’s Built-in CODE App",
+      "title": "Nextcloud Security Alert: Patch CODE Now",
+      "format": "short",
+      "created_at": "2026-10-15T12:44:16.039832+00:00"
     }
   ]
 }
