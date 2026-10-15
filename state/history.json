@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:37:03.987122+00:00"
+      "analytics_updated_at": "2026-10-15T13:51:16.247621+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:37:04.007996+00:00"
+      "analytics_updated_at": "2026-10-15T13:51:16.269795+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:37:04.011853+00:00"
+      "analytics_updated_at": "2026-10-15T13:51:16.273949+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:37:03.981687+00:00"
+      "analytics_updated_at": "2026-10-15T13:51:16.243417+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -947,7 +947,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:37:03.968518+00:00"
+      "analytics_updated_at": "2026-10-15T13:51:16.229574+00:00"
     },
     {
       "video_id": "KVFqKsYLfW0",
@@ -967,7 +967,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:37:03.972491+00:00"
+      "analytics_updated_at": "2026-10-15T13:51:16.233788+00:00"
     },
     {
       "video_id": "yBRO_fFCfXs",
@@ -1009,7 +1009,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:37:03.977710+00:00"
+      "analytics_updated_at": "2026-10-15T13:51:16.239226+00:00"
     },
     {
       "video_id": "ReHy3vKUNFU",
@@ -1095,6 +1095,15 @@
       "format": "short",
       "script_preview": "If you host a Nextcloud server, stop. Attackers are exploiting a critical flaw in the Collabora built-in CODE app to plant web shells. The vulnerability, tracked as CVE-2026-110447, permits unauthenticated remote code execution on the server. This exploit triggers specifically when the document server crashes or restarts, bypassing standard security authentication. It affects the 'richdocumentscode' package. Simply disabling the app is insufficient; you must secure your server environment. The fix is mandatory: update the app to version 26.4.303 or remove it from your instance entirely. Standa",
       "created_at": "2026-10-15T12:44:16.039832+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "DnlI23stQlM",
+      "topic": "Linus Torvalds let Claude Code fix the Linux page cache. Then reviewers found a race.",
+      "title": "Linus Torvalds Let AI Fix Linux, And It Failed",
+      "format": "long",
+      "script_preview": "When you think of the Linux kernel, you probably think of manual, line-by-line expert scrutiny. Yet, recently, Linus Torvalds, the creator of Linux, allowed an AI—Claude Code—to help him fix a technical issue involving the Linux page cache. It was an bold experiment in machine-assisted development. This was not just a side project. The page cache is a critical component of how Linux handles data in memory. If you get the code wrong, you create performance bottlenecks or, worse, data corruption. The experiment was meant to test if AI could handle complex kernel-level refactoring tasks. Claude C",
+      "created_at": "2026-10-15T14:34:32.927955+00:00",
       "analytics": {}
     }
   ],
@@ -1519,6 +1528,12 @@
       "title": "Nextcloud Security Alert: Patch CODE Now",
       "format": "short",
       "created_at": "2026-10-15T12:44:16.039832+00:00"
+    },
+    {
+      "topic": "Linus Torvalds let Claude Code fix the Linux page cache. Then reviewers found a race.",
+      "title": "Linus Torvalds Let AI Fix Linux, And It Failed",
+      "format": "long",
+      "created_at": "2026-10-15T14:34:32.927955+00:00"
     }
   ]
 }
