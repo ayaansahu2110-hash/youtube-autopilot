@@ -57,9 +57,17 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "RUN_SLOT=${{ inputs.slot }}" >> "$GITHUB_ENV"
-          elif [ "${{ github.event.schedule }}" = "23 6 * * *" ] || [ "${{ github.event.schedule }}" = "7 7 * * *" ]; then
-            echo "RUN_SLOT=morning" >> "$GITHUB_ENV"
+          elif [ "${{ github.event_name }}" = "schedule" ]; then
+            # GitHub can deliver cron events hours late. Use the actual local
+            # execution time so a delayed morning event cannot suppress a due long video.
+            local_hour="$(TZ=Asia/Kolkata date +%H)"
+            if [ "$((10#$local_hour))" -ge 16 ]; then
+              echo "RUN_SLOT=evening" >> "$GITHUB_ENV"
+            else
+              echo "RUN_SLOT=morning" >> "$GITHUB_ENV"
+            fi
           else
+            # Safe recovery for a reviewed push: quota checks prevent duplicates.
             echo "RUN_SLOT=evening" >> "$GITHUB_ENV"
           fi
           # User-approved October 10 recovery; normal daily limits resume afterward.
