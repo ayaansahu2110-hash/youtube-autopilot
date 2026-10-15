@@ -666,6 +666,65 @@ def verified_curio_seed(
                 ),
             ),
         ),
+        (
+            "Why Mars Has Blue Sunsets",
+            "space",
+            "Fine dust in Mars's thin atmosphere spreads warm colors across much of the sky while directing more blue light close to the Sun, reversing the familiar color pattern of many Earth sunsets.",
+            ("mars blue sunset", "martian sunset", "blue sunset"),
+            (
+                ResearchSource(
+                    title="What Do Sunrises and Sunsets Look Like on Mars?",
+                    publisher="NASA Science",
+                    url="https://science.nasa.gov/solar-system/planets/mars/what-does-a-sunrise-sunset-look-like-on-mars/",
+                    snippet=(
+                        "NASA explains that fine Martian dust changes how sunlight is scattered. "
+                        "Blue light remains concentrated closer to the direction of the Sun, while "
+                        "the broader daytime sky looks rusty or reddish. Rover observations show that "
+                        "the blue region becomes especially noticeable when sunlight follows a long "
+                        "path through dusty air near sunrise or sunset. The effect is directional and "
+                        "does not mean the entire Martian sky becomes uniformly blue."
+                    ),
+                ),
+                ResearchSource(
+                    title="Sunset Sequence in Mars' Gale Crater",
+                    publisher="NASA Jet Propulsion Laboratory",
+                    url="https://www.jpl.nasa.gov/images/pia19401-sunset-sequence-in-mars-gale-crater-animation/",
+                    snippet=(
+                        "Curiosity's Mastcam recorded a sequence of the Sun setting in Gale Crater. "
+                        "JPL states that fine atmospheric dust permits blue light to penetrate more "
+                        "efficiently and keeps that blue contribution close to the Sun, while yellow "
+                        "and red colors spread more broadly. The observation supplies a real time "
+                        "sequence for explaining the transition instead of relying on an illustration."
+                    ),
+                ),
+                ResearchSource(
+                    title="Five Fun Facts About Mars",
+                    publisher="Smithsonian National Air and Space Museum",
+                    url="https://airandspace.si.edu/stories/editorial/five-fun-facts-about-mars",
+                    snippet=(
+                        "The Smithsonian notes that rover observations revealed a bluish region near "
+                        "the Martian horizon at sunset, opposite the color pattern familiar on Earth. "
+                        "It connects the effect to tiny dust particles and also notes that the Sun "
+                        "appears smaller and dimmer from Mars because the planet is farther away. "
+                        "These points support a visual comparison without claiming every sunset has "
+                        "the same color or brightness."
+                    ),
+                ),
+                ResearchSource(
+                    title="Mars Express HRSC Images Frequently Asked Questions",
+                    publisher="European Space Agency",
+                    url="https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Mars_Express_HRSC_images_Frequently_Asked_Questions_FAQs",
+                    snippet=(
+                        "ESA explains that Mars is dusty and that atmospheric scattering can give "
+                        "surface scenes a diffuse reddish glow. Its spacecraft cameras record separate "
+                        "color and infrared channels that must be combined and calibrated, so apparent "
+                        "colors depend on both the atmosphere and the imaging method. A documentary "
+                        "should distinguish calibrated rover observations from enhanced orbital images "
+                        "and avoid treating every blue-toned Mars picture as natural human-eye color."
+                    ),
+                ),
+            ),
+        ),
     )
     for title, category, reason, concept_aliases, sources in seeds:
         normalised = _normalise_topic(title)
