@@ -134,7 +134,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:05:23.056196+00:00"
+      "analytics_updated_at": "2026-10-15T12:41:22.793534+00:00"
     },
     {
       "video_id": "tXzKJN-Sxds",
@@ -173,7 +173,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:05:23.057205+00:00"
+      "analytics_updated_at": "2026-10-15T12:41:22.794518+00:00"
     },
     {
       "video_id": "rOXhektjpHg",
@@ -193,7 +193,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:05:23.054395+00:00"
+      "analytics_updated_at": "2026-10-15T12:41:22.791728+00:00"
     },
     {
       "video_id": "bT9UdwBKLks",
@@ -213,7 +213,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:05:23.059877+00:00"
+      "analytics_updated_at": "2026-10-15T12:41:22.797295+00:00"
     },
     {
       "video_id": "wDtG3Hpjs6s",
@@ -233,7 +233,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:05:23.061665+00:00"
+      "analytics_updated_at": "2026-10-15T12:41:22.799077+00:00"
     },
     {
       "video_id": "RurypNkFZeY",
@@ -253,7 +253,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:05:23.058997+00:00"
+      "analytics_updated_at": "2026-10-15T12:41:22.796389+00:00"
     },
     {
       "video_id": "EiZc33RD3Rg",
@@ -273,7 +273,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:05:23.053513+00:00"
+      "analytics_updated_at": "2026-10-15T12:41:22.790853+00:00"
     },
     {
       "video_id": "5R3YR8lO-hQ",
@@ -484,7 +484,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:05:23.042404+00:00"
+      "analytics_updated_at": "2026-10-15T12:41:22.781048+00:00"
     },
     {
       "video_id": "SN6_j-wBvuE",
@@ -504,7 +504,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T12:05:23.045954+00:00"
+      "analytics_updated_at": "2026-10-15T12:41:22.784591+00:00"
     },
     {
       "video_id": "OhnIA4OlnXs",
@@ -551,6 +551,15 @@
       "format": "short",
       "script_preview": "Rivers are surgical, focusing energy to cut narrow V-shaped canyons. Glaciers act differently. They are heavy, broad, and blunt, using embedded rock fragments like industrial sandpaper to grind bedrock. While rivers cut downward, glaciers excavate both the floor and the steep valley walls, straightening the path into a wide trough. But geologists advise caution; not every valley is purely the work of ice. Many represent a composite memory, where initial stream-carved terrain was later aggressively modified by glaciers. By observing features like moraines and hanging valleys, we see a layered h",
       "created_at": "2026-10-15T12:13:02.798898+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "uGgQ_Xhczsc",
+      "topic": "Why Autumn Leaves Reveal Hidden Colors",
+      "title": "Why Leaves Are Actually Stripping Their Mask",
+      "format": "short",
+      "script_preview": "Your trees aren't changing colors; they are stripping away a mask. All summer, vibrant green chlorophyll dominates the leaf, powering life through photosynthesis. But as daylight wanes and temperatures shift, the cellular factory shuts down. Chlorophyll production halts. The green pigment breaks down, finally exposing carotenoids—yellows and oranges that were already hiding in the leaf structure. Some trees even synthesize new red anthocyanins for chemical protection. This display is not a single, universal shift. Light, moisture, and unique species genetics dictate the final hue. Nature does ",
+      "created_at": "2026-10-15T12:49:50.843494+00:00",
       "analytics": {}
     }
   ],
@@ -736,6 +745,12 @@
       "title": "Why Glaciers Carve U-Shaped Valleys",
       "format": "short",
       "created_at": "2026-10-15T12:13:02.798898+00:00"
+    },
+    {
+      "topic": "Why Autumn Leaves Reveal Hidden Colors",
+      "title": "Why Leaves Are Actually Stripping Their Mask",
+      "format": "short",
+      "created_at": "2026-10-15T12:49:50.843494+00:00"
     }
   ]
 }
