@@ -134,7 +134,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:50:34.170601+00:00"
+      "analytics_updated_at": "2026-10-16T11:53:41.488907+00:00"
     },
     {
       "video_id": "tXzKJN-Sxds",
@@ -173,7 +173,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:50:34.171444+00:00"
+      "analytics_updated_at": "2026-10-16T11:53:41.488056+00:00"
     },
     {
       "video_id": "rOXhektjpHg",
@@ -183,17 +183,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T13:17:46Z",
       "analytics": {
-        "views": 15.0,
-        "estimatedMinutesWatched": 4.0,
-        "averageViewDuration": 30.0,
-        "averageViewPercentage": 70.43,
+        "views": 5.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 8.0,
+        "averageViewPercentage": 19.1,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:50:34.169049+00:00"
+      "analytics_updated_at": "2026-10-16T11:53:41.485710+00:00"
     },
     {
       "video_id": "bT9UdwBKLks",
@@ -213,7 +213,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:50:34.173700+00:00"
+      "analytics_updated_at": "2026-10-16T11:53:41.491227+00:00"
     },
     {
       "video_id": "wDtG3Hpjs6s",
@@ -233,7 +233,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:50:34.175231+00:00"
+      "analytics_updated_at": "2026-10-16T11:53:41.492778+00:00"
     },
     {
       "video_id": "RurypNkFZeY",
@@ -253,7 +253,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:50:34.172949+00:00"
+      "analytics_updated_at": "2026-10-16T11:53:41.490451+00:00"
     },
     {
       "video_id": "EiZc33RD3Rg",
@@ -263,17 +263,17 @@
       "script_preview": "",
       "created_at": "2026-09-15T12:14:11Z",
       "analytics": {
-        "views": 18.0,
-        "estimatedMinutesWatched": 8.0,
-        "averageViewDuration": 47.0,
-        "averageViewPercentage": 72.88,
+        "views": 11.0,
+        "estimatedMinutesWatched": 5.0,
+        "averageViewDuration": 44.0,
+        "averageViewPercentage": 68.49,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:50:34.168265+00:00"
+      "analytics_updated_at": "2026-10-16T11:53:41.484928+00:00"
     },
     {
       "video_id": "5R3YR8lO-hQ",
@@ -474,17 +474,17 @@
       "script_preview": "",
       "created_at": "2026-10-10T17:18:44Z",
       "analytics": {
-        "views": 331.0,
-        "estimatedMinutesWatched": 77.0,
-        "averageViewDuration": 27.0,
-        "averageViewPercentage": 57.50999999999999,
+        "views": 326.0,
+        "estimatedMinutesWatched": 75.0,
+        "averageViewDuration": 26.0,
+        "averageViewPercentage": 57.34,
         "likes": 9.0,
         "comments": 0.0,
         "shares": 3.0,
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:50:34.159806+00:00"
+      "analytics_updated_at": "2026-10-16T11:53:41.476895+00:00"
     },
     {
       "video_id": "SN6_j-wBvuE",
@@ -494,17 +494,17 @@
       "script_preview": "",
       "created_at": "2026-10-10T17:26:25Z",
       "analytics": {
-        "views": 201.0,
-        "estimatedMinutesWatched": 37.0,
-        "averageViewDuration": 20.0,
-        "averageViewPercentage": 38.03,
+        "views": 194.0,
+        "estimatedMinutesWatched": 36.0,
+        "averageViewDuration": 21.0,
+        "averageViewPercentage": 38.62,
         "likes": 6.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:50:34.162878+00:00"
+      "analytics_updated_at": "2026-10-16T11:53:41.479428+00:00"
     },
     {
       "video_id": "OhnIA4OlnXs",
@@ -560,6 +560,15 @@
       "format": "short",
       "script_preview": "Your trees aren't changing colors; they are stripping away a mask. All summer, vibrant green chlorophyll dominates the leaf, powering life through photosynthesis. But as daylight wanes and temperatures shift, the cellular factory shuts down. Chlorophyll production halts. The green pigment breaks down, finally exposing carotenoids—yellows and oranges that were already hiding in the leaf structure. Some trees even synthesize new red anthocyanins for chemical protection. This display is not a single, universal shift. Light, moisture, and unique species genetics dictate the final hue. Nature does ",
       "created_at": "2026-10-15T12:49:50.843494+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "Fde4y2jHOts",
+      "topic": "Why Mars Has Blue Sunsets",
+      "title": "Why Mars Has Blue Sunsets",
+      "format": "short",
+      "script_preview": "On Earth, our sunsets bleed into vibrant reds. On Mars, the horizon turns a paradoxical blue. This isn't a digital filter or a camera error. It is a fundamental shift in how sunlight interacts with the Martian environment. Our home sky scatters light in ways that favor red wavelengths at dusk. But Mars is different. Its atmosphere is thin, suspended with fine, jagged dust particles. These microscopic grains filter incoming sunlight. Blue light penetrates more efficiently through the air. Red light is scattered away. As the sun sinks low, the path through the dust lengthens. This deepens that e",
+      "created_at": "2026-10-16T12:01:04.219947+00:00",
       "analytics": {}
     }
   ],
@@ -751,6 +760,12 @@
       "title": "Why Leaves Are Actually Stripping Their Mask",
       "format": "short",
       "created_at": "2026-10-15T12:49:50.843494+00:00"
+    },
+    {
+      "topic": "Why Mars Has Blue Sunsets",
+      "title": "Why Mars Has Blue Sunsets",
+      "format": "short",
+      "created_at": "2026-10-16T12:01:04.219947+00:00"
     }
   ]
 }
