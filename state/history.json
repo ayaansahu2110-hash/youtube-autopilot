@@ -8,17 +8,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T06:59:52Z",
       "analytics": {
-        "views": 13.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 22.0,
-        "averageViewPercentage": 50.39,
+        "views": 16.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 20.0,
+        "averageViewPercentage": 46.09,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:44:47.638417+00:00"
+      "analytics_updated_at": "2026-10-16T11:57:50.506124+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:44:47.664905+00:00"
+      "analytics_updated_at": "2026-10-16T11:57:50.540814+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:44:47.669888+00:00"
+      "analytics_updated_at": "2026-10-16T11:57:50.537933+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:44:47.633469+00:00"
+      "analytics_updated_at": "2026-10-16T11:57:50.504699+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -937,7 +937,7 @@
       "script_preview": "",
       "created_at": "2026-10-07T13:59:06Z",
       "analytics": {
-        "views": 30.0,
+        "views": 31.0,
         "estimatedMinutesWatched": 2.0,
         "averageViewDuration": 22.0,
         "averageViewPercentage": 44.85,
@@ -947,7 +947,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:44:47.617123+00:00"
+      "analytics_updated_at": "2026-10-16T11:57:50.488818+00:00"
     },
     {
       "video_id": "KVFqKsYLfW0",
@@ -957,7 +957,7 @@
       "script_preview": "",
       "created_at": "2026-10-10T17:02:06Z",
       "analytics": {
-        "views": 27.0,
+        "views": 26.0,
         "estimatedMinutesWatched": 3.0,
         "averageViewDuration": 29.0,
         "averageViewPercentage": 48.72,
@@ -967,7 +967,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:44:47.622040+00:00"
+      "analytics_updated_at": "2026-10-16T11:57:50.493168+00:00"
     },
     {
       "video_id": "yBRO_fFCfXs",
@@ -1009,7 +1009,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-15T17:44:47.628546+00:00"
+      "analytics_updated_at": "2026-10-16T11:57:50.497501+00:00"
     },
     {
       "video_id": "ReHy3vKUNFU",
@@ -1039,7 +1039,8 @@
       "script_preview": "Your enterprise AI agent just lost its architects. Microsoft is cutting fifty roles in the team building Copilot Studio, the backbone of their autonomous business bots. Here is the paradox: as companies like Microsoft and Monday.com force-push 'AI agent' strategies, they are simultaneously dismantling the specialized R&D teams required to maintain them. You are likely using these agents to auto-summarize weekly emails or sync CRM data. But when the core developers behind these tools are replaced by restructuring, technical debt accumulates in the platform itself. If your workflow relies on a C",
       "created_at": "2026-10-13T13:58:49.858025+00:00",
       "analytics": {},
-      "source": "youtube_sync"
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-10-16T11:57:50.516175+00:00"
     },
     {
       "video_id": "32SAXoj_OXo",
@@ -1049,7 +1050,8 @@
       "script_preview": "Microsoft is gutting AI features in the new Outlook for Windows because users simply aren't engaging with them. The company is officially retiring 'Themes by Copilot,' ending the experiment that allowed users to generate backgrounds via prompt. This change follows a broader trend where Windows 11 users remain unimpressed with aggressive AI integration. Even with new features like in-app browser support for Copilot, user pushback against unnecessary UI clutter remains high. The reality is that AI is often forced into interfaces where it adds cognitive friction instead of actual workflow speed. ",
       "created_at": "2026-10-13T14:05:50.985295+00:00",
       "analytics": {},
-      "source": "youtube_sync"
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-10-16T11:57:50.501815+00:00"
     },
     {
       "video_id": "U0fuwALpesI",
@@ -1059,7 +1061,8 @@
       "script_preview": "Spotify’s engineering team has achieved a massive milestone: they have more than doubled their monthly code changes. This jump in velocity is the direct result of integrating AI-assisted coding tools throughout their development lifecycle. For software teams, doubling your output is a metric for celebration, but here, the consequences are complex. When we look at the raw data, this surge represents a fundamental shift in how developers interact with their codebase. Instead of manually writing every function from scratch, engineers now act as curators for AI-generated suggestions. The speed inc",
       "created_at": "2026-10-13T14:46:33.697958+00:00",
       "analytics": {},
-      "source": "youtube_sync"
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-10-16T11:57:50.536505+00:00"
     },
     {
       "video_id": "VqUrtS3l9D4",
@@ -1068,7 +1071,8 @@
       "format": "short",
       "script_preview": "Epic Games is officially mandating an 'AI-first' workflow, effectively moving away from traditional hand-written code. Developers are now prompted to use AI for core logic generation. This massive internal shift has reportedly caused delays for high-profile projects, including a planned Disney shooter. The benefit is supposed to be rapid iteration, but the catch is a steep learning curve and the constant risk of AI hallucinations. If you are a developer, stop viewing AI as just a search tool; start treating it as a junior teammate. Your primary job is shifting from manual coding to rigorous au",
       "created_at": "2026-10-13T19:25:11.457712+00:00",
-      "analytics": {}
+      "analytics": {},
+      "analytics_updated_at": "2026-10-16T11:57:50.522012+00:00"
     },
     {
       "video_id": "rflVIZ6Wxz8",
@@ -1077,7 +1081,8 @@
       "format": "short",
       "script_preview": "Your AI agent just cost your company an unauthorized $10,000 because your prompt wasn't a policy. Netsujo just dropped Agent Role Contracts v0.5.0 to kill this problem. Instead of trusting LLMs to 'follow instructions,' this update forces agents to operate under explicit, logic-bound contracts. Think of it as a circuit breaker for your automation. In a procurement workflow, for instance, you define an approval threshold as a hard code constraint, not a suggestion. The workflow check happens at the system level, blocking any action that violates the specific role logic. The catch? It requires m",
       "created_at": "2026-10-13T19:28:12.915294+00:00",
-      "analytics": {}
+      "analytics": {},
+      "analytics_updated_at": "2026-10-16T11:57:50.543717+00:00"
     },
     {
       "video_id": "lktA7aPQdvs",
@@ -1104,6 +1109,24 @@
       "format": "long",
       "script_preview": "When you think of the Linux kernel, you probably think of manual, line-by-line expert scrutiny. Yet, recently, Linus Torvalds, the creator of Linux, allowed an AI—Claude Code—to help him fix a technical issue involving the Linux page cache. It was an bold experiment in machine-assisted development. This was not just a side project. The page cache is a critical component of how Linux handles data in memory. If you get the code wrong, you create performance bottlenecks or, worse, data corruption. The experiment was meant to test if AI could handle complex kernel-level refactoring tasks. Claude C",
       "created_at": "2026-10-15T14:34:32.927955+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "TkuF3hCJ3yQ",
+      "topic": "Microsoft and GitHub Keep Giving AI Agents More Power -- and More Restrictions",
+      "title": "Microsoft's AI Agents Get Power—and Containers",
+      "format": "short",
+      "script_preview": "Autonomous AI agents can now handle complex coding jobs, but enterprise systems will strictly limit where they run. Microsoft and GitHub are expanding agent autonomy while introducing mandatory sandboxing and enterprise monitoring controls. Consider an engineer tasking an AI agent with refactoring shared business processes and repository dependencies. Input: the developer triggers an automated run to update packages and run test suites. Action: Microsoft Execution Containers isolate the agent, validating every system call against corporate security policies. Result: the agent successfully gene",
+      "created_at": "2026-10-16T11:47:38.673731+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "NxhA6taXdXI",
+      "topic": "I outsourced my life to AI agents for two weeks. It went…weirdly.",
+      "title": "I Outsourced My Life to AI Agents for Two Weeks",
+      "format": "short",
+      "script_preview": "I handed my social life and wardrobe choices over to AI agents for two weeks, and my friends almost staged an intervention. The experiment relied on automated systems to pick outfits and draft texts using my past communication patterns. The change was immediate: friends reported 'chatfishing,' where they felt I was being replaced by robotic, overly-optimized replies. While calendar management became hyper-efficient, the results showed a clear limitation. You quickly lose touch with your own preferences when an agent decides for you. My experience mirrors findings in The Guardian and Business I",
+      "created_at": "2026-10-16T12:00:52.933672+00:00",
       "analytics": {}
     }
   ],
@@ -1534,6 +1557,18 @@
       "title": "Linus Torvalds Let AI Fix Linux, And It Failed",
       "format": "long",
       "created_at": "2026-10-15T14:34:32.927955+00:00"
+    },
+    {
+      "topic": "Microsoft and GitHub Keep Giving AI Agents More Power -- and More Restrictions",
+      "title": "Microsoft's AI Agents Get Power—and Containers",
+      "format": "short",
+      "created_at": "2026-10-16T11:47:38.673731+00:00"
+    },
+    {
+      "topic": "I outsourced my life to AI agents for two weeks. It went…weirdly.",
+      "title": "I Outsourced My Life to AI Agents for Two Weeks",
+      "format": "short",
+      "created_at": "2026-10-16T12:00:52.933672+00:00"
     }
   ]
 }
