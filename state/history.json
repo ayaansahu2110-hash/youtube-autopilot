@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-17T11:28:46.384096+00:00"
+      "analytics_updated_at": "2026-10-17T12:10:35.818970+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-17T11:28:46.422747+00:00"
+      "analytics_updated_at": "2026-10-17T12:10:35.855247+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-17T11:28:46.419026+00:00"
+      "analytics_updated_at": "2026-10-17T12:10:35.851803+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-17T11:28:46.382322+00:00"
+      "analytics_updated_at": "2026-10-17T12:10:35.817234+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -947,7 +947,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-17T11:28:46.356409+00:00"
+      "analytics_updated_at": "2026-10-17T12:10:35.793723+00:00"
     },
     {
       "video_id": "KVFqKsYLfW0",
@@ -967,7 +967,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-17T11:28:46.365826+00:00"
+      "analytics_updated_at": "2026-10-17T12:10:35.802059+00:00"
     },
     {
       "video_id": "yBRO_fFCfXs",
@@ -1009,7 +1009,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-10-17T11:28:46.373333+00:00"
+      "analytics_updated_at": "2026-10-17T12:10:35.808818+00:00"
     },
     {
       "video_id": "ReHy3vKUNFU",
@@ -1136,7 +1136,8 @@
       "format": "short",
       "script_preview": "Turning a dense twenty-page research PDF into slides usually means retyping data and pasting blurry screenshots. Presentations.AI launched a converter that restructures full PDFs into editable PowerPoint decks in thirty seconds. Instead of cloning pages one-to-one, the AI parses the core arguments into a narrative slide structure. Embedded data tables and charts convert into native, editable PowerPoint assets, keeping image resolution intact. It handles scanned documents and password-protected files, applying your team's custom brand colors and fonts automatically. Unlike Gamma or Beautiful.ai",
       "created_at": "2026-10-17T11:03:02.885670+00:00",
-      "analytics": {}
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "SJk9kKOCi24",
@@ -1145,7 +1146,8 @@
       "format": "short",
       "script_preview": "Your next social media post could be a fully playable browser game generated from a single sentence. Bluesky expanded its AI tool Attie from building custom feeds into generating lightweight, standalone web apps. Instead of writing code, a creator types a prompt describing an interactive experience for their followers. Attie automatically compiles the mini-app and deploys it as an independent public web page. Official demos include Flappy Butterfly, an arcade clone dodging ratio icons and bad takes. Other tests built profile persona quizzes analyzing recent activity, live AMA question boards, ",
       "created_at": "2026-10-17T11:06:12.365920+00:00",
-      "analytics": {}
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "BlNs3G51JVk",
@@ -1154,7 +1156,8 @@
       "format": "long",
       "script_preview": "The U.S. Department of Energy just released a suite of standardized AI tools called Genesis Agent Skills. This is a deliberate shift from loose, experimental AI toward a unified framework designed specifically to automate and accelerate scientific research across national laboratories. For decades, scientific discovery has been bottlenecked by manual trial-and-error in labs. You would hypothesize, run a chemical reaction, analyze results, and then refine. This cycle takes months. Now, these new agent skills allow AI to bridge that gap. What changed is the formalization of 'Agent Skills.' Think",
       "created_at": "2026-10-17T12:09:00.132128+00:00",
-      "analytics": {}
+      "analytics": {},
+      "source": "youtube_sync"
     }
   ],
   "topics": [
@@ -1604,16 +1607,37 @@
       "created_at": "2026-10-17T11:03:02.885670+00:00"
     },
     {
+      "topic": "Convert PDF to Editable PowerPoint in 30 Seconds",
+      "title": "Convert PDF to Editable PowerPoint in 30 Seconds",
+      "format": "short",
+      "created_at": "2026-10-17T11:03:19Z",
+      "source": "youtube_sync"
+    },
+    {
       "topic": "Bluesky’s Attie Turns AI Prompts Into Shareable Social Apps",
       "title": "Bluesky Attie: AI Prompts Into Mini Apps",
       "format": "short",
       "created_at": "2026-10-17T11:06:12.365920+00:00"
     },
     {
+      "topic": "Bluesky Attie: AI Prompts Into Mini Apps",
+      "title": "Bluesky Attie: AI Prompts Into Mini Apps",
+      "format": "short",
+      "created_at": "2026-10-17T11:06:26Z",
+      "source": "youtube_sync"
+    },
+    {
       "topic": "DOE Releases Genesis Agent Skills to Support AI-Driven Scientific Research",
       "title": "DOE's New AI Agents: How They Actually Speed Up Science",
       "format": "long",
       "created_at": "2026-10-17T12:09:00.132128+00:00"
+    },
+    {
+      "topic": "DOE's New AI Agents: How They Actually Speed Up Science",
+      "title": "DOE's New AI Agents: How They Actually Speed Up Science",
+      "format": "long",
+      "created_at": "2026-10-17T12:09:47Z",
+      "source": "youtube_sync"
     }
   ]
 }
