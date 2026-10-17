@@ -1,50 +1,98 @@
 {
-  "generated_at": "2026-10-16T17:21:32.759582+00:00",
+  "generated_at": "2026-10-17T11:28:46.437509+00:00",
   "competitors": [
+    {
+      "channel": "Dan Martell",
+      "subscribers": 3120000,
+      "channel_views": 416896297,
+      "video_count": 3795,
+      "high_performing_recent_videos": [
+        {
+          "title": "The Best AI Strategies by Income Level: $35K, $100K, $1M+",
+          "views": 76751,
+          "likes": 1318,
+          "comments": 86,
+          "published_at": "2026-10-14T13:00:36Z",
+          "description_excerpt": "✅ Get your FREE Scale Your Business Workbook here: https://go.danmartell.com/scale-workbook-lf-733\n\n🔥 Join the waitlist for Apex: https://go.danmartell.com/apex-waitlist-lf-733\n\nNo matter what you earn right now, there is one thing keeping you stuck at that level.\n\nI have hit every one of these ceilings myself while building my companies, and I coa"
+        },
+        {
+          "title": "Deleting your fear of rejection in less than 60 seconds",
+          "views": 31902,
+          "likes": 2420,
+          "comments": 22,
+          "published_at": "2026-10-14T21:03:46Z",
+          "description_excerpt": "Deleting your fear of rejection in less than 60 seconds"
+        },
+        {
+          "title": "How do you maximize the time you get out of your week?",
+          "views": 20745,
+          "likes": 1117,
+          "comments": 185,
+          "published_at": "2026-10-14T15:05:55Z",
+          "description_excerpt": "How do you maximize the time you get out of your week?"
+        },
+        {
+          "title": "Your environment is what shapes your reality",
+          "views": 18662,
+          "likes": 1580,
+          "comments": 11,
+          "published_at": "2026-10-13T22:01:55Z",
+          "description_excerpt": "Your environment is what shapes your reality"
+        },
+        {
+          "title": "How to delegate like a $100M CEO",
+          "views": 11477,
+          "likes": 432,
+          "comments": 1,
+          "published_at": "2026-10-15T21:02:20Z",
+          "description_excerpt": "How to delegate like a $100M CEO"
+        }
+      ]
+    },
     {
       "channel": "Nate Herk | AI Automation",
       "subscribers": 1070000,
-      "channel_views": 60721317,
-      "video_count": 553,
+      "channel_views": 61179093,
+      "video_count": 555,
       "high_performing_recent_videos": [
         {
-          "title": "I Tested the Viral Reverse Engineer Anything Skill. What You Need to Know.",
-          "views": 163480,
-          "likes": 2016,
-          "comments": 67,
-          "published_at": "2026-10-13T17:34:41Z",
-          "description_excerpt": "FREE Scrollcraft Website Design Skill: https://app.aiautomationsociety.ai/optin/scrollcraft/?utm_source=youtube&utm_medium=organic&utm_content=reverse-engineer-anything&sl=yt_reverse-engineer-anything\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=reverse-engineer-anything&hcat"
-        },
-        {
           "title": "AI Agents Just Became Multiplayer. Here's How to Build Them.",
-          "views": 68544,
-          "likes": 722,
-          "comments": 96,
+          "views": 76111,
+          "likes": 783,
+          "comments": 99,
           "published_at": "2026-10-15T15:16:33Z",
           "description_excerpt": "$50 off Kylon here: https://kylon.io/lp/nate-herk?utm_source=youtube&utm_medium=creator&utm_campaign=nate_herk&utm_content=dedicated_video\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=kylon-video-1&hcategory=youtube-videos&utm_campaign=plus-group\nMy FREE resources: https://ww"
         },
         {
+          "title": "Matt Pocock: The Most Valuable Skill to Learn in the Age of AI",
+          "views": 71285,
+          "likes": 1104,
+          "comments": 53,
+          "published_at": "2026-10-16T19:52:20Z",
+          "description_excerpt": "Hostinger VPS: http://hostinger.com/nateherkvps\nFREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=matt-pocock-pod&sl=yt_matt-pocock-pod\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=matt-pocock-pod &hcategory=youtube-videos&utm_campaign=free-group\n\nMy Too"
+        },
+        {
           "title": "Claude has completely changed how I edit videos",
-          "views": 50902,
-          "likes": 1259,
-          "comments": 679,
+          "views": 57246,
+          "likes": 1374,
+          "comments": 746,
           "published_at": "2026-10-14T12:36:04Z",
           "description_excerpt": "Free skills: https://www.skool.com/ai-automation-society/classroom/2f7c4aea?md=263d927bda6d49758d1ceecacbe41a10"
         },
         {
-          "title": "The Viral \"Reverse Engineer Anything\" Repo Explained Clearly",
-          "views": 32922,
-          "likes": 1491,
-          "comments": 210,
-          "published_at": "2026-10-13T17:39:04Z",
-          "description_excerpt": "Free guide: https://drive.google.com/file/d/1BFHwG3QmCQ7_HPc0bgY2nYasNPCf5PBV/view?usp=sharing"
-        },
-        {
           "title": "Why the Reverse Engineer Anything Repo Gained 100k Stars in a Day",
-          "views": 30647,
-          "likes": 1297,
+          "views": 31625,
+          "likes": 1311,
           "comments": 7,
           "published_at": "2026-10-14T01:29:00Z",
+          "description_excerpt": ""
+        },
+        {
+          "title": "AI Agents Just Became Multiplayer. Here's How to Build Them.",
+          "views": 28965,
+          "likes": 736,
+          "comments": 110,
+          "published_at": "2026-10-15T16:33:38Z",
           "description_excerpt": ""
         }
       ]
@@ -52,96 +100,48 @@
     {
       "channel": "Matt Wolfe",
       "subscribers": 1020000,
-      "channel_views": 81589705,
+      "channel_views": 81681347,
       "video_count": 808,
       "high_performing_recent_videos": [
         {
           "title": "Google Just Caught Up (Gemini-4 Argon)",
-          "views": 248056,
-          "likes": 3459,
-          "comments": 329,
+          "views": 254104,
+          "likes": 3507,
+          "comments": 330,
           "published_at": "2026-10-13T16:47:07Z",
           "description_excerpt": "Gemini 4 Argon is finally here, so I put it through some hands-on tests—from coding games to 3D printing Gary Busey. Here’s what impressed me, what got stuck, and how Google stacks up against Claude and ChatGPT.\n\nSharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: h"
         },
         {
           "title": "AI News: Dots, GPT-6.1 Sol, Sonnet 5.5, Gemini 4, and everything you need to know",
-          "views": 160060,
-          "likes": 2722,
+          "views": 160430,
+          "likes": 2724,
           "comments": 250,
           "published_at": "2026-10-02T15:00:16Z",
           "description_excerpt": "Here's the AI News you probably missed this week. See what Optimizely’s Virtual Teammates can automate for you at https://optimizely.com/mattwolfe \n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com"
         },
         {
-          "title": "AI News: Haiku-5.5, Visual ChatGPT, Grok's New Trick, and more!",
-          "views": 130073,
-          "likes": 2392,
-          "comments": 272,
-          "published_at": "2026-10-09T15:00:01Z",
-          "description_excerpt": "Here's The AI News You Probably Missed This Week! Get $100 in free credits for @Hyperagent when you sign up for a paid plan here: https://hyperagent.com/invite/MATT100?utm_source=youtube&utm_medium=influencer&utm_campaign=MATT100\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newslett"
-        },
-        {
           "title": "This Tesla Actually Flies (NOT AI)",
-          "views": 53294,
-          "likes": 1058,
-          "comments": 266,
+          "views": 159845,
+          "likes": 2410,
+          "comments": 563,
           "published_at": "2026-10-16T04:30:35Z",
           "description_excerpt": "This Tesla is Insane - Hard to believe it's not AI."
         },
         {
-          "title": "AI Design Hack Saves HOURS",
-          "views": 11808,
-          "likes": 218,
-          "comments": 12,
-          "published_at": "2026-10-08T15:13:52Z",
-          "description_excerpt": "#ad I used @GensparkProduct Design to generate the UI for a FutureTools app... and it only took me about 30 minutes.\n\nIt created the home feed, individual tool pages, and a layered, fully editable design. I could even generate a launch video in the same visual style, share the project with my team, and bring it into Genspark Code to start turning i"
-        }
-      ]
-    },
-    {
-      "channel": "AI Search",
-      "subscribers": 760000,
-      "channel_views": 74115970,
-      "video_count": 491,
-      "high_performing_recent_videos": [
-        {
-          "title": "Claude Opus 5.5 is ridiculous",
-          "views": 1006642,
-          "likes": 9542,
-          "comments": 1031,
-          "published_at": "2026-09-24T03:25:26Z",
-          "description_excerpt": "Claude Opus 5.5 review. #ai #ainews #llm #agi #singularity Thanks to our sponsor Higgsfield. Try it today https://higgsfield.ai/s/theaisearch-dkHOlY\n\n\nClaude Opus 5.5 release page https://www.anthropic.com/claude-opus-5-5 \nAlso see GPT 6 Astra review https://youtu.be/Ji4amrxrzVM \n\n00:00 Claude Opus 5.5 intro\n00:49 Recaptcha puzzles\n03:49 Ray tracin"
+          "title": "AI News: Haiku-5.5, Visual ChatGPT, Grok's New Trick, and more!",
+          "views": 131203,
+          "likes": 2400,
+          "comments": 275,
+          "published_at": "2026-10-09T15:00:01Z",
+          "description_excerpt": "Here's The AI News You Probably Missed This Week! Get $100 in free credits for @Hyperagent when you sign up for a paid plan here: https://hyperagent.com/invite/MATT100?utm_source=youtube&utm_medium=influencer&utm_campaign=MATT100\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newslett"
         },
         {
-          "title": "The AI unlock has begun",
-          "views": 1000068,
-          "likes": 21999,
-          "comments": 3611,
-          "published_at": "2026-10-06T03:36:24Z",
-          "description_excerpt": "How AI is used to mod games. Pass through mod, rebuilding in rust, porting mechanics. Claude Opus 5.5 game mod. Thanks to our sponsor Runway. https://runwayml.com/aisearch-oct \nUse code MKTG50 for 50% off any paid plan for the 1st month\n\n#ai #aitools #gaming #ainews #singularity \n\nResources\nhttps://github.com/rehan-remade/universal-modder\nhttps://g"
-        },
-        {
-          "title": "Deepseek just did the impossible",
-          "views": 807051,
-          "likes": 12630,
-          "comments": 1235,
-          "published_at": "2026-09-18T03:24:05Z",
-          "description_excerpt": "Deepseek V4.1 Flash explained #ai #llm #ainews #agi #singularity Thanks to our sponsor Luma. Try it today https://lumalabs.ai/aisearch-sep3\n\nDeepseek V4.1 Flash tech report https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/blob/main/DeepSeek_V41_Tech_Report.pdf\n\nAlso see:\nHow AI models work: https://youtu.be/U2hZFMVNSE0\nDSpark https://youtu.be"
-        },
-        {
-          "title": "OpenAI hacked, Jev, Google’s RSI, Qwen 3.8 Omni, Bonsai 2, new Gemini Live: AI NEWS",
-          "views": 476066,
-          "likes": 6686,
-          "comments": 538,
-          "published_at": "2026-09-20T03:28:57Z",
-          "description_excerpt": "HUGE AI NEWS: Jev, Laya, Bonsai 2 27B, Dream RSI, Gemini 3.8 Live, Qwen 3.8 Live & more #ai #ainews #aitools #aivideo #agi Thanks to our sponsor Runway. Try it today https://runwayml.com/aisearch-sept \nUse code MKTG50 for 50% off any paid plan for the 1st month\n\n#ai #aitools #ainews #agi #singularity \n\nMeridian https://huggingface.co/Viggle/Meridia"
-        },
-        {
-          "title": "Waifus incoming, GPT 6 Sol, Grok 4.7, Opus 5.5, Mimo 2.6, Step 5, OpenMuse: AI NEWS",
-          "views": 430104,
-          "likes": 6183,
-          "comments": 560,
-          "published_at": "2026-09-27T03:24:32Z",
-          "description_excerpt": "HUGE AI NEWS: GPT 6 Sol, Gemini 3.8 TTS, Grok 4.7, Opus 5.5, Mimo 2.6 & more. Thanks to our sponsor Luma. Try it today https://lumalabs.ai/aisearch-sep5\n\n#ai #ainews #aitools #aivideo #agi #singularity \n\nWorldCrafter https://drexubery.github.io/WorldCrafter/\nMing Image https://huggingface.co/inclusionAI/Ming-Image-0.1-Design\nMira Scene  https://vas"
+          "title": "AI News: 6 New Models & A Nano Banana Killer",
+          "views": 98370,
+          "likes": 1922,
+          "comments": 139,
+          "published_at": "2026-10-16T16:20:28Z",
+          "description_excerpt": "Get free credits when you sign up for @GensparkProduct Design here: https://www.genspark.ai/agents?type=design&utm_campaign=mattwolfe04&utm_source=yt\n\nThis week in AI: Krea 3 makes image editing seriously easy, Google’s Gemini 4 Argon and Meta’s Muse Wonder get put to the test, and new open-weight models keep coming. Plus, the latest OpenAI updates"
         }
       ]
     }
@@ -180,10 +180,10 @@
       "title": "Prompt Injection: Why Hackers No Longer Need Code",
       "format": "short",
       "metrics": {
-        "views": 21.0,
+        "views": 22.0,
         "estimatedMinutesWatched": 4.0,
-        "averageViewDuration": 25.0,
-        "averageViewPercentage": 38.49,
+        "averageViewDuration": 23.0,
+        "averageViewPercentage": 36.16,
         "likes": 3.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -236,10 +236,10 @@
       "title": "Build Your Own VSTs Instantly",
       "format": "short",
       "metrics": {
-        "views": 138.0,
-        "estimatedMinutesWatched": 19.0,
-        "averageViewDuration": 24.0,
-        "averageViewPercentage": 43.82,
+        "views": 148.0,
+        "estimatedMinutesWatched": 23.0,
+        "averageViewDuration": 28.0,
+        "averageViewPercentage": 50.2,
         "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -264,8 +264,8 @@
       "title": "Spreadsheet Security Alert: LibreOffice vs OpenOffice",
       "format": "short",
       "metrics": {
-        "views": 31.0,
-        "estimatedMinutesWatched": 2.0,
+        "views": 36.0,
+        "estimatedMinutesWatched": 3.0,
         "averageViewDuration": 22.0,
         "averageViewPercentage": 44.85,
         "likes": 0.0,
@@ -278,10 +278,10 @@
       "title": "Why AI Coding Agents Don't Ship More Software",
       "format": "short",
       "metrics": {
-        "views": 26.0,
-        "estimatedMinutesWatched": 3.0,
+        "views": 27.0,
+        "estimatedMinutesWatched": 4.0,
         "averageViewDuration": 29.0,
-        "averageViewPercentage": 48.72,
+        "averageViewPercentage": 49.09,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -362,11 +362,11 @@
       "title": "Microsoft Copilot Team Cuts: What This Means for Your AI Agents",
       "format": "short",
       "metrics": {
-        "views": 9.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 23.0,
-        "averageViewPercentage": 42.3,
-        "likes": 0.0,
+        "views": 22.0,
+        "estimatedMinutesWatched": 4.0,
+        "averageViewDuration": 38.0,
+        "averageViewPercentage": 70.0,
+        "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
@@ -376,10 +376,10 @@
       "title": "Microsoft Kills Outlook AI Themes",
       "format": "short",
       "metrics": {
-        "views": 17.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 33.0,
-        "averageViewPercentage": 56.91,
+        "views": 32.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 24.0,
+        "averageViewPercentage": 42.33,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -390,10 +390,10 @@
       "title": "Why Spotify's AI Coding Surge is a Double-Edged Sword",
       "format": "long",
       "metrics": {
-        "views": 2.0,
-        "estimatedMinutesWatched": 3.0,
-        "averageViewDuration": 109.0,
-        "averageViewPercentage": 19.45,
+        "views": 76.0,
+        "estimatedMinutesWatched": 21.0,
+        "averageViewDuration": 75.0,
+        "averageViewPercentage": 13.459999999999999,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -404,10 +404,10 @@
       "title": "Epic Games' 'AI-First' Mandate Explained",
       "format": "short",
       "metrics": {
-        "views": 6.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 0.0,
-        "averageViewPercentage": 0.0,
+        "views": 17.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 12.0,
+        "averageViewPercentage": 24.46,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -490,10 +490,10 @@
       "title": "Build Your Own VSTs Instantly",
       "format": "short",
       "metrics": {
-        "views": 138.0,
-        "estimatedMinutesWatched": 19.0,
-        "averageViewDuration": 24.0,
-        "averageViewPercentage": 43.82,
+        "views": 148.0,
+        "estimatedMinutesWatched": 23.0,
+        "averageViewDuration": 28.0,
+        "averageViewPercentage": 50.2,
         "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
