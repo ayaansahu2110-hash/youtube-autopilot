@@ -22,7 +22,7 @@
       "video_id": "_aUXHfTgXBs",
       "topic": "The 2,000-Year-Old Computer That Shouldn't Exist",
       "title": "The 2,000-Year-Old Computer That Shouldn't Exist",
-      "format": "unknown",
+      "format": "short",
       "script_preview": "",
       "created_at": "2026-11-09T10:54:15Z",
       "analytics": {},
@@ -41,11 +41,29 @@
       "video_id": "NWHT9sjYmnU",
       "topic": "The 2,000-Year-Old Computer That Broke History",
       "title": "The 2,000-Year-Old Computer That Broke History",
-      "format": "unknown",
+      "format": "short",
       "script_preview": "",
       "created_at": "2026-11-09T10:55:52Z",
       "analytics": {},
       "source": "youtube_sync"
+    },
+    {
+      "video_id": "BxyiVY5mMiA",
+      "topic": "Derinkuyu: The Massive Ancient Underground City That Housed 20,000 People",
+      "title": "Derinkuyu: The Impossible Underground City",
+      "format": "short",
+      "script_preview": "Eighty-five meters beneath the surface of Turkey, an entire city lies waiting—built for 20,000 people. This is Derinkuyu. It descends 18 levels into volcanic tuff, carved with such precision that modern archaeologists still struggle to explain the construction method. The city featured full stables, wine presses, and chapels. Most baffling are the massive, circular stone doors engineered to seal each floor from the inside. Orthodox history claims this was merely a temporary refuge from invaders. However, moving millions of tons of rock by hand suggests a purpose far more permanent. When you st",
+      "created_at": "2026-11-09T22:49:12.678236+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "y1MPohd9Dlc",
+      "topic": "Engineers Found Evidence of Hydraulics in an Ancient Pyramid, Solving a 4,500-Year-Old Mystery",
+      "title": "Ancient Egypt's Hidden Hydraulic Pyramid Tech Revealed",
+      "format": "short",
+      "script_preview": "For 4,500 years, Egyptologists debated simple sand ramps. Now, modern engineering suggests a far more complex reality. Researchers are pointing to a high-tech hydraulic system hidden in plain sight. French engineers propose the Step Pyramid of Djoser relied on a massive ancient dam, the Gisr el-Mudir, to capture flash floods. This allowed water to surge into internal stone shafts, essentially creating a vertical lock system. By utilizing water pressure to elevate limestone blocks, these builders achieved what human muscle alone could not. This discovery forces a complete re-evaluation of Old K",
+      "created_at": "2026-11-09T22:52:24.363094+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -64,7 +82,7 @@
     {
       "topic": "The 2,000-Year-Old Computer That Shouldn't Exist",
       "title": "The 2,000-Year-Old Computer That Shouldn't Exist",
-      "format": "unknown",
+      "format": "short",
       "created_at": "2026-11-09T10:54:15Z",
       "source": "youtube_sync"
     },
@@ -77,9 +95,21 @@
     {
       "topic": "The 2,000-Year-Old Computer That Broke History",
       "title": "The 2,000-Year-Old Computer That Broke History",
-      "format": "unknown",
+      "format": "short",
       "created_at": "2026-11-09T10:55:52Z",
       "source": "youtube_sync"
+    },
+    {
+      "topic": "Derinkuyu: The Massive Ancient Underground City That Housed 20,000 People",
+      "title": "Derinkuyu: The Impossible Underground City",
+      "format": "short",
+      "created_at": "2026-11-09T22:49:12.678236+00:00"
+    },
+    {
+      "topic": "Engineers Found Evidence of Hydraulics in an Ancient Pyramid, Solving a 4,500-Year-Old Mystery",
+      "title": "Ancient Egypt's Hidden Hydraulic Pyramid Tech Revealed",
+      "format": "short",
+      "created_at": "2026-11-09T22:52:24.363094+00:00"
     }
   ]
 }
