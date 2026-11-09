@@ -1,5 +1,4 @@
 import json
-import sys
 import time
 from pathlib import Path
 from rich.console import Console
@@ -53,10 +52,10 @@ def main() -> None:
         target_goal = TARGET_PER_CHANNEL
         needed = max(0, target_goal - current_uploaded)
 
-        console.print(f"\n[bold cyan]--------------------------------------------------[/bold cyan]")
+        console.print("\n[bold cyan]--------------------------------------------------[/bold cyan]")
         console.print(f"[bold cyan]▶ Channel: {display_name} ({profile})[/bold cyan]")
         console.print(f"  Current Uploads: {current_uploaded} / {target_goal} (Need {needed} more)")
-        console.print(f"[bold cyan]--------------------------------------------------[/bold cyan]")
+        console.print("[bold cyan]--------------------------------------------------[/bold cyan]")
 
         if needed <= 0:
             console.print(f"[green]✓ {display_name} already has {current_uploaded} videos. Moving to next channel.[/green]")
@@ -121,7 +120,7 @@ def main() -> None:
                 state = StateStore(s.state_file)
 
     console.print("\n[bold green]==================================================[/bold green]")
-    console.print(f"[bold green]Day 1 Boost Batch Finished![/bold green]")
+    console.print("[bold green]Day 1 Boost Batch Finished![/bold green]")
     console.print(f"  Total Published In This Session: {len(results['published'])}")
     console.print(f"  Total Rendered / Stored: {len(results['rendered'])}")
     console.print(f"  Failures: {len(results['failed'])}")

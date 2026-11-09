@@ -1,4 +1,3 @@
-import sys
 from autopilot.config import Settings
 from autopilot.pipeline import AutopilotPipeline
 
@@ -18,9 +17,9 @@ settings = Settings(
 pipeline = AutopilotPipeline(settings)
 
 for topic in topics:
-    print(f"\n==========================================")
+    print("\n==========================================")
     print(f"PRODUCING CHRONOSENIGMA: {topic}")
-    print(f"==========================================")
+    print("==========================================")
     try:
         res = pipeline.run(topic=topic, dry_run=False, video_format="short")
         print(f"RESULT: {res.status}")

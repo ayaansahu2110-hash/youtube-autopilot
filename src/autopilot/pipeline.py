@@ -5,9 +5,8 @@ from pathlib import Path
 from autopilot.captions import write_srt
 from autopilot.config import Settings
 from autopilot.discovery import TopicDiscovery
-from autopilot.editorial import ByteVexaEditorialSystem, editorial_system_for
+from autopilot.editorial import editorial_system_for
 from autopilot.facts import (
-    CurioAxiomEditorialSystem,
     FactScriptPlanner,
     FactTopicDiscovery,
     FactVerifier,
@@ -27,6 +26,7 @@ from autopilot.youtube import YouTubeUploader
 
 
 DEFAULT_TOPIC = "A useful AI workflow most people are underusing"
+DEFAULT_FACT_TOPIC = "Why Airplane Windows Have That Tiny Hole"
 
 
 class AutopilotPipeline:

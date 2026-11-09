@@ -76,7 +76,7 @@ class ScriptPlanner:
             data["scenes"] = polished
 
         # Ensure required VideoPlan fields are always present
-        data.setdefault("angle", f"Analysis of {research.topic}")
+        data.setdefault("angle", data.get("hook") or f"Analysis of {research.topic}")
         data.setdefault("hook", f"The truth about {research.topic}")
         data.setdefault("script", "")
         data.setdefault("title", research.topic)
@@ -115,7 +115,7 @@ class ScriptPlanner:
                     break
                 # Try to split cleanly on sentence / clause boundaries if available
                 text = scene_to_split.narration.strip()
-                lines = [l.strip() for l in re.split(r"(?<=[.!?,\n\u0964\u0965])\s+", text) if l.strip()]
+                lines = [part.strip() for part in re.split(r"(?<=[.!?,\n\u0964\u0965])\s+", text) if part.strip()]
                 if len(lines) >= 2:
                     mid_idx = len(lines) // 2
                     left_text = " ".join(lines[:mid_idx])
@@ -224,6 +224,9 @@ class ScriptPlanner:
         data.pop("topic", None)
         data.pop("format", None)
         data.pop("source_urls", None)
+
+        if data.get("content_mode") not in {"tool_review", "news_explainer", "general_explainer"}:
+            data["content_mode"] = "general_explainer"
 
         urls = [source.url for source in research.sources if source.url]
         return VideoPlan(

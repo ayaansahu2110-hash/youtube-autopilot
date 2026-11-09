@@ -26,6 +26,18 @@ class EditorialBrief:
 
 
 class ByteVexaEditorialSystem:
+    @staticmethod
+    def is_relevant_topic(title: str) -> bool:
+        """Require an explicit technology subject for ByteVexa news."""
+        return bool(re.search(
+            r"\b(?:AI|artificial intelligence|LLM|agent|GPT|OpenAI|Claude|Gemini|"
+            r"software|app|browser|computer|coding|developer|programming|cybersecurity|"
+            r"malware|ransomware|vulnerability|spreadsheet|LibreOffice|OpenOffice|"
+            r"cloud|microchip|processor|robot|machine learning|neural network|"
+            r"digital|internet|website|data center|smartphone|GPU|API|automation)\b",
+            title, re.IGNORECASE,
+        ))
+
     def enrich(self, candidate: TopicCandidate, research: ResearchPack, video_format: str = "short") -> ResearchPack:
         brief = self.brief_for(candidate, research, video_format=video_format)
         notes = research.research_notes.strip()
@@ -122,6 +134,10 @@ class ByteVexaEditorialSystem:
 class WonderTalesEditorialSystem:
     """Editorial system for WonderTales Kids (Children's poems, rhymes, bedtime tales)."""
 
+    @staticmethod
+    def is_relevant_topic(title: str) -> bool:
+        return True
+
     def enrich(self, candidate: TopicCandidate, research: ResearchPack, video_format: str = "short") -> ResearchPack:
         brief = self.brief_for(candidate, research, video_format=video_format)
         notes = research.research_notes.strip()
@@ -172,6 +188,10 @@ class WonderTalesEditorialSystem:
 
 class MokshaVaniEditorialSystem:
     """Editorial system for MokshaVani (Hindi bhajans, Gayatri Mantra, sacred Sanskrit chants)."""
+
+    @staticmethod
+    def is_relevant_topic(title: str) -> bool:
+        return True
 
     def enrich(self, candidate: TopicCandidate, research: ResearchPack, video_format: str = "short") -> ResearchPack:
         brief = self.brief_for(candidate, research, video_format=video_format)
@@ -224,6 +244,10 @@ class MokshaVaniEditorialSystem:
 class ApexStoicEditorialSystem:
     """Editorial system for ApexStoic (Stoicism, Marcus Aurelius, emotional mastery, discipline)."""
 
+    @staticmethod
+    def is_relevant_topic(title: str) -> bool:
+        return True
+
     def enrich(self, candidate: TopicCandidate, research: ResearchPack, video_format: str = "short") -> ResearchPack:
         brief = self.brief_for(candidate, research, video_format=video_format)
         notes = research.research_notes.strip()
@@ -275,6 +299,10 @@ class ApexStoicEditorialSystem:
 class ChronosEnigmaEditorialSystem:
     """Editorial system for ChronosEnigma (Ancient mysteries, lost civilizations, archaeology)."""
 
+    @staticmethod
+    def is_relevant_topic(title: str) -> bool:
+        return True
+
     def enrich(self, candidate: TopicCandidate, research: ResearchPack, video_format: str = "short") -> ResearchPack:
         brief = self.brief_for(candidate, research, video_format=video_format)
         notes = research.research_notes.strip()
@@ -325,6 +353,10 @@ class ChronosEnigmaEditorialSystem:
 
 class EmpirePulseEditorialSystem:
     """Editorial system for EmpirePulse (Geopolitics, sovereign wealth, billionaire dynasties, megaprojects)."""
+
+    @staticmethod
+    def is_relevant_topic(title: str) -> bool:
+        return True
 
     def enrich(self, candidate: TopicCandidate, research: ResearchPack, video_format: str = "short") -> ResearchPack:
         brief = self.brief_for(candidate, research, video_format=video_format)

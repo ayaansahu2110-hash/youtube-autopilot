@@ -12,9 +12,11 @@ class ThumbnailGenerator:
         title: str = "",
         brief: str = "",
         brand_name: str = "ByteVexa",
+        feature_image: Path | None = None,
     ) -> Path:
         """Create a high-contrast thumbnail with a visual story, tailored to the channel brand."""
         output_path.parent.mkdir(parents=True, exist_ok=True)
+        facts_mode = "curio" in brand_name.lower()
         if facts_mode:
             return self._create_fact_thumbnail(
                 text,
@@ -23,6 +25,7 @@ class ThumbnailGenerator:
                 brand_name=brand_name,
                 feature_image=feature_image,
             )
+        primary, _ = self._bytevexa_theme(f"{title} {brief} {text}")
         width, height = 1280, 720
         is_curio = "curio" in brand_name.lower()
 

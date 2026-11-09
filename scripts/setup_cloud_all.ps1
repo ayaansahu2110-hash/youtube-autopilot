@@ -110,3 +110,4 @@ Set-RepoVariable "ENABLE_UPLOADS" "true" $gh
 Set-RepoVariable "SCHEDULE_TIMEZONE" "Asia/Kolkata" $gh
 
 Write-Host "`nAll 7 channels' secrets and production variables have been uploaded successfully to GitHub Actions!" -ForegroundColor Green
+

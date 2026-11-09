@@ -1,5 +1,4 @@
 from pathlib import Path
-import pytest
 
 from autopilot.config import CHANNEL_PROFILES, PROFILE_CONFIGS, Settings
 from autopilot.editorial import (

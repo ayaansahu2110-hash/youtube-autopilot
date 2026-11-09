@@ -1,4 +1,3 @@
-import json
 from pathlib import Path
 from googleapiclient.discovery import build
 from rich.console import Console

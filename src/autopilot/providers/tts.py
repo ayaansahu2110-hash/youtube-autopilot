@@ -1,5 +1,6 @@
 import asyncio
 import base64
+import re
 import subprocess
 from pathlib import Path
 

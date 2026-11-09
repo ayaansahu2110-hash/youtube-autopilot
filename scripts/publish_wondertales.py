@@ -1,4 +1,3 @@
-import sys
 from autopilot.config import Settings
 from autopilot.pipeline import AutopilotPipeline
 
