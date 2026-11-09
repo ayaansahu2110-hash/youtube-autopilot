@@ -3,6 +3,7 @@ from pathlib import Path
 from autopilot.config import CHANNEL_PROFILES, PROFILE_CONFIGS, Settings
 from autopilot.editorial import (
     ApexStoicEditorialSystem,
+    AstraPulseEditorialSystem,
     ByteVexaEditorialSystem,
     ChronosEnigmaEditorialSystem,
     EmpirePulseEditorialSystem,
@@ -18,7 +19,7 @@ from autopilot.providers.visuals import PexelsVideoProvider
 from autopilot.state import StateStore
 
 
-def test_all_seven_channels_defined() -> None:
+def test_all_channels_defined() -> None:
     expected = [
         "bytevexa",
         "curioaxiom",
@@ -27,6 +28,7 @@ def test_all_seven_channels_defined() -> None:
         "apexstoic",
         "chronosenigma",
         "empirepulse",
+        "astrapulse",
     ]
     assert CHANNEL_PROFILES == expected
     for profile in expected:
@@ -76,6 +78,13 @@ def test_profile_isolation_and_settings() -> None:
     assert ep.edge_tts_voice == "en-GB-RyanNeural"
     assert ep.youtube_token_file == Path("secrets/youtube_token_empirepulse.json")
 
+    # AstraPulse
+    ap = Settings(channel_profile="astrapulse")
+    assert ap.channel_display_name == "AstraPulse"
+    assert ap.edge_tts_voice == "en-US-JennyNeural"
+    assert ap.youtube_token_file == Path("secrets/youtube_token_astrapulse.json")
+    assert ap.artifacts_dir == Path("artifacts/astrapulse")
+
 
 def test_editorial_systems_factory() -> None:
     assert isinstance(editorial_system_for("bytevexa"), ByteVexaEditorialSystem)
@@ -85,10 +94,11 @@ def test_editorial_systems_factory() -> None:
     assert isinstance(editorial_system_for("apexstoic"), ApexStoicEditorialSystem)
     assert isinstance(editorial_system_for("chronosenigma"), ChronosEnigmaEditorialSystem)
     assert isinstance(editorial_system_for("empirepulse"), EmpirePulseEditorialSystem)
+    assert isinstance(editorial_system_for("astrapulse"), AstraPulseEditorialSystem)
 
 
 def test_discovery_for_new_channels(tmp_path: Path) -> None:
-    for profile in ["wondertales", "mokshavani", "apexstoic", "chronosenigma", "empirepulse"]:
+    for profile in ["wondertales", "mokshavani", "apexstoic", "chronosenigma", "empirepulse", "astrapulse"]:
         s = Settings(channel_profile=profile, state_file=tmp_path / f"{profile}_history.json")
         state = StateStore(s.state_file)
         discovery = TopicDiscovery(s, state)

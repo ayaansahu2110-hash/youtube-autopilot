@@ -12,6 +12,7 @@ ChannelProfileType = Literal[
     "apexstoic",
     "chronosenigma",
     "empirepulse",
+    "astrapulse",
 ]
 
 CHANNEL_PROFILES: list[str] = [
@@ -22,6 +23,7 @@ CHANNEL_PROFILES: list[str] = [
     "apexstoic",
     "chronosenigma",
     "empirepulse",
+    "astrapulse",
 ]
 
 PROFILE_CONFIGS: dict[str, dict] = {
@@ -133,6 +135,22 @@ PROFILE_CONFIGS: dict[str, dict] = {
         "min_clips_short": 6,
         "clip_seconds": 2.4,
         "shorts_per_day": 2,
+        "min_research_sources": 1,
+    },
+    "astrapulse": {
+        "display_name": "AstraPulse",
+        "niche": "daily zodiac horoscopes, astrology compatibility, birth chart deep dives, and cosmic wisdom",
+        "topic_queries": "daily horoscope,zodiac sign personality,astrology compatibility,astrology facts,birth chart explained,zodiac secrets,horoscope today",
+        "voice": "en-US-JennyNeural",
+        "rate": "+1%",
+        "pitch": "+0Hz",
+        "category_id": "24",
+        "made_for_kids": False,
+        "token_file": "secrets/youtube_token_astrapulse.json",
+        "max_clips_short": 18,
+        "min_clips_short": 6,
+        "clip_seconds": 2.2,
+        "shorts_per_day": 12,
         "min_research_sources": 1,
     },
 }

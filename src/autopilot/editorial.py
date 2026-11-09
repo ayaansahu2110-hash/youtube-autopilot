@@ -406,6 +406,95 @@ class EmpirePulseEditorialSystem:
         return max(-10.0, min(20.0, score))
 
 
+class AstraPulseEditorialSystem:
+    """Editorial system for AstraPulse (Daily Zodiac Horoscopes, Compatibility & Astrology Deep Dives)."""
+
+    ZODIAC_SIGNS: tuple[str, ...] = (
+        "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo",
+        "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"
+    )
+
+    @staticmethod
+    def is_relevant_topic(title: str) -> bool:
+        return bool(re.search(
+            r"\b(?:aries|taurus|gemini|cancer|leo|virgo|libra|scorpio|sagittarius|capricorn|aquarius|pisces|"
+            r"zodiac|horoscope|astrology|natal chart|birth chart|sun sign|moon sign|rising sign|ascendant|"
+            r"kundali|retrograde|transit|planets|celestial|cosmos|tarot|astrological)\b",
+            title, re.IGNORECASE,
+        ))
+
+    def enrich(self, candidate: TopicCandidate, research: ResearchPack, video_format: str = "short") -> ResearchPack:
+        brief = self.brief_for(candidate, research, video_format=video_format)
+        notes = research.research_notes.strip()
+        combined = brief.as_text() + ("\n\nCOSMIC & ASTROLOGICAL EVIDENCE\n" + notes if notes else "")
+        return research.model_copy(update={"research_notes": combined})
+
+    def brief_for(self, candidate: TopicCandidate, research: ResearchPack, video_format: str = "short") -> EditorialBrief:
+        text = f"{candidate.title} {candidate.angle} {research.research_notes}".lower()
+        sign = self._detect_sign(text)
+
+        if video_format == "long":
+            return EditorialBrief(
+                brand_name="ASTRAPULSE",
+                series="Cosmic Blueprint & Astrological Mastery",
+                promise=(
+                    "An illuminating 8-10 minute astrological documentary diving deep into birth charts, planetary transits, "
+                    "karmic cycles, and the psychological truth behind zodiac archetypes."
+                ),
+                required_beats=(
+                    "Captivating cosmic mystery hook: How planetary cycles shape human behavior, historical epochs, and destiny.",
+                    "The Astronomical and Symbolic Foundation: Planetary rulers, elements, modalities, and house placements.",
+                    "Archetypal Psychology: Shadow traits, highest gifts, and how this dynamic manifests in real life.",
+                    "The Karmic Transit / Cycle: What happens during major transits (Saturn Return, Eclipse Portal, Retrogrades).",
+                    "Compatibility & Relational Dynamics: Synastry insights, magnetic attractions, and fatal clashes.",
+                    "Practical Cosmic Wisdom: Actionable guidance to harmonize personal energy with celestial rhythms.",
+                    "Empowering final perspective on using astrology as a mirror for self-mastery.",
+                ),
+            )
+
+        if sign:
+            return EditorialBrief(
+                brand_name="ASTRAPULSE",
+                series=f"{sign} Daily Horoscope & Cosmic Forecast",
+                promise=f"Deliver an urgent, hyper-accurate daily horoscope forecast for {sign} with energy, love, career, and lucky signs.",
+                required_beats=(
+                    f"Electrifying sign callout hook: Address {sign} directly with today's overarching energetic theme.",
+                    "Love & Connection forecast: What emotional vibrations and relationship dynamics to expect today.",
+                    "Career & Ambition forecast: Key opportunities, financial moves, or pitfalls to navigate today.",
+                    "Lucky Cosmic Signatures: Lucky number, lucky power color, and key intuitive hour.",
+                    f"A punchy cosmic blessing or warning reminding {sign} of their divine power to conclude.",
+                ),
+            )
+
+        return EditorialBrief(
+            brand_name="ASTRAPULSE",
+            series="Zodiac Secrets & Cosmic Truths",
+            promise="A high-retention 45-second revelation uncovering the psychological secrets, rankings, or compatibility truth of the zodiac.",
+            required_beats=(
+                "Provocative zodiac question or ranking hook that creates instant curiosity.",
+                "The psychological and astrological mechanism behind the trait.",
+                "Relatable everyday scenarios proving why this zodiac dynamic is true.",
+                "Sharp interactive conclusion asking viewers what sign they are in the comments.",
+            ),
+        )
+
+    def _detect_sign(self, text: str) -> str | None:
+        for sign in self.ZODIAC_SIGNS:
+            if re.search(rf"\b{sign.lower()}\b", text):
+                return sign
+        return None
+
+    def relevance_score(self, title: str) -> float:
+        text = title.lower()
+        score = 0.0
+        good_terms = ("horoscope", "zodiac", "astrology", "sign", "prediction", "aries", "taurus", "gemini",
+                      "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces")
+        for t in good_terms:
+            if t in text:
+                score += 3.0
+        return max(-10.0, min(20.0, score))
+
+
 def editorial_system_for(profile: str):
     """Factory to retrieve the isolated editorial system for any channel profile."""
     from autopilot.facts import CurioAxiomEditorialSystem
@@ -418,6 +507,7 @@ def editorial_system_for(profile: str):
         "apexstoic": ApexStoicEditorialSystem,
         "chronosenigma": ChronosEnigmaEditorialSystem,
         "empirepulse": EmpirePulseEditorialSystem,
+        "astrapulse": AstraPulseEditorialSystem,
     }
     cls = systems.get(profile, ByteVexaEditorialSystem)
     return cls()

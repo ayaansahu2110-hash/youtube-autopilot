@@ -17,6 +17,7 @@ on:
           - apexstoic
           - chronosenigma
           - empirepulse
+          - astrapulse
       slot:
         description: "Production slot (morning produces 1 Short; evening produces 1 Short + alternate-day Long; all produces both)"
         required: true
@@ -42,7 +43,7 @@ jobs:
           TARGET: ${{ inputs.target_channel }}
           SLOT: ${{ inputs.slot }}
         run: |
-          channels=("bytevexa" "curioaxiom" "wondertales" "mokshavani" "apexstoic" "chronosenigma" "empirepulse")
+          channels=("bytevexa" "curioaxiom" "wondertales" "mokshavani" "apexstoic" "chronosenigma" "empirepulse" "astrapulse")
           workflow_map_bytevexa="daily.yml"
           workflow_map_curioaxiom="curioaxiom.yml"
           workflow_map_wondertales="wondertales.yml"
@@ -50,6 +51,7 @@ jobs:
           workflow_map_apexstoic="apexstoic.yml"
           workflow_map_chronosenigma="chronosenigma.yml"
           workflow_map_empirepulse="empirepulse.yml"
+          workflow_map_astrapulse="astrapulse.yml"
 
           if [ "$TARGET" = "all" ]; then
             for ch in "${channels[@]}"; do

@@ -52,6 +52,7 @@ ALL_CHANNELS = [
     ("apexstoic", "ApexStoic", "UChPKS0EQQJPnMReTR-2pcvw", Path("secrets/youtube_token_apexstoic.json")),
     ("chronosenigma", "ChronosEnigma", "UCkskXfpnzm8lQnZGHOVMfQQ", Path("secrets/youtube_token_chronosenigma.json")),
     ("empirepulse", "EmpirePulse", "UC6rE9fs_Os6NSXdTN1oBNdw", Path("secrets/youtube_token_empirepulse.json")),
+    ("astrapulse", "AstraPulse", None, Path("secrets/youtube_token_astrapulse.json")),
 ]
 
 
@@ -116,10 +117,10 @@ def auth_curioaxiom() -> None:
 def auth_channel(
     profile: str = typer.Option(
         ..., "--profile", "-p",
-        help="Channel profile: bytevexa, curioaxiom, wondertales, mokshavani, apexstoic, chronosenigma, empirepulse"
+        help="Channel profile: bytevexa, curioaxiom, wondertales, mokshavani, apexstoic, chronosenigma, empirepulse, astrapulse"
     ),
 ) -> None:
-    """Run browser OAuth flow to link and authorize any of the 7 YouTube channels."""
+    """Run browser OAuth flow to link and authorize any of the 8 YouTube channels."""
     from autopilot.config import CHANNEL_PROFILES, PROFILE_CONFIGS
     norm_profile = profile.strip().lower()
     if norm_profile not in CHANNEL_PROFILES:
@@ -148,7 +149,7 @@ def verify_youtube() -> None:
 
 @app.command("verify-all")
 def verify_all() -> None:
-    """Verify OAuth tokens and live authorization for all 7 channels."""
+    """Verify OAuth tokens and live authorization for all 8 channels."""
     for profile, display_name, expected_id, token_path in ALL_CHANNELS:
         s = Settings(
             channel_profile=profile,
@@ -310,6 +311,41 @@ def daily(
         raise typer.Exit(code=1)
 
 
+@app.command("zodiac-daily")
+def zodiac_daily(
+    live: bool = typer.Option(False, "--live", help="Render and publish live; otherwise dry-run"),
+    signs: str = typer.Option("all", "--signs", "-s", help="Comma-separated signs or 'all'"),
+) -> None:
+    """Generate daily horoscope Shorts for AstraPulse across zodiac signs."""
+    all_signs = [
+        "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo",
+        "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"
+    ]
+    if signs.strip().lower() == "all":
+        target_signs = all_signs
+    else:
+        chosen = [s.strip().capitalize() for s in signs.split(",") if s.strip()]
+        target_signs = [s for s in chosen if s in all_signs]
+
+    settings = Settings(channel_profile="astrapulse")
+    short_settings = _settings_for_format(settings, "short")
+    today_str = datetime.now(ZoneInfo(settings.schedule_timezone)).strftime("%B %d, %Y")
+
+    console.print(f"[bold cyan]Running AstraPulse Zodiac Forecasts for {today_str}[/bold cyan] ({len(target_signs)} signs)")
+    for sign in target_signs:
+        topic = f"{sign} Horoscope Today {today_str} - Daily Cosmic Forecast & Luck"
+        console.print(f"\n[bold yellow]► Generating {sign} Horoscope Short...[/bold yellow]")
+        try:
+            res = AutopilotPipeline(short_settings).run(
+                topic=topic,
+                dry_run=not live,
+                video_format="short",
+            )
+            _print_result(res, short_settings)
+        except Exception as exc:
+            console.print(f"[bold red]Failed for {sign}:[/bold red] {exc}")
+
+
 @app.command()
 def schedule() -> None:
     """Keep a local machine running and execute two daily production slots."""
@@ -462,7 +498,7 @@ def schedule_all() -> None:
         max_instances=1,
         coalesce=True,
     )
-    console.print(f"[bold green]Unified 7-Channel Scheduler active at 12:00 and 18:00 ({settings.schedule_timezone}) across all channels[/bold green]")
+    console.print(f"[bold green]Unified 8-Channel Scheduler active at 12:00 and 18:00 ({settings.schedule_timezone}) across all channels[/bold green]")
     scheduler.start()
 
 

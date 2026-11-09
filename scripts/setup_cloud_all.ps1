@@ -81,11 +81,16 @@ $channels = @(
     @{ Profile = "mokshavani"; Secret = "MOKSHAVANI_YOUTUBE_TOKEN_B64"; File = "secrets/youtube_token_mokshavani.json"; DisplayName = "MokshaVani" },
     @{ Profile = "apexstoic"; Secret = "APEXSTOIC_YOUTUBE_TOKEN_B64"; File = "secrets/youtube_token_apexstoic.json"; DisplayName = "ApexStoic" },
     @{ Profile = "chronosenigma"; Secret = "CHRONOSENIGMA_YOUTUBE_TOKEN_B64"; File = "secrets/youtube_token_chronosenigma.json"; DisplayName = "ChronosEnigma" },
-    @{ Profile = "empirepulse"; Secret = "EMPIREPULSE_YOUTUBE_TOKEN_B64"; File = "secrets/youtube_token_empirepulse.json"; DisplayName = "EmpirePulse" }
+    @{ Profile = "empirepulse"; Secret = "EMPIREPULSE_YOUTUBE_TOKEN_B64"; File = "secrets/youtube_token_empirepulse.json"; DisplayName = "EmpirePulse" },
+    @{ Profile = "astrapulse"; Secret = "ASTRAPULSE_YOUTUBE_TOKEN_B64"; File = "secrets/youtube_token_astrapulse.json"; DisplayName = "AstraPulse" }
 )
 
 foreach ($ch in $channels) {
     if (-not (Test-Path $ch.File)) {
+        if ($ch.Profile -eq "astrapulse") {
+            Write-Host "Notice: AstraPulse token not found yet (will upload after authorization)." -ForegroundColor Yellow
+            continue
+        }
         throw "Token file for $($ch.DisplayName) ($($ch.File)) is missing!"
     }
 }
@@ -95,9 +100,13 @@ Set-RepoSecret "GEMINI_API_KEY" $gemini $gh
 Set-RepoSecret "PEXELS_API_KEY" $pexels $gh
 Set-RepoSecret "YOUTUBE_CLIENT_SECRETS_B64" $clientB64 $gh
 
-Step "Uploading 7 Channel OAuth Tokens to GitHub repository"
+Step "Uploading Channel OAuth Tokens to GitHub repository"
 foreach ($ch in $channels) {
-    $b64 = [Convert]::ToBase64String([IO.File]::ReadAllBytes((Resolve-Path $ch.File)))
+    if (Test-Path $ch.File) {
+        $b64 = [Convert]::ToBase64String([IO.File]::ReadAllBytes((Resolve-Path $ch.File)))
+        Set-RepoSecret $ch.Secret $b64 $gh
+    }
+}
     Set-RepoSecret $ch.Secret $b64 $gh
 }
 
