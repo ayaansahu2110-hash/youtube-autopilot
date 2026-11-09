@@ -1404,6 +1404,30 @@ class HybridVisualDirector:
                     matched_niche.append(q)
             fallbacks.extend(["modern city skyline aerial drone", "container shipping port aerial", "gold bullion bars vault"])
 
+        elif profile == "astrapulse":
+            mappings = (
+                (("zodiac", "horoscope", "constellation", "astrology"), "starry night sky time lapse nature"),
+                (("aries", "mars", "fire", "ram"), "dramatic fire flames blazing darkness"),
+                (("taurus", "venus", "earth", "bull"), "lush green forest nature landscape"),
+                (("gemini", "mercury", "air", "twins"), "wind blowing clouds blue sky timelapse"),
+                (("cancer", "moon", "water", "crab"), "full moon reflection calm ocean night"),
+                (("leo", "sun", "solar", "lion"), "golden sunrise sunlight lens flare"),
+                (("virgo", "mercury", "earth", "detail"), "autumn forest sunlight peaceful nature"),
+                (("libra", "venus", "balance", "scales"), "calm still water lake reflection sunrise"),
+                (("scorpio", "pluto", "mars", "water", "shadow"), "dark stormy ocean waves dramatic night"),
+                (("sagittarius", "jupiter", "fire", "archer"), "starry galaxy milky way time lapse"),
+                (("capricorn", "saturn", "earth", "mountain"), "rugged snow mountain peak summit aerial"),
+                (("aquarius", "uranus", "air", "rebel", "future"), "aurora borealis northern lights night sky"),
+                (("pisces", "neptune", "water", "dream", "fish"), "deep blue ocean water sunlight rays underwater"),
+                (("crystal", "tarot", "cards", "candles", "oracle"), "burning candle mystical dark ambient flame"),
+                (("stars", "galaxy", "nebula", "cosmos", "celestial"), "deep space galaxy colorful nebula stars"),
+                (("planet", "orbit", "saturn", "retrograde"), "planet earth rotating dark space starry"),
+            )
+            for terms, q in mappings:
+                if any(t in combined for t in terms):
+                    matched_niche.append(q)
+            fallbacks.extend(["starry night sky time lapse nature", "deep space galaxy colorful nebula stars", "full moon reflection calm ocean night"])
+
         elif profile == "curioaxiom" or self.facts_mode:
             mappings = (
                 (("reentry", "spacecraft", "capsule"), "space capsule spacecraft"),
@@ -1510,6 +1534,11 @@ class HybridVisualDirector:
             ]
         if profile == "empirepulse":
             return ["desk", "bedroom", "casual", "messy", "sofa", "couch", "slum"]
+        if profile == "astrapulse":
+            return [
+                "office", "laptop", "meeting", "desk", "computer", "phone",
+                "traffic", "car", "subway", "supermarket", "shopping", "gym",
+            ]
         return ["split-screen", "diagram", "typography", "text-graphic"]
 
     def _channel_positives(self) -> list[str]:
@@ -1544,5 +1573,11 @@ class HybridVisualDirector:
                 "skyline", "skyscrapers", "drone", "dubai", "singapore", "london",
                 "tokyo", "port", "cargo", "ship", "container", "gold", "vault",
                 "jet", "runway", "highway", "night",
+            ]
+        if profile == "astrapulse":
+            return [
+                "stars", "galaxy", "night", "sky", "milky-way", "moon", "sun",
+                "nebula", "space", "candle", "ocean", "aurora", "mountains",
+                "sunrise", "nature",
             ]
         return ["workflow", "feature", "interface", "software", "screen"]

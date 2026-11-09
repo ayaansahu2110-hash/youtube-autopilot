@@ -456,7 +456,7 @@ class AstraPulseEditorialSystem:
             return EditorialBrief(
                 brand_name="ASTRAPULSE",
                 series=f"{sign} Daily Horoscope & Cosmic Forecast",
-                promise=f"Deliver an urgent, hyper-accurate daily horoscope forecast for {sign} with energy, love, career, and lucky signs.",
+                promise=f"Deliver an urgent, hyper-accurate 45-second daily horoscope forecast for {sign} with 100-130 spoken words covering energy, love, career, and lucky signs.",
                 required_beats=(
                     f"Electrifying sign callout hook: Address {sign} directly with today's overarching energetic theme.",
                     "Love & Connection forecast: What emotional vibrations and relationship dynamics to expect today.",
@@ -469,7 +469,7 @@ class AstraPulseEditorialSystem:
         return EditorialBrief(
             brand_name="ASTRAPULSE",
             series="Zodiac Secrets & Cosmic Truths",
-            promise="A high-retention 45-second revelation uncovering the psychological secrets, rankings, or compatibility truth of the zodiac.",
+            promise="A high-retention 45-second revelation uncovering the psychological secrets, rankings, or compatibility truth of the zodiac with 100-130 spoken words.",
             required_beats=(
                 "Provocative zodiac question or ranking hook that creates instant curiosity.",
                 "The psychological and astrological mechanism behind the trait.",

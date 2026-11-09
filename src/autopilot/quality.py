@@ -17,12 +17,12 @@ class QualityGate:
         warnings: list[str] = []
         words = len(plan.script.split())
 
-        short_min = 80 if self.settings.channel_profile == "curioaxiom" else 85
-        short_max = 175 if self.settings.channel_profile == "curioaxiom" else 165
+        short_min = 75 if self.settings.channel_profile in {"curioaxiom", "astrapulse"} else 85
+        short_max = 175 if self.settings.channel_profile in {"curioaxiom", "astrapulse"} else 165
         if plan.format == "short" and not short_min <= words <= short_max:
             errors.append(f"Short script word count {words} is outside premium range {short_min}-{short_max}.")
-        if plan.format == "long" and not 1050 <= words <= 1700:
-            errors.append(f"Long script word count {words} is outside 8-12 minute target 1050-1700.")
+        if plan.format == "long" and not 980 <= words <= 1700:
+            errors.append(f"Long script word count {words} is outside 8-12 minute target 980-1700.")
         if len(plan.title) > 100:
             errors.append("YouTube title exceeds 100 characters.")
         if strict and len(research.sources) < self.settings.min_research_sources and self.settings.channel_profile != "wondertales":

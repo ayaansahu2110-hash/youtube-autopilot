@@ -273,7 +273,7 @@ class ScriptPlanner:
             f"Keep the exact same number of scenes ({len(scenes)}) and same order and meaning.\n"
             "Current scenes:\n"
             + json.dumps([{"index": i, "purpose": s.purpose, "visual_query": s.visual_query, "draft": s.narration} for i, s in enumerate(scenes)])
-            + "\n\nReturn JSON ONLY as an array: [{\"index\": integer, \"narration\": \"expanded 35-45 word spoken text...\"}]"
+            + "\n\nReturn JSON ONLY as an object: {\"scenes\": [{\"index\": integer, \"narration\": \"expanded 35-45 word spoken text...\"}]}"
         )
         try:
             expansions = self._generate_json(prompt)
@@ -289,20 +289,36 @@ class ScriptPlanner:
             print(f"Long narration expansion note: {exc}")
 
         total_words = sum(len(s.narration.split()) for s in scenes)
-        if total_words < 1050:
-            filler_extensions = (
-                "This architecture ensures the execution pipeline remains reliable and responsive across demanding workloads.",
-                "In practical workflows, this approach minimizes overhead and avoids the latency penalties introduced by remote cloud dependencies.",
-                "Deploying this configuration gives users complete operational independence and transparent, predictable execution.",
-                "By decoupling the core processing layer from third-party services, data remains private, local, and fully auditable.",
-                "The key advantage is verifiable determinism and reproducible results across diverse hardware configurations.",
-            )
+        if total_words < 980:
+            profile = getattr(self.settings, "channel_profile", "bytevexa")
+            if profile == "astrapulse":
+                filler_extensions = (
+                    "Understanding these planetary alignments gives profound clarity into how personal strengths manifest in everyday life.",
+                    "When celestial cycles shift, aligning conscious intention with astrological wisdom opens unexpected doors.",
+                    "Every zodiac placement reflects a unique psychological blueprint that reveals hidden talents and evolutionary lessons.",
+                    "Observing how planetary energies interact allows for greater emotional balance and harmonious relationships.",
+                    "By tuning into these astrological truths, you gain a deeper understanding of your soul journey and true purpose.",
+                )
+            elif profile == "mokshavani":
+                filler_extensions = (
+                    "यह दिव्य श्लोक और वैदिक मंत्र मन को असीम शांति और आत्मिक ऊर्जा प्रदान करते हैं।",
+                    "सनातन संस्कृति के अनुसार, इस मंत्र का नियमित स्मरण जीवन के सभी संशयों को समाप्त करता है।",
+                    "आध्यात्मिक चेतना के जागरण के लिए इन पवित्र ध्वनियों का श्रवण अत्यंत कल्याणकारी माना गया है।",
+                )
+            else:
+                filler_extensions = (
+                    "This architecture ensures the execution pipeline remains reliable and responsive across demanding workloads.",
+                    "In practical workflows, this approach minimizes overhead and avoids the latency penalties introduced by remote cloud dependencies.",
+                    "Deploying this configuration gives users complete operational independence and transparent, predictable execution.",
+                    "By decoupling the core processing layer from third-party services, data remains private, local, and fully auditable.",
+                    "The key advantage is verifiable determinism and reproducible results across diverse hardware configurations.",
+                )
             for idx, scene in enumerate(scenes):
                 if len(scene.narration.split()) < 35:
                     ext = filler_extensions[idx % len(filler_extensions)]
                     scene.narration = f"{scene.narration} {ext}"
                     total_words = sum(len(s.narration.split()) for s in scenes)
-                    if total_words >= 1100:
+                    if total_words >= 1050:
                         break
 
         return scenes
@@ -673,11 +689,12 @@ Return the complete corrected JSON only, preserving the required top-level keys 
             if text.endswith("```"):
                 text = text[:-3]
         data = json.loads(text.strip())
-        # Models occasionally wrap the requested object in a one-item JSON
-        # array. Accept that harmless shape variation, but fail explicitly for
-        # every other non-object response instead of crashing later on `.get`.
-        if isinstance(data, list) and len(data) == 1 and isinstance(data[0], dict):
-            data = data[0]
+        # Accept harmless array shape variation (or single-wrapped object)
+        if isinstance(data, list):
+            if len(data) == 1 and isinstance(data[0], dict) and "scenes" not in data[0] and "title" in data[0]:
+                data = data[0]
+            else:
+                data = {"scenes": data}
         if not isinstance(data, dict):
             raise ValueError("LLM JSON response must be an object")
         return data

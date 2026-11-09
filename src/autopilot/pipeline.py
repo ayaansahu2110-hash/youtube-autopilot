@@ -271,7 +271,7 @@ class AutopilotPipeline:
     ) -> tuple[TopicCandidate, ResearchPack]:
         if topic:
             if self.settings.channel_profile != "curioaxiom" and not self.editorial.is_relevant_topic(topic):
-                raise ValueError("ByteVexa topic must have an explicit AI or technology subject.")
+                raise ValueError(f"{self.settings.channel_display_name} topic must match its channel niche.")
             if self.settings.channel_profile == "curioaxiom":
                 seeded = self._verified_fact_seed(topic)
                 if seeded:

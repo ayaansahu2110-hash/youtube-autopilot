@@ -361,6 +361,50 @@ CHANNEL_EVERGREEN_TOPICS: dict[str, list[dict]] = {
             "reason": "The European fund administration capital managing trillions in sovereign and institutional wealth.",
         },
     ],
+    "astrapulse": [
+        {
+            "title": "Scorpio Zodiac Secrets: Why Their Intuition Is Never Wrong",
+            "urls": ["https://en.wikipedia.org/wiki/Scorpio_(astrology)", "https://en.wikipedia.org/wiki/Astrological_sign"],
+            "score": 96.0,
+            "reason": "Hyper-engaging exploration of Scorpio's piercing emotional intuition, psychological depth, and loyalty.",
+        },
+        {
+            "title": "Cancer Zodiac Secrets: The Fierce Protector Behind the Shell",
+            "urls": ["https://en.wikipedia.org/wiki/Cancer_(astrology)", "https://en.wikipedia.org/wiki/Water_(classical_element)"],
+            "score": 95.0,
+            "reason": "Emotional resonance exploring Cancer's lunar connection, fierce loyalty, and psychic empathy.",
+        },
+        {
+            "title": "Aries Zodiac Secrets: The Unstoppable Fire of the Pioneer",
+            "urls": ["https://en.wikipedia.org/wiki/Aries_(astrology)", "https://en.wikipedia.org/wiki/Mars_(astrology)"],
+            "score": 94.0,
+            "reason": "High-energy breakdown of Aries courage, magnetic confidence, and primal leadership drive.",
+        },
+        {
+            "title": "The 12 Zodiac Signs Ranked by Emotional Intelligence",
+            "urls": ["https://en.wikipedia.org/wiki/Astrology", "https://en.wikipedia.org/wiki/Zodiac"],
+            "score": 95.0,
+            "reason": "Viral ranking format breaking down how water, earth, fire, and air signs process human emotion.",
+        },
+        {
+            "title": "Zodiac Compatibility: Why Opposites Magnetic Attractions Clashes",
+            "urls": ["https://en.wikipedia.org/wiki/Synastry", "https://en.wikipedia.org/wiki/Astrology"],
+            "score": 93.0,
+            "reason": "Deep relational astrology analyzing polarity pairs and magnetic attractions.",
+        },
+        {
+            "title": "What Your Moon Sign Really Reveals About Your Hidden Soul",
+            "urls": ["https://en.wikipedia.org/wiki/Moon_(astrology)", "https://en.wikipedia.org/wiki/Horoscope"],
+            "score": 92.0,
+            "reason": "Essential astrological wisdom explaining the subconscious mind, emotional instinct, and inner child.",
+        },
+        {
+            "title": "Saturn Return Explained: The Defining Karmic Shift of Your 20s",
+            "urls": ["https://en.wikipedia.org/wiki/Saturn_return", "https://en.wikipedia.org/wiki/Saturn_(astrology)"],
+            "score": 91.0,
+            "reason": "The major 29-year astrological milestone of maturity, destiny realignment, and life restructuring.",
+        },
+    ],
 }
 
 
