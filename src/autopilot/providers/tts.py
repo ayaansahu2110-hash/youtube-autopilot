@@ -21,7 +21,17 @@ class EdgeTTSProvider:
 
     @staticmethod
     def _prepare_text(text: str) -> str:
-        # TTS sounds more human when the script contains deliberate breathing room.
+        # TTS sounds more human and musical when deliberate breathing room is provided.
+        # For multi-line nursery rhymes and poems, ensure each line ends with expressive punctuation.
+        lines = [line.strip() for line in text.strip().splitlines() if line.strip()]
+        if len(lines) >= 3:
+            processed = []
+            for line in lines:
+                if not line.endswith((".", "!", "?", ",", ";", ":", "—")):
+                    line += "!"
+                processed.append(line)
+            return "  ".join(processed)
+
         cleaned = re.sub(r"\s+", " ", text).strip()
         cleaned = re.sub(r"([.!?])\s+", r"\1  ", cleaned)
         cleaned = cleaned.replace(" — ", ".  ")

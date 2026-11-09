@@ -2,9 +2,8 @@ name: CurioAxiom Facts Pipeline
 
 on:
   schedule:
-    - cron: "30 3 * * *"
-    - cron: "30 8 * * *"
-    - cron: "30 13 * * *"
+    - cron: "35 6 * * *"   # 12:05 Asia/Kolkata (Noon slot)
+    - cron: "35 12 * * *"  # 18:05 Asia/Kolkata (Evening slot)
   workflow_dispatch:
     inputs:
       slot:
@@ -41,13 +40,12 @@ jobs:
       GEMINI_MODEL: gemini-flash-latest
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
-      # The OAuth application may be shared; the channel authorization token must never be shared.
       YOUTUBE_CLIENT_SECRETS_B64: ${{ secrets.YOUTUBE_CLIENT_SECRETS_B64 }}
       YOUTUBE_TOKEN_B64: ${{ secrets.CURIOAXIOM_YOUTUBE_TOKEN_B64 }}
       YOUTUBE_TOKEN_FILE: secrets/youtube_token_curioaxiom.json
       ENABLE_UPLOADS: "true"
-      UPLOAD_PRIVACY_STATUS: "private"
-      ALLOW_PUBLIC_UPLOADS: "false"
+      UPLOAD_PRIVACY_STATUS: "public"
+      ALLOW_PUBLIC_UPLOADS: "true"
       SHORTS_PUBLIC: "true"
       AUTOPILOT_ENV: production
       SCHEDULE_TIMEZONE: Asia/Kolkata
@@ -62,10 +60,8 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "RUN_SLOT=${{ inputs.slot }}" >> "$GITHUB_ENV"
-          elif [ "${{ github.event.schedule }}" = "30 3 * * *" ]; then
+          elif [ "${{ github.event.schedule }}" = "35 6 * * *" ]; then
             echo "RUN_SLOT=morning" >> "$GITHUB_ENV"
-          elif [ "${{ github.event.schedule }}" = "30 8 * * *" ]; then
-            echo "RUN_SLOT=midday" >> "$GITHUB_ENV"
           else
             echo "RUN_SLOT=evening" >> "$GITHUB_ENV"
           fi
@@ -74,7 +70,7 @@ jobs:
         run: |
           if { [ -z "$GEMINI_API_KEY" ] && [ -z "$OPENAI_API_KEY" ]; } || [ -z "$YOUTUBE_CLIENT_SECRETS_B64" ] || [ -z "$YOUTUBE_TOKEN_B64" ]; then
             echo "READY=false" >> "$GITHUB_ENV"
-            echo "CurioAxiom OAuth is not configured; safely skipping without touching ByteVexa."
+            echo "CurioAxiom OAuth is not configured; safely skipping."
           else
             echo "READY=true" >> "$GITHUB_ENV"
           fi
@@ -98,19 +94,34 @@ jobs:
       - name: Verify CurioAxiom OAuth and channel identity
         if: env.READY == 'true'
         run: python -m autopilot.cli verify-youtube
-      - name: Produce verified facts (public Shorts)
+      - name: Produce verified facts (public Shorts & alternate-day Longs)
         if: env.READY == 'true'
         shell: bash
         env:
           TEST_TOPIC: ${{ inputs.topic }}
         run: |
-          if [ -n "$TEST_TOPIC" ]; then
-            python -m autopilot.cli run --topic "$TEST_TOPIC" --format short --render
-          else
-            python -m autopilot.cli daily --live --slot "$RUN_SLOT"
-          fi
+          set +e
+          for attempt in 1 2 3; do
+            echo "Production attempt $attempt of 3 for slot: $RUN_SLOT"
+            if [ -n "$TEST_TOPIC" ]; then
+              python -m autopilot.cli run --topic "$TEST_TOPIC" --format short --render
+            else
+              python -m autopilot.cli daily --live --slot "$RUN_SLOT"
+            fi
+            code=$?
+            if [ "$code" -eq 0 ]; then
+              echo "CurioAxiom production completed successfully on attempt $attempt."
+              exit 0
+            fi
+            if [ "$attempt" -lt 3 ]; then
+              echo "Attempt $attempt failed; retrying after 20 seconds."
+              sleep 20
+            fi
+          done
+          echo "All CurioAxiom production attempts failed."
+          exit 1
       - name: Persist CurioAxiom state only
-        if: env.READY == 'true'
+        if: always() && env.READY == 'true'
         shell: bash
         run: |
           git config user.name "curioaxiom-autopilot-bot"
@@ -118,6 +129,7 @@ jobs:
           git add state/curioaxiom/history.json state/curioaxiom/learning.json 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "chore: update CurioAxiom learning state [skip ci]"
+            git pull --rebase origin main
             git push
           fi
       - name: Upload CurioAxiom artifacts

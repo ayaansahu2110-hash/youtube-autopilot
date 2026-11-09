@@ -1,0 +1,85 @@
+{
+  "videos": [
+    {
+      "video_id": "2s0cpKNaRAw",
+      "topic": "The Submerged Ancient City of Dwarka in the Arabian Sea",
+      "title": "The 9,500-Year-Old Drowned Ruins of Khambhat",
+      "format": "short",
+      "script_preview": "20 kilometers off India's coast, submerged 20 to 40 meters underwater, lie acoustic grids hiding an archaeological paradox. In December 2000, oceanographers mapping paleochannels in the Gulf of Khambhat detected massive submerged structures along ancient riverbeds. Ocean dredging operations pulled up stone objects alongside a piece of ancient preserved wood from 131 feet deep. Carbon dating placed the timber at 7500 BC—predating the Indus Valley civilization by over four thousand years. Orthodox archaeologists quickly rejected the timeline, arguing ocean dredging destroys critical context requ",
+      "created_at": "2026-11-09T08:45:14.850505+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "081RA5ynfgA",
+      "topic": "The Antikythera Mechanism: The 2,000-Year-Old Astronomical Computer",
+      "title": "The 2,000-Year-Old Computer That Shatters History",
+      "format": "short",
+      "script_preview": "In 1901, divers off the coast of Greece retrieved a corroded mess from a Roman-era shipwreck. X-rays later revealed the impossible: a sophisticated clockwork computer. Housed in a wooden box just 34 by 18 centimeters, this mechanism used at least 30 precision-cut bronze gears, including one with 223 teeth, to map the cosmos. It didn't just tell time; it tracked lunar cycles, predicted solar eclipses decades out, and marked the four-year interval of the Olympic Games. Modern historians expected this level of mechanical complexity only in 14th-century European clocks. Finding it in the 2nd centu",
+      "created_at": "2026-11-09T10:54:49.188719+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "_aUXHfTgXBs",
+      "topic": "The 2,000-Year-Old Computer That Shouldn't Exist",
+      "title": "The 2,000-Year-Old Computer That Shouldn't Exist",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-11-09T10:54:15Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "wv9Ave0iSgQ",
+      "topic": "The Great Pyramid of Giza: Impossible Precision Engineering",
+      "title": "The Giza Anomaly: Why the Great Pyramid Defies Physics",
+      "format": "short",
+      "script_preview": "4,500 years ago, engineers stacked 2.3 million stone blocks to build the Great Pyramid. Orthodox history credits copper chisels and simple labor for this 6-million-tonne marvel. Yet, the facts defy that narrative. The base spans 230 meters, perfectly level with an error margin of less than 15 millimeters. This is a feat demanding modern survey equipment. More chilling? Its alignment to True North is accurate to within three-sixtieths of a degree. This exceeds the precision of the Paris Observatory, built in the 17th century. Consider the logistics: transporting multi-tonne granite blocks with ",
+      "created_at": "2026-11-09T11:02:24.320211+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "NWHT9sjYmnU",
+      "topic": "The 2,000-Year-Old Computer That Broke History",
+      "title": "The 2,000-Year-Old Computer That Broke History",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-11-09T10:55:52Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    }
+  ],
+  "topics": [
+    {
+      "topic": "The Submerged Ancient City of Dwarka in the Arabian Sea",
+      "title": "The 9,500-Year-Old Drowned Ruins of Khambhat",
+      "format": "short",
+      "created_at": "2026-11-09T08:45:14.850505+00:00"
+    },
+    {
+      "topic": "The Antikythera Mechanism: The 2,000-Year-Old Astronomical Computer",
+      "title": "The 2,000-Year-Old Computer That Shatters History",
+      "format": "short",
+      "created_at": "2026-11-09T10:54:49.188719+00:00"
+    },
+    {
+      "topic": "The 2,000-Year-Old Computer That Shouldn't Exist",
+      "title": "The 2,000-Year-Old Computer That Shouldn't Exist",
+      "format": "unknown",
+      "created_at": "2026-11-09T10:54:15Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "The Great Pyramid of Giza: Impossible Precision Engineering",
+      "title": "The Giza Anomaly: Why the Great Pyramid Defies Physics",
+      "format": "short",
+      "created_at": "2026-11-09T11:02:24.320211+00:00"
+    },
+    {
+      "topic": "The 2,000-Year-Old Computer That Broke History",
+      "title": "The 2,000-Year-Old Computer That Broke History",
+      "format": "unknown",
+      "created_at": "2026-11-09T10:55:52Z",
+      "source": "youtube_sync"
+    }
+  ]
+}

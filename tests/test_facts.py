@@ -18,7 +18,7 @@ def test_curioaxiom_defaults_are_isolated() -> None:
     assert settings.max_visual_clips_short == 24
     assert settings.min_visual_clips_short == 20
     assert settings.visual_clip_seconds == 2.0
-    assert settings.shorts_per_day == 3
+    assert settings.shorts_per_day == 2
 
 
 def test_curioaxiom_public_short_setting_does_not_publish_long_form() -> None:

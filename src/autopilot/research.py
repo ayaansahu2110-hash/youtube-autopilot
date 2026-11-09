@@ -11,9 +11,10 @@ from autopilot.models import ResearchPack, ResearchSource, TopicCandidate
 
 _BROWSER_HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140 Safari/537.36"
-    )
+        "YouTubeAutopilot/2.0 (research@autopilot.local) "
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
 
 
@@ -28,9 +29,8 @@ class Researcher:
 
         # Preserve primary discovery evidence before news aggregators can fill
         # the source budget with secondary coverage.
-        if self.settings.channel_profile == "curioaxiom":
-            for url in candidate.source_urls[:5]:
-                self._append_url_source(sources, seen_urls, seen_publishers, candidate.title, url)
+        for url in candidate.source_urls[:5]:
+            self._append_url_source(sources, seen_urls, seen_publishers, candidate.title, url)
 
         # Search more than one public news endpoint because hosted runners can
         # occasionally be rate-limited or blocked by an individual provider.
@@ -131,7 +131,9 @@ class Researcher:
             return
         publisher = urlparse(url).netloc.strip()
         publisher_key = publisher.lower()
-        if publisher_key and publisher_key in seen_publishers:
+        is_encyclopedia = "wikipedia.org" in publisher_key or "britannica.com" in publisher_key
+        # For general news, enforce distinct publishers. For encyclopedias/archives, allow distinct articles.
+        if publisher_key and publisher_key in seen_publishers and not is_encyclopedia:
             return
         snippet = self._clean(self._extract_page_text(url))
         if len(snippet) < 120:

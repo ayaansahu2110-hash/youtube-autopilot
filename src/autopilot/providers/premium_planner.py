@@ -15,9 +15,11 @@ class PremiumScriptPlanner(ScriptPlanner):
         source_text = research.research_notes[:22000]
         source_catalog = self._source_catalog(research)
         learned = learning_context(self.settings)
-        return f"""You are the senior writer, researcher and visual editor for ByteVexa, a premium faceless technology channel.
+        channel_name = self.settings.channel_display_name
+        channel_niche = self.settings.channel_niche
+        return f"""You are the senior writer, researcher and visual editor for {channel_name}, a premium channel specializing in {channel_niche}.
 Create an ORIGINAL 8-12 minute YouTube long-form video about: {research.topic}
-Channel promise: current AI and technology explained through useful real-world consequences, demos and honest limitations.
+Channel promise: technology and scientific principles explained through useful real-world consequences, architecture, demos and honest limitations.
 
 Research evidence:
 {source_text}
@@ -30,8 +32,11 @@ Recent channel-learning signals:
 
 Use those learning signals only to improve general patterns such as hook strength, topic specificity, pacing, title clarity, useful examples and viewer objections. Never copy another creator's wording, script structure beat-for-beat, thumbnail identity, catchphrases or branding.
 
-LONG-FORM CONTENT STANDARD
-- Target 1,250-1,750 spoken words. Do not pad with filler.
+CRITICAL MANDATORY LONG-FORM REQUIREMENTS:
+- Total script MUST be between 1,200 and 1,550 spoken words (8 to 10 minutes spoken duration).
+- Create exactly 32 to 38 scenes in exact chronological narration order.
+- EVERY SINGLE SCENE'S 'narration' MUST BE 35 TO 50 SPOKEN WORDS (2 to 4 detailed spoken sentences explaining the setup, code, commands, mechanics, architecture, or evidence).
+- DO NOT write 10-word outlines or brief bullet points. Each scene's narration will be synthesized as spoken voiceover.
 - Cover one coherent topic deeply enough that a viewer finishes understanding what changed, how it works, where it helps, where it fails and whether it matters to them.
 - Open with a specific real-world consequence or surprising capability in the first 15 seconds.
 - Structure the narrative: hook -> context -> what changed -> real workflow/demo -> concrete examples/results -> comparison -> limitations/catch -> who should use it -> practical takeaway.
@@ -47,15 +52,15 @@ LONG-FORM CONTENT STANDARD
 - End with a concrete decision framework or action, not a generic subscribe-style conclusion.
 
 LONG-FORM VISUAL DIRECTION
-Create 26-34 scenes in exact narration order. Every scene must choose ONE visual_mode:
+Create 32-38 scenes in exact narration order. Every scene must choose ONE visual_mode:
 1) "ui" — real public product/interface evidence using an approved SOURCE_URL exactly.
-2) "motion" — ByteVexa explanatory graphics for comparisons, concepts, steps, numbers, timelines, pros/cons, before/after and summaries.
+2) "motion" — {channel_name} explanatory graphics for comparisons, concepts, steps, numbers, timelines, pros/cons, before/after and summaries.
 3) "stock" — only literal real-world B-roll that directly matches the narration.
 
 Visual rules:
 - Prefer real UI + motion graphics; stock should remain a minority.
 - Do not show the same landing-page state repeatedly. For product coverage, vary hero, feature section, examples/templates, input/demo, result/preview and limitation/support evidence when available.
-- Each scene narration should normally be 25-60 spoken words so visuals change regularly without becoming frantic.
+- Each scene narration MUST be 35-50 spoken words.
 - visual_query must describe the exact visual evidence needed.
 - on_screen_text should be 2-7 useful words.
 - purpose should use clear labels such as hook, context, feature, workflow, demo, example, result, comparison, limitation, decision, takeaway.
@@ -82,7 +87,8 @@ scenes are the source of truth for the final script and visuals.
         source_text = research.research_notes[:18000]
         source_catalog = self._source_catalog(research)
         learned = learning_context(self.settings)
-        review_prompt = f"""Act as the executive editor for a premium ByteVexa 8-12 minute technology video.
+        channel_name = self.settings.channel_display_name
+        review_prompt = f"""Act as the executive editor for a premium {channel_name} 8-12 minute video.
 Rewrite this draft until it is informative, tightly structured, visually varied and worth watching to the end.
 
 Topic: {research.topic}
@@ -99,7 +105,8 @@ Draft JSON:
 {json.dumps(draft, ensure_ascii=False)}
 
 REQUIRED FINAL STANDARD
-- 1,250-1,750 spoken words and 26-34 scene beats.
+- 1,200-1,550 total spoken words across 32-38 scene beats.
+- EVERY scene narration MUST be 35-50 spoken words of substantive explanation (never short 10-word outlines).
 - Strong real-world hook, not a generic introduction.
 - At least 5 concrete researched facts/actions/examples.
 - At least one workflow/demo sequence and one result/example sequence.
@@ -110,7 +117,7 @@ REQUIRED FINAL STANDARD
 - Prefer actual UI evidence and custom motion graphics; stock remains a minority.
 - Avoid repeating one public source page across many consecutive scenes.
 - UI source_url values must exactly match an approved URL. If evidence is not visually capturable, use motion instead of inventing a URL.
-- Preserve ByteVexa's original voice; do not imitate any specific creator.
+- Preserve {channel_name}'s original voice; do not imitate any specific creator.
 
 Return the complete corrected JSON only, preserving the required top-level keys and exact scene keys: narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
 """

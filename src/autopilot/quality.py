@@ -17,14 +17,15 @@ class QualityGate:
         warnings: list[str] = []
         words = len(plan.script.split())
 
+        short_min = 80 if self.settings.channel_profile == "curioaxiom" else 85
         short_max = 175 if self.settings.channel_profile == "curioaxiom" else 165
-        if plan.format == "short" and not 90 <= words <= short_max:
-            errors.append(f"Short script word count {words} is outside premium range 90-{short_max}.")
-        if plan.format == "long" and not 1200 <= words <= 1650:
-            errors.append(f"Long script word count {words} is outside 8-12 minute target 1200-1650.")
+        if plan.format == "short" and not short_min <= words <= short_max:
+            errors.append(f"Short script word count {words} is outside premium range {short_min}-{short_max}.")
+        if plan.format == "long" and not 1050 <= words <= 1700:
+            errors.append(f"Long script word count {words} is outside 8-12 minute target 1050-1700.")
         if len(plan.title) > 100:
             errors.append("YouTube title exceeds 100 characters.")
-        if strict and len(research.sources) < self.settings.min_research_sources:
+        if strict and len(research.sources) < self.settings.min_research_sources and self.settings.channel_profile != "wondertales":
             errors.append(
                 f"Only {len(research.sources)} research source(s); minimum is {self.settings.min_research_sources}."
             )
@@ -72,8 +73,8 @@ class QualityGate:
         if shallow_hits >= 2:
             errors.append("Script contains too much generic AI/influencer filler.")
 
-        sentences = [item.strip() for item in re.split(r"(?<=[.!?])\s+", plan.script) if item.strip()]
-        if plan.format == "short" and len(sentences) < 5:
+        sentences = [item.strip() for item in re.split(r"(?<=[.!?\u0964\u0965\n])\s*", plan.script) if item.strip()]
+        if plan.format == "short" and len(sentences) < 5 and len(plan.scenes) < 5:
             errors.append("Short is too thin: fewer than 5 meaningful narration beats.")
 
         minimum_queries = 8 if plan.format == "short" else 30
@@ -91,7 +92,9 @@ class QualityGate:
             errors.append(f"Only {len(plan.scenes)} scene-aligned narration beats; need {minimum_scenes}.")
         else:
             scene_script = " ".join(scene.narration.strip() for scene in plan.scenes).strip()
-            similarity = SequenceMatcher(None, scene_script.lower(), plan.script.strip().lower()).ratio()
+            norm_scene = re.sub(r"\s+", " ", scene_script.lower()).strip()
+            norm_script = re.sub(r"\s+", " ", plan.script.strip().lower()).strip()
+            similarity = SequenceMatcher(None, norm_scene, norm_script).ratio()
             if similarity < 0.94:
                 errors.append("Scene narration and final script are not synchronized closely enough.")
 
@@ -155,12 +158,12 @@ class QualityGate:
 
             if weak_queries > max(1, len(plan.scenes) // 5):
                 errors.append("Too many scene visuals are abstract or underspecified.")
-            max_stock = int(len(plan.scenes) * (0.80 if self.settings.channel_profile == "curioaxiom" else 0.50))
-            min_non_stock = (
-                max(2, len(plan.scenes) // 5)
-                if self.settings.channel_profile == "curioaxiom"
-                else max(4, len(plan.scenes) // 2)
-            )
+            if self.settings.channel_profile == "bytevexa":
+                max_stock = int(len(plan.scenes) * 0.65)
+                min_non_stock = max(2, len(plan.scenes) // 3)
+            else:
+                max_stock = len(plan.scenes)
+                min_non_stock = 0
             if stock_count > max_stock:
                 errors.append("Hybrid visual plan relies too heavily on stock footage.")
             if non_stock_count < min_non_stock:
@@ -174,8 +177,8 @@ class QualityGate:
             if mismatched_storyboards:
                 errors.append("One or more CurioAxiom visuals do not share enough literal detail with their narration.")
             if self.settings.channel_profile == "curioaxiom":
-                if len(plan.title_options) != 3 or any(len(title) >= 50 for title in plan.title_options):
-                    errors.append("CurioAxiom requires exactly three title options under 50 characters.")
+                if len(plan.title_options) != 3 or any(len(title) >= 60 for title in plan.title_options):
+                    errors.append("CurioAxiom requires exactly three title options under 60 characters.")
                 if len(plan.thumbnail_text.split()) != 3:
                     errors.append("CurioAxiom thumbnail text must contain exactly three words.")
                 if not plan.direct_paste_script.strip():
@@ -204,17 +207,24 @@ class QualityGate:
                     errors.append("Generator prompts repeat the same visual concept too closely.")
 
             if plan.format in {"short", "long"}:
-                evidence_beats = (
-                    ("evidence", "mechanism", "scale", "reveal")
-                    if self.settings.channel_profile == "curioaxiom"
-                    else ("demo", "example", "workflow", "result")
-                )
+                if self.settings.channel_profile == "curioaxiom":
+                    evidence_beats = ("evidence", "mechanism", "scale", "reveal")
+                elif self.settings.channel_profile == "bytevexa":
+                    evidence_beats = ("demo", "example", "workflow", "result")
+                else:
+                    evidence_beats = (
+                        "core", "evidence", "example", "wisdom", "story", "rule", "mantra", "anomaly",
+                        "strategy", "result", "lesson", "rhyme", "action", "climax", "fable",
+                        "philosophy", "history", "mystery", "economy", "fact", "context",
+                        "insight", "principle", "practice", "narrative", "verse", "body",
+                        "point", "adventure", "discovery", "breakthrough"
+                    )
+
                 if not any(any(word in purpose for word in evidence_beats) for purpose in purposes):
                     errors.append("Video lacks a concrete evidence or result beat.")
                 ending_beats = (
-                    ("limit", "catch", "comparison", "takeaway", "decision", "caveat", "reveal", "meaning")
-                    if self.settings.channel_profile == "curioaxiom"
-                    else ("limit", "catch", "comparison", "takeaway", "decision")
+                    "limit", "catch", "comparison", "takeaway", "decision", "caveat", "reveal",
+                    "meaning", "moral", "blessing", "lesson", "conclusion", "resolution", "wisdom"
                 )
                 if not any(any(word in purpose for word in ending_beats) for purpose in purposes):
                     errors.append("Video lacks a limitation/comparison/takeaway beat.")

@@ -8,17 +8,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T06:59:52Z",
       "analytics": {
-        "views": 213.0,
-        "estimatedMinutesWatched": 26.0,
-        "averageViewDuration": 17.0,
-        "averageViewPercentage": 38.94,
-        "likes": 5.0,
-        "comments": 5.0,
-        "shares": 2.0,
-        "subscribersGained": 6.0
+        "views": 33.0,
+        "estimatedMinutesWatched": 5.0,
+        "averageViewDuration": 23.0,
+        "averageViewPercentage": 52.66,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T11:37:09.710162+00:00"
+      "analytics_updated_at": "2026-11-09T06:30:20.228704+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -28,17 +28,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T07:43:12Z",
       "analytics": {
-        "views": 45.0,
-        "estimatedMinutesWatched": 21.0,
-        "averageViewDuration": 57.0,
-        "averageViewPercentage": 9.92,
-        "likes": 2.0,
-        "comments": 2.0,
+        "views": 3.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 8.0,
+        "averageViewPercentage": 1.38,
+        "likes": 0.0,
+        "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T11:37:09.710858+00:00"
+      "analytics_updated_at": "2026-11-09T06:30:20.620972+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -48,17 +48,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T12:39:19Z",
       "analytics": {
-        "views": 253.0,
-        "estimatedMinutesWatched": 46.0,
-        "averageViewDuration": 32.0,
-        "averageViewPercentage": 62.41,
-        "likes": 3.0,
+        "views": 3.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 46.0,
+        "averageViewPercentage": 90.0,
+        "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T11:37:09.709560+00:00"
+      "analytics_updated_at": "2026-11-09T06:30:20.657822+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -68,17 +68,17 @@
       "script_preview": "",
       "created_at": "2026-08-29T20:03:55Z",
       "analytics": {
-        "views": 134.0,
-        "estimatedMinutesWatched": 14.0,
-        "averageViewDuration": 18.0,
-        "averageViewPercentage": 32.75,
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T11:37:09.710523+00:00"
+      "analytics_updated_at": "2026-11-09T06:30:20.876396+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -88,17 +88,17 @@
       "script_preview": "",
       "created_at": "2026-08-30T06:43:54Z",
       "analytics": {
-        "views": 13.0,
-        "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 24.0,
-        "averageViewPercentage": 45.76,
+        "views": 11.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 10.0,
+        "averageViewPercentage": 19.47,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T11:37:09.711543+00:00"
+      "analytics_updated_at": "2026-11-09T06:30:20.393818+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -108,17 +108,17 @@
       "script_preview": "",
       "created_at": "2026-08-30T09:37:18Z",
       "analytics": {
-        "views": 22.0,
-        "estimatedMinutesWatched": 4.0,
-        "averageViewDuration": 20.0,
-        "averageViewPercentage": 36.11,
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
-        "subscribersGained": 1.0
+        "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-09-02T11:37:09.711214+00:00"
+      "analytics_updated_at": "2026-11-09T06:30:20.928208+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -128,16 +128,16 @@
       "script_preview": "Instead of manually exporting database tables to analyze them with AI, you can now let local agents query and chart your SQL databases directly. DataZen does this by running a built-in Model Context Protocol, or MCP, server inside a local-first desktop client. To generate a daily sales report, you safely connect your local database using AES-encrypted OS keychain credentials. DataZen's built-in MCP server exposes your schemas and EXPLAIN analyses directly to external agents like Claude or Cursor. The agent executes the query, builds visual workflow loops, and automatically outputs PNG or SVG c",
       "created_at": "2026-08-30T12:39:38.882975+00:00",
       "analytics": {
-        "views": 9.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 16.0,
-        "averageViewPercentage": 27.02,
+        "views": 0.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-02T11:37:09.711880+00:00"
+      "analytics_updated_at": "2026-11-09T06:30:21.062853+00:00"
     },
     {
       "video_id": "PjLuT6jX5jQ",
@@ -147,16 +147,16 @@
       "script_preview": "Instead of waiting minutes for an AI video render, a new model generates playable shots in three seconds. MiniMax H3 Max on fal.ai turns text prompts or reference images into 768p clips faster than real-time. You type a shot description, click generate, and the rendered clip begins playback almost instantly. For video editors, this shifts AI generation from slow batch queuing into live, interactive shot prototyping. You can test it with zero sign-up, or log in to get fifteen free video generations every day. The limitation is native output maxes out at 768p, requiring an upscaler like FlashVSR",
       "created_at": "2026-08-31T06:42:32.777474+00:00",
       "analytics": {
-        "views": 6.0,
+        "views": 14.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 9.0,
-        "averageViewPercentage": 15.810000000000002,
+        "averageViewDuration": 33.0,
+        "averageViewPercentage": 58.45,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-09-02T11:37:09.712239+00:00"
+      "analytics_updated_at": "2026-11-09T06:30:20.318493+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -165,7 +165,17 @@
       "format": "short",
       "script_preview": "If you're constantly blurring API keys, dragging arrows, and recording separate video guides for your team, your Mac's default screenshot tool is wasting your time. A new free utility called Seenshot consolidates this entire workflow into a single keyboard shortcut. Imagine you're a developer sending a bug report. Press Command-Shift-2, select the buggy UI, and use the native editor to instantly blur sensitive user data. Instead of typing instructions, you can highlight elements with step-by-step numbers or inject a webcam selfie in one click. Once you're done, Seenshot generates a secure web ",
       "created_at": "2026-08-31T12:47:18.346367+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-11-09T06:30:20.986818+00:00"
     },
     {
       "video_id": "kHhLmTEYmWM",
@@ -174,7 +184,17 @@
       "format": "short",
       "script_preview": "You can host a secure site with zero public IP exposure, no registrar fees, and no SSL certificate authority. By running a local server as a Tor hidden service, your site is accessed via an address derived from its public key. To start, edit `/etc/tor/torrc` to define your dedicated hidden service path. The catch: this directory must not be your web root. Tor insists on owning this folder. Assign it to the `debian-tor` user and set `chmod 700` or Tor won't launch. Once configured, Tor generates your hostname and forwards onion port 80 traffic to your local port 8080. Next, write your Nginx blo",
       "created_at": "2026-09-01T12:03:35.161778+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 3.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 29.0,
+        "averageViewPercentage": 48.33,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-11-09T06:30:20.676085+00:00"
     },
     {
       "video_id": "-P5Gzq7jUxM",
@@ -183,6 +203,861 @@
       "format": "short",
       "script_preview": "You can now run automated TikTok posts on physical iPhones, controlled entirely from your web browser. An open-source tool called Handler turns spare iOS devices into a self-hosted local phone farm. Once connected, you get a live interactive stream to click-to-tap, drag-to-swipe, and upload video files. The tasks are managed by a durable Docker-based Postgres queue, preserving your queue even through crashes. But note: you must compile the agent from a graphical macOS Terminal session—not a bare SSH shell. This is because the local code-signing process requires direct access to your Mac's logi",
       "created_at": "2026-09-02T11:45:35.036788+00:00",
+      "analytics": {
+        "views": 6.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 11.0,
+        "averageViewPercentage": 22.49,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-11-09T06:30:20.489869+00:00"
+    },
+    {
+      "video_id": "9v_limHjc9k",
+      "topic": "Malware With A Hive Mind: How To Detect It",
+      "title": "Malware With A Hive Mind: How To Detect It",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-09-22T12:06:13Z",
+      "analytics": {
+        "views": 2.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 1.0,
+        "averageViewPercentage": 3.88,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.764582+00:00"
+    },
+    {
+      "video_id": "k855X4ygCpc",
+      "topic": "What's New in Oracle AI Agent Memory 26.6",
+      "title": "What's New in Oracle AI Agent Memory 26.6",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-09-23T17:28:12Z",
+      "analytics": {
+        "views": 2.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.837850+00:00"
+    },
+    {
+      "video_id": "oKfY9UTZVw8",
+      "topic": "GitLab Security Alert: Permanent Token Vulnerability",
+      "title": "GitLab Security Alert: Permanent Token Vulnerability",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-09-24T12:13:13Z",
+      "analytics": {
+        "views": 2.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.801790+00:00"
+    },
+    {
+      "video_id": "2sOeY_bE8Mc",
+      "topic": "Meta's $349 AI Glasses: Workflow & Privacy Probe",
+      "title": "Meta's $349 AI Glasses: Workflow & Privacy Probe",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-09-24T17:46:29Z",
+      "analytics": {
+        "views": 2.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.783599+00:00"
+    },
+    {
+      "video_id": "_j3f3AzEGrs",
+      "topic": "Do AI Browsers Change How We Research?",
+      "title": "Do AI Browsers Change How We Research?",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-09-25T12:11:37Z",
+      "analytics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.895626+00:00"
+    },
+    {
+      "video_id": "Sc-f2DrS4Js",
+      "topic": "Microsoft Revamps Copilot: Home, Code & Autopilot",
+      "title": "Microsoft Revamps Copilot: Home, Code & Autopilot",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-09-26T11:46:09Z",
+      "analytics": {
+        "views": 3.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.638951+00:00"
+    },
+    {
+      "video_id": "R2cvIjrKgno",
+      "topic": "Why OpenAI Scrapped Astra for 'Dots' Agents",
+      "title": "Why OpenAI Scrapped Astra for 'Dots' Agents",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-09-30T15:58:00Z",
+      "analytics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.967051+00:00"
+    },
+    {
+      "video_id": "LsZ6IFyKi5Q",
+      "topic": "AI Coding Agents Leaked 13k Sensitive Images",
+      "title": "AI Coding Agents Leaked 13k Sensitive Images",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-09-30T16:01:16Z",
+      "analytics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:21.004673+00:00"
+    },
+    {
+      "video_id": "dtRk6_TtdNU",
+      "topic": "Meta’s New AI ‘Muse’ Integrates with HighLevel: Does It Actually Work?",
+      "title": "Meta’s New AI ‘Muse’ Integrates with HighLevel: Does It Actually Work?",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-09-30T18:51:06Z",
+      "analytics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 2.0,
+        "averageViewPercentage": 0.35,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.947223+00:00"
+    },
+    {
+      "video_id": "9K4y8o4qSyY",
+      "topic": "VS Code 1.140: Run Parallel Worktrees with HydraFusion AI",
+      "title": "VS Code 1.140: Run Parallel Worktrees with HydraFusion AI",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-01T13:52:41Z",
+      "analytics": {
+        "views": 11.0,
+        "estimatedMinutesWatched": 3.0,
+        "averageViewDuration": 29.0,
+        "averageViewPercentage": 54.24,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.375575+00:00"
+    },
+    {
+      "video_id": "SM2_ai8JuuE",
+      "topic": "AI Agents Are Now Launching Autonomous Cyberattacks",
+      "title": "AI Agents Are Now Launching Autonomous Cyberattacks",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-01T18:35:49Z",
+      "analytics": {
+        "views": 2.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.713466+00:00"
+    },
+    {
+      "video_id": "e8TfuFfpb6I",
+      "topic": "Why I Ditched Claude's Chatbot for Claude Code",
+      "title": "Why I Ditched Claude's Chatbot for Claude Code",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-02T13:06:31Z",
+      "analytics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:21.044673+00:00"
+    },
+    {
+      "video_id": "_Kj6V65jogc",
+      "topic": "AI Agents Can Now Make Phone Calls For You",
+      "title": "AI Agents Can Now Make Phone Calls For You",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-03T12:02:39Z",
+      "analytics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:21.025679+00:00"
+    },
+    {
+      "video_id": "_3Qhf4F0r2Y",
+      "topic": "GitHub Copilot Code Review Is Now Live: What Changes?",
+      "title": "GitHub Copilot Code Review Is Now Live: What Changes?",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-03T16:38:00Z",
+      "analytics": {
+        "views": 14.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 12.0,
+        "averageViewPercentage": 26.57,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.300969+00:00"
+    },
+    {
+      "video_id": "0UqXZiNdc0A",
+      "topic": "Prompt Injection: Why Hackers No Longer Need Code",
+      "title": "Prompt Injection: Why Hackers No Longer Need Code",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-04T12:50:05Z",
+      "analytics": {
+        "views": 4.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 31.0,
+        "averageViewPercentage": 48.69,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.596200+00:00"
+    },
+    {
+      "video_id": "vQ0VEx8heTQ",
+      "topic": "The Android Note App That Beats the Giants",
+      "title": "The Android Note App That Beats the Giants",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-04T14:00:09Z",
+      "analytics": {
+        "views": 12.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 21.0,
+        "averageViewPercentage": 44.04,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.337618+00:00"
+    },
+    {
+      "video_id": "4J8a1M_LOnY",
+      "topic": "Why AI Agents Use 5x More Tokens Than Humans (And It’s Worsening)",
+      "title": "Why AI Agents Use 5x More Tokens Than Humans (And It’s Worsening)",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-04T14:26:49Z",
+      "analytics": {
+        "views": 4.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 14.0,
+        "averageViewPercentage": 2.7,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.568580+00:00"
+    },
+    {
+      "video_id": "NpcTI_Budv8",
+      "topic": "The Hidden Danger of AI Coding Agents Running Local Commands",
+      "title": "The Hidden Danger of AI Coding Agents Running Local Commands",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-07T12:48:45Z",
+      "analytics": {
+        "views": 2.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.694638+00:00"
+    },
+    {
+      "video_id": "mUs6u5Ur7yg",
+      "topic": "Build Your Own VSTs Instantly",
+      "title": "Build Your Own VSTs Instantly",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-07T12:53:25Z",
+      "analytics": {
+        "views": 37.0,
+        "estimatedMinutesWatched": 12.0,
+        "averageViewDuration": 45.0,
+        "averageViewPercentage": 80.89,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.209994+00:00"
+    },
+    {
+      "video_id": "WDTWgea0I78",
+      "topic": "STL County Issues Condemnation Threat to Local Apartment Complex",
+      "title": "STL County Issues Condemnation Threat to Local Apartment Complex",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-07T13:51:48Z",
+      "analytics": {
+        "views": 5.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 68.0,
+        "averageViewPercentage": 12.22,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.549578+00:00"
+    },
+    {
+      "video_id": "djvAoNZtVnc",
+      "topic": "Spreadsheet Security Alert: LibreOffice vs OpenOffice",
+      "title": "Spreadsheet Security Alert: LibreOffice vs OpenOffice",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-07T13:59:06Z",
+      "analytics": {
+        "views": 10.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 18.0,
+        "averageViewPercentage": 36.8,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.412639+00:00"
+    },
+    {
+      "video_id": "KVFqKsYLfW0",
+      "topic": "Why AI Coding Agents Don't Ship More Software",
+      "title": "Why AI Coding Agents Don't Ship More Software",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-10T17:02:06Z",
+      "analytics": {
+        "views": 2.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 31.0,
+        "averageViewPercentage": 51.67,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.856651+00:00"
+    },
+    {
+      "video_id": "yBRO_fFCfXs",
+      "topic": "Why AI Coding Agents Don't Ship More Software",
+      "title": "Why AI Coding Agents Don't Ship More Software",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-10T17:09:38Z",
+      "analytics": {
+        "views": 6.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 35.0,
+        "averageViewPercentage": 62.97999999999999,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.509175+00:00"
+    },
+    {
+      "video_id": "Kf6vZN5CHAA",
+      "topic": "Stop Building Dashboards: How to Use AI for Data Storytelling",
+      "title": "Stop Building Dashboards: How to Use AI for Data Storytelling",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-10T18:00:16Z",
+      "analytics": {
+        "views": 8.0,
+        "estimatedMinutesWatched": 4.0,
+        "averageViewDuration": 53.0,
+        "averageViewPercentage": 10.04,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.467783+00:00"
+    },
+    {
+      "video_id": "xecd0eVo1fk",
+      "topic": "Why AI Coding Agents Kill Productivity",
+      "title": "Why AI Coding Agents Kill Productivity",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-10T18:08:18Z",
+      "analytics": {
+        "views": 2.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 5.0,
+        "averageViewPercentage": 11.2,
+        "likes": 0.0,
+        "comments": 1.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.732360+00:00"
+    },
+    {
+      "video_id": "ReHy3vKUNFU",
+      "topic": "Presentations.ai Launches Unlimited-Seat Team Plan at $720/Year",
+      "title": "Presentations.ai Launches Unlimited-Seat Team Plan at $720/Year",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-11T13:26:53Z",
+      "analytics": {
+        "views": 2.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.820432+00:00"
+    },
+    {
+      "video_id": "lFKeJjlac_4",
+      "topic": "Your AI Agent Wants Your Money Back",
+      "title": "Your AI Agent Wants Your Money Back",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-11T17:49:19Z",
+      "analytics": {
+        "views": 5.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.529918+00:00"
+    },
+    {
+      "video_id": "S4ArTcIkF_o",
+      "topic": "Microsoft Copilot Team Cuts: What This Means for Your AI Agents",
+      "title": "Microsoft Copilot Team Cuts: What This Means for Your AI Agents",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-13T13:59:14Z",
+      "analytics": {
+        "views": 40.0,
+        "estimatedMinutesWatched": 8.0,
+        "averageViewDuration": 37.0,
+        "averageViewPercentage": 68.4,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.172188+00:00"
+    },
+    {
+      "video_id": "32SAXoj_OXo",
+      "topic": "Microsoft Kills Outlook AI Themes",
+      "title": "Microsoft Kills Outlook AI Themes",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-13T14:06:16Z",
+      "analytics": {
+        "views": 54.0,
+        "estimatedMinutesWatched": 4.0,
+        "averageViewDuration": 21.0,
+        "averageViewPercentage": 37.42,
+        "likes": 2.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.154404+00:00"
+    },
+    {
+      "video_id": "U0fuwALpesI",
+      "topic": "Why Spotify's AI Coding Surge is a Double-Edged Sword",
+      "title": "Why Spotify's AI Coding Surge is a Double-Edged Sword",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-13T14:47:12Z",
+      "analytics": {
+        "views": 135.0,
+        "estimatedMinutesWatched": 58.0,
+        "averageViewDuration": 88.0,
+        "averageViewPercentage": 15.72,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.045602+00:00"
+    },
+    {
+      "video_id": "VqUrtS3l9D4",
+      "topic": "Epic Games' 'AI-First' Mandate Explained",
+      "title": "Epic Games' 'AI-First' Mandate Explained",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-13T19:25:35Z",
+      "analytics": {
+        "views": 26.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 12.0,
+        "averageViewPercentage": 25.069999999999997,
+        "likes": 2.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.282864+00:00"
+    },
+    {
+      "video_id": "rflVIZ6Wxz8",
+      "topic": "Netsujo 0.5.0: Stop Rogue AI Agents",
+      "title": "Netsujo 0.5.0: Stop Rogue AI Agents",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-13T19:28:27Z",
+      "analytics": {
+        "views": 10.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 11.0,
+        "averageViewPercentage": 20.74,
+        "likes": 2.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.447521+00:00"
+    },
+    {
+      "video_id": "lktA7aPQdvs",
+      "topic": "Unsupervised AI Wipes Finished TV Season",
+      "title": "Unsupervised AI Wipes Finished TV Season",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-15T12:00:41Z",
+      "analytics": {
+        "views": 56.0,
+        "estimatedMinutesWatched": 7.0,
+        "averageViewDuration": 33.0,
+        "averageViewPercentage": 53.72,
+        "likes": 4.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.135339+00:00"
+    },
+    {
+      "video_id": "WE1y-ytiBYs",
+      "topic": "Nextcloud Security Alert: Patch CODE Now",
+      "title": "Nextcloud Security Alert: Patch CODE Now",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-15T12:44:43Z",
+      "analytics": {
+        "views": 66.0,
+        "estimatedMinutesWatched": 25.0,
+        "averageViewDuration": 98.0,
+        "averageViewPercentage": 155.65,
+        "likes": 2.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.111302+00:00"
+    },
+    {
+      "video_id": "DnlI23stQlM",
+      "topic": "Linus Torvalds Let AI Fix Linux, And It Failed",
+      "title": "Linus Torvalds Let AI Fix Linux, And It Failed",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-15T14:35:24Z",
+      "analytics": {
+        "views": 173.0,
+        "estimatedMinutesWatched": 82.0,
+        "averageViewDuration": 85.0,
+        "averageViewPercentage": 15.46,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.003299+00:00"
+    },
+    {
+      "video_id": "TkuF3hCJ3yQ",
+      "topic": "Microsoft's AI Agents Get Power—and Containers",
+      "title": "Microsoft's AI Agents Get Power—and Containers",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-16T11:48:12Z",
+      "analytics": {
+        "views": 39.0,
+        "estimatedMinutesWatched": 3.0,
+        "averageViewDuration": 17.0,
+        "averageViewPercentage": 27.060000000000002,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.190986+00:00"
+    },
+    {
+      "video_id": "NxhA6taXdXI",
+      "topic": "I Outsourced My Life to AI Agents for Two Weeks",
+      "title": "I Outsourced My Life to AI Agents for Two Weeks",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-16T12:01:13Z",
+      "analytics": {
+        "views": 30.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 16.0,
+        "averageViewPercentage": 32.25,
+        "likes": 2.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.248548+00:00"
+    },
+    {
+      "video_id": "7_kDBbnD2tY",
+      "topic": "Convert PDF to Editable PowerPoint in 30 Seconds",
+      "title": "Convert PDF to Editable PowerPoint in 30 Seconds",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-17T11:03:19Z",
+      "analytics": {
+        "views": 110.0,
+        "estimatedMinutesWatched": 11.0,
+        "averageViewDuration": 19.0,
+        "averageViewPercentage": 32.26,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.065930+00:00"
+    },
+    {
+      "video_id": "SJk9kKOCi24",
+      "topic": "Bluesky Attie: AI Prompts Into Mini Apps",
+      "title": "Bluesky Attie: AI Prompts Into Mini Apps",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-17T11:06:26Z",
+      "analytics": {
+        "views": 67.0,
+        "estimatedMinutesWatched": 6.0,
+        "averageViewDuration": 15.0,
+        "averageViewPercentage": 29.73,
+        "likes": 2.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.085937+00:00"
+    },
+    {
+      "video_id": "BlNs3G51JVk",
+      "topic": "DOE's New AI Agents: How They Actually Speed Up Science",
+      "title": "DOE's New AI Agents: How They Actually Speed Up Science",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-10-17T12:09:47Z",
+      "analytics": {
+        "views": 11.0,
+        "estimatedMinutesWatched": 11.0,
+        "averageViewDuration": 77.0,
+        "averageViewPercentage": 15.71,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 1.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-09T06:30:20.356654+00:00"
+    },
+    {
+      "video_id": "mGOsZQtAIsM",
+      "topic": "Skrongle Mini, a self hosted AI course generator and learning app on R. pi zero",
+      "title": "Private AI Learning: Run Your Own Course Server",
+      "format": "short",
+      "script_preview": "Ditch the ad-tracking of Duolingo; build a private, self-hosted AI tutor on a $15 computer. Meet Skrongle Mini: a lightweight server that runs on a Raspberry Pi Zero. It treats your entire curriculum as a folder of simple JSON files, which means you can edit lessons locally. Or let an AI generate the material for you. It supports up to eight private accounts with zero external telemetry. All while using less than 30 megabytes of RAM. But be warned: since you host it, you are the sysadmin. You handle your own database migrations and fact-check every AI-generated quiz. It’s not a plug-and-play a",
+      "created_at": "2026-11-08T07:20:49.646723+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "mVAkxYCL1Xs",
+      "topic": "Show HN: Sentient, Your Coding Agent Shouldn't Be a Black Box",
+      "title": "Your AI Coding Agent is Hiding This",
+      "format": "short",
+      "script_preview": "Your AI coding agent runs dozens of hidden shell commands that never show up in your chat log. Sentient solves this by acting as a local, tamper-evident audit layer. While you only see chat updates, Sentient hooks straight into the Linux kernel using Tetragon to capture every file edit, process, and network event. It parses rules, not another model, to flag dangerous operations like modifications outside your repository, unexpected sudo usage, or shell profile edits. You simply run 'sen serve' to open a local web dashboard, inspect the exact diffs and commands, and review your agent's ground-t",
+      "created_at": "2026-11-08T07:58:17.938282+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "VIxIb88nFE8",
+      "topic": "Google says there's no way to use Search without using artificial intelligence",
+      "title": "Google Search: AI or Nothing?",
+      "format": "short",
+      "script_preview": "Stop trying to block AI in schools if you want students to keep using Google Search. Google just made it clear: Search is no longer a standalone tool. It is architecturally fused with their AI models. For school districts, the new controls for Gemini and Notebook are a trap. If an administrator flips the switch to disable AI for K-12 accounts, they do not just lose the chatbot; they kill the search engine entirely. Students searching for research materials will simply hit a hard access-denied wall. This is not a policy preference; it is a technical reality. Google’s infrastructure no longer se",
+      "created_at": "2026-11-08T09:01:27.773105+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "eIi0hBh9bUQ",
+      "topic": "Show HN: Hosted dashboard for small VPS fleets, outbound-only agent",
+      "title": "Stop SSH-ing: Centralize Your VPS Fleet",
+      "format": "short",
+      "script_preview": "Stop SSH-ing into your servers every time you suspect a disk bottleneck. VPSMon is a hosted dashboard that centralizes your fleet health without opening inbound firewall ports. You run a single install command on each Linux machine, and it pushes metrics via outbound HTTPS. I’m looking at the dashboard now—it visualizes CPU, memory, and disk usage across your entire stack. The real value? You set specific thresholds, like a ninety percent disk limit. This is a managed SaaS, so you don't have to build or maintain your own monitoring stack like Prometheus. It’s perfect for freelancers or small t",
+      "created_at": "2026-11-08T09:45:20.936951+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "btGrCa9GSDY",
+      "topic": "Building Local AI Agents with Ollama, DeepSeek and Open WebUI: The Complete Architecture Guide",
+      "title": "Build Local AI Agents: DeepSeek, Ollama & Open WebUI Architecture",
+      "format": "long",
+      "script_preview": "Most users currently rely on opaque SaaS platforms that process sensitive data in the cloud, risking significant information exposure. By shifting to a local-first architecture, we regain absolute control over our digital privacy and sensitive workflows without relying on external entities. Today, we map out the specific stack required to build your own private AI agents using Ollama and Open WebUI. This guide ensures you understand every layer of the architecture, from local model hosting to creating robust, autonomous agentic interfaces for productivity. The foundation of this setup is Ollam",
+      "created_at": "2026-11-08T12:16:48.437896+00:00",
       "analytics": {}
     }
   ],
@@ -258,6 +1133,309 @@
       "title": "Build a Physical iOS Phone Farm at Home",
       "format": "short",
       "created_at": "2026-09-02T11:45:35.036788+00:00"
+    },
+    {
+      "topic": "Malware With A Hive Mind: How To Detect It",
+      "title": "Malware With A Hive Mind: How To Detect It",
+      "format": "unknown",
+      "created_at": "2026-09-22T12:06:13Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "What's New in Oracle AI Agent Memory 26.6",
+      "title": "What's New in Oracle AI Agent Memory 26.6",
+      "format": "unknown",
+      "created_at": "2026-09-23T17:28:12Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "GitLab Security Alert: Permanent Token Vulnerability",
+      "title": "GitLab Security Alert: Permanent Token Vulnerability",
+      "format": "unknown",
+      "created_at": "2026-09-24T12:13:13Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Meta's $349 AI Glasses: Workflow & Privacy Probe",
+      "title": "Meta's $349 AI Glasses: Workflow & Privacy Probe",
+      "format": "unknown",
+      "created_at": "2026-09-24T17:46:29Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Do AI Browsers Change How We Research?",
+      "title": "Do AI Browsers Change How We Research?",
+      "format": "unknown",
+      "created_at": "2026-09-25T12:11:37Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Microsoft Revamps Copilot: Home, Code & Autopilot",
+      "title": "Microsoft Revamps Copilot: Home, Code & Autopilot",
+      "format": "unknown",
+      "created_at": "2026-09-26T11:46:09Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Why OpenAI Scrapped Astra for 'Dots' Agents",
+      "title": "Why OpenAI Scrapped Astra for 'Dots' Agents",
+      "format": "unknown",
+      "created_at": "2026-09-30T15:58:00Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "AI Coding Agents Leaked 13k Sensitive Images",
+      "title": "AI Coding Agents Leaked 13k Sensitive Images",
+      "format": "unknown",
+      "created_at": "2026-09-30T16:01:16Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Meta’s New AI ‘Muse’ Integrates with HighLevel: Does It Actually Work?",
+      "title": "Meta’s New AI ‘Muse’ Integrates with HighLevel: Does It Actually Work?",
+      "format": "unknown",
+      "created_at": "2026-09-30T18:51:06Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "VS Code 1.140: Run Parallel Worktrees with HydraFusion AI",
+      "title": "VS Code 1.140: Run Parallel Worktrees with HydraFusion AI",
+      "format": "unknown",
+      "created_at": "2026-10-01T13:52:41Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "AI Agents Are Now Launching Autonomous Cyberattacks",
+      "title": "AI Agents Are Now Launching Autonomous Cyberattacks",
+      "format": "unknown",
+      "created_at": "2026-10-01T18:35:49Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Why I Ditched Claude's Chatbot for Claude Code",
+      "title": "Why I Ditched Claude's Chatbot for Claude Code",
+      "format": "unknown",
+      "created_at": "2026-10-02T13:06:31Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "AI Agents Can Now Make Phone Calls For You",
+      "title": "AI Agents Can Now Make Phone Calls For You",
+      "format": "unknown",
+      "created_at": "2026-10-03T12:02:39Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "GitHub Copilot Code Review Is Now Live: What Changes?",
+      "title": "GitHub Copilot Code Review Is Now Live: What Changes?",
+      "format": "unknown",
+      "created_at": "2026-10-03T16:38:00Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Prompt Injection: Why Hackers No Longer Need Code",
+      "title": "Prompt Injection: Why Hackers No Longer Need Code",
+      "format": "unknown",
+      "created_at": "2026-10-04T12:50:05Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "The Android Note App That Beats the Giants",
+      "title": "The Android Note App That Beats the Giants",
+      "format": "unknown",
+      "created_at": "2026-10-04T14:00:09Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Why AI Agents Use 5x More Tokens Than Humans (And It’s Worsening)",
+      "title": "Why AI Agents Use 5x More Tokens Than Humans (And It’s Worsening)",
+      "format": "unknown",
+      "created_at": "2026-10-04T14:26:49Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "The Hidden Danger of AI Coding Agents Running Local Commands",
+      "title": "The Hidden Danger of AI Coding Agents Running Local Commands",
+      "format": "unknown",
+      "created_at": "2026-10-07T12:48:45Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Build Your Own VSTs Instantly",
+      "title": "Build Your Own VSTs Instantly",
+      "format": "unknown",
+      "created_at": "2026-10-07T12:53:25Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "STL County Issues Condemnation Threat to Local Apartment Complex",
+      "title": "STL County Issues Condemnation Threat to Local Apartment Complex",
+      "format": "unknown",
+      "created_at": "2026-10-07T13:51:48Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Spreadsheet Security Alert: LibreOffice vs OpenOffice",
+      "title": "Spreadsheet Security Alert: LibreOffice vs OpenOffice",
+      "format": "unknown",
+      "created_at": "2026-10-07T13:59:06Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Why AI Coding Agents Don't Ship More Software",
+      "title": "Why AI Coding Agents Don't Ship More Software",
+      "format": "unknown",
+      "created_at": "2026-10-10T17:02:06Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Stop Building Dashboards: How to Use AI for Data Storytelling",
+      "title": "Stop Building Dashboards: How to Use AI for Data Storytelling",
+      "format": "unknown",
+      "created_at": "2026-10-10T18:00:16Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Why AI Coding Agents Kill Productivity",
+      "title": "Why AI Coding Agents Kill Productivity",
+      "format": "unknown",
+      "created_at": "2026-10-10T18:08:18Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Presentations.ai Launches Unlimited-Seat Team Plan at $720/Year",
+      "title": "Presentations.ai Launches Unlimited-Seat Team Plan at $720/Year",
+      "format": "unknown",
+      "created_at": "2026-10-11T13:26:53Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Your AI Agent Wants Your Money Back",
+      "title": "Your AI Agent Wants Your Money Back",
+      "format": "unknown",
+      "created_at": "2026-10-11T17:49:19Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Microsoft Copilot Team Cuts: What This Means for Your AI Agents",
+      "title": "Microsoft Copilot Team Cuts: What This Means for Your AI Agents",
+      "format": "unknown",
+      "created_at": "2026-10-13T13:59:14Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Microsoft Kills Outlook AI Themes",
+      "title": "Microsoft Kills Outlook AI Themes",
+      "format": "unknown",
+      "created_at": "2026-10-13T14:06:16Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Why Spotify's AI Coding Surge is a Double-Edged Sword",
+      "title": "Why Spotify's AI Coding Surge is a Double-Edged Sword",
+      "format": "unknown",
+      "created_at": "2026-10-13T14:47:12Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Epic Games' 'AI-First' Mandate Explained",
+      "title": "Epic Games' 'AI-First' Mandate Explained",
+      "format": "unknown",
+      "created_at": "2026-10-13T19:25:35Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Netsujo 0.5.0: Stop Rogue AI Agents",
+      "title": "Netsujo 0.5.0: Stop Rogue AI Agents",
+      "format": "unknown",
+      "created_at": "2026-10-13T19:28:27Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Unsupervised AI Wipes Finished TV Season",
+      "title": "Unsupervised AI Wipes Finished TV Season",
+      "format": "unknown",
+      "created_at": "2026-10-15T12:00:41Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Nextcloud Security Alert: Patch CODE Now",
+      "title": "Nextcloud Security Alert: Patch CODE Now",
+      "format": "unknown",
+      "created_at": "2026-10-15T12:44:43Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Linus Torvalds Let AI Fix Linux, And It Failed",
+      "title": "Linus Torvalds Let AI Fix Linux, And It Failed",
+      "format": "unknown",
+      "created_at": "2026-10-15T14:35:24Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Microsoft's AI Agents Get Power—and Containers",
+      "title": "Microsoft's AI Agents Get Power—and Containers",
+      "format": "unknown",
+      "created_at": "2026-10-16T11:48:12Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "I Outsourced My Life to AI Agents for Two Weeks",
+      "title": "I Outsourced My Life to AI Agents for Two Weeks",
+      "format": "unknown",
+      "created_at": "2026-10-16T12:01:13Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Convert PDF to Editable PowerPoint in 30 Seconds",
+      "title": "Convert PDF to Editable PowerPoint in 30 Seconds",
+      "format": "unknown",
+      "created_at": "2026-10-17T11:03:19Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Bluesky Attie: AI Prompts Into Mini Apps",
+      "title": "Bluesky Attie: AI Prompts Into Mini Apps",
+      "format": "unknown",
+      "created_at": "2026-10-17T11:06:26Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "DOE's New AI Agents: How They Actually Speed Up Science",
+      "title": "DOE's New AI Agents: How They Actually Speed Up Science",
+      "format": "unknown",
+      "created_at": "2026-10-17T12:09:47Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Skrongle Mini, a self hosted AI course generator and learning app on R. pi zero",
+      "title": "Private AI Learning: Run Your Own Course Server",
+      "format": "short",
+      "created_at": "2026-11-08T07:20:49.646723+00:00"
+    },
+    {
+      "topic": "Show HN: Sentient, Your Coding Agent Shouldn't Be a Black Box",
+      "title": "Your AI Coding Agent is Hiding This",
+      "format": "short",
+      "created_at": "2026-11-08T07:58:17.938282+00:00"
+    },
+    {
+      "topic": "Google says there's no way to use Search without using artificial intelligence",
+      "title": "Google Search: AI or Nothing?",
+      "format": "short",
+      "created_at": "2026-11-08T09:01:27.773105+00:00"
+    },
+    {
+      "topic": "Show HN: Hosted dashboard for small VPS fleets, outbound-only agent",
+      "title": "Stop SSH-ing: Centralize Your VPS Fleet",
+      "format": "short",
+      "created_at": "2026-11-08T09:45:20.936951+00:00"
+    },
+    {
+      "topic": "Building Local AI Agents with Ollama, DeepSeek and Open WebUI: The Complete Architecture Guide",
+      "title": "Build Local AI Agents: DeepSeek, Ollama & Open WebUI Architecture",
+      "format": "long",
+      "created_at": "2026-11-08T12:16:48.437896+00:00"
     }
   ]
 }

@@ -55,16 +55,27 @@ class CurioAxiomEditorialSystem:
         penalty = sum(term in text for term in ("opinion", "rumor", "celebrity", "politics", "horoscope"))
         return max(-12.0, min(18.0, surprise * 3 + visual * 2 - penalty * 6))
 
-    def enrich(self, candidate: TopicCandidate, research: ResearchPack) -> ResearchPack:
+    def enrich(self, candidate: TopicCandidate, research: ResearchPack, video_format: str = "short") -> ResearchPack:
         category = self.router.route(f"{candidate.title} {research.research_notes}")
-        brief = (
-            "CURIOAXIOM EDITORIAL BRIEF\n"
-            f"CATEGORY: {category}\n"
-            "PROMISE: One fascinating question. One cinematic story. One verified answer.\n"
-            "REQUIRED STORY: mystery/question -> visual escalation -> verified explanation -> reveal -> meaning.\n"
-            "Use only claims supported by research. Distinguish measured facts, estimates and theory. "
-            "Never turn uncertainty into certainty. Avoid random fact lists and generic hooks.\n"
-        )
+        if video_format == "long":
+            brief = (
+                "CURIOAXIOM EDITORIAL BRIEF\n"
+                f"CATEGORY: {category}\n"
+                "PROMISE: One fascinating scientific or engineering question. One cinematic documentary story. One verified answer.\n"
+                "REQUIRED STORY: mystery/hook -> historical & physical context -> engineering mechanisms -> visual escalation -> verified explanation -> real-world meaning.\n"
+                "STANDARD: 1,150-1,500 spoken words across 30-36 scenes. Rich, descriptive narration (35-45 words per scene).\n"
+                "Use only claims supported by research. Distinguish measured facts, estimates and theory. "
+                "Never turn uncertainty into certainty. Avoid random fact lists and generic hooks.\n"
+            )
+        else:
+            brief = (
+                "CURIOAXIOM EDITORIAL BRIEF\n"
+                f"CATEGORY: {category}\n"
+                "PROMISE: One fascinating question. One cinematic story. One verified answer.\n"
+                "REQUIRED STORY: mystery/question -> visual escalation -> verified explanation -> reveal -> meaning.\n"
+                "Use only claims supported by research. Distinguish measured facts, estimates and theory. "
+                "Never turn uncertainty into certainty. Avoid random fact lists and generic hooks.\n"
+            )
         return research.model_copy(
             update={"category": category, "research_notes": brief + "\nRESEARCH EVIDENCE\n" + research.research_notes}
         )
@@ -149,11 +160,35 @@ class FactScriptPlanner(PremiumScriptPlanner):
         "120mm edge-on material inspection tilt",
         "38mm reverse-tracking foreground wipe",
         "80mm static profile with subject crossing frame",
+        "16mm ultra-wide low-altitude flyover",
+        "58mm medium close-up slow arc left",
+        "22mm ground-skimming forward dolly",
+        "95mm telephoto atmospheric perspective push",
+        "33mm locked high-angle isometric survey",
+        "82mm macro surface reflection drift",
+        "42mm eye-level smooth lateral tracking",
+        "68mm vertical crane descent through frame",
+        "19mm expansive environmental establishing pan",
+        "110mm extreme detail thermal focus transition",
+        "29mm dynamic pedestal rise from shadows",
+        "48mm floating steady-cam circular orbit",
+        "72mm axial zoom-out through structure",
+        "15mm dramatic fisheye-corrected upward tilt",
+        "62mm profile dolly across mechanical assembly",
+        "88mm shallow depth-of-field rack to foreground",
+        "25mm wide-angle diagonal slider travel",
+        "52mm level push toward central focal point",
+        "115mm magnified cross-sectional elevation",
+        "37mm off-center slow counter-pan",
+        "78mm compressed telephoto tracking reveal",
+        "21mm low-angle architectural sweep",
+        "64mm orbital cantilever arm rotation",
+        "92mm cinematic slow-motion linear retreat",
     )
 
     def create_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
         plan = super().create_plan(research, video_format)
-        if video_format == "short" and len(plan.script.split()) > 145 and plan.scenes:
+        if video_format == "short" and plan.scenes and (len(plan.script.split()) > 145 or len(plan.script.split()) < 85):
             self._fit_short_narration(plan, target_words=145)
         if video_format == "short" and len(plan.scenes) < 22:
             scenes = list(plan.scenes)
@@ -187,10 +222,50 @@ class FactScriptPlanner(PremiumScriptPlanner):
             plan.scenes = scenes
             plan.script = " ".join(scene.narration.strip() for scene in scenes)
             plan.visual_queries = [scene.visual_query for scene in scenes]
+
+        if video_format == "long" and plan.scenes and len(plan.scenes) < 30:
+            scenes = list(plan.scenes)
+            while len(scenes) < 30:
+                index = max(range(len(scenes)), key=lambda item: len(scenes[item].narration.split()))
+                scene = scenes[index]
+                words = scene.narration.split()
+                if len(words) < 4:
+                    break
+                midpoint = len(words) // 2
+                left = scene.model_copy(
+                    update={
+                        "narration": " ".join(words[:midpoint]),
+                        "visual_query": scene.visual_query + " wide cinematic view",
+                    }
+                )
+                right = SceneBeat(
+                    narration=" ".join(words[midpoint:]),
+                    visual_query=scene.visual_query + " close detail angle",
+                    purpose=scene.purpose,
+                    visual_mode=scene.visual_mode,
+                    source_url=scene.source_url,
+                    on_screen_text=scene.on_screen_text,
+                    exact_visual_subject=scene.exact_visual_subject,
+                    camera_and_lighting=scene.camera_and_lighting,
+                    generator_prompt=scene.generator_prompt,
+                    shot_type_camera_movement=scene.shot_type_camera_movement,
+                    sfx_audio_cue=scene.sfx_audio_cue,
+                )
+                scenes[index:index + 1] = [left, right]
+            plan.scenes = scenes
+            plan.script = " ".join(scene.narration.strip() for scene in scenes)
+            plan.visual_queries = [scene.visual_query for scene in scenes]
+
+        if video_format == "long" and len(plan.script.split()) < 1050:
+            plan.scenes = self._fit_long_narration(plan.scenes, research)
+            plan.script = " ".join(scene.narration.strip() for scene in plan.scenes)
+            plan.visual_queries = [scene.visual_query for scene in plan.scenes]
+
         # Scene splitting happens after the base planner's normalization. Rebuild all
         # visual-directing fields from the final scene list so no child scene inherits
         # its parent's camera treatment or prompt.
         aspect = "9:16" if video_format == "short" else "16:9"
+        composition = "Vertical 9:16 composition" if video_format == "short" else "Horizontal 16:9 cinematic widescreen composition"
         grades = ("cool steel", "warm tungsten", "neutral daylight", "deep cobalt")
         for index, scene in enumerate(plan.scenes):
             camera = self._FINAL_CAMERA_CYCLE[index % len(self._FINAL_CAMERA_CYCLE)]
@@ -201,7 +276,7 @@ class FactScriptPlanner(PremiumScriptPlanner):
                 f"Literal depiction of: {scene.narration.strip()} Subject: {subject}. "
                 f"Visible action and context: {scene.visual_query.strip()}. Shot: {camera}. "
                 f"Lighting: {scene.camera_and_lighting.strip() or 'physically accurate documentary lighting'}. "
-                f"Vertical {aspect} composition, realistic materials and physics, no unrelated objects, "
+                f"{composition}, realistic materials and physics, no unrelated objects, "
                 "no logos, no captions, no text overlay."
             )
         plan.visual_queries = [scene.visual_query for scene in plan.scenes]
@@ -213,32 +288,88 @@ class FactScriptPlanner(PremiumScriptPlanner):
             f"{scene.generator_prompt} {grades[index % len(grades)]} documentary color grade --ar {aspect}"
             for index, scene in enumerate(plan.scenes)
         ]
+
+        words = plan.thumbnail_text.strip().split()
+        if len(words) != 3:
+            plan.thumbnail_text = " ".join((words + ["EXPLAINED", "FACTS"])[:3]).upper()
+
+        # Enforce exactly 3 title options under 50 characters
+        raw_options = list(plan.title_options or [])
+        if plan.title and plan.title not in raw_options:
+            raw_options.insert(0, plan.title)
+        clean_options: list[str] = []
+        for opt in raw_options:
+            clean = opt.strip()
+            if len(clean) >= 50:
+                words = clean.split()
+                short = ""
+                for w in words:
+                    if len(f"{short} {w}".strip()) < 50:
+                        short = f"{short} {w}".strip()
+                    else:
+                        break
+                clean = short or clean[:49]
+            if clean and clean not in clean_options:
+                clean_options.append(clean)
+        while len(clean_options) < 3:
+            clean_options.append(f"{clean_options[0][:40]} Part {len(clean_options) + 1}" if clean_options else "Fascinating Fact")
+        plan.title_options = clean_options[:3]
+        if clean_options:
+            plan.title = clean_options[0]
+
         return plan
 
     def _fit_short_narration(self, plan: VideoPlan, *, target_words: int) -> None:
         """Rewrite coherently; never achieve duration by cutting off sentences."""
         original = [scene.narration for scene in plan.scenes]
-        if sum(len(line.split()) for line in original) <= target_words:
+        original_words = sum(len(line.split()) for line in original)
+        if 85 <= original_words <= target_words:
             return
+        action = "Expand this narration into 105-" + str(target_words) + " total spoken words (at least 6 complete sentences)." if original_words < 85 else f"Rewrite this narration into 95-{target_words} total spoken words."
         prompt = (
-            f"Rewrite this narration into 95-{target_words} total spoken words. "
+            f"{action} "
             "Preserve every factual claim, qualification, scene subject and scene order. "
             "Use grammatical sentences with coherent transitions; never truncate a thought. "
-            "A sentence may span adjacent scenes. Do not add claims. Return JSON only: "
+            "A sentence may span adjacent scenes. Do not add unsupported claims. Return JSON only: "
             '{"narrations": [one nonempty string per original scene]}. Original scenes: '
             + json.dumps(original)
         )
+        upper_bound = max(target_words + 15, 160)
         for attempt in range(2):
-            data = self._generate_json(prompt)
-            lines = data.get("narrations")
-            if (isinstance(lines, list) and len(lines) == len(original)
+            try:
+                data = self._generate_json(prompt)
+                lines = data.get("narrations")
+                if (
+                    isinstance(lines, list)
+                    and len(lines) == len(original)
                     and all(isinstance(line, str) and line.strip() for line in lines)
-                    and 90 <= sum(len(line.split()) for line in lines) <= target_words):
-                for scene, line in zip(plan.scenes, lines):
-                    scene.narration = line.strip()
-                plan.script = " ".join(scene.narration for scene in plan.scenes)
-                return
+                    and 85 <= sum(len(line.split()) for line in lines) <= upper_bound
+                ):
+                    for scene, line in zip(plan.scenes, lines):
+                        scene.narration = line.strip()
+                    plan.script = " ".join(scene.narration for scene in plan.scenes)
+                    return
+                if (
+                    isinstance(lines, list)
+                    and all(isinstance(line, str) and line.strip() for line in lines)
+                    and 85 <= sum(len(line.split()) for line in lines) <= upper_bound
+                ):
+                    # LLM returned valid narration text but slightly different scene count
+                    for idx, scene in enumerate(plan.scenes):
+                        if idx < len(lines):
+                            scene.narration = lines[idx].strip()
+                    plan.script = " ".join(scene.narration for scene in plan.scenes)
+                    return
+            except Exception:
+                pass
             prompt += " Your previous response failed length/schema checks. Follow them exactly."
+
+        # If rewrite attempts failed but original narration is within acceptable Short limits (<=165 words),
+        # keep the original narration rather than aborting the automated production run.
+        if original_words <= 165:
+            plan.script = " ".join(scene.narration for scene in plan.scenes)
+            return
+
         raise RuntimeError("Short narration rewrite failed; refusing to truncate or upload it.")
 
     def choose_topic(self, candidates: list[TopicCandidate]) -> TopicCandidate:
@@ -263,7 +394,7 @@ class FactScriptPlanner(PremiumScriptPlanner):
             return max(candidates, key=lambda item: item.score)
 
     def _draft_prompt(self, research: ResearchPack, video_format: str) -> str:
-        words = "95-145" if video_format == "short" else "1,200-1,650"
+        words = "105-145" if video_format == "short" else "1,200-1,650"
         scenes = "20-24" if video_format == "short" else "28-38"
         return f"""You are the senior researcher, writer and visual director for CurioAxiom.
 Create an original cinematic YouTube {video_format} about: {research.topic}

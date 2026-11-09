@@ -11,24 +11,33 @@ class ThumbnailGenerator:
         *,
         title: str = "",
         brief: str = "",
+        brand_name: str = "ByteVexa",
     ) -> Path:
-        """Create a high-contrast ByteVexa thumbnail with a visual story, not a text card."""
+        """Create a high-contrast thumbnail with a visual story, tailored to the channel brand."""
         output_path.parent.mkdir(parents=True, exist_ok=True)
         width, height = 1280, 720
+        is_curio = "curio" in brand_name.lower()
 
         image = Image.new("RGB", (width, height), (8, 11, 20))
         glow = Image.new("RGBA", (width, height), (0, 0, 0, 0))
         glow_draw = ImageDraw.Draw(glow)
-        glow_draw.ellipse((790, -120, 1390, 500), fill=(76, 235, 148, 95))
-        glow_draw.ellipse((-230, 330, 430, 980), fill=(72, 92, 255, 72))
+        if is_curio:
+            glow_draw.ellipse((790, -120, 1390, 500), fill=(246, 201, 14, 90))
+            glow_draw.ellipse((-230, 330, 430, 980), fill=(45, 90, 240, 70))
+        else:
+            glow_draw.ellipse((790, -120, 1390, 500), fill=(76, 235, 148, 95))
+            glow_draw.ellipse((-230, 330, 430, 980), fill=(72, 92, 255, 72))
         glow = glow.filter(ImageFilter.GaussianBlur(90))
         image = Image.alpha_composite(image.convert("RGBA"), glow).convert("RGB")
         draw = ImageDraw.Draw(image)
 
         # Small brand tag: recognizable, but never competes with the hook.
         brand_font = self._font(25)
-        draw.rounded_rectangle((64, 50, 250, 96), radius=18, fill=(20, 30, 43))
-        draw.text((84, 61), "BYTEVEXA", font=brand_font, fill=(116, 255, 165))
+        tag_text = brand_name.upper().strip()
+        tag_width = len(tag_text) * 16 + 40
+        tag_accent = (246, 201, 14) if is_curio else (116, 255, 165)
+        draw.rounded_rectangle((64, 50, 64 + tag_width, 96), radius=18, fill=(20, 30, 43))
+        draw.text((84, 61), tag_text, font=brand_font, fill=tag_accent)
 
         display = (text or "WORTH TRYING?").upper().strip()[:34]
         lines = self._split_display(display)

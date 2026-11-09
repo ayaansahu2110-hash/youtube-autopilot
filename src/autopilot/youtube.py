@@ -34,7 +34,10 @@ class YouTubeAuth:
         if credentials and not credentials.has_scopes(YOUTUBE_SCOPES):
             credentials = None
         if credentials and credentials.expired and credentials.refresh_token:
-            credentials.refresh(Request())
+            try:
+                credentials.refresh(Request())
+            except Exception:
+                credentials = None
         if credentials and credentials.valid:
             token_path.parent.mkdir(parents=True, exist_ok=True)
             token_path.write_text(credentials.to_json(), encoding="utf-8")
@@ -55,8 +58,17 @@ class YouTubeAuth:
         return credentials
 
     def authorize(self) -> Path:
-        self.credentials(interactive=True)
-        return self.settings.youtube_token_file
+        secrets_path = self.settings.youtube_client_secrets_file
+        if not secrets_path.exists():
+            raise FileNotFoundError(
+                f"YouTube OAuth client file not found: {secrets_path}. Download a Desktop OAuth client JSON from Google Cloud."
+            )
+        flow = InstalledAppFlow.from_client_secrets_file(str(secrets_path), YOUTUBE_SCOPES)
+        credentials = flow.run_local_server(port=0, access_type="offline", prompt="consent")
+        token_path = self.settings.youtube_token_file
+        token_path.parent.mkdir(parents=True, exist_ok=True)
+        token_path.write_text(credentials.to_json(), encoding="utf-8")
+        return token_path
 
 
 class YouTubeUploader:

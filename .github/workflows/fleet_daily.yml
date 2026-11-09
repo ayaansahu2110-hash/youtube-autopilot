@@ -1,0 +1,67 @@
+name: Fleet Dispatch (All Channels)
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_channel:
+        description: "Select channel to produce (or all for full fleet run)"
+        required: true
+        default: "all"
+        type: choice
+        options:
+          - all
+          - bytevexa
+          - curioaxiom
+          - wondertales
+          - mokshavani
+          - apexstoic
+          - chronosenigma
+          - empirepulse
+      slot:
+        description: "Production slot (morning produces 1 Short; evening produces 1 Short + alternate-day Long; all produces both)"
+        required: true
+        default: "evening"
+        type: choice
+        options:
+          - morning
+          - evening
+          - all
+
+permissions:
+  actions: write
+  contents: write
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Trigger target workflows via GitHub CLI
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET: ${{ inputs.target_channel }}
+          SLOT: ${{ inputs.slot }}
+        run: |
+          channels=("bytevexa" "curioaxiom" "wondertales" "mokshavani" "apexstoic" "chronosenigma" "empirepulse")
+          workflow_map_bytevexa="daily.yml"
+          workflow_map_curioaxiom="curioaxiom.yml"
+          workflow_map_wondertales="wondertales.yml"
+          workflow_map_mokshavani="mokshavani.yml"
+          workflow_map_apexstoic="apexstoic.yml"
+          workflow_map_chronosenigma="chronosenigma.yml"
+          workflow_map_empirepulse="empirepulse.yml"
+
+          if [ "$TARGET" = "all" ]; then
+            for ch in "${channels[@]}"; do
+              varname="workflow_map_${ch}"
+              wf="${!varname}"
+              echo "Dispatching $wf for channel $ch (slot: $SLOT)..."
+              gh workflow run "$wf" -f slot="$SLOT"
+              sleep 5
+            done
+          else
+            varname="workflow_map_${TARGET}"
+            wf="${!varname}"
+            echo "Dispatching $wf for channel $TARGET (slot: $SLOT)..."
+            gh workflow run "$wf" -f slot="$SLOT"
+          fi

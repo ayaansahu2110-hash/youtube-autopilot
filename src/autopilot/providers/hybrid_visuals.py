@@ -30,10 +30,12 @@ class HybridVisualDirector:
         *,
         brand_name: str = "ByteVexa",
         facts_mode: bool = False,
+        channel_profile: str = "bytevexa",
     ):
         self.pexels = pexels
         self.brand_name = brand_name
         self.facts_mode = facts_mode
+        self.channel_profile = channel_profile
 
     def build_assets(
         self,
@@ -52,7 +54,8 @@ class HybridVisualDirector:
         for scene_index, scene in enumerate(scenes[:limit]):
             asset: VisualAsset | None = None
 
-            if scene.visual_mode == "ui":
+            # 1. UI capture (only for ByteVexa tech tools when UI mode is requested with an allowed URL)
+            if scene.visual_mode == "ui" and self.channel_profile == "bytevexa":
                 source_url = scene.source_url if scene.source_url in allowed else ""
                 if source_url:
                     asset = self._capture_public_ui(
@@ -63,7 +66,8 @@ class HybridVisualDirector:
                         vertical=vertical,
                     )
 
-            if asset is None and scene.visual_mode == "stock":
+            # 2. High-definition moving Video B-Roll from Pexels (Try for all scenes to eliminate slideshows)
+            if asset is None:
                 stock = []
                 for query in self._stock_queries(scene):
                     stock = self.pexels.fetch_assets(
@@ -71,6 +75,8 @@ class HybridVisualDirector:
                         output_dir / "stock",
                         vertical=vertical,
                         limit=1,
+                        negative_keywords=self._channel_negatives(),
+                        positive_keywords=self._channel_positives(),
                     )
                     if stock:
                         break
@@ -83,10 +89,7 @@ class HybridVisualDirector:
                         }
                     )
 
-            # Fact Shorts should move. Primary-source stills are excellent proof,
-            # but using one for every beat produces a slideshow. Prefer a tightly
-            # matched real clip for action beats and keep authority media as the
-            # evidence/fallback layer.
+            # 3. Fact primary-source stills (CurioAxiom facts mode fallback)
             if asset is None and self.facts_mode:
                 asset = self._fetch_authoritative_image(
                     scene,
@@ -96,6 +99,7 @@ class HybridVisualDirector:
                     used_urls=used_source_media,
                 )
 
+            # 4. Fallback to stylized channel-themed motion graphic explainer
             if asset is None:
                 card = output_dir / f"scene-{scene_index:02d}-motion.png"
                 self._make_visual_explainer(scene, card, vertical=vertical, scene_index=scene_index)
@@ -469,13 +473,28 @@ class HybridVisualDirector:
         vertical: bool,
         scene_index: int,
     ) -> None:
-        """Create a graphic mini-demo, not a black text poster."""
+        """Create a channel-themed graphic motion explainer, never a black text poster."""
         width, height = (1080, 1920) if vertical else (1920, 1080)
         image = Image.new("RGB", (width, height), (10, 15, 28))
         draw = ImageDraw.Draw(image)
         margin = int(width * 0.065)
 
-        if self.facts_mode:
+        if self.channel_profile == "wondertales":
+            self._make_wondertales_explainer(image, draw, scene, output, vertical=vertical)
+            return
+        if self.channel_profile == "mokshavani":
+            self._make_mokshavani_explainer(image, draw, scene, output, vertical=vertical)
+            return
+        if self.channel_profile == "apexstoic":
+            self._make_apexstoic_explainer(image, draw, scene, output, vertical=vertical)
+            return
+        if self.channel_profile == "chronosenigma":
+            self._make_chronosenigma_explainer(image, draw, scene, output, vertical=vertical)
+            return
+        if self.channel_profile == "empirepulse":
+            self._make_empirepulse_explainer(image, draw, scene, output, vertical=vertical)
+            return
+        if self.facts_mode or self.channel_profile == "curioaxiom":
             self._make_fact_explainer(image, draw, scene, output, vertical=vertical, scene_index=scene_index)
             return
 
@@ -617,26 +636,438 @@ class HybridVisualDirector:
             return "Upload document → ask for concise summary"
         return "Describe the task in one clear prompt"
 
+    def _make_wondertales_explainer(
+        self,
+        image: Image.Image,
+        draw: ImageDraw.ImageDraw,
+        scene: SceneBeat,
+        output: Path,
+        *,
+        vertical: bool,
+    ) -> None:
+        """WonderTales: warm storybook pastel palette with rounded playful borders."""
+        width, height = image.size
+        margin = int(width * 0.07)
+        # Sunny sky and warm golden meadow gradient effect
+        draw.rectangle((0, 0, width, height), fill=(26, 42, 68))
+        draw.ellipse((-width // 4, -height // 8, width + width // 4, int(height * 0.45)), fill=(42, 90, 140))
+        draw.ellipse((-width // 4, int(height * 0.65), width + width // 4, height + height // 4), fill=(35, 78, 55))
+
+        # Rounded storybook parchment card
+        card_top = int(height * (0.15 if vertical else 0.12))
+        card_bottom = int(height * (0.85 if vertical else 0.88))
+        draw.rounded_rectangle(
+            (margin, card_top, width - margin, card_bottom),
+            radius=36,
+            fill=(248, 245, 235),
+            outline=(255, 193, 7),
+            width=5,
+        )
+
+        brand_font = self._font(28 if vertical else 30, bold=True)
+        kicker_font = self._font(24 if vertical else 24, bold=True)
+        headline_font = self._font(44 if vertical else 46, bold=True)
+        body_font = self._font(26 if vertical else 26)
+
+        draw.text((margin + 36, card_top + 32), "WONDERTALES KIDS", font=brand_font, fill=(230, 81, 0))
+        draw.text((margin + 36, card_top + 80), "BEDTIME STORY & RHYME", font=kicker_font, fill=(245, 124, 0))
+
+        # Little decorative stars
+        for sx, sy in [(width - margin - 80, card_top + 50), (width - margin - 120, card_top + 90)]:
+            draw.polygon([(sx, sy - 14), (sx + 4, sy - 4), (sx + 15, sy), (sx + 6, sy + 6), (sx + 10, sy + 18), (sx, sy + 10), (sx - 10, sy + 18), (sx - 6, sy + 6), (sx - 15, sy), (sx - 4, sy - 4)], fill=(255, 215, 0))
+
+        headline = self._clean(scene.on_screen_text) or self._headline_from_narration(scene.narration)
+        y = card_top + 140
+        for line in self._wrap(headline, 20 if vertical else 32, max_lines=2):
+            draw.text((margin + 36, y), line, font=headline_font, fill=(40, 40, 40))
+            y += int(headline_font.size * 1.2)
+
+        narration_clean = self._clean(scene.narration)
+        y += 30
+        for line in self._wrap(narration_clean, 24 if vertical else 40, max_lines=4):
+            draw.text((margin + 36, y), line, font=body_font, fill=(70, 70, 70))
+            y += int(body_font.size * 1.25)
+
+        output.parent.mkdir(parents=True, exist_ok=True)
+        image.save(output, quality=95)
+
+    def _make_mokshavani_explainer(
+        self,
+        image: Image.Image,
+        draw: ImageDraw.ImageDraw,
+        scene: SceneBeat,
+        output: Path,
+        *,
+        vertical: bool,
+    ) -> None:
+        """MokshaVani: Sacred saffron and cosmic gold Vedic mantra aesthetic."""
+        width, height = image.size
+        margin = int(width * 0.07)
+        # Deep spiritual cosmic background with saffron aura
+        draw.rectangle((0, 0, width, height), fill=(16, 8, 22))
+        draw.ellipse((width // 4, height // 4, int(width * 0.75), int(height * 0.55)), fill=(48, 16, 12))
+        draw.ellipse((-width // 4, height // 3, width + width // 4, height + height // 4), fill=(32, 10, 8))
+
+        # Sacred golden bordered card
+        card_top = int(height * (0.14 if vertical else 0.12))
+        card_bottom = int(height * (0.86 if vertical else 0.88))
+        draw.rounded_rectangle(
+            (margin, card_top, width - margin, card_bottom),
+            radius=32,
+            fill=(26, 12, 14),
+            outline=(212, 175, 55),
+            width=4,
+        )
+
+        brand_font = self._font(28 if vertical else 30, bold=True)
+        kicker_font = self._font(24 if vertical else 24, bold=True)
+        headline_font = self._font(44 if vertical else 48, bold=True)
+        body_font = self._font(26 if vertical else 26)
+
+        draw.text((margin + 36, card_top + 34), "MOKSHAVANI - SACRED WISDOM", font=brand_font, fill=(255, 193, 7))
+        draw.text((margin + 36, card_top + 84), "VEDIC MANTRAS & BHAJANS", font=kicker_font, fill=(255, 138, 101))
+
+        # Sacred Om symbol representation / golden glowing orb
+        cx, cy = width // 2, int(height * 0.44)
+        draw.ellipse((cx - 70, cy - 70, cx + 70, cy + 70), outline=(212, 175, 55), width=3)
+        draw.ellipse((cx - 50, cy - 50, cx + 50, cy + 50), fill=(255, 160, 0))
+
+        headline = self._clean(scene.on_screen_text) or self._headline_from_narration(scene.narration)
+        y = int(height * 0.55)
+        for line in self._wrap(headline, 22 if vertical else 34, max_lines=2):
+            draw.text((margin + 36, y), line, font=headline_font, fill=(255, 248, 225))
+            y += int(headline_font.size * 1.2)
+
+        narration_clean = self._clean(scene.narration)
+        y += 24
+        for line in self._wrap(narration_clean, 26 if vertical else 42, max_lines=4):
+            draw.text((margin + 36, y), line, font=body_font, fill=(255, 224, 178))
+            y += int(body_font.size * 1.25)
+
+        output.parent.mkdir(parents=True, exist_ok=True)
+        image.save(output, quality=95)
+
+    def _make_apexstoic_explainer(
+        self,
+        image: Image.Image,
+        draw: ImageDraw.ImageDraw,
+        scene: SceneBeat,
+        output: Path,
+        *,
+        vertical: bool,
+    ) -> None:
+        """ApexStoic: Obsidian slate, dark Roman marble, and crimson discipline aesthetic."""
+        width, height = image.size
+        margin = int(width * 0.07)
+        draw.rectangle((0, 0, width, height), fill=(10, 10, 12))
+        draw.line((margin, 80, width - margin, 80), fill=(50, 50, 55), width=2)
+
+        card_top = int(height * (0.14 if vertical else 0.12))
+        card_bottom = int(height * (0.86 if vertical else 0.88))
+        draw.rounded_rectangle(
+            (margin, card_top, width - margin, card_bottom),
+            radius=20,
+            fill=(18, 18, 22),
+            outline=(211, 47, 47),
+            width=3,
+        )
+
+        brand_font = self._font(28 if vertical else 30, bold=True)
+        kicker_font = self._font(24 if vertical else 24, bold=True)
+        headline_font = self._font(44 if vertical else 48, bold=True)
+        body_font = self._font(26 if vertical else 26)
+
+        draw.text((margin + 36, card_top + 34), "APEXSTOIC", font=brand_font, fill=(245, 245, 245))
+        draw.text((margin + 36, card_top + 84), "RULE OF MENTAL TOUGHNESS", font=kicker_font, fill=(229, 57, 53))
+
+        headline = self._clean(scene.on_screen_text) or self._headline_from_narration(scene.narration)
+        y = card_top + 150
+        for line in self._wrap(headline.upper(), 20 if vertical else 32, max_lines=2):
+            draw.text((margin + 36, y), line, font=headline_font, fill=(255, 255, 255))
+            y += int(headline_font.size * 1.2)
+
+        draw.line((margin + 36, y + 10, width - margin - 36, y + 10), fill=(211, 47, 47), width=3)
+        y += 36
+
+        narration_clean = self._clean(scene.narration)
+        for line in self._wrap(narration_clean, 24 if vertical else 40, max_lines=5):
+            draw.text((margin + 36, y), line, font=body_font, fill=(189, 189, 189))
+            y += int(body_font.size * 1.25)
+
+        output.parent.mkdir(parents=True, exist_ok=True)
+        image.save(output, quality=95)
+
+    def _make_chronosenigma_explainer(
+        self,
+        image: Image.Image,
+        draw: ImageDraw.ImageDraw,
+        scene: SceneBeat,
+        output: Path,
+        *,
+        vertical: bool,
+    ) -> None:
+        """ChronosEnigma: Mysterious ancient parchment, deep oceanic navy, and blueprint grid."""
+        width, height = image.size
+        margin = int(width * 0.07)
+        draw.rectangle((0, 0, width, height), fill=(8, 16, 26))
+
+        # Ancient latitude/longitude coordinate grid lines
+        for gx in range(margin, width - margin, 120):
+            draw.line((gx, 0, gx, height), fill=(16, 32, 48), width=1)
+        for gy in range(int(height * 0.1), int(height * 0.9), 120):
+            draw.line((0, gy, width, gy), fill=(16, 32, 48), width=1)
+
+        card_top = int(height * (0.14 if vertical else 0.12))
+        card_bottom = int(height * (0.86 if vertical else 0.88))
+        draw.rounded_rectangle(
+            (margin, card_top, width - margin, card_bottom),
+            radius=24,
+            fill=(14, 24, 38),
+            outline=(64, 196, 255),
+            width=3,
+        )
+
+        brand_font = self._font(28 if vertical else 30, bold=True)
+        kicker_font = self._font(24 if vertical else 24, bold=True)
+        headline_font = self._font(44 if vertical else 48, bold=True)
+        body_font = self._font(26 if vertical else 26)
+
+        draw.text((margin + 36, card_top + 34), "CHRONOSENIGMA", font=brand_font, fill=(64, 196, 255))
+        draw.text((margin + 36, card_top + 84), "UNSOLVED HISTORICAL ANOMALY", font=kicker_font, fill=(255, 179, 0))
+
+        headline = self._clean(scene.on_screen_text) or self._headline_from_narration(scene.narration)
+        y = card_top + 150
+        for line in self._wrap(headline, 20 if vertical else 32, max_lines=2):
+            draw.text((margin + 36, y), line, font=headline_font, fill=(240, 248, 255))
+            y += int(headline_font.size * 1.2)
+
+        narration_clean = self._clean(scene.narration)
+        y += 28
+        for line in self._wrap(narration_clean, 24 if vertical else 40, max_lines=5):
+            draw.text((margin + 36, y), line, font=body_font, fill=(176, 190, 197))
+            y += int(body_font.size * 1.25)
+
+        output.parent.mkdir(parents=True, exist_ok=True)
+        image.save(output, quality=95)
+
+    def _make_empirepulse_explainer(
+        self,
+        image: Image.Image,
+        draw: ImageDraw.ImageDraw,
+        scene: SceneBeat,
+        output: Path,
+        *,
+        vertical: bool,
+    ) -> None:
+        """EmpirePulse: Executive obsidian, financial emerald green, and gold wealth metrics."""
+        width, height = image.size
+        margin = int(width * 0.07)
+        draw.rectangle((0, 0, width, height), fill=(8, 12, 18))
+
+        card_top = int(height * (0.14 if vertical else 0.12))
+        card_bottom = int(height * (0.86 if vertical else 0.88))
+        draw.rounded_rectangle(
+            (margin, card_top, width - margin, card_bottom),
+            radius=24,
+            fill=(16, 22, 32),
+            outline=(0, 230, 118),
+            width=3,
+        )
+
+        brand_font = self._font(28 if vertical else 30, bold=True)
+        kicker_font = self._font(24 if vertical else 24, bold=True)
+        headline_font = self._font(44 if vertical else 48, bold=True)
+        body_font = self._font(26 if vertical else 26)
+
+        draw.text((margin + 36, card_top + 34), "EMPIREPULSE", font=brand_font, fill=(0, 230, 118))
+        draw.text((margin + 36, card_top + 84), "SOVEREIGN WEALTH & GEOPOLITICS", font=kicker_font, fill=(255, 215, 0))
+
+        headline = self._clean(scene.on_screen_text) or self._headline_from_narration(scene.narration)
+        y = card_top + 150
+        for line in self._wrap(headline, 20 if vertical else 32, max_lines=2):
+            draw.text((margin + 36, y), line, font=headline_font, fill=(245, 250, 255))
+            y += int(headline_font.size * 1.2)
+
+        narration_clean = self._clean(scene.narration)
+        y += 28
+        for line in self._wrap(narration_clean, 24 if vertical else 40, max_lines=5):
+            draw.text((margin + 36, y), line, font=body_font, fill=(207, 216, 220))
+            y += int(body_font.size * 1.25)
+
+        output.parent.mkdir(parents=True, exist_ok=True)
+        image.save(output, quality=95)
+
     def _stock_queries(self, scene: SceneBeat) -> list[str]:
         primary = self._clean(scene.visual_query)
-        if not self.facts_mode:
-            return [primary]
-        text = f"{scene.narration} {primary}".lower()
+        narration = self._clean(scene.narration).lower()
+        combined = f"{primary} {narration}".lower()
+
+        stop_words = {
+            "cinematic", "footage", "shot", "camera", "lighting", "ultra", "realistic",
+            "4k", "8k", "detail", "view", "high", "quality", "hd", "style", "scene", "beat",
+            "slow", "motion", "macro", "angle", "aerial", "drone", "showing", "capturing",
+            "warm", "gentle", "dramatic", "hyperrealistic", "photorealistic", "with", "from",
+            "into", "onto", "that", "this", "their", "there", "these", "those",
+            "split", "screen", "screens", "diagram", "diagrams", "text", "graphic", "graphics",
+            "typography", "minimalist", "infographic", "overlay", "illustration", "animation",
+            "title", "caption", "minimal", "minimalistic",
+        }
+        words = [w for w in re.findall(r"[a-z0-9]+", primary.lower()) if w not in stop_words and len(w) > 2]
+
+        queries: list[str] = []
+        if len(words) >= 4:
+            queries.append(" ".join(words[:4]))
+        if len(words) >= 3:
+            queries.append(" ".join(words[:3]))
+        if len(words) >= 2:
+            queries.append(" ".join(words[:2]))
+        if len(words) >= 1:
+            queries.append(words[0])
+
+        matched_niche: list[str] = []
         fallbacks: list[str] = []
-        keyword_queries = (
-            (("reentry", "spacecraft", "capsule"), "space capsule spacecraft"),
-            (("heat", "fire", "plasma"), "extreme heat flames"),
-            (("rocket", "space"), "rocket in space"),
-            (("parachute", "landing"), "parachute landing sky"),
-            (("race", "formula", "car"), "race car track"),
-            (("engine", "automobile"), "car engine close up"),
-            (("ocean", "river"), "aerial ocean landscape"),
-            (("ancient", "history"), "ancient ruins archaeology"),
-        )
-        for terms, query in keyword_queries:
-            if any(term in text for term in terms):
-                fallbacks.append(query)
-        return list(dict.fromkeys([primary, *fallbacks]))
+        profile = getattr(self, "channel_profile", "bytevexa")
+
+        if profile == "wondertales":
+            mappings = (
+                (("rabbit", "bunny", "hop", "hop-hop", "burrow", "clover"), "cute bunny rabbit hopping grass outdoors"),
+                (("bear", "honey", "cub", "trees"), "cute brown bear cub climbing tree forest"),
+                (("fox", "friendly", "red", "clever"), "cute red fox in forest nature"),
+                (("owl", "night", "tree", "hoot", "moon"), "owl perched on tree branch nature"),
+                (("elephant", "mouse", "trunk", "big"), "baby elephant walking nature sunny"),
+                (("squirrel", "nut", "tail", "acorn"), "cute squirrel eating nut tree"),
+                (("star", "twinkle", "sky", "shining", "sparkle"), "starry night sky time lapse nature"),
+                (("bedtime", "sleep", "moon", "night", "dream", "sleepy", "lullaby"), "crescent moon night clouds"),
+                (("flower", "garden", "meadow", "bloom", "blossom"), "colorful blooming wildflowers butterflies"),
+                (("duck", "duckling", "pond", "quack", "water", "splash"), "baby ducks swimming in clean pond"),
+                (("children", "kids", "happy", "sing", "dance", "play"), "happy children playing outdoors sunshine"),
+                (("rainbow", "sunshine", "sun", "bright"), "rainbow in sunny blue sky nature"),
+                (("cloud", "soft", "cotton", "sky"), "fluffy white clouds blue sky sunshine"),
+                (("forest", "woods", "magical", "green"), "sunlight streaming through green forest trees"),
+                (("puppy", "dog", "wag", "bark", "tail"), "cute playful puppy running green grass"),
+                (("kitten", "cat", "meow", "purr"), "cute playful kitten playing indoors"),
+                (("bird", "sing", "chirp", "fly", "feather"), "colorful bird singing on tree branch"),
+                (("butterfly", "flutter", "wings"), "vibrant butterflies on yellow wildflowers"),
+            )
+            for terms, q in mappings:
+                if any(t in combined for t in terms):
+                    matched_niche.append(q)
+            fallbacks.extend(["cute bunny rabbit hopping grass outdoors", "baby ducks swimming in clean pond", "colorful blooming wildflowers butterflies"])
+
+        elif profile == "mokshavani":
+            mappings = (
+                (("gayatri", "surya", "savitr", "sun", "light", "prakash", "tejas"), "golden sunrise over holy river ganges mountains"),
+                (("shiva", "mahamrityunjaya", "tandav", "rudra", "bholenath", "kailash"), "himalayas mountain sacred peaks aerial"),
+                (("hanuman", "chalisa", "sankat", "strength", "bajrang"), "ancient indian stone temple intricate carvings"),
+                (("krishna", "radha", "flute", "gita", "arjuna", "vishnu"), "ancient indian stone temple intricate carvings"),
+                (("diya", "lamp", "flame", "aarti", "jyoti", "deepam", "puja", "worship"), "burning traditional brass diya oil lamp"),
+                (("ganga", "ganges", "river", "ghat", "varanasi", "kashi", "holy", "jal", "snan"), "varanasi ganga aarti ceremony ritual"),
+                (("incense", "dhoop", "fragrance", "havan", "yajna", "fire", "agni"), "sacred fire havan puja"),
+                (("meditation", "dhyana", "peace", "soul", "atman", "samadhi", "focus", "shanti", "man", "buddhi"), "peaceful sadhu meditating sunrise mountains"),
+                (("bell", "ghanti", "mandir", "temple", "shrine", "carving", "murti"), "sacred brass temple bells ringing"),
+                (("om", "aum", "mantra", "chant", "sacred", "sound", "vibration", "dhwani", "shloka"), "burning traditional brass diya oil lamp"),
+                (("rudraksha", "mala", "japa", "prayer", "pranam", "namaste", "bhakti"), "folded hands in namaste prayer holy river"),
+                (("himalayas", "kedarnath", "badrinath", "mountains", "snow", "peaks", "rishi", "vedic"), "ancient indian stone temple intricate carvings"),
+                (("lotus", "flower", "pushpa", "divine", "kamal"), "blooming lotus flower clean water pond"),
+            )
+            for terms, q in mappings:
+                if any(t in combined for t in terms):
+                    matched_niche.append(q)
+            fallbacks.extend(["burning traditional brass diya oil lamp", "varanasi ganga aarti ceremony ritual", "ancient indian stone temple intricate carvings"])
+
+        elif profile == "apexstoic":
+            mappings = (
+                (("marcus", "aurelius", "emperor", "roman"), "roman marble statue bust"),
+                (("statue", "sculpture", "marble"), "ancient marble statue museum dramatic light"),
+                (("silence", "quiet", "speak"), "man walking alone dark silhouette"),
+                (("emotion", "anger", "calm", "control"), "ocean waves crashing against dark rocks"),
+                (("discipline", "hardship", "workout", "early"), "athlete training in rain early morning"),
+                (("storm", "rain", "chaos"), "dark stormy clouds thunderstorm lightning"),
+                (("wolf", "pack", "lone"), "lone wolf walking in snow forest"),
+                (("hourglass", "time", "memento", "mori"), "sand falling through antique hourglass"),
+                (("fire", "flame", "fuel"), "fire burning brightly in darkness"),
+                (("mountain", "peak", "summit"), "hiker standing on mountain summit looking out"),
+            )
+            for terms, q in mappings:
+                if any(t in combined for t in terms):
+                    matched_niche.append(q)
+            fallbacks.extend(["ancient roman marble statue", "ocean waves crashing against rocks", "stormy sky dramatic light"])
+
+        elif profile == "chronosenigma":
+            mappings = (
+                (("pyramid", "giza", "egypt"), "pyramids of giza aerial drone 4k"),
+                (("gobekli", "tepe", "megalith", "stonehenge"), "stonehenge ancient megalith ruins"),
+                (("underwater", "dwarka", "yonaguni", "sunken", "ocean"), "deep blue ocean underwater ruins reefs"),
+                (("ruins", "temple", "ancient", "carving"), "ancient stone ruins overgrown jungle"),
+                (("underground", "derinkuyu", "tunnel", "cave"), "deep underground limestone cave tunnel"),
+                (("artifact", "antikythera", "mechanism", "clockwork"), "antique brass gears clockwork macro"),
+                (("desert", "sahara", "richat"), "vast desert sand dunes aerial view"),
+                (("compass", "map", "voyage"), "antique navigation compass on vintage map"),
+                (("mountain", "gunung", "padang"), "misty mountain peaks jungle ruins aerial"),
+            )
+            for terms, q in mappings:
+                if any(t in combined for t in terms):
+                    matched_niche.append(q)
+            fallbacks.extend(["ancient stone ruins aerial", "pyramids desert aerial drone", "deep blue underwater ocean"])
+
+        elif profile == "empirepulse":
+            mappings = (
+                (("qatar", "dubai", "gulf", "emirates"), "dubai marina futuristic skyscrapers drone"),
+                (("singapore", "asia", "superpower"), "singapore marina bay sands skyline night"),
+                (("oil", "fund", "norway", "energy"), "offshore oil drilling platform ocean aerial"),
+                (("switzerland", "bank", "vault", "gold"), "gold bullion bars in bank vault"),
+                (("billionaire", "dynasty", "wealth", "luxury"), "luxury superyacht sailing open ocean"),
+                (("shipping", "cargo", "port", "trade", "malacca"), "container cargo ship sailing ocean port"),
+                (("jet", "aviation", "flight"), "private luxury jet taking off runway"),
+                (("stock", "market", "trade", "exchange", "wall street"), "stock market trading floor screens data"),
+                (("skyscraper", "city", "megacity", "financial"), "modern financial district skyscrapers time lapse"),
+            )
+            for terms, q in mappings:
+                if any(t in combined for t in terms):
+                    matched_niche.append(q)
+            fallbacks.extend(["modern city skyline aerial drone", "container shipping port aerial", "gold bullion bars vault"])
+
+        elif profile == "curioaxiom" or self.facts_mode:
+            mappings = (
+                (("reentry", "spacecraft", "capsule"), "space capsule spacecraft"),
+                (("heat", "fire", "plasma"), "extreme heat flames"),
+                (("rocket", "space"), "rocket in space"),
+                (("parachute", "landing"), "parachute landing sky"),
+                (("race", "formula", "car"), "race car track"),
+                (("engine", "automobile"), "car engine close up"),
+                (("ocean", "river"), "aerial ocean landscape"),
+                (("ancient", "history"), "ancient ruins archaeology"),
+                (("airplane", "aircraft", "cockpit"), "airplane flying above clouds"),
+                (("window", "fuselage"), "airplane cabin window view clouds"),
+                (("astronaut", "orbit", "earth"), "astronaut space station earth orbit"),
+            )
+            for terms, q in mappings:
+                if any(t in combined for t in terms):
+                    matched_niche.append(q)
+            fallbacks.extend(["planet earth from space", "scientific laboratory microscope", "airplane flying above clouds"])
+
+        else:  # bytevexa
+            mappings = (
+                (("code", "developer", "programming", "python"), "programmer typing code on multiple screens"),
+                (("typing", "keyboard", "desk"), "hands typing on mechanical keyboard close up"),
+                (("server", "cloud", "data", "datacenter"), "server room blinking green blue lights"),
+                (("browser", "web", "internet"), "person using modern laptop desk"),
+                (("phone", "mobile", "app"), "using modern smartphone close up"),
+                (("ai", "model", "neural", "robot"), "clean modern technology workspace"),
+            )
+            for terms, q in mappings:
+                if any(t in combined for t in terms):
+                    matched_niche.append(q)
+            fallbacks.extend(["clean modern tech office desk", "typing on keyboard screen", "server room blinking lights"])
+
+        # Prioritize: matched niche mappings first -> cleaned primary -> general fallbacks
+        combined_queries = matched_niche + queries + fallbacks
+        deduped = []
+        for q in combined_queries:
+            clean_q = self._clean(q)
+            if clean_q and clean_q.lower() not in [d.lower() for d in deduped]:
+                deduped.append(clean_q)
+        return deduped
 
     @staticmethod
     def _headline_from_narration(text: str) -> str:
@@ -674,3 +1105,67 @@ class HybridVisualDirector:
             except OSError:
                 continue
         return ImageFont.load_default()
+
+    def _channel_negatives(self) -> list[str]:
+        profile = getattr(self, "channel_profile", "bytevexa")
+        if profile == "mokshavani":
+            return [
+                "bible", "jewish", "torah", "rosary", "church", "cross", "jesus", "christ",
+                "headphones", "office", "laptop", "computer", "smartphone", "party",
+                "carpathian", "romania", "sage", "smudging", "supermarket", "shopping",
+                "galaxy", "neon", "disco", "club",
+            ]
+        if profile == "wondertales":
+            return [
+                "office", "laptop", "meeting", "business", "desk", "computer", "suit",
+                "sofa", "stuffed-toy", "teddy-plush", "workout", "gym", "beer", "wine",
+                "couple", "fashion", "model", "supermarket", "car", "traffic",
+            ]
+        if profile == "apexstoic":
+            return [
+                "office", "laptop", "computer", "party", "club", "supermarket",
+                "shopping", "laughing", "phone", "comedy", "dancing",
+            ]
+        if profile == "chronosenigma":
+            return [
+                "office", "laptop", "modern", "city", "traffic", "car", "computer",
+                "phone", "smartphone", "subway",
+            ]
+        if profile == "empirepulse":
+            return ["desk", "bedroom", "casual", "messy", "sofa", "couch", "slum"]
+        return ["split-screen", "diagram", "typography", "text-graphic"]
+
+    def _channel_positives(self) -> list[str]:
+        profile = getattr(self, "channel_profile", "bytevexa")
+        if profile == "mokshavani":
+            return [
+                "diya", "diwali", "lamp", "aarti", "varanasi", "ganges", "ganga",
+                "temple", "puja", "ritual", "prayer", "sadhu", "yogi", "meditat",
+                "himalaya", "mountain", "sunrise", "bells", "lotus", "fire",
+            ]
+        if profile == "wondertales":
+            return [
+                "bunny", "rabbit", "bear", "puppy", "dog", "kitten", "cat", "duck",
+                "duckling", "owl", "squirrel", "butterfly", "flower", "garden",
+                "meadow", "forest", "nature", "cute", "happy", "playing", "rainbow",
+                "stars", "moon",
+            ]
+        if profile == "apexstoic":
+            return [
+                "sculpture", "statue", "marble", "roman", "greek", "ocean", "waves",
+                "rocks", "storm", "clouds", "hourglass", "silhouette", "dark",
+                "mountain", "alone",
+            ]
+        if profile == "chronosenigma":
+            return [
+                "pyramid", "ruins", "ancient", "megalith", "stonehenge", "temple",
+                "underwater", "relic", "artifact", "gears", "clockwork", "excavation",
+                "monument", "canyon", "cave",
+            ]
+        if profile == "empirepulse":
+            return [
+                "skyline", "skyscrapers", "drone", "dubai", "singapore", "london",
+                "tokyo", "port", "cargo", "ship", "container", "gold", "vault",
+                "jet", "runway", "highway", "night",
+            ]
+        return ["workflow", "feature", "interface", "software", "screen"]

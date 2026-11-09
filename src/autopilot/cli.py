@@ -1,3 +1,4 @@
+from pathlib import Path
 import shutil
 from datetime import date, datetime
 from zoneinfo import ZoneInfo
@@ -30,6 +31,17 @@ def _longform_due(settings: Settings) -> bool:
     anchor = date.fromisoformat(settings.longform_anchor_date)
     interval = max(1, settings.longform_every_days)
     return (local_today - anchor).days >= 0 and (local_today - anchor).days % interval == 0
+
+
+ALL_CHANNELS = [
+    ("bytevexa", "ByteVexa", "UC09G9D1CBuQBBWa7ZY8fRnQ", Path("secrets/youtube_token.json")),
+    ("curioaxiom", "CurioAxiom", "UCpddoAgL5DCidscCMx4WMHQ", Path("secrets/youtube_token_curioaxiom.json")),
+    ("wondertales", "WonderTales Kids", "UCgpwDJEsds9CfjR9JJXqI6Q", Path("secrets/youtube_token_wondertales.json")),
+    ("mokshavani", "MokshaVani", "UCfLZBTZFO2SfgJJ-iGrlBBA", Path("secrets/youtube_token_mokshavani.json")),
+    ("apexstoic", "ApexStoic", "UChPKS0EQQJPnMReTR-2pcvw", Path("secrets/youtube_token_apexstoic.json")),
+    ("chronosenigma", "ChronosEnigma", "UCkskXfpnzm8lQnZGHOVMfQQ", Path("secrets/youtube_token_chronosenigma.json")),
+    ("empirepulse", "EmpirePulse", "UC6rE9fs_Os6NSXdTN1oBNdw", Path("secrets/youtube_token_empirepulse.json")),
+]
 
 
 def _settings_for_format(settings: Settings, video_format: str) -> Settings:
@@ -70,10 +82,45 @@ def doctor() -> None:
 
 @app.command("auth-youtube")
 def auth_youtube() -> None:
-    """Run the one-time browser OAuth flow for upload + analytics access."""
+    """Run the one-time browser OAuth flow for upload + analytics access (ByteVexa)."""
     settings = load_settings()
     token = YouTubeAuth(settings).authorize()
     console.print(f"[bold green]YouTube authorized.[/bold green] Token saved to {token}")
+
+
+@app.command("auth-curioaxiom")
+def auth_curioaxiom() -> None:
+    """Run browser OAuth flow for CurioAxiom (channel ID: UCpddoAgL5DCidscCMx4WMHQ)."""
+    settings = Settings(
+        channel_profile="curioaxiom",
+        channel_display_name="CurioAxiom",
+        expected_youtube_channel_id="UCpddoAgL5DCidscCMx4WMHQ",
+        youtube_token_file=Path("secrets/youtube_token_curioaxiom.json"),
+    )
+    token = YouTubeAuth(settings).authorize()
+    console.print(f"[bold green]CurioAxiom authorized.[/bold green] Token saved to {token}")
+
+
+@app.command("auth-channel")
+def auth_channel(
+    profile: str = typer.Option(
+        ..., "--profile", "-p",
+        help="Channel profile: bytevexa, curioaxiom, wondertales, mokshavani, apexstoic, chronosenigma, empirepulse"
+    ),
+) -> None:
+    """Run browser OAuth flow to link and authorize any of the 7 YouTube channels."""
+    from autopilot.config import CHANNEL_PROFILES, PROFILE_CONFIGS
+    norm_profile = profile.strip().lower()
+    if norm_profile not in CHANNEL_PROFILES:
+        raise typer.BadParameter(f"Unknown profile: {profile}. Valid options: {', '.join(CHANNEL_PROFILES)}")
+    cfg = PROFILE_CONFIGS[norm_profile]
+    settings = Settings(
+        channel_profile=norm_profile,
+        channel_display_name=cfg["display_name"],
+        youtube_token_file=Path(cfg["token_file"]),
+    )
+    token = YouTubeAuth(settings).authorize()
+    console.print(f"[bold green]{cfg['display_name']} ({norm_profile}) authorized.[/bold green] Token saved to {token}")
 
 
 @app.command("verify-youtube")
@@ -88,13 +135,35 @@ def verify_youtube() -> None:
     )
 
 
+@app.command("verify-all")
+def verify_all() -> None:
+    """Verify OAuth tokens and live authorization for all 7 channels."""
+    for profile, display_name, expected_id, token_path in ALL_CHANNELS:
+        s = Settings(
+            channel_profile=profile,
+            channel_display_name=display_name,
+            expected_youtube_channel_id=expected_id,
+            youtube_token_file=token_path,
+        )
+        if not token_path.exists():
+            console.print(f"[yellow]○ {display_name}[/yellow] ({profile}): Token not created yet. Run: python -m autopilot.cli auth-channel --profile {profile}")
+            continue
+        try:
+            uploader = YouTubeUploader(s)
+            uploader.recent_uploads(limit=1)
+            console.print(f"[bold green]✓ {display_name}[/bold green] ({profile}): Authorized and live on YouTube.")
+        except Exception as exc:
+            console.print(f"[bold red]✗ {display_name}[/bold red] ({profile}) verification notice: {exc}")
+
+
 @app.command("run")
 def run_once(
     topic: str | None = typer.Option(None, help="Optional topic override"),
     video_format: str | None = typer.Option(None, "--format", help="short or long"),
     dry_run: bool = typer.Option(True, "--dry-run/--render", help="Plan only or render media"),
+    profile: str | None = typer.Option(None, "--profile", "-p", help="Channel profile to run"),
 ) -> None:
-    settings = load_settings()
+    settings = Settings(channel_profile=profile.strip().lower()) if profile else load_settings()
     chosen_format = video_format or settings.default_video_format
     production_settings = _settings_for_format(settings, chosen_format)
     result = AutopilotPipeline(production_settings).run(
@@ -207,6 +276,111 @@ def schedule() -> None:
         coalesce=True,
     )
     console.print(f"Scheduler active at 12:00 and 18:00 ({settings.schedule_timezone})")
+    scheduler.start()
+
+
+@app.command("run-all")
+def run_all(
+    slot: str = typer.Option("all", "--slot", help="morning, evening, or all"),
+    live: bool = typer.Option(False, "--live", help="Render and publish; otherwise planning only"),
+) -> None:
+    """Run production cycle across both ByteVexa and CurioAxiom."""
+    slot = slot.strip().lower()
+    dry_run = not live
+    for profile, display_name, expected_id, token_path in ALL_CHANNELS:
+        try:
+            console.print(f"\n[bold cyan]=== Running {display_name} [{profile}] ({slot}) ===[/bold cyan]")
+            s = Settings(
+                channel_profile=profile,
+                channel_display_name=display_name,
+                expected_youtube_channel_id=expected_id,
+                youtube_token_file=token_path,
+            )
+            # If live requested but token does not exist yet, produce full video artifacts safely
+            effective_dry = dry_run or not token_path.exists()
+            if not dry_run and not token_path.exists():
+                console.print(f"[yellow]Notice: {display_name} YouTube token not linked yet; rendering full video to artifacts for review.[/yellow]")
+
+            state = StateStore(s.state_file)
+            try:
+                DailyLearningLoop(s, state).refresh()
+            except Exception:
+                pass
+
+            short_count = max(1, s.shorts_per_day) if slot == "all" else 1
+            short_settings = _settings_for_format(s, "short")
+            for _ in range(short_count):
+                short_res = AutopilotPipeline(short_settings).run(dry_run=effective_dry, video_format="short")
+                _print_result(short_res, short_settings)
+
+            if slot in {"evening", "all"} and _longform_due(s):
+                console.print(f"[cyan]Alternate-day long-form due for {display_name}...[/cyan]")
+                long_res = AutopilotPipeline(s).run(dry_run=effective_dry, video_format="long")
+                _print_result(long_res, s)
+        except Exception as exc:
+            console.print(f"[bold red]Error in automated slot for {display_name}: {exc}[/bold red]")
+
+
+@app.command("schedule-all")
+def schedule_all() -> None:
+    """Run unified 2-channel background scheduler at 12:00 and 18:00 IST for ByteVexa & CurioAxiom."""
+    settings = load_settings()
+    scheduler = BlockingScheduler(timezone=settings.schedule_timezone)
+
+    def execute_slot(slot_name: str, is_morning: bool) -> None:
+        console.print(f"\n[bold green]Executing {slot_name} production slot across all 7 channels ({settings.schedule_timezone})...[/bold green]")
+        for profile, display_name, expected_id, token_path in ALL_CHANNELS:
+            try:
+                s = Settings(
+                    channel_profile=profile,
+                    channel_display_name=display_name,
+                    expected_youtube_channel_id=expected_id,
+                    youtube_token_file=token_path,
+                )
+                state = StateStore(s.state_file)
+                try:
+                    DailyLearningLoop(s, state).refresh()
+                except Exception:
+                    pass
+
+                should_upload = s.enable_uploads and token_path.exists()
+                short_s = _settings_for_format(s, "short")
+                short_res = AutopilotPipeline(short_s).run(
+                    dry_run=not should_upload,
+                    video_format="short",
+                )
+                _print_result(short_res, short_s)
+
+                if not is_morning and short_res.status != "failed" and _longform_due(s):
+                    long_res = AutopilotPipeline(s).run(
+                        dry_run=not should_upload,
+                        video_format="long",
+                    )
+                    _print_result(long_res, s)
+            except Exception as exc:
+                console.print(f"[bold red]Slot error for {display_name}:[/bold red] {exc}")
+
+    scheduler.add_job(
+        lambda: execute_slot("12:00 Noon", True),
+        "cron",
+        hour=12,
+        minute=0,
+        id="both-channels-noon-short",
+        replace_existing=True,
+        max_instances=1,
+        coalesce=True,
+    )
+    scheduler.add_job(
+        lambda: execute_slot("18:00 Evening", False),
+        "cron",
+        hour=18,
+        minute=0,
+        id="both-channels-evening-short-long",
+        replace_existing=True,
+        max_instances=1,
+        coalesce=True,
+    )
+    console.print(f"[bold green]Unified 7-Channel Scheduler active at 12:00 and 18:00 ({settings.schedule_timezone}) across all channels[/bold green]")
     scheduler.start()
 
 

@@ -4,7 +4,7 @@ from pathlib import Path
 from autopilot.captions import write_srt
 from autopilot.config import Settings
 from autopilot.discovery import TopicDiscovery
-from autopilot.editorial import ByteVexaEditorialSystem
+from autopilot.editorial import ByteVexaEditorialSystem, editorial_system_for
 from autopilot.facts import (
     CurioAxiomEditorialSystem,
     FactScriptPlanner,
@@ -39,7 +39,7 @@ class AutopilotPipeline:
             else TopicDiscovery(settings, self.state)
         )
         self.researcher = Researcher(settings)
-        self.editorial = CurioAxiomEditorialSystem() if is_facts else ByteVexaEditorialSystem()
+        self.editorial = editorial_system_for(settings.channel_profile)
         self.verifier = FactVerifier() if is_facts else None
         self.planner = FactScriptPlanner(settings) if is_facts else PremiumScriptPlanner(settings)
         self.tts = EdgeTTSProvider(
@@ -53,6 +53,7 @@ class AutopilotPipeline:
             self.visuals,
             brand_name=settings.channel_display_name,
             facts_mode=is_facts,
+            channel_profile=settings.channel_profile,
         )
         self.renderer = FFmpegRenderer(settings.ffmpeg_binary, settings.ffprobe_binary)
         self.thumbnail = ThumbnailGenerator()
@@ -80,7 +81,7 @@ class AutopilotPipeline:
                 pass
 
         candidate, research = self._candidate_with_research(topic)
-        research = self.editorial.enrich(candidate, research)
+        research = self.editorial.enrich(candidate, research, chosen_format)
         if self.verifier:
             research = self.verifier.verify(research)
         plan = self.planner.create_plan(research, chosen_format)
@@ -212,21 +213,29 @@ class AutopilotPipeline:
                 scene_word_counts=scene_word_counts,
                 scene_labels=[scene.on_screen_text for scene in plan.scenes] if plan.scenes else None,
                 facts_style=self.settings.channel_profile == "curioaxiom",
+                channel_profile=self.settings.channel_profile,
             )
             thumbnail_path = self.thumbnail.create(
                 plan.thumbnail_text,
                 run_dir / "thumbnail.jpg",
                 title=plan.title,
                 brief=plan.thumbnail_brief,
+                brand_name=self.settings.channel_display_name,
             )
             result.video_path = video_path
             result.thumbnail_path = thumbnail_path
             result.status = "rendered"
 
-            if self.settings.enable_uploads:
+            if self.settings.enable_uploads and self.settings.youtube_token_file.exists():
                 result.youtube_video_id = self.uploader.upload(video_path, plan, thumbnail_path)
                 result.status = "uploaded"
                 self.state.record_run(result)
+            elif self.settings.enable_uploads:
+                result.status = "rendered"
+                result.notes.append(
+                    f"Video rendered successfully. To link YouTube for {self.settings.channel_display_name}, "
+                    f"run: python -m autopilot.cli auth-channel --profile {self.settings.channel_profile}"
+                )
             else:
                 result.notes.append("Video rendered but upload is disabled.")
         except Exception as exc:
@@ -240,10 +249,15 @@ class AutopilotPipeline:
         if topic:
             source_urls: list[str] = []
             lowered = topic.lower()
+            from autopilot.discovery import CHANNEL_EVERGREEN_TOPICS
+            for item in CHANNEL_EVERGREEN_TOPICS.get(self.settings.channel_profile, []):
+                t_low = item["title"].lower()
+                if t_low in lowered or lowered in t_low or any(w in lowered for w in t_low.split()[:3] if len(w) > 3):
+                    source_urls = list(item.get("urls", []))
+                    break
             if (
                 self.settings.channel_profile == "curioaxiom"
-                and "heat shield" in lowered
-                and "reentry" in lowered
+                and ("heat shield" in lowered or "reentry" in lowered)
             ):
                 source_urls = [
                     "https://www.nasa.gov/ames/core-area-of-expertise-entry-systems/",
@@ -301,7 +315,16 @@ class AutopilotPipeline:
 
         candidates = self.discovery.discover()
         if not candidates:
-            fallback = DEFAULT_FACT_TOPIC if self.settings.channel_profile == "curioaxiom" else DEFAULT_TOPIC
+            profile_fallbacks = {
+                "wondertales": "The Little Rabbit Who Lost His Hop",
+                "mokshavani": "Gayatri Mantra: Meaning and Divine Acoustic Power",
+                "apexstoic": "Marcus Aurelius: 7 Rules to Never Care What People Think",
+                "chronosenigma": "Göbekli Tepe: The 12,000-Year-Old Megalith That Defies History",
+                "empirepulse": "How Qatar Built Infinite Wealth with Zero Rivers or Farmland",
+                "curioaxiom": DEFAULT_FACT_TOPIC,
+                "bytevexa": DEFAULT_TOPIC,
+            }
+            fallback = profile_fallbacks.get(self.settings.channel_profile, DEFAULT_TOPIC)
             candidate = TopicCandidate(title=fallback, score=50, reason="Evergreen fallback.")
             return candidate, self.researcher.research(candidate)
 

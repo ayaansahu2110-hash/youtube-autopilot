@@ -1,13 +1,13 @@
-name: Daily YouTube Autopilot
+name: ByteVexa Autopilot
 
 on:
   schedule:
-    - cron: "30 6 * * *"  # 12:00 Asia/Kolkata
-    - cron: "30 12 * * *" # 18:00 Asia/Kolkata
+    - cron: "30 6 * * *"  # 12:00 Asia/Kolkata (Noon slot)
+    - cron: "30 12 * * *" # 18:00 Asia/Kolkata (Evening slot)
   workflow_dispatch:
     inputs:
       slot:
-        description: "Production slot"
+        description: "ByteVexa production slot"
         required: false
         default: "evening"
         type: choice
@@ -15,27 +15,40 @@ on:
           - morning
           - evening
           - all
+      topic:
+        description: "Optional commissioning-test topic override"
+        required: false
+        default: ""
+        type: string
 
 permissions:
   contents: write
 
 concurrency:
-  group: youtube-autopilot-daily
+  group: bytevexa-autopilot
   cancel-in-progress: false
 
 jobs:
   produce:
     runs-on: ubuntu-latest
     env:
+      CHANNEL_PROFILE: bytevexa
+      CHANNEL_DISPLAY_NAME: ByteVexa
+      EXPECTED_YOUTUBE_CHANNEL_ID: UC09G9D1CBuQBBWa7ZY8fRnQ
+      ARTIFACTS_DIR: artifacts
+      STATE_FILE: state/history.json
+      LEARNING_FILE: state/learning.json
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       GEMINI_MODEL: gemini-flash-latest
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
       YOUTUBE_CLIENT_SECRETS_B64: ${{ secrets.YOUTUBE_CLIENT_SECRETS_B64 }}
       YOUTUBE_TOKEN_B64: ${{ secrets.YOUTUBE_TOKEN_B64 }}
+      YOUTUBE_TOKEN_FILE: secrets/youtube_token.json
       ENABLE_UPLOADS: "true"
       UPLOAD_PRIVACY_STATUS: "public"
       ALLOW_PUBLIC_UPLOADS: "true"
+      SHORTS_PUBLIC: "true"
       AUTOPILOT_ENV: production
       SCHEDULE_TIMEZONE: Asia/Kolkata
     steps:
@@ -87,20 +100,30 @@ jobs:
           python - <<'PY'
           import base64, os, pathlib
           pathlib.Path('secrets/client_secret.json').write_bytes(base64.b64decode(os.environ['YOUTUBE_CLIENT_SECRETS_B64']))
-          pathlib.Path('secrets/youtube_token.json').write_bytes(base64.b64decode(os.environ['YOUTUBE_TOKEN_B64']))
+          pathlib.Path(os.environ['YOUTUBE_TOKEN_FILE']).write_bytes(base64.b64decode(os.environ['YOUTUBE_TOKEN_B64']))
           PY
+
+      - name: Verify OAuth and channel identity
+        if: env.READY == 'true'
+        run: python -m autopilot.cli verify-youtube
 
       - name: Produce scheduled videos with retry
         if: env.READY == 'true'
         shell: bash
+        env:
+          TEST_TOPIC: ${{ inputs.topic }}
         run: |
           set +e
           for attempt in 1 2 3; do
             echo "Production attempt $attempt of 3 for slot: $RUN_SLOT"
-            python -m autopilot.cli daily --live --slot "$RUN_SLOT"
+            if [ -n "$TEST_TOPIC" ]; then
+              python -m autopilot.cli run --topic "$TEST_TOPIC" --format short --render
+            else
+              python -m autopilot.cli daily --live --slot "$RUN_SLOT"
+            fi
             code=$?
             if [ "$code" -eq 0 ]; then
-              echo "Production completed successfully on attempt $attempt."
+              echo "ByteVexa production completed successfully on attempt $attempt."
               exit 0
             fi
             if [ "$attempt" -lt 3 ]; then
@@ -108,18 +131,18 @@ jobs:
               sleep 20
             fi
           done
-          echo "All production attempts failed."
+          echo "All ByteVexa production attempts failed."
           exit 1
 
       - name: Persist topic, analytics and learning history
         if: always() && env.READY == 'true'
         shell: bash
         run: |
-          git config user.name "youtube-autopilot-bot"
-          git config user.email "youtube-autopilot-bot@users.noreply.github.com"
+          git config user.name "bytevexa-autopilot-bot"
+          git config user.email "bytevexa-autopilot-bot@users.noreply.github.com"
           git add state/history.json state/learning.json 2>/dev/null || true
           if ! git diff --cached --quiet; then
-            git commit -m "chore: update autopilot learning history [skip ci]"
+            git commit -m "chore: update ByteVexa learning history [skip ci]"
             git pull --rebase origin main
             git push
           fi
@@ -128,6 +151,6 @@ jobs:
         if: always() && env.READY == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: youtube-autopilot-${{ github.run_id }}
+          name: bytevexa-${{ github.run_id }}
           path: artifacts/
           retention-days: 7

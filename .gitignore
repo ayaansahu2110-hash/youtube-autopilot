@@ -12,3 +12,7 @@ client_secret*.json
 *.mp4
 *.wav
 .DS_Store
+*.egg-info/
+.test-*
+scratch/
+logs/

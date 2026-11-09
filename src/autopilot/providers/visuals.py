@@ -19,6 +19,8 @@ class PexelsVideoProvider:
         *,
         vertical: bool,
         limit: int,
+        negative_keywords: list[str] | None = None,
+        positive_keywords: list[str] | None = None,
     ) -> list[VisualAsset]:
         if not self.api_key:
             return []
@@ -26,7 +28,13 @@ class PexelsVideoProvider:
         assets: list[VisualAsset] = []
         used_ids = self._used_ids
         for scene_index, query in enumerate(queries[:limit]):
-            video = self._search_best(query, vertical=vertical, used_ids=used_ids)
+            video = self._search_best(
+                query,
+                vertical=vertical,
+                used_ids=used_ids,
+                negative_keywords=negative_keywords,
+                positive_keywords=positive_keywords,
+            )
             if not video:
                 continue
             used_ids.add(int(video["id"]))
@@ -55,7 +63,15 @@ class PexelsVideoProvider:
             )
         return assets
 
-    def _search_best(self, query: str, *, vertical: bool, used_ids: set[int]) -> dict | None:
+    def _search_best(
+        self,
+        query: str,
+        *,
+        vertical: bool,
+        used_ids: set[int],
+        negative_keywords: list[str] | None = None,
+        positive_keywords: list[str] | None = None,
+    ) -> dict | None:
         try:
             response = httpx.get(
                 self.API_URL,
@@ -79,23 +95,39 @@ class PexelsVideoProvider:
         if not videos:
             return None
 
-        def score(video: dict) -> tuple[int, int, int]:
+        negs = [n.lower().strip() for n in (negative_keywords or []) if n.strip()]
+        filtered = []
+        for v in videos:
+            url_slug = str(v.get("url") or "").lower()
+            if any(neg in url_slug for neg in negs):
+                continue
+            filtered.append(v)
+
+        candidates = filtered if filtered else videos
+        pos = [p.lower().strip() for p in (positive_keywords or []) if p.strip()]
+
+        def score(item: tuple[int, dict]) -> tuple[int, int, int, int, int]:
+            rank, video = item
+            url_slug = str(video.get("url") or "").lower()
+            pos_matches = sum(2 for p in pos if p in url_slug)
             duration = int(video.get("duration") or 0)
             files = video.get("video_files") or []
             best_pixels = 0
             orientation_ok = False
-            for item in files:
-                width = int(item.get("width") or 0)
-                height = int(item.get("height") or 0)
+            for f in files:
+                width = int(f.get("width") or 0)
+                height = int(f.get("height") or 0)
                 if width and height:
                     best_pixels = max(best_pixels, width * height)
                     if (height >= width) == vertical:
                         orientation_ok = True
             duration_score = 1 if 3 <= duration <= 25 else 0
-            return (1 if orientation_ok else 0, duration_score, best_pixels)
+            rank_score = max(0, 30 - rank)
+            return (1 if orientation_ok else 0, pos_matches, rank_score, duration_score, best_pixels)
 
-        videos.sort(key=score, reverse=True)
-        return videos[0]
+        ranked = list(enumerate(candidates))
+        ranked.sort(key=score, reverse=True)
+        return ranked[0][1]
 
     @staticmethod
     def _best_file(video: dict, *, vertical: bool) -> str | None:
@@ -107,9 +139,11 @@ class PexelsVideoProvider:
             width = int(item.get("width") or 0)
             height = int(item.get("height") or 0)
             orientation_ok = height >= width if vertical else width >= height
-            pixels = width * height
-            oversize_penalty = abs(max(width, height) - 2160)
-            return (1 if orientation_ok else 0, pixels, -oversize_penalty)
+            max_dim = max(width, height)
+            # Perfect match for YouTube Full HD is max dimension 1920 (1080x1920 or 1920x1080)
+            # Avoid downloading bloated 4K/UHD (3840x2160) files that take minutes to download
+            distance_from_1080p = abs(max_dim - 1920)
+            return (1 if orientation_ok else 0, -distance_from_1080p, width * height)
 
         files.sort(key=score, reverse=True)
         return str(files[0]["link"])
