@@ -1,6 +1,54 @@
 {
-  "generated_at": "2026-11-09T11:34:00.779518+00:00",
+  "generated_at": "2026-11-09T12:08:46.102298+00:00",
   "competitors": [
+    {
+      "channel": "Dan Martell",
+      "subscribers": 3160000,
+      "channel_views": 425142058,
+      "video_count": 3849,
+      "high_performing_recent_videos": [
+        {
+          "title": "Anyone can start a business in less than 60 seconds with GrokBot",
+          "views": 36079,
+          "likes": 1217,
+          "comments": 19,
+          "published_at": "2026-11-06T16:03:18Z",
+          "description_excerpt": "Anyone can start a business in less than 60 seconds with GrokBot"
+        },
+        {
+          "title": "Leave things better than you found it",
+          "views": 22810,
+          "likes": 828,
+          "comments": 6,
+          "published_at": "2026-11-05T22:01:59Z",
+          "description_excerpt": "Leave things better than you found it"
+        },
+        {
+          "title": "Which CEO are you?",
+          "views": 19007,
+          "likes": 693,
+          "comments": 10,
+          "published_at": "2026-11-05T16:02:52Z",
+          "description_excerpt": "Which CEO are you?"
+        },
+        {
+          "title": "Why I get my haircut at work",
+          "views": 13413,
+          "likes": 417,
+          "comments": 12,
+          "published_at": "2026-11-07T15:02:09Z",
+          "description_excerpt": "Why I get my haircut at work @al_clipone"
+        },
+        {
+          "title": "You're either a dictator or a doormat",
+          "views": 8797,
+          "likes": 421,
+          "comments": 4,
+          "published_at": "2026-11-06T21:02:29Z",
+          "description_excerpt": "You're either a dictator or a doormat"
+        }
+      ]
+    },
     {
       "channel": "Nate Herk | AI Automation",
       "subscribers": 1120000,
@@ -9,8 +57,8 @@
       "high_performing_recent_videos": [
         {
           "title": "Every AI Business Ranked from Worst to Best",
-          "views": 88184,
-          "likes": 1137,
+          "views": 88281,
+          "likes": 1140,
           "comments": 96,
           "published_at": "2026-11-05T10:13:40Z",
           "description_excerpt": "FREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=ai-business-ranked-from-worst-to-best&sl=yt_ai-business-ranked-from-worst-to-best\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=ai-business-ranke"
@@ -25,8 +73,8 @@
         },
         {
           "title": "Do people say please to AI?",
-          "views": 7069,
-          "likes": 147,
+          "views": 7108,
+          "likes": 148,
           "comments": 8,
           "published_at": "2026-11-06T14:01:00Z",
           "description_excerpt": "I asked people at Oracle AI World if they say please to AI. Do you?"
@@ -41,7 +89,7 @@
         },
         {
           "title": "Would you let AI text for you for a week?",
-          "views": 4454,
+          "views": 4461,
           "likes": 77,
           "comments": 1,
           "published_at": "2026-11-05T14:01:13Z",
@@ -57,16 +105,16 @@
       "high_performing_recent_videos": [
         {
           "title": "AI News: New ChatGPT & Google Models (14 Updates Worth Knowing)",
-          "views": 112943,
-          "likes": 2088,
+          "views": 113148,
+          "likes": 2090,
           "comments": 147,
           "published_at": "2026-11-06T18:20:31Z",
           "description_excerpt": "See what Optimizely’s Virtual Teammates can automate for you at http://optimizely.com/mattwolfe\n\nThis week’s AI news covers OpenAI’s GPT-Image 2.6, Google Gemini Omni 1.2 Flash, and the latest AI tools for creating images, generating videos, and getting things done. Watch demos of ChatGPT’s animated GIF creation and image editing, Google’s free AI "
         },
         {
           "title": "How I Get Claude To Edit My Videos (Step-By-Step)",
-          "views": 86077,
-          "likes": 1393,
+          "views": 86187,
+          "likes": 1394,
           "comments": 123,
           "published_at": "2026-11-04T16:40:16Z",
           "description_excerpt": "Try vidIQ for only $1 https://vidiq.com/mattwolfe/\n\nLearn how to edit videos with Claude AI, work with Premiere Pro, and turn your footage into short-form content.\n\nIn this guide, I walk through how to use Claude to help with video editing, from working with your existing footage to creating clips for Shorts and Reels. We’ll explore how Claude fits"
@@ -81,87 +129,25 @@
         },
         {
           "title": "Claude Code Just Called My Phone",
-          "views": 22113,
-          "likes": 707,
+          "views": 22207,
+          "likes": 709,
           "comments": 19,
           "published_at": "2026-11-07T17:00:37Z",
           "description_excerpt": "Your AI agent can now call you when it needs help 🤯\n\nHere's how I'm using it with Claude Code to edit my videos:\n\n1. If it needs a creative decision, it calls my phone and asks.\n2. If a render finishes, it just sends me a text.\n3. If it doesn't need my input, it keeps working without interrupting me.\n\nNo more AI agents sitting in a terminal waiting"
         },
         {
           "title": "That is Some Crazy Fabric",
-          "views": 15280,
-          "likes": 854,
+          "views": 15306,
+          "likes": 853,
           "comments": 70,
           "published_at": "2026-11-07T07:36:33Z",
           "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
-        }
-      ]
-    },
-    {
-      "channel": "AI Search",
-      "subscribers": 773000,
-      "channel_views": 77936654,
-      "video_count": 497,
-      "high_performing_recent_videos": [
-        {
-          "title": "AI is reverse engineering everything",
-          "views": 1093759,
-          "likes": 22901,
-          "comments": 3716,
-          "published_at": "2026-10-06T03:36:24Z",
-          "description_excerpt": "How AI is used to mod games. Pass through mod, rebuilding in rust, porting mechanics. Claude Opus 5.5 game mod. Thanks to our sponsor Runway. https://runwayml.com/aisearch-oct \nUse code MKTG50 for 50% off any paid plan for the 1st month\n\n#ai #aitools #gaming #ainews #singularity \n\nResources\nhttps://github.com/rehan-remade/universal-modder\nhttps://g"
-        },
-        {
-          "title": "Deepseek strikes again",
-          "views": 1000274,
-          "likes": 11244,
-          "comments": 1468,
-          "published_at": "2026-10-23T03:29:27Z",
-          "description_excerpt": "New Deepseek model. Deepseek V4.1 Flash 1017 and DeepInfer review. Thanks to our sponsor Higgsfield. Try it today https://higgsfield.ai/s/theaisearch-ZsWXGm\n\n#ainews #ai #agi #singularity #llm #aitools\n\nDeepseek V4.1 1017 https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017\nDeepInfer https://github.com/deepseek-ai/DeepInfer\nAlso see Deepseek"
-        },
-        {
-          "title": "Quantum breakthrough, Gemini 4 Argon, MOSS Image, KLING 4, OpenAI spy, Muse Wonder: AI NEWS",
-          "views": 588139,
-          "likes": 7679,
-          "comments": 630,
-          "published_at": "2026-10-18T03:30:33Z",
-          "description_excerpt": "HUGE AI NEWS: Gemini 4 Argon, Muse Wonder, Drama 3, MOSS Image, Krea 3, KLING 4, Flux 3 & more. Thanks to our sponsor Luma. Try it today https://lumalabs.ai/aisearch-oct2\n\n#ai #ainews #aitools #aivideo #agi #singularity \n\nDrama 3 https://fish.audio/drama-3/\nMatrix-Game 4.0 https://matrix-game-v4-0.github.io/page/\nGaussiAnimate https://cookmaker.cn/"
-        },
-        {
-          "title": "AI finally sleeps, Gemini 4 Carbon, ETH cracked, energy-based models, Anthropic IPO: AI NEWS",
-          "views": 471914,
-          "likes": 7585,
-          "comments": 707,
-          "published_at": "2026-11-01T03:27:10Z",
-          "description_excerpt": "HUGE AI NEWS: Gemini 4 Carbon, Genie 4, GPT 6.1 Terra, Nanbeige 4.3, Anthropic IPO, MotionBricks & more. Thanks to our sponsor Luma. Try it today https://lumalabs.ai/aisearch-oct4\n\n#ai #ainews #aitools #aivideo #agi #singularity \n\n00:00 AI news intro\n01:10 MotionBricks\n03:11 Idol\n04:27 SceneBloom\n05:48 Unlimited OCR 2\n06:57 UniAction\n08:00 AutoSwar"
-        },
-        {
-          "title": "New top local AI image generator is here!",
-          "views": 416762,
-          "likes": 7782,
-          "comments": 661,
-          "published_at": "2026-10-20T03:24:08Z",
-          "description_excerpt": "MOSS Image review & tutorial. How to use MOSS Image in ComfyUI. How to edit images with MOSS. Thanks to our sponsor Higgsfield. Try it today https://higgsfield.ai/s/theaisearch-rxYPHC\n\n#ai #aiart #imagegenerator #aitools #ainews #agi\n\nhttps://huggingface.co/Comfy-Org/MOSS-Image\nhttps://huggingface.co/lodestones/MOSS-Image-SFT-8-steps-dmd/blob/main/"
         }
       ]
     }
   ],
   "own_comments": [],
   "own_analytics": [
-    {
-      "title": "Microsoft Copilot Team Cuts: What This Means for Your AI Agents",
-      "format": "short",
-      "metrics": {
-        "views": 40.0,
-        "estimatedMinutesWatched": 8.0,
-        "averageViewDuration": 37.0,
-        "averageViewPercentage": 68.4,
-        "likes": 1.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
     {
       "title": "Microsoft Kills Outlook AI Themes",
       "format": "short",
