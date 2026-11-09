@@ -107,8 +107,6 @@ foreach ($ch in $channels) {
         Set-RepoSecret $ch.Secret $b64 $gh
     }
 }
-    Set-RepoSecret $ch.Secret $b64 $gh
-}
 
 Step "Setting Repository Variables for Production"
 Set-RepoVariable "GEMINI_MODEL" "gemini-flash-latest" $gh

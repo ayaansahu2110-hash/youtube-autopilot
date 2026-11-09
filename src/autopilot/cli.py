@@ -52,7 +52,7 @@ ALL_CHANNELS = [
     ("apexstoic", "ApexStoic", "UChPKS0EQQJPnMReTR-2pcvw", Path("secrets/youtube_token_apexstoic.json")),
     ("chronosenigma", "ChronosEnigma", "UCkskXfpnzm8lQnZGHOVMfQQ", Path("secrets/youtube_token_chronosenigma.json")),
     ("empirepulse", "EmpirePulse", "UC6rE9fs_Os6NSXdTN1oBNdw", Path("secrets/youtube_token_empirepulse.json")),
-    ("astrapulse", "AstraPulse", None, Path("secrets/youtube_token_astrapulse.json")),
+    ("astrapulse", "AstraPulse", "UC9-C8N7q2m8nax0kYWFy9og", Path("secrets/youtube_token_astrapulse.json")),
 ]
 
 

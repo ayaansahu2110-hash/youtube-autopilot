@@ -34,6 +34,7 @@ jobs:
     env:
       CHANNEL_PROFILE: astrapulse
       CHANNEL_DISPLAY_NAME: AstraPulse
+      EXPECTED_YOUTUBE_CHANNEL_ID: UC9-C8N7q2m8nax0kYWFy9og
       ARTIFACTS_DIR: artifacts/astrapulse
       STATE_FILE: state/astrapulse/history.json
       LEARNING_FILE: state/astrapulse/learning.json
@@ -153,3 +154,4 @@ jobs:
           name: astrapulse-${{ github.run_id }}
           path: artifacts/astrapulse/
           retention-days: 7
+
