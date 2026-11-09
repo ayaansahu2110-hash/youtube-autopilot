@@ -1,13 +1,19 @@
 from pathlib import Path
-import pytest
-
 from autopilot.config import Settings
 from autopilot.cli import _settings_for_format
-from autopilot.facts import FactCategoryRouter, FactScriptPlanner, FactTopicDiscovery, FactVerifier
+from autopilot.facts import (
+    CurioAxiomEditorialSystem,
+    FactCategoryRouter,
+    FactScriptPlanner,
+    FactVerifier,
+    verified_curio_seed,
+)
 from autopilot.models import ResearchPack, ResearchSource, SceneBeat, TopicCandidate, VideoPlan
 from autopilot.models import VisualAsset
 from autopilot.render import FFmpegRenderer
 from autopilot.pipeline import AutopilotPipeline
+from autopilot.providers.llm import ScriptPlanner
+from autopilot.youtube import YouTubeUploader
 
 
 def test_curioaxiom_defaults_are_isolated() -> None:
@@ -31,6 +37,13 @@ def test_curioaxiom_public_short_setting_does_not_publish_long_form() -> None:
     assert long_form.allow_public_uploads is False
 
 
+def test_youtube_duration_parser_supports_short_and_long_videos() -> None:
+    assert YouTubeUploader._duration_seconds("PT59S") == 59
+    assert YouTubeUploader._duration_seconds("PT1M1S") == 61
+    assert YouTubeUploader._duration_seconds("PT1H2M3S") == 3723
+    assert YouTubeUploader._duration_seconds("not-a-duration") == 0
+
+
 def test_fact_category_router_handles_f1() -> None:
     assert FactCategoryRouter().route("Why Formula 1 brakes glow red") == "f1_automotive"
 
@@ -49,12 +62,252 @@ def test_fact_verifier_rewards_authoritative_diverse_sources() -> None:
     assert any(note.startswith("2 category-authoritative") for note in verified.verification_notes)
 
 
+def test_verified_curio_seed_is_authoritative_and_never_reuses_an_excluded_topic() -> None:
+    first = verified_curio_seed()
+    assert first is not None
+    candidate, research = first
+    verified = FactVerifier().verify(research)
+    assert candidate.title == "Why Astronauts Float in Orbit"
+    assert verified.confidence_score >= 65
+    next_seed = verified_curio_seed(excluded_topics=[candidate.title])
+    assert next_seed is not None
+    assert next_seed[0].title != candidate.title
+    semantic_next_seed = verified_curio_seed(excluded_topics=["The Physics of Falling Forever"])
+    assert semantic_next_seed is not None
+    assert semantic_next_seed[0].title != candidate.title
+
+
+def test_verified_curio_reserve_continues_after_original_topics_are_used() -> None:
+    seeded = verified_curio_seed(
+        excluded_topics=[
+            "Why Astronauts Float in Orbit",
+            "Why Ocean Water Is Salty",
+            "Why Heat Shields Burn on Purpose",
+        ]
+    )
+    assert seeded is not None
+    candidate, research = seeded
+    assert candidate.title == "Why the Sky Is Blue but Sunsets Are Red"
+    assert len(research.sources) == 2
+    assert FactVerifier().verify(research).confidence_score >= 65
+
+
+def test_curated_fact_category_survives_editorial_enrichment() -> None:
+    seeded = verified_curio_seed(
+        excluded_topics=[
+            "Why Astronauts Float in Orbit",
+            "Why Ocean Water Is Salty",
+            "Why Heat Shields Burn on Purpose",
+        ]
+    )
+    assert seeded is not None
+    candidate, research = seeded
+    enriched = CurioAxiomEditorialSystem().enrich(candidate, research)
+    assert enriched.category == "science"
+    assert FactVerifier().verify(enriched).confidence_score >= 65
+
+
+def test_curated_reserve_recovers_after_previous_topics_are_exhausted() -> None:
+    used = [
+        "Why Astronauts Float in Orbit",
+        "Why Ocean Water Is Salty",
+        "Why Heat Shields Burn on Purpose",
+        "Why the Sky Is Blue but Sunsets Are Red",
+        "Why the Deep Ocean Can Crush a Submarine",
+        "Why Lightning Is Hotter Than the Sun's Surface",
+        "Why the Moon Moves Earth's Oceans",
+        "Why the Moon Changes Shape Without Changing Its Shape",
+    ]
+    first = verified_curio_seed(excluded_topics=used)
+    assert first is not None
+    assert first[0].title == "Why Jet Trails Sometimes Linger for Hours"
+    assert FactVerifier().verify(first[1]).confidence_score >= 65
+    second = verified_curio_seed(excluded_topics=[*used, first[0].title])
+    assert second is not None
+    assert second[0].title == "Why a Hurricane Has a Calm Eye"
+    assert FactVerifier().verify(second[1]).confidence_score >= 65
+
+
+def test_curated_reserve_extends_with_independent_october_sources() -> None:
+    used = [
+        "Why Astronauts Float in Orbit",
+        "Why Ocean Water Is Salty",
+        "Why Heat Shields Burn on Purpose",
+        "Why the Sky Is Blue but Sunsets Are Red",
+        "Why the Deep Ocean Can Crush a Submarine",
+        "Why Lightning Is Hotter Than the Sun's Surface",
+        "Why the Moon Moves Earth's Oceans",
+        "Why the Moon Changes Shape Without Changing Its Shape",
+        "Why Jet Trails Sometimes Linger for Hours",
+        "Why a Hurricane Has a Calm Eye",
+        "Why Venus Is Hotter Than Mercury",
+        "Why Rivers Carve S-Bends",
+        "Why Glacier Ice Looks Blue",
+        "Why Auroras Glow in Different Colors",
+        "Why Geysers Erupt Instead of Flowing Steadily",
+        "Why a Compass Does Not Point to True North",
+        "Why Cooling Lava Forms Stone Columns",
+    ]
+    fog = verified_curio_seed(excluded_topics=used)
+    assert fog is not None
+    assert fog[0].title == "Why Fog Hugs the Ground"
+    assert {source.publisher for source in fog[1].sources} == {
+        "NOAA NESDIS",
+        "Rocky Mountain National Park",
+    }
+    assert FactVerifier().verify(fog[1]).confidence_score >= 65
+
+    glacier = verified_curio_seed(excluded_topics=[*used, fog[0].title])
+    assert glacier is not None
+    assert glacier[0].title == "Why Glaciers Carve U-Shaped Valleys"
+    assert len(glacier[1].sources) == 4
+    assert {source.publisher for source in glacier[1].sources} == {
+        "U.S. Geological Survey",
+        "U.S. National Park Service",
+    }
+    assert FactVerifier().verify(glacier[1]).confidence_score >= 65
+
+    leaves = verified_curio_seed(excluded_topics=[*used, fog[0].title, glacier[0].title])
+    assert leaves is not None
+    assert leaves[0].title == "Why Autumn Leaves Reveal Hidden Colors"
+    assert {source.publisher for source in leaves[1].sources} == {
+        "USDA Forest Service",
+        "Rocky Mountain National Park",
+    }
+    assert FactVerifier().verify(leaves[1]).confidence_score >= 65
+
+    mars = verified_curio_seed(
+        excluded_topics=[*used, fog[0].title, glacier[0].title, leaves[0].title]
+    )
+    assert mars is not None
+    assert mars[0].title == "Why Mars Has Blue Sunsets"
+    assert len(mars[1].sources) == 4
+    assert {source.publisher for source in mars[1].sources} == {
+        "NASA Science",
+        "NASA Jet Propulsion Laboratory",
+        "Smithsonian National Air and Space Museum",
+        "European Space Agency",
+    }
+    assert FactVerifier().verify(mars[1]).confidence_score >= 65
+
+
+def test_fact_planner_repairs_missing_title_options_without_changing_story(monkeypatch) -> None:
+    narration = "Sinking air clears the eye."
+    plan = VideoPlan(
+        topic="Hurricane eye",
+        angle="science",
+        format="short",
+        hook="The calm is temporary.",
+        script=" ".join([narration] * 22),
+        title="Why a Hurricane Has a Calm Eye",
+        title_options=["Why a Hurricane Has a Calm Eye"],
+        description="Test",
+        thumbnail_brief="Storm eye from above",
+        scenes=[SceneBeat(narration=narration, visual_query="hurricane eye") for _ in range(22)],
+    )
+    monkeypatch.setattr(
+        "autopilot.providers.premium_planner.PremiumScriptPlanner.create_plan",
+        lambda self, research, video_format: plan,
+    )
+    planner = FactScriptPlanner(Settings(channel_profile="curioaxiom"))
+    planner._generate_json = lambda prompt: {
+        "titles": [
+            "What Happens Inside a Hurricane Eye?",
+            "The Calm Center of a Hurricane",
+            "Why a Hurricane Has a Calm Eye",
+        ]
+    }
+
+    result = planner.create_plan(ResearchPack(topic="Hurricane eye"), "short")
+
+    assert len(result.title_options) == 3
+    assert all(len(title) < 50 for title in result.title_options)
+    assert result.title == "Why a Hurricane Has a Calm Eye"
+    assert result.script == " ".join([narration] * 22)
+
+
 def test_fact_editing_splits_long_visual_holds() -> None:
     asset = VisualAsset(local_path=Path("proof.jpg"), asset_kind="image", scene_index=0)
     timeline = FFmpegRenderer._rapid_timeline([(asset, 7.2)], max_seconds=2.65)
     assert len(timeline) == 3
     assert all(seconds <= 2.65 for _, seconds in timeline)
     assert abs(sum(seconds for _, seconds in timeline) - 7.2) < 0.001
+
+
+def test_short_voice_normalization_only_allows_mild_speedup(tmp_path, monkeypatch) -> None:
+    renderer = FFmpegRenderer()
+    audio = tmp_path / "voice.mp3"
+    audio.write_bytes(b"original")
+    calls = []
+
+    def fake_run(command, **kwargs):
+        calls.append(command)
+        Path(command[-1]).write_bytes(b"normalized")
+
+    monkeypatch.setattr("autopilot.render.subprocess.run", fake_run)
+    monkeypatch.setattr(renderer, "probe_duration", lambda path: 64.9)
+
+    assert renderer.normalize_short_voice_duration(audio, 71.5) == 64.9
+    assert any("atempo=1.108527" in part for part in calls[0])
+    assert audio.read_bytes() == b"normalized"
+
+    calls.clear()
+    assert renderer.normalize_short_voice_duration(audio, 80.0) == 80.0
+    assert calls == []
+
+
+def test_short_voice_at_old_boundary_keeps_padding_margin(tmp_path, monkeypatch) -> None:
+    renderer = FFmpegRenderer()
+    audio = tmp_path / "voice.mp3"
+    audio.write_bytes(b"original")
+
+    def fake_run(command, **kwargs):
+        assert any("atempo=1.007752" in part for part in command)
+        Path(command[-1]).write_bytes(b"normalized")
+
+    monkeypatch.setattr("autopilot.render.subprocess.run", fake_run)
+    monkeypatch.setattr(renderer, "probe_duration", lambda path: 64.6)
+    assert renderer.normalize_short_voice_duration(audio, 65.0) == 64.6
+
+
+def test_planner_recovers_when_provider_omits_angle() -> None:
+    planner = ScriptPlanner(Settings(channel_profile="curioaxiom", gemini_api_key="test"))
+    research = ResearchPack(topic="Why Glaciers Carve U-Shaped Valleys")
+    scenes = [
+        {
+            "narration": " ".join([f"supported{index}"] * 40),
+            "visual_query": f"glacier valley evidence {index}",
+            "purpose": "evidence",
+            "visual_mode": "stock",
+            "source_url": "",
+            "on_screen_text": "ICE CARVES ROCK",
+            "exact_visual_subject": f"moving glacier and valley wall {index}",
+            "camera_and_lighting": "documentary daylight",
+            "generator_prompt": f"real glacier erosion scene {index}",
+            "shot_type_camera_movement": f"distinct camera move {index}",
+            "sfx_audio_cue": "restrained ice movement",
+        }
+        for index in range(30)
+    ]
+    provider_json = {
+        "hook": "Moving ice can widen an entire valley.",
+        "script": "",
+        "title": "How Ice Carves a Valley",
+        "description": "A sourced explanation of glacial erosion.",
+        "tags": ["glaciers", "geology"],
+        "thumbnail_brief": "Glacier above a U-shaped valley",
+        "thumbnail_text": "ICE CARVES VALLEYS",
+        "visual_queries": [],
+        "scenes": scenes,
+    }
+    planner._generate_json = lambda prompt: provider_json.copy()
+    planner._improve_plan = lambda research, video_format, draft: draft
+
+    plan = planner.create_plan(research, "long")
+
+    assert plan.angle == provider_json["hook"]
+    assert plan.topic == research.topic
+    assert len(plan.scenes) == 30
 
 
 def test_fact_prompt_requires_zero_mismatch_storyboards() -> None:
@@ -180,14 +433,76 @@ def test_fact_short_duration_guard_preserves_all_scenes() -> None:
     assert all(len(scene.narration.split()) >= 3 for scene in plan.scenes)
 
 
-def test_no_unverified_fact_fallback(tmp_path: Path) -> None:
-    pipeline = AutopilotPipeline(Settings(channel_profile="curioaxiom", artifacts_dir=tmp_path))
+def test_fact_short_rewrite_failure_preserves_original_for_quality_gate() -> None:
+    scenes = [
+        SceneBeat(narration="one two three four five six seven eight", visual_query=f"literal shot {i}")
+        for i in range(22)
+    ]
+    plan = VideoPlan(
+        topic="Ocean salt",
+        angle="science",
+        format="short",
+        hook="Why salty?",
+        script=" ".join(scene.narration for scene in scenes),
+        title="Why Is The Ocean Salty?",
+        description="Test",
+        thumbnail_brief="Ocean cross-section",
+        scenes=scenes,
+    )
+    original = [scene.narration for scene in plan.scenes]
+    planner = FactScriptPlanner(Settings(channel_profile="curioaxiom"))
+    planner._generate_json = lambda prompt: {"narrations": ["too short"]}
+
+    planner._fit_short_narration(plan, target_words=145)
+
+    assert [scene.narration for scene in plan.scenes] == original
+    assert plan.script == " ".join(original)
+
+
+def test_fact_short_rewrite_expands_underlength_narration_without_new_scenes() -> None:
+    scenes = [
+        SceneBeat(narration="Ice crystals linger.", visual_query=f"distinct cloud shot {i}")
+        for i in range(22)
+    ]
+    plan = VideoPlan(
+        topic="Contrails",
+        angle="science",
+        format="short",
+        hook="Why linger?",
+        script=" ".join(scene.narration for scene in scenes),
+        title="Why Jet Trails Linger",
+        description="Test",
+        thumbnail_brief="Cloud close-up",
+        scenes=scenes,
+    )
+    planner = FactScriptPlanner(Settings(channel_profile="curioaxiom"))
+    planner._generate_json = lambda prompt: {
+        "narrations": ["Humid air lets ice crystals linger."] * 22
+    }
+
+    planner._fit_short_narration(plan, target_words=145)
+
+    assert len(plan.scenes) == 22
+    assert len(plan.script.split()) == 132
+    assert all(scene.narration == "Humid air lets ice crystals linger." for scene in plan.scenes)
+
+
+def test_failed_live_research_uses_only_verified_fact_reserve(tmp_path: Path) -> None:
+    pipeline = AutopilotPipeline(Settings(
+        channel_profile="curioaxiom",
+        artifacts_dir=tmp_path,
+        state_file=tmp_path / "history.json",
+        learning_file=tmp_path / "learning.json",
+    ))
     candidate = TopicCandidate(title="Prompting is Not Programming", score=90, reason="news")
     pipeline.discovery.discover = lambda: [candidate]
     pipeline.planner.choose_topic = lambda candidates: candidate
     pipeline.researcher.research = lambda candidate: ResearchPack(topic=candidate.title)
-    with pytest.raises(RuntimeError, match="No eligible facts topic"):
-        pipeline._candidate_with_research(None)
+    fallback_candidate, fallback_research = pipeline._candidate_with_research(None)
+    assert fallback_candidate.title != candidate.title
+    verified = FactVerifier().verify(fallback_research)
+    assert verified.confidence_score >= 65
+    assert len(fallback_research.sources) >= pipeline.settings.min_research_sources
 
 
 def test_facts_fallback_uses_cached_official_feed(tmp_path: Path) -> None:
@@ -200,3 +515,37 @@ def test_facts_fallback_uses_cached_official_feed(tmp_path: Path) -> None:
     assert pipeline.discovery._hacker_news("space") == [{"title": "NASA science"}]
     pipeline.discovery._hacker_news("engineering")
     assert calls == ["https://www.nasa.gov/feed/"]
+
+
+def test_fact_editor_preserves_short_and_long_length_contract():
+    planner = FactScriptPlanner(Settings(channel_profile="curioaxiom"))
+    prompts = []
+    planner._generate_json = lambda prompt: prompts.append(prompt) or {}
+    research = ResearchPack(topic="Cooling lava", category="geography")
+    planner._improve_plan(research, "long", {})
+    planner._improve_plan(research, "short", {})
+    assert "FINAL FORMAT: long" in prompts[0]
+    assert "1,200-1,650 spoken words and 30-38 distinct scenes" in prompts[0]
+    assert "FINAL FORMAT: short" in prompts[1]
+    assert "95-145 spoken words and 20-24 distinct scenes" in prompts[1]
+
+
+def test_curio_long_contract_counts_scene_narration() -> None:
+    valid = {
+        "scenes": [
+            {"narration": " ".join(["verified"] * 40)}
+            for _ in range(30)
+        ]
+    }
+    assert ScriptPlanner._curio_long_contract_ok(valid)
+
+    too_short = {"scenes": valid["scenes"][:-1]}
+    assert not ScriptPlanner._curio_long_contract_ok(too_short)
+
+    thin = {
+        "scenes": [
+            {"narration": " ".join(["verified"] * 10)}
+            for _ in range(30)
+        ]
+    }
+    assert not ScriptPlanner._curio_long_contract_ok(thin)

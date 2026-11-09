@@ -1,6 +1,22 @@
 name: CurioAxiom Facts Pipeline
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/curioaxiom.yml"
+      - "src/autopilot/facts.py"
+      - "src/autopilot/pipeline.py"
+      - "src/autopilot/cli.py"
+      - "src/autopilot/config.py"
+      - "src/autopilot/models.py"
+      - "src/autopilot/quality.py"
+      - "src/autopilot/discovery.py"
+      - "src/autopilot/research.py"
+      - "src/autopilot/render.py"
+      - "src/autopilot/providers/llm.py"
+      - "src/autopilot/providers/premium_planner.py"
+      - "src/autopilot/providers/tts.py"
   schedule:
     - cron: "35 6 * * *"   # 12:05 Asia/Kolkata (Noon slot)
     - cron: "35 12 * * *"  # 18:05 Asia/Kolkata (Evening slot)
@@ -11,7 +27,7 @@ on:
         required: false
         default: "evening"
         type: choice
-        options: [morning, midday, evening, all]
+        options: [morning, evening, all]
       topic:
         description: "Optional commissioning-test topic override"
         required: false
@@ -63,7 +79,13 @@ jobs:
           elif [ "${{ github.event.schedule }}" = "35 6 * * *" ]; then
             echo "RUN_SLOT=morning" >> "$GITHUB_ENV"
           else
+            # Safe recovery for a reviewed push: quota checks prevent duplicates.
             echo "RUN_SLOT=evening" >> "$GITHUB_ENV"
+          fi
+          # User-approved October 10 recovery; normal daily limits resume afterward.
+          if [ "$(TZ=Asia/Kolkata date +%F)" = "2026-10-10" ]; then
+            echo "SHORTS_PER_DAY=4" >> "$GITHUB_ENV"
+            echo "RUN_SLOT=all" >> "$GITHUB_ENV"
           fi
       - name: Preflight isolated CurioAxiom secrets
         shell: bash
@@ -91,7 +113,7 @@ jobs:
           pathlib.Path('secrets/client_secret.json').write_bytes(base64.b64decode(os.environ['YOUTUBE_CLIENT_SECRETS_B64']))
           pathlib.Path('secrets/youtube_token_curioaxiom.json').write_bytes(base64.b64decode(os.environ['YOUTUBE_TOKEN_B64']))
           PY
-      - name: Verify CurioAxiom OAuth and channel identity
+      - name: Verify CurioAxiom OAuth and channel identity (transient API retry)
         if: env.READY == 'true'
         run: python -m autopilot.cli verify-youtube
       - name: Produce verified facts (public Shorts & alternate-day Longs)

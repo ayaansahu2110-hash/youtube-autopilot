@@ -1,4 +1,5 @@
 import uuid
+from difflib import SequenceMatcher
 from pathlib import Path
 
 from autopilot.captions import write_srt
@@ -10,6 +11,7 @@ from autopilot.facts import (
     FactScriptPlanner,
     FactTopicDiscovery,
     FactVerifier,
+    verified_curio_seed,
 )
 from autopilot.models import PipelineRun, ResearchPack, ResearchSource, TopicCandidate
 from autopilot.providers.hybrid_visuals import HybridVisualDirector
@@ -25,7 +27,6 @@ from autopilot.youtube import YouTubeUploader
 
 
 DEFAULT_TOPIC = "A useful AI workflow most people are underusing"
-DEFAULT_FACT_TOPIC = "Why airplane windows are rounded"
 
 
 class AutopilotPipeline:
@@ -47,6 +48,8 @@ class AutopilotPipeline:
             rate=settings.edge_tts_rate,
             pitch=settings.edge_tts_pitch,
             volume=settings.edge_tts_volume,
+            gemini_api_key=settings.gemini_api_key,
+            ffmpeg_binary=settings.ffmpeg_binary,
         )
         self.visuals = PexelsVideoProvider(settings.pexels_api_key)
         self.hybrid_visuals = HybridVisualDirector(
@@ -66,6 +69,7 @@ class AutopilotPipeline:
         topic: str | None = None,
         dry_run: bool = True,
         video_format: str | None = None,
+        excluded_topics: tuple[str, ...] = (),
     ) -> PipelineRun:
         run_id = uuid.uuid4().hex[:12]
         chosen_format = video_format or self.settings.default_video_format
@@ -92,8 +96,10 @@ class AutopilotPipeline:
         # valid video: convert those scenes to ByteVexa/CurioAxiom motion
         # explainers before the quality gate evaluates the plan.
         self._sanitize_visual_sources(plan, research)
+        self._anchor_manual_tool_review_sources(plan)
         if self.verifier:
             self._sanitize_fact_visual_sources(plan, research)
+        self._append_product_link(plan)
         self._append_research_sources(plan, research)
         quality = self.quality.evaluate(plan, research, strict=not dry_run)
         if self.verifier and not dry_run:
@@ -131,11 +137,20 @@ class AutopilotPipeline:
         try:
             audio_path = self.tts.synthesize(plan.script, run_dir / "voice.mp3")
             duration = self.renderer.probe_duration(audio_path)
+            if plan.format == "short":
+                duration = self.renderer.normalize_short_voice_duration(audio_path, duration)
+            self._validate_voice_track(plan, duration)
+            result.metadata["voice_duration_seconds"] = round(duration, 2)
+            result.metadata["voice_words_per_minute"] = round(
+                len(plan.script.split()) * 60 / max(duration, 1), 1
+            )
             captions_path = write_srt(
                 plan.script,
                 duration,
                 run_dir / "captions.srt",
-                words_per_caption=(2 if self.settings.channel_profile == "curioaxiom" else 3)
+                # Keep ByteVexa captions brief; the visual canvas should carry
+                # the demo instead of becoming a text-heavy screen.
+                words_per_caption=2
                 if plan.format == "short" else 6,
             )
 
@@ -171,6 +186,12 @@ class AutopilotPipeline:
                 mode: sum(1 for asset in assets if asset.visual_mode == mode)
                 for mode in ("ui", "motion", "stock")
             }
+
+            if plan.content_mode == "tool_review":
+                self._require_captured_product_walkthrough(plan, assets, result)
+                if result.status == "failed":
+                    self._write_manifest(manifest_path, result)
+                    return result
 
             if len(assets) < min_clips:
                 result.status = "failed"
@@ -245,9 +266,17 @@ class AutopilotPipeline:
         self._write_manifest(manifest_path, result)
         return result
 
-    def _candidate_with_research(self, topic: str | None) -> tuple[TopicCandidate, ResearchPack]:
+    def _candidate_with_research(
+        self, topic: str | None, excluded_topics: tuple[str, ...] = ()
+    ) -> tuple[TopicCandidate, ResearchPack]:
         if topic:
-            source_urls: list[str] = []
+            if self.settings.channel_profile != "curioaxiom" and not self.editorial.is_relevant_topic(topic):
+                raise ValueError("ByteVexa topic must have an explicit AI or technology subject.")
+            if self.settings.channel_profile == "curioaxiom":
+                seeded = self._verified_fact_seed(topic)
+                if seeded:
+                    return seeded
+            source_urls: list[str] = list(self.settings.manual_topic_source_list)
             lowered = topic.lower()
             from autopilot.discovery import CHANNEL_EVERGREEN_TOPICS
             for item in CHANNEL_EVERGREEN_TOPICS.get(self.settings.channel_profile, []):
@@ -314,6 +343,20 @@ class AutopilotPipeline:
             return candidate, research
 
         candidates = self.discovery.discover()
+        if self.settings.channel_profile != "curioaxiom":
+            candidates = [candidate for candidate in candidates if self.editorial.is_relevant_topic(candidate.title)]
+        if excluded_topics:
+            # A failed quality plan must not be selected again for the next
+            # production attempt. Similar headline rewrites count as the same
+            # story; the existing research and quality checks still apply.
+            def distinct(candidate: TopicCandidate) -> bool:
+                title = candidate.title.lower().strip()
+                return all(
+                    SequenceMatcher(None, title, previous.lower().strip()).ratio() < 0.70
+                    for previous in excluded_topics
+                )
+
+            candidates = [candidate for candidate in candidates if distinct(candidate)]
         if not candidates:
             profile_fallbacks = {
                 "wondertales": "The Little Rabbit Who Lost His Hop",
@@ -354,6 +397,9 @@ class AutopilotPipeline:
                     and len(research.sources) >= self.settings.min_research_sources
                 ):
                     return candidate, research
+            seeded = self._verified_fact_seed(excluded_topics=excluded_topics)
+            if seeded:
+                return seeded
             if best:
                 raise RuntimeError(
                     "No eligible facts topic passed source verification. "
@@ -374,7 +420,39 @@ class AutopilotPipeline:
             if len(research.sources) >= minimum:
                 return candidate, research
 
-        return best_candidate, best_research
+        raise RuntimeError(
+            f"No topic has the required {minimum} research sources; "
+            "skipping script generation until adequate evidence is available."
+        )
+
+    def _verified_fact_seed(
+        self, requested_topic: str | None = None, excluded_topics: tuple[str, ...] = ()
+    ) -> tuple[TopicCandidate, ResearchPack] | None:
+        """Use a unique, pre-verified reserve only when normal fact research cannot pass."""
+        return verified_curio_seed(
+            excluded_topics=[*self.state.recent_topics(limit=120), *excluded_topics],
+            requested_topic=requested_topic,
+        )
+
+    @staticmethod
+    def _validate_voice_track(plan, duration: float) -> None:
+        """Block synthetic narration that would feel rushed, sluggish, or cut short."""
+        words = len(plan.script.split())
+        words_per_minute = words * 60 / max(duration, 1)
+        if plan.format == "short":
+            if not 28 <= duration <= 65:
+                raise RuntimeError(f"Short voice track is {duration:.1f}s; expected 28-65 seconds.")
+            if not 120 <= words_per_minute <= 210:
+                raise RuntimeError(
+                    f"Short narration pace is {words_per_minute:.0f} WPM; expected 120-210 WPM."
+                )
+            return
+        if not 7.5 * 60 <= duration <= 13 * 60:
+            raise RuntimeError(f"Long-form voice track is {duration / 60:.1f} minutes; expected 7.5-13 minutes.")
+        if not 115 <= words_per_minute <= 185:
+            raise RuntimeError(
+                f"Long-form narration pace is {words_per_minute:.0f} WPM; expected 115-185 WPM."
+            )
 
     @staticmethod
     def _ensure_airplane_window_sources(research: ResearchPack) -> ResearchPack:
@@ -428,11 +506,60 @@ class AutopilotPipeline:
         if lines:
             plan.description = AutopilotPipeline._append_section(plan.description, "Research sources", lines)
 
+    def _anchor_manual_tool_review_sources(self, plan) -> None:
+        """Keep a commissioned public review on real, appropriate product surfaces."""
+        if plan.content_mode != "tool_review":
+            return
+        sources = self.settings.manual_topic_source_list
+        if not sources:
+            return
+        primary = sources[0]
+        feature = sources[1] if len(sources) > 1 else primary
+        pricing = sources[2] if len(sources) > 2 else primary
+        for scene in plan.scenes:
+            purpose = scene.purpose.lower()
+            if any(label in purpose for label in ("signup", "sign up", "main", "workflow", "demo", "output", "result")):
+                scene.visual_mode = "ui"
+                scene.source_url = primary
+            elif "feature" in purpose:
+                scene.visual_mode = "ui"
+                scene.source_url = feature
+            elif any(label in purpose for label in ("pricing", "price", "free", "availability")):
+                scene.visual_mode = "ui"
+                scene.source_url = pricing
+
+    @staticmethod
+    def _append_product_link(plan) -> None:
+        """Put the exact captured public product page at the top of a tool review.
+
+        The URL is selected from an approved UI scene rather than generated by
+        the model, so a viewer never receives an invented link.
+        """
+        if plan.content_mode != "tool_review":
+            return
+        product_url = next(
+            (
+                scene.source_url.strip()
+                for scene in plan.scenes
+                if scene.visual_mode == "ui" and scene.source_url.strip()
+            ),
+            "",
+        )
+        if product_url and "Software / website:" not in plan.description:
+            plan.description = AutopilotPipeline._append_section(
+                plan.description,
+                "Software / website",
+                [product_url],
+            )
+
     @staticmethod
     def _sanitize_visual_sources(plan, research: ResearchPack) -> None:
         """Keep UI footage inside approved evidence and prevent landing-page repetition."""
         approved_urls = {source.url for source in research.sources if source.url}
         repeat_limit = (
+            len(plan.scenes)
+            if plan.content_mode == "tool_review"
+            else
             max(3, len(plan.scenes) // 3)
             if plan.format == "long"
             else max(3, len(plan.scenes) // 2)
@@ -450,6 +577,32 @@ class AutopilotPipeline:
             if usage[url] > repeat_limit:
                 scene.visual_mode = "motion"
                 scene.source_url = ""
+
+    @staticmethod
+    def _require_captured_product_walkthrough(plan, assets, result: PipelineRun) -> None:
+        """Fail closed if a claimed software review lacks real public product proof."""
+        captured_stages = {
+            asset.capture_stage
+            for asset in assets
+            if asset.visual_mode == "ui" and asset.capture_stage
+        }
+        # A browser app can legitimately be free and direct-access, with no
+        # signup screen or paid plan.  Its verified availability surface is
+        # enough for both decisions; the actual product, workflow and output
+        # are still mandatory.
+        required_stages = {"main", "feature", "workflow", "output"}
+        missing = sorted(required_stages - captured_stages)
+        if not ({"signup", "availability"} & captured_stages):
+            missing.append("signup/access")
+        if not ({"pricing", "availability"} & captured_stages):
+            missing.append("pricing/free availability")
+        if missing:
+            result.status = "failed"
+            result.notes.append(
+                "Live product walkthrough gate blocked upload: missing captured public "
+                + ", ".join(missing)
+                + ". The video would otherwise look like a slide presentation rather than a verified software test."
+            )
 
     @staticmethod
     def _sanitize_fact_visual_sources(plan, research: ResearchPack) -> None:

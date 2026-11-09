@@ -429,14 +429,86 @@
       }
     }
   ],
+  "own_winners": [
+    {
+      "title": "VS Code 1.140: Run Parallel Worktrees with HydraFusion AI",
+      "format": "short",
+      "metrics": {
+        "views": 287.0,
+        "estimatedMinutesWatched": 20.0,
+        "averageViewDuration": 16.0,
+        "averageViewPercentage": 30.59,
+        "likes": 3.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Stanford's Paper2Agent Turns PDFs Into Working Code",
+      "format": "short",
+      "metrics": {
+        "views": 183.0,
+        "estimatedMinutesWatched": 37.0,
+        "averageViewDuration": 31.0,
+        "averageViewPercentage": 64.94,
+        "likes": 6.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 1.0
+      }
+    },
+    {
+      "title": "Microsoft Revamps Copilot: Home, Code & Autopilot",
+      "format": "short",
+      "metrics": {
+        "views": 203.0,
+        "estimatedMinutesWatched": 24.0,
+        "averageViewDuration": 17.0,
+        "averageViewPercentage": 30.64,
+        "likes": 3.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "GitHub Copilot Code Review Is Now Live: What Changes?",
+      "format": "short",
+      "metrics": {
+        "views": 161.0,
+        "estimatedMinutesWatched": 21.0,
+        "averageViewDuration": 25.0,
+        "averageViewPercentage": 55.8,
+        "likes": 2.0,
+        "comments": 0.0,
+        "shares": 1.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Build Your Own VSTs Instantly",
+      "format": "short",
+      "metrics": {
+        "views": 148.0,
+        "estimatedMinutesWatched": 23.0,
+        "averageViewDuration": 28.0,
+        "averageViewPercentage": 50.2,
+        "likes": 2.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    }
+  ],
   "monetization": {
     "subscribers": 18,
     "subscriber_target": 1000,
-    "estimated_long_watch_hours_365d": 0.0,
+    "estimated_long_watch_hours_365d": null,
     "watch_hour_target": 4000,
-    "estimated_shorts_views_90d": 0.0,
+    "estimated_shorts_views_90d": null,
     "shorts_view_target": 10000000,
-    "bottleneck": "long_form_watch_hours",
+    "bottleneck": "unknown",
     "note": "Directional estimate; YouTube Studio Earn tab is authoritative."
   }
 }

@@ -5,19 +5,749 @@ from urllib.parse import urlparse
 
 from autopilot.config import Settings
 from autopilot.discovery import TopicDiscovery
-from autopilot.models import ResearchPack, SceneBeat, TopicCandidate, VideoPlan
+from autopilot.models import ResearchPack, ResearchSource, SceneBeat, TopicCandidate, VideoPlan
 from autopilot.providers.premium_planner import PremiumScriptPlanner
 
 
 AUTHORITATIVE_DOMAINS = {
-    "science": ("nasa.gov", "noaa.gov", "esa.int", "nih.gov", "nature.com", "science.org"),
+    "science": (
+        "nasa.gov", "noaa.gov", "weather.gov", "esa.int", "nih.gov", "nature.com", "science.org"
+    ),
     "history": ("si.edu", "loc.gov", "archives.gov", "britishmuseum.org"),
-    "geography": ("un.org", "worldbank.org", "usgs.gov", "noaa.gov"),
+    "geography": ("un.org", "worldbank.org", "usgs.gov", "noaa.gov", "whoi.edu", "nps.gov", "fs.usda.gov"),
     "mathematics": ("ams.org", "maa.org", "mathworld.wolfram.com", "edu"),
-    "space": ("nasa.gov", "esa.int", "jpl.nasa.gov", "noirlab.edu"),
+    # NOAA is authoritative for Earth-Moon tide interactions that cross the
+    # space and ocean-science lanes.
+    "space": ("nasa.gov", "noaa.gov", "esa.int", "jpl.nasa.gov", "noirlab.edu"),
     "engineering": ("nist.gov", "ieee.org", "asme.org", "sae.org", "faa.gov", "nasa.gov", "edu"),
     "f1_automotive": ("fia.com", "formula1.com", "sae.org", "nhtsa.gov"),
 }
+
+
+def verified_curio_seed(
+    excluded_topics: list[str] | None = None,
+    requested_topic: str | None = None,
+) -> tuple[TopicCandidate, ResearchPack] | None:
+    """Return a fresh, independently sourced fact when live research is unavailable.
+
+    A hosted runner can be blocked by an otherwise valid public source.  This is a
+    deliberately small editorial reserve, not a generic fallback: every entry has
+    two independent, category-authoritative sources and enough evidence for the
+    verifier to re-check it.  Used entries are excluded from the channel history,
+    so a source outage cannot create repetitive uploads.
+    """
+    excluded = {_normalise_topic(topic) for topic in (excluded_topics or [])}
+    requested = _normalise_topic(requested_topic or "")
+    seeds = (
+        (
+            "Why Astronauts Float in Orbit",
+            "space",
+            "Astronauts and their spacecraft are continually falling around Earth, not beyond gravity.",
+            ("astronaut float", "microgravity", "falling forever", "physics of falling"),
+            (
+                ResearchSource(
+                    title="What is microgravity?",
+                    publisher="NASA",
+                    url="https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-microgravity-grades-5-8/",
+                    snippet=(
+                        "NASA explains that astronauts in low Earth orbit are still strongly affected "
+                        "by Earth's gravity. The apparent weightlessness comes because the spacecraft "
+                        "and everyone inside it are falling together while moving sideways fast enough "
+                        "to keep missing Earth. That shared free-fall removes the supporting force people "
+                        "normally feel as weight, producing the microgravity environment seen on station."
+                    ),
+                ),
+                ResearchSource(
+                    title="Space on Earth",
+                    publisher="European Space Agency",
+                    url="https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Celsius_Mission_-_English_version/Space_on_Earth",
+                    snippet=(
+                        "ESA describes microgravity as a condition created when people and their vehicle "
+                        "are in free-fall together. Orbit is not a place where gravity disappears: a craft "
+                        "keeps falling toward Earth while its forward speed curves its path around the planet. "
+                        "This is why objects released inside an orbiting spacecraft appear to float beside "
+                        "the crew instead of dropping to a floor."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why Ocean Water Is Salty",
+            "geography",
+            "Most ocean salt ultimately comes from dissolved minerals carried from land, then concentrated as water cycles away.",
+            ("ocean water salty", "why ocean is salty", "seawater salinity"),
+            (
+                ResearchSource(
+                    title="Why is the ocean salty?",
+                    publisher="NOAA Ocean Service",
+                    url="https://oceanservice.noaa.gov/facts/whysalty.html",
+                    snippet=(
+                        "NOAA explains that rain and rivers dissolve small amounts of mineral material from "
+                        "rocks and carry ions to the sea. Water leaves the ocean through evaporation, but the "
+                        "dissolved salts remain, so ocean circulation mixes and concentrates them over very "
+                        "long periods. Seafloor hydrothermal activity also adds dissolved material, while "
+                        "chemical processes and sediments remove some ions and help set seawater's balance."
+                    ),
+                ),
+                ResearchSource(
+                    title="Saline water and salinity",
+                    publisher="U.S. Geological Survey",
+                    url="https://www.usgs.gov/special-topics/water-science-school/science/saline-water-and-salinity",
+                    snippet=(
+                        "The U.S. Geological Survey describes salinity as the amount of dissolved salts in "
+                        "water and notes that ocean water is saline because it contains a mixture of dissolved "
+                        "ions. The water cycle moves liquid water and water vapor, not all of those dissolved "
+                        "materials, so rivers, evaporation, mixing, and geological inputs shape where salinity "
+                        "is high or low rather than making every part of the ocean identical."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why Heat Shields Burn on Purpose",
+            "science",
+            "Ablative heat shields sacrifice material to carry heat away from a spacecraft during atmospheric entry.",
+            ("heat shield burn", "heat shield reentry", "ablative reentry"),
+            (
+                ResearchSource(
+                    title="Entry systems",
+                    publisher="NASA Ames Research Center",
+                    url="https://www.nasa.gov/ames/core-area-of-expertise-entry-systems/",
+                    snippet=(
+                        "NASA's entry-systems work explains that a spacecraft entering an atmosphere must "
+                        "manage extreme heating created as air is compressed and flows around the vehicle. "
+                        "Ablative thermal-protection materials are designed to char, melt, and erode in a "
+                        "controlled way. That changing surface carries heat away and protects the structure "
+                        "behind it, so visible burning can be part of the intended engineering design."
+                    ),
+                ),
+                ResearchSource(
+                    title="Protecting planetary missions from extreme heat",
+                    publisher="NASA Science",
+                    url="https://science.nasa.gov/science-research/science-enabling-technology/technology-highlights/protecting-future-planetary-missions-from-extreme-heat/",
+                    snippet=(
+                        "NASA describes thermal-protection systems as a critical layer between a vehicle and "
+                        "the intense heat of atmospheric entry. Different missions use materials selected for "
+                        "their temperature, mass, and return profile; some systems insulate while ablative "
+                        "systems deliberately consume surface material. The engineering objective is to keep "
+                        "the spacecraft's internal structure and instruments within safe temperatures."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why the Sky Is Blue but Sunsets Are Red",
+            "science",
+            "Air molecules scatter shorter blue wavelengths more strongly; at sunset the longer path removes more blue light before sunlight reaches an observer.",
+            ("sky blue sunset red", "rayleigh scattering", "red sunset"),
+            (
+                ResearchSource(
+                    title="Why is the sky blue?",
+                    publisher="NASA Space Place",
+                    url="https://spaceplace.nasa.gov/blue-sky/en/",
+                    snippet=(
+                        "NASA explains that white sunlight contains many wavelengths. Tiny molecules in "
+                        "Earth's atmosphere scatter shorter blue wavelengths more strongly than red ones, "
+                        "so blue light arrives from across the daytime sky. Near sunset, sunlight travels "
+                        "through much more atmosphere; much of the blue is scattered out of the direct path, "
+                        "leaving more red and yellow light to reach an observer."
+                    ),
+                ),
+                ResearchSource(
+                    title="Why is the sky blue?",
+                    publisher="NOAA SciJinks",
+                    url="https://www.noaa.gov/jetstream/color-of-sky",
+                    snippet=(
+                        "NOAA's educational material describes Rayleigh scattering: atmospheric molecules "
+                        "scatter shorter visible wavelengths more efficiently. The longer atmospheric path "
+                        "at sunrise and sunset scatters much of the blue light away, while longer orange and "
+                        "red wavelengths continue toward the viewer. Dust and aerosols can change the colors, "
+                        "so not every sunset has the same intensity."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why the Deep Ocean Can Crush a Submarine",
+            "geography",
+            "Water pressure increases with depth because every deeper surface supports a taller column of water above it.",
+            ("deep ocean pressure", "submarine crushed", "hadal pressure"),
+            (
+                ResearchSource(
+                    title="How does pressure impact animals in the ocean?",
+                    publisher="NOAA Ocean Exploration",
+                    url="https://oceanexplorer.noaa.gov/facts/pressure.html",
+                    snippet=(
+                        "NOAA explains that ocean pressure rises steadily with depth as the weight of the "
+                        "overlying water increases. At the deepest trenches, pressures exceed one thousand "
+                        "times the pressure at sea level. Deep-sea organisms and engineered vehicles survive "
+                        "only when their structures avoid vulnerable air spaces or resist the pressure difference."
+                    ),
+                ),
+                ResearchSource(
+                    title="Hadal zone",
+                    publisher="Woods Hole Oceanographic Institution",
+                    url="https://www.whoi.edu/ocean-learning-hub/ocean-topics/how-the-ocean-works/ocean-zones/hadal-zone/",
+                    snippet=(
+                        "WHOI defines the hadal zone as the deepest ocean trenches, roughly six to eleven "
+                        "kilometres below the surface. It reports pressures greater than one thousand times "
+                        "surface pressure and describes pressure-resistant autonomous vehicles built with "
+                        "NASA's Jet Propulsion Laboratory to explore those environments."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why Lightning Is Hotter Than the Sun's Surface",
+            "science",
+            "A lightning channel can briefly heat air to roughly five times the Sun's visible-surface temperature, but it contains vastly less total energy than the Sun.",
+            ("lightning hotter sun", "lightning temperature", "thunder shockwave"),
+            (
+                ResearchSource(
+                    title="How hot is lightning?",
+                    publisher="National Weather Service",
+                    url="https://www.weather.gov/safety/lightning-temperature",
+                    snippet=(
+                        "The National Weather Service explains that the air in a lightning channel can be "
+                        "heated to around fifty thousand degrees Fahrenheit, about five times hotter than "
+                        "the Sun's visible surface. The heating is extremely brief and confined to a narrow "
+                        "channel; it does not mean a lightning bolt contains more total energy than the Sun."
+                    ),
+                ),
+                ResearchSource(
+                    title="Lightning facts",
+                    publisher="NOAA National Severe Storms Laboratory",
+                    url="https://www.nssl.noaa.gov/education/svrwx101/lightning/faq/",
+                    snippet=(
+                        "NOAA describes lightning as a powerful electrical discharge that rapidly heats the "
+                        "surrounding air. The sudden expansion creates a shock wave heard as thunder. Channel "
+                        "temperature estimates are tens of thousands of degrees, but the event lasts only a "
+                        "fraction of a second and varies along the discharge."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why the Moon Moves Earth's Oceans",
+            "space",
+            "Tides arise mainly from differences in the Moon's gravitational pull across Earth, with the Sun modifying their strength.",
+            ("moon moves ocean", "moon causes tides", "tidal bulge"),
+            (
+                ResearchSource(
+                    title="What causes tides?",
+                    publisher="NOAA Ocean Service",
+                    url="https://oceanservice.noaa.gov/education/tutorial_tides/tides02_cause.html",
+                    snippet=(
+                        "NOAA explains that tides are driven primarily by the Moon's gravity and the "
+                        "Earth-Moon system's motion. The pull differs across Earth, producing tidal bulges, "
+                        "while coastlines, ocean depth, and basin shape determine the local timing and height. "
+                        "The Sun also contributes and strengthens or weakens tides depending on alignment."
+                    ),
+                ),
+                ResearchSource(
+                    title="Tides and the Moon",
+                    publisher="NASA Science",
+                    url="https://science.nasa.gov/moon/tides/",
+                    snippet=(
+                        "NASA describes the Moon's gravity as the main driver of Earth's ocean tides. Because "
+                        "the lunar pull is stronger on the near side than the far side, water is redistributed "
+                        "into broad bulges as Earth rotates. Solar gravity modifies this pattern, creating "
+                        "larger spring tides and smaller neap tides during different alignments."
+                    ),
+                ),
+            ),
+        ),
+    )
+    # Reviewed 2026-09-19. Two NASA publications, not independent publishers.
+    seeds += ((
+        "Why the Moon Changes Shape Without Changing Its Shape",
+        "space",
+        "Lunar phases are changing views of the sunlit hemisphere, not Earth's shadow.",
+        ("moon phases", "moon changes shape", "lunar phases"),
+        (
+            ResearchSource(
+                title="Moon Facts", publisher="NASA Science",
+                url="https://science.nasa.gov/moon/facts/",
+                snippet=(
+                    "The Moon spins once per orbit, keeping its near hemisphere toward Earth. "
+                    "Sunlight illuminates different regions as it orbits. At full Moon the visible "
+                    "hemisphere is illuminated; at new Moon its far hemisphere receives sunlight. "
+                    "The far side is therefore not permanently dark. Rotation and changing illumination "
+                    "are different effects; a fixed face does not imply a fixed phase."
+                ),
+            ),
+            ResearchSource(
+                title="What Are the Moon's Phases?", publisher="NASA Space Place",
+                url="https://spaceplace.nasa.gov/moon-phases/en/",
+                snippet=(
+                    "Moonlight is reflected sunlight. Half of the Moon is illuminated by the Sun, "
+                    "while an observer on Earth sees different fractions of that illuminated half "
+                    "as the Moon travels around Earth. These views produce the sequence of lunar "
+                    "phases. The Moon remains a sphere throughout the cycle; ordinary phases do not "
+                    "mean that Earth is casting its shadow over the lunar surface."
+                ),
+            ),
+        ),
+    ),)
+    # Reviewed 2026-09-23 against separate NASA and NOAA explanations.
+    seeds += (
+        (
+            "Why Jet Trails Sometimes Linger for Hours",
+            "science",
+            "Aircraft exhaust adds water vapor that freezes into ice crystals high in the atmosphere; surrounding humidity controls how long the cloud persists.",
+            ("contrail", "jet trails", "airplane trails", "condensation trails"),
+            (
+                ResearchSource(
+                    title="Contrail Simulation",
+                    publisher="NOAA NESDIS",
+                    url="https://www.nesdis.noaa.gov/about/k-12-education/atmosphere/contrail-simulation",
+                    snippet=(
+                        "NOAA explains that water vapor from aircraft exhaust condenses and freezes "
+                        "in the cold air at cruising altitude, making a visible cloud of tiny ice "
+                        "crystals. Its interactive simulation varies atmospheric temperature and "
+                        "humidity: more humid air slows the disappearance of the trail, while wind "
+                        "spreads it. The visible white streak is primarily ice rather than a stream "
+                        "of smoke, though the aircraft still emits other exhaust constituents."
+                    ),
+                ),
+                ResearchSource(
+                    title="The Evolution of a Contrail",
+                    publisher="NASA Earth Observatory",
+                    url="https://science.nasa.gov/earth/earth-observatory/the-evolution-of-a-contrail-78154/",
+                    snippet=(
+                        "NASA compares satellite images of aircraft trails off Newfoundland taken "
+                        "nearly two hours apart. The young narrow lines had spread into wispy "
+                        "cirrus-like clouds as winds moved them. Dry air can dissipate a trail in "
+                        "seconds or minutes; sufficiently humid air can let it persist and spread "
+                        "for hours. This is an atmospheric condition, not evidence that the airplane "
+                        "changed its purpose or released a different visible substance."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why a Hurricane Has a Calm Eye",
+            "science",
+            "Air sinks and warms in the center, clearing clouds, while the surrounding eyewall holds the strongest rising thunderstorms and winds.",
+            ("hurricane eye", "calm eye", "eye of a hurricane", "eyewall"),
+            (
+                ResearchSource(
+                    title="Hurricanes: The Greatest Storms on Earth",
+                    publisher="NASA Science",
+                    url="https://science.nasa.gov/earth/natural-disasters/hurricanes-typhoons/hurricanes-the-greatest-storms-on-earth/",
+                    snippet=(
+                        "NASA describes the hurricane eye as a relatively calm center where air "
+                        "sinks, compresses, and warms, leaving fewer clouds and less precipitation. "
+                        "Surrounding it is the eyewall, a ring of intense thunderstorms, rising "
+                        "moist air, heavy rain, and strong winds. A calm passage through the eye "
+                        "does not mean the hurricane has ended; dangerous eyewall conditions "
+                        "return on the other side."
+                    ),
+                ),
+                ResearchSource(
+                    title="A Guide to Understanding Satellite Images of Hurricanes",
+                    publisher="NOAA NESDIS",
+                    url="https://www.nesdis.noaa.gov/news/guide-understanding-satellite-images-of-hurricanes",
+                    snippet=(
+                        "NOAA explains that air flows inward near the ocean surface, rises in "
+                        "the eyewall, and spreads outward aloft. As a mature storm strengthens, "
+                        "air also sinks in the center and the sinking motion clears clouds from "
+                        "the eye. The eye is the calmest part of the storm, while the wall of deep "
+                        "clouds around it carries deadly winds. An eye is not always clearly "
+                        "visible in ordinary satellite imagery."
+                    ),
+                ),
+            ),
+        ),
+    )
+    # Reviewed 2026-10-07 against separate primary science/education agencies.
+    # Keep a small reserve for source outages without recycling old uploads.
+    seeds += (
+        (
+            "Why Venus Is Hotter Than Mercury",
+            "space",
+            "Venus has a hotter average surface than Mercury because its dense carbon-dioxide atmosphere traps heat, although Mercury is closer to the Sun.",
+            ("venus hotter than mercury", "venus greenhouse atmosphere"),
+            (
+                ResearchSource(
+                    title="Venus Facts", publisher="NASA Science",
+                    url="https://science.nasa.gov/venus/venus-facts/",
+                    snippet=(
+                        "NASA identifies Venus as the hottest planet even though Mercury orbits closer "
+                        "to the Sun. A thick atmosphere dominated by carbon dioxide traps outgoing heat "
+                        "through an extreme greenhouse effect. The resulting mean surface temperature is "
+                        "about 467 degrees Celsius. This comparison is about sustained surface conditions, "
+                        "not a claim that Venus receives more sunlight or that every location on Mercury "
+                        "is cooler at every instant."
+                    ),
+                ),
+                ResearchSource(
+                    title="Greenhouse effect, clouds and winds", publisher="European Space Agency",
+                    url="https://www.esa.int/Science_Exploration/Space_Science/Venus_Express/Greenhouse_effect_clouds_and_winds",
+                    snippet=(
+                        "ESA explains that Venus has the Solar System's strongest planetary greenhouse "
+                        "effect. Its clouds reflect much of the incoming sunlight, yet the dense lower "
+                        "atmosphere retains heat efficiently; the heat balance makes the surface intensely "
+                        "hot. A Venus story should distinguish the sunlight reaching the planet from the "
+                        "heat trapped below its clouds and avoid presenting a made-up surface experiment "
+                        "or an exact temperature unsupported by the chosen source."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why Rivers Carve S-Bends",
+            "geography",
+            "Faster water erodes the outside of a river bend while slower water deposits sediment on the inside; bends can migrate and sometimes become oxbow lakes.",
+            ("river meander", "river s bends", "oxbow lake"),
+            (
+                ResearchSource(
+                    title="Find-A-Feature: Meander", publisher="U.S. Geological Survey",
+                    url="https://www.usgs.gov/educational-resources/find-feature-meander",
+                    snippet=(
+                        "USGS describes a meander as a bend in a river whose shape changes through "
+                        "erosion on the outside of the bend and deposition on the inside. The flow "
+                        "moves sediment instead of carving a fixed decorative curve. A visual explanation "
+                        "can mark the outside cut bank and the inner deposit, then show the channel "
+                        "shifting sideways with time. The pace depends on flow and local ground, "
+                        "so the video should avoid claiming that every river bends at one rate."
+                    ),
+                ),
+                ResearchSource(
+                    title="Fluvial Features: Meandering Stream", publisher="U.S. National Park Service",
+                    url="https://www.nps.gov/articles/meandering-stream.htm",
+                    snippet=(
+                        "NPS explains that the fastest part of a meandering stream shifts toward "
+                        "the outside of a bend. The outer bank erodes while sediment builds a point "
+                        "bar on the inner bank, producing sideways migration. If neighboring bends "
+                        "eventually meet and the stream takes a shorter course, the abandoned loop "
+                        "can become an oxbow lake. This process is a useful animated cross-section "
+                        "story, not a claim that all river curves must cut off."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why Glacier Ice Looks Blue",
+            "geography",
+            "Thick, compact glacier ice absorbs more red light while blue wavelengths can travel and scatter back toward an observer; trapped air makes fresh snow look white.",
+            ("glacier ice blue", "why glaciers blue"),
+            (
+                ResearchSource(
+                    title="Why are glaciers blue?", publisher="U.S. Geological Survey",
+                    url="https://www.usgs.gov/media/audio/why-are-glaciers-blue",
+                    snippet=(
+                        "USGS explains the blue appearance of glacier ice through the interaction of "
+                        "light and a thick path of ice. Longer red wavelengths are absorbed more "
+                        "strongly, while shorter blue light is transmitted and scattered toward the "
+                        "viewer. A thin piece of clear ice does not necessarily look vividly blue; "
+                        "the color becomes noticeable where light passes through enough compact ice. "
+                        "This is an optical explanation, not a claim that the ice contains blue dye."
+                    ),
+                ),
+                ResearchSource(
+                    title="Why is the Ice Blue? In Glacier Bay", publisher="U.S. National Park Service",
+                    url="https://www.nps.gov/places/why-is-the-ice-blue-in-glacier-bay.htm",
+                    snippet=(
+                        "NPS describes deep blue glacier ice as compact ice with relatively few air "
+                        "bubbles after long compression. Fresh snow has many small air spaces that "
+                        "scatter visible light and make it look white. A visual story can compare "
+                        "snow, compact ice, and the longer light path through a glacier, then show "
+                        "red light absorbed more readily than blue. The exact shade changes with "
+                        "the thickness, lighting and impurities, so a glacier need not look blue everywhere."
+                    ),
+                ),
+            ),
+        ),
+    )
+    seeds += (
+        (
+            "Why Auroras Glow in Different Colors",
+            "space",
+            "Energetic particles excite oxygen and nitrogen in the upper atmosphere; the gas and altitude determine the light's colors.",
+            ("aurora colors", "northern lights colors", "oxygen nitrogen aurora"),
+            (
+                ResearchSource(
+                    title="Auroras", publisher="NASA Science",
+                    url="https://science.nasa.gov/sun/auroras/",
+                    snippet=(
+                        "NASA explains that energetic particles guided into Earth's upper atmosphere "
+                        "transfer energy to oxygen and nitrogen. As those atoms and molecules release "
+                        "energy, they emit visible light. Oxygen can appear green around 100 to 200 km "
+                        "and red higher than about 200 km. Nitrogen can appear blue or pink, and mixtures "
+                        "of emissions can look purple or white. The color is tied to both the atmospheric "
+                        "gas and the altitude, rather than a different color of sunlight."
+                    ),
+                ),
+                ResearchSource(
+                    title="What is an Aurora?", publisher="NOAA NESDIS",
+                    url="https://www.nesdis.noaa.gov/about/k-12-education/optical-phenomena/what-aurora",
+                    snippet=(
+                        "NOAA describes solar particles and energy reaching polar regions along Earth's "
+                        "magnetic field and interacting with atmospheric gases. Excited oxygen emits "
+                        "green and red light, while nitrogen produces blue and purple hues. Auroras "
+                        "are seen at night but their energy comes from solar activity; the magnetic "
+                        "field steers particles toward the polar atmosphere. A visual explanation "
+                        "can separate the Sun, magnetic field, atmosphere and emitted colors."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why Geysers Erupt Instead of Flowing Steadily",
+            "geography",
+            "A pressure drop allows hot underground water to flash into steam through a constricted conduit.",
+            ("geyser", "underground pressure",),
+            (
+                ResearchSource(title="Yellowstone active hydrothermal system", publisher="USGS",
+                               url="https://www.usgs.gov/volcanoes/yellowstone/science/yellowstones-active-hydrothermal-system",
+                               snippet="USGS identifies two essentials for a geyser: an underground hot-water reservoir and a constriction that focuses the outflow. Initial water ejection reduces pressure, allowing the remaining water to become an expanding steam-water mixture. Eruptions may be regular or unpredictable because underground plumbing changes. Rain and snow feed groundwater heated by rocks above Yellowstone's magma storage region."),
+                ResearchSource(title="How a geyser works", publisher="National Park Service",
+                               url="https://www.nps.gov/features/yell/ofvec/exhibits/treasures/thermals/geysers/geyser2.htm",
+                               snippet="NPS describes pressure holding hot water below its boiling threshold until steam bubbles accumulate behind a narrow section. Escaping water lowers pressure and triggers rapid steam formation that expels more water. The eruption ends when the reservoir drains or cools. This is a hydrothermal water-and-steam process; do not depict molten lava erupting from the geyser vent."),
+            ),
+        ),
+        (
+            "Why a Compass Does Not Point to True North",
+            "geography",
+            "A compass follows the local magnetic field; declination is the difference from geographic north.",
+            ("compass", "magnetic declination",),
+            (
+                ResearchSource(title="What is declination?", publisher="USGS",
+                               url="https://www.usgs.gov/faqs/what-declination?items_per_page=6&page=1",
+                               snippet="USGS defines magnetic declination as the angle between a compass direction and geographic north. This angle depends on location and date because Earth's magnetic field is complex and not perfectly aligned with the rotation axis. Topographic maps state a declination and its reference year. At high latitudes compass behavior can become counterintuitive, so a compass is not simply a pointer aimed directly at a fixed geographic pole."),
+                ResearchSource(title="World Magnetic Model navigation", publisher="NOAA NCEI",
+                               url="https://www.ncei.noaa.gov/products/world-magnetic-model",
+                               snippet="NOAA explains that compasses align with magnetic force at the observer's location. Geographic north is generally a different direction. Magnetic models provide the declination correction, which changes with location and time; WMM updates support ships, aircraft, and consumer devices. Magnetic headings complement GPS position measurements. Avoid claiming any single correction works worldwide or indefinitely."),
+            ),
+        ),
+        (
+            "Why Cooling Lava Forms Stone Columns",
+            "geography",
+            "Cooling contraction creates fractures that often form approximately hexagonal columns.",
+            ("basalt column", "stone column", "columnar joint",),
+            (
+                ResearchSource(title="Columnar jointing and cooling history", publisher="USGS",
+                               url="https://www.usgs.gov/observatories/hvo/news/volcano-watch-columnar-jointing-provides-clues-cooling-history-lava-flows",
+                               snippet="USGS explains that cooling lava solidifies from its boundaries inward and contracts, generating thermal stress relieved by fractures. Cracks progress toward the hotter interior perpendicular to cooling boundaries. Slower cooling can form thick regular colonnades, while faster cooling produces less regular entablature. Many columns show overall hexagonal symmetry, but individual columns can have other shapes."),
+                ResearchSource(title="Columnar Jointing", publisher="National Park Service",
+                               url="https://www.nps.gov/subjects/volcanoes/columnar-jointing.htm",
+                               snippet="NPS describes parallel fractures made by contraction as hot igneous rock cools. Columns are commonly six-sided but may have three to seven sides; they stand perpendicular to the principal cooling surfaces rather than necessarily vertical. Intersecting cracks near 120 degrees efficiently relieve contractional stress. Devils Postpile and Devils Tower illustrate this natural geological pattern, which also occurs outside basalt lava flows."),
+            ),
+        ),
+    )
+    # Reviewed 2026-10-14 against independent NOAA/NPS and USDA/NPS sources.
+    # These are editorial reserves for source outages; history exclusions prevent reuse.
+    seeds += (
+        (
+            "Why Fog Hugs the Ground",
+            "geography",
+            "Fog is a cloud at ground level: humid air cools to its dew point and water condenses near the surface, while terrain and light winds can keep it pooled in low places.",
+            ("fog ground", "ground cloud", "valley fog"),
+            (
+                ResearchSource(
+                    title="What's the Difference Between Fog and Clouds?",
+                    publisher="NOAA NESDIS",
+                    url="https://www.nesdis.noaa.gov/about/k-12-education/atmosphere/whats-the-difference-between-fog-and-clouds",
+                    snippet=(
+                        "NOAA explains that clouds and fog both form when water vapor condenses or "
+                        "freezes into tiny droplets or ice crystals, but fog is defined by forming at "
+                        "ground level. Cooling humid air toward its dew point allows condensation near "
+                        "the surface. Wind, temperature, moisture and terrain determine whether the "
+                        "droplets remain as a shallow ground-level layer or mix into higher cloud. "
+                        "A visual explanation should show real condensation and terrain, not smoke."
+                    ),
+                ),
+                ResearchSource(
+                    title="Clouds and Fog",
+                    publisher="Rocky Mountain National Park",
+                    url="https://www.nps.gov/romo/clouds_and_fog.htm",
+                    snippet=(
+                        "The National Park Service describes mountain and valley fog forming where "
+                        "moist air cools enough for water to condense. Air forced up a slope cools as "
+                        "pressure drops, while clear nights can cool valley air near the ground and "
+                        "produce shallow fog when moisture is available. Terrain can therefore make "
+                        "fog look as if it hugs a slope or pools in a basin, but the effect still "
+                        "depends on humidity, temperature and airflow rather than gravity pulling clouds down."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why Glaciers Carve U-Shaped Valleys",
+            "geography",
+            "Moving glacier ice abrades and plucks rock across a valley floor and walls, widening a narrow river-cut V into a broad U-shaped valley while tributary glaciers can leave hanging valleys.",
+            ("glacier u shaped valley", "glacial valley", "hanging valley"),
+            (
+                ResearchSource(
+                    title="Geology of Rocky Mountain National Park",
+                    publisher="U.S. Geological Survey",
+                    url="https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-rocky-mountain-national-park",
+                    snippet=(
+                        "USGS describes glaciers as moving masses whose immense weight and embedded rock "
+                        "fragments crack, scrape and transport material from the landscape. In Rocky Mountain "
+                        "National Park, that erosion helped produce broad U-shaped valleys rather than the "
+                        "narrow V-shaped canyons normally cut by streams. The ice acts over long periods and "
+                        "also leaves till and other deposits, so the finished landscape records both erosion "
+                        "and deposition rather than a single instant of carving."
+                    ),
+                ),
+                ResearchSource(
+                    title="U-Shaped Valleys, Fjords, and Hanging Valleys",
+                    publisher="U.S. National Park Service",
+                    url="https://www.nps.gov/articles/ushapedvalleysfjordshangingvalleys.htm",
+                    snippet=(
+                        "NPS explains that a valley glacier widens, deepens and straightens an existing "
+                        "stream valley, creating steep walls and a comparatively broad floor. When a main "
+                        "glacier erodes more deeply than a smaller tributary glacier, the tributary floor can "
+                        "remain perched above the main valley after the ice retreats, producing a hanging "
+                        "valley and often a waterfall. A glacial valley flooded by the sea is called a fjord."
+                    ),
+                ),
+                ResearchSource(
+                    title="Geology of Glacier National Park",
+                    publisher="U.S. Geological Survey",
+                    url="https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-glacier-national-park",
+                    snippet=(
+                        "USGS inventories a connected family of glacial landforms at Glacier National Park: "
+                        "U-shaped and hanging valleys, cirques, sharp arêtes and horns, moraines, tarns and "
+                        "chains of paternoster lakes. It explains that smaller tributary glaciers may erode "
+                        "less deeply than the main glacier, leaving hanging valleys after retreat. These "
+                        "features let a documentary move from the mechanics of flowing ice to multiple pieces "
+                        "of real landscape evidence without claiming that every U-shaped valley has one history."
+                    ),
+                ),
+                ResearchSource(
+                    title="Glaciers and Glacial Landforms",
+                    publisher="U.S. National Park Service",
+                    url="https://www.nps.gov/subjects/geology/glacial-landforms.htm",
+                    snippet=(
+                        "NPS describes glaciers as flowing ice that transports rock and reshapes terrain "
+                        "through erosion and deposition. Valley glaciers can excavate U-shaped valleys, while "
+                        "ice moving in different directions can leave cirques, arêtes and horns. Retreating "
+                        "ice deposits moraines and can leave lake basins. The source distinguishes a glacier's "
+                        "active movement and erosion from the later retreat that reveals the landforms, an "
+                        "important timeline for accurate visuals and narration."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why Autumn Leaves Reveal Hidden Colors",
+            "geography",
+            "Shorter days and cooler conditions slow chlorophyll production; as green chlorophyll breaks down, yellow and orange pigments become visible, while some leaves also make red pigments.",
+            ("leaves change color", "autumn leaf color", "chlorophyll fall"),
+            (
+                ResearchSource(
+                    title="Why Leaves Change Color",
+                    publisher="USDA Forest Service",
+                    url="https://www.fs.usda.gov/Internet/FSE_DOCUMENTS/stelprd3817419.pdf",
+                    snippet=(
+                        "The USDA Forest Service explains that chlorophyll gives growing leaves their "
+                        "green appearance during spring and summer. As autumn days shorten and temperatures "
+                        "change, chlorophyll production slows and the existing pigment breaks down. Yellow "
+                        "and orange carotenoid colors that were already present become visible, while "
+                        "chemical changes can also produce red anthocyanin pigments. Weather and tree "
+                        "species affect the display, so every leaf does not follow one identical color path."
+                    ),
+                ),
+                ResearchSource(
+                    title="Learn About Fall Colors",
+                    publisher="Rocky Mountain National Park",
+                    url="https://home.nps.gov/romo/learn/nature/learn-about-fall-colors.htm",
+                    snippet=(
+                        "The National Park Service describes green chlorophyll as the pigment supporting "
+                        "photosynthesis through the growing season. With shorter daylight and changing "
+                        "autumn conditions, trees stop replacing chlorophyll and the green color fades, "
+                        "revealing other pigments in the leaf. Some leaves also form red or purple "
+                        "anthocyanins. Light, temperature, moisture and species influence the final color, "
+                        "so the explanation should not promise a single date or shade for every tree."
+                    ),
+                ),
+            ),
+        ),
+        (
+            "Why Mars Has Blue Sunsets",
+            "space",
+            "Fine dust in Mars's thin atmosphere spreads warm colors across much of the sky while directing more blue light close to the Sun, reversing the familiar color pattern of many Earth sunsets.",
+            ("mars blue sunset", "martian sunset", "blue sunset"),
+            (
+                ResearchSource(
+                    title="What Do Sunrises and Sunsets Look Like on Mars?",
+                    publisher="NASA Science",
+                    url="https://science.nasa.gov/solar-system/planets/mars/what-does-a-sunrise-sunset-look-like-on-mars/",
+                    snippet=(
+                        "NASA explains that fine Martian dust changes how sunlight is scattered. "
+                        "Blue light remains concentrated closer to the direction of the Sun, while "
+                        "the broader daytime sky looks rusty or reddish. Rover observations show that "
+                        "the blue region becomes especially noticeable when sunlight follows a long "
+                        "path through dusty air near sunrise or sunset. The effect is directional and "
+                        "does not mean the entire Martian sky becomes uniformly blue."
+                    ),
+                ),
+                ResearchSource(
+                    title="Sunset Sequence in Mars' Gale Crater",
+                    publisher="NASA Jet Propulsion Laboratory",
+                    url="https://www.jpl.nasa.gov/images/pia19401-sunset-sequence-in-mars-gale-crater-animation/",
+                    snippet=(
+                        "Curiosity's Mastcam recorded a sequence of the Sun setting in Gale Crater. "
+                        "JPL states that fine atmospheric dust permits blue light to penetrate more "
+                        "efficiently and keeps that blue contribution close to the Sun, while yellow "
+                        "and red colors spread more broadly. The observation supplies a real time "
+                        "sequence for explaining the transition instead of relying on an illustration."
+                    ),
+                ),
+                ResearchSource(
+                    title="Five Fun Facts About Mars",
+                    publisher="Smithsonian National Air and Space Museum",
+                    url="https://airandspace.si.edu/stories/editorial/five-fun-facts-about-mars",
+                    snippet=(
+                        "The Smithsonian notes that rover observations revealed a bluish region near "
+                        "the Martian horizon at sunset, opposite the color pattern familiar on Earth. "
+                        "It connects the effect to tiny dust particles and also notes that the Sun "
+                        "appears smaller and dimmer from Mars because the planet is farther away. "
+                        "These points support a visual comparison without claiming every sunset has "
+                        "the same color or brightness."
+                    ),
+                ),
+                ResearchSource(
+                    title="Mars Express HRSC Images Frequently Asked Questions",
+                    publisher="European Space Agency",
+                    url="https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Mars_Express_HRSC_images_Frequently_Asked_Questions_FAQs",
+                    snippet=(
+                        "ESA explains that Mars is dusty and that atmospheric scattering can give "
+                        "surface scenes a diffuse reddish glow. Its spacecraft cameras record separate "
+                        "color and infrared channels that must be combined and calibrated, so apparent "
+                        "colors depend on both the atmosphere and the imaging method. A documentary "
+                        "should distinguish calibrated rover observations from enhanced orbital images "
+                        "and avoid treating every blue-toned Mars picture as natural human-eye color."
+                    ),
+                ),
+            ),
+        ),
+    )
+    for title, category, reason, concept_aliases, sources in seeds:
+        normalised = _normalise_topic(title)
+        if normalised in excluded:
+            continue
+        aliases = {_normalise_topic(alias) for alias in concept_aliases}
+        if any(alias and alias in previous for alias in aliases for previous in excluded):
+            continue
+        if requested and requested != normalised:
+            continue
+        notes = "\n\n".join(
+            f"SOURCE: {source.publisher} — {source.title}\nURL: {source.url}\nEVIDENCE: {source.snippet}"
+            for source in sources
+        )
+        return (
+            TopicCandidate(title=title, score=72, reason=reason, source_urls=[source.url for source in sources]),
+            ResearchPack(topic=title, sources=list(sources), research_notes=notes, category=category),
+        )
+    return None
+
+
+def _normalise_topic(topic: str) -> str:
+    return " ".join("".join(character if character.isalnum() else " " for character in topic.lower()).split())
 
 
 class FactCategoryRouter:
@@ -272,6 +1002,12 @@ class FactScriptPlanner(PremiumScriptPlanner):
             scene.shot_type_camera_movement = camera
             subject = scene.exact_visual_subject.strip() or scene.visual_query.strip()
             scene.exact_visual_subject = subject
+            # A literal visual subject is already part of CurioAxiom's contract.
+            # Reuse it as the search query only when the model omitted the
+            # query field; never let a detailed, valid storyboard fail into an
+            # abstract slide simply because one optional string was blank.
+            if not scene.visual_query.strip():
+                scene.visual_query = subject
             scene.generator_prompt = (
                 f"Literal depiction of: {scene.narration.strip()} Subject: {subject}. "
                 f"Visible action and context: {scene.visual_query.strip()}. Shot: {camera}. "
@@ -455,7 +1191,13 @@ camera_and_lighting, generator_prompt, shot_type_camera_movement, sfx_audio_cue.
 """
 
     def _improve_plan(self, research: ResearchPack, video_format: str, draft: dict) -> dict | None:
+        words = "95-145" if video_format == "short" else "1,200-1,650"
+        scenes = "20-24" if video_format == "short" else "30-38"
         prompt = f"""Act as CurioAxiom's fact-checking executive editor. Rewrite the draft JSON.
+FINAL FORMAT: {video_format}. Preserve {words} spoken words and {scenes} distinct scenes.
+The scenes are the source of truth: their complete narration must match the script.
+Do not replace a long documentary with a Short, summary, outline, or truncated draft.
+Develop each section using supported research, mechanisms and caveats; never pad or invent facts.
 Research: {research.research_notes[:18000]}
 Verification: {research.confidence_score:.0f}/100; {research.verification_notes}
 Draft: {json.dumps(draft, ensure_ascii=False)}

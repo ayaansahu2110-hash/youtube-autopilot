@@ -1,6 +1,9 @@
 name: ByteVexa Autopilot
 
 on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/daily.yml", "src/autopilot/pipeline.py", "src/autopilot/cli.py", "src/autopilot/discovery.py", "src/autopilot/research.py", "src/autopilot/providers/llm.py", "src/autopilot/providers/tts.py", "src/autopilot/editorial.py"]
   schedule:
     - cron: "30 6 * * *"  # 12:00 Asia/Kolkata (Noon slot)
     - cron: "30 12 * * *" # 18:00 Asia/Kolkata (Evening slot)
@@ -64,10 +67,33 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "RUN_SLOT=${{ inputs.slot }}" >> "$GITHUB_ENV"
-          elif [ "${{ github.event.schedule }}" = "30 6 * * *" ]; then
-            echo "RUN_SLOT=morning" >> "$GITHUB_ENV"
+          elif [ "${{ github.event_name }}" = "schedule" ]; then
+            # GitHub can deliver cron events hours late. Use the actual local
+            # execution time so a delayed morning event cannot suppress a due long video.
+            local_hour="$(TZ=Asia/Kolkata date +%H)"
+            if [ "$((10#$local_hour))" -ge 16 ]; then
+              echo "RUN_SLOT=evening" >> "$GITHUB_ENV"
+            else
+              echo "RUN_SLOT=morning" >> "$GITHUB_ENV"
+            fi
           else
+            # Safe recovery for a reviewed push: quota checks prevent duplicates.
             echo "RUN_SLOT=evening" >> "$GITHUB_ENV"
+          fi
+          # User-approved October 10 recovery; normal daily limits resume afterward.
+          if [ "$(TZ=Asia/Kolkata date +%F)" = "2026-10-10" ]; then
+            echo "SHORTS_PER_DAY=4" >> "$GITHUB_ENV"
+            echo "RUN_SLOT=all" >> "$GITHUB_ENV"
+          fi
+
+      - name: Bound the remaining October 10 recovery
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          if [ "$(TZ=Asia/Kolkata date +%F)" = "2026-10-11" ]; then
+            # Three Shorts and the long video are already recorded for Oct 10.
+            # Only one additional Short is needed to finish that commission.
+            echo "SHORTS_PER_DAY=1" >> "$GITHUB_ENV"
           fi
 
       - name: Preflight secrets

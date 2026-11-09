@@ -44,6 +44,18 @@ class ScriptPlanner:
         except Exception:
             return max(candidates, key=lambda item: item.score)
 
+    @staticmethod
+    def _curio_long_contract_ok(data: dict) -> bool:
+        scenes = data.get("scenes", [])
+        if not isinstance(scenes, list) or not 30 <= len(scenes) <= 38:
+            return False
+        words = sum(
+            len(str(scene.get("narration") or "").split())
+            for scene in scenes
+            if isinstance(scene, dict)
+        )
+        return 1200 <= words <= 1650
+
     def create_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
         if not self.settings.llm_configured:
             return self._fallback_plan(research, video_format)
@@ -390,7 +402,7 @@ PACKAGING
 - thumbnail_brief: one simple focal visual idea.
 
 Return JSON only with exactly these top-level keys:
-angle, hook, script, title, description, tags, thumbnail_brief, thumbnail_text, visual_queries, scenes.
+angle, content_mode, hook, script, title, description, tags, thumbnail_brief, thumbnail_text, visual_queries, scenes.
 Each scenes item must contain exactly:
 narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
 """
@@ -478,11 +490,13 @@ Fix every problem you find:
 - scenes whose visual does not literally explain the narration beat
 {editorial_notes}
 - vague advice with no concrete takeaway
+- on-screen text that reads like a transcript, repeats branding, or would become a persistent banner
+- a claimed software test that does not visibly show signup/access, the main product, a feature, a public workflow, an output, price/free availability, and a compact pros/cons decision
 
 {format_rules}
 {visual_style_note}
 
-Return the complete corrected JSON only, preserving the required top-level keys and these exact scene keys: narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
+Return the complete corrected JSON only, preserving the required top-level keys including content_mode and these exact scene keys: narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
 """
         try:
             return self._generate_json(review_prompt)
@@ -634,7 +648,15 @@ Return the complete corrected JSON only, preserving the required top-level keys 
             text = text.split("\n", 1)[-1]
             if text.endswith("```"):
                 text = text[:-3]
-        return json.loads(text.strip())
+        data = json.loads(text.strip())
+        # Models occasionally wrap the requested object in a one-item JSON
+        # array. Accept that harmless shape variation, but fail explicitly for
+        # every other non-object response instead of crashing later on `.get`.
+        if isinstance(data, list) and len(data) == 1 and isinstance(data[0], dict):
+            data = data[0]
+        if not isinstance(data, dict):
+            raise ValueError("LLM JSON response must be an object")
+        return data
 
     def _fallback_plan(self, research: ResearchPack, video_format: str) -> VideoPlan:
         topic = research.topic

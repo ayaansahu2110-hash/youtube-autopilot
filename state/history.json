@@ -4,7 +4,7 @@
       "video_id": "Acw2Uj-kyJc",
       "topic": "Bypass 2FA Walls with Self-Hosted Browser Automation",
       "title": "Bypass 2FA Walls with Self-Hosted Browser Automation",
-      "format": "unknown",
+      "format": "short",
       "script_preview": "",
       "created_at": "2026-08-29T06:59:52Z",
       "analytics": {
@@ -24,7 +24,7 @@
       "video_id": "LMKSOhUQ6dI",
       "topic": "Puppetflow: The Self-Hosted Browser Automation That Handles 2FA",
       "title": "Puppetflow: The Self-Hosted Browser Automation That Handles 2FA",
-      "format": "unknown",
+      "format": "long",
       "script_preview": "",
       "created_at": "2026-08-29T07:43:12Z",
       "analytics": {
@@ -44,7 +44,7 @@
       "video_id": "TX4J_dQRoHQ",
       "topic": "Build PowerPoint Decks Locally with SlideX and MDX",
       "title": "Build PowerPoint Decks Locally with SlideX and MDX",
-      "format": "unknown",
+      "format": "short",
       "script_preview": "",
       "created_at": "2026-08-29T12:39:19Z",
       "analytics": {
@@ -64,7 +64,7 @@
       "video_id": "WH9XlFC_2os",
       "topic": "Stop Pasting SQL Into AI Chatbots",
       "title": "Stop Pasting SQL Into AI Chatbots",
-      "format": "unknown",
+      "format": "short",
       "script_preview": "",
       "created_at": "2026-08-29T20:03:55Z",
       "analytics": {
@@ -84,7 +84,7 @@
       "video_id": "vJuJiodXx04",
       "topic": "Stop syncing your thoughts: Local-first AI notebooks",
       "title": "Stop syncing your thoughts: Local-first AI notebooks",
-      "format": "unknown",
+      "format": "short",
       "script_preview": "",
       "created_at": "2026-08-30T06:43:54Z",
       "analytics": {
@@ -104,7 +104,7 @@
       "video_id": "hrPr_pqHlhQ",
       "topic": "Query Databases Safely with Local AI Agents",
       "title": "Query Databases Safely with Local AI Agents",
-      "format": "unknown",
+      "format": "short",
       "script_preview": "",
       "created_at": "2026-08-30T09:37:18Z",
       "analytics": {
@@ -1059,48 +1059,114 @@
       "script_preview": "Most users currently rely on opaque SaaS platforms that process sensitive data in the cloud, risking significant information exposure. By shifting to a local-first architecture, we regain absolute control over our digital privacy and sensitive workflows without relying on external entities. Today, we map out the specific stack required to build your own private AI agents using Ollama and Open WebUI. This guide ensures you understand every layer of the architecture, from local model hosting to creating robust, autonomous agentic interfaces for productivity. The foundation of this setup is Ollam",
       "created_at": "2026-11-08T12:16:48.437896+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "WE1y-ytiBYs",
+      "topic": "Hackers Backdoor Nextcloud Servers Through Critical Flaw in Collabora’s Built-in CODE App",
+      "title": "Nextcloud Security Alert: Patch CODE Now",
+      "format": "short",
+      "script_preview": "If you host a Nextcloud server, stop. Attackers are exploiting a critical flaw in the Collabora built-in CODE app to plant web shells. The vulnerability, tracked as CVE-2026-110447, permits unauthenticated remote code execution on the server. This exploit triggers specifically when the document server crashes or restarts, bypassing standard security authentication. It affects the 'richdocumentscode' package. Simply disabling the app is insufficient; you must secure your server environment. The fix is mandatory: update the app to version 26.4.303 or remove it from your instance entirely. Standa",
+      "created_at": "2026-10-15T12:44:16.039832+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "DnlI23stQlM",
+      "topic": "Linus Torvalds let Claude Code fix the Linux page cache. Then reviewers found a race.",
+      "title": "Linus Torvalds Let AI Fix Linux, And It Failed",
+      "format": "long",
+      "script_preview": "When you think of the Linux kernel, you probably think of manual, line-by-line expert scrutiny. Yet, recently, Linus Torvalds, the creator of Linux, allowed an AI—Claude Code—to help him fix a technical issue involving the Linux page cache. It was an bold experiment in machine-assisted development. This was not just a side project. The page cache is a critical component of how Linux handles data in memory. If you get the code wrong, you create performance bottlenecks or, worse, data corruption. The experiment was meant to test if AI could handle complex kernel-level refactoring tasks. Claude C",
+      "created_at": "2026-10-15T14:34:32.927955+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "TkuF3hCJ3yQ",
+      "topic": "Microsoft and GitHub Keep Giving AI Agents More Power -- and More Restrictions",
+      "title": "Microsoft's AI Agents Get Power—and Containers",
+      "format": "short",
+      "script_preview": "Autonomous AI agents can now handle complex coding jobs, but enterprise systems will strictly limit where they run. Microsoft and GitHub are expanding agent autonomy while introducing mandatory sandboxing and enterprise monitoring controls. Consider an engineer tasking an AI agent with refactoring shared business processes and repository dependencies. Input: the developer triggers an automated run to update packages and run test suites. Action: Microsoft Execution Containers isolate the agent, validating every system call against corporate security policies. Result: the agent successfully gene",
+      "created_at": "2026-10-16T11:47:38.673731+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "NxhA6taXdXI",
+      "topic": "I outsourced my life to AI agents for two weeks. It went…weirdly.",
+      "title": "I Outsourced My Life to AI Agents for Two Weeks",
+      "format": "short",
+      "script_preview": "I handed my social life and wardrobe choices over to AI agents for two weeks, and my friends almost staged an intervention. The experiment relied on automated systems to pick outfits and draft texts using my past communication patterns. The change was immediate: friends reported 'chatfishing,' where they felt I was being replaced by robotic, overly-optimized replies. While calendar management became hyper-efficient, the results showed a clear limitation. You quickly lose touch with your own preferences when an agent decides for you. My experience mirrors findings in The Guardian and Business I",
+      "created_at": "2026-10-16T12:00:52.933672+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "7_kDBbnD2tY",
+      "topic": "PDF to PPT Converter From Presentations.AI Turns PDFs Into Editable PowerPoint Slide Decks With AI, Keeping Charts, Tables and Images Intact, as a Free-to-Try Gamma and Beautiful.ai Alternative",
+      "title": "Convert PDF to Editable PowerPoint in 30 Seconds",
+      "format": "short",
+      "script_preview": "Turning a dense twenty-page research PDF into slides usually means retyping data and pasting blurry screenshots. Presentations.AI launched a converter that restructures full PDFs into editable PowerPoint decks in thirty seconds. Instead of cloning pages one-to-one, the AI parses the core arguments into a narrative slide structure. Embedded data tables and charts convert into native, editable PowerPoint assets, keeping image resolution intact. It handles scanned documents and password-protected files, applying your team's custom brand colors and fonts automatically. Unlike Gamma or Beautiful.ai",
+      "created_at": "2026-10-17T11:03:02.885670+00:00",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "SJk9kKOCi24",
+      "topic": "Bluesky’s Attie Turns AI Prompts Into Shareable Social Apps",
+      "title": "Bluesky Attie: AI Prompts Into Mini Apps",
+      "format": "short",
+      "script_preview": "Your next social media post could be a fully playable browser game generated from a single sentence. Bluesky expanded its AI tool Attie from building custom feeds into generating lightweight, standalone web apps. Instead of writing code, a creator types a prompt describing an interactive experience for their followers. Attie automatically compiles the mini-app and deploys it as an independent public web page. Official demos include Flappy Butterfly, an arcade clone dodging ratio icons and bad takes. Other tests built profile persona quizzes analyzing recent activity, live AMA question boards, ",
+      "created_at": "2026-10-17T11:06:12.365920+00:00",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "BlNs3G51JVk",
+      "topic": "DOE Releases Genesis Agent Skills to Support AI-Driven Scientific Research",
+      "title": "DOE's New AI Agents: How They Actually Speed Up Science",
+      "format": "long",
+      "script_preview": "The U.S. Department of Energy just released a suite of standardized AI tools called Genesis Agent Skills. This is a deliberate shift from loose, experimental AI toward a unified framework designed specifically to automate and accelerate scientific research across national laboratories. For decades, scientific discovery has been bottlenecked by manual trial-and-error in labs. You would hypothesize, run a chemical reaction, analyze results, and then refine. This cycle takes months. Now, these new agent skills allow AI to bridge that gap. What changed is the formalization of 'Agent Skills.' Think",
+      "created_at": "2026-10-17T12:09:00.132128+00:00",
+      "analytics": {},
+      "source": "youtube_sync"
     }
   ],
   "topics": [
     {
       "topic": "Bypass 2FA Walls with Self-Hosted Browser Automation",
       "title": "Bypass 2FA Walls with Self-Hosted Browser Automation",
-      "format": "unknown",
+      "format": "short",
       "created_at": "2026-08-29T06:59:52Z",
       "source": "youtube_sync"
     },
     {
       "topic": "Puppetflow: The Self-Hosted Browser Automation That Handles 2FA",
       "title": "Puppetflow: The Self-Hosted Browser Automation That Handles 2FA",
-      "format": "unknown",
+      "format": "long",
       "created_at": "2026-08-29T07:43:12Z",
       "source": "youtube_sync"
     },
     {
       "topic": "Build PowerPoint Decks Locally with SlideX and MDX",
       "title": "Build PowerPoint Decks Locally with SlideX and MDX",
-      "format": "unknown",
+      "format": "short",
       "created_at": "2026-08-29T12:39:19Z",
       "source": "youtube_sync"
     },
     {
       "topic": "Stop Pasting SQL Into AI Chatbots",
       "title": "Stop Pasting SQL Into AI Chatbots",
-      "format": "unknown",
+      "format": "short",
       "created_at": "2026-08-29T20:03:55Z",
       "source": "youtube_sync"
     },
     {
       "topic": "Stop syncing your thoughts: Local-first AI notebooks",
       "title": "Stop syncing your thoughts: Local-first AI notebooks",
-      "format": "unknown",
+      "format": "short",
       "created_at": "2026-08-30T06:43:54Z",
       "source": "youtube_sync"
     },
     {
       "topic": "Query Databases Safely with Local AI Agents",
       "title": "Query Databases Safely with Local AI Agents",
-      "format": "unknown",
+      "format": "short",
       "created_at": "2026-08-30T09:37:18Z",
       "source": "youtube_sync"
     },

@@ -408,6 +408,8 @@ class TopicDiscovery:
         candidates: list[TopicCandidate] = []
 
         for key, signal in signals.items():
+            if self.settings.channel_profile != "curioaxiom" and not self.editorial.is_relevant_topic(signal["title"]):
+                continue
             if any(self._similar(key, old) for old in recent if old):
                 continue
 
@@ -491,9 +493,9 @@ class TopicDiscovery:
         try:
             response = httpx.get(url, timeout=15, follow_redirects=True, headers=_BROWSER_HEADERS)
             response.raise_for_status()
-            parsed = feedparser.loads(response.text)
-        except Exception:
+        except httpx.HTTPError:
             return []
+        parsed = feedparser.parse(response.text)
 
         now = datetime.now(timezone.utc)
         items = []

@@ -39,6 +39,18 @@ class QualityGate:
                 errors.append(f"Topic is too similar to a recent topic ({similarity:.0%}).")
                 break
 
+        # A headline rewrite cannot make a published narration a new story.
+        for old in self.state.load()["videos"][-80:]:
+            if str(old.get("title", "")).strip().lower() == plan.title.strip().lower():
+                errors.append("Title duplicates an already published video.")
+                break
+            preview = str(old.get("script_preview") or "").strip().lower()
+            if len(preview.split()) >= 60:
+                current = plan.script[:600].strip().lower()
+                if SequenceMatcher(None, current, preview).ratio() >= 0.90:
+                    errors.append("Narration duplicates an already published video.")
+                    break
+
         combined = f"{plan.title} {plan.script}".lower()
         risky_terms = {
             "guaranteed profit", "get rich quick", "medical cure", "diagnose yourself",
@@ -104,6 +116,7 @@ class QualityGate:
             stock_count = 0
             non_stock_count = 0
             missing_labels = 0
+            oversized_labels = 0
             invalid_ui_sources = 0
             incomplete_storyboards = 0
             mismatched_storyboards = 0
@@ -122,6 +135,11 @@ class QualityGate:
                     non_stock_count += 1
                 if not scene.on_screen_text.strip():
                     missing_labels += 1
+                if (
+                    self.settings.channel_profile == "bytevexa"
+                    and len(scene.on_screen_text.split()) > 5
+                ):
+                    oversized_labels += 1
                 if scene.visual_mode == "ui":
                     ui_sources.append(scene.source_url)
                     if scene.source_url not in approved_urls:
@@ -170,6 +188,8 @@ class QualityGate:
                 errors.append("Not enough explanatory or source-grounded scenes were planned.")
             if missing_labels > max(1, len(plan.scenes) // 5):
                 errors.append("Too many scenes are missing useful on-screen reinforcement text.")
+            if oversized_labels > max(1, len(plan.scenes) // 5):
+                errors.append("Too many ByteVexa on-screen labels read like subtitles instead of visual emphasis.")
             if invalid_ui_sources:
                 errors.append("One or more UI scenes reference a source URL that research did not approve.")
             if incomplete_storyboards:
@@ -229,9 +249,87 @@ class QualityGate:
                 if not any(any(word in purpose for word in ending_beats) for purpose in purposes):
                     errors.append("Video lacks a limitation/comparison/takeaway beat.")
                 source_counts = Counter(url for url in ui_sources if url)
-                repeat_limit = max(3, len(plan.scenes) // 3) if plan.format == "long" else max(3, len(plan.scenes) // 2)
+                repeat_limit = (
+                    len(plan.scenes)
+                    if plan.content_mode == "tool_review"
+                    else max(3, len(plan.scenes) // 3)
+                    if plan.format == "long"
+                    else max(3, len(plan.scenes) // 2)
+                )
                 if source_counts and max(source_counts.values()) > repeat_limit:
                     errors.append("Too many scenes reuse the same product page; show more varied evidence or explanatory visuals.")
+
+                if self.settings.channel_profile == "bytevexa" and plan.content_mode == "tool_review":
+                    required_purposes = {
+                        "signup": ("signup", "sign up", "access", "availability", "no signup"),
+                        "main": ("main", "product", "dashboard", "workspace"),
+                        "feature": ("feature",),
+                        "workflow": ("workflow", "demo", "flow"),
+                        "output": ("output", "result"),
+                        "pricing": ("pricing", "price", "free", "availability"),
+                        "pros_cons": ("pros", "cons", "comparison", "limitation"),
+                    }
+                    missing_walkthrough = [
+                        stage
+                        for stage, labels in required_purposes.items()
+                        if not any(any(label in purpose for label in labels) for purpose in purposes)
+                    ]
+                    ui_stages = {"signup", "main", "feature", "workflow", "output", "pricing"}
+                    non_ui_walkthrough = []
+                    for stage, labels in required_purposes.items():
+                        if stage not in ui_stages:
+                            continue
+                        if not any(
+                            scene.visual_mode == "ui"
+                            and any(label in scene.purpose.lower() for label in labels)
+                            for scene in plan.scenes
+                        ):
+                            non_ui_walkthrough.append(stage)
+                    if missing_walkthrough:
+                        errors.append(
+                            "Tool review is missing required viewer decision beats: "
+                            + ", ".join(missing_walkthrough)
+                            + "."
+                        )
+                    if non_ui_walkthrough:
+                        errors.append(
+                            "Tool review must use verified product UI for: "
+                            + ", ".join(non_ui_walkthrough)
+                            + "."
+                        )
+                    if "Software / website:" not in plan.description:
+                        errors.append("Tool review description must include the verified software / website link.")
+
+            if plan.format == "long" and self.settings.channel_profile == "bytevexa":
+                opening_labels = ("hook", "problem", "outcome", "consequence", "result", "demo", "proof")
+                if not any(label in purposes[0] for label in opening_labels):
+                    errors.append("ByteVexa long-form must open on a concrete hook, problem, outcome or proof beat.")
+
+                proof_labels = ("proof", "demo", "result", "workflow", "evidence")
+                if not any(
+                    any(label in purpose for label in proof_labels)
+                    for purpose in purposes[:4]
+                ):
+                    errors.append("ByteVexa long-form must show proof, a demo action or a result within its first four scenes.")
+
+                reset_labels = (
+                    "proof", "demo", "example", "result", "comparison",
+                    "limitation", "catch", "decision", "takeaway",
+                )
+                reset_count = sum(
+                    any(label in purpose for label in reset_labels)
+                    for purpose in purposes
+                )
+                minimum_resets = max(5, len(purposes) // 6)
+                if reset_count < minimum_resets:
+                    errors.append(
+                        f"ByteVexa long-form has only {reset_count} retention-reset scenes; need at least {minimum_resets}."
+                    )
+
+                if len(plan.title) > 70:
+                    errors.append("ByteVexa long-form title must stay under 70 characters.")
+                if not 2 <= len(plan.thumbnail_text.split()) <= 4:
+                    errors.append("ByteVexa long-form thumbnail text must contain 2-4 words.")
 
         if len(research.sources) >= 3:
             warnings.append("Research depth is strong: three or more independent source pages were available.")

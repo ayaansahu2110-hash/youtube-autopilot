@@ -1,6 +1,8 @@
 from pathlib import Path
+import re
 
 from google.auth.transport.requests import Request
+from google.auth.exceptions import RefreshError
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
@@ -86,7 +88,7 @@ class YouTubeUploader:
         expected = (self.settings.expected_youtube_channel_id or "").strip()
         if not expected:
             return
-        items = youtube.channels().list(part="id,snippet", mine=True, maxResults=1).execute().get("items", [])
+        items = youtube.channels().list(part="id,snippet", mine=True, maxResults=1).execute(num_retries=3).get("items", [])
         actual = str(items[0].get("id") if items else "")
         if actual != expected:
             raise RuntimeError(
@@ -94,10 +96,14 @@ class YouTubeUploader:
                 f"YouTube channel {expected}, got {actual or 'none'}."
             )
 
+    def verify_channel(self) -> None:
+        """Check the OAuth token and channel lock without querying individual videos."""
+        self._service()
+
     def recent_uploads(self, limit: int = 30) -> list[dict[str, str]]:
         """Return the channel's most recent real uploads for cross-run duplicate protection."""
         youtube = self._service()
-        channel_items = youtube.channels().list(part="contentDetails", mine=True, maxResults=1).execute().get("items", [])
+        channel_items = youtube.channels().list(part="contentDetails", mine=True, maxResults=1).execute(num_retries=3).get("items", [])
         if not channel_items:
             return []
         uploads_playlist = (
@@ -109,9 +115,24 @@ class YouTubeUploader:
             part="snippet,contentDetails",
             playlistId=uploads_playlist,
             maxResults=max(1, min(50, limit)),
-        ).execute()
+        ).execute(num_retries=3)
+        items = data.get("items", []) or []
+        video_ids = [
+            str(item.get("contentDetails", {}).get("videoId") or "")
+            for item in items
+            if item.get("contentDetails", {}).get("videoId")
+        ]
+        durations: dict[str, int] = {}
+        if video_ids:
+            details = youtube.videos().list(
+                part="contentDetails", id=",".join(video_ids)
+            ).execute(num_retries=3).get("items", [])
+            for video in details:
+                seconds = self._duration_seconds(str(video.get("contentDetails", {}).get("duration") or ""))
+                durations[str(video.get("id") or "")] = seconds
+
         output: list[dict[str, str]] = []
-        for item in data.get("items", []) or []:
+        for item in items:
             snippet = item.get("snippet", {})
             video_id = str(item.get("contentDetails", {}).get("videoId") or "")
             title = str(snippet.get("title") or "").strip()
@@ -121,9 +142,25 @@ class YouTubeUploader:
                         "video_id": video_id,
                         "title": title,
                         "published_at": str(snippet.get("publishedAt") or ""),
+                        # Conservative classification keeps long-form watch-hour
+                        # reporting honest. Videos beyond a minute are treated as
+                        # long-form unless their own production record says otherwise.
+                        "format": (
+                            "short" if 0 < durations.get(video_id, 0) <= 60
+                            else "long" if durations.get(video_id, 0) > 60
+                            else "unknown"
+                        ),
                     }
                 )
         return output
+
+    @staticmethod
+    def _duration_seconds(iso_duration: str) -> int:
+        match = re.fullmatch(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", iso_duration)
+        if not match:
+            return 0
+        hours, minutes, seconds = (int(value or 0) for value in match.groups())
+        return hours * 3600 + minutes * 60 + seconds
 
     def delete_video(self, video_id: str) -> None:
         """Delete one owned YouTube upload by ID."""

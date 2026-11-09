@@ -47,6 +47,7 @@ class DailyLearningLoop:
             "competitors": [],
             "own_comments": [],
             "own_analytics": self._own_analytics_snapshot(),
+            "own_winners": self._own_winners_snapshot(),
             "monetization": {},
         }
         if not self.settings.youtube_token_file.exists():
@@ -173,11 +174,11 @@ class DailyLearningLoop:
         snapshot = {
             "subscribers": 0,
             "subscriber_target": 1000,
-            "estimated_long_watch_hours_365d": 0.0,
+            "estimated_long_watch_hours_365d": None,
             "watch_hour_target": 4000,
-            "estimated_shorts_views_90d": 0.0,
+            "estimated_shorts_views_90d": None,
             "shorts_view_target": 10_000_000,
-            "bottleneck": "subscribers",
+            "bottleneck": "unknown",
             "note": "Directional estimate; YouTube Studio Earn tab is authoritative.",
         }
         try:
@@ -195,7 +196,6 @@ class DailyLearningLoop:
             if isinstance(item, dict) and item.get("video_id"):
                 formats[str(item["video_id"])] = str(item.get("format") or "")
         if not formats:
-            self._set_bottleneck(snapshot)
             return snapshot
 
         try:
@@ -237,7 +237,8 @@ class DailyLearningLoop:
         except HttpError:
             pass
 
-        self._set_bottleneck(snapshot)
+        if snapshot["estimated_long_watch_hours_365d"] is not None and snapshot["estimated_shorts_views_90d"] is not None:
+            self._set_bottleneck(snapshot)
         return snapshot
 
     @staticmethod
@@ -272,6 +273,16 @@ class DailyLearningLoop:
                 )
         return rows[-20:]
 
+    def _own_winners_snapshot(self) -> list[dict]:
+        return [
+            {
+                "title": item.get("title", ""),
+                "format": item.get("format", "unknown"),
+                "metrics": item.get("analytics") or {},
+            }
+            for item in self.state.top_performers(limit=5)
+        ]
+
     def _write(self, report: dict) -> dict:
         path = self.settings.learning_file
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -289,13 +300,21 @@ def learning_context(settings: Settings, max_chars: int = 9000) -> str:
         return ""
 
     lines = ["DAILY CHANNEL LEARNING — use patterns only; never copy wording or creator identity."]
+    lines.append(
+        "Editorial experiment: open each Short with a concrete visual question or surprising result, "
+        "show the evidence or mechanism before the viewer has to wait through an introduction, "
+        "and end with the truthful answer. Keep the next video original; do not lengthen a weak idea "
+        "to meet a posting target. Review Studio's 'stayed to watch' and video retention after publishing "
+        "before repeating a format. Those metrics are not available in this stored report, so do not "
+        "claim an experiment improved them without fresh data."
+    )
     monetization = data.get("monetization") or {}
     if monetization:
         lines.append(
             "YPP growth estimate: "
             f"subs={monetization.get('subscribers', 0)}/1000; "
-            f"long_watch_hours≈{monetization.get('estimated_long_watch_hours_365d', 0)}/4000; "
-            f"shorts_views_90d≈{monetization.get('estimated_shorts_views_90d', 0)}/10000000; "
+            f"long_watch_hours≈{monetization.get('estimated_long_watch_hours_365d') if monetization.get('estimated_long_watch_hours_365d') is not None else 'unknown'}/4000; "
+            f"shorts_views_90d≈{monetization.get('estimated_shorts_views_90d') if monetization.get('estimated_shorts_views_90d') is not None else 'unknown'}/10000000; "
             f"current bottleneck={monetization.get('bottleneck', 'unknown')}."
         )
         lines.append(
@@ -308,14 +327,84 @@ def learning_context(settings: Settings, max_chars: int = 9000) -> str:
         )
         for video in item.get("high_performing_recent_videos", [])[:4]:
             lines.append(f"- {video.get('views', 0)} views: {video.get('title', '')}")
-    analytics = data.get("own_analytics", [])[-10:]
-    if analytics:
-        lines.append("ByteVexa recent performance:")
-        for item in analytics:
+    analytics = data.get("own_analytics", [])[-20:]
+    eligible = [
+        item for item in analytics
+        if float((item.get("metrics") or {}).get("views", 0) or 0) >= 20
+    ]
+    if eligible:
+        retention_winner = max(
+            eligible,
+            key=lambda item: (
+                min(
+                    100,
+                    float((item.get("metrics") or {}).get("averageViewPercentage", 0) or 0),
+                )
+                * min(1, float((item.get("metrics") or {}).get("views", 0) or 0) / 100),
+                float((item.get("metrics") or {}).get("views", 0) or 0),
+            ),
+        )
+        retention_metrics = retention_winner.get("metrics") or {}
+        lines.append(
+            "Own retention baseline: "
+            f"{retention_winner.get('title', '')} at "
+            f"{float(retention_metrics.get('averageViewPercentage', 0) or 0):.1f}% average viewed. "
+            "Preserve its specificity and pace, but create a new structure and wording."
+        )
+
+        conversion_candidates = [
+            item for item in eligible
+            if float((item.get("metrics") or {}).get("views", 0) or 0) >= 75
+        ] or eligible
+        conversion_winner = max(
+            conversion_candidates,
+            key=lambda item: (
+                100 * float((item.get("metrics") or {}).get("subscribersGained", 0) or 0)
+                / max(1, float((item.get("metrics") or {}).get("views", 0) or 0))
+            ),
+        )
+        conversion_metrics = conversion_winner.get("metrics") or {}
+        conversion_rate = (
+            100 * float(conversion_metrics.get("subscribersGained", 0) or 0)
+            / max(1, float(conversion_metrics.get("views", 0) or 0))
+        )
+        if conversion_rate > 0:
+            lines.append(
+                "Own subscriber-conversion baseline: "
+                f"{conversion_winner.get('title', '')} at {conversion_rate:.2f} subscribers per 100 views. "
+                "Reuse the pattern of a concrete pain point, useful mechanism and honest catch; never reuse its wording."
+            )
+
+        long_rows = [item for item in eligible if item.get("format") == "long"]
+        if long_rows:
+            weighted_views = sum(float((item.get("metrics") or {}).get("views", 0) or 0) for item in long_rows)
+            weighted_retention = sum(
+                float((item.get("metrics") or {}).get("views", 0) or 0)
+                * float((item.get("metrics") or {}).get("averageViewPercentage", 0) or 0)
+                for item in long_rows
+            ) / max(1, weighted_views)
+            if weighted_retention < 30:
+                lines.append(
+                    f"Long-form intervention: tracked weighted retention is only {weighted_retention:.1f}%. "
+                    "Lead with the visible result, deliver proof/demo inside 30 seconds, cut history/setup preambles, "
+                    "and introduce a fresh proof, example, comparison, limitation or decision every 30-45 seconds."
+                )
+
+    winners = data.get("own_winners", [])[:5]
+    if winners:
+        lines.append("Our best-performing baselines — reuse only the winning topic, hook, pacing and retention patterns; never copy wording:")
+        for item in winners:
+            lines.append(f"- {item.get('title', '')} ({item.get('format', 'unknown')}): {json.dumps(item.get('metrics', {}), ensure_ascii=False)}")
+    recent_analytics = analytics[-10:]
+    if recent_analytics:
+        lines.append(f"{settings.channel_display_name} recent performance:")
+        for item in recent_analytics:
             lines.append(f"- {item.get('title', '')}: {json.dumps(item.get('metrics', {}), ensure_ascii=False)}")
     comments = data.get("own_comments", [])[:15]
     if comments:
         lines.append("Viewer feedback themes from our comments:")
         for item in comments:
             lines.append(f"- {item.get('text', '')}")
+    else:
+        lines.append("No usable viewer-comment text is available yet; do not invent comment-derived preferences.")
     return "\n".join(lines)[:max_chars]

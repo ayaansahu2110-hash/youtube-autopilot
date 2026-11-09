@@ -8,7 +8,7 @@ from urllib.parse import urljoin, urlparse
 
 import httpx
 from bs4 import BeautifulSoup
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 from autopilot.models import SceneBeat, VisualAsset
 from autopilot.providers.visuals import PexelsVideoProvider
@@ -210,7 +210,12 @@ class HybridVisualDirector:
         scene_index: int,
         vertical: bool,
     ) -> VisualAsset | None:
-        """Record a richer public UI sequence, then fall back to a framed screenshot."""
+        """Record a specific public product surface, never an authenticated session.
+
+        Each tool-review stage is captured separately.  This produces a real
+        guided walkthrough rather than replaying the hero section as a generic
+        slide background.
+        """
         video_output = output_stem.with_suffix(".webm")
         screenshot_output = output_stem.with_suffix(".png")
         raw = output_stem.with_name(output_stem.name + "-raw.png")
@@ -232,32 +237,9 @@ class HybridVisualDirector:
                 page.goto(url, wait_until="domcontentloaded", timeout=30000)
                 page.wait_for_timeout(1200)
                 self._dismiss_cookie_banner(page)
+                capture_stage = self._capture_stage(scene)
+                captured_stage = self._capture_stage_surface(page, scene, capture_stage)
                 page.screenshot(path=str(raw), full_page=False)
-
-                # 1) Start with the actual product page.
-                page.wait_for_timeout(700)
-
-                # 2) Show a relevant feature/examples/how-it-works section instead
-                # of repeating only the hero landing page.
-                if not self._show_relevant_section(page, scene):
-                    page.evaluate(
-                        "window.scrollBy({top: Math.min(window.innerHeight * 0.65, 850), behavior: 'smooth'})"
-                    )
-                    page.wait_for_timeout(1200)
-
-                # 3) When a public no-login input exists, demonstrate a harmless
-                # generic prompt. This creates real typing footage for tools like
-                # slide generators without using private information.
-                demo_started = self._try_public_demo(page, scene)
-                if demo_started:
-                    page.wait_for_timeout(4500)
-                    self._show_result_area(page)
-                    page.wait_for_timeout(1800)
-                else:
-                    # 4) If no interactive demo is available, deliberately show
-                    # examples/templates/results rather than another hero shot.
-                    self._show_examples_or_results(page)
-                    page.wait_for_timeout(1600)
 
                 recorded_path = page.video.path() if page.video else None
                 context.close()
@@ -274,6 +256,7 @@ class HybridVisualDirector:
                     scene_index=scene_index,
                     asset_kind="video",
                     visual_mode="ui",
+                    capture_stage=captured_stage,
                 )
 
             if raw.exists():
@@ -287,6 +270,7 @@ class HybridVisualDirector:
                     scene_index=scene_index,
                     asset_kind="image",
                     visual_mode="ui",
+                    capture_stage=captured_stage,
                 )
         except Exception:
             pass
@@ -309,14 +293,181 @@ class HybridVisualDirector:
             except Exception:
                 continue
 
+    @staticmethod
+    def _capture_stage(scene: SceneBeat) -> str:
+        # Some genuinely public browser apps (for example an editor that opens
+        # without an account) have no signup screen.  Keep that distinction
+        # explicit rather than pretending an access page is an account flow.
+        if "availability" in scene.purpose.lower() or "no signup" in scene.on_screen_text.lower():
+            return "availability"
+        text = f"{scene.purpose} {scene.on_screen_text} {scene.visual_query}".lower()
+        stages = (
+            ("signup", ("signup", "sign up", "get started", "access")),
+            ("pricing", ("pricing", "price", "free", "trial", "plan", "availability")),
+            ("output", ("output", "result", "generated", "preview")),
+            ("workflow", ("workflow", "demo", "flow", "input", "action")),
+            ("main", ("main", "dashboard", "workspace", "editor", "product")),
+            ("feature", ("feature", "how it works", "capability")),
+        )
+        return next((stage for stage, terms in stages if any(term in text for term in terms)), "feature")
+
+    def _capture_stage_surface(self, page, scene: SceneBeat, stage: str) -> str:
+        """Focus one public stage and return it only when the stage is visible."""
+        if self._is_photopea(page):
+            return self._capture_photopea_surface(page, stage)
+        if stage == "signup":
+            return "signup" if self._show_public_surface(
+                page, ("Sign up", "Get started", "Start free", "Try for free"), navigate=False
+            ) else ""
+        if stage == "pricing":
+            return "pricing" if self._show_public_surface(
+                page, ("Pricing", "Plans", "Free", "Trial"), navigate=True
+            ) else ""
+        if stage == "main":
+            if self._show_public_surface(
+                page, ("Dashboard", "Workspace", "Editor", "Product", "App"), navigate=False
+            ):
+                return "main"
+            # Some useful products, such as public answer/search engines, open
+            # directly into their primary workspace. A visible non-sensitive
+            # input is real main-product evidence; a marketing hero is not.
+            return "main" if self._find_public_input(page) is not None else ""
+        if stage == "feature":
+            return "feature" if self._show_relevant_section(page, scene) else ""
+        if stage == "workflow":
+            self._show_relevant_section(page, scene)
+            if self._try_public_demo(page, scene):
+                page.wait_for_timeout(4500)
+                return "workflow"
+            return ""
+        if stage == "output":
+            self._show_relevant_section(page, scene)
+            if self._try_public_demo(page, scene):
+                page.wait_for_timeout(4500)
+                return "output" if self._show_result_area(page) else ""
+            # A template gallery is useful supporting footage, but it is not a
+            # live output.  Keep the tool-review gate honest by refusing to
+            # count it as one.
+            self._show_examples_or_results(page)
+            return ""
+        return ""
+
+    @staticmethod
+    def _is_photopea(page) -> bool:
+        """Photopea is a public in-browser editor suitable for a real demo."""
+        try:
+            return "photopea.com" in page.url.lower()
+        except Exception:
+            return False
+
+    def _capture_photopea_surface(self, page, stage: str) -> str:
+        """Show a real Photopea session without login, upload, or export.
+
+        Photopea deliberately has no account-creation wall for its core editor.
+        The capture opens the public editor and creates only an empty local
+        canvas, which gives the viewer an honest view of the working software
+        while leaving the user's files and any external account untouched.
+        """
+        if stage in {"signup", "availability", "pricing"}:
+            if self._page_contains(page, ("free online photo editor", "without spending a dime")):
+                return "availability"
+            return ""
+
+        if not self._open_photopea_editor(page):
+            return ""
+        if stage == "main":
+            return "main"
+        if stage == "feature":
+            try:
+                image_menu = page.get_by_role("button", name=re.compile(r"^Image$", re.I)).first
+                if image_menu.count() and image_menu.is_visible():
+                    image_menu.click(timeout=1500)
+                    page.wait_for_timeout(500)
+                    return "feature"
+            except Exception:
+                pass
+            return ""
+        if stage in {"workflow", "output"}:
+            return stage if self._photopea_new_canvas(page) else ""
+        return ""
+
+    @staticmethod
+    def _page_contains(page, phrases: tuple[str, ...]) -> bool:
+        try:
+            body = page.locator("body").inner_text(timeout=1200).lower()
+        except Exception:
+            return False
+        return any(phrase in body for phrase in phrases)
+
+    @staticmethod
+    def _photopea_editor_ready(page) -> bool:
+        try:
+            file_menu = page.get_by_role("button", name=re.compile(r"^File$", re.I)).first
+            return file_menu.count() > 0 and file_menu.is_visible()
+        except Exception:
+            return False
+
+    def _open_photopea_editor(self, page) -> bool:
+        if self._photopea_editor_ready(page):
+            return True
+        try:
+            start = page.get_by_role("button", name=re.compile(r"^Start using Photopea$", re.I)).first
+            if not start.count() or not start.is_visible():
+                return False
+            start.click(timeout=1800)
+            page.wait_for_timeout(1400)
+        except Exception:
+            return False
+        return self._photopea_editor_ready(page)
+
+    def _photopea_new_canvas(self, page) -> bool:
+        """Create a blank local document as observable workflow/output proof."""
+        if not self._photopea_editor_ready(page):
+            return False
+        try:
+            new_project = page.get_by_text("New Project", exact=True).first
+            if new_project.count() and new_project.is_visible():
+                new_project.click(timeout=1600)
+                page.wait_for_timeout(350)
+            create = page.get_by_role("button", name=re.compile(r"^Create$", re.I)).first
+            if create.count() and create.is_visible():
+                create.click(timeout=1800)
+                page.wait_for_timeout(1100)
+            # The canvas workspace exposes the Layers panel after a document
+            # is created.  It is product output, not a static landing page.
+            layers = page.get_by_text("Layers", exact=True).first
+            return layers.count() > 0 and layers.is_visible()
+        except Exception:
+            return False
+
+    def _show_public_surface(self, page, hints: tuple[str, ...], *, navigate: bool) -> bool:
+        """Focus public navigation/section text without ever signing in or buying."""
+        for hint in hints:
+            for role in ("link", "button"):
+                try:
+                    target = page.get_by_role(role, name=re.compile(rf"{re.escape(hint)}", re.I)).first
+                    if not target.count() or not target.is_visible():
+                        continue
+                    target.scroll_into_view_if_needed(timeout=1200)
+                    if navigate and role == "link":
+                        href = target.get_attribute("href") or ""
+                        if href and not any(term in hint.lower() for term in ("sign", "start", "free")):
+                            target.click(timeout=1500)
+                            page.wait_for_timeout(1100)
+                    page.wait_for_timeout(800)
+                    return True
+                except Exception:
+                    continue
+        return False
+
     def _show_relevant_section(self, page, scene: SceneBeat) -> bool:
         hints = []
         joined = f"{scene.purpose} {scene.on_screen_text} {scene.visual_query} {scene.narration}".lower()
         if any(word in joined for word in ("result", "output", "example", "template")):
             hints += ["Examples", "Templates", "Results", "Gallery", "Showcase"]
         if any(word in joined for word in ("feature", "work", "how", "create", "generate")):
-            hints += ["How it works", "Features", "Create", "Generate", "Demo"]
-        hints += ["Features", "How it works", "Examples", "Templates"]
+            hints += ["How it works", "Features", "Create", "Generate", "Demo", "Search", "Research", "Products"]
+        hints += ["Features", "How it works", "Examples", "Templates", "Search", "Research", "Products"]
 
         for hint in dict.fromkeys(hints):
             try:
@@ -349,25 +500,11 @@ class HybridVisualDirector:
             "input[placeholder*='topic' i]",
             "input[placeholder*='presentation' i]",
             "input[placeholder*='slide' i]",
+            "input[placeholder*='ask' i]",
+            "input[placeholder*='search' i]",
             "[contenteditable='true']",
         ]
-        field = None
-        for selector in candidates:
-            try:
-                locator = page.locator(selector)
-                for index in range(min(locator.count(), 4)):
-                    item = locator.nth(index)
-                    if not item.is_visible():
-                        continue
-                    input_type = (item.get_attribute("type") or "").lower()
-                    if input_type in {"password", "email", "tel", "number"}:
-                        continue
-                    field = item
-                    break
-            except Exception:
-                continue
-            if field is not None:
-                break
+        field = self._find_public_input(page, candidates)
         if field is None:
             return False
 
@@ -390,7 +527,7 @@ class HybridVisualDirector:
         # Click only an obvious generation/creation button, never login/buy/save.
         button_patterns = [
             r"^generate$", r"^create$", r"generate slides", r"create presentation",
-            r"make slides", r"generate presentation", r"^go$", r"^submit$",
+            r"make slides", r"generate presentation", r"^go$", r"^submit$", r"^search$", r"^ask$",
         ]
         for pattern in button_patterns:
             try:
@@ -403,33 +540,73 @@ class HybridVisualDirector:
                     return True
             except Exception:
                 continue
-        return False
+        # Public answer engines often use an icon-only submit control. Enter is
+        # safe here because the typed prompt is generic and non-personal.
+        try:
+            field.press("Enter")
+            page.wait_for_timeout(800)
+            return True
+        except Exception:
+            return False
 
     @staticmethod
-    def _show_result_area(page) -> None:
-        for hint in ("Result", "Preview", "Generated", "Presentation", "Slides", "Output"):
+    def _find_public_input(page, selectors: list[str] | None = None):
+        selectors = selectors or [
+            "textarea",
+            "input[placeholder*='prompt' i]",
+            "input[placeholder*='describe' i]",
+            "input[placeholder*='topic' i]",
+            "input[placeholder*='presentation' i]",
+            "input[placeholder*='slide' i]",
+            "input[placeholder*='ask' i]",
+            "input[placeholder*='search' i]",
+            "[contenteditable='true']",
+        ]
+        for selector in selectors:
+            try:
+                locator = page.locator(selector)
+                for index in range(min(locator.count(), 4)):
+                    item = locator.nth(index)
+                    if not item.is_visible():
+                        continue
+                    input_type = (item.get_attribute("type") or "").lower()
+                    if input_type in {"password", "email", "tel", "number"}:
+                        continue
+                    return item
+            except Exception:
+                continue
+        return None
+
+    @staticmethod
+    def _show_result_area(page) -> bool:
+        for hint in (
+            "Result", "Preview", "Generated", "Presentation", "Slides", "Output",
+            "Answer", "Sources", "Citations", "Related",
+        ):
             try:
                 target = page.get_by_text(re.compile(hint, re.I)).first
                 if target.count() and target.is_visible():
                     target.scroll_into_view_if_needed(timeout=1000)
-                    return
+                    return True
             except Exception:
                 continue
+        return False
 
     @staticmethod
-    def _show_examples_or_results(page) -> None:
+    def _show_examples_or_results(page) -> bool:
         for hint in ("Examples", "Templates", "Gallery", "Showcase", "Results", "Preview"):
             try:
                 target = page.get_by_text(re.compile(hint, re.I)).first
                 if target.count() and target.is_visible():
                     target.scroll_into_view_if_needed(timeout=1100)
-                    return
+                    return True
             except Exception:
                 continue
         try:
             page.evaluate("window.scrollBy({top: Math.min(window.innerHeight * 0.75, 950), behavior: 'smooth'})")
         except Exception:
-            pass
+            return False
+        return False
 
     def _frame_browser_capture(self, raw: Path, output: Path, *, url: str, vertical: bool) -> None:
         width, height = (1080, 1920) if vertical else (1920, 1080)
@@ -498,75 +675,275 @@ class HybridVisualDirector:
             self._make_fact_explainer(image, draw, scene, output, vertical=vertical, scene_index=scene_index)
             return
 
-        # Decorative depth so the fallback still feels like a designed tech short.
-        draw.ellipse((-180, 50, 520, 750), fill=(20, 55, 70))
-        draw.ellipse((width - 430, height - 720, width + 180, height - 100), fill=(34, 28, 70))
+        role, theme = self._bytevexa_theme(scene, scene_index)
+        base, surface, accent, secondary, muted = theme
+
+        # A different palette is selected for each story beat.  It deliberately
+        # avoids the old repeated blue information banner.
+        for y in range(0, height, 8):
+            mix = y / max(1, height)
+            colour = tuple(round(base[channel] * (1 - mix) + surface[channel] * mix) for channel in range(3))
+            draw.rectangle((0, y, width, min(height, y + 8)), fill=colour)
+        glow = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+        glow_draw = ImageDraw.Draw(glow)
+        glow_draw.ellipse((-width // 3, int(height * 0.12), int(width * 0.62), int(height * 0.72)), fill=(*accent, 72))
+        glow_draw.ellipse((int(width * 0.46), int(height * 0.48), width + width // 3, height + height // 5), fill=(*secondary, 62))
+        image = Image.alpha_composite(image.convert("RGBA"), glow.filter(ImageFilter.GaussianBlur(85))).convert("RGB")
+        draw = ImageDraw.Draw(image)
+
+        brand_font = self._font(24 if vertical else 27, bold=True)
+        small_font = self._font(21 if vertical else 23, bold=True)
+        label_font = self._font(48 if vertical else 54, bold=True)
+        chrome = (241, 245, 250)
+        panel = tuple(min(255, value + 12) for value in surface)
+        dim_panel = tuple(max(0, value - 8) for value in surface)
+
+        draw.text((margin, int(height * 0.075)), self.brand_name.upper(), font=brand_font, fill=chrome)
         draw.rounded_rectangle(
-            (margin, int(height * 0.10), width - margin, int(height * 0.84)),
-            radius=40,
-            fill=(18, 25, 42),
-            outline=(57, 74, 100),
+            (width - margin - 122, int(height * 0.072), width - margin, int(height * 0.112)),
+            radius=18,
+            fill=(*accent, 232),
+        )
+        draw.text((width - margin - 92, int(height * 0.079)), f"{scene_index + 1:02d}", font=small_font, fill=base)
+
+        # One compact, single-line emphasis: never a transcript or a persistent
+        # multi-line banner.  Spoken captions are rendered separately at the bottom.
+        label = self._visual_label(scene).upper()
+        label_box_top = int(height * 0.155)
+        label_box_bottom = label_box_top + int(height * 0.078)
+        draw.rounded_rectangle(
+            (margin, label_box_top, width - margin, label_box_bottom),
+            radius=30,
+            fill=(7, 10, 18),
+            outline=(*accent, 205),
             width=3,
         )
+        bbox = draw.textbbox((0, 0), label, font=label_font)
+        label_width = bbox[2] - bbox[0]
+        while label_width > width - margin * 2 - 52 and label_font.size > 30:
+            label_font = self._font(label_font.size - 2, bold=True)
+            bbox = draw.textbbox((0, 0), label, font=label_font)
+            label_width = bbox[2] - bbox[0]
+        label_y = label_box_top + (label_box_bottom - label_box_top - (bbox[3] - bbox[1])) // 2 - bbox[1]
+        draw.text(((width - label_width) // 2, label_y), label, font=label_font, fill=chrome)
 
-        brand_font = self._font(27 if vertical else 30, bold=True)
-        kicker_font = self._font(24 if vertical else 24, bold=True)
-        headline_font = self._font(48 if vertical else 48, bold=True)
-        small_font = self._font(25 if vertical else 24)
-        ui_font = self._font(27 if vertical else 26, bold=True)
+        canvas_top = int(height * 0.29)
+        canvas_bottom = int(height * 0.77)
+        canvas_left = margin
+        canvas_right = width - margin
+        if role == "comparison":
+            self._draw_comparison_canvas(
+                draw, canvas_left, canvas_top, canvas_right, canvas_bottom,
+                accent=accent, secondary=secondary, panel=panel, dim_panel=dim_panel, text=chrome,
+            )
+        elif role == "limitation":
+            self._draw_caution_canvas(
+                draw, canvas_left, canvas_top, canvas_right, canvas_bottom,
+                accent=accent, secondary=secondary, panel=panel, text=chrome,
+            )
+        elif role == "result":
+            self._draw_result_canvas(
+                draw, canvas_left, canvas_top, canvas_right, canvas_bottom,
+                accent=accent, secondary=secondary, panel=panel, dim_panel=dim_panel, text=chrome,
+            )
+        else:
+            self._draw_workflow_canvas(
+                draw, canvas_left, canvas_top, canvas_right, canvas_bottom,
+                accent=accent, secondary=secondary, panel=panel, dim_panel=dim_panel, text=chrome,
+                scene_index=scene_index,
+            )
 
-        draw.text((margin + 40, int(height * 0.13)), self.brand_name.upper(), font=brand_font, fill=(119, 255, 166))
-        purpose = self._clean(scene.purpose).upper()[:24] or "HOW IT WORKS"
-        draw.text((margin + 40, int(height * 0.18)), purpose, font=kicker_font, fill=(137, 151, 177))
-
-        headline = self._clean(scene.on_screen_text) or self._headline_from_narration(scene.narration)
-        y = int(height * 0.23)
-        for line in self._wrap(headline, 24 if vertical else 34, max_lines=2):
-            draw.text((margin + 40, y), line, font=headline_font, fill=(247, 249, 252))
-            y += int(headline_font.size * 1.15)
-
-        # Mini product-workflow mockup: INPUT -> PROCESS -> OUTPUT.
-        box_left = margin + 42
-        box_right = width - margin - 42
-        box_w = box_right - box_left
-        top = int(height * 0.39)
-        input_h = int(height * 0.12)
-        output_h = int(height * 0.17)
-
-        draw.rounded_rectangle((box_left, top, box_right, top + input_h), radius=24, fill=(27, 35, 56))
-        draw.text((box_left + 24, top + 18), "INPUT", font=kicker_font, fill=(119, 255, 166))
-        prompt = self._input_label(scene)
-        for idx, line in enumerate(self._wrap(prompt, 42 if vertical else 64, max_lines=2)):
-            draw.text((box_left + 24, top + 58 + idx * 34), line, font=small_font, fill=(222, 228, 238))
-
-        mid_y = top + input_h + 52
-        draw.line((box_left + 30, mid_y, box_right - 30, mid_y), fill=(65, 82, 110), width=4)
-        cx = box_left + box_w // 2
-        draw.polygon([(cx, mid_y + 20), (cx - 16, mid_y - 6), (cx + 16, mid_y - 6)], fill=(119, 255, 166))
-
-        out_top = mid_y + 46
-        draw.rounded_rectangle((box_left, out_top, box_right, out_top + output_h), radius=24, fill=(24, 31, 48))
-        draw.text((box_left + 24, out_top + 18), "OUTPUT", font=kicker_font, fill=(119, 255, 166))
-
-        # Draw three compact result cards to imply generated slides/results.
-        card_gap = 16
-        card_w = (box_w - card_gap * 2 - 48) // 3
-        card_y = out_top + 66
-        for i in range(3):
-            x1 = box_left + 18 + i * (card_w + card_gap)
-            x2 = x1 + card_w
-            draw.rounded_rectangle((x1, card_y, x2, card_y + int(output_h * 0.48)), radius=16, fill=(38, 48, 70))
-            draw.rectangle((x1 + 12, card_y + 12, x2 - 12, card_y + 30), fill=(119, 255, 166))
-            draw.rectangle((x1 + 12, card_y + 43, x2 - 24, card_y + 53), fill=(105, 118, 144))
-            draw.rectangle((x1 + 12, card_y + 63, x2 - 38, card_y + 73), fill=(79, 92, 118))
-
-        footer = self._clean(scene.narration)
-        footer_y = int(height * 0.76)
-        for idx, line in enumerate(self._wrap(footer, 48 if vertical else 76, max_lines=2)):
-            draw.text((margin + 40, footer_y + idx * 34), line, font=small_font, fill=(180, 190, 208))
+        # Tiny progress markers make the sequence feel tactile without turning
+        # every scene into a branded lower-third.
+        dot_y = int(height * 0.84)
+        for index in range(5):
+            x = width // 2 - 72 + index * 36
+            colour = accent if index == scene_index % 5 else muted
+            draw.ellipse((x - 7, dot_y - 7, x + 7, dot_y + 7), fill=colour)
 
         output.parent.mkdir(parents=True, exist_ok=True)
-        image.save(output, quality=95)
+        image.save(output, quality=96)
+
+    def _bytevexa_theme(
+        self,
+        scene: SceneBeat,
+        scene_index: int,
+    ) -> tuple[str, tuple[tuple[int, int, int], ...]]:
+        """Return a purposeful visual role and a non-repeating colour theme."""
+        purpose = self._clean(scene.purpose).lower()
+        if any(word in purpose for word in ("comparison", "versus", "decision", "alternative", "pros", "cons")):
+            role = "comparison"
+        elif any(word in purpose for word in ("limit", "catch", "risk", "warning", "caveat")):
+            role = "limitation"
+        elif any(word in purpose for word in ("proof", "result", "output", "evidence", "reveal")):
+            role = "result"
+        else:
+            role = "workflow"
+
+        themes = {
+            "workflow": ((12, 15, 22), (31, 25, 48), (148, 255, 107), (255, 151, 71), (118, 124, 145)),
+            "comparison": ((18, 13, 30), (39, 25, 54), (213, 123, 255), (99, 255, 195), (140, 126, 158)),
+            "limitation": ((29, 16, 12), (58, 29, 22), (255, 181, 61), (255, 93, 93), (161, 130, 111)),
+            "result": ((13, 22, 20), (22, 46, 40), (70, 243, 188), (255, 211, 92), (119, 153, 143)),
+        }
+        # Rotate accent variants so adjacent general workflow beats do not look cloned.
+        if role == "workflow" and scene_index % 3 == 2:
+            themes["workflow"] = ((18, 16, 29), (42, 28, 54), (247, 118, 193), (117, 226, 255), (142, 133, 159))
+        return role, themes[role]
+
+    def _draw_workflow_canvas(
+        self,
+        draw: ImageDraw.ImageDraw,
+        left: int,
+        top: int,
+        right: int,
+        bottom: int,
+        *,
+        accent: tuple[int, int, int],
+        secondary: tuple[int, int, int],
+        panel: tuple[int, int, int],
+        dim_panel: tuple[int, int, int],
+        text: tuple[int, int, int],
+        scene_index: int,
+    ) -> None:
+        """Draw a product-like action canvas with changing controls and outcomes."""
+        draw.rounded_rectangle((left, top, right, bottom), radius=46, fill=panel, outline=accent, width=4)
+        header_bottom = top + int((bottom - top) * 0.16)
+        draw.rounded_rectangle((left + 28, top + 28, right - 28, header_bottom), radius=24, fill=dim_panel)
+        for offset, colour in ((0, accent), (28, secondary), (56, text)):
+            draw.ellipse((left + 52 + offset, top + 53, left + 68 + offset, top + 69), fill=colour)
+        draw.rounded_rectangle((left + 52, header_bottom + 44, right - 52, header_bottom + 134), radius=24, fill=(9, 12, 19))
+        for index, ratio in enumerate((0.76, 0.48, 0.64)):
+            y = header_bottom + 68 + index * 20
+            draw.rounded_rectangle((left + 82, y, left + 82 + int((right - left - 180) * ratio), y + 8), radius=4, fill=(104, 116, 139))
+
+        card_top = header_bottom + 180
+        card_gap = 22
+        card_width = (right - left - 104 - card_gap * 2) // 3
+        for index in range(3):
+            x = left + 52 + index * (card_width + card_gap)
+            tint = accent if index == scene_index % 3 else secondary
+            draw.rounded_rectangle((x, card_top, x + card_width, card_top + int((bottom - card_top) * 0.52)), radius=25, fill=dim_panel)
+            draw.rounded_rectangle((x + 20, card_top + 20, x + card_width - 20, card_top + 34), radius=7, fill=tint)
+            draw.ellipse((x + 28, card_top + 65, x + 72, card_top + 109), fill=(*tint,))
+            for row, ratio in enumerate((0.72, 0.50, 0.63)):
+                y = card_top + 132 + row * 18
+                draw.rounded_rectangle((x + 24, y, x + 24 + int((card_width - 48) * ratio), y + 7), radius=4, fill=(125, 135, 153))
+
+        button_width = min(260, int((right - left) * 0.34))
+        button_left = (left + right - button_width) // 2
+        button_top = bottom - 115
+        draw.rounded_rectangle((button_left, button_top, button_left + button_width, button_top + 58), radius=25, fill=accent)
+        play_x = button_left + button_width // 2
+        draw.polygon([(play_x - 8, button_top + 17), (play_x - 8, button_top + 41), (play_x + 14, button_top + 29)], fill=(10, 12, 18))
+
+    def _draw_comparison_canvas(
+        self,
+        draw: ImageDraw.ImageDraw,
+        left: int,
+        top: int,
+        right: int,
+        bottom: int,
+        *,
+        accent: tuple[int, int, int],
+        secondary: tuple[int, int, int],
+        panel: tuple[int, int, int],
+        dim_panel: tuple[int, int, int],
+        text: tuple[int, int, int],
+    ) -> None:
+        gap = 26
+        card_width = (right - left - gap) // 2
+        for index, colour in enumerate((secondary, accent)):
+            x = left + index * (card_width + gap)
+            draw.rounded_rectangle((x, top, x + card_width, bottom), radius=42, fill=panel, outline=colour, width=5)
+            draw.rounded_rectangle((x + 30, top + 34, x + card_width - 30, top + 55), radius=10, fill=colour)
+            heading = "PROS" if index == 0 else "CONS"
+            heading_font = self._font(34, bold=True)
+            heading_box = draw.textbbox((0, 0), heading, font=heading_font)
+            heading_width = heading_box[2] - heading_box[0]
+            draw.text(
+                (x + (card_width - heading_width) // 2, top + 78),
+                heading,
+                font=heading_font,
+                fill=text,
+            )
+            circle_y = top + int((bottom - top) * 0.33)
+            draw.ellipse((x + card_width // 2 - 74, circle_y - 74, x + card_width // 2 + 74, circle_y + 74), fill=dim_panel, outline=colour, width=5)
+            if index == 0:
+                draw.line((x + card_width // 2 - 35, circle_y, x + card_width // 2 + 35, circle_y), fill=colour, width=10)
+            else:
+                draw.polygon(
+                    [(x + card_width // 2 - 24, circle_y - 36), (x + card_width // 2 + 42, circle_y), (x + card_width // 2 - 24, circle_y + 36)],
+                    fill=colour,
+                )
+            for row, ratio in enumerate((0.70, 0.44, 0.60)):
+                y = top + int((bottom - top) * 0.66) + row * 28
+                draw.rounded_rectangle((x + 44, y, x + 44 + int((card_width - 88) * ratio), y + 10), radius=5, fill=text if row == 0 else (132, 139, 157))
+
+    def _draw_caution_canvas(
+        self,
+        draw: ImageDraw.ImageDraw,
+        left: int,
+        top: int,
+        right: int,
+        bottom: int,
+        *,
+        accent: tuple[int, int, int],
+        secondary: tuple[int, int, int],
+        panel: tuple[int, int, int],
+        text: tuple[int, int, int],
+    ) -> None:
+        draw.rounded_rectangle((left, top, right, bottom), radius=46, fill=panel, outline=secondary, width=5)
+        cx = (left + right) // 2
+        cy = top + int((bottom - top) * 0.37)
+        triangle = [(cx, cy - 148), (cx - 152, cy + 122), (cx + 152, cy + 122)]
+        draw.polygon(triangle, fill=accent)
+        draw.rounded_rectangle((cx - 13, cy - 66, cx + 13, cy + 35), radius=8, fill=(27, 19, 14))
+        draw.ellipse((cx - 13, cy + 64, cx + 13, cy + 90), fill=(27, 19, 14))
+        for row, ratio in enumerate((0.76, 0.55, 0.68)):
+            y = top + int((bottom - top) * 0.70) + row * 30
+            x2 = left + int((right - left) * (0.12 + ratio * 0.76))
+            draw.rounded_rectangle((left + int((right - left) * 0.12), y, x2, y + 11), radius=5, fill=text if row == 0 else (170, 145, 126))
+        draw.ellipse((right - 102, top + 62, right - 62, top + 102), outline=secondary, width=5)
+        draw.line((right - 82, top + 73, right - 82, top + 91), fill=secondary, width=5)
+
+    def _draw_result_canvas(
+        self,
+        draw: ImageDraw.ImageDraw,
+        left: int,
+        top: int,
+        right: int,
+        bottom: int,
+        *,
+        accent: tuple[int, int, int],
+        secondary: tuple[int, int, int],
+        panel: tuple[int, int, int],
+        dim_panel: tuple[int, int, int],
+        text: tuple[int, int, int],
+    ) -> None:
+        draw.rounded_rectangle((left, top, right, bottom), radius=46, fill=panel, outline=accent, width=5)
+        cx = (left + right) // 2
+        cy = top + int((bottom - top) * 0.30)
+        draw.ellipse((cx - 122, cy - 122, cx + 122, cy + 122), fill=dim_panel, outline=accent, width=8)
+        draw.line((cx - 55, cy + 2, cx - 12, cy + 47), fill=accent, width=18)
+        draw.line((cx - 12, cy + 47, cx + 72, cy - 55), fill=accent, width=18)
+        bar_left = left + 66
+        bar_right = right - 66
+        for index, ratio in enumerate((0.88, 0.62, 0.76)):
+            y = top + int((bottom - top) * 0.59) + index * 58
+            draw.rounded_rectangle((bar_left, y, bar_right, y + 22), radius=11, fill=(16, 20, 28))
+            draw.rounded_rectangle((bar_left, y, bar_left + int((bar_right - bar_left) * ratio), y + 22), radius=11, fill=accent if index != 1 else secondary)
+        for index in range(3):
+            x = left + 78 + index * int((right - left - 156) / 2)
+            draw.ellipse((x - 10, bottom - 86, x + 10, bottom - 66), fill=text if index == 0 else (123, 142, 143))
+
+    @staticmethod
+    def _visual_label(scene: SceneBeat) -> str:
+        """Keep overlay copy short enough to be a visual emphasis, not a banner."""
+        raw = HybridVisualDirector._clean(scene.on_screen_text) or HybridVisualDirector._headline_from_narration(scene.narration)
+        words = raw.replace("\n", " ").split()[:4]
+        label = " ".join(words).strip(" .,:;!?")
+        return label[:32] or "SEE THE MOVE"
 
     def _make_fact_explainer(
         self,

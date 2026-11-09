@@ -16,7 +16,7 @@ In Google Cloud Console:
 
 1. Create a project for YouTube Autopilot.
 2. Enable **YouTube Data API v3** and **YouTube Analytics API**.
-3. Configure the OAuth consent screen. If the app is in testing, add the Google account that owns your YouTube channel as a test user.
+3. Configure the OAuth consent screen. If the app is in testing, add the Google account that owns your YouTube channel as a test user. For unattended publishing, check **Google Auth Platform → Audience → Publishing status**. An external app left in **Testing** receives YouTube refresh tokens that expire after seven days. Move the app to **In production** through Google's normal publishing and verification process, if eligible, before expecting durable authorization. Changing this status does not renew an already expired token.
 4. Create an OAuth client ID of type **Desktop app**.
 5. Download the JSON file and save it locally as `secrets/client_secret.json`. Never commit it.
 
@@ -85,3 +85,15 @@ powershell -ExecutionPolicy Bypass -File .\scripts\setup_curioaxiom.ps1
 Google will ask for authorization once. Select CurioAxiom. The script verifies the exact channel ID
 before it installs `CURIOAXIOM_YOUTUBE_TOKEN_B64` or starts the private test. A ByteVexa token fails
 closed and is never installed as the CurioAxiom token.
+
+## Recover expired YouTube authorization
+
+If Actions reports `invalid_grant: Token has been expired or revoked`, the account owner must renew each channel separately. In `C:\Users\Lenovo\Documents\youtube-autopilot`, update the local checkout, then run these commands **one at a time**, waiting for each browser flow and script to finish:
+
+```powershell
+git pull --ff-only origin main
+powershell -ExecutionPolicy Bypass -File .\scripts\setup_cloud.ps1
+powershell -ExecutionPolicy Bypass -File .\scripts\setup_curioaxiom.ps1
+```
+
+Select **ByteVexa** during the first flow and **CurioAxiom** during the second. The scripts verify the exact channel identity before replacing either GitHub Actions token secret. If the local token file is missing, `auth-youtube` opens the browser; do not copy tokens into chat or commit them. If Google Cloud still shows **Testing**, reauthorization will likely need to be repeated in seven days. Check Google's [OAuth refresh-token expiration rules](https://developers.google.com/identity/protocols/oauth2) and [publishing-status guidance](https://support.google.com/cloud/answer/15549945) before changing app status; YouTube scopes may require verification. A code retry cannot restore an expired refresh token.

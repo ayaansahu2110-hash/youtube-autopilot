@@ -24,10 +24,21 @@ def load_settings() -> Settings:
     return Settings()
 
 
-def _longform_due(settings: Settings) -> bool:
+def _longform_due(
+    settings: Settings,
+    state: StateStore | None = None,
+    local_today: date | None = None,
+) -> bool:
     if not settings.longform_enabled:
         return False
-    local_today = datetime.now(ZoneInfo(settings.schedule_timezone)).date()
+    local_today = local_today or datetime.now(ZoneInfo(settings.schedule_timezone)).date()
+    if state is not None:
+        latest_long = state.latest_upload_date(
+            timezone_name=settings.schedule_timezone,
+            video_format="long",
+        )
+        if latest_long is not None:
+            return (local_today - latest_long).days >= max(1, settings.longform_every_days)
     anchor = date.fromisoformat(settings.longform_anchor_date)
     interval = max(1, settings.longform_every_days)
     return (local_today - anchor).days >= 0 and (local_today - anchor).days % interval == 0
@@ -128,7 +139,7 @@ def verify_youtube() -> None:
     """Verify the OAuth token belongs to the configured isolated channel."""
     settings = load_settings()
     uploader = YouTubeUploader(settings)
-    uploader.recent_uploads(limit=1)
+    uploader.verify_channel()
     console.print(
         f"[bold green]Channel verified:[/bold green] {settings.channel_display_name} "
         f"({settings.expected_youtube_channel_id or 'identity lock not configured'})"
@@ -209,22 +220,93 @@ def daily(
         raise typer.BadParameter("slot must be morning, midday, evening, or all")
 
     results = []
-    short_count = max(1, settings.shorts_per_day) if slot == "all" else 1
+    slot_errors = []
+    local_today = datetime.now(ZoneInfo(settings.schedule_timezone)).date()
+    if live:
+        # A queued run can check out old history; consult the actual channel first.
+        uploader = YouTubeUploader(settings)
+        state.sync_recent_uploads(uploader.recent_uploads(limit=50))
+    uploaded_shorts = state.upload_count_on_date(
+        local_today,
+        timezone_name=settings.schedule_timezone,
+        video_format="short",
+    )
+    remaining_shorts = max(0, max(1, settings.shorts_per_day) - uploaded_shorts)
+    short_count = remaining_shorts if slot in {"evening", "all"} else min(1, remaining_shorts)
+    if short_count == 0:
+        console.print(
+            f"Daily Shorts target already met ({uploaded_shorts}/{settings.shorts_per_day}); "
+            "skipping duplicate publication."
+        )
     short_settings = _settings_for_format(settings, "short")
+    rejected_topics: list[str] = []
+    short_failed = False
     for _ in range(short_count):
-        short_result = AutopilotPipeline(short_settings).run(dry_run=dry_run, video_format="short")
-        results.append(short_result)
-        _print_result(short_result, short_settings)
-        if short_result.status == "failed":
+        if live:
+            # Each pipeline instance records its canonical topic to disk. Reload
+            # before syncing so the slot does not overwrite that fresh memory.
+            state = StateStore(settings.state_file)
+            state.sync_recent_uploads(uploader.recent_uploads(limit=50))
+            if state.upload_count_on_date(local_today, timezone_name=settings.schedule_timezone, video_format="short") >= settings.shorts_per_day:
+                break
+        for attempt in range(3):
+            try:
+                short_result = AutopilotPipeline(short_settings).run(
+                    dry_run=dry_run, video_format="short", excluded_topics=tuple(rejected_topics)
+                )
+            except Exception as exc:
+                slot_errors.append(type(exc).__name__)
+                console.print(f"Short production stopped before rendering: {type(exc).__name__}: {exc}")
+                break
+            results.append(short_result)
+            _print_result(short_result, short_settings)
+            if short_result.status != "failed":
+                break
+            rejected_topics.append(short_result.plan.topic)
+            if attempt < 2:
+                console.print("Rejected draft; trying a distinct researched topic.")
+        if slot_errors or short_result.status == "failed":
+            short_failed = True
             break
 
-    should_make_long = slot in {"evening", "all"} and _longform_due(settings)
-    if not any(result.status == "failed" for result in results) and should_make_long:
-        long_result = AutopilotPipeline(settings).run(dry_run=dry_run, video_format="long")
-        results.append(long_result)
-        _print_result(long_result, settings)
+    state = StateStore(settings.state_file)
+    uploaded_longs = state.upload_count_on_date(
+        local_today,
+        timezone_name=settings.schedule_timezone,
+        video_format="long",
+    )
+    long_due = _longform_due(settings, state, local_today)
+    should_make_long = (
+        slot in {"evening", "all"}
+        and long_due
+        and uploaded_longs == 0
+    )
+    if slot in {"evening", "all"} and long_due and uploaded_longs:
+        console.print("Today's long-form upload already exists; skipping duplicate publication.")
+    # Treat Shorts and long-form as independent quality-controlled slots. A
+    # rejected Short must not starve an otherwise-due long video for days.
+    long_failed = False
+    if should_make_long:
+        for attempt in range(3):
+            try:
+                long_result = AutopilotPipeline(settings).run(
+                    dry_run=dry_run, video_format="long", excluded_topics=tuple(rejected_topics)
+                )
+            except Exception as exc:
+                slot_errors.append(type(exc).__name__)
+                console.print(f"Long production stopped before rendering: {type(exc).__name__}: {exc}")
+                break
+            results.append(long_result)
+            _print_result(long_result, settings)
+            if long_result.status != "failed":
+                break
+            rejected_topics.append(long_result.plan.topic)
+            if attempt < 2:
+                console.print("Rejected long draft; trying a distinct researched topic.")
+        if not slot_errors and long_result.status == "failed":
+            long_failed = True
 
-    if any(result.status == "failed" for result in results):
+    if slot_errors or short_failed or long_failed:
         raise typer.Exit(code=1)
 
 
@@ -249,7 +331,7 @@ def schedule() -> None:
             dry_run=not settings.enable_uploads,
             video_format="short",
         )
-        if result.status != "failed" and _longform_due(settings):
+        if result.status != "failed" and _longform_due(settings, state):
             AutopilotPipeline(settings).run(
                 dry_run=not settings.enable_uploads,
                 video_format="long",
@@ -391,6 +473,10 @@ def _print_result(result, settings: Settings) -> None:
     if result.quality and result.quality.errors:
         for error in result.quality.errors:
             console.print(f"[red]- {error}[/red]")
+    if result.status == "failed":
+        for note in result.notes:
+            if not result.quality or note not in result.quality.errors:
+                console.print(f"[red]- {note}[/red]")
     console.print(f"Artifacts: {settings.artifacts_dir / result.run_id}")
 
 
