@@ -75,6 +75,27 @@ class ScriptPlanner:
         elif isinstance(polished, list):
             data["scenes"] = polished
 
+        if (self.settings.channel_profile != "curioaxiom" and video_format == "short"
+                and len(data.get("scenes", [])) < 8):
+            correction = (
+                "Repair this ByteVexa Short storyboard using only the supplied research. "
+                "Return the complete JSON with 8-11 genuinely different scenes, 105-145 "
+                "spoken words total, and a concrete evidence or result beat. Each scene needs "
+                "a distinct visual subject/action that literally explains its narration; do not "
+                "pad by splitting one repeated slide or inventing a demo. Keep official UI URLs "
+                "exactly as supplied, otherwise use a truthful motion explanation. "
+                f"Research: {research.research_notes[:12000]}\n"
+                f"Approved URLs: {self._source_catalog(research)}\n"
+                f"Draft JSON: {json.dumps(data, ensure_ascii=False)}\n"
+                "Return corrected JSON only with the same keys and scene fields."
+            )
+            try:
+                repaired = self._generate_json(correction)
+                if isinstance(repaired, dict) and isinstance(repaired.get("scenes"), list) and 8 <= len(repaired["scenes"]) <= 11:
+                    data = repaired
+            except Exception:
+                pass
+
         # Ensure required VideoPlan fields are always present
         data.setdefault("angle", data.get("hook") or f"Analysis of {research.topic}")
         data.setdefault("hook", f"The truth about {research.topic}")
