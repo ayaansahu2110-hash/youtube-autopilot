@@ -7,7 +7,17 @@
       "format": "short",
       "script_preview": "Little Bear, Little Bear, what do you see? A sticky golden feast in the tall honey tree! He wiggles his tail and he climbs up so high, stretching out a paw to the blue summer sky. SNAP! goes the branch—oh no! Down he slips! SPLASH! into mud with a giggle on his lips. Did you know? Before printing existed, adults shared oral fables to teach children big lessons. Since the fifteenth century, stories were written specifically to guide young minds. Little Bear learns that rushing brings bumps, while waiting patiently stops silly thumps! He offers the honey to a happy little mouse. Patience and sha",
       "created_at": "2026-11-09T07:15:28.107982+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 2.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 61.0,
+        "averageViewPercentage": 113.55,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-11-10T20:01:18.839789+00:00"
     },
     {
       "video_id": "NXwh5O6kQ7o",
@@ -109,6 +119,33 @@
       "script_preview": "Five little ducklings went swimming one day, over the hills in a musical way!\nMummy duck said with a quack-quack-quack, but only four ducklings came paddling back.\nFour little ducklings splash-splash in the sun, hopping on lily pads, having such fun!\nThree little ducklings wiggle their feet, finding some grass that is yummy and sweet.\nTwo little ducklings dance on the shore, flapping their wings as they chirp out for more.\nThe sad mummy duck cried a quack-quack-quack, and all of her babies came swimming right back!\nThey snuggle together so cozy and tight, happy and safe for a sleepy goodnight.",
       "created_at": "2026-11-10T15:25:54.337494+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "wi4J--62_e0",
+      "topic": "The Playful Puppy Who Chased the Rainbow",
+      "title": "The Golden Puppy’s Rainbow Chase | Singing Nursery Rhymes",
+      "format": "short",
+      "script_preview": "A golden puppy starts his day, to chase a rainbow far away!\nWith ears that flop and tail that swings, he dances past the robin’s wings.\nHe spots a bow of colors bright, he runs with all his puppy might!\nWith hop-hop steps he leaps so high, across the grass beneath the sky.\nHe stops to splash in puddles clear, he has no worry and no fear!\nHe sniffs a bloom with giggle-sound, and rolls upon the mossy ground.\nHe reaches for the arch of gold, a magic sight to have and hold!\nIt fades away in mist so blue, but he is happy, yes it’s true.\nThe chase is better than the prize, he wags his tail with spar",
+      "created_at": "2026-11-10T20:09:01.895280+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "RKxTq0vrJTA",
+      "topic": "The Busy Little Bee Making Sweet Honey",
+      "title": "The Busy Bee's Sweet Honey Song",
+      "format": "short",
+      "script_preview": "Buzz-buzz, see the bee in the morning light, Working in the garden with all of her might.\nShe lands on a flower, so soft and so bright, Drinking up nectar with pure delight.\nFlap-flap, tiny wings zoom to the hive, Keeping the fuzzy bee colony alive.\nThey build up the wax where the honey will flow, Working as a team to help the hive grow.\nDeep in the cells where the nectar turns gold, Filling up treasure that's lovely to hold.\nEvery small drop is a gift for us all, Sweet honey saved for the winter so tall.\nSpread it on toast for a treat that is sweet, Nature provides such a wonderful eat.\nBusy ",
+      "created_at": "2026-11-10T20:14:08.856227+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "KZwspFBDd8c",
+      "topic": "The Gentle Giraffe Who Reached for the Clouds",
+      "title": "The Gentle Giraffe: Why Biology Limits How High They Can Reach",
+      "format": "long",
+      "script_preview": "Have you ever gazed up at the fluffy white clouds drifting by on a sunny day and wondered if a gentle giraffe could keep stretching its long, graceful neck until it actually touched them? It is a truly magical and imaginative bedtime thought.\nIt is such a wonderful image for a whimsical bedtime story, painting a picture of a world where creatures can reach the stars. However, in our fascinating real world of biology, nature sets very strict and important limits on growth.\nWhile dreams are boundless, nature requires a balance for every living creature to stay healthy and strong. Understanding t",
+      "created_at": "2026-11-10T20:40:30.236267+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -185,6 +222,24 @@
       "title": "Five Little Ducklings Splashing in the Lake | WonderTales Kids",
       "format": "short",
       "created_at": "2026-11-10T15:25:54.337494+00:00"
+    },
+    {
+      "topic": "The Playful Puppy Who Chased the Rainbow",
+      "title": "The Golden Puppy’s Rainbow Chase | Singing Nursery Rhymes",
+      "format": "short",
+      "created_at": "2026-11-10T20:09:01.895280+00:00"
+    },
+    {
+      "topic": "The Busy Little Bee Making Sweet Honey",
+      "title": "The Busy Bee's Sweet Honey Song",
+      "format": "short",
+      "created_at": "2026-11-10T20:14:08.856227+00:00"
+    },
+    {
+      "topic": "The Gentle Giraffe Who Reached for the Clouds",
+      "title": "The Gentle Giraffe: Why Biology Limits How High They Can Reach",
+      "format": "long",
+      "created_at": "2026-11-10T20:40:30.236267+00:00"
     }
   ]
 }
