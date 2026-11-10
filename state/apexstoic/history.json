@@ -62,6 +62,33 @@
       "script_preview": "Stop acting like a victim of betrayal; you are merely a victim of your own expectations. When someone insults you, they provide a reflection of their character, not yours. By reacting, you hand them the keys to your internal state. Marcus Aurelius taught that life is what our thoughts make of it—if you perceive an insult as injury, you have already surrendered. The weak man starves for external validation and weaponizes his resentment. The master observes the malice, identifies it as an external disturbance, and discards it without a second thought. Your character is an impenetrable fortress; ",
       "created_at": "2026-11-09T22:53:09.002786+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "M8GRYkspRLo",
+      "topic": "The Law of Emotional Detachment: Amor Fati",
+      "title": "Amor Fati: The Brutal Truth About Resilience",
+      "format": "short",
+      "script_preview": "You are drowning in self-pity because you mistake your preferences for reality. You want a life without friction, but a life without friction is a life without growth. Stop begging the universe for a lighter load and start demanding a stronger spine. Marcus Aurelius didn’t ask for easier days; he prepared for harder ones. This is Amor Fati: the deliberate choice to love your fate, not just endure it. When tragedy strikes, the weak man bleeds his energy into complaint. The Stoic takes that same tragedy and grinds it into iron for his character. If it happens, it is necessary. If it is necessary",
+      "created_at": "2026-11-10T20:07:16.546712+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "xoy8Pg3gIK8",
+      "topic": "Charlie Munger’s 5 Golden Stoic Rules for Self-Discipline",
+      "title": "The Stoic Blueprint: 5 Rules for Unbreakable Discipline",
+      "format": "short",
+      "script_preview": "Stop lying to yourself: your lack of progress isn't bad luck, it's a lack of governance over your own mind. Charlie Munger never gambled on feelings; he operated on cold, calculated discipline. Marcus Aurelius commanded an empire by mastering the gap between events and his response. The weak man treats irritation as a command to stop. The master treats discomfort as a mere data point. You are not a victim of your schedule; you are a captive of your own fragile impulse. If you feel tired, work. If you feel insulted, sharpen your resolve. If you feel like quitting, double your output. Permission",
+      "created_at": "2026-11-10T20:10:05.754312+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "SniUAQq7_uM",
+      "topic": "Marcus Aurelius’ 9 Rules for Living a Stoic Life",
+      "title": "9 Rules of Marcus Aurelius for Absolute Mental Toughness",
+      "format": "long",
+      "script_preview": "Most men lose control of their lives because they allow external chaos to dictate their internal state, becoming slaves to their own impulses. They are trapped in a cycle of constant reactivity, failing to realize that their peace is being auctioned off to the highest bidder. In the modern age, you are merely reacting, not choosing, to every notification, opinion, and hardship that comes your way. This lack of intentionality is why your mental clarity evaporates, leaving you exhausted, frustrated, and perpetually chasing validation from forces you cannot possibly influence. Consider Marcus Aur",
+      "created_at": "2026-11-10T20:28:08.265638+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -106,6 +133,24 @@
       "title": "Why Betrayal Cannot Hurt A Stoic",
       "format": "short",
       "created_at": "2026-11-09T22:53:09.002786+00:00"
+    },
+    {
+      "topic": "The Law of Emotional Detachment: Amor Fati",
+      "title": "Amor Fati: The Brutal Truth About Resilience",
+      "format": "short",
+      "created_at": "2026-11-10T20:07:16.546712+00:00"
+    },
+    {
+      "topic": "Charlie Munger’s 5 Golden Stoic Rules for Self-Discipline",
+      "title": "The Stoic Blueprint: 5 Rules for Unbreakable Discipline",
+      "format": "short",
+      "created_at": "2026-11-10T20:10:05.754312+00:00"
+    },
+    {
+      "topic": "Marcus Aurelius’ 9 Rules for Living a Stoic Life",
+      "title": "9 Rules of Marcus Aurelius for Absolute Mental Toughness",
+      "format": "long",
+      "created_at": "2026-11-10T20:28:08.265638+00:00"
     }
   ]
 }
