@@ -64,6 +64,33 @@
       "script_preview": "For 4,500 years, Egyptologists debated simple sand ramps. Now, modern engineering suggests a far more complex reality. Researchers are pointing to a high-tech hydraulic system hidden in plain sight. French engineers propose the Step Pyramid of Djoser relied on a massive ancient dam, the Gisr el-Mudir, to capture flash floods. This allowed water to surge into internal stone shafts, essentially creating a vertical lock system. By utilizing water pressure to elevate limestone blocks, these builders achieved what human muscle alone could not. This discovery forces a complete re-evaluation of Old K",
       "created_at": "2026-11-09T22:52:24.363094+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "6SUjjU0QqZ8",
+      "topic": "Göbekli Tepe: The 12,000-Year-Old Megalith That Defies History",
+      "title": "Göbekli Tepe: The 15-Ton Engineering Paradox",
+      "format": "short",
+      "script_preview": "12,000 years ago, humanity shouldn't have been able to build this. Göbekli Tepe exists—a monumental defiance of the Neolithic timeline. We are looking at T-shaped limestone pillars, some weighing 15 tons, extracted from bedrock. They were transported across mountainous terrain without the wheel or draft animals. These are circular enclosures displaying sophisticated geometry and high-relief zoomorphic carvings. Orthodox theory places this in the Pre-Pottery Neolithic, yet the logistics suggest complex societal coordination. How do you carve, move, and align 30,000 pounds of stone with only fli",
+      "created_at": "2026-11-10T20:08:07.533958+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "w_MKhr2NiUs",
+      "topic": "Gunung Padang: The Megalithic Site Hidden Under a Mountain",
+      "title": "Gunung Padang: The Impossible Mountain Megalith",
+      "format": "short",
+      "script_preview": "Deep in West Java, 370 andesite steps climb 95 meters up an extinct volcano at a steep 45-degree angle. At the summit of Gunung Padang, five artificial terraces stretch across the peak along a precise northwest-southeast axis. Builders leveled the volcanic terrain, creating five diminishing platforms retained by massive stone walls. These perimeters are constructed from thousands of hexagonal volcanic columns, stacked horizontally and raised vertically as structural posts. Local Sundanese myth claims King Siliwangi erected the entire palace complex in a single night. Modern headlines claimed a",
+      "created_at": "2026-11-10T20:11:34.779403+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "YIKhH8HJrbc",
+      "topic": "The Richat Structure: Is the Eye of the Sahara the Lost Atlantis?",
+      "title": "The Richat Structure: Is it Really Atlantis? The Truth Revealed",
+      "format": "long",
+      "script_preview": "Visible from space and measuring forty kilometers across, the Richat Structure has become a modern obsession for those seeking the lost city of Atlantis. But is this desert anomaly a forgotten megalithic marvel or a perfectly natural geological dome sculpted by the earth itself? We start with the satellite data. When you look at the Sahara from low Earth orbit, this massive, circular formation stands out in stark contrast to the surrounding sand. The concentric rings suggest a level of symmetry that feels manufactured rather than occurring by simple geological chance. The primary theory linkin",
+      "created_at": "2026-11-10T20:33:13.713031+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -110,6 +137,24 @@
       "title": "Ancient Egypt's Hidden Hydraulic Pyramid Tech Revealed",
       "format": "short",
       "created_at": "2026-11-09T22:52:24.363094+00:00"
+    },
+    {
+      "topic": "Göbekli Tepe: The 12,000-Year-Old Megalith That Defies History",
+      "title": "Göbekli Tepe: The 15-Ton Engineering Paradox",
+      "format": "short",
+      "created_at": "2026-11-10T20:08:07.533958+00:00"
+    },
+    {
+      "topic": "Gunung Padang: The Megalithic Site Hidden Under a Mountain",
+      "title": "Gunung Padang: The Impossible Mountain Megalith",
+      "format": "short",
+      "created_at": "2026-11-10T20:11:34.779403+00:00"
+    },
+    {
+      "topic": "The Richat Structure: Is the Eye of the Sahara the Lost Atlantis?",
+      "title": "The Richat Structure: Is it Really Atlantis? The Truth Revealed",
+      "format": "long",
+      "created_at": "2026-11-10T20:33:13.713031+00:00"
     }
   ]
 }
