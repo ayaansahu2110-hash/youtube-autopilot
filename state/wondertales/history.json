@@ -90,6 +90,25 @@
       "created_at": "2026-11-09T11:39:22Z",
       "analytics": {},
       "source": "youtube_sync"
+    },
+    {
+      "video_id": "Jcmn38fheew",
+      "topic": "Counting Baby Stars: A Goodnight Lullaby Song for Kids",
+      "title": "Counting Baby Stars: A Goodnight Lullaby Song for Kids",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-11-10T13:05:12Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "mYo-jv9VVKw",
+      "topic": "Five Little Ducklings Splashing in the Lake",
+      "title": "Five Little Ducklings Splashing in the Lake | WonderTales Kids",
+      "format": "short",
+      "script_preview": "Five little ducklings went swimming one day, over the hills in a musical way!\nMummy duck said with a quack-quack-quack, but only four ducklings came paddling back.\nFour little ducklings splash-splash in the sun, hopping on lily pads, having such fun!\nThree little ducklings wiggle their feet, finding some grass that is yummy and sweet.\nTwo little ducklings dance on the shore, flapping their wings as they chirp out for more.\nThe sad mummy duck cried a quack-quack-quack, and all of her babies came swimming right back!\nThey snuggle together so cozy and tight, happy and safe for a sleepy goodnight.",
+      "created_at": "2026-11-10T15:25:54.337494+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -153,6 +172,19 @@
       "format": "short",
       "created_at": "2026-11-09T11:39:22Z",
       "source": "youtube_sync"
+    },
+    {
+      "topic": "Counting Baby Stars: A Goodnight Lullaby Song for Kids",
+      "title": "Counting Baby Stars: A Goodnight Lullaby Song for Kids",
+      "format": "short",
+      "created_at": "2026-11-10T13:05:12Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Five Little Ducklings Splashing in the Lake",
+      "title": "Five Little Ducklings Splashing in the Lake | WonderTales Kids",
+      "format": "short",
+      "created_at": "2026-11-10T15:25:54.337494+00:00"
     }
   ]
 }
