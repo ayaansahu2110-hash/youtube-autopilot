@@ -1,6 +1,151 @@
 {
-  "generated_at": "2026-11-09T22:49:41.966376+00:00",
-  "competitors": [],
+  "generated_at": "2026-11-10T15:21:14.484294+00:00",
+  "competitors": [
+    {
+      "channel": "Dan Martell",
+      "subscribers": 3160000,
+      "channel_views": 425445263,
+      "video_count": 3852,
+      "high_performing_recent_videos": [
+        {
+          "title": "Why I get my haircut at work",
+          "views": 17840,
+          "likes": 555,
+          "comments": 12,
+          "published_at": "2026-11-07T15:02:09Z",
+          "description_excerpt": "Why I get my haircut at work @al_clipone"
+        },
+        {
+          "title": "You're either a dictator or a doormat",
+          "views": 10691,
+          "likes": 537,
+          "comments": 4,
+          "published_at": "2026-11-06T21:02:29Z",
+          "description_excerpt": "You're either a dictator or a doormat"
+        },
+        {
+          "title": "Use my AI replacement ladder to decide what to automate",
+          "views": 10479,
+          "likes": 381,
+          "comments": 4,
+          "published_at": "2026-11-09T21:01:34Z",
+          "description_excerpt": "Use my AI replacement ladder to decide what to automate"
+        },
+        {
+          "title": "Why do people blame their team?",
+          "views": 9562,
+          "likes": 438,
+          "comments": 6,
+          "published_at": "2026-11-09T15:03:14Z",
+          "description_excerpt": "Why do people blame their team?"
+        },
+        {
+          "title": "Comfort is the most expensive thing",
+          "views": 9531,
+          "likes": 553,
+          "comments": 6,
+          "published_at": "2026-11-08T21:02:05Z",
+          "description_excerpt": "Comfort is the most expensive thing"
+        }
+      ]
+    },
+    {
+      "channel": "Jeff Su",
+      "subscribers": 1950000,
+      "channel_views": 107932452,
+      "video_count": 319,
+      "high_performing_recent_videos": [
+        {
+          "title": "Learn 95% of ChatGPT Work in Under 20 Minutes",
+          "views": 548921,
+          "likes": 6071,
+          "comments": 362,
+          "published_at": "2026-08-25T13:00:23Z",
+          "description_excerpt": "📚 Grab HubSpot's free Guide to #ChatGPT Work: https://clickhubspot.com/8f3780\n\nMost people open #ChatGPT Work, type a question, and end up using it exactly like the regular chatbot. In this tutorial I show you the one thing that changes that: a folder you mount, with a plain-English rulebook inside that ChatGPT Work reads before every single task.\n"
+        },
+        {
+          "title": "Personal Agents, Clearly Explained",
+          "views": 328674,
+          "likes": 3448,
+          "comments": 356,
+          "published_at": "2026-10-13T13:00:11Z",
+          "description_excerpt": "📧 Join my free AI Essentials newsletter - https://www.jeffsu.org/newsletter/?utm_source=youtube&utm_medium=video&utm_campaign=v212\n\nAlready using #ChatGPT, Claude, or Gemini and wondering whether personal AI agents are worth your time? A chatbot can summarize one health report, a do-it-yourself agent can compare it with your history, and personal a"
+        },
+        {
+          "title": "Write a Killer Résumé in the AI Era: 5 New Rules!",
+          "views": 220213,
+          "likes": 3359,
+          "comments": 150,
+          "published_at": "2026-09-15T13:00:20Z",
+          "description_excerpt": "📨 Get 1% better at AI every week - https://www.jeffsu.org/newsletter/?utm_source=youtube&utm_medium=video&utm_campaign=v210\n\nFinding reliable #résumé advice was already hard enough, and now employers use #AI to screen applications. I break down research covering more than 4,000 hiring managers and nearly 2 million applications to show which résumé "
+        },
+        {
+          "title": "Stop Organizing Files Yourself.",
+          "views": 199310,
+          "likes": 2278,
+          "comments": 158,
+          "published_at": "2026-09-29T13:00:30Z",
+          "description_excerpt": "📦 Try Dropbox in ChatGPT with your team: https://bit.ly/jeffsudropbox \n\nEvery downloaded PDF becomes another file to rename and another folder to choose. In this video, I show you how to give #AI a file management rulebook so it can name and organize your files using the folder structure and preferences that make sense to you.\n\nSpecifically, you’ll"
+        },
+        {
+          "title": "I knew AI + Notion would be good, but this... wow.",
+          "views": 97104,
+          "likes": 846,
+          "comments": 119,
+          "published_at": "2026-10-27T13:02:29Z",
+          "description_excerpt": "Grab my free Cowork Toolkit: https://coworkacademy.ai/toolkit?utm_source=youtube&utm_medium=video&utm_campaign=v213\n\nIf your #AI keeps creating Notion pages you have to fix, it needs to learn how YOU work. In this video, I’ll show you how to teach Claude and #ChatGPT your database, template, and formatting preferences so they can handle the tedious"
+        }
+      ]
+    },
+    {
+      "channel": "Nate Herk | AI Automation",
+      "subscribers": 1120000,
+      "channel_views": 66928119,
+      "video_count": 589,
+      "high_performing_recent_videos": [
+        {
+          "title": "Every AI Business Ranked from Worst to Best",
+          "views": 92999,
+          "likes": 1223,
+          "comments": 98,
+          "published_at": "2026-11-05T10:13:40Z",
+          "description_excerpt": "FREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=ai-business-ranked-from-worst-to-best&sl=yt_ai-business-ranked-from-worst-to-best\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=ai-business-ranke"
+        },
+        {
+          "title": "I Studied 10,000 AI Websites… Here’s what I learned",
+          "views": 51471,
+          "likes": 813,
+          "comments": 19,
+          "published_at": "2026-11-09T09:53:40Z",
+          "description_excerpt": "How I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=10000-ai-websites&hcategory=youtube-videos&utm_campaign=plus-group\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=10000-ai-websites&hcategory=youtube-videos&utm_campaign=free-group\nFREE Scrollcraft Website "
+        },
+        {
+          "title": "Do people say please to AI?",
+          "views": 9304,
+          "likes": 193,
+          "comments": 9,
+          "published_at": "2026-11-06T14:01:00Z",
+          "description_excerpt": "I asked people at Oracle AI World if they say please to AI. Do you?"
+        },
+        {
+          "title": "Favorite person in AI? Asking people at Oracle AI World",
+          "views": 9071,
+          "likes": 87,
+          "comments": 4,
+          "published_at": "2026-11-04T14:02:03Z",
+          "description_excerpt": "Who's your favorite person in AI? I asked people at Oracle AI World."
+        },
+        {
+          "title": "Describe AI agents in 2027 in one word",
+          "views": 5929,
+          "likes": 79,
+          "comments": 1,
+          "published_at": "2026-11-05T02:00:48Z",
+          "description_excerpt": "Describe AI agents in 2027 in one word. I asked people at Oracle AI World."
+        }
+      ]
+    }
+  ],
   "own_comments": [],
   "own_analytics": [],
   "own_winners": [],
