@@ -1,181 +1,153 @@
 {
-  "generated_at": "2026-11-09T22:44:32.476153+00:00",
+  "generated_at": "2026-11-10T15:28:34.039386+00:00",
   "competitors": [
+    {
+      "channel": "Dan Martell",
+      "subscribers": 3160000,
+      "channel_views": 425445263,
+      "video_count": 3852,
+      "high_performing_recent_videos": [
+        {
+          "title": "Why I get my haircut at work",
+          "views": 17871,
+          "likes": 556,
+          "comments": 12,
+          "published_at": "2026-11-07T15:02:09Z",
+          "description_excerpt": "Why I get my haircut at work @al_clipone"
+        },
+        {
+          "title": "You're either a dictator or a doormat",
+          "views": 10699,
+          "likes": 537,
+          "comments": 4,
+          "published_at": "2026-11-06T21:02:29Z",
+          "description_excerpt": "You're either a dictator or a doormat"
+        },
+        {
+          "title": "Use my AI replacement ladder to decide what to automate",
+          "views": 10595,
+          "likes": 383,
+          "comments": 4,
+          "published_at": "2026-11-09T21:01:34Z",
+          "description_excerpt": "Use my AI replacement ladder to decide what to automate"
+        },
+        {
+          "title": "Why do people blame their team?",
+          "views": 9619,
+          "likes": 441,
+          "comments": 6,
+          "published_at": "2026-11-09T15:03:14Z",
+          "description_excerpt": "Why do people blame their team?"
+        },
+        {
+          "title": "Comfort is the most expensive thing",
+          "views": 9541,
+          "likes": 554,
+          "comments": 6,
+          "published_at": "2026-11-08T21:02:05Z",
+          "description_excerpt": "Comfort is the most expensive thing"
+        }
+      ]
+    },
+    {
+      "channel": "Jeff Su",
+      "subscribers": 1950000,
+      "channel_views": 107932452,
+      "video_count": 319,
+      "high_performing_recent_videos": [
+        {
+          "title": "Learn 95% of ChatGPT Work in Under 20 Minutes",
+          "views": 548935,
+          "likes": 6071,
+          "comments": 362,
+          "published_at": "2026-08-25T13:00:23Z",
+          "description_excerpt": "📚 Grab HubSpot's free Guide to #ChatGPT Work: https://clickhubspot.com/8f3780\n\nMost people open #ChatGPT Work, type a question, and end up using it exactly like the regular chatbot. In this tutorial I show you the one thing that changes that: a folder you mount, with a plain-English rulebook inside that ChatGPT Work reads before every single task.\n"
+        },
+        {
+          "title": "Personal Agents, Clearly Explained",
+          "views": 328683,
+          "likes": 3448,
+          "comments": 356,
+          "published_at": "2026-10-13T13:00:11Z",
+          "description_excerpt": "📧 Join my free AI Essentials newsletter - https://www.jeffsu.org/newsletter/?utm_source=youtube&utm_medium=video&utm_campaign=v212\n\nAlready using #ChatGPT, Claude, or Gemini and wondering whether personal AI agents are worth your time? A chatbot can summarize one health report, a do-it-yourself agent can compare it with your history, and personal a"
+        },
+        {
+          "title": "Write a Killer Résumé in the AI Era: 5 New Rules!",
+          "views": 220239,
+          "likes": 3360,
+          "comments": 150,
+          "published_at": "2026-09-15T13:00:20Z",
+          "description_excerpt": "📨 Get 1% better at AI every week - https://www.jeffsu.org/newsletter/?utm_source=youtube&utm_medium=video&utm_campaign=v210\n\nFinding reliable #résumé advice was already hard enough, and now employers use #AI to screen applications. I break down research covering more than 4,000 hiring managers and nearly 2 million applications to show which résumé "
+        },
+        {
+          "title": "Stop Organizing Files Yourself.",
+          "views": 199312,
+          "likes": 2278,
+          "comments": 158,
+          "published_at": "2026-09-29T13:00:30Z",
+          "description_excerpt": "📦 Try Dropbox in ChatGPT with your team: https://bit.ly/jeffsudropbox \n\nEvery downloaded PDF becomes another file to rename and another folder to choose. In this video, I show you how to give #AI a file management rulebook so it can name and organize your files using the folder structure and preferences that make sense to you.\n\nSpecifically, you’ll"
+        },
+        {
+          "title": "I knew AI + Notion would be good, but this... wow.",
+          "views": 97112,
+          "likes": 847,
+          "comments": 119,
+          "published_at": "2026-10-27T13:02:29Z",
+          "description_excerpt": "Grab my free Cowork Toolkit: https://coworkacademy.ai/toolkit?utm_source=youtube&utm_medium=video&utm_campaign=v213\n\nIf your #AI keeps creating Notion pages you have to fix, it needs to learn how YOU work. In this video, I’ll show you how to teach Claude and #ChatGPT your database, template, and formatting preferences so they can handle the tedious"
+        }
+      ]
+    },
     {
       "channel": "Nate Herk | AI Automation",
       "subscribers": 1120000,
-      "channel_views": 66791831,
+      "channel_views": 66928119,
       "video_count": 589,
       "high_performing_recent_videos": [
         {
           "title": "Every AI Business Ranked from Worst to Best",
-          "views": 90327,
-          "likes": 1174,
+          "views": 93013,
+          "likes": 1223,
           "comments": 98,
           "published_at": "2026-11-05T10:13:40Z",
           "description_excerpt": "FREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=ai-business-ranked-from-worst-to-best&sl=yt_ai-business-ranked-from-worst-to-best\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=ai-business-ranke"
         },
         {
           "title": "I Studied 10,000 AI Websites… Here’s what I learned",
-          "views": 38627,
-          "likes": 634,
-          "comments": 13,
+          "views": 51581,
+          "likes": 813,
+          "comments": 19,
           "published_at": "2026-11-09T09:53:40Z",
           "description_excerpt": "How I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=10000-ai-websites&hcategory=youtube-videos&utm_campaign=plus-group\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=10000-ai-websites&hcategory=youtube-videos&utm_campaign=free-group\nFREE Scrollcraft Website "
         },
         {
+          "title": "Do people say please to AI?",
+          "views": 9304,
+          "likes": 193,
+          "comments": 9,
+          "published_at": "2026-11-06T14:01:00Z",
+          "description_excerpt": "I asked people at Oracle AI World if they say please to AI. Do you?"
+        },
+        {
           "title": "Favorite person in AI? Asking people at Oracle AI World",
-          "views": 9101,
+          "views": 9074,
           "likes": 87,
           "comments": 4,
           "published_at": "2026-11-04T14:02:03Z",
           "description_excerpt": "Who's your favorite person in AI? I asked people at Oracle AI World."
         },
         {
-          "title": "Do people say please to AI?",
-          "views": 8383,
-          "likes": 176,
-          "comments": 8,
-          "published_at": "2026-11-06T14:01:00Z",
-          "description_excerpt": "I asked people at Oracle AI World if they say please to AI. Do you?"
-        },
-        {
           "title": "Describe AI agents in 2027 in one word",
-          "views": 5856,
-          "likes": 77,
+          "views": 5937,
+          "likes": 80,
           "comments": 1,
           "published_at": "2026-11-05T02:00:48Z",
           "description_excerpt": "Describe AI agents in 2027 in one word. I asked people at Oracle AI World."
-        }
-      ]
-    },
-    {
-      "channel": "Matt Wolfe",
-      "subscribers": 1030000,
-      "channel_views": 85694477,
-      "video_count": 835,
-      "high_performing_recent_videos": [
-        {
-          "title": "AI News: New ChatGPT & Google Models (14 Updates Worth Knowing)",
-          "views": 118250,
-          "likes": 2167,
-          "comments": 148,
-          "published_at": "2026-11-06T18:20:31Z",
-          "description_excerpt": "See what Optimizely’s Virtual Teammates can automate for you at http://optimizely.com/mattwolfe\n\nThis week’s AI news covers OpenAI’s GPT-Image 2.6, Google Gemini Omni 1.2 Flash, and the latest AI tools for creating images, generating videos, and getting things done. Watch demos of ChatGPT’s animated GIF creation and image editing, Google’s free AI "
-        },
-        {
-          "title": "How I Get Claude To Edit My Videos (Step-By-Step)",
-          "views": 88902,
-          "likes": 1433,
-          "comments": 130,
-          "published_at": "2026-11-04T16:40:16Z",
-          "description_excerpt": "Try vidIQ for only $1 https://vidiq.com/mattwolfe/\n\nLearn how to edit videos with Claude AI, work with Premiere Pro, and turn your footage into short-form content.\n\nIn this guide, I walk through how to use Claude to help with video editing, from working with your existing footage to creating clips for Shorts and Reels. We’ll explore how Claude fits"
-        },
-        {
-          "title": "A real-life speeder bike from Return of the Jedi (Not AI)",
-          "views": 30517,
-          "likes": 1084,
-          "comments": 50,
-          "published_at": "2026-11-03T20:51:24Z",
-          "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
-        },
-        {
-          "title": "Claude Code Just Called My Phone",
-          "views": 23968,
-          "likes": 745,
-          "comments": 21,
-          "published_at": "2026-11-07T17:00:37Z",
-          "description_excerpt": "Your AI agent can now call you when it needs help 🤯\n\nHere's how I'm using it with Claude Code to edit my videos:\n\n1. If it needs a creative decision, it calls my phone and asks.\n2. If a render finishes, it just sends me a text.\n3. If it doesn't need my input, it keeps working without interrupting me.\n\nNo more AI agents sitting in a terminal waiting"
-        },
-        {
-          "title": "That is Some Crazy Fabric",
-          "views": 16365,
-          "likes": 914,
-          "comments": 69,
-          "published_at": "2026-11-07T07:36:33Z",
-          "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
-        }
-      ]
-    },
-    {
-      "channel": "Your AI Workflow",
-      "subscribers": 28900,
-      "channel_views": 1287353,
-      "video_count": 62,
-      "high_performing_recent_videos": [
-        {
-          "title": "Google’s New Gemini Agent Is Huge 🤯 (Gemini at Work 2026: Workspace & Enterprise)",
-          "views": 40018,
-          "likes": 363,
-          "comments": 19,
-          "published_at": "2026-10-10T08:04:05Z",
-          "description_excerpt": "💼 Try Google Workspace for 25% off → https://www.youraiworkflow.co/workspace?ref=yt-geminiwork\nThis video and description may contain affiliate links. If you purchase a product through these links, I may earn a commission.\n📋 Full breakdown & How to get access → https://www.youraiworkflow.co/gemini-at-work\n👩🏼‍💻 Book a session → https://www.youraiwor"
-        },
-        {
-          "title": "I Tested Gemini 4 Argon on Real Work 🤯 (Gemini 4 Review vs Claude & 3.1 Pro)",
-          "views": 22097,
-          "likes": 187,
-          "comments": 29,
-          "published_at": "2026-10-14T04:30:04Z",
-          "description_excerpt": "📊 Full results, prompts & test files → https://www.youraiworkflow.co/gemini-4-review\n👩🏼‍💻 Book a session → https://www.youraiworkflow.co/book\n🛠️ Request a custom build → https://www.youraiworkflow.co/quote\n\nGemini 4 Argon is finally here, and Google says it’s the smartest model in the world. But can you actually trust it with real work? I got early"
-        },
-        {
-          "title": "Google Workspace Studio Agents: Email, Jira & Webhooks (Full Tutorial)",
-          "views": 20911,
-          "likes": 301,
-          "comments": 16,
-          "published_at": "2026-10-06T11:02:49Z",
-          "description_excerpt": "💼 Try Google Workspace for 25% off → https://www.youraiworkflow.co/workspace?ref=yt-studioagents\nThis video and description may contain affiliate links. If you purchase a product through these links, I may earn a commission.\n📋 *Copy all the prompts from this video* → https://www.youraiworkflow.co/studio\n\n👩🏼‍💻 Want custom AI apps or workflows built "
-        },
-        {
-          "title": "Gemini in Chrome: 4 Hidden Workflows 🤯 (Save Hours Every Week)",
-          "views": 12296,
-          "likes": 202,
-          "comments": 6,
-          "published_at": "2026-11-04T01:28:49Z",
-          "description_excerpt": "💼 Try Gemini in Google Workspace → https://www.youraiworkflow.co/workspace?ref=yt-chrome\n📋 Prompts & steps → https://www.youraiworkflow.co/gemini-in-chrome?ref=yt-chrome\n📄 Your AI PDF waitlist → https://www.youraipdf.com/?ref=yt-chrome\n🛠️ Start a project → https://www.youraiworkflow.co/quote?ref=yt-chrome\n🗓️ AI consulting → https://www.youraiworkfl"
-        },
-        {
-          "title": "Google Gemini Just Got 5 New Features 🤯 (Sites, PDFs, Gmail, Docs & Slides)",
-          "views": 11630,
-          "likes": 254,
-          "comments": 10,
-          "published_at": "2026-11-07T07:03:32Z",
-          "description_excerpt": "💼 Try Gemini in Google Workspace → https://www.youraiworkflow.co/workspace?ref=yt-new-gemini\n🖼️ Free image host → https://www.youraiworkflow.co/images?ref=yt-new-gemini\n📄 Your AI PDF waitlist → https://www.youraipdf.com/?ref=yt-new-gemini\n🛠️ Start a project → https://www.youraiworkflow.co/quote?ref=yt-new-gemini\n🗓️ AI consulting → https://www.youra"
         }
       ]
     }
   ],
   "own_comments": [],
   "own_analytics": [
-    {
-      "title": "Why Spotify's AI Coding Surge is a Double-Edged Sword",
-      "format": "long",
-      "metrics": {
-        "views": 135.0,
-        "estimatedMinutesWatched": 58.0,
-        "averageViewDuration": 88.0,
-        "averageViewPercentage": 15.72,
-        "likes": 0.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
-      "title": "Epic Games' 'AI-First' Mandate Explained",
-      "format": "short",
-      "metrics": {
-        "views": 26.0,
-        "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 12.0,
-        "averageViewPercentage": 25.069999999999997,
-        "likes": 2.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
     {
       "title": "Netsujo 0.5.0: Stop Rogue AI Agents",
       "format": "short",
@@ -348,10 +320,10 @@
       "title": "Stanford's Paper2Agent Turns PDFs Into Working Code",
       "format": "short",
       "metrics": {
-        "views": 3.0,
+        "views": 1.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 28.0,
-        "averageViewPercentage": 58.78,
+        "averageViewDuration": 8.0,
+        "averageViewPercentage": 16.94,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -460,7 +432,7 @@
     }
   ],
   "monetization": {
-    "subscribers": 18,
+    "subscribers": 20,
     "subscriber_target": 1000,
     "estimated_long_watch_hours_365d": null,
     "watch_hour_target": 4000,
