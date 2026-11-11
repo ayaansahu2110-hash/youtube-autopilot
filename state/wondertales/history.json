@@ -17,7 +17,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-10T20:01:18.839789+00:00"
+      "analytics_updated_at": "2026-11-11T19:52:14.391972+00:00"
     },
     {
       "video_id": "NXwh5O6kQ7o",
@@ -146,6 +146,34 @@
       "script_preview": "Have you ever gazed up at the fluffy white clouds drifting by on a sunny day and wondered if a gentle giraffe could keep stretching its long, graceful neck until it actually touched them? It is a truly magical and imaginative bedtime thought.\nIt is such a wonderful image for a whimsical bedtime story, painting a picture of a world where creatures can reach the stars. However, in our fascinating real world of biology, nature sets very strict and important limits on growth.\nWhile dreams are boundless, nature requires a balance for every living creature to stay healthy and strong. Understanding t",
       "created_at": "2026-11-10T20:40:30.236267+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "NBDSFl91Ix0",
+      "topic": "Buster the Puppy’s Rainbow Chase",
+      "title": "Buster the Puppy’s Rainbow Chase",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-11-11T13:17:36Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "PpSdcRLMzgs",
+      "topic": "The Cheerful Kitten and the Golden Yarn Ball",
+      "title": "The Cheerful Kitten & Golden Yarn Ball | Nursery Rhyme",
+      "format": "short",
+      "script_preview": "Hop-hop goes the kitten so fluffy and small, chasing a magical golden yarn ball!\nRoll-roll rolls the yarn through the soft clover green, the brightest and shiniest toy ever seen!\nPounce-pounce goes the kitten with joy in her eyes, jumping for magic under bright sunny skies!\nPurr-purr hears a puppy who wants to play too, sharing the yarn makes the world bright and new!\nSpin-spin go two friends as they tumble in glee, happy as chipmunks high up in a tree!\nGiggle and play through the warm sunny day, kindness brings friendship in the happiest way!\nTwinkle-twinkle soft stars wake up in the height, ",
+      "created_at": "2026-11-11T19:56:29.801079+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "XarD5-Nr1W8",
+      "topic": "Hop Little Froggie on the Green Lily Pad",
+      "title": "Hop Little Froggie: A Bouncy Nursery Rhyme",
+      "format": "short",
+      "script_preview": "Hop, little froggie, on green lily pads, singing a song that makes everyone glad!\nLeap in the water, a big happy splash, Quick as a blink or a bright lightning flash!\nBusy bees hum as they fly past the tree, Wave to the ducklings so wild and so free!\nFroggie brings friends to his soft leafy seat, Sharing his pond is a wonderful treat!\nRipples go dancing in circles of blue, Birdies are singing a lullaby too!\nKindness is sunshine that warms every day, Lighting the path as we frolic and play!\nStars twinkle softly, a silver-lit sky, Close your big eyes as the moon drifts on by!\nRest your small hea",
+      "created_at": "2026-11-11T20:00:36.921359+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -240,6 +268,25 @@
       "title": "The Gentle Giraffe: Why Biology Limits How High They Can Reach",
       "format": "long",
       "created_at": "2026-11-10T20:40:30.236267+00:00"
+    },
+    {
+      "topic": "Buster the Puppy’s Rainbow Chase",
+      "title": "Buster the Puppy’s Rainbow Chase",
+      "format": "short",
+      "created_at": "2026-11-11T13:17:36Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "The Cheerful Kitten and the Golden Yarn Ball",
+      "title": "The Cheerful Kitten & Golden Yarn Ball | Nursery Rhyme",
+      "format": "short",
+      "created_at": "2026-11-11T19:56:29.801079+00:00"
+    },
+    {
+      "topic": "Hop Little Froggie on the Green Lily Pad",
+      "title": "Hop Little Froggie: A Bouncy Nursery Rhyme",
+      "format": "short",
+      "created_at": "2026-11-11T20:00:36.921359+00:00"
     }
   ]
 }
