@@ -17,7 +17,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-10T20:02:59.070368+00:00"
+      "analytics_updated_at": "2026-11-11T19:54:04.791755+00:00"
     },
     {
       "video_id": "qZ6xQr7jAV0",
@@ -36,7 +36,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-10T20:02:59.069780+00:00"
+      "analytics_updated_at": "2026-11-11T19:54:04.791039+00:00"
     },
     {
       "video_id": "MScEwckGKbc",
@@ -128,6 +128,24 @@
       "script_preview": "Can ancient Sanskrit acoustic frequencies and cutting-edge visual art systems truly merge to lower human stress? We are diving deep into the intricate mechanisms behind Lotus Ocean, exploring how these ancient, resonant sound-codes function within our modern digital landscape. This unique body of work successfully translates centuries-old Vedic philosophy into a digital-first, immersive experience. By carefully structuring modern meditative visuals, the project creates an environment where ancient wisdom meets contemporary accessibility, inviting the viewer into a highly curated, peaceful spac",
       "created_at": "2026-11-10T20:40:21.392653+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "Kmk3ArkIVqg",
+      "topic": "The legend of Ravana and the creation of Shiv Tandav Stotram",
+      "title": "शिव तांडव स्तोत्रम की उत्पत्ति और दिव्य रहस्य | Divya Shloka Sutra",
+      "format": "short",
+      "script_preview": "क्या आप जानते हैं कि शिव तांडव स्तोत्रम का जन्म रावण के अहंकार के टूटने और महादेव की भक्ति से हुआ था? पौराणिक कथा के अनुसार, जब रावण ने अपने बल के मद में पवित्र कैलाश पर्वत को उठाने की चेष्टा की, तब महादेव ने केवल अपने अंगूठे से कैलाश को दबाया। रावण का समस्त अहंकार क्षण भर में चूर हो गया। तब उसने महादेव की स्तुति में रचा— 'जटाटवीगलज्जलप्रवाहपावितस्थले गलेऽवलम्ब्य लम्बितां भुजङ्गतुङ्गमालिकाम्।' अर्थात, जिनकी जटाओं से निकली गंगा कंठ को पवित्र करती है और गले में विशाल सर्पों की माला सुशोभित है। रावण की इस भक्ति से प्रसन्न होकर शिवजी ने उसे क्षमा किया। यह स्तोत्र समस्त भय और तनाव का नाश करता है। ज",
+      "created_at": "2026-11-11T20:02:33.002851+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "J90Gb-KrrTI",
+      "topic": "Indian Diaspora Gifts Hanuman Chalisa To Trump During Diwali Celebrations; Why Is It Believed To Ward Off Nega",
+      "title": "हनुमान चालीसा का दिव्य महत्व",
+      "format": "short",
+      "script_preview": "हाल ही में व्हाइट हाउस में दीपावली के अवसर पर हनुमान चालीसा भेंट की गई। यह केवल एक उपहार नहीं, बल्कि शांति और साहस का प्रतीक है। हनुमान चालीसा में गोस्वामी तुलसीदास जी ने लिखा है: 'संकट कटै मिटै सब पीरा, जो सुमिरै हनुमत बलबीरा।' इसका अर्थ है— जो व्यक्ति वीर हनुमान का स्मरण करता है, उसके जीवन के सभी कष्ट और बाधाएं दूर हो जाती हैं। अध्यात्म में हनुमान चालीसा को नकारात्मक ऊर्जा को नष्ट करने और मन में निर्भयता लाने का सबसे सरल मार्ग माना गया है। हनुमान जी का स्मरण व्यक्ति के भीतर अदम्य आत्मबल भरता है, जो जीवन की चुनौतियों का सामना करने के लिए आवश्यक है। दैनिक जीवन में जब तनाव बढ़े, तो हनुमान चालीसा",
+      "created_at": "2026-11-11T20:09:19.307832+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -203,6 +221,18 @@
       "title": "How Lotus Ocean Connects Vedic Thought and LotusOcean Films",
       "format": "long",
       "created_at": "2026-11-10T20:40:21.392653+00:00"
+    },
+    {
+      "topic": "The legend of Ravana and the creation of Shiv Tandav Stotram",
+      "title": "शिव तांडव स्तोत्रम की उत्पत्ति और दिव्य रहस्य | Divya Shloka Sutra",
+      "format": "short",
+      "created_at": "2026-11-11T20:02:33.002851+00:00"
+    },
+    {
+      "topic": "Indian Diaspora Gifts Hanuman Chalisa To Trump During Diwali Celebrations; Why Is It Believed To Ward Off Nega",
+      "title": "हनुमान चालीसा का दिव्य महत्व",
+      "format": "short",
+      "created_at": "2026-11-11T20:09:19.307832+00:00"
     }
   ]
 }
