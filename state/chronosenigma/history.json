@@ -91,6 +91,24 @@
       "script_preview": "Visible from space and measuring forty kilometers across, the Richat Structure has become a modern obsession for those seeking the lost city of Atlantis. But is this desert anomaly a forgotten megalithic marvel or a perfectly natural geological dome sculpted by the earth itself? We start with the satellite data. When you look at the Sahara from low Earth orbit, this massive, circular formation stands out in stark contrast to the surrounding sand. The concentric rings suggest a level of symmetry that feels manufactured rather than occurring by simple geological chance. The primary theory linkin",
       "created_at": "2026-11-10T20:33:13.713031+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "PxwtUsxs1Wc",
+      "topic": "Mysterious Shapes Hidden Beneath the Amazon Canopy Reveal a Sprawling Ancient Civilization Much Bigger Than Researchers Expected",
+      "title": "Amazonia's Secret Megalopolis",
+      "format": "short",
+      "script_preview": "For decades, history books called the Amazon a 'pristine' wilderness incapable of sustaining large populations. They were wrong. Modern LIDAR mapping has now pierced the thick jungle canopy to reveal thousands of perfectly geometric earthen structures. We are not talking about simple campfires; these are massive geoglyphs and complex defensive moats spanning hundreds of miles. This evidence proves that two thousand years ago, millions of people lived here in interconnected megalopolises. Orthodox history claimed the rainforest soil couldn't support mass farming, yet these massive urban layouts",
+      "created_at": "2026-11-11T19:58:43.055598+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "xi8Y7H-cq3c",
+      "topic": "Artificial intelligence unravels the mysteries of the Peruvian desert: 303 new archaeological drawings discovered",
+      "title": "303 New Nazca Geoglyphs: AI Reveals Lost Secrets",
+      "format": "short",
+      "script_preview": "The Nazca desert was hiding 303 secrets in plain sight, invisible to the human eye for millennia. Researchers just deployed AI to scan the arid plains, uncovering 303 previously unknown geoglyphs. These aren't random lines; they are high-precision carvings depicting humanoids, decapitated heads, and animals. Orthodox archaeology previously relied on manual aerial surveys, which fundamentally failed to resolve complex ground etchings. AI-driven pattern recognition has now mapped these figures with absolute mathematical certainty. We have spent decades searching, yet a neural network just proved",
+      "created_at": "2026-11-11T20:01:31.946587+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -155,6 +173,18 @@
       "title": "The Richat Structure: Is it Really Atlantis? The Truth Revealed",
       "format": "long",
       "created_at": "2026-11-10T20:33:13.713031+00:00"
+    },
+    {
+      "topic": "Mysterious Shapes Hidden Beneath the Amazon Canopy Reveal a Sprawling Ancient Civilization Much Bigger Than Researchers Expected",
+      "title": "Amazonia's Secret Megalopolis",
+      "format": "short",
+      "created_at": "2026-11-11T19:58:43.055598+00:00"
+    },
+    {
+      "topic": "Artificial intelligence unravels the mysteries of the Peruvian desert: 303 new archaeological drawings discovered",
+      "title": "303 New Nazca Geoglyphs: AI Reveals Lost Secrets",
+      "format": "short",
+      "created_at": "2026-11-11T20:01:31.946587+00:00"
     }
   ]
 }
