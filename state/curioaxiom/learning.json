@@ -1,48 +1,96 @@
 {
-  "generated_at": "2026-11-12T20:50:15.690450+00:00",
+  "generated_at": "2026-11-13T11:23:06.136960+00:00",
   "competitors": [
+    {
+      "channel": "HISTORY",
+      "subscribers": 15500000,
+      "channel_views": 5275409162,
+      "video_count": 12401,
+      "high_performing_recent_videos": [
+        {
+          "title": "MILLION DOLLAR Hidden Americana Treasures | History's Mystery Files (S1)",
+          "views": 48104,
+          "likes": 178,
+          "comments": 15,
+          "published_at": "2026-11-11T20:00:35Z",
+          "description_excerpt": "The search for treasure doesn’t always lead to ancient ruins. Sometimes, priceless history is concealed inside a home, buried among unwanted possessions, or waiting unnoticed at a garage sale. See more in this clip from Season 1, Episode 1, \"Hidden Treasures.\"\n \nSubscribe for more from other great The HISTORY Channel shows:\nhttp://histv.co/Subscrib"
+        },
+        {
+          "title": "Could Mythical Beasts Be Extraterrestrial? | Ancient Aliens (S3, E2) | Full Episode",
+          "views": 36410,
+          "likes": 339,
+          "comments": 18,
+          "published_at": "2026-11-11T23:00:11Z",
+          "description_excerpt": "Hindu scripture describes an enormous flying creature called a Garuda that shook the ground when it landed on Earth. Is it possible that this monster was actually misinterpreted? See more in Season 3, Episode 2, \"Aliens and Monsters.\"\n\nStay up to date on all of your favorite shows on The HISTORY Channel website at http://history.com/schedule\n \n#Anc"
+        },
+        {
+          "title": "The Ocean’s Most Destructive Forces | Underwater Universe | Special",
+          "views": 31967,
+          "likes": 147,
+          "comments": 10,
+          "published_at": "2026-11-12T01:00:16Z",
+          "description_excerpt": "Throughout history, tidal waves have drowned us, storm surges have sunk cities, and hurricanes and cyclones--fueled by the ocean--have blown away all in their path. See more in this special \"Underwater Universe.\"\n\n#History\n \nSubscribe for more from other great The HISTORY Channel shows:\nhttp://histv.co/SubscribeHistoryYT\n\nCheck out exclusive The HI"
+        },
+        {
+          "title": "The Secret Dogfight that Saved WWII | Mission to Honor",
+          "views": 20952,
+          "likes": 199,
+          "comments": 7,
+          "published_at": "2026-11-12T23:00:04Z",
+          "description_excerpt": "This secret dogfight may have saved World War II. See more in this scene from the special, \"Mission to Honor: A 250th Salute to American Veterans.\"\n\n#History #MissiontoHonor\n \nSubscribe for more from other great The HISTORY Channel shows:\nhttp://histv.co/SubscribeHistoryYT\n\nCheck out exclusive The HISTORY Channel content:\nHistory Newsletter - https"
+        },
+        {
+          "title": "The 2012 Doomsday Prophecy | Countdown to Apocalypse (S1, E1) | Full Episode",
+          "views": 19954,
+          "likes": 183,
+          "comments": 31,
+          "published_at": "2026-11-12T23:00:27Z",
+          "description_excerpt": "December 21, 2012: a prophetic date delivered in stone by the ancient Maya. People are heeding the warning and getting prepared, including a group of everyday Americans learning how to fend for themselves and live off the grid. See more in Season 1, Episode 1, \"Maya Messengers.\"\n \n#CountdownApocalypse\n\nSubscribe for more from Countdown to the Apoca"
+        }
+      ]
+    },
     {
       "channel": "Science and fun",
       "subscribers": 10000000,
-      "channel_views": 8796083510,
+      "channel_views": 8799227378,
       "video_count": 926,
       "high_performing_recent_videos": [
         {
           "title": "How To Remove Permanent Ink I Science Experiment",
-          "views": 6605086,
-          "likes": 149829,
-          "comments": 1202,
+          "views": 6711567,
+          "likes": 151695,
+          "comments": 1209,
           "published_at": "2026-10-27T12:28:06Z",
           "description_excerpt": ""
         },
         {
           "title": "Iphone Jeeto Newton’s 2nd Law Se 😳",
-          "views": 4945943,
-          "likes": 126711,
-          "comments": 871,
+          "views": 4992950,
+          "likes": 127622,
+          "comments": 876,
           "published_at": "2026-10-23T12:01:31Z",
           "description_excerpt": ""
         },
         {
           "title": "Ice On Fire 😳 | Science Experiment",
-          "views": 4677336,
-          "likes": 103739,
-          "comments": 682,
+          "views": 4689924,
+          "likes": 103985,
+          "comments": 683,
           "published_at": "2026-10-13T12:29:11Z",
           "description_excerpt": ""
         },
         {
           "title": "I Just Donated My Eyes… What Happens In 6 Hours?",
-          "views": 2385298,
-          "likes": 31124,
-          "comments": 1840,
+          "views": 2394955,
+          "likes": 31204,
+          "comments": 1846,
           "published_at": "2026-10-25T08:49:22Z",
           "description_excerpt": "Eye Bank Link: https://aiims.edu/index.php/en/national-eye-bank\n\nEDSA NOTICE:\nThis video is created strictly for Educational, Documentary, Scientific, and Artistic (EDSA) purposes. It contains documented real-world procedures, scientific breakdowns, and medical awareness regarding eye donation. It does not promote self-harm, gore, or unauthorized m"
         },
         {
           "title": "20 Deadly Leeches vs My Body! (Crazy Experiment)",
-          "views": 907485,
-          "likes": 25594,
+          "views": 908656,
+          "likes": 25602,
           "comments": 1238,
           "published_at": "2026-10-18T09:17:34Z",
           "description_excerpt": "*EDSA NOTICE: This video is created for Educational, Documentary, Scientific, and Artistic purposes.*\n\nWhat happens when blood-sucking leeches are placed on the human face and body? 🩸\n\nIn this extreme experiment, we explore the science behind leech therapy, its historical medical uses, and how these fascinating creatures interact with human skin.\n\n"
@@ -50,94 +98,46 @@
       ]
     },
     {
-      "channel": "The Engineering Mindset",
-      "subscribers": 4500000,
-      "channel_views": 353029596,
-      "video_count": 318,
-      "high_performing_recent_videos": [
-        {
-          "title": "MOSFET vs Transistor vs Relay: Most People Get This Wrong",
-          "views": 828463,
-          "likes": 16925,
-          "comments": 502,
-          "published_at": "2026-06-15T18:41:01Z",
-          "description_excerpt": "MOSFET V Transistors Try Brilliant 👉  http://brilliant.org/TheEngineeringMindset Plus our viewers 20% off an annual Premium subscription.\n\nLearn the key differences between MOSFETs, transistors and relays. This beginner-friendly electronics tutorial explains how BJTs and MOSFETs work, why they are used for switching and amplification, and how to ch"
-        },
-        {
-          "title": "How a CPU Turns 1s and 0s Into Everything You See",
-          "views": 487633,
-          "likes": 7094,
-          "comments": 183,
-          "published_at": "2026-10-05T15:00:22Z",
-          "description_excerpt": "How do CPUs actually work? Design PCB's with Altium:  http://altium.com/yt/engineeringmindset\nHow does a CPU use billions of microscopic transistors to perform calculations and run software? In this video, we work from individual MOSFETs through logic gates, binary arithmetic and full adders to the ALU and CPU core.\nSee how processors fetch and exe"
-        },
-        {
-          "title": "Why 3 Phase Power Is So Much Better",
-          "views": 380517,
-          "likes": 3664,
-          "comments": 91,
-          "published_at": "2026-09-15T15:00:01Z",
-          "description_excerpt": "Why 3 phases? Get a 30 day free trial and 20% off an annual subscription.🎁 Click here: https://brilliant.org/TheEngineeringMindset \n\nWhat is 3 phase electricity and how does three phase power work, learn Wye Delta loads and neutral currents, how and where three phase electricity is used, why 3 phases, how the generator works to produce 3 phase sine"
-        },
-        {
-          "title": "The 1.25V Trick That Gives You Any Voltage You Want",
-          "views": 372839,
-          "likes": 9284,
-          "comments": 335,
-          "published_at": "2026-06-01T17:04:21Z",
-          "description_excerpt": "Learn how voltage regulators actually work and how to design and build one. \nCheck out PCBWAY➡️ https://www.pcbway.com/ for PCB's, 3D printing and CNC at expectational value and design PCB's with Altium ➡️ http://altium.com/yt/engineeringmindset\nLearn how an LM317 adjustable voltage regulator turns unregulated DC into a smooth, stable output for el"
-        },
-        {
-          "title": "The Truth About Three-Phase Power: Why It Became the Standard",
-          "views": 186370,
-          "likes": 6650,
-          "comments": 627,
-          "published_at": "2026-07-28T17:13:17Z",
-          "description_excerpt": "Why Not 2 Phase Power? Try Brilliant 👉  http://brilliant.org/TheEngineeringMindset Plus our viewers 20% off an annual Premium subscription.\n\nDownload your Excel sheets here ➡️ https://tinyurl.com/2-Phase-Excel\nTry Brilliant Tutor for free 👉  http://brilliant.org/TheEngineeringMindset\nGet your engineers mug here:➡️ https://engineeringmindset.store/p"
-        }
-      ]
-    },
-    {
       "channel": "Engineering Explained",
       "subscribers": 4240000,
-      "channel_views": 1072474119,
+      "channel_views": 1072533548,
       "video_count": 1073,
       "high_performing_recent_videos": [
         {
           "title": "I Fact-Checked Every Stunt in the Tesla Roadster Reveal",
-          "views": 2841145,
-          "likes": 45964,
-          "comments": 8246,
+          "views": 2846783,
+          "likes": 46012,
+          "comments": 8249,
           "published_at": "2026-10-23T14:00:00Z",
           "description_excerpt": "Tesla Roadster Revealed: It Flies, It Kickflips, It Rockets! Right?\nMath From 6 Years Ago - https://youtu.be/4PRi4B1APj0\nSubscribe to Engineering Explained for more videos! - https://goo.gl/VZstk7\n\nTesla has unveiled the new Roadster, and in classic Tesla fashion, they have some wild marketing stunts to go along with it. I love marketing stunts, be"
         },
         {
           "title": "Porsche's 6-Stroke Engine Is Fascinating – More Power!",
-          "views": 967566,
-          "likes": 40173,
+          "views": 967647,
+          "likes": 40174,
           "comments": 809,
           "published_at": "2026-07-31T14:00:15Z",
           "description_excerpt": "Porsche patented a 6-stroke engine, yes, two more strokes than you’d commonly see for a combustion engine, and most excitingly, one of those additional strokes is a power-stroke! We now have two power strokes per cylinder within the full six-stroke cycle. The way it works is through Porsche’s genius hypocycloidal design which the crankshaft follows"
         },
         {
           "title": "Are You Buying The Wrong Tires?",
-          "views": 926010,
-          "likes": 13939,
-          "comments": 1239,
+          "views": 928410,
+          "likes": 13968,
+          "comments": 1242,
           "published_at": "2026-09-25T14:00:36Z",
           "description_excerpt": "Summer, All-Season, All-Weather, Winter, All-Terrain – What Tires Should You Buy?\nFind the right tires for your car: https://continentaltire.com/tire-search\nBig thanks to Continental for sponsoring this video! \n\nNothing impacts the performance of your car more than tires. But when you’re buying tires, it can be overwhelming trying to figure out wha"
         },
         {
           "title": "Lucid Bought My Car Back, So I Bought A Mach-E",
-          "views": 875224,
-          "likes": 20970,
+          "views": 875897,
+          "likes": 20974,
           "comments": 3707,
           "published_at": "2026-10-09T14:00:42Z",
           "description_excerpt": "Lucid bought back my Air, so I bought a Ford Mustang Mach-E GT\nCheck out Continental's ECS02 Tires! - https://bit.ly/3Ulidu1\nSponsored by Continental \n\nGenuinely this was some of the most fun I’ve ever had car shopping because the criteria was very open: pretty much anything electric, except for three brands. I’ve already had a long term Nissan Lea"
         },
         {
           "title": "How To Easily Ruin Your Turbocharged Car",
-          "views": 491407,
+          "views": 491473,
           "likes": 15152,
           "comments": 599,
           "published_at": "2026-09-11T14:00:36Z",
@@ -305,14 +305,14 @@
       }
     },
     {
-      "title": "Why Glaciers Carve U-Shaped Valleys",
+      "title": "Why Mars Has Blue Sunsets",
       "format": "short",
       "metrics": {
-        "views": 114.0,
-        "estimatedMinutesWatched": 28.0,
-        "averageViewDuration": 34.0,
-        "averageViewPercentage": 73.62,
-        "likes": 9.0,
+        "views": 98.0,
+        "estimatedMinutesWatched": 20.0,
+        "averageViewDuration": 29.0,
+        "averageViewPercentage": 62.19,
+        "likes": 4.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
