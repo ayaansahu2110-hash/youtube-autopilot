@@ -1,167 +1,153 @@
 {
-  "generated_at": "2026-11-12T20:18:17.117517+00:00",
+  "generated_at": "2026-11-13T11:44:02.523249+00:00",
   "competitors": [
+    {
+      "channel": "Dan Martell",
+      "subscribers": 3160000,
+      "channel_views": 426536759,
+      "video_count": 3858,
+      "high_performing_recent_videos": [
+        {
+          "title": "It took me 30 harsh years to learn what I’ll teach you in just 27 minutes",
+          "views": 35826,
+          "likes": 904,
+          "comments": 39,
+          "published_at": "2026-11-11T13:00:02Z",
+          "description_excerpt": "✅ Get your FREE Perfect Week Template here: https://go.danmartell.com/perfect-week-lf-754\n\nIt took me 30 years of personal development to figure out what we are actually looking for. Almost everybody gets it wrong, because they think it is about being happy.\n\nIn this video, I share the talk I gave at my most recent King's Club, a free mentorship ev"
+        },
+        {
+          "title": "Whats the worst business advice you've heard?",
+          "views": 29425,
+          "likes": 812,
+          "comments": 12,
+          "published_at": "2026-11-12T15:03:05Z",
+          "description_excerpt": "Whats the worst business advice you've heard?"
+        },
+        {
+          "title": "As business owners, have this conversation with your best employees",
+          "views": 24578,
+          "likes": 736,
+          "comments": 3,
+          "published_at": "2026-11-10T21:02:08Z",
+          "description_excerpt": "As business owners, have this conversation with your best employees"
+        },
+        {
+          "title": "Do you think AI should be allowed in schools?",
+          "views": 24311,
+          "likes": 869,
+          "comments": 46,
+          "published_at": "2026-11-11T15:04:06Z",
+          "description_excerpt": "Do you think AI should be allowed in schools?"
+        },
+        {
+          "title": "Use my AI replacement ladder to decide what to automate",
+          "views": 19483,
+          "likes": 550,
+          "comments": 5,
+          "published_at": "2026-11-09T21:01:34Z",
+          "description_excerpt": "Use my AI replacement ladder to decide what to automate"
+        }
+      ]
+    },
+    {
+      "channel": "Jeff Su",
+      "subscribers": 1950000,
+      "channel_views": 108230417,
+      "video_count": 319,
+      "high_performing_recent_videos": [
+        {
+          "title": "Learn 95% of ChatGPT Work in Under 20 Minutes",
+          "views": 563107,
+          "likes": 6169,
+          "comments": 373,
+          "published_at": "2026-08-25T13:00:23Z",
+          "description_excerpt": "📚 Grab HubSpot's free Guide to #ChatGPT Work: https://clickhubspot.com/8f3780\n\nMost people open #ChatGPT Work, type a question, and end up using it exactly like the regular chatbot. In this tutorial I show you the one thing that changes that: a folder you mount, with a plain-English rulebook inside that ChatGPT Work reads before every single task.\n"
+        },
+        {
+          "title": "Personal Agents, Clearly Explained",
+          "views": 336491,
+          "likes": 3514,
+          "comments": 358,
+          "published_at": "2026-10-13T13:00:11Z",
+          "description_excerpt": "📧 Join my free AI Essentials newsletter - https://www.jeffsu.org/newsletter/?utm_source=youtube&utm_medium=video&utm_campaign=v212\n\nAlready using #ChatGPT, Claude, or Gemini and wondering whether personal AI agents are worth your time? A chatbot can summarize one health report, a do-it-yourself agent can compare it with your history, and personal a"
+        },
+        {
+          "title": "Write a Killer Résumé in the AI Era: 5 New Rules!",
+          "views": 228618,
+          "likes": 3482,
+          "comments": 154,
+          "published_at": "2026-09-15T13:00:20Z",
+          "description_excerpt": "📨 Get 1% better at AI every week - https://www.jeffsu.org/newsletter/?utm_source=youtube&utm_medium=video&utm_campaign=v210\n\nFinding reliable #résumé advice was already hard enough, and now employers use #AI to screen applications. I break down research covering more than 4,000 hiring managers and nearly 2 million applications to show which résumé "
+        },
+        {
+          "title": "Stop Organizing Files Yourself.",
+          "views": 202821,
+          "likes": 2334,
+          "comments": 159,
+          "published_at": "2026-09-29T13:00:30Z",
+          "description_excerpt": "📦 Try Dropbox in ChatGPT with your team: https://bit.ly/jeffsudropbox \n\nEvery downloaded PDF becomes another file to rename and another folder to choose. In this video, I show you how to give #AI a file management rulebook so it can name and organize your files using the folder structure and preferences that make sense to you.\n\nSpecifically, you’ll"
+        },
+        {
+          "title": "I knew AI + Notion would be good, but this... wow.",
+          "views": 103318,
+          "likes": 891,
+          "comments": 119,
+          "published_at": "2026-10-27T13:02:29Z",
+          "description_excerpt": "Grab my free Cowork Toolkit: https://coworkacademy.ai/toolkit?utm_source=youtube&utm_medium=video&utm_campaign=v213\n\nIf your #AI keeps creating Notion pages you have to fix, it needs to learn how YOU work. In this video, I’ll show you how to teach Claude and #ChatGPT your database, template, and formatting preferences so they can handle the tedious"
+        }
+      ]
+    },
     {
       "channel": "Nate Herk | AI Automation",
       "subscribers": 1130000,
-      "channel_views": 67396608,
+      "channel_views": 67497957,
       "video_count": 591,
       "high_performing_recent_videos": [
         {
           "title": "Every AI Business Ranked from Worst to Best",
-          "views": 101224,
-          "likes": 1323,
-          "comments": 99,
+          "views": 102273,
+          "likes": 1336,
+          "comments": 100,
           "published_at": "2026-11-05T10:13:40Z",
           "description_excerpt": "FREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=ai-business-ranked-from-worst-to-best&sl=yt_ai-business-ranked-from-worst-to-best\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=ai-business-ranke"
         },
         {
           "title": "I Studied 10,000 AI Websites… Here’s what I learned",
-          "views": 67485,
-          "likes": 1013,
-          "comments": 27,
+          "views": 68982,
+          "likes": 1037,
+          "comments": 28,
           "published_at": "2026-11-09T09:53:40Z",
           "description_excerpt": "How I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=10000-ai-websites&hcategory=youtube-videos&utm_campaign=plus-group\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=10000-ai-websites&hcategory=youtube-videos&utm_campaign=free-group\nFREE Scrollcraft Website "
         },
         {
           "title": "Everything Alex Hormozi Said About AI in 2026",
-          "views": 45200,
-          "likes": 624,
+          "views": 51961,
+          "likes": 710,
           "comments": 45,
           "published_at": "2026-11-11T12:44:29Z",
           "description_excerpt": "How I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=hormozi-ai&hcategory=youtube-videos&utm_campaign=plus-group\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=hormozi-ai&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: ht"
         },
         {
           "title": "Do people say please to AI?",
-          "views": 9869,
-          "likes": 199,
+          "views": 9877,
+          "likes": 203,
           "comments": 9,
           "published_at": "2026-11-06T14:01:00Z",
           "description_excerpt": "I asked people at Oracle AI World if they say please to AI. Do you?"
         },
         {
           "title": "Claude Can Now Run Your Omnisend Account for You",
-          "views": 7201,
-          "likes": 223,
-          "comments": 4,
+          "views": 9374,
+          "likes": 257,
+          "comments": 6,
           "published_at": "2026-11-11T18:00:39Z",
           "description_excerpt": "Claude can now work inside your Omnisend account, using your real data to build the campaign. Go to my Instagram, DM me \"FLOW\" and I'll send you my code for 30% off your first 3 months. 👇 @omnisend #ad \n\nhttps://your.omnisend.com/nate_herk, code NATEH30"
-        }
-      ]
-    },
-    {
-      "channel": "Matt Wolfe",
-      "subscribers": 1030000,
-      "channel_views": 86130970,
-      "video_count": 842,
-      "high_performing_recent_videos": [
-        {
-          "title": "Anthropic's Fable 5.2 is the World’s Best AI Model",
-          "views": 150931,
-          "likes": 2219,
-          "comments": 198,
-          "published_at": "2026-11-09T23:16:34Z",
-          "description_excerpt": "Fable 5.2 from Anthropic just dropped today. Here's the details.\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.link"
-        },
-        {
-          "title": "How To Build An AI Operating System For Your Life",
-          "views": 59753,
-          "likes": 1155,
-          "comments": 77,
-          "published_at": "2026-11-11T16:00:07Z",
-          "description_excerpt": "What if you could use AI agents to manage your emails, organize your schedule, create content, and help run your entire business?\n\nI sat down with Peter Yang to explore the personal AI system he uses to run his one-person business. He walks me through his AI chief of staff, a personal advisor that keeps him focused on his goals, and the automated w"
-        },
-        {
-          "title": "Fable 5.2 Is Quite Insane!",
-          "views": 31094,
-          "likes": 680,
-          "comments": 38,
-          "published_at": "2026-11-11T04:59:41Z",
-          "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
-        },
-        {
-          "title": "The New Ring Camera Flies Around Your House",
-          "views": 23294,
-          "likes": 851,
-          "comments": 95,
-          "published_at": "2026-11-11T15:00:23Z",
-          "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
-        },
-        {
-          "title": "This controls games characters AND robots",
-          "views": 16047,
-          "likes": 710,
-          "comments": 35,
-          "published_at": "2026-11-08T18:30:51Z",
-          "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
-        }
-      ]
-    },
-    {
-      "channel": "ICOR with Tom | AI Productivity",
-      "subscribers": 114000,
-      "channel_views": 14507739,
-      "video_count": 627,
-      "high_performing_recent_videos": [
-        {
-          "title": "I pay €400 a month for AI. Only Claude Code delivers.",
-          "views": 5912,
-          "likes": 101,
-          "comments": 37,
-          "published_at": "2026-11-09T22:30:34Z",
-          "description_excerpt": "I pay over $400 a month for AI, and here is where Grok Bot falls short and what stays safe whichever agent tool you use.\nMore on building your system: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=WGfIwQbM9K4&utm_content=description\n\nWATCH THIS NEXT\n• Before You Set Up Grok Bot, Watch This: https://www.youtube.com/watch?v"
-        },
-        {
-          "title": "I pay 210 euros a month and I am at 92%",
-          "views": 2814,
-          "likes": 25,
-          "comments": 2,
-          "published_at": "2026-11-03T03:21:30Z",
-          "description_excerpt": "Grok Bot is at 92% of my 210 euro plan. A whole Claude Code build barely scratched mine.\n🚀 Lay out your own tool stack with the Tool Workflow Creator, now back inside the myICOR membership: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=hGGNlF0ezmY&utm_content=description\n\nFull video: Did I Ditch Claude for Grok Bot? Not a"
-        },
-        {
-          "title": "Fable 5.2 did this...it's not a game #claudecode #claudeai #fable",
-          "views": 2020,
-          "likes": 31,
-          "comments": 5,
-          "published_at": "2026-11-10T01:56:32Z",
-          "description_excerpt": "Full insights soon on @myicor and @myicorpodcast"
-        },
-        {
-          "title": "The pull to build everything yourself is real",
-          "views": 1939,
-          "likes": 7,
-          "comments": 2,
-          "published_at": "2026-11-03T18:26:59Z",
-          "description_excerpt": "Eighty percent in a tool that already works beats a hundred percent you spend your life chasing. Build only the part nobody else can.\n🚀 Lay out your own tool stack with the Tool Workflow Creator, now back inside the myICOR membership: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=cM0S0f6OcJM&utm_content=description\n\nFull "
-        },
-        {
-          "title": "My AI said it made 12 skills. They never got created properly",
-          "views": 1793,
-          "likes": 13,
-          "comments": 1,
-          "published_at": "2026-11-04T14:00:12Z",
-          "description_excerpt": "My AI said it made 12 skills. They never got created properly, and one question showed it.\n🚀 Lay out your own tool stack with the Tool Workflow Creator, now back inside the myICOR membership: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=0qmaWEIvbQU&utm_content=description\n\nFull video: Did I Ditch Claude for Grok Bot? Not"
         }
       ]
     }
   ],
   "own_comments": [],
   "own_analytics": [
-    {
-      "title": "Microsoft's AI Agents Get Power—and Containers",
-      "format": "long",
-      "metrics": {
-        "views": 39.0,
-        "estimatedMinutesWatched": 3.0,
-        "averageViewDuration": 17.0,
-        "averageViewPercentage": 27.060000000000002,
-        "likes": 0.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
     {
       "title": "I Outsourced My Life to AI Agents for Two Weeks",
       "format": "short",
@@ -459,13 +445,13 @@
       }
     },
     {
-      "title": "Linus Torvalds Let AI Fix Linux, And It Failed",
+      "title": "Nextcloud Security Alert: Patch CODE Now",
       "format": "long",
       "metrics": {
-        "views": 181.0,
-        "estimatedMinutesWatched": 83.0,
-        "averageViewDuration": 82.0,
-        "averageViewPercentage": 14.940000000000001,
+        "views": 41.0,
+        "estimatedMinutesWatched": 19.0,
+        "averageViewDuration": 283.0,
+        "averageViewPercentage": 450.26,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -473,14 +459,14 @@
       }
     },
     {
-      "title": "Nextcloud Security Alert: Patch CODE Now",
+      "title": "Linus Torvalds Let AI Fix Linux, And It Failed",
       "format": "long",
       "metrics": {
-        "views": 66.0,
-        "estimatedMinutesWatched": 25.0,
-        "averageViewDuration": 98.0,
-        "averageViewPercentage": 155.65,
-        "likes": 2.0,
+        "views": 162.0,
+        "estimatedMinutesWatched": 64.0,
+        "averageViewDuration": 85.0,
+        "averageViewPercentage": 15.439999999999998,
+        "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
@@ -502,7 +488,7 @@
     }
   ],
   "monetization": {
-    "subscribers": 21,
+    "subscribers": 22,
     "subscriber_target": 1000,
     "estimated_long_watch_hours_365d": null,
     "watch_hour_target": 4000,
