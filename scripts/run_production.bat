@@ -1,6 +1,6 @@
 @echo off
 setlocal
-cd /d "F:\youtube-autopilot"
+cd /d "%~dp0.."
 if not exist "logs" mkdir "logs"
 echo ======================================================== >> "logs\scheduler.log"
 echo Production slot [%1] started at %DATE% %TIME% >> "logs\scheduler.log"
