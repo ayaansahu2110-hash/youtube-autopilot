@@ -1,181 +1,153 @@
 {
-  "generated_at": "2026-11-12T12:30:20.116364+00:00",
+  "generated_at": "2026-11-12T20:18:17.117517+00:00",
   "competitors": [
+    {
+      "channel": "Nate Herk | AI Automation",
+      "subscribers": 1130000,
+      "channel_views": 67396608,
+      "video_count": 591,
+      "high_performing_recent_videos": [
+        {
+          "title": "Every AI Business Ranked from Worst to Best",
+          "views": 101224,
+          "likes": 1323,
+          "comments": 99,
+          "published_at": "2026-11-05T10:13:40Z",
+          "description_excerpt": "FREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=ai-business-ranked-from-worst-to-best&sl=yt_ai-business-ranked-from-worst-to-best\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=ai-business-ranke"
+        },
+        {
+          "title": "I Studied 10,000 AI Websites… Here’s what I learned",
+          "views": 67485,
+          "likes": 1013,
+          "comments": 27,
+          "published_at": "2026-11-09T09:53:40Z",
+          "description_excerpt": "How I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=10000-ai-websites&hcategory=youtube-videos&utm_campaign=plus-group\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=10000-ai-websites&hcategory=youtube-videos&utm_campaign=free-group\nFREE Scrollcraft Website "
+        },
+        {
+          "title": "Everything Alex Hormozi Said About AI in 2026",
+          "views": 45200,
+          "likes": 624,
+          "comments": 45,
+          "published_at": "2026-11-11T12:44:29Z",
+          "description_excerpt": "How I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=hormozi-ai&hcategory=youtube-videos&utm_campaign=plus-group\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=hormozi-ai&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: ht"
+        },
+        {
+          "title": "Do people say please to AI?",
+          "views": 9869,
+          "likes": 199,
+          "comments": 9,
+          "published_at": "2026-11-06T14:01:00Z",
+          "description_excerpt": "I asked people at Oracle AI World if they say please to AI. Do you?"
+        },
+        {
+          "title": "Claude Can Now Run Your Omnisend Account for You",
+          "views": 7201,
+          "likes": 223,
+          "comments": 4,
+          "published_at": "2026-11-11T18:00:39Z",
+          "description_excerpt": "Claude can now work inside your Omnisend account, using your real data to build the campaign. Go to my Instagram, DM me \"FLOW\" and I'll send you my code for 30% off your first 3 months. 👇 @omnisend #ad \n\nhttps://your.omnisend.com/nate_herk, code NATEH30"
+        }
+      ]
+    },
     {
       "channel": "Matt Wolfe",
       "subscribers": 1030000,
-      "channel_views": 86027794,
-      "video_count": 841,
+      "channel_views": 86130970,
+      "video_count": 842,
       "high_performing_recent_videos": [
         {
           "title": "Anthropic's Fable 5.2 is the World’s Best AI Model",
-          "views": 148063,
-          "likes": 2198,
+          "views": 150931,
+          "likes": 2219,
           "comments": 198,
           "published_at": "2026-11-09T23:16:34Z",
           "description_excerpt": "Fable 5.2 from Anthropic just dropped today. Here's the details.\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.link"
         },
         {
-          "title": "He Built an AI System That Runs His Entire Business",
-          "views": 50407,
-          "likes": 1007,
-          "comments": 68,
+          "title": "How To Build An AI Operating System For Your Life",
+          "views": 59753,
+          "likes": 1155,
+          "comments": 77,
           "published_at": "2026-11-11T16:00:07Z",
           "description_excerpt": "What if you could use AI agents to manage your emails, organize your schedule, create content, and help run your entire business?\n\nI sat down with Peter Yang to explore the personal AI system he uses to run his one-person business. He walks me through his AI chief of staff, a personal advisor that keeps him focused on his goals, and the automated w"
         },
         {
           "title": "Fable 5.2 Is Quite Insane!",
-          "views": 29263,
-          "likes": 654,
-          "comments": 36,
+          "views": 31094,
+          "likes": 680,
+          "comments": 38,
           "published_at": "2026-11-11T04:59:41Z",
           "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
         },
         {
-          "title": "Claude Code Just Called My Phone",
-          "views": 28994,
-          "likes": 847,
-          "comments": 24,
-          "published_at": "2026-11-07T17:00:37Z",
-          "description_excerpt": "Your AI agent can now call you when it needs help 🤯\n\nHere's how I'm using it with Claude Code to edit my videos:\n\n1. If it needs a creative decision, it calls my phone and asks.\n2. If a render finishes, it just sends me a text.\n3. If it doesn't need my input, it keeps working without interrupting me.\n\nNo more AI agents sitting in a terminal waiting"
+          "title": "The New Ring Camera Flies Around Your House",
+          "views": 23294,
+          "likes": 851,
+          "comments": 95,
+          "published_at": "2026-11-11T15:00:23Z",
+          "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
         },
         {
-          "title": "The New Ring Camera Flies Around Your House",
-          "views": 16209,
-          "likes": 624,
-          "comments": 70,
-          "published_at": "2026-11-11T15:00:23Z",
+          "title": "This controls games characters AND robots",
+          "views": 16047,
+          "likes": 710,
+          "comments": 35,
+          "published_at": "2026-11-08T18:30:51Z",
           "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
         }
       ]
     },
     {
-      "channel": "AI News & Strategy Daily | Nate B Jones",
-      "subscribers": 328000,
-      "channel_views": 30174306,
-      "video_count": 1213,
+      "channel": "ICOR with Tom | AI Productivity",
+      "subscribers": 114000,
+      "channel_views": 14507739,
+      "video_count": 627,
       "high_performing_recent_videos": [
         {
-          "title": "China Won't Take 600,000 Nvidia Chips. Did It Target Jensen Huang For Better Ones?",
-          "views": 111996,
-          "likes": 997,
-          "comments": 200,
-          "published_at": "2026-11-10T16:26:00Z",
-          "description_excerpt": "The Jensen Huang investigation comes down to who gets NVIDIA's AI chips, and it lands right as AI starts helping build the next AI. Here's what the reporting says and what it means for your company's access to frontier models.\n\nNate's Library MCP (every prompt kit and guide, inside the AI you already use):\nhttps://unlock-ai.natebjones.com/guides/ho"
+          "title": "I pay €400 a month for AI. Only Claude Code delivers.",
+          "views": 5912,
+          "likes": 101,
+          "comments": 37,
+          "published_at": "2026-11-09T22:30:34Z",
+          "description_excerpt": "I pay over $400 a month for AI, and here is where Grok Bot falls short and what stays safe whichever agent tool you use.\nMore on building your system: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=WGfIwQbM9K4&utm_content=description\n\nWATCH THIS NEXT\n• Before You Set Up Grok Bot, Watch This: https://www.youtube.com/watch?v"
         },
         {
-          "title": "Is the AI Boom Over? Let's Talk About It.",
-          "views": 57375,
-          "likes": 972,
-          "comments": 437,
-          "published_at": "2026-11-08T17:00:26Z",
-          "description_excerpt": "Voters across the US turned against AI data centers on November 3, while AI use keeps climbing. Here's who gains when computing power gets harder to build, why the backlash could leave Big Tech stronger, and where AI investment and jobs go next.\n\nFull post:\nhttps://natesnewsletter.substack.com/p/ai-data-center-backlash?utm_source=youtube&utm_medium"
-        },
-        {
-          "title": "Elon's AI Agent Has a Massive Cost Problem",
-          "views": 40854,
-          "likes": 454,
-          "comments": 84,
-          "published_at": "2026-11-04T15:00:03Z",
-          "description_excerpt": "AI agents have a cost problem that keeps companies from scaling. This breakdown shows how to calculate the real price of your internal automation.\n\nElon Musk says his AI agent, Grok Bot, costs too much to serve for the money it brings in. xAI's own write-ups show the same agent saving the company over $14,000 on unused software seats. So what is yo"
-        },
-        {
-          "title": "You've Never Lost $19 Billion. So Why Are You Playing It Safer Than Zuckerberg?",
-          "views": 27606,
-          "likes": 353,
-          "comments": 64,
-          "published_at": "2026-11-03T15:00:08Z",
-          "description_excerpt": "10 million people set up Meta's personal AI agent, Muse, in six weeks. That came after Reality Labs lost $19.2 billion in 2025 alone. Here are three things Zuckerberg did that you can copy without his money: who they hired, the details nobody asked for, and swinging again after a public miss.\n\nFull post:\nhttps://natesnewsletter.substack.com/p/zucke"
-        },
-        {
-          "title": "The end of git? OpenAI CTO on the future of coding.",
-          "views": 25611,
-          "likes": 288,
-          "comments": 28,
-          "published_at": "2026-11-06T15:00:23Z",
-          "description_excerpt": "OpenAI is outgrowing Git as their internal code generation speeds overwhelm standard version control systems.\n\nVijay Raji, CTO of Applications at OpenAI, explains why their team had to architect a new code repository system to handle the massive influx of AI-generated commits. We look at the breakdown of how rapid model deployment forces infrastruc"
-        }
-      ]
-    },
-    {
-      "channel": "The AI Productivity Coach",
-      "subscribers": 42600,
-      "channel_views": 3758808,
-      "video_count": 251,
-      "high_performing_recent_videos": [
-        {
-          "title": "Gemini Skills Are Replacing Gems: How to Use Them",
-          "views": 19517,
-          "likes": 369,
-          "comments": 12,
-          "published_at": "2026-11-01T14:30:37Z",
-          "description_excerpt": "Gemini Gems are becoming Gemini Skills. In this practical tutorial, I explain what changes, how Skills differ from Gems, and how to create, use and import your own.\n\nGoogle's personal-account transition begins on 17 November 2026. If you've been using Gems, this walkthrough shows you how Skills work inside your existing chats and where to start wit"
-        },
-        {
-          "title": "AI Tools for Work: ChatGPT, Claude, Gemini & More",
-          "views": 1730,
-          "likes": 31,
+          "title": "I pay 210 euros a month and I am at 92%",
+          "views": 2814,
+          "likes": 25,
           "comments": 2,
-          "published_at": "2026-10-31T15:00:18Z",
-          "description_excerpt": "AI tools for work: here’s where ChatGPT, Claude, Gemini, Gamma and other tools fit into everyday tasks.\n\nUse this as a quick reference when you know what you need to do but are deciding which tool to open.\n\n- Writing: Claude\n- Brainstorming: ChatGPT\n- Presentations: Gamma\n- Building apps: Lovable\n- Dictation: Wispr Flow\n- Analysing data: Claude\n- I"
+          "published_at": "2026-11-03T03:21:30Z",
+          "description_excerpt": "Grok Bot is at 92% of my 210 euro plan. A whole Claude Code build barely scratched mine.\n🚀 Lay out your own tool stack with the Tool Workflow Creator, now back inside the myICOR membership: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=hGGNlF0ezmY&utm_content=description\n\nFull video: Did I Ditch Claude for Grok Bot? Not a"
         },
         {
-          "title": "How to Use Claude Dashboards: 3 Real Examples",
-          "views": 1601,
-          "likes": 22,
-          "comments": 4,
-          "published_at": "2026-10-25T15:00:12Z",
-          "description_excerpt": "Claude Dashboards lets you turn your data into interactive charts and reports using plain language. In this tutorial, I walk through three practical examples: sales reporting, project tracking and a YouTube channel dashboard connected to vidIQ.\n\nYou’ll see how I build each dashboard, ask for changes and bring in data in three different ways. No cod"
+          "title": "Fable 5.2 did this...it's not a game #claudecode #claudeai #fable",
+          "views": 2020,
+          "likes": 31,
+          "comments": 5,
+          "published_at": "2026-11-10T01:56:32Z",
+          "description_excerpt": "Full insights soon on @myicor and @myicorpodcast"
         },
         {
-          "title": "Prompt Engineering 101...",
-          "views": 1393,
-          "likes": 16,
+          "title": "The pull to build everything yourself is real",
+          "views": 1939,
+          "likes": 7,
+          "comments": 2,
+          "published_at": "2026-11-03T18:26:59Z",
+          "description_excerpt": "Eighty percent in a tool that already works beats a hundred percent you spend your life chasing. Build only the part nobody else can.\n🚀 Lay out your own tool stack with the Tool Workflow Creator, now back inside the myICOR membership: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=cM0S0f6OcJM&utm_content=description\n\nFull "
+        },
+        {
+          "title": "My AI said it made 12 skills. They never got created properly",
+          "views": 1793,
+          "likes": 13,
           "comments": 1,
-          "published_at": "2026-10-23T14:00:09Z",
-          "description_excerpt": "My prompt engineering strategy: passive aggression\n \nEvery AI user has fought this battle 😭 \n\nSubscribe for weekly AI tips: https://aiproductivitycoach.com/subscribe/\n\n#AIPC #AIProductivityCoach #AIHumor #ChatGPT #PromptEngineering"
-        },
-        {
-          "title": "Gemini Gems Are Becoming Skills: What Changes?",
-          "views": 1244,
-          "likes": 26,
-          "comments": 1,
-          "published_at": "2026-11-04T14:30:16Z",
-          "description_excerpt": "Gemini Skills are replacing Gems, bringing reusable instructions into your existing chats. Here's what changes, how to create a Skill and what to check when importing one from another AI tool.\n\nStart with one job you repeat, such as analysing a weekly Excel report and drafting the team update.\n\nThe transition starts on 17 November 2026 for personal"
+          "published_at": "2026-11-04T14:00:12Z",
+          "description_excerpt": "My AI said it made 12 skills. They never got created properly, and one question showed it.\n🚀 Lay out your own tool stack with the Tool Workflow Creator, now back inside the myICOR membership: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=0qmaWEIvbQU&utm_content=description\n\nFull video: Did I Ditch Claude for Grok Bot? Not"
         }
       ]
     }
   ],
   "own_comments": [],
   "own_analytics": [
-    {
-      "title": "Nextcloud Security Alert: Patch CODE Now",
-      "format": "long",
-      "metrics": {
-        "views": 66.0,
-        "estimatedMinutesWatched": 25.0,
-        "averageViewDuration": 98.0,
-        "averageViewPercentage": 155.65,
-        "likes": 2.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
-      "title": "Linus Torvalds Let AI Fix Linux, And It Failed",
-      "format": "long",
-      "metrics": {
-        "views": 180.0,
-        "estimatedMinutesWatched": 83.0,
-        "averageViewDuration": 82.0,
-        "averageViewPercentage": 14.940000000000001,
-        "likes": 1.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
     {
       "title": "Microsoft's AI Agents Get Power—and Containers",
       "format": "long",
@@ -250,8 +222,8 @@
       "title": "Private AI Learning: Run Your Own Course Server",
       "format": "short",
       "metrics": {
-        "views": 63.0,
-        "estimatedMinutesWatched": 7.0,
+        "views": 66.0,
+        "estimatedMinutesWatched": 8.0,
         "averageViewDuration": 20.0,
         "averageViewPercentage": 46.63,
         "likes": 3.0,
@@ -264,10 +236,10 @@
       "title": "Your AI Coding Agent is Hiding This",
       "format": "short",
       "metrics": {
-        "views": 251.0,
-        "estimatedMinutesWatched": 448.0,
-        "averageViewDuration": 299.0,
-        "averageViewPercentage": 637.09,
+        "views": 257.0,
+        "estimatedMinutesWatched": 449.0,
+        "averageViewDuration": 293.0,
+        "averageViewPercentage": 624.79,
         "likes": 6.0,
         "comments": 0.0,
         "shares": 2.0,
@@ -292,10 +264,10 @@
       "title": "Stop SSH-ing: Centralize Your VPS Fleet",
       "format": "short",
       "metrics": {
-        "views": 60.0,
-        "estimatedMinutesWatched": 6.0,
+        "views": 70.0,
+        "estimatedMinutesWatched": 7.0,
         "averageViewDuration": 14.0,
-        "averageViewPercentage": 30.98,
+        "averageViewPercentage": 30.329999999999995,
         "likes": 3.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -306,14 +278,14 @@
       "title": "Build Local AI Agents: DeepSeek, Ollama & Open WebUI Architecture",
       "format": "long",
       "metrics": {
-        "views": 20.0,
-        "estimatedMinutesWatched": 25.0,
-        "averageViewDuration": 115.0,
-        "averageViewPercentage": 21.63,
+        "views": 22.0,
+        "estimatedMinutesWatched": 26.0,
+        "averageViewDuration": 103.0,
+        "averageViewPercentage": 19.39,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
-        "subscribersGained": 1.0
+        "subscribersGained": 2.0
       }
     },
     {
@@ -390,13 +362,13 @@
       "title": "Stop Building AI Agents Without This",
       "format": "short",
       "metrics": {
-        "views": 12.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 12.0,
-        "averageViewPercentage": 28.26,
-        "likes": 0.0,
+        "views": 24.0,
+        "estimatedMinutesWatched": 4.0,
+        "averageViewDuration": 29.0,
+        "averageViewPercentage": 64.82,
+        "likes": 2.0,
         "comments": 0.0,
-        "shares": 0.0,
+        "shares": 1.0,
         "subscribersGained": 0.0
       }
     },
@@ -404,27 +376,55 @@
       "title": "Stanford's AI Research Rule: Don't Get Played",
       "format": "short",
       "metrics": {
-        "views": 26.0,
-        "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 16.0,
-        "averageViewPercentage": 26.229999999999997,
-        "likes": 0.0,
+        "views": 75.0,
+        "estimatedMinutesWatched": 32.0,
+        "averageViewDuration": 61.0,
+        "averageViewPercentage": 100.24,
+        "likes": 3.0,
         "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
+        "shares": 1.0,
+        "subscribersGained": 1.0
       }
     },
     {
       "title": "One UI 9.5 Voice Recorder: AI Summaries Tested",
       "format": "short",
       "metrics": {
-        "views": 18.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 6.0,
-        "averageViewPercentage": 14.04,
-        "likes": 0.0,
+        "views": 44.0,
+        "estimatedMinutesWatched": 5.0,
+        "averageViewDuration": 17.0,
+        "averageViewPercentage": 36.03,
+        "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "One UI 9.5 Voice Recorder AI Upgrade: Cloud vs Local",
+      "format": "short",
+      "metrics": {
+        "views": 35.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 15.0,
+        "averageViewPercentage": 27.97,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Linux Kernel: The Rise of Self-Fixing Code",
+      "format": "short",
+      "metrics": {
+        "views": 252.0,
+        "estimatedMinutesWatched": 52.0,
+        "averageViewDuration": 21.0,
+        "averageViewPercentage": 43.88,
+        "likes": 7.0,
+        "comments": 0.0,
+        "shares": 2.0,
         "subscribersGained": 0.0
       }
     }
@@ -434,10 +434,10 @@
       "title": "Your AI Coding Agent is Hiding This",
       "format": "short",
       "metrics": {
-        "views": 251.0,
-        "estimatedMinutesWatched": 448.0,
-        "averageViewDuration": 299.0,
-        "averageViewPercentage": 637.09,
+        "views": 257.0,
+        "estimatedMinutesWatched": 449.0,
+        "averageViewDuration": 293.0,
+        "averageViewPercentage": 624.79,
         "likes": 6.0,
         "comments": 0.0,
         "shares": 2.0,
@@ -445,10 +445,24 @@
       }
     },
     {
+      "title": "Linux Kernel: The Rise of Self-Fixing Code",
+      "format": "short",
+      "metrics": {
+        "views": 252.0,
+        "estimatedMinutesWatched": 52.0,
+        "averageViewDuration": 21.0,
+        "averageViewPercentage": 43.88,
+        "likes": 7.0,
+        "comments": 0.0,
+        "shares": 2.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
       "title": "Linus Torvalds Let AI Fix Linux, And It Failed",
       "format": "long",
       "metrics": {
-        "views": 180.0,
+        "views": 181.0,
         "estimatedMinutesWatched": 83.0,
         "averageViewDuration": 82.0,
         "averageViewPercentage": 14.940000000000001,
@@ -473,31 +487,17 @@
       }
     },
     {
-      "title": "Convert PDF to Editable PowerPoint in 30 Seconds",
+      "title": "Stanford's AI Research Rule: Don't Get Played",
       "format": "short",
       "metrics": {
-        "views": 110.0,
-        "estimatedMinutesWatched": 11.0,
-        "averageViewDuration": 19.0,
-        "averageViewPercentage": 32.26,
-        "likes": 0.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
-      "title": "Private AI Learning: Run Your Own Course Server",
-      "format": "short",
-      "metrics": {
-        "views": 63.0,
-        "estimatedMinutesWatched": 7.0,
-        "averageViewDuration": 20.0,
-        "averageViewPercentage": 46.63,
+        "views": 75.0,
+        "estimatedMinutesWatched": 32.0,
+        "averageViewDuration": 61.0,
+        "averageViewPercentage": 100.24,
         "likes": 3.0,
         "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
+        "shares": 1.0,
+        "subscribersGained": 1.0
       }
     }
   ],
