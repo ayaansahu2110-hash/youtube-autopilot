@@ -17,7 +17,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T14:55:02.489525+00:00"
+      "analytics_updated_at": "2026-11-13T20:03:04.765399+00:00"
     },
     {
       "video_id": "NXwh5O6kQ7o",
@@ -36,7 +36,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T14:55:02.491900+00:00"
+      "analytics_updated_at": "2026-11-13T20:03:04.768063+00:00"
     },
     {
       "video_id": "-g4L3jo5Kss",
@@ -55,7 +55,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T14:55:02.491110+00:00"
+      "analytics_updated_at": "2026-11-13T20:03:04.769942+00:00"
     },
     {
       "video_id": "_tS6qVweLhU",
@@ -74,7 +74,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T14:55:02.492764+00:00"
+      "analytics_updated_at": "2026-11-13T20:03:04.770552+00:00"
     },
     {
       "video_id": "IHJ43Gs1dK8",
@@ -93,7 +93,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T14:55:02.492368+00:00"
+      "analytics_updated_at": "2026-11-13T20:03:04.768686+00:00"
     },
     {
       "video_id": "0gkxPDpRNgg",
@@ -112,7 +112,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T14:55:02.491496+00:00"
+      "analytics_updated_at": "2026-11-13T20:03:04.769316+00:00"
     },
     {
       "video_id": "4clzO505QVo",
@@ -131,7 +131,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T14:55:02.490727+00:00"
+      "analytics_updated_at": "2026-11-13T20:03:04.766739+00:00"
     },
     {
       "video_id": "q8VpV9avtOw",
@@ -150,7 +150,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T14:55:02.490208+00:00"
+      "analytics_updated_at": "2026-11-13T20:03:04.766095+00:00"
     },
     {
       "video_id": "RNbdDj_tmoM",
@@ -178,8 +178,18 @@
       "format": "short",
       "script_preview": "",
       "created_at": "2026-11-10T13:05:12Z",
-      "analytics": {},
-      "source": "youtube_sync"
+      "analytics": {
+        "views": 3.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 36.0,
+        "averageViewPercentage": 64.46,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-13T20:03:04.764746+00:00"
     },
     {
       "video_id": "mYo-jv9VVKw",
@@ -215,7 +225,17 @@
       "format": "long",
       "script_preview": "Have you ever gazed up at the fluffy white clouds drifting by on a sunny day and wondered if a gentle giraffe could keep stretching its long, graceful neck until it actually touched them? It is a truly magical and imaginative bedtime thought.\nIt is such a wonderful image for a whimsical bedtime story, painting a picture of a world where creatures can reach the stars. However, in our fascinating real world of biology, nature sets very strict and important limits on growth.\nWhile dreams are boundless, nature requires a balance for every living creature to stay healthy and strong. Understanding t",
       "created_at": "2026-11-10T20:40:30.236267+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 3.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 13.0,
+        "averageViewPercentage": 2.49,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-11-13T20:03:04.763708+00:00"
     },
     {
       "video_id": "NBDSFl91Ix0",
@@ -243,7 +263,17 @@
       "format": "short",
       "script_preview": "Hop, little froggie, on green lily pads, singing a song that makes everyone glad!\nLeap in the water, a big happy splash, Quick as a blink or a bright lightning flash!\nBusy bees hum as they fly past the tree, Wave to the ducklings so wild and so free!\nFroggie brings friends to his soft leafy seat, Sharing his pond is a wonderful treat!\nRipples go dancing in circles of blue, Birdies are singing a lullaby too!\nKindness is sunshine that warms every day, Lighting the path as we frolic and play!\nStars twinkle softly, a silver-lit sky, Close your big eyes as the moon drifts on by!\nRest your small hea",
       "created_at": "2026-11-11T20:00:36.921359+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 25.0,
+        "averageViewPercentage": 45.55,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-11-13T20:03:04.767344+00:00"
     },
     {
       "video_id": "dpoGIzVxX8A",
@@ -281,6 +311,24 @@
       "created_at": "2026-11-13T12:59:08Z",
       "analytics": {},
       "source": "youtube_sync"
+    },
+    {
+      "video_id": "SMu4p8clvSU",
+      "topic": "Adventurous baby black bear wins 2026 Courageous Cub Award",
+      "title": "Brave Baby Bear Wins 2026 Courageous Cub Award! 🐻",
+      "format": "short",
+      "script_preview": "Sniff-sniff, hop-hop, through the pine tree shade,\nA brave little bear cub stepped into the glade!\nIn big Tongass Forest he wandered a mile,\nWith furry black paws and a cheerful bright smile!\nOh no, where is mama? He ran down the track,\nHe wobbled too far and he couldn't turn back!\nHe asked funny tourists and lost his own way,\nBut using his super nose saved the whole day!\nSniff-sniff, twitch-twitch, through the tall piney trees,\nHis cute little nose caught a scent on the breeze!\nHe smelled mama Dory two miles through the air,\nAnd zoomed back to cuddle his brother right there!\nThe rangers all c",
+      "created_at": "2026-11-13T20:09:02.520683+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "R4p3DzbWxwQ",
+      "topic": "Large bear caught stealing pumpkin from front porch of metro Atlanta home",
+      "title": "The Bear and the Pumpkin Treat",
+      "format": "short",
+      "script_preview": "A fuzzy bear walks on his padded soft feet, to look for a yummy and orange-round treat.\nHe finds a big pumpkin right there by the door, and decides he must hunt for a little bit more.\nHe gives it a nibble, a crunch, and a snap, then settles right down for a quick pumpkin nap.\nHe takes just a bite of the squash on the floor, then waddles away to the woods to explore.\nThe porch is now quiet, the pumpkin is gone, he heads to the trees at the break of the dawn.\nHe loves all the snacks that the forest provides, and back to his home in the shadows he glides.\nSo keep your home safe if a bear comes to",
+      "created_at": "2026-11-13T20:14:07.798422+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -419,6 +467,18 @@
       "format": "unknown",
       "created_at": "2026-11-13T12:59:08Z",
       "source": "youtube_sync"
+    },
+    {
+      "topic": "Adventurous baby black bear wins 2026 Courageous Cub Award",
+      "title": "Brave Baby Bear Wins 2026 Courageous Cub Award! 🐻",
+      "format": "short",
+      "created_at": "2026-11-13T20:09:02.520683+00:00"
+    },
+    {
+      "topic": "Large bear caught stealing pumpkin from front porch of metro Atlanta home",
+      "title": "The Bear and the Pumpkin Treat",
+      "format": "short",
+      "created_at": "2026-11-13T20:14:07.798422+00:00"
     }
   ]
 }
