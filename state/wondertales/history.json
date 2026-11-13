@@ -17,7 +17,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-12T20:27:16.721502+00:00"
+      "analytics_updated_at": "2026-11-13T14:55:02.489525+00:00"
     },
     {
       "video_id": "NXwh5O6kQ7o",
@@ -36,7 +36,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-12T20:27:16.724770+00:00"
+      "analytics_updated_at": "2026-11-13T14:55:02.491900+00:00"
     },
     {
       "video_id": "-g4L3jo5Kss",
@@ -55,7 +55,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-12T20:27:16.723514+00:00"
+      "analytics_updated_at": "2026-11-13T14:55:02.491110+00:00"
     },
     {
       "video_id": "_tS6qVweLhU",
@@ -74,7 +74,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-12T20:27:16.725974+00:00"
+      "analytics_updated_at": "2026-11-13T14:55:02.492764+00:00"
     },
     {
       "video_id": "IHJ43Gs1dK8",
@@ -93,7 +93,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-12T20:27:16.725429+00:00"
+      "analytics_updated_at": "2026-11-13T14:55:02.492368+00:00"
     },
     {
       "video_id": "0gkxPDpRNgg",
@@ -112,7 +112,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-12T20:27:16.724186+00:00"
+      "analytics_updated_at": "2026-11-13T14:55:02.491496+00:00"
     },
     {
       "video_id": "4clzO505QVo",
@@ -131,7 +131,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-12T20:27:16.722930+00:00"
+      "analytics_updated_at": "2026-11-13T14:55:02.490727+00:00"
     },
     {
       "video_id": "q8VpV9avtOw",
@@ -150,7 +150,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-12T20:27:16.722333+00:00"
+      "analytics_updated_at": "2026-11-13T14:55:02.490208+00:00"
     },
     {
       "video_id": "RNbdDj_tmoM",
@@ -271,6 +271,16 @@
       "script_preview": "When we think of heavy animals, we imagine them stomping across flat ground. We often picture them moving slowly through thick brush, but these massive creatures are secretly gifted with incredible athletic abilities that often go unnoticed by the casual forest observer.\nBut have you ever seen a bear transform into a vertical sprinter? It is a truly startling sight to behold as such a hefty animal ignores the pull of gravity and launches itself upward, turning a solid tree into its personal climbing wall.\nThe sight of a massive black bear scaling a thin tree is a masterclass in biological engi",
       "created_at": "2026-11-12T21:05:58.700984+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "KZveMTk5KiM",
+      "topic": "Little Bear's Forest Adventure: A Kind Nature Song",
+      "title": "Little Bear's Forest Adventure: A Kind Nature Song",
+      "format": "unknown",
+      "script_preview": "",
+      "created_at": "2026-11-13T12:59:08Z",
+      "analytics": {},
+      "source": "youtube_sync"
     }
   ],
   "topics": [
@@ -402,6 +412,13 @@
       "title": "The Physics of the Bear Climb: Why Trees Aren't Enough",
       "format": "long",
       "created_at": "2026-11-12T21:05:58.700984+00:00"
+    },
+    {
+      "topic": "Little Bear's Forest Adventure: A Kind Nature Song",
+      "title": "Little Bear's Forest Adventure: A Kind Nature Song",
+      "format": "unknown",
+      "created_at": "2026-11-13T12:59:08Z",
+      "source": "youtube_sync"
     }
   ]
 }
