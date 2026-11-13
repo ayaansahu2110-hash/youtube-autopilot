@@ -150,7 +150,7 @@ PROFILE_CONFIGS: dict[str, dict] = {
         "max_clips_short": 18,
         "min_clips_short": 6,
         "clip_seconds": 2.2,
-        "shorts_per_day": 12,
+        "shorts_per_day": 2,
         "min_research_sources": 1,
     },
 }

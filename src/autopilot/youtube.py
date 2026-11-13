@@ -193,9 +193,15 @@ class YouTubeUploader:
             media_body=MediaFileUpload(str(video_path), chunksize=-1, resumable=True),
         )
         response = None
-        while response is None:
-            _, response = request.next_chunk()
-        video_id = str(response["id"])
+        try:
+            while response is None:
+                _, response = request.next_chunk()
+            video_id = str(response["id"])
+        except Exception as exc:
+            err_str = str(exc)
+            if "uploadLimitExceeded" in err_str or "exceeded the number of videos" in err_str:
+                return "UPLOAD_LIMIT_EXCEEDED"
+            raise
 
         if thumbnail_path and thumbnail_path.exists():
             try:

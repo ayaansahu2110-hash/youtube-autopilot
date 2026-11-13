@@ -248,9 +248,14 @@ class AutopilotPipeline:
             result.status = "rendered"
 
             if self.settings.enable_uploads and self.settings.youtube_token_file.exists():
-                result.youtube_video_id = self.uploader.upload(video_path, plan, thumbnail_path)
-                result.status = "uploaded"
-                self.state.record_run(result)
+                upload_res = self.uploader.upload(video_path, plan, thumbnail_path)
+                if upload_res == "UPLOAD_LIMIT_EXCEEDED":
+                    result.status = "quota_paused"
+                    result.notes.append("YouTube daily upload limit reached for this channel. Production paused safely until quota resets.")
+                else:
+                    result.youtube_video_id = upload_res
+                    result.status = "uploaded"
+                    self.state.record_run(result)
             elif self.settings.enable_uploads:
                 result.status = "rendered"
                 result.notes.append(
@@ -345,16 +350,19 @@ class AutopilotPipeline:
         candidates = self.discovery.discover()
         if self.settings.channel_profile != "curioaxiom":
             candidates = [candidate for candidate in candidates if self.editorial.is_relevant_topic(candidate.title)]
-        if excluded_topics:
-            # A failed quality plan must not be selected again for the next
-            # production attempt. Similar headline rewrites count as the same
-            # story; the existing research and quality checks still apply.
+        all_excluded = [*self.state.recent_topics(limit=80), *excluded_topics]
+        if all_excluded:
             def distinct(candidate: TopicCandidate) -> bool:
                 title = candidate.title.lower().strip()
-                return all(
-                    SequenceMatcher(None, title, previous.lower().strip()).ratio() < 0.70
-                    for previous in excluded_topics
-                )
+                cand_words = set(title.split())
+                for previous in all_excluded:
+                    prev_low = previous.lower().strip()
+                    if SequenceMatcher(None, title, prev_low).ratio() >= 0.70:
+                        return False
+                    prev_words = set(prev_low.split())
+                    if cand_words and prev_words and len(cand_words & prev_words) / len(cand_words | prev_words) >= 0.50:
+                        return False
+                return True
 
             candidates = [candidate for candidate in candidates if distinct(candidate)]
         if not candidates:

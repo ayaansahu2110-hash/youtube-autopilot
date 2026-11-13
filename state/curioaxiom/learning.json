@@ -1,96 +1,96 @@
 {
-  "generated_at": "2026-11-09T12:34:37.293375+00:00",
+  "generated_at": "2026-11-12T12:39:48.718290+00:00",
   "competitors": [
     {
-      "channel": "The Engineering Mindset",
-      "subscribers": 4500000,
-      "channel_views": 352625470,
-      "video_count": 318,
+      "channel": "Practical Engineering",
+      "subscribers": 4850000,
+      "channel_views": 576341907,
+      "video_count": 254,
       "high_performing_recent_videos": [
         {
-          "title": "MOSFET vs Transistor vs Relay: Most People Get This Wrong",
-          "views": 817461,
-          "likes": 16834,
-          "comments": 499,
-          "published_at": "2026-06-15T18:41:01Z",
-          "description_excerpt": "MOSFET V Transistors Try Brilliant 👉  http://brilliant.org/TheEngineeringMindset Plus our viewers 20% off an annual Premium subscription.\n\nLearn the key differences between MOSFETs, transistors and relays. This beginner-friendly electronics tutorial explains how BJTs and MOSFETs work, why they are used for switching and amplification, and how to ch"
+          "title": "Stopping the Unstoppable",
+          "views": 5595734,
+          "likes": 61470,
+          "comments": 2979,
+          "published_at": "2026-09-01T13:00:00Z",
+          "description_excerpt": "Buffer stops and bumping posts are hidden in plain sight\n⚙️ Check out SendCutSend for custom parts fabricated from your CAD: http://sendcutsend.com/practicalengineering\n\nAs long as we rely on rail, the \"simple\" physics of stopping will always be a complex balancing act.\n\n📖My new book, Disasters By Design: How Engineering Failures Shaped the Modern "
         },
         {
-          "title": "How a CPU Turns 1s and 0s Into Everything You See",
-          "views": 476937,
-          "likes": 6943,
-          "comments": 181,
-          "published_at": "2026-10-05T15:00:22Z",
-          "description_excerpt": "How do CPUs actually work? Design PCB's with Altium:  http://altium.com/yt/engineeringmindset\nHow does a CPU use billions of microscopic transistors to perform calculations and run software? In this video, we work from individual MOSFETs through logic gates, binary arithmetic and full adders to the ALU and CPU core.\nSee how processors fetch and exe"
+          "title": "The Hidden Engineering of Pressure Regulators",
+          "views": 1979902,
+          "likes": 29695,
+          "comments": 873,
+          "published_at": "2026-10-06T13:00:17Z",
+          "description_excerpt": "Pressure regulators are Victorian-era mechanical computers, and I cut one in half so we can see how it works\n⚙️ Check out SendCutSend for custom parts fabricated from your CAD: http://sendcutsend.com/practicalengineering\n\nI just love that there’s stuff like this out there, pretty much anywhere you’re willing to look, doing an essential job that few"
         },
         {
-          "title": "Why 3 Phase Power Is So Much Better",
-          "views": 377512,
-          "likes": 3631,
-          "comments": 91,
-          "published_at": "2026-09-15T15:00:01Z",
-          "description_excerpt": "Why 3 phases? Get a 30 day free trial and 20% off an annual subscription.🎁 Click here: https://brilliant.org/TheEngineeringMindset \n\nWhat is 3 phase electricity and how does three phase power work, learn Wye Delta loads and neutral currents, how and where three phase electricity is used, why 3 phases, how the generator works to produce 3 phase sine"
+          "title": "Every US Electrical Outlet Explained",
+          "views": 1564423,
+          "likes": 29488,
+          "comments": 2665,
+          "published_at": "2026-09-15T13:00:35Z",
+          "description_excerpt": "Can you collect them all?\nWant to restore the planet's ecosystems and see your impact in monthly videos? The first 100 people to join Planet Wild with my code PRACTICAL29 will get the first month paid for by me: https://planetwild.com/r/practicalengineering/join/29\nIf you want to get to know them better first, check out their mission rewilding tran"
         },
         {
-          "title": "The 1.25V Trick That Gives You Any Voltage You Want",
-          "views": 371503,
-          "likes": 9274,
-          "comments": 335,
-          "published_at": "2026-06-01T17:04:21Z",
-          "description_excerpt": "Learn how voltage regulators actually work and how to design and build one. \nCheck out PCBWAY➡️ https://www.pcbway.com/ for PCB's, 3D printing and CNC at expectational value and design PCB's with Altium ➡️ http://altium.com/yt/engineeringmindset\nLearn how an LM317 adjustable voltage regulator turns unregulated DC into a smooth, stable output for el"
+          "title": "Are Beavers Actually Good at Dams?",
+          "views": 1352055,
+          "likes": 35657,
+          "comments": 1941,
+          "published_at": "2026-08-18T13:00:21Z",
+          "description_excerpt": "Want to restore the planet’s ecosystems and see your impact in monthly videos? The first 100 people to join Planet Wild with my code PRACTICAL8 will get the first month paid for by me: https://planetwild.com/r/practicalengineering/join/8\nIf you want to get to know them better first, check out their wildlife crossings mission: https://planetwild.com"
         },
         {
-          "title": "The Truth About Three-Phase Power: Why It Became the Standard",
-          "views": 185639,
-          "likes": 6640,
-          "comments": 627,
-          "published_at": "2026-07-28T17:13:17Z",
-          "description_excerpt": "Why Not 2 Phase Power? Try Brilliant 👉  http://brilliant.org/TheEngineeringMindset Plus our viewers 20% off an annual Premium subscription.\n\nDownload your Excel sheets here ➡️ https://tinyurl.com/2-Phase-Excel\nTry Brilliant Tutor for free 👉  http://brilliant.org/TheEngineeringMindset\nGet your engineers mug here:➡️ https://engineeringmindset.store/p"
+          "title": "Whatever Happened to Fire Escapes?",
+          "views": 1103552,
+          "likes": 21483,
+          "comments": 969,
+          "published_at": "2026-10-20T13:00:19Z",
+          "description_excerpt": "External fire escapes are becoming a thing of the past\n📰 Go to https://ground.news/practicalengineering to get 40% off unlimited access to the news tool I use. It helps you cut through the noise and understand how stories are being reported across the spectrum.\n\nWriting building regulations is a messy process, and there really is rarely a single “r"
         }
       ]
     },
     {
       "channel": "Engineering Explained",
       "subscribers": 4240000,
-      "channel_views": 1072065933,
+      "channel_views": 1072420541,
       "video_count": 1073,
       "high_performing_recent_videos": [
         {
           "title": "I Fact-Checked Every Stunt in the Tesla Roadster Reveal",
-          "views": 2796615,
-          "likes": 45613,
-          "comments": 8205,
+          "views": 2836866,
+          "likes": 45932,
+          "comments": 8242,
           "published_at": "2026-10-23T14:00:00Z",
           "description_excerpt": "Tesla Roadster Revealed: It Flies, It Kickflips, It Rockets! Right?\nMath From 6 Years Ago - https://youtu.be/4PRi4B1APj0\nSubscribe to Engineering Explained for more videos! - https://goo.gl/VZstk7\n\nTesla has unveiled the new Roadster, and in classic Tesla fashion, they have some wild marketing stunts to go along with it. I love marketing stunts, be"
         },
         {
           "title": "Porsche's 6-Stroke Engine Is Fascinating – More Power!",
-          "views": 967019,
-          "likes": 40166,
+          "views": 967492,
+          "likes": 40172,
           "comments": 809,
           "published_at": "2026-07-31T14:00:15Z",
           "description_excerpt": "Porsche patented a 6-stroke engine, yes, two more strokes than you’d commonly see for a combustion engine, and most excitingly, one of those additional strokes is a power-stroke! We now have two power strokes per cylinder within the full six-stroke cycle. The way it works is through Porsche’s genius hypocycloidal design which the crankshaft follows"
         },
         {
           "title": "Are You Buying The Wrong Tires?",
-          "views": 913143,
-          "likes": 13816,
-          "comments": 1235,
+          "views": 924853,
+          "likes": 13932,
+          "comments": 1239,
           "published_at": "2026-09-25T14:00:36Z",
           "description_excerpt": "Summer, All-Season, All-Weather, Winter, All-Terrain – What Tires Should You Buy?\nFind the right tires for your car: https://continentaltire.com/tire-search\nBig thanks to Continental for sponsoring this video! \n\nNothing impacts the performance of your car more than tires. But when you’re buying tires, it can be overwhelming trying to figure out wha"
         },
         {
           "title": "Lucid Bought My Car Back, So I Bought A Mach-E",
-          "views": 871162,
-          "likes": 20917,
+          "views": 874923,
+          "likes": 20966,
           "comments": 3707,
           "published_at": "2026-10-09T14:00:42Z",
           "description_excerpt": "Lucid bought back my Air, so I bought a Ford Mustang Mach-E GT\nCheck out Continental's ECS02 Tires! - https://bit.ly/3Ulidu1\nSponsored by Continental \n\nGenuinely this was some of the most fun I’ve ever had car shopping because the criteria was very open: pretty much anything electric, except for three brands. I’ve already had a long term Nissan Lea"
         },
         {
           "title": "How To Easily Ruin Your Turbocharged Car",
-          "views": 491075,
-          "likes": 15152,
+          "views": 491375,
+          "likes": 15153,
           "comments": 599,
           "published_at": "2026-09-11T14:00:36Z",
           "description_excerpt": "If you want to ruin your turbocharged car, it’s easy. All you have to do is drive your car hard, then immediately shut it off. You see, turbos are one of the hottest parts of your car, since all of the exhaust gases are routed through it. To help enable high turbo speeds, and to help cool it, engine oil pass through the insides of the turbocharger,"
@@ -100,46 +100,46 @@
     {
       "channel": "Historically",
       "subscribers": 1640000,
-      "channel_views": 503181853,
+      "channel_views": 506149841,
       "video_count": 85,
       "high_performing_recent_videos": [
         {
           "title": "The MASS-CANNIBALISM of Suiyang  #history #4k",
-          "views": 4701550,
-          "likes": 180949,
-          "comments": 2397,
+          "views": 4782649,
+          "likes": 183375,
+          "comments": 2435,
           "published_at": "2026-09-26T10:14:22Z",
           "description_excerpt": "Narration: Youri\nAnimation: William and Naomi\n\nbon appetite"
         },
         {
           "title": "The Country that built 500K BUNKERS  #history #4k",
-          "views": 2686944,
-          "likes": 87140,
-          "comments": 1644,
+          "views": 2698245,
+          "likes": 87335,
+          "comments": 1650,
           "published_at": "2026-10-04T20:33:43Z",
           "description_excerpt": "Narration: Youri\nAnimation: William and Naomi"
         },
         {
           "title": "My Favorite Greek Myths [No AI]",
-          "views": 2494859,
-          "likes": 51170,
-          "comments": 2849,
+          "views": 2567630,
+          "likes": 51821,
+          "comments": 2878,
           "published_at": "2026-10-06T12:11:22Z",
           "description_excerpt": "🌌Join Warhammer 40,000: Tacticus using my link https://play.tacticusgame.com/HistoricallyxTacticus  and enter code TACTICUS4SEP to conquer the Galaxy! #ad\n... Have you ever heard the tragedy of Darth Asterion the Wise? It’s not a story the Athenians would tell you.\n🕊️SUPPORT OUR CHANNEL: https://heyhistorically.com/join\n\n🌐 Be part of Historically e"
         },
         {
           "title": "Fanta was a N*ZI DRINK?! #4k #history",
-          "views": 2423575,
-          "likes": 79859,
-          "comments": 1096,
+          "views": 2474388,
+          "likes": 80987,
+          "comments": 1112,
           "published_at": "2026-09-30T23:40:23Z",
           "description_excerpt": "by Youri, Naomi and William"
         },
         {
           "title": "The Church LOVED Torturing?!  #history #4k",
-          "views": 2024039,
-          "likes": 80000,
-          "comments": 1620,
+          "views": 2149803,
+          "likes": 83244,
+          "comments": 1693,
           "published_at": "2026-10-14T20:32:46Z",
           "description_excerpt": "by Youri, Naomi and William"
         }
@@ -147,33 +147,160 @@
     }
   ],
   "own_comments": [],
-  "own_analytics": [],
-  "own_winners": [
+  "own_analytics": [
     {
-      "title": "Why Lava Forms Perfect Stone Columns",
+      "title": "Why Heat Shields Must Burn",
       "format": "short",
       "metrics": {
-        "views": 251.0,
-        "estimatedMinutesWatched": 40.0,
-        "averageViewDuration": 21.0,
-        "averageViewPercentage": 43.33,
-        "likes": 10.0,
+        "views": 1280.0,
+        "estimatedMinutesWatched": 210.0,
+        "averageViewDuration": 17.0,
+        "averageViewPercentage": 43.78,
+        "likes": 15.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       }
     },
     {
-      "title": "Why Fog Hugs The Ground",
+      "title": "Why F1 Brakes Glow at 1,000°C Without Melting",
       "format": "short",
       "metrics": {
-        "views": 187.0,
-        "estimatedMinutesWatched": 53.0,
-        "averageViewDuration": 32.0,
-        "averageViewPercentage": 72.17,
-        "likes": 5.0,
+        "views": 1213.0,
+        "estimatedMinutesWatched": 204.0,
+        "averageViewDuration": 18.0,
+        "averageViewPercentage": 37.47,
+        "likes": 9.0,
         "comments": 0.0,
         "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "The Engineering Logic Behind Airplane Windows",
+      "format": "short",
+      "metrics": {
+        "views": 269.0,
+        "estimatedMinutesWatched": 46.0,
+        "averageViewDuration": 28.0,
+        "averageViewPercentage": 52.11,
+        "likes": 4.0,
+        "comments": 0.0,
+        "shares": 1.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Why Astronauts Float: The Perpetual Fall",
+      "format": "short",
+      "metrics": {
+        "views": 520.0,
+        "estimatedMinutesWatched": 30.0,
+        "averageViewDuration": 11.0,
+        "averageViewPercentage": 36.17,
+        "likes": 6.0,
+        "comments": 1.0,
+        "shares": 0.0,
+        "subscribersGained": 1.0
+      }
+    },
+    {
+      "title": "The Physics of Atmospheric Ablation",
+      "format": "long",
+      "metrics": {
+        "views": 6.0,
+        "estimatedMinutesWatched": 10.0,
+        "averageViewDuration": 158.0,
+        "averageViewPercentage": 31.69,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Why the Sky Changes Color at Sunset",
+      "format": "short",
+      "metrics": {
+        "views": 12.0,
+        "estimatedMinutesWatched": 9.0,
+        "averageViewDuration": 141.0,
+        "averageViewPercentage": 231.70999999999998,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Why Sunsets turn Red while the Sky stays Blue",
+      "format": "short",
+      "metrics": {
+        "views": 10.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 6.0,
+        "averageViewPercentage": 10.03,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    }
+  ],
+  "own_winners": [
+    {
+      "title": "Why Heat Shields Must Burn",
+      "format": "short",
+      "metrics": {
+        "views": 1280.0,
+        "estimatedMinutesWatched": 210.0,
+        "averageViewDuration": 17.0,
+        "averageViewPercentage": 43.78,
+        "likes": 15.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Why F1 Brakes Glow at 1,000°C Without Melting",
+      "format": "short",
+      "metrics": {
+        "views": 1213.0,
+        "estimatedMinutesWatched": 204.0,
+        "averageViewDuration": 18.0,
+        "averageViewPercentage": 37.47,
+        "likes": 9.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Why Astronauts Float: The Perpetual Fall",
+      "format": "short",
+      "metrics": {
+        "views": 520.0,
+        "estimatedMinutesWatched": 30.0,
+        "averageViewDuration": 11.0,
+        "averageViewPercentage": 36.17,
+        "likes": 6.0,
+        "comments": 1.0,
+        "shares": 0.0,
+        "subscribersGained": 1.0
+      }
+    },
+    {
+      "title": "The Engineering Logic Behind Airplane Windows",
+      "format": "short",
+      "metrics": {
+        "views": 269.0,
+        "estimatedMinutesWatched": 46.0,
+        "averageViewDuration": 28.0,
+        "averageViewPercentage": 52.11,
+        "likes": 4.0,
+        "comments": 0.0,
+        "shares": 1.0,
         "subscribersGained": 0.0
       }
     },
@@ -185,35 +312,7 @@
         "estimatedMinutesWatched": 28.0,
         "averageViewDuration": 34.0,
         "averageViewPercentage": 73.62,
-        "likes": 8.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
-      "title": "Why Leaves Are Actually Stripping Their Mask",
-      "format": "short",
-      "metrics": {
-        "views": 132.0,
-        "estimatedMinutesWatched": 20.0,
-        "averageViewDuration": 20.0,
-        "averageViewPercentage": 46.9,
-        "likes": 8.0,
-        "comments": 0.0,
-        "shares": 1.0,
-        "subscribersGained": 1.0
-      }
-    },
-    {
-      "title": "Why Mars Has Blue Sunsets",
-      "format": "short",
-      "metrics": {
-        "views": 97.0,
-        "estimatedMinutesWatched": 20.0,
-        "averageViewDuration": 29.0,
-        "averageViewPercentage": 62.19,
-        "likes": 3.0,
+        "likes": 9.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0

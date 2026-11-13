@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from difflib import SequenceMatcher
 import json
 from urllib.parse import urlparse
 
@@ -730,8 +731,24 @@ def verified_curio_seed(
         normalised = _normalise_topic(title)
         if normalised in excluded:
             continue
+        # Check fuzzy similarity against previously published videos
+        cand_words = set(normalised.split())
+        is_dup = False
+        for prev in excluded:
+            if not prev:
+                continue
+            if SequenceMatcher(None, normalised, prev).ratio() >= 0.65:
+                is_dup = True
+                break
+            prev_words = set(prev.split())
+            if cand_words and prev_words and len(cand_words & prev_words) / len(cand_words | prev_words) >= 0.45:
+                is_dup = True
+                break
+        if is_dup:
+            continue
+
         aliases = {_normalise_topic(alias) for alias in concept_aliases}
-        if any(alias and alias in previous for alias in aliases for previous in excluded):
+        if any(alias and (alias in previous or SequenceMatcher(None, alias, previous).ratio() >= 0.75) for alias in aliases for previous in excluded):
             continue
         if requested and requested != normalised:
             continue

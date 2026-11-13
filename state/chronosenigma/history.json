@@ -22,7 +22,7 @@
       "video_id": "_aUXHfTgXBs",
       "topic": "The 2,000-Year-Old Computer That Shouldn't Exist",
       "title": "The 2,000-Year-Old Computer That Shouldn't Exist",
-      "format": "unknown",
+      "format": "short",
       "script_preview": "",
       "created_at": "2026-11-09T10:54:15Z",
       "analytics": {},
@@ -41,9 +41,59 @@
       "video_id": "NWHT9sjYmnU",
       "topic": "The 2,000-Year-Old Computer That Broke History",
       "title": "The 2,000-Year-Old Computer That Broke History",
-      "format": "unknown",
+      "format": "short",
       "script_preview": "",
       "created_at": "2026-11-09T10:55:52Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "BxyiVY5mMiA",
+      "topic": "Derinkuyu: The Impossible Underground City",
+      "title": "Derinkuyu: The Impossible Underground City",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-11-09T22:49:42Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "y1MPohd9Dlc",
+      "topic": "Ancient Egypt's Hidden Hydraulic Pyramid Tech Revealed",
+      "title": "Ancient Egypt's Hidden Hydraulic Pyramid Tech Revealed",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-11-09T22:52:52Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "6SUjjU0QqZ8",
+      "topic": "Göbekli Tepe: The 15-Ton Engineering Paradox",
+      "title": "Göbekli Tepe: The 15-Ton Engineering Paradox",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-11-10T20:08:25Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "w_MKhr2NiUs",
+      "topic": "Gunung Padang: The Impossible Mountain Megalith",
+      "title": "Gunung Padang: The Impossible Mountain Megalith",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-11-10T20:11:52Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "YIKhH8HJrbc",
+      "topic": "The Richat Structure: Is it Really Atlantis? The Truth Revealed",
+      "title": "The Richat Structure: Is it Really Atlantis? The Truth Revealed",
+      "format": "long",
+      "script_preview": "",
+      "created_at": "2026-11-10T20:33:52Z",
       "analytics": {},
       "source": "youtube_sync"
     }
@@ -64,7 +114,7 @@
     {
       "topic": "The 2,000-Year-Old Computer That Shouldn't Exist",
       "title": "The 2,000-Year-Old Computer That Shouldn't Exist",
-      "format": "unknown",
+      "format": "short",
       "created_at": "2026-11-09T10:54:15Z",
       "source": "youtube_sync"
     },
@@ -77,8 +127,43 @@
     {
       "topic": "The 2,000-Year-Old Computer That Broke History",
       "title": "The 2,000-Year-Old Computer That Broke History",
-      "format": "unknown",
+      "format": "short",
       "created_at": "2026-11-09T10:55:52Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Derinkuyu: The Impossible Underground City",
+      "title": "Derinkuyu: The Impossible Underground City",
+      "format": "short",
+      "created_at": "2026-11-09T22:49:42Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Ancient Egypt's Hidden Hydraulic Pyramid Tech Revealed",
+      "title": "Ancient Egypt's Hidden Hydraulic Pyramid Tech Revealed",
+      "format": "short",
+      "created_at": "2026-11-09T22:52:52Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Göbekli Tepe: The 15-Ton Engineering Paradox",
+      "title": "Göbekli Tepe: The 15-Ton Engineering Paradox",
+      "format": "short",
+      "created_at": "2026-11-10T20:08:25Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Gunung Padang: The Impossible Mountain Megalith",
+      "title": "Gunung Padang: The Impossible Mountain Megalith",
+      "format": "short",
+      "created_at": "2026-11-10T20:11:52Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "The Richat Structure: Is it Really Atlantis? The Truth Revealed",
+      "title": "The Richat Structure: Is it Really Atlantis? The Truth Revealed",
+      "format": "long",
+      "created_at": "2026-11-10T20:33:52Z",
       "source": "youtube_sync"
     }
   ]
