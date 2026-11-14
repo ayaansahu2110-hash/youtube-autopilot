@@ -17,7 +17,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-11-14T13:54:20.630935+00:00"
+      "analytics_updated_at": "2026-11-14T18:37:28.353848+00:00"
     },
     {
       "video_id": "cR06wB2x2zQ",
@@ -36,7 +36,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-11-14T13:54:20.629391+00:00"
+      "analytics_updated_at": "2026-11-14T18:37:28.352476+00:00"
     },
     {
       "video_id": "dz8rJMxh3JY",
@@ -55,7 +55,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T13:54:20.630334+00:00"
+      "analytics_updated_at": "2026-11-14T18:37:28.353283+00:00"
     },
     {
       "video_id": "j0u-bjz8Et0",
@@ -74,7 +74,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T13:54:20.631998+00:00"
+      "analytics_updated_at": "2026-11-14T18:37:28.360542+00:00"
     },
     {
       "video_id": "Nfsoxi_1ns8",
@@ -93,7 +93,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T13:54:20.631466+00:00"
+      "analytics_updated_at": "2026-11-14T18:37:28.360037+00:00"
     },
     {
       "video_id": "qD65-aR18zM",
@@ -139,7 +139,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T13:54:20.632495+00:00"
+      "analytics_updated_at": "2026-11-14T18:37:28.361063+00:00"
     },
     {
       "video_id": "YS-Zl_ffFE0",
@@ -211,6 +211,33 @@
       "format": "short",
       "script_preview": "What happens when a $450 billion sovereign wealth superpower signs a blank check military pact with NATO's second-largest standing army? Qatar and Turkey just finalized a historic mutual defense agreement, pledging an immediate unified response to any external armed attack. The strategy is simple: sovereign wealth collateralizing hard power. Qatar's massive energy revenues fund Turkish military technology and defense manufacturing. In return, Ankara deploys strategic military projection straight into the Gulf, securing vital energy trade corridors and billions in bilateral assets. This creates",
       "created_at": "2026-11-13T20:21:04.859193+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "lTX9aSj3sOU",
+      "topic": "Turkey, Qatar sign mutual defense agreement",
+      "title": "The Turkey-Qatar Defense Axis: Sovereign Wealth’s New Perimeter",
+      "format": "short",
+      "script_preview": "Why are two nations holding the keys to the Middle East just merged their militaries? Turkey and Qatar just signed a mutual defense pact, but this isn't just a military treaty—it’s an insurance policy. Turkey brings the massive NATO-aligned army; Qatar brings the trillion-dollar QIA sovereign wealth fund. By formalizing this, they’ve created a protected corridor of capital. Qatar secures its liquidity from regional aggression, while Turkey guarantees its influence in the energy-rich Gulf. This is the ultimate hedge: trading military steel for financial security. In an era where regional instab",
+      "created_at": "2026-11-14T18:40:45.904260+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "m9ZASacO3A8",
+      "topic": "Election results: California voters approve Sergey Brin-backed proposition that makes it harder to enact future wealth taxes",
+      "title": "How Billionaires Rewrote California’s Wealth Laws",
+      "format": "short",
+      "script_preview": "California’s elite just secured a permanent win against future wealth taxes. Voters approved Proposition 42, creating a structural barrier to any new levies on personal assets. The play was pure power: tech titans, including Sergey Brin, deployed nearly 400 million dollars in campaign spending. This isn't just a political result; it’s the ultimate defensive mechanism for capital. By moving the battlefield from the boardroom to the ballot box, wealth architects effectively fenced off their private holdings from state legislative reach. The lesson is clinical: when private wealth reaches a criti",
+      "created_at": "2026-11-14T18:43:55.481229+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "D-C4-WPPkXI",
+      "topic": "Billionaires spent nearly $400M to sink California’s wealth tax; tax-the-rich side won 3 other votes",
+      "title": "Why Billionaires Get a Tax Break to Defeat Wealth Taxes",
+      "format": "long",
+      "script_preview": "If a small group of individuals could legally force the general public to unknowingly subsidize their own aggressive political maneuvers, what would that look like in practice? In California, we are witnessing exactly how this mechanism functions in the modern era. We just gained a rare, front-row seat to the internal dynamics of this power struggle. Billionaires recently funneled nearly four hundred million dollars into a massive, coordinated campaign to crush a proposed state wealth tax, effectively protecting their own immense accumulated fortunes. This move effectively turned their aggress",
+      "created_at": "2026-11-14T19:04:49.292707+00:00",
       "analytics": {}
     }
   ],
@@ -316,6 +343,24 @@
       "title": "Qatar & Turkey: The $450B Defense Move",
       "format": "short",
       "created_at": "2026-11-13T20:21:04.859193+00:00"
+    },
+    {
+      "topic": "Turkey, Qatar sign mutual defense agreement",
+      "title": "The Turkey-Qatar Defense Axis: Sovereign Wealth’s New Perimeter",
+      "format": "short",
+      "created_at": "2026-11-14T18:40:45.904260+00:00"
+    },
+    {
+      "topic": "Election results: California voters approve Sergey Brin-backed proposition that makes it harder to enact future wealth taxes",
+      "title": "How Billionaires Rewrote California’s Wealth Laws",
+      "format": "short",
+      "created_at": "2026-11-14T18:43:55.481229+00:00"
+    },
+    {
+      "topic": "Billionaires spent nearly $400M to sink California’s wealth tax; tax-the-rich side won 3 other votes",
+      "title": "Why Billionaires Get a Tax Break to Defeat Wealth Taxes",
+      "format": "long",
+      "created_at": "2026-11-14T19:04:49.292707+00:00"
     }
   ]
 }
