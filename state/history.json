@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:28.994523+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.810780+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.033926+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.835650+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.044095+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.843291+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -78,7 +78,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.073315+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.863031+00:00"
     },
     {
       "video_id": "vJuJiodXx04",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.011490+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.819525+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.078464+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.866265+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -137,7 +137,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T20:07:29.083591+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.869552+00:00"
     },
     {
       "video_id": "PjLuT6jX5jQ",
@@ -147,16 +147,16 @@
       "script_preview": "Instead of waiting minutes for an AI video render, a new model generates playable shots in three seconds. MiniMax H3 Max on fal.ai turns text prompts or reference images into 768p clips faster than real-time. You type a shot description, click generate, and the rendered clip begins playback almost instantly. For video editors, this shifts AI generation from slow batch queuing into live, interactive shot prototyping. You can test it with zero sign-up, or log in to get fifteen free video generations every day. The limitation is native output maxes out at 768p, requiring an upscaler like FlashVSR",
       "created_at": "2026-08-31T06:42:32.777474+00:00",
       "analytics": {
-        "views": 14.0,
+        "views": 12.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 33.0,
-        "averageViewPercentage": 58.45,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T20:07:29.001230+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.815149+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -175,7 +175,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T20:07:29.062878+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.856489+00:00"
     },
     {
       "video_id": "kHhLmTEYmWM",
@@ -194,7 +194,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T20:07:29.037328+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.838952+00:00"
     },
     {
       "video_id": "-P5Gzq7jUxM",
@@ -213,7 +213,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T20:07:29.023741+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.830178+00:00"
     },
     {
       "video_id": "9v_limHjc9k",
@@ -233,7 +233,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.054318+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.851014+00:00"
     },
     {
       "video_id": "k855X4ygCpc",
@@ -253,7 +253,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.068045+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.859758+00:00"
     },
     {
       "video_id": "oKfY9UTZVw8",
@@ -273,7 +273,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.035653+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.836745+00:00"
     },
     {
       "video_id": "2sOeY_bE8Mc",
@@ -293,7 +293,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.047581+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.845459+00:00"
     },
     {
       "video_id": "_j3f3AzEGrs",
@@ -313,7 +313,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.076792+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.865196+00:00"
     },
     {
       "video_id": "Sc-f2DrS4Js",
@@ -333,7 +333,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.039030+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.840044+00:00"
     },
     {
       "video_id": "R2cvIjrKgno",
@@ -353,7 +353,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.061178+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.855382+00:00"
     },
     {
       "video_id": "LsZ6IFyKi5Q",
@@ -373,7 +373,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.081846+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.868450+00:00"
     },
     {
       "video_id": "dtRk6_TtdNU",
@@ -393,7 +393,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.056077+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.852095+00:00"
     },
     {
       "video_id": "9K4y8o4qSyY",
@@ -413,7 +413,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.013175+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.823154+00:00"
     },
     {
       "video_id": "SM2_ai8JuuE",
@@ -433,7 +433,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.045763+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.844384+00:00"
     },
     {
       "video_id": "e8TfuFfpb6I",
@@ -453,7 +453,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.080174+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.867346+00:00"
     },
     {
       "video_id": "_Kj6V65jogc",
@@ -473,7 +473,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.069776+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.860867+00:00"
     },
     {
       "video_id": "_3Qhf4F0r2Y",
@@ -483,7 +483,7 @@
       "script_preview": "",
       "created_at": "2026-10-03T16:38:00Z",
       "analytics": {
-        "views": 10.0,
+        "views": 9.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 12.0,
         "averageViewPercentage": 26.57,
@@ -493,7 +493,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.009783+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.824632+00:00"
     },
     {
       "video_id": "0UqXZiNdc0A",
@@ -513,7 +513,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.049239+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.847716+00:00"
     },
     {
       "video_id": "vQ0VEx8heTQ",
@@ -533,7 +533,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.008126+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.821848+00:00"
     },
     {
       "video_id": "4J8a1M_LOnY",
@@ -553,7 +553,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.042381+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.842212+00:00"
     },
     {
       "video_id": "NpcTI_Budv8",
@@ -573,7 +573,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.064604+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.857585+00:00"
     },
     {
       "video_id": "mUs6u5Ur7yg",
@@ -583,7 +583,7 @@
       "script_preview": "",
       "created_at": "2026-10-07T12:53:25Z",
       "analytics": {
-        "views": 13.0,
+        "views": 12.0,
         "estimatedMinutesWatched": 3.0,
         "averageViewDuration": 42.0,
         "averageViewPercentage": 76.41,
@@ -593,7 +593,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.002923+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.817351+00:00"
     },
     {
       "video_id": "WDTWgea0I78",
@@ -613,7 +613,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.030561+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.834569+00:00"
     },
     {
       "video_id": "djvAoNZtVnc",
@@ -633,7 +633,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.025419+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.831262+00:00"
     },
     {
       "video_id": "KVFqKsYLfW0",
@@ -653,7 +653,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.075061+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.864117+00:00"
     },
     {
       "video_id": "yBRO_fFCfXs",
@@ -673,7 +673,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.040722+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.841131+00:00"
     },
     {
       "video_id": "Kf6vZN5CHAA",
@@ -693,7 +693,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.014874+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.825757+00:00"
     },
     {
       "video_id": "xecd0eVo1fk",
@@ -713,7 +713,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.050939+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.848835+00:00"
     },
     {
       "video_id": "ReHy3vKUNFU",
@@ -733,7 +733,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.059514+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.854293+00:00"
     },
     {
       "video_id": "lFKeJjlac_4",
@@ -753,7 +753,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.052652+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.849941+00:00"
     },
     {
       "video_id": "S4ArTcIkF_o",
@@ -763,7 +763,7 @@
       "script_preview": "",
       "created_at": "2026-10-13T13:59:14Z",
       "analytics": {
-        "views": 8.0,
+        "views": 5.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 2.0,
         "averageViewPercentage": 3.71,
@@ -773,7 +773,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.016586+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.833461+00:00"
     },
     {
       "video_id": "32SAXoj_OXo",
@@ -783,17 +783,17 @@
       "script_preview": "",
       "created_at": "2026-10-13T14:06:16Z",
       "analytics": {
-        "views": 4.0,
+        "views": 2.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 21.0,
-        "averageViewPercentage": 36.29,
-        "likes": 1.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.032249+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.846621+00:00"
     },
     {
       "video_id": "U0fuwALpesI",
@@ -803,17 +803,17 @@
       "script_preview": "",
       "created_at": "2026-10-13T14:47:12Z",
       "analytics": {
-        "views": 21.0,
-        "estimatedMinutesWatched": 19.0,
-        "averageViewDuration": 70.0,
-        "averageViewPercentage": 12.44,
+        "views": 12.0,
+        "estimatedMinutesWatched": 15.0,
+        "averageViewDuration": 78.0,
+        "averageViewPercentage": 13.99,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:28.997861+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.816258+00:00"
     },
     {
       "video_id": "VqUrtS3l9D4",
@@ -823,7 +823,7 @@
       "script_preview": "",
       "created_at": "2026-10-13T19:25:35Z",
       "analytics": {
-        "views": 4.0,
+        "views": 3.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 14.0,
         "averageViewPercentage": 29.5,
@@ -833,7 +833,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.028870+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.837849+00:00"
     },
     {
       "video_id": "rflVIZ6Wxz8",
@@ -843,7 +843,7 @@
       "script_preview": "",
       "created_at": "2026-10-13T19:28:27Z",
       "analytics": {
-        "views": 8.0,
+        "views": 7.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 11.0,
         "averageViewPercentage": 20.74,
@@ -853,7 +853,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.018267+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.827986+00:00"
     },
     {
       "video_id": "lktA7aPQdvs",
@@ -863,7 +863,7 @@
       "script_preview": "",
       "created_at": "2026-10-15T12:00:41Z",
       "analytics": {
-        "views": 16.0,
+        "views": 7.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 0.0,
         "averageViewPercentage": 0.0,
@@ -873,7 +873,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:28.999560+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.826875+00:00"
     },
     {
       "video_id": "WE1y-ytiBYs",
@@ -883,7 +883,7 @@
       "script_preview": "",
       "created_at": "2026-10-15T12:44:43Z",
       "analytics": {
-        "views": 42.0,
+        "views": 34.0,
         "estimatedMinutesWatched": 19.0,
         "averageViewDuration": 283.0,
         "averageViewPercentage": 450.26,
@@ -893,7 +893,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:28.985990+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.808580+00:00"
     },
     {
       "video_id": "DnlI23stQlM",
@@ -903,17 +903,17 @@
       "script_preview": "",
       "created_at": "2026-10-15T14:35:24Z",
       "analytics": {
-        "views": 163.0,
-        "estimatedMinutesWatched": 64.0,
-        "averageViewDuration": 83.0,
-        "averageViewPercentage": 15.160000000000002,
+        "views": 129.0,
+        "estimatedMinutesWatched": 56.0,
+        "averageViewDuration": 94.0,
+        "averageViewPercentage": 17.11,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:28.972336+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.798452+00:00"
     },
     {
       "video_id": "TkuF3hCJ3yQ",
@@ -923,17 +923,17 @@
       "script_preview": "",
       "created_at": "2026-10-16T11:48:12Z",
       "analytics": {
-        "views": 39.0,
-        "estimatedMinutesWatched": 3.0,
+        "views": 15.0,
+        "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 17.0,
-        "averageViewPercentage": 27.060000000000002,
+        "averageViewPercentage": 27.61,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:28.989418+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.812993+00:00"
     },
     {
       "video_id": "NxhA6taXdXI",
@@ -943,17 +943,17 @@
       "script_preview": "",
       "created_at": "2026-10-16T12:01:13Z",
       "analytics": {
-        "views": 30.0,
-        "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 16.0,
-        "averageViewPercentage": 32.25,
-        "likes": 2.0,
+        "views": 14.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 5.0,
+        "averageViewPercentage": 10.27,
+        "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:28.991116+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.814072+00:00"
     },
     {
       "video_id": "7_kDBbnD2tY",
@@ -973,7 +973,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:28.974017+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.799650+00:00"
     },
     {
       "video_id": "SJk9kKOCi24",
@@ -993,7 +993,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:28.980898+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.804148+00:00"
     },
     {
       "video_id": "BlNs3G51JVk",
@@ -1013,7 +1013,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.004626+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.818425+00:00"
     },
     {
       "video_id": "mGOsZQtAIsM",
@@ -1032,7 +1032,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T20:07:28.982616+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.805272+00:00"
     },
     {
       "video_id": "mVAkxYCL1Xs",
@@ -1051,7 +1051,7 @@
         "shares": 2.0,
         "subscribersGained": 2.0
       },
-      "analytics_updated_at": "2026-11-13T20:07:28.970435+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.797054+00:00"
     },
     {
       "video_id": "VIxIb88nFE8",
@@ -1070,7 +1070,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T20:07:29.006356+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.820660+00:00"
     },
     {
       "video_id": "eIi0hBh9bUQ",
@@ -1089,7 +1089,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T20:07:28.979193+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.803034+00:00"
     },
     {
       "video_id": "btGrCa9GSDY",
@@ -1108,7 +1108,7 @@
         "shares": 0.0,
         "subscribersGained": 2.0
       },
-      "analytics_updated_at": "2026-11-13T20:07:28.992821+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.809695+00:00"
     },
     {
       "video_id": "WE1y-ytiBYs",
@@ -1194,7 +1194,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.066273+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.858679+00:00"
     },
     {
       "video_id": "e2ltwbdZZsI",
@@ -1214,7 +1214,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.021997+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.829087+00:00"
     },
     {
       "video_id": "TyhfJ6HJnYQ",
@@ -1234,7 +1234,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.071521+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.861955+00:00"
     },
     {
       "video_id": "tUPTEapaLYw",
@@ -1254,7 +1254,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.027146+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.832384+00:00"
     },
     {
       "video_id": "yknAuovRzH8",
@@ -1274,7 +1274,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:29.057782+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.853210+00:00"
     },
     {
       "video_id": "2tadGQcXd3M",
@@ -1293,7 +1293,7 @@
         "shares": 1.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T20:07:28.996202+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.811874+00:00"
     },
     {
       "video_id": "7R_SEuwyUiQ",
@@ -1312,7 +1312,7 @@
         "shares": 1.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-11-13T20:07:28.975821+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.800787+00:00"
     },
     {
       "video_id": "5q-fBWIzGS8",
@@ -1331,7 +1331,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T20:07:28.977509+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.801902+00:00"
     },
     {
       "video_id": "PmSkGh8xeLQ",
@@ -1351,7 +1351,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-13T20:07:28.984291+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.806358+00:00"
     },
     {
       "video_id": "0FecNH-i2eg",
@@ -1370,7 +1370,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T20:07:28.968112+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.795413+00:00"
     },
     {
       "video_id": "914eGdEzFxY",
@@ -1389,7 +1389,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-13T20:07:28.987746+00:00"
+      "analytics_updated_at": "2026-11-14T14:50:17.807463+00:00"
     },
     {
       "video_id": "oAziI9Sb_io",
@@ -1425,6 +1425,33 @@
       "format": "short",
       "script_preview": "If your AI coding projects keep breaking after three prompts, sloppy vibe coding is the reason. Software engineering is replacing informal prompt dumping with structured Spec-Driven Development. Imagine a developer needing a clean data pipeline who defines exact architecture requirements before generating code. Using GitHub's open-source Spec-Kit, you write a structured markdown spec that directly guides autonomous coding agents. Claude Code excels at multi-file terminal agent tasks, whereas GitHub Copilot integrates directly inside your IDE workflow. Passing this spec into an AI agent generat",
       "created_at": "2026-11-13T11:50:59.782608+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "V0NFg4TFWII",
+      "topic": "\"You Can't Rule Out Anything\": Mullin Refuses to Clear the FAA's New AI Tool as Ground Stop Investigation Unfolds",
+      "title": "FAA AI Under Fire: Did a $1B Tool Trigger the Nationwide Ground Stop?",
+      "format": "long",
+      "script_preview": "On November thirteenth, a nationwide ground stop brought all departing flights across the United States to a total halt. This massive operational disruption triggered immediate scrutiny into the FAA's digital backbone, revealing the complex, fragile nature of our current national flight tracking systems during peak hours. The timing was critical because the FAA had deployed a nearly one billion dollar AI tool just three days prior. When reporters questioned the role of this new SMART software, Homeland Security Secretary Markwayne Mullin refused to clear the system, stating investigators canno",
+      "created_at": "2026-11-14T14:49:56.698082+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "Y9XEGZVVgpI",
+      "topic": "ChatGPT wallet lets OpenAI's Dots AI agents shop on your behalf without accessing actual card details",
+      "title": "ChatGPT Wallet: AI Agents Now Shop For You",
+      "format": "short",
+      "script_preview": "Stop manually checking out; ChatGPT's new 'Wallet' lets its AI agents buy items for you without ever sharing your actual credit card number. OpenAI just introduced 'Dots'—AI agents that browse and purchase goods on your behalf. You add your Visa, Mastercard, or Amex to the secure wallet once. When you ask a Dot to find an item, it does the legwork and carts the product for you. The agent never touches your raw card digits. Instead, you review the item, total, and card used. You then authorize the specific transaction with a biometric Face ID or fingerprint scan, keeping the money in your contr",
+      "created_at": "2026-11-14T14:58:58.864660+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "Fe95_7u7JQo",
+      "topic": "Nearly 20 years after launch, ancient AMD Radeon HD 2000 and 3000 GPUs finally get a Linux fix for corrupted video playback — AI helps squash a decades-old UVD bug",
+      "title": "AI Just Fixed a 20-Year-Old GPU Bug",
+      "format": "short",
+      "script_preview": "Your 2007-era GPU is no longer a brick—AI just fixed a two-decade-old video playback bug. For nearly twenty years, the Radeon HD 2000 and 3000 series suffered from corrupted UVD video output on Linux. It was a classic 'lost knowledge' scenario until OpenAI Codex analyzed the driver's C-code and identified a precise register mismatch. This isn't just theory; the fix is already merged into the Mesa 25.2 branch. If you are building a vintage gaming rig, you can now enable hardware video acceleration without the screen artifacts of the past. To get it, update your Linux kernel and Mesa drivers to ",
+      "created_at": "2026-11-14T15:02:29.608576+00:00",
       "analytics": {}
     }
   ],
@@ -1899,6 +1926,24 @@
       "title": "Stop Vibe Coding: Why Spec-Driven AI Development Works",
       "format": "short",
       "created_at": "2026-11-13T11:50:59.782608+00:00"
+    },
+    {
+      "topic": "\"You Can't Rule Out Anything\": Mullin Refuses to Clear the FAA's New AI Tool as Ground Stop Investigation Unfolds",
+      "title": "FAA AI Under Fire: Did a $1B Tool Trigger the Nationwide Ground Stop?",
+      "format": "long",
+      "created_at": "2026-11-14T14:49:56.698082+00:00"
+    },
+    {
+      "topic": "ChatGPT wallet lets OpenAI's Dots AI agents shop on your behalf without accessing actual card details",
+      "title": "ChatGPT Wallet: AI Agents Now Shop For You",
+      "format": "short",
+      "created_at": "2026-11-14T14:58:58.864660+00:00"
+    },
+    {
+      "topic": "Nearly 20 years after launch, ancient AMD Radeon HD 2000 and 3000 GPUs finally get a Linux fix for corrupted video playback — AI helps squash a decades-old UVD bug",
+      "title": "AI Just Fixed a 20-Year-Old GPU Bug",
+      "format": "short",
+      "created_at": "2026-11-14T15:02:29.608576+00:00"
     }
   ]
 }
