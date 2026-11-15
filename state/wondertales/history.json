@@ -17,7 +17,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:29:59.048895+00:00"
+      "analytics_updated_at": "2026-11-15T14:18:13.409701+00:00"
     },
     {
       "video_id": "NXwh5O6kQ7o",
@@ -36,7 +36,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:29:59.052130+00:00"
+      "analytics_updated_at": "2026-11-15T14:18:13.414261+00:00"
     },
     {
       "video_id": "-g4L3jo5Kss",
@@ -55,7 +55,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:29:59.054556+00:00"
+      "analytics_updated_at": "2026-11-15T14:18:13.415738+00:00"
     },
     {
       "video_id": "_tS6qVweLhU",
@@ -74,7 +74,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:29:59.055365+00:00"
+      "analytics_updated_at": "2026-11-15T14:18:13.417190+00:00"
     },
     {
       "video_id": "IHJ43Gs1dK8",
@@ -93,7 +93,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:29:59.052899+00:00"
+      "analytics_updated_at": "2026-11-15T14:18:13.416464+00:00"
     },
     {
       "video_id": "0gkxPDpRNgg",
@@ -112,7 +112,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:29:59.053717+00:00"
+      "analytics_updated_at": "2026-11-15T14:18:13.415015+00:00"
     },
     {
       "video_id": "4clzO505QVo",
@@ -131,7 +131,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:29:59.050436+00:00"
+      "analytics_updated_at": "2026-11-15T14:18:13.412791+00:00"
     },
     {
       "video_id": "q8VpV9avtOw",
@@ -150,7 +150,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:29:59.049661+00:00"
+      "analytics_updated_at": "2026-11-15T14:18:13.413514+00:00"
     },
     {
       "video_id": "RNbdDj_tmoM",
@@ -189,7 +189,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-14T18:29:59.047972+00:00"
+      "analytics_updated_at": "2026-11-15T14:18:13.411242+00:00"
     },
     {
       "video_id": "mYo-jv9VVKw",
@@ -235,7 +235,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:29:59.046712+00:00"
+      "analytics_updated_at": "2026-11-15T14:18:13.410486+00:00"
     },
     {
       "video_id": "NBDSFl91Ix0",
@@ -273,7 +273,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:29:59.051336+00:00"
+      "analytics_updated_at": "2026-11-15T14:18:13.411980+00:00"
     },
     {
       "video_id": "dpoGIzVxX8A",
@@ -282,7 +282,17 @@
       "format": "short",
       "script_preview": "High in the gum tree, where breezes blow free, a fuzzy gray koala is sleeping for tea!\nWith ears round and soft and a nose made for sniff, he takes a deep nap in a dream-filled mid-tiff.\nHe wakes with a stretch and a yawn wide and slow, then searches for leaves in the branches below.\nMunch-munch go his teeth on the eucalyptus treat, the crunchiest snack that a koala can eat!\nScience says those leaves are toxic to many, but our friend stays healthy, yes, more than any.\nHe clings to the bark with a hug tight and strong, while singing the forest a sweet bedtime song.\nWith blink-blink of eyes as t",
       "created_at": "2026-11-12T20:33:21.548660+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 4.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 37.0,
+        "averageViewPercentage": 63.080000000000005,
+        "likes": 1.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-11-15T14:18:13.408442+00:00"
     },
     {
       "video_id": "VFLYZaUS6UY",
@@ -356,6 +366,26 @@
       "script_preview": "Have you ever paused to consider why certain clever advertising slogans or rhythmic song lyrics seem to get permanently lodged in your brain for decades, while other vital information slips away almost instantly? The architecture of human memory clearly favors structured, repeating sound patterns over plain prose.\nThis phenomenon reveals how our cognitive processing units are specifically primed to prioritize patterned input. By examining the mechanics of rhyme, we can unlock strategies to make communication more memorable and effective, ensuring that our key messages penetrate the noise of th",
       "created_at": "2026-11-14T19:15:06.821463+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "VuQ8zozlK2U",
+      "topic": "The Munchkin Surprise: A Sweet Delivery Tale",
+      "title": "The Munchkin Surprise: A Sweet Delivery Tale",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-11-15T07:02:39Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "otePFy3aH1c",
+      "topic": "Chirp Chirp! Sing Along Birdie Rhyme",
+      "title": "Chirp Chirp! Sing Along Birdie Rhyme",
+      "format": "long",
+      "script_preview": "",
+      "created_at": "2026-11-15T13:05:39Z",
+      "analytics": {},
+      "source": "youtube_sync"
     }
   ],
   "topics": [
@@ -524,6 +554,20 @@
       "title": "The Resurgence of Rhyme: Why Patterns Stick in Our Modern Minds",
       "format": "long",
       "created_at": "2026-11-14T19:15:06.821463+00:00"
+    },
+    {
+      "topic": "The Munchkin Surprise: A Sweet Delivery Tale",
+      "title": "The Munchkin Surprise: A Sweet Delivery Tale",
+      "format": "short",
+      "created_at": "2026-11-15T07:02:39Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Chirp Chirp! Sing Along Birdie Rhyme",
+      "title": "Chirp Chirp! Sing Along Birdie Rhyme",
+      "format": "long",
+      "created_at": "2026-11-15T13:05:39Z",
+      "source": "youtube_sync"
     }
   ]
 }
