@@ -17,7 +17,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T14:22:33.543301+00:00"
+      "analytics_updated_at": "2026-11-15T19:10:00.591186+00:00"
     },
     {
       "video_id": "SrCFKhynUyc",
@@ -36,7 +36,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T14:22:33.539840+00:00"
+      "analytics_updated_at": "2026-11-15T19:10:00.587887+00:00"
     },
     {
       "video_id": "AUqN-Jp-MPw",
@@ -55,7 +55,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T14:22:33.542133+00:00"
+      "analytics_updated_at": "2026-11-15T19:10:00.590032+00:00"
     },
     {
       "video_id": "bfy1acwg1Co",
@@ -74,7 +74,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T14:22:33.542710+00:00"
+      "analytics_updated_at": "2026-11-15T19:10:00.590626+00:00"
     },
     {
       "video_id": "68OhLQ7dRJE",
@@ -93,7 +93,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T14:22:33.541500+00:00"
+      "analytics_updated_at": "2026-11-15T19:10:00.589459+00:00"
     },
     {
       "video_id": "hcZbG6mkUiw",
@@ -112,7 +112,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T14:22:33.544544+00:00"
+      "analytics_updated_at": "2026-11-15T19:10:00.592437+00:00"
     },
     {
       "video_id": "mC8sTJyTOWo",
@@ -131,7 +131,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T14:22:33.543954+00:00"
+      "analytics_updated_at": "2026-11-15T19:10:00.591865+00:00"
     },
     {
       "video_id": "M8GRYkspRLo",
@@ -150,7 +150,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T14:22:33.540807+00:00"
+      "analytics_updated_at": "2026-11-15T19:10:00.588829+00:00"
     },
     {
       "video_id": "xoy8Pg3gIK8",
@@ -258,6 +258,24 @@
       "format": "long",
       "script_preview": "Do you feel like your daily efforts remain unseen by the world? History reveals that consistency is often a comforting lie; ultimately, only your final, high-pressure results define your trajectory. Most men lose control because they prioritize busyness over impactful performance. True legacy is forged in the furnace of high-stakes moments. You must adopt a permanent November mindset, treating every deadline and test as the final audit of your character. Stop seeking validation for the process and start demanding victory from the result. Coaches and elite leaders have long understood that autu",
       "created_at": "2026-11-14T18:56:23.579450+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "KViCY-0ec14",
+      "topic": "Michigan football’s Kyle Whittingham uses 3 brutal adjectives to describe Oregon beatdown",
+      "title": "The Stoic Rule of Defeat",
+      "format": "short",
+      "script_preview": "When disaster strikes, your fragile ego instinctively fabricates soft excuses to cushion the humiliation. After Oregon dismantled Michigan, coach Kyle Whittingham refused to hide behind sugarcoated lies, confronting the beatdown with three brutal adjectives. As Marcus Aurelius commanded: 'If anyone can prove I am wrong, I will gladly change. I seek truth, by which no man was ever injured.' The weak blame bad luck or circumstances, begging for unearned sympathy while their flaws fester. The master stares directly into the carnage, dissecting his failures with surgical indifference. Stop protect",
+      "created_at": "2026-11-15T19:15:08.505159+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "EGv6lzTWnLU",
+      "topic": "Aidan Hutchinson injures knee during sack celebration in brutal Lions blow",
+      "title": "Aidan Hutchinson: When Vanity Costs Everything",
+      "format": "short",
+      "script_preview": "Aidan Hutchinson dominated the Patriots line, only to lose his season to the vanity of a celebration. The knee buckles, the lights dim, and in one ego-driven second, a season of discipline is erased. Seneca said: 'The greatest conqueror is he who conquers himself.' The weak athlete plays for the roar of the crowd; the master plays for the objective. Hutchinson’s injury is a brutal reminder: performative emotion is a luxury you cannot afford. While the crowd demands a show, you must demand cold, unyielding focus. When you achieve greatness, do not linger in the spectacle. Do not seek the applau",
+      "created_at": "2026-11-15T19:18:40.758825+00:00",
       "analytics": {}
     }
   ],
@@ -381,6 +399,18 @@
       "title": "Why Nobody Remembers Your Effort (The November Mindset)",
       "format": "long",
       "created_at": "2026-11-14T18:56:23.579450+00:00"
+    },
+    {
+      "topic": "Michigan football’s Kyle Whittingham uses 3 brutal adjectives to describe Oregon beatdown",
+      "title": "The Stoic Rule of Defeat",
+      "format": "short",
+      "created_at": "2026-11-15T19:15:08.505159+00:00"
+    },
+    {
+      "topic": "Aidan Hutchinson injures knee during sack celebration in brutal Lions blow",
+      "title": "Aidan Hutchinson: When Vanity Costs Everything",
+      "format": "short",
+      "created_at": "2026-11-15T19:18:40.758825+00:00"
     }
   ]
 }
