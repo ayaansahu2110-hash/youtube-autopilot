@@ -17,7 +17,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-11-15T14:28:02.151294+00:00"
+      "analytics_updated_at": "2026-11-15T19:13:03.871752+00:00"
     },
     {
       "video_id": "cR06wB2x2zQ",
@@ -36,7 +36,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-11-15T14:28:02.150263+00:00"
+      "analytics_updated_at": "2026-11-15T19:13:03.870183+00:00"
     },
     {
       "video_id": "dz8rJMxh3JY",
@@ -55,7 +55,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T14:28:02.150926+00:00"
+      "analytics_updated_at": "2026-11-15T19:13:03.871142+00:00"
     },
     {
       "video_id": "j0u-bjz8Et0",
@@ -74,7 +74,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T14:28:02.151926+00:00"
+      "analytics_updated_at": "2026-11-15T19:13:03.873000+00:00"
     },
     {
       "video_id": "Nfsoxi_1ns8",
@@ -93,7 +93,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T14:28:02.151625+00:00"
+      "analytics_updated_at": "2026-11-15T19:13:03.872366+00:00"
     },
     {
       "video_id": "qD65-aR18zM",
@@ -139,7 +139,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T14:28:02.152227+00:00"
+      "analytics_updated_at": "2026-11-15T19:13:03.873583+00:00"
     },
     {
       "video_id": "YS-Zl_ffFE0",
@@ -176,7 +176,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T14:28:02.152648+00:00"
+      "analytics_updated_at": "2026-11-15T19:13:03.874303+00:00"
     },
     {
       "video_id": "jK-61nLRyAs",
@@ -248,6 +248,24 @@
       "format": "long",
       "script_preview": "If a small group of individuals could legally force the general public to unknowingly subsidize their own aggressive political maneuvers, what would that look like in practice? In California, we are witnessing exactly how this mechanism functions in the modern era. We just gained a rare, front-row seat to the internal dynamics of this power struggle. Billionaires recently funneled nearly four hundred million dollars into a massive, coordinated campaign to crush a proposed state wealth tax, effectively protecting their own immense accumulated fortunes. This move effectively turned their aggress",
       "created_at": "2026-11-14T19:04:49.292707+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "SCD5q-WnpmA",
+      "topic": "How Jensen Huang Built the Backdoor Route That Keeps Beijing in the AI Race",
+      "title": "How Jensen Huang Kept China in the AI Race",
+      "format": "short",
+      "script_preview": "Washington banned advanced AI chips from China, yet Silicon Valley silently routed twelve billion dollars of computing power to Beijing. Middleman brokers like Megaspeed arranged nearly twelve billion dollars in Nvidia orders specifically for Chinese tech firms. Nvidia shifted Asian revenue reporting through third-party hubs, obscuring final chip destinations from federal auditors. CEO Jensen Huang engineered a sovereign balancing act, tweaking chip architecture to satisfy Chinese AI demand legally. The dependency is so complete that Elon Musk warned global tech supply chains would collapse wi",
+      "created_at": "2026-11-15T19:21:29.748840+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "3mTFGxb5Zkc",
+      "topic": "Money, spies and Al Jazeera: How Qatar's intelligence services wield power",
+      "title": "Qatar: How $400B Buys Global Influence",
+      "format": "short",
+      "script_preview": "Qatar doesn't trade in mere gas; it weaponizes a 400-billion-dollar sovereign footprint to command global intelligence networks. By utilizing Al Jazeera as a state-sponsored soft-power microphone, Doha projects strategic narratives directly into Western living rooms. Meanwhile, the Qatar Investment Authority embeds capital into critical infrastructure, blurring the line between passive investor and active intelligence operative. We've seen billions in capital flows tied to political insiders, functioning as shadow-leverage in high-stakes negotiations. When a state controls a 400-billion-dollar",
+      "created_at": "2026-11-15T19:26:04.004938+00:00",
       "analytics": {}
     }
   ],
@@ -371,6 +389,18 @@
       "title": "Why Billionaires Get a Tax Break to Defeat Wealth Taxes",
       "format": "long",
       "created_at": "2026-11-14T19:04:49.292707+00:00"
+    },
+    {
+      "topic": "How Jensen Huang Built the Backdoor Route That Keeps Beijing in the AI Race",
+      "title": "How Jensen Huang Kept China in the AI Race",
+      "format": "short",
+      "created_at": "2026-11-15T19:21:29.748840+00:00"
+    },
+    {
+      "topic": "Money, spies and Al Jazeera: How Qatar's intelligence services wield power",
+      "title": "Qatar: How $400B Buys Global Influence",
+      "format": "short",
+      "created_at": "2026-11-15T19:26:04.004938+00:00"
     }
   ]
 }
