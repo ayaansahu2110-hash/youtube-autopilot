@@ -117,6 +117,46 @@ def slice_scenes(trailer: Path) -> None:
     print(f"Successfully prepared {len(SCENES)} GTA 6 video clips and stills!")
 
 
+def ensure_clips() -> None:
+    """Ensure all 16 GTA 6 vertical and horizontal clips are available."""
+    vert_clips = list(CLIPS_DIR.glob("*_vert.mp4"))
+    if len(vert_clips) >= 14:
+        print(f"GTA 6 clips already prepared ({len(vert_clips)} clips found).")
+        return
+
+    # 1. Download pre-sliced clips from GitHub Releases (fast, datacenter-safe)
+    release_url = "https://github.com/ayaansahu2110-hash/youtube-autopilot/releases/download/gta6-assets/assets_gta6_clips.zip"
+    zip_path = Path("assets_gta6_clips.zip")
+    print("Downloading pre-processed GTA 6 clips pack from GitHub Release...")
+    try:
+        import urllib.request
+        import zipfile
+        # User-agent header to ensure clean GitHub download
+        req = urllib.request.Request(
+            release_url,
+            headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+        )
+        with urllib.request.urlopen(req) as resp, open(zip_path, "wb") as f:
+            f.write(resp.read())
+
+        print("Extracting clips...")
+        with zipfile.ZipFile(zip_path, "r") as z:
+            z.extractall("assets/gta6")
+        zip_path.unlink(missing_ok=True)
+        vert_clips = list(CLIPS_DIR.glob("*_vert.mp4"))
+        if len(vert_clips) >= 14:
+            print(f"Successfully unpacked {len(vert_clips)} GTA 6 clips from release.")
+            return
+    except Exception as exc:
+        print(f"Release download notice: {exc}, falling back to trailer download...")
+
+    # 2. Fallback: download trailer and slice with ffmpeg
+    try:
+        t = download_trailer()
+        slice_scenes(t)
+    except Exception as exc:
+        print(f"Trailer download notice: {exc}")
+
+
 if __name__ == "__main__":
-    t = download_trailer()
-    slice_scenes(t)
+    ensure_clips()
