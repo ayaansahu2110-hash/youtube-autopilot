@@ -66,6 +66,15 @@ class HybridVisualDirector:
                         vertical=vertical,
                     )
 
+            # 1.5 Real GTA 6 official gameplay & trailer clips
+            if asset is None and self.channel_profile == "gta6hub":
+                asset = self._match_gta6_clip(
+                    scene,
+                    output_dir / f"scene-{scene_index:02d}-gta6.mp4",
+                    scene_index=scene_index,
+                    vertical=vertical,
+                )
+
             # 2. High-definition moving Video B-Roll from Pexels (Try for all scenes to eliminate slideshows)
             if asset is None:
                 stock = []
@@ -200,6 +209,77 @@ class HybridVisualDirector:
                     output.unlink(missing_ok=True)
                     continue
         return None
+
+    def _match_gta6_clip(
+        self,
+        scene: SceneBeat,
+        output_file: Path,
+        *,
+        scene_index: int,
+        vertical: bool,
+    ) -> VisualAsset | None:
+        """Select authentic GTA 6 gameplay/trailer footage based on scene semantics."""
+        clips_dir = Path("assets/gta6/clips")
+        if not clips_dir.exists() or not list(clips_dir.glob("*.mp4")):
+            try:
+                import sys
+                import subprocess
+                script = Path("scripts/prepare_gta6_assets.py")
+                if script.exists():
+                    subprocess.run([sys.executable, str(script)], check=True, timeout=120)
+            except Exception as exc:
+                print(f"GTA 6 asset preparation notice: {exc}")
+                return None
+
+        suffix = "_vert.mp4" if vertical else "_horiz.mp4"
+        clips = sorted(clips_dir.glob(f"*{suffix}"))
+        if not clips:
+            clips = sorted(clips_dir.glob("*.mp4"))
+        if not clips:
+            return None
+
+        combined_text = f"{scene.visual_query} {scene.narration}".lower()
+        keyword_map = [
+            (("prison", "lucia", "interview", "orange", "counselor"), "01_lucia_prison"),
+            (("sunset", "freeway", "highway", "skyline", "aerial", "city view", "bridge"), "02_miami_sunset_freeway"),
+            (("speedboat", "keys", "ocean", "water", "boat", "turquoise", "bay"), "03_speedboat_keys"),
+            (("airboat", "everglades", "swamp", "marsh", "alligator grass", "foliage"), "04_everglades_airboat"),
+            (("beach", "crowd", "plane", "ocean drive", "sunbathers", "bikini"), "05_vice_beach_crowd"),
+            (("lowrider", "custom", "hydraulics", "car meet", "tuning", "wheels"), "06_custom_lowriders"),
+            (("rooftop", "pool", "party", "luxury", "swimming pool", "mansion"), "07_rooftop_pool_party"),
+            (("club", "nightclub", "neon", "dance", "nightlife", "music"), "08_club_neon_lights"),
+            (("dirtbike", "bike", "wheelie", "atv", "gang", "motorcycle"), "09_dirtbikes_highway"),
+            (("police", "cop", "cruiser", "siren", "chase", "pursuit", "flashing"), "10_police_cruiser_speeding"),
+            (("alligator", "gator", "swimming", "backyard", "reptile"), "11_alligator_pool"),
+            (("gas station", "drift", "night street", "race", "drifting", "exhaust"), "12_night_gas_station_drift"),
+            (("social media", "livestream", "phone", "tiktok", "viral", "instagram"), "13_social_media_livestream"),
+            (("jason", "driving", "convertible", "cruise", "couple", "car night"), "14_jason_lucia_convertible"),
+            (("robbery", "store", "heist", "door", "gun", "convenience", "cash register"), "15_store_robbery_kick"),
+            (("trust", "cash", "money", "closing", "subscribe", "end", "follow"), "16_trust_closing_shot"),
+        ]
+
+        selected_clip: Path | None = None
+        for keywords, pattern in keyword_map:
+            if any(k in combined_text for k in keywords):
+                candidates = [c for c in clips if pattern in c.name]
+                if candidates:
+                    selected_clip = candidates[0]
+                    break
+
+        if not selected_clip:
+            # Clean rotation across all available clips
+            selected_clip = clips[scene_index % len(clips)]
+
+        output_file.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(selected_clip, output_file)
+        return VisualAsset(
+            local_path=output_file,
+            creator="Rockstar Games Official GTA 6 Footage",
+            query=scene.visual_query,
+            scene_index=scene_index,
+            asset_kind="video",
+            visual_mode="stock",
+        )
 
     def _capture_public_ui(
         self,

@@ -24,7 +24,8 @@ dependencies = [
   "pydantic-settings>=2.7,<3",
   "rich>=14,<15",
   "typer>=0.16,<1",
-  "tzdata>=2025.2"
+  "tzdata>=2025.2",
+  "yt-dlp>=2025.1"
 ]
 
 [project.optional-dependencies]

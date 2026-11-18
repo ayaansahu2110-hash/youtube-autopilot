@@ -512,6 +512,19 @@ class GTA6HubEditorialSystem:
             title, re.IGNORECASE,
         ))
 
+    def relevance_score(self, title: str) -> float:
+        text = title.lower()
+        score = 0.0
+        good_terms = (
+            "gta", "gta 6", "gta vi", "rockstar", "leonida", "vice city",
+            "jason", "lucia", "easter egg", "secret", "hidden", "map",
+            "physics", "graphics", "gameplay", "tips", "tricks", "mechanics"
+        )
+        for t in good_terms:
+            if t in text:
+                score += 3.5
+        return max(-10.0, min(20.0, score))
+
     def enrich(self, candidate: TopicCandidate, research: ResearchPack, video_format: str = "short") -> ResearchPack:
         brief = self.brief_for(candidate, research, video_format=video_format)
         notes = research.research_notes.strip()

@@ -132,6 +132,16 @@ jobs:
         if: env.READY == 'true'
         run: python -m autopilot.cli verify-youtube
 
+      - name: Cache GTA 6 clips
+        uses: actions/cache@v4
+        with:
+          path: assets/gta6
+          key: gta6-clips-v1
+
+      - name: Prepare real GTA 6 clips
+        if: env.READY == 'true'
+        run: python scripts/prepare_gta6_assets.py
+
       - name: Produce GTA6Hub videos with retry
         if: env.READY == 'true'
         shell: bash
