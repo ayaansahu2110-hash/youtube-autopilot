@@ -237,7 +237,9 @@ class QualityGate:
                         "strategy", "result", "lesson", "rhyme", "action", "climax", "fable",
                         "philosophy", "history", "mystery", "economy", "fact", "context",
                         "insight", "principle", "practice", "narrative", "verse", "body",
-                        "point", "adventure", "discovery", "breakthrough"
+                        "point", "adventure", "discovery", "breakthrough", "tip", "trick",
+                        "secret", "easter", "egg", "detail", "gameplay", "mechanic", "breakdown",
+                        "benefit", "feature", "location", "reveal", "comparison", "guide"
                     )
 
                 if not any(any(word in purpose for word in evidence_beats) for purpose in purposes):

@@ -397,6 +397,8 @@ class AutopilotPipeline:
                 "apexstoic": "Marcus Aurelius: 7 Rules to Never Care What People Think",
                 "chronosenigma": "Göbekli Tepe: The 12,000-Year-Old Megalith That Defies History",
                 "empirepulse": "How Qatar Built Infinite Wealth with Zero Rivers or Farmland",
+                "astrapulse": "Scorpio Daily Horoscope: The Cosmic Shift You Cannot Ignore",
+                "gta6hub": "GTA 6 Leonida Map: Hidden Easter Eggs Rockstar Buried in the Everglades",
                 "curioaxiom": DEFAULT_FACT_TOPIC,
                 "bytevexa": DEFAULT_TOPIC,
             }

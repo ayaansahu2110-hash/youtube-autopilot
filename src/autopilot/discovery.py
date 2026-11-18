@@ -405,6 +405,50 @@ CHANNEL_EVERGREEN_TOPICS: dict[str, list[dict]] = {
             "reason": "The major 29-year astrological milestone of maturity, destiny realignment, and life restructuring.",
         },
     ],
+    "gta6hub": [
+        {
+            "title": "GTA 6 Leonida Map: 5 Hidden Locations Modeled After Real Florida",
+            "urls": ["https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI", "https://en.wikipedia.org/wiki/Florida"],
+            "score": 98.0,
+            "reason": "Detailed breakdown of the Leonida state map, Vice City, Grassrivers Everglades, and Keys.",
+        },
+        {
+            "title": "GTA 6 vs GTA 5: The Water and Hair Physics Leap That Changes Everything",
+            "urls": ["https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI", "https://en.wikipedia.org/wiki/Rockstar_Advanced_Game_Engine"],
+            "score": 97.0,
+            "reason": "Direct side-by-side comparison of RAGE engine improvements across two console generations.",
+        },
+        {
+            "title": "GTA 6 Jason and Lucia: Hidden Details in Their Relationship Dynamic",
+            "urls": ["https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI", "https://en.wikipedia.org/wiki/Bonnie_and_Clyde"],
+            "score": 96.0,
+            "reason": "Psychological breakdown of dual protagonist mechanics and Bonnie & Clyde inspiration.",
+        },
+        {
+            "title": "GTA 6 Secret Easter Eggs: Pop Culture References Hidden in Plain Sight",
+            "urls": ["https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI", "https://en.wikipedia.org/wiki/Easter_egg_(media)"],
+            "score": 95.0,
+            "reason": "Viral discovery format highlighting clever hidden nods to Florida Man, Vice City nostalgia, and pop culture.",
+        },
+        {
+            "title": "GTA 6 Day One Pro Tips: 5 Mechanics Every Player Needs to Know Immediately",
+            "urls": ["https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI", "https://en.wikipedia.org/wiki/Open_world"],
+            "score": 95.0,
+            "reason": "High-utility gameplay guide revealing advanced weapon wheel, driving physics, and inventory management.",
+        },
+        {
+            "title": "GTA 6 NPC AI Evolution: How Rockstar Programmed Real Crowds in Vice City",
+            "urls": ["https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI", "https://en.wikipedia.org/wiki/Artificial_intelligence_in_video_games"],
+            "score": 94.0,
+            "reason": "Deep dive into patented Rockstar AI routines, social media in-game mechanics, and NPC reactions.",
+        },
+        {
+            "title": "GTA 6 Vehicle Customization and Car Physics: What Changed Since GTA 5",
+            "urls": ["https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI", "https://en.wikipedia.org/wiki/Car_tuning"],
+            "score": 93.0,
+            "reason": "Automotive deep dive into interior camera views, handling models, and lowrider hydraulics in Vice City.",
+        },
+    ],
 }
 
 
@@ -510,6 +554,10 @@ class TopicDiscovery:
             terms.extend(["ancient archaeological mystery", "unsolved ancient engineering", "lost civilization discovery"])
         elif profile == "empirepulse":
             terms.extend(["how small country became rich", "sovereign wealth fund strategy", "billionaire economic dynasty"])
+        elif profile == "astrapulse":
+            terms.extend(["zodiac sign secrets", "daily horoscope prediction", "astrology compatibility truths"])
+        elif profile == "gta6hub":
+            terms.extend(["GTA 6 hidden secrets", "GTA 6 Leonida map guide", "GTA 6 tips and tricks", "GTA 6 Easter eggs", "GTA 6 gameplay mechanics"])
 
         terms.extend(self.state.performance_terms(limit=6))
         return list(dict.fromkeys(terms))[:14]
