@@ -17,7 +17,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:10:00.591186+00:00"
+      "analytics_updated_at": "2026-11-15T07:09:52.095356+00:00"
     },
     {
       "video_id": "SrCFKhynUyc",
@@ -36,7 +36,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:10:00.587887+00:00"
+      "analytics_updated_at": "2026-11-15T07:09:52.084998+00:00"
     },
     {
       "video_id": "AUqN-Jp-MPw",
@@ -55,7 +55,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:10:00.590032+00:00"
+      "analytics_updated_at": "2026-11-15T07:09:52.092165+00:00"
     },
     {
       "video_id": "bfy1acwg1Co",
@@ -74,7 +74,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:10:00.590626+00:00"
+      "analytics_updated_at": "2026-11-15T07:09:52.093190+00:00"
     },
     {
       "video_id": "68OhLQ7dRJE",
@@ -93,7 +93,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:10:00.589459+00:00"
+      "analytics_updated_at": "2026-11-15T07:09:52.088058+00:00"
     },
     {
       "video_id": "hcZbG6mkUiw",
@@ -112,7 +112,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:10:00.592437+00:00"
+      "analytics_updated_at": "2026-11-15T07:09:52.097395+00:00"
     },
     {
       "video_id": "mC8sTJyTOWo",
@@ -131,7 +131,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:10:00.591865+00:00"
+      "analytics_updated_at": "2026-11-15T07:09:52.096381+00:00"
     },
     {
       "video_id": "M8GRYkspRLo",
@@ -150,7 +150,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:10:00.588829+00:00"
+      "analytics_updated_at": "2026-11-15T07:09:52.087045+00:00"
     },
     {
       "video_id": "xoy8Pg3gIK8",
@@ -217,66 +217,53 @@
     },
     {
       "video_id": "dc9VHSmbB7k",
-      "topic": "Read: Memento Mori | Monsignor Lunsford’s Reflections Upon the Four Last Things",
+      "topic": "Stop Pretending You Have Forever: Memento Mori",
       "title": "Stop Pretending You Have Forever: Memento Mori",
       "format": "short",
-      "script_preview": "You are wasting your life because you treat death like a distant stranger. You aren't. Death is a silent occupant in your room right now. Monsignor Lunsford’s reflections on the Four Last Things confirm what the Stoics knew: Memento Mori is not morbid—it is a surgical tool. The weak fear their own end, drowning in the noise of trivial distractions. The Stoic master uses this cold reality as a whetstone. Marcus Aurelius did not guess at his mortality; he lived it. 'Act as if this were your last day on earth,' he commanded. When you accept your life is finite, your petty grievances and ego vanis",
-      "created_at": "2026-11-13T20:10:43.379926+00:00",
-      "analytics": {}
+      "script_preview": "",
+      "created_at": "2026-11-13T20:11:09Z",
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "UKm4h53IB2U",
-      "topic": "Preston: Moving Company’s play about death makes us think about life",
+      "topic": "Why You Fear Death (And How to Stop)",
       "title": "Why You Fear Death (And How to Stop)",
       "format": "short",
-      "script_preview": "You fear death because you are wasting the life you’ve been given. In The Moving Company’s 'Memento Vivere', the portrayal of Clytemnestra hauling a corpse is a visceral, unvarnished reminder: death is physical. You spend your life numbing this truth with distractions. Marcus Aurelius commanded: 'You could leave life right now. Let that determine what you do, say, and think.' The weak run from the void, paralyzed by their own fleeting nature. The master stares into the abyss to sharpen his resolve. Every moment you spend in indecision is a theft from your own potential. Stop mourning the hours",
-      "created_at": "2026-11-13T20:13:20.565773+00:00",
-      "analytics": {}
+      "script_preview": "",
+      "created_at": "2026-11-13T20:13:50Z",
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "G6qhKF-R9gI",
-      "topic": "I’m a Neurosurgeon. My Near-Death Experience Showed Me ‘Universal Consciousness’ for the First Time.",
+      "topic": "A Neurosurgeon Faced Death. Here Is the Stoic Truth.",
       "title": "A Neurosurgeon Faced Death. Here Is the Stoic Truth.",
-      "format": "short",
-      "script_preview": "You panic at the thought of death because your weak ego demands eternal comfort. When a neurosurgeon’s brain flatlined, clinical studies recorded heightened electrical surges—more than hallucinations, a complete collapse of cerebral filters. Science calls it recalled death experience; Marcus Aurelius called it waking from a dream. Seneca warned: 'You are dying daily, yet you beg the universe for extra time to waste.' The weak wait for a cardiac arrest or traumatic crisis to realize their petty anxieties are meaningless. The Stoic master kills the illusion of self today. He strips away pride, f",
-      "created_at": "2026-11-14T18:37:53.062826+00:00",
-      "analytics": {}
+      "format": "long",
+      "script_preview": "",
+      "created_at": "2026-11-14T18:38:23Z",
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "ABsGQElMAQI",
-      "topic": "Casualties: Unknown Is A Brutal 97%-Rated Survival Game That Will Make You Realize Your Mortality, And At A Cheap Price, Too",
+      "topic": "Casualties: Unknown — The 97%-Rated Game That Exposes Your Mortality",
       "title": "Casualties: Unknown — The 97%-Rated Game That Exposes Your Mortality",
       "format": "short",
-      "script_preview": "You hide from your own mortality behind soft entertainment and low-stakes comfort. Casualties: Unknown earned a ninety-seven percent rating on Steam as a total pain simulator that treats every mistake as fatal. Marcus Aurelius declared: You could leave life right now. Let that determine what you do, say, and think. Modern distractions coddle your ego, but brutal survival strips away illusion and forces direct confrontation with death. When crisis strikes, the fragile soul panics, seeking cheap comfort and external blame. The master responds with cold composure, turning extreme hardship into ra",
-      "created_at": "2026-11-14T18:40:56.397487+00:00",
-      "analytics": {}
+      "script_preview": "",
+      "created_at": "2026-11-14T18:41:29Z",
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "Jt96iox6PUg",
-      "topic": "They Only Remember What You Do In November If It's Worth Remembering",
+      "topic": "Why Nobody Remembers Your Effort (The November Mindset)",
       "title": "Why Nobody Remembers Your Effort (The November Mindset)",
       "format": "long",
-      "script_preview": "Do you feel like your daily efforts remain unseen by the world? History reveals that consistency is often a comforting lie; ultimately, only your final, high-pressure results define your trajectory. Most men lose control because they prioritize busyness over impactful performance. True legacy is forged in the furnace of high-stakes moments. You must adopt a permanent November mindset, treating every deadline and test as the final audit of your character. Stop seeking validation for the process and start demanding victory from the result. Coaches and elite leaders have long understood that autu",
-      "created_at": "2026-11-14T18:56:23.579450+00:00",
-      "analytics": {}
-    },
-    {
-      "video_id": "KViCY-0ec14",
-      "topic": "Michigan football’s Kyle Whittingham uses 3 brutal adjectives to describe Oregon beatdown",
-      "title": "The Stoic Rule of Defeat",
-      "format": "short",
-      "script_preview": "When disaster strikes, your fragile ego instinctively fabricates soft excuses to cushion the humiliation. After Oregon dismantled Michigan, coach Kyle Whittingham refused to hide behind sugarcoated lies, confronting the beatdown with three brutal adjectives. As Marcus Aurelius commanded: 'If anyone can prove I am wrong, I will gladly change. I seek truth, by which no man was ever injured.' The weak blame bad luck or circumstances, begging for unearned sympathy while their flaws fester. The master stares directly into the carnage, dissecting his failures with surgical indifference. Stop protect",
-      "created_at": "2026-11-15T19:15:08.505159+00:00",
-      "analytics": {}
-    },
-    {
-      "video_id": "EGv6lzTWnLU",
-      "topic": "Aidan Hutchinson injures knee during sack celebration in brutal Lions blow",
-      "title": "Aidan Hutchinson: When Vanity Costs Everything",
-      "format": "short",
-      "script_preview": "Aidan Hutchinson dominated the Patriots line, only to lose his season to the vanity of a celebration. The knee buckles, the lights dim, and in one ego-driven second, a season of discipline is erased. Seneca said: 'The greatest conqueror is he who conquers himself.' The weak athlete plays for the roar of the crowd; the master plays for the objective. Hutchinson’s injury is a brutal reminder: performative emotion is a luxury you cannot afford. While the crowd demands a show, you must demand cold, unyielding focus. When you achieve greatness, do not linger in the spectacle. Do not seek the applau",
-      "created_at": "2026-11-15T19:18:40.758825+00:00",
-      "analytics": {}
+      "script_preview": "",
+      "created_at": "2026-11-14T18:57:01Z",
+      "analytics": {},
+      "source": "youtube_sync"
     }
   ],
   "topics": [
@@ -371,46 +358,39 @@
       "created_at": "2026-11-12T21:00:47.202936+00:00"
     },
     {
-      "topic": "Read: Memento Mori | Monsignor Lunsford’s Reflections Upon the Four Last Things",
+      "topic": "Stop Pretending You Have Forever: Memento Mori",
       "title": "Stop Pretending You Have Forever: Memento Mori",
       "format": "short",
-      "created_at": "2026-11-13T20:10:43.379926+00:00"
+      "created_at": "2026-11-13T20:11:09Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "Preston: Moving Company’s play about death makes us think about life",
+      "topic": "Why You Fear Death (And How to Stop)",
       "title": "Why You Fear Death (And How to Stop)",
       "format": "short",
-      "created_at": "2026-11-13T20:13:20.565773+00:00"
+      "created_at": "2026-11-13T20:13:50Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "I’m a Neurosurgeon. My Near-Death Experience Showed Me ‘Universal Consciousness’ for the First Time.",
+      "topic": "A Neurosurgeon Faced Death. Here Is the Stoic Truth.",
       "title": "A Neurosurgeon Faced Death. Here Is the Stoic Truth.",
-      "format": "short",
-      "created_at": "2026-11-14T18:37:53.062826+00:00"
+      "format": "long",
+      "created_at": "2026-11-14T18:38:23Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "Casualties: Unknown Is A Brutal 97%-Rated Survival Game That Will Make You Realize Your Mortality, And At A Cheap Price, Too",
+      "topic": "Casualties: Unknown — The 97%-Rated Game That Exposes Your Mortality",
       "title": "Casualties: Unknown — The 97%-Rated Game That Exposes Your Mortality",
       "format": "short",
-      "created_at": "2026-11-14T18:40:56.397487+00:00"
+      "created_at": "2026-11-14T18:41:29Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "They Only Remember What You Do In November If It's Worth Remembering",
+      "topic": "Why Nobody Remembers Your Effort (The November Mindset)",
       "title": "Why Nobody Remembers Your Effort (The November Mindset)",
       "format": "long",
-      "created_at": "2026-11-14T18:56:23.579450+00:00"
-    },
-    {
-      "topic": "Michigan football’s Kyle Whittingham uses 3 brutal adjectives to describe Oregon beatdown",
-      "title": "The Stoic Rule of Defeat",
-      "format": "short",
-      "created_at": "2026-11-15T19:15:08.505159+00:00"
-    },
-    {
-      "topic": "Aidan Hutchinson injures knee during sack celebration in brutal Lions blow",
-      "title": "Aidan Hutchinson: When Vanity Costs Everything",
-      "format": "short",
-      "created_at": "2026-11-15T19:18:40.758825+00:00"
+      "created_at": "2026-11-14T18:57:01Z",
+      "source": "youtube_sync"
     }
   ]
 }

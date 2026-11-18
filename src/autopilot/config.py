@@ -13,6 +13,7 @@ ChannelProfileType = Literal[
     "chronosenigma",
     "empirepulse",
     "astrapulse",
+    "gta6hub",
 ]
 
 CHANNEL_PROFILES: list[str] = [
@@ -24,6 +25,7 @@ CHANNEL_PROFILES: list[str] = [
     "chronosenigma",
     "empirepulse",
     "astrapulse",
+    "gta6hub",
 ]
 
 PROFILE_CONFIGS: dict[str, dict] = {
@@ -153,6 +155,32 @@ PROFILE_CONFIGS: dict[str, dict] = {
         "shorts_per_day": 2,
         "min_research_sources": 1,
     },
+    "gta6hub": {
+        "display_name": "GTA6Hub",
+        "niche": (
+            "GTA 6 gameplay commentary, Leonida map secrets, hidden Easter eggs, "
+            "character deep dives (Jason & Lucia), Vice City exploration, "
+            "GTA 6 tips & tricks, funny moments, graphics comparisons, and launch-day news breakdowns"
+        ),
+        "topic_queries": (
+            "GTA 6 hidden secrets,GTA 6 Leonida map guide,GTA 6 Easter eggs,GTA 6 Jason and Lucia,"
+            "GTA 6 Vice City locations,GTA 6 tips and tricks,GTA 6 vs GTA 5 graphics,"
+            "GTA 6 funny moments,GTA 6 physics details,GTA 6 character abilities,"
+            "GTA 6 day one patch,GTA 6 launch impressions,GTA 6 open world details"
+        ),
+        "voice": "en-US-GuyNeural",
+        "rate": "+3%",
+        "pitch": "-1Hz",
+        "category_id": "20",
+        "made_for_kids": False,
+        "token_file": "secrets/youtube_token_gta6hub.json",
+        "max_clips_short": 20,
+        "min_clips_short": 8,
+        "clip_seconds": 2.5,
+        "shorts_per_day": 5,
+        "min_research_sources": 1,
+        "longform_every_days": 1,
+    },
 }
 
 
@@ -266,6 +294,8 @@ class Settings(BaseSettings):
             self.shorts_per_day = cfg["shorts_per_day"]
             if "min_research_sources" in cfg:
                 self.min_research_sources = cfg["min_research_sources"]
+            if "longform_every_days" in cfg:
+                self.longform_every_days = cfg["longform_every_days"]
 
     @property
     def topic_query_list(self) -> list[str]:

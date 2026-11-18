@@ -495,6 +495,167 @@ class AstraPulseEditorialSystem:
         return max(-10.0, min(20.0, score))
 
 
+class GTA6HubEditorialSystem:
+    """Editorial system for GTA6Hub — Rockstar-policy-compliant commentary, secrets, and guides."""
+
+    GTA6_CONTENT_TYPES = (
+        "easter_egg", "map_guide", "character", "comparison", "tips_tricks",
+        "hidden_detail", "physics", "gameplay_reaction", "news_breakdown",
+    )
+
+    @staticmethod
+    def is_relevant_topic(title: str) -> bool:
+        return bool(re.search(
+            r"\b(?:GTA|grand theft auto|GTA\s*6|GTA\s*VI|rockstar|leonida|vice city|jason|lucia"
+            r"|gameplay|easter egg|map|secret|hidden|trick|tip|guide|comparison|graphics"
+            r"|character|mission|update|patch|detail|physics|funny|moments|reaction)\\b",
+            title, re.IGNORECASE,
+        ))
+
+    def enrich(self, candidate: TopicCandidate, research: ResearchPack, video_format: str = "short") -> ResearchPack:
+        brief = self.brief_for(candidate, research, video_format=video_format)
+        notes = research.research_notes.strip()
+        combined = brief.as_text() + ("\n\nGTA6 RESEARCH & COMMUNITY FINDINGS\n" + notes if notes else "")
+        return research.model_copy(update={"research_notes": combined})
+
+    def brief_for(self, candidate: TopicCandidate, research: ResearchPack, video_format: str = "short") -> EditorialBrief:
+        text = f"{candidate.title} {candidate.angle} {research.research_notes}".lower()
+
+        if video_format == "long":
+            return EditorialBrief(
+                brand_name="GTA6HUB",
+                series="GTA 6 Deep Dive Guide",
+                promise=(
+                    "An in-depth 8-12 minute GTA 6 guide, map exploration, or character analysis. "
+                    "Uses official Rockstar gameplay footage, trailers, and community discoveries "
+                    "with energetic commentary, on-screen text callouts, and B-roll cutaways. "
+                    "Every claim is grounded in verifiable in-game footage or official Rockstar sources."
+                ),
+                required_beats=(
+                    "Explosive hook: One jaw-dropping GTA 6 visual detail or secret that viewers haven't noticed.",
+                    "Official gameplay footage context: Explain what region, mission, or scenario is being shown.",
+                    "Three to five layered discoveries or tips, each with an exact location, stat, or mechanic.",
+                    "GTA V vs GTA VI comparison on at least one specific mechanic, NPC behavior, or visual fidelity.",
+                    "Jason & Lucia character lore or mission dynamic that deepens player investment.",
+                    "Leonida map highlight: One specific real-world Florida location faithfully recreated.",
+                    "Community Easter egg or fan theory supported by in-game evidence.",
+                    "High-energy closing: Call to action asking viewers to subscribe for daily GTA 6 secrets.",
+                ),
+            )
+
+        content_type = self._detect_content_type(text)
+        return EditorialBrief(
+            brand_name="GTA6HUB",
+            series=self._series_for(content_type),
+            promise=self._promise_for(content_type),
+            required_beats=self._beats_for(content_type),
+        )
+
+    def _detect_content_type(self, text: str) -> str:
+        if any(w in text for w in ("easter egg", "hidden", "secret")):
+            return "easter_egg"
+        if any(w in text for w in ("map", "leonida", "location", "explore")):
+            return "map_guide"
+        if any(w in text for w in ("jason", "lucia", "character", "protagonist")):
+            return "character"
+        if any(w in text for w in ("gta v", "gta 5", "comparison", "compare", "vs", "graphics")):
+            return "comparison"
+        if any(w in text for w in ("tip", "trick", "trick", "guide", "how to", "best way")):
+            return "tips_tricks"
+        if any(w in text for w in ("physics", "detail", "npc", "ai", "realistic")):
+            return "hidden_detail"
+        if any(w in text for w in ("funny", "fail", "moment", "clip")):
+            return "gameplay_reaction"
+        if any(w in text for w in ("patch", "update", "news", "announced", "day one")):
+            return "news_breakdown"
+        return "hidden_detail"
+
+    @staticmethod
+    def _series_for(content_type: str) -> str:
+        return {
+            "easter_egg": "GTA 6 Secrets Nobody Told You",
+            "map_guide": "Leonida Map Masterclass",
+            "character": "Jason & Lucia: Character Decoded",
+            "comparison": "GTA 6 vs GTA 5",
+            "tips_tricks": "GTA 6 Pro Tips",
+            "hidden_detail": "Details You Missed in GTA 6",
+            "gameplay_reaction": "GTA 6 Moments",
+            "news_breakdown": "GTA 6 News Flash",
+        }.get(content_type, "GTA 6 Secrets Nobody Told You")
+
+    @staticmethod
+    def _promise_for(content_type: str) -> str:
+        return {
+            "easter_egg": "A 45-second reveal of one jaw-dropping GTA 6 Easter egg or hidden secret with exact location and in-game evidence.",
+            "map_guide": "A fast 45-second guide to one specific Leonida map location, landmark, or real-world Florida reference in GTA 6.",
+            "character": "A punchy 45-second character breakdown revealing a surprising Jason or Lucia personality detail, ability, or story beat.",
+            "comparison": "A sharp 45-second side-by-side breakdown of one specific mechanic, visual, or feature comparing GTA 6 vs GTA 5.",
+            "tips_tricks": "A crisp 45-second GTA 6 tip that immediately makes players better at one specific in-game challenge.",
+            "hidden_detail": "A mind-blowing 45-second reveal of one tiny GTA 6 physics or NPC AI detail that shows how insane Rockstar's attention to detail is.",
+            "gameplay_reaction": "A high-energy 45-second clip reaction to one hilarious, insane, or unexpected GTA 6 gameplay moment.",
+            "news_breakdown": "A rapid-fire 45-second breakdown of one major GTA 6 launch-day news item or Rockstar Newswire update.",
+        }.get(content_type, "A gripping 45-second GTA 6 short that leaves viewers wanting more and hitting subscribe.")
+
+    @staticmethod
+    def _beats_for(content_type: str) -> tuple[str, ...]:
+        common_cta = "High-energy subscribe callout: 'Follow GTA6Hub for daily GTA 6 secrets — before Rockstar patches them.'"
+        return {
+            "easter_egg": (
+                "Hook: Show the Easter egg location visually within the first 2 seconds.",
+                "Exact coordinates or in-game instructions to find it yourself.",
+                "Brief speculation on what it references (pop culture, Rockstar history, real event).",
+                common_cta,
+            ),
+            "map_guide": (
+                "Hook: Name the real-world Florida counterpart immediately (e.g. 'This is GTA 6's version of Miami Beach').",
+                "Three things to do or find at this location that the game doesn't tell you.",
+                "One hidden interaction, NPC spawn, or visual detail unique to this spot.",
+                common_cta,
+            ),
+            "character": (
+                "Hook: One surprising thing about Jason or Lucia that players haven't noticed yet.",
+                "Official gameplay evidence supporting the character detail.",
+                "How this detail changes how you approach missions or story.",
+                common_cta,
+            ),
+            "comparison": (
+                "Hook: Shocking stat or visual that shows GTA 6's leap forward.",
+                "Side-by-side description: Exactly what improved (lighting, NPC count, water physics, etc.).",
+                "One area where GTA 6 is objectively miles ahead.",
+                common_cta,
+            ),
+            "tips_tricks": (
+                "Hook: 'Most players are doing this WRONG in GTA 6.'",
+                "The exact tip explained in plain language with the in-game benefit.",
+                "One bonus micro-tip as a quick win.",
+                common_cta,
+            ),
+            "hidden_detail": (
+                "Hook: 'Nobody is talking about this GTA 6 detail.'",
+                "The specific physics or AI behavior described with precision.",
+                "Why it matters and what it tells us about Rockstar's design philosophy.",
+                common_cta,
+            ),
+            "gameplay_reaction": (
+                "Hook: Drop straight into the moment — no intro, no fluff.",
+                "Energetic commentary calling out exactly what makes the moment insane/funny.",
+                "Brief reflection on how this shows GTA 6's sandbox freedom.",
+                common_cta,
+            ),
+            "news_breakdown": (
+                "Hook: The most important GTA 6 news in one sentence.",
+                "What it means for players right now.",
+                "One open question or what to watch for next.",
+                common_cta,
+            ),
+        }.get(content_type, (
+            "Hook: One mind-blowing GTA 6 detail nobody is talking about.",
+            "The specific evidence from official Rockstar gameplay.",
+            "Why this matters for every GTA 6 player.",
+            common_cta,
+        ))
+
+
 def editorial_system_for(profile: str):
     """Factory to retrieve the isolated editorial system for any channel profile."""
     from autopilot.facts import CurioAxiomEditorialSystem
@@ -508,6 +669,7 @@ def editorial_system_for(profile: str):
         "chronosenigma": ChronosEnigmaEditorialSystem,
         "empirepulse": EmpirePulseEditorialSystem,
         "astrapulse": AstraPulseEditorialSystem,
+        "gta6hub": GTA6HubEditorialSystem,
     }
     cls = systems.get(profile, ByteVexaEditorialSystem)
     return cls()

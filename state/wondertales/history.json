@@ -17,7 +17,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:07:24.070767+00:00"
+      "analytics_updated_at": "2026-11-16T06:39:55.417989+00:00"
     },
     {
       "video_id": "NXwh5O6kQ7o",
@@ -36,7 +36,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:07:24.087191+00:00"
+      "analytics_updated_at": "2026-11-16T06:39:55.432910+00:00"
     },
     {
       "video_id": "-g4L3jo5Kss",
@@ -55,7 +55,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:07:24.088613+00:00"
+      "analytics_updated_at": "2026-11-16T06:39:55.437442+00:00"
     },
     {
       "video_id": "_tS6qVweLhU",
@@ -74,7 +74,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:07:24.090000+00:00"
+      "analytics_updated_at": "2026-11-16T06:39:55.441174+00:00"
     },
     {
       "video_id": "IHJ43Gs1dK8",
@@ -93,7 +93,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:07:24.089309+00:00"
+      "analytics_updated_at": "2026-11-16T06:39:55.438447+00:00"
     },
     {
       "video_id": "0gkxPDpRNgg",
@@ -112,7 +112,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:07:24.087926+00:00"
+      "analytics_updated_at": "2026-11-16T06:39:55.435138+00:00"
     },
     {
       "video_id": "4clzO505QVo",
@@ -131,7 +131,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:07:24.085755+00:00"
+      "analytics_updated_at": "2026-11-16T06:39:55.424009+00:00"
     },
     {
       "video_id": "q8VpV9avtOw",
@@ -150,7 +150,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:07:24.086466+00:00"
+      "analytics_updated_at": "2026-11-16T06:39:55.429765+00:00"
     },
     {
       "video_id": "RNbdDj_tmoM",
@@ -189,7 +189,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-15T19:07:24.084017+00:00"
+      "analytics_updated_at": "2026-11-16T06:39:55.419995+00:00"
     },
     {
       "video_id": "mYo-jv9VVKw",
@@ -216,7 +216,17 @@
       "format": "short",
       "script_preview": "Buzz-buzz, see the bee in the morning light, Working in the garden with all of her might.\nShe lands on a flower, so soft and so bright, Drinking up nectar with pure delight.\nFlap-flap, tiny wings zoom to the hive, Keeping the fuzzy bee colony alive.\nThey build up the wax where the honey will flow, Working as a team to help the hive grow.\nDeep in the cells where the nectar turns gold, Filling up treasure that's lovely to hold.\nEvery small drop is a gift for us all, Sweet honey saved for the winter so tall.\nSpread it on toast for a treat that is sweet, Nature provides such a wonderful eat.\nBusy ",
       "created_at": "2026-11-10T20:14:08.856227+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-11-16T06:39:55.427756+00:00"
     },
     {
       "video_id": "KZwspFBDd8c",
@@ -235,7 +245,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:07:24.071506+00:00"
+      "analytics_updated_at": "2026-11-16T06:39:55.415726+00:00"
     },
     {
       "video_id": "NBDSFl91Ix0",
@@ -273,7 +283,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:07:24.084917+00:00"
+      "analytics_updated_at": "2026-11-16T06:39:55.425518+00:00"
     },
     {
       "video_id": "dpoGIzVxX8A",
@@ -283,16 +293,16 @@
       "script_preview": "High in the gum tree, where breezes blow free, a fuzzy gray koala is sleeping for tea!\nWith ears round and soft and a nose made for sniff, he takes a deep nap in a dream-filled mid-tiff.\nHe wakes with a stretch and a yawn wide and slow, then searches for leaves in the branches below.\nMunch-munch go his teeth on the eucalyptus treat, the crunchiest snack that a koala can eat!\nScience says those leaves are toxic to many, but our friend stays healthy, yes, more than any.\nHe clings to the bark with a hug tight and strong, while singing the forest a sweet bedtime song.\nWith blink-blink of eyes as t",
       "created_at": "2026-11-12T20:33:21.548660+00:00",
       "analytics": {
-        "views": 4.0,
+        "views": 5.0,
         "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 37.0,
-        "averageViewPercentage": 63.080000000000005,
+        "averageViewDuration": 29.0,
+        "averageViewPercentage": 50.25999999999999,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-15T19:07:24.069670+00:00"
+      "analytics_updated_at": "2026-11-16T06:39:55.403630+00:00"
     },
     {
       "video_id": "VFLYZaUS6UY",
@@ -324,86 +334,101 @@
     },
     {
       "video_id": "SMu4p8clvSU",
-      "topic": "Adventurous baby black bear wins 2026 Courageous Cub Award",
+      "topic": "Brave Baby Bear Wins 2026 Courageous Cub Award! 🐻",
       "title": "Brave Baby Bear Wins 2026 Courageous Cub Award! 🐻",
-      "format": "short",
-      "script_preview": "Sniff-sniff, hop-hop, through the pine tree shade,\nA brave little bear cub stepped into the glade!\nIn big Tongass Forest he wandered a mile,\nWith furry black paws and a cheerful bright smile!\nOh no, where is mama? He ran down the track,\nHe wobbled too far and he couldn't turn back!\nHe asked funny tourists and lost his own way,\nBut using his super nose saved the whole day!\nSniff-sniff, twitch-twitch, through the tall piney trees,\nHis cute little nose caught a scent on the breeze!\nHe smelled mama Dory two miles through the air,\nAnd zoomed back to cuddle his brother right there!\nThe rangers all c",
-      "created_at": "2026-11-13T20:09:02.520683+00:00",
-      "analytics": {}
+      "format": "long",
+      "script_preview": "",
+      "created_at": "2026-11-13T20:09:25Z",
+      "analytics": {
+        "views": 2.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 39.0,
+        "averageViewPercentage": 64.75,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-16T06:39:55.422001+00:00"
     },
     {
       "video_id": "R4p3DzbWxwQ",
-      "topic": "Large bear caught stealing pumpkin from front porch of metro Atlanta home",
+      "topic": "The Bear and the Pumpkin Treat",
       "title": "The Bear and the Pumpkin Treat",
       "format": "short",
-      "script_preview": "A fuzzy bear walks on his padded soft feet, to look for a yummy and orange-round treat.\nHe finds a big pumpkin right there by the door, and decides he must hunt for a little bit more.\nHe gives it a nibble, a crunch, and a snap, then settles right down for a quick pumpkin nap.\nHe takes just a bite of the squash on the floor, then waddles away to the woods to explore.\nThe porch is now quiet, the pumpkin is gone, he heads to the trees at the break of the dawn.\nHe loves all the snacks that the forest provides, and back to his home in the shadows he glides.\nSo keep your home safe if a bear comes to",
-      "created_at": "2026-11-13T20:14:07.798422+00:00",
-      "analytics": {}
+      "script_preview": "",
+      "created_at": "2026-11-13T20:14:31Z",
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "B1HgnyDXUhs",
-      "topic": "Eight black bear cubs released after months of care in Snohomish",
+      "topic": "Eight Bear Cubs Go Home! 🐾 | Snohomish Rhyme",
       "title": "Eight Bear Cubs Go Home! 🐾 | Snohomish Rhyme",
       "format": "short",
-      "script_preview": "Eight little black bear cubs, stomp-stomp-stomp! Playing in Snohomish, romp-romp-romp!\nPAWS wildlife rescue cared for them each day, Helping little bear cubs grow and play!\nMunching juicy berries, crunch-crunch-chew, Growing big and strong under skies so blue!\nClimbing tall green pine trees, high-high-high, Reaching for the stars up in the sky!\nMonths of gentle care are complete today, Eight brave bear cubs happily run away!\nSplashing in the river, splash-splash-fun, Running through the forest in the sun!\nBack home in the wild woods where they belong, Singing with the trees a sweet forest song",
-      "created_at": "2026-11-14T18:38:48.410911+00:00",
-      "analytics": {}
+      "script_preview": "",
+      "created_at": "2026-11-14T18:39:07Z",
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "OX1rTX3nWrQ",
-      "topic": "'Hundreds and hundreds of bones': In a hidden Alpine cave, a mountaineer discovers an Ice Age cave bear graveyard",
+      "topic": "The Secret Bear Cave Discovery",
       "title": "The Secret Bear Cave Discovery",
       "format": "short",
-      "script_preview": "High on a peak where the chilly winds blow, a secret is hidden deep under the snow!\nA climber goes walking with tip-toe and tap,\nhe finds a dark cave on the edge of the map!\nInside are the treasures from long, long ago,\nwhere giant bear shadows would once safely go!\nHe creeps through the tunnel with twinkle and light,\na cave full of fossils all tucked away tight!\nWith hundreds of bones in a pile so wide, the bears had a home where they rested inside!\nThey slept through the winter with heavy-eyed blink, while stars in the sky gave a soft, sparkly wink!\nSo hush now, my darling, and drift off to ",
-      "created_at": "2026-11-14T18:42:26.579669+00:00",
-      "analytics": {}
+      "script_preview": "",
+      "created_at": "2026-11-14T18:42:51Z",
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "Bs0UcmyqSM4",
-      "topic": "The Resurgence of Rhyme",
+      "topic": "The Resurgence of Rhyme: Why Patterns Stick in Our Modern Minds",
       "title": "The Resurgence of Rhyme: Why Patterns Stick in Our Modern Minds",
       "format": "long",
-      "script_preview": "Have you ever paused to consider why certain clever advertising slogans or rhythmic song lyrics seem to get permanently lodged in your brain for decades, while other vital information slips away almost instantly? The architecture of human memory clearly favors structured, repeating sound patterns over plain prose.\nThis phenomenon reveals how our cognitive processing units are specifically primed to prioritize patterned input. By examining the mechanics of rhyme, we can unlock strategies to make communication more memorable and effective, ensuring that our key messages penetrate the noise of th",
-      "created_at": "2026-11-14T19:15:06.821463+00:00",
-      "analytics": {}
+      "script_preview": "",
+      "created_at": "2026-11-14T19:15:50Z",
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "VuQ8zozlK2U",
-      "topic": "The Munchkin Surprise: A Sweet Delivery Tale",
+      "topic": "Little Munchkin: Raleigh couple delivers baby in Dunkin' Donuts parking lot before ambulance arrives",
       "title": "The Munchkin Surprise: A Sweet Delivery Tale",
       "format": "short",
-      "script_preview": "",
-      "created_at": "2026-11-15T07:02:39Z",
-      "analytics": {},
-      "source": "youtube_sync"
+      "script_preview": "A tiny bear cub in a car seat so bright, began to arrive in the soft morning light!\nThe parking lot hummed with a joyful sound, as a new little munchkin was finally found!\nThe car came to stop with a hop and a skip, before any ambulance finished its trip!\nIn the donut shop lot where the big sirens wait, the baby arrived at a marvelous rate!\nNo doctor was near as the sun began glow, the littlest munchkin is watching us grow!\nThe parking lot flowers are dancing so sweet, to welcome the baby who couldn't be beat!\nA miracle happened right here in the day, so hug your dear ones in a magical way!\nWe",
+      "created_at": "2026-11-15T07:01:56.840322+00:00",
+      "analytics": {}
     },
     {
       "video_id": "otePFy3aH1c",
-      "topic": "Chirp Chirp! Sing Along Birdie Rhyme",
+      "topic": "The Maine Bird Atlas takes wing | Nature Connects",
       "title": "Chirp Chirp! Sing Along Birdie Rhyme",
-      "format": "long",
+      "format": "short",
+      "script_preview": "Chirp-chirp sings the bluebird high up in the tree! Flap-flap go his shiny wings so wild and free!\nHop-hop goes the robin on the garden ground, looking for a wiggly worm that he just found!\nTweet-tweet calls the cardinal in his feather coat! Music floats like fairy magic from his tiny throat!\nPeck-peck goes the woodpecker knocking on the bark! Birdie eyes are curious from sunrise until dark!\nSplash-splash goes the duckling swimming in the pond! Of the happy sunny day he is super fond!\nSwoop-swoop goes the little owl flying through the night, watching every shining star glowing soft and bright!",
+      "created_at": "2026-11-15T13:04:49.102900+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "yYDT-0TF8EE",
+      "topic": "Why Songs & Rhymes Calm Us Down!",
+      "title": "Why Songs & Rhymes Calm Us Down!",
+      "format": "short",
       "script_preview": "",
-      "created_at": "2026-11-15T13:05:39Z",
+      "created_at": "2026-11-15T19:16:38Z",
       "analytics": {},
       "source": "youtube_sync"
     },
     {
-      "video_id": "yYDT-0TF8EE",
-      "topic": "Co-Regulation: We Don’t Outgrow the Rhyme and the Rhythm",
-      "title": "Why Songs & Rhymes Calm Us Down!",
-      "format": "short",
-      "script_preview": "Hop-hop goes the bunny on a sunny meadow lane,\nSinging little rhythms to wash away the rain!\nTwinkle-twinkle stars glow as birds begin to peep,\nHumming gentle lullabies to help us fall asleep!\nSoft heartbeats are dancing in a steady steady beat,\nMatching up together as our tiny pulses meet!\nWhen we hear a melody our breathing slows down low,\nFeeling safe and cozy everywhere that we may go!\nOne song for a baby makes the crying fade away,\nTwice as calm and happy for the rest of the day!\nSplash-splash goes the duckling in a pond of crystal blue,\nSharing happy rhythms that are made for me and you!",
-      "created_at": "2026-11-15T19:16:15.343094+00:00",
-      "analytics": {}
-    },
-    {
       "video_id": "6Uk_gaK6QVU",
-      "topic": "Nature: Sea lions in La Jolla, Calif.",
+      "topic": "La Jolla Sea Lions: A Singing Nature Rhyme",
       "title": "La Jolla Sea Lions: A Singing Nature Rhyme",
       "format": "short",
-      "script_preview": "On sun-warmed rocks by the deep blue sea, the playful lions splash with glee!\nWatch them wiggle and slide on the sand, the happiest friends in all the land!\nSplish-splash they dive in the cool, clear tide, with nowhere to run and nowhere to hide!\nBark-bark they giggle and call to their crew, under the sky of California blue!\nThey snack on a fish with a yummy crunch, munch-munch goes the belly at time for lunch!\nSunbeams twinkle on whiskers so bright, glowing with warmth in the morning light!\nWe share the shore so let's be kind, leaving no trash or mess behind!\nOur gentle hands keep the beach s",
-      "created_at": "2026-11-15T19:19:57.708311+00:00",
-      "analytics": {}
+      "script_preview": "",
+      "created_at": "2026-11-15T19:20:27Z",
+      "analytics": {},
+      "source": "youtube_sync"
     }
   ],
   "topics": [
@@ -544,60 +569,65 @@
       "source": "youtube_sync"
     },
     {
-      "topic": "Adventurous baby black bear wins 2026 Courageous Cub Award",
+      "topic": "Brave Baby Bear Wins 2026 Courageous Cub Award! 🐻",
       "title": "Brave Baby Bear Wins 2026 Courageous Cub Award! 🐻",
-      "format": "short",
-      "created_at": "2026-11-13T20:09:02.520683+00:00"
+      "format": "long",
+      "created_at": "2026-11-13T20:09:25Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "Large bear caught stealing pumpkin from front porch of metro Atlanta home",
+      "topic": "The Bear and the Pumpkin Treat",
       "title": "The Bear and the Pumpkin Treat",
       "format": "short",
-      "created_at": "2026-11-13T20:14:07.798422+00:00"
+      "created_at": "2026-11-13T20:14:31Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "Eight black bear cubs released after months of care in Snohomish",
+      "topic": "Eight Bear Cubs Go Home! 🐾 | Snohomish Rhyme",
       "title": "Eight Bear Cubs Go Home! 🐾 | Snohomish Rhyme",
       "format": "short",
-      "created_at": "2026-11-14T18:38:48.410911+00:00"
+      "created_at": "2026-11-14T18:39:07Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "'Hundreds and hundreds of bones': In a hidden Alpine cave, a mountaineer discovers an Ice Age cave bear graveyard",
+      "topic": "The Secret Bear Cave Discovery",
       "title": "The Secret Bear Cave Discovery",
       "format": "short",
-      "created_at": "2026-11-14T18:42:26.579669+00:00"
+      "created_at": "2026-11-14T18:42:51Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "The Resurgence of Rhyme",
+      "topic": "The Resurgence of Rhyme: Why Patterns Stick in Our Modern Minds",
       "title": "The Resurgence of Rhyme: Why Patterns Stick in Our Modern Minds",
       "format": "long",
-      "created_at": "2026-11-14T19:15:06.821463+00:00"
+      "created_at": "2026-11-14T19:15:50Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "The Munchkin Surprise: A Sweet Delivery Tale",
+      "topic": "Little Munchkin: Raleigh couple delivers baby in Dunkin' Donuts parking lot before ambulance arrives",
       "title": "The Munchkin Surprise: A Sweet Delivery Tale",
       "format": "short",
-      "created_at": "2026-11-15T07:02:39Z",
-      "source": "youtube_sync"
+      "created_at": "2026-11-15T07:01:56.840322+00:00"
     },
     {
-      "topic": "Chirp Chirp! Sing Along Birdie Rhyme",
+      "topic": "The Maine Bird Atlas takes wing | Nature Connects",
       "title": "Chirp Chirp! Sing Along Birdie Rhyme",
-      "format": "long",
-      "created_at": "2026-11-15T13:05:39Z",
-      "source": "youtube_sync"
+      "format": "short",
+      "created_at": "2026-11-15T13:04:49.102900+00:00"
     },
     {
-      "topic": "Co-Regulation: We Don’t Outgrow the Rhyme and the Rhythm",
+      "topic": "Why Songs & Rhymes Calm Us Down!",
       "title": "Why Songs & Rhymes Calm Us Down!",
       "format": "short",
-      "created_at": "2026-11-15T19:16:15.343094+00:00"
+      "created_at": "2026-11-15T19:16:38Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "Nature: Sea lions in La Jolla, Calif.",
+      "topic": "La Jolla Sea Lions: A Singing Nature Rhyme",
       "title": "La Jolla Sea Lions: A Singing Nature Rhyme",
       "format": "short",
-      "created_at": "2026-11-15T19:19:57.708311+00:00"
+      "created_at": "2026-11-15T19:20:27Z",
+      "source": "youtube_sync"
     }
   ]
 }

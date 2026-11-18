@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-14T18:34:21.193180+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.363320+00:00"
     },
     {
       "video_id": "_sd7bLRor_o",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-14T18:34:21.209024+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.417641+00:00"
     },
     {
       "video_id": "yPUU3tQ6MTU",
@@ -57,7 +57,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.207907+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.414099+00:00"
     },
     {
       "video_id": "-WXARpXcqL4",
@@ -76,7 +76,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.189809+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.341323+00:00"
     },
     {
       "video_id": "EeviDSBWxZ8",
@@ -95,7 +95,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.212376+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.432213+00:00"
     },
     {
       "video_id": "VwzE41erxjY",
@@ -114,7 +114,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.211259+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.426578+00:00"
     },
     {
       "video_id": "N1fheI9ReKQ",
@@ -134,7 +134,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-14T18:34:21.180865+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.326411+00:00"
     },
     {
       "video_id": "tXzKJN-Sxds",
@@ -153,7 +153,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.206788+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.402487+00:00"
     },
     {
       "video_id": "gXh8hCzY7Vg",
@@ -173,7 +173,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-14T18:34:21.210155+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.419654+00:00"
     },
     {
       "video_id": "rOXhektjpHg",
@@ -193,7 +193,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-14T18:34:21.204571+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.384511+00:00"
     },
     {
       "video_id": "bT9UdwBKLks",
@@ -213,7 +213,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-14T18:34:21.205664+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.396793+00:00"
     },
     {
       "video_id": "wDtG3Hpjs6s",
@@ -233,7 +233,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-14T18:34:21.213472+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.436249+00:00"
     },
     {
       "video_id": "RurypNkFZeY",
@@ -243,17 +243,17 @@
       "script_preview": "",
       "created_at": "2026-09-14T18:21:55Z",
       "analytics": {
-        "views": 3.0,
+        "views": 1.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 53.0,
-        "averageViewPercentage": 108.5,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-14T18:34:21.202328+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.411071+00:00"
     },
     {
       "video_id": "EiZc33RD3Rg",
@@ -263,17 +263,17 @@
       "script_preview": "",
       "created_at": "2026-09-15T12:14:11Z",
       "analytics": {
-        "views": 3.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 81.0,
-        "averageViewPercentage": 125.54,
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-14T18:34:21.200078+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.400473+00:00"
     },
     {
       "video_id": "5R3YR8lO-hQ",
@@ -283,16 +283,16 @@
       "script_preview": "Raindrops strike exposed mountain bedrock, dissolving tiny amounts of mineral material. Rivers carry these dissolved ions across the landscape toward the sea. NOAA reports rain and rivers dissolve rock minerals and carry ions to the ocean. Water leaves the ocean through evaporation while dissolved salts remain behind. Ocean circulation slowly mixes and concentrates these elements over vast periods. Seafloor hydrothermal activity adds further dissolved material into the deep basins. Chemical processes and sediments remove some ions to balance the composition. The USGS notes water cycles move li",
       "created_at": "2026-09-15T15:22:38.583859+00:00",
       "analytics": {
-        "views": 4.0,
-        "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 162.0,
-        "averageViewPercentage": 312.37,
+        "views": 0.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.192057+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.428596+00:00"
     },
     {
       "video_id": "yFb4e4FzPrk",
@@ -302,16 +302,16 @@
       "script_preview": "Why design a spacecraft that’s meant to burn up? As a vehicle screams back into Earth's atmosphere, it compresses air into a superheated plasma. Temperatures spike into the thousands of degrees. Instead of fighting this, engineers embrace the fire. They use ablative materials on the heat shield. These materials are designed to char, melt, and erode in a controlled cycle. This phase change physically carries intense heat away from the craft, acting as a sacrificial barrier. It’s an engineered self-destruction. The underlying structure remains shielded, protected by the very material that is van",
       "created_at": "2026-09-16T14:46:15.466236+00:00",
       "analytics": {
-        "views": 6.0,
-        "estimatedMinutesWatched": 14.0,
-        "averageViewDuration": 878.0,
-        "averageViewPercentage": 1909.41,
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.185339+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.408540+00:00"
     },
     {
       "video_id": "BaavNS7Uw_4",
@@ -321,16 +321,16 @@
       "script_preview": "The sky overhead is brilliantly blue, but as the sun dips low, that same air ignites into deep crimson. Why does the same atmosphere paint two completely opposite colors? Sunlight appears white to our eyes, but it holds every color of the visible spectrum. As this light hits Earth's upper atmosphere, tiny nitrogen and oxygen molecules scatter the shorter, high-energy blue wavelengths in every direction across the sky. This process is known as Rayleigh scattering. But near sunrise and sunset, sunlight must travel a much longer path through a thicker layer of the atmosphere. This extreme distanc",
       "created_at": "2026-09-17T14:32:11.016421+00:00",
       "analytics": {
-        "views": 6.0,
-        "estimatedMinutesWatched": 7.0,
-        "averageViewDuration": 425.0,
-        "averageViewPercentage": 708.93,
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.183092+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.405522+00:00"
     },
     {
       "video_id": "SDh0T-bNHK8",
@@ -340,16 +340,16 @@
       "script_preview": "A submarine is essentially a bubble in a graveyard. At the surface, you face one atmosphere of pressure. But descend into the hadal zone, and you’re beneath the weight of miles of water. NOAA reports pressures exceeding one thousand times sea level. The ocean doesn’t just push; it permeates. If your vessel contains any air gap, the ocean exploits the difference in density. These vessels rely on hyper-engineered geometry to resist the collapse. It is a fragile equilibrium. We are not designed to exist in the abyss; we are merely visitors who have calculated the cost of entry, knowing that one f",
       "created_at": "2026-09-17T14:49:59.130644+00:00",
       "analytics": {
-        "views": 3.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 74.0,
-        "averageViewPercentage": 182.56,
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.197810+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.390556+00:00"
     },
     {
       "video_id": "Op35DrqSUHg",
@@ -359,16 +359,16 @@
       "script_preview": "A split-second flash in our dark sky achieves a temperature dwarfing our host star's surface. How does this brief atmospheric discharge momentarily outshine that stellar furnace? While our Sun’s visible surface radiates at an estimated ten thousand degrees Fahrenheit, the National Weather Service explains that a lightning channel can heat to around fifty thousand degrees—five times hotter. This extreme temperature is born from raw electrical resistance, as millions of volts force their way through the insulating atmosphere, ripping gas molecules into superheated plasma. This sudden, violent th",
       "created_at": "2026-09-18T11:52:21.956778+00:00",
       "analytics": {
-        "views": 4.0,
-        "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 77.0,
-        "averageViewPercentage": 134.39,
+        "views": 0.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.190938+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.423082+00:00"
     },
     {
       "video_id": "G-LNKStFd7U",
@@ -378,16 +378,16 @@
       "script_preview": "Why does the ocean rhythmically rise and fall, as if the planet itself is breathing? It is not a pulse of life, but a pull of gravity. The Moon acts as a celestial anchor, its gravitational force stronger on the side of Earth facing it, redistributing water into vast, invisible bulges. As Earth rotates, we move through these bulges, experiencing high tides. The Sun acts as a secondary, variable force that amplifies or dampens this motion. Yet, this is not uniform; local coastline shapes and ocean depths refract this energy, making tidal timing and height unique to every shore. We are locked in",
       "created_at": "2026-09-18T16:46:49.142713+00:00",
       "analytics": {
-        "views": 10.0,
-        "estimatedMinutesWatched": 6.0,
-        "averageViewDuration": 129.0,
-        "averageViewPercentage": 301.83,
+        "views": 2.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 1.0,
+        "averageViewPercentage": 2.33,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.179727+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.382331+00:00"
     },
     {
       "video_id": "6yh1NsZCPsQ",
@@ -397,16 +397,16 @@
       "script_preview": "Every night, the Moon seems to grow and shrink, carving itself into crescents and circles. It looks like a shape-shifter, but the Moon remains a constant sphere. Its phases are a game of perspective. Sunlight always illuminates one hemisphere of the Moon, while the other remains dark. As it orbits Earth, our viewing angle shifts. We aren't seeing the Moon change shape; we are seeing different portions of its sunlit side. When the face turned toward us is fully lit, we see a full moon; when the illuminated side faces away, it is the new moon. This sequence is not Earth’s shadow casting over the",
       "created_at": "2026-09-19T18:18:21.650384+00:00",
       "analytics": {
-        "views": 3.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 81.0,
-        "averageViewPercentage": 184.18,
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.198932+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.393743+00:00"
     },
     {
       "video_id": "--3apYN5otg",
@@ -425,7 +425,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.195570+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.369924+00:00"
     },
     {
       "video_id": "HjLB3AwxGSk",
@@ -444,7 +444,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.201214+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.374011+00:00"
     },
     {
       "video_id": "_FozGQGjT74",
@@ -454,7 +454,7 @@
       "script_preview": "Why do flat-plain rivers rarely flow straight? Even dug, perfectly straight channels eventually bend. The slightest bed or bank irregularity disrupts uniform flow, pushing the fastest current aside. This erodes a steep outer cut bank, while slower inner water deposits sediment into a shallow point bar. This forces the channel to migrate sideways. Over decades, gentle curves become dramatic S-bends. Eventually, neighboring bends leave only a narrow neck of land. During heavy floods, high-volume water cuts straight through, taking the shorter, straighter course, abandoning the loop as an isolate",
       "created_at": "2026-10-07T12:56:42.200016+00:00",
       "analytics": {
-        "views": 5.0,
+        "views": 4.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 13.0,
         "averageViewPercentage": 22.01,
@@ -463,7 +463,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.188690+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.344352+00:00"
     },
     {
       "video_id": "Rylu0UCrO4w",
@@ -482,7 +482,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.203438+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.378782+00:00"
     },
     {
       "video_id": "lxeeZUi6oEg",
@@ -492,17 +492,17 @@
       "script_preview": "",
       "created_at": "2026-10-10T17:18:44Z",
       "analytics": {
-        "views": 13.0,
-        "estimatedMinutesWatched": 5.0,
-        "averageViewDuration": 99.0,
-        "averageViewPercentage": 211.94000000000003,
+        "views": 6.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 3.0,
+        "averageViewPercentage": 6.38,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-14T18:34:21.175196+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.330432+00:00"
     },
     {
       "video_id": "SN6_j-wBvuE",
@@ -512,17 +512,17 @@
       "script_preview": "",
       "created_at": "2026-10-10T17:26:25Z",
       "analytics": {
-        "views": 6.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 29.0,
-        "averageViewPercentage": 53.76,
-        "likes": 1.0,
+        "views": 4.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 2.0,
+        "averageViewPercentage": 4.91,
+        "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-14T18:34:21.186455+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.349575+00:00"
     },
     {
       "video_id": "OhnIA4OlnXs",
@@ -541,7 +541,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.181982+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.338301+00:00"
     },
     {
       "video_id": "kvotNIjf1Y8",
@@ -551,16 +551,16 @@
       "script_preview": "Why does your compass point to a destination that doesn't technically exist? If you rely on the needle for true geographic heading, you may drift miles off course. The needle does not track Earth's rotational axis; it aligns with local magnetic force lines generated by the flow of molten iron deep within the planet. This angular difference is magnetic declination. Because Earth’s interior is in constant, dynamic motion, this declination is not fixed—it varies significantly based on your specific global coordinates and the current date. Global magnetic models must be updated continuously to acc",
       "created_at": "2026-10-10T19:09:51.873485+00:00",
       "analytics": {
-        "views": 3.0,
+        "views": 1.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 45.0,
-        "averageViewPercentage": 104.03999999999999,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.196674+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.387538+00:00"
     },
     {
       "video_id": "a70qCFSCLbs",
@@ -570,7 +570,7 @@
       "script_preview": "Nature doesn't carve these monoliths; it shrinks them into existence. Look at the jagged giants of Devils Postpile. How does molten chaos freeze into perfect geometric symmetry? As lava flows cool, they solidify from their boundaries inward, generating massive thermal stress. To relieve this tension, the cooling rock fractures. These cracks propagate deep into the flow, meeting at 120-degree angles to maximize efficiency. This creates a network of polygonal columns. While most form hexagonal patterns, individual columns can display three to seven sides depending on cooling rates. It is not int",
       "created_at": "2026-10-14T12:35:20.052493+00:00",
       "analytics": {
-        "views": 5.0,
+        "views": 4.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 0.0,
         "averageViewPercentage": 0.0,
@@ -579,7 +579,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.187598+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.366874+00:00"
     },
     {
       "video_id": "NOj4lQEiw1c",
@@ -589,7 +589,7 @@
       "script_preview": "Why does a cloud sometimes drift at our feet instead of floating in the sky? It is not gravity pulling vapor down. Fog is simply a cloud with no elevation. When humid air hits its dew point at ground level, water vapor condenses into visible droplets. On clear nights, heat radiates from the earth into space, cooling the air until it can no longer hold moisture. Terrain dictates the shape. Basins trap this cold, dense air, while slopes force it to rise and cool. It is a delicate balance of temperature, humidity, and airflow. If conditions shift, it dissipates. We are not walking through a super",
       "created_at": "2026-10-14T14:03:44.558225+00:00",
       "analytics": {
-        "views": 4.0,
+        "views": 3.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 0.0,
         "averageViewPercentage": 0.0,
@@ -598,7 +598,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.194431+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.376084+00:00"
     },
     {
       "video_id": "wueMOwf3mik",
@@ -608,16 +608,16 @@
       "script_preview": "Rivers are surgical, focusing energy to cut narrow V-shaped canyons. Glaciers act differently. They are heavy, broad, and blunt, using embedded rock fragments like industrial sandpaper to grind bedrock. While rivers cut downward, glaciers excavate both the floor and the steep valley walls, straightening the path into a wide trough. But geologists advise caution; not every valley is purely the work of ice. Many represent a composite memory, where initial stream-carved terrain was later aggressively modified by glaciers. By observing features like moraines and hanging valleys, we see a layered h",
       "created_at": "2026-10-15T12:13:02.798898+00:00",
       "analytics": {
-        "views": 13.0,
+        "views": 9.0,
         "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 34.0,
-        "averageViewPercentage": 73.03,
+        "averageViewDuration": 61.0,
+        "averageViewPercentage": 130.1,
         "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.174078+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.322818+00:00"
     },
     {
       "video_id": "uGgQ_Xhczsc",
@@ -627,16 +627,16 @@
       "script_preview": "Your trees aren't changing colors; they are stripping away a mask. All summer, vibrant green chlorophyll dominates the leaf, powering life through photosynthesis. But as daylight wanes and temperatures shift, the cellular factory shuts down. Chlorophyll production halts. The green pigment breaks down, finally exposing carotenoids—yellows and oranges that were already hiding in the leaf structure. Some trees even synthesize new red anthocyanins for chemical protection. This display is not a single, universal shift. Light, moisture, and unique species genetics dictate the final hue. Nature does ",
       "created_at": "2026-10-15T12:49:50.843494+00:00",
       "analytics": {
-        "views": 11.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 18.0,
-        "averageViewPercentage": 43.11,
+        "views": 4.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 8.0,
+        "averageViewPercentage": 20.01,
         "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.178620+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.346930+00:00"
     },
     {
       "video_id": "Fde4y2jHOts",
@@ -646,16 +646,16 @@
       "script_preview": "On Earth, our sunsets bleed into vibrant reds. On Mars, the horizon turns a paradoxical blue. This isn't a digital filter or a camera error. It is a fundamental shift in how sunlight interacts with the Martian environment. Our home sky scatters light in ways that favor red wavelengths at dusk. But Mars is different. Its atmosphere is thin, suspended with fine, jagged dust particles. These microscopic grains filter incoming sunlight. Blue light penetrates more efficiently through the air. Red light is scattered away. As the sun sinks low, the path through the dust lengthens. This deepens that e",
       "created_at": "2026-10-16T12:01:04.219947+00:00",
       "analytics": {
-        "views": 51.0,
-        "estimatedMinutesWatched": 9.0,
-        "averageViewDuration": 33.0,
-        "averageViewPercentage": 68.87,
+        "views": 11.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 20.0,
+        "averageViewPercentage": 43.33,
         "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.172932+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.319459+00:00"
     },
     {
       "video_id": "VwzE41erxjY",
@@ -964,7 +964,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.167847+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.280836+00:00"
     },
     {
       "video_id": "o03IgW76gqY",
@@ -974,7 +974,7 @@
       "script_preview": "Slamming the pedal at two hundred miles per hour makes Formula 1 brake discs glow incandescent red at one thousand degrees Celsius. How do these rotors survive extreme heat without shattering? The secret begins not with rigid metal, but soft carbon-fiber fabric resembling material from a fashion atelier. Official supplier Brembo stacks roughly forty carbon layers inside a press called the Needler. Thousands of needles puncture and bind the rotating fabric into an ultra-dense fibrous ring. Uniquely, the brake pads are built differently— stacked like sheets of paper without any needle stitching.",
       "created_at": "2026-11-08T08:45:50.469996+00:00",
       "analytics": {
-        "views": 1247.0,
+        "views": 1248.0,
         "estimatedMinutesWatched": 212.0,
         "averageViewDuration": 18.0,
         "averageViewPercentage": 37.54,
@@ -983,7 +983,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.169402+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.285058+00:00"
     },
     {
       "video_id": "YFFtkjvzukw",
@@ -1002,7 +1002,7 @@
         "shares": 1.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.171794+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.311276+00:00"
     },
     {
       "video_id": "2kTuosg-wgM",
@@ -1021,7 +1021,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.170662+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.308255+00:00"
     },
     {
       "video_id": "EfJg1GDmKTk",
@@ -1040,7 +1040,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.184217+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.334083+00:00"
     },
     {
       "video_id": "0q-37YxUNg8",
@@ -1050,16 +1050,16 @@
       "script_preview": "Why does blue sky turn red at sunset? Sunlight carries every visible color wavelength. Light travels in distinct electromagnetic waves. Blue light travels in short, tight waves. Red light travels in long, wide waves. Earth's atmosphere holds tiny gas molecules. These molecules scatter short blue light easily. Physics calls this phenomenon Rayleigh scattering. At noon, sunlight takes a short atmospheric route. Scattered blue light fills the daytime dome. At dusk, sunlight strikes at a low angle. Sunlight must traverse a much longer air path. Extended distance scatters blue light completely away",
       "created_at": "2026-11-09T12:05:08.877770+00:00",
       "analytics": {
-        "views": 12.0,
+        "views": 13.0,
         "estimatedMinutesWatched": 9.0,
-        "averageViewDuration": 141.0,
-        "averageViewPercentage": 231.70999999999998,
+        "averageViewDuration": 115.0,
+        "averageViewPercentage": 189.2,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-14T18:34:21.176346+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.313651+00:00"
     },
     {
       "video_id": "ijSjV3LSWvM",
@@ -1069,7 +1069,7 @@
       "script_preview": "",
       "created_at": "2026-11-09T12:38:28Z",
       "analytics": {
-        "views": 11.0,
+        "views": 12.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 6.0,
         "averageViewPercentage": 10.03,
@@ -1079,33 +1079,45 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-14T18:34:21.177477+00:00"
+      "analytics_updated_at": "2026-11-15T06:35:32.316440+00:00"
     },
     {
       "video_id": "WnRH0W52X8o",
-      "topic": "Why the Moon Moves Earth's Oceans",
+      "topic": "Why the Moon Pulls Earth's Oceans",
       "title": "Why the Moon Pulls Earth's Oceans",
       "format": "short",
-      "script_preview": "Billions of tons of seawater rise daily. Coasts flood, then drain hours later. Yet the engine sits in deep space. The Moon moves oceans across vacuum. How does distant rock pull liquid Earth? Gravity weakens over distance. Lunar pull hits hardest on Earth’s near side. Water lifts into a massive bulge. Surprisingly, a twin bulge forms opposite it. The Moon pulls Earth away from far water. Earth rotates beneath these fixed bulges. Coasts pass through, creating high tides twice daily. Solar gravity modifies this pull. Yet space pull alone does not dictate height. Coastline shape and depth alter l",
-      "created_at": "2026-11-13T11:39:57.169207+00:00",
-      "analytics": {}
+      "script_preview": "",
+      "created_at": "2026-11-13T11:40:30Z",
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "8ngSj-m7ttc",
-      "topic": "Why Rivers Carve S-Bends",
+      "topic": "Why Rivers Must Meander",
       "title": "Why Rivers Must Meander",
       "format": "short",
-      "script_preview": "A river is never a straight path. It is a restless, shifting machine. As water travels, it moves faster toward the outside of every bend. This speed difference forces the river to eat away at its outer bank... ...while depositing sediment on the inside curve. Over time, this dance of erosion and growth pushes the channel sideways. In some spots, neighboring loops eventually collide... ...cutting off the path entirely to create an oxbow lake. This movement is not uniform; the rate depends on the ground beneath the water and the sheer force of the flow. A river is always searching for a shorter ",
-      "created_at": "2026-11-13T11:48:34.514911+00:00",
-      "analytics": {}
+      "script_preview": "",
+      "created_at": "2026-11-13T11:48:59Z",
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "80JiPEGG1tc",
-      "topic": "Why Autumn Leaves Reveal Hidden Colors",
+      "topic": "Why Leaves Change Color: The Hidden Chemistry",
       "title": "Why Leaves Change Color: The Hidden Chemistry",
       "format": "long",
-      "script_preview": "Every summer, the forest functions as a highly efficient, high-performance chemical engine. A vast sea of deep green foliage captures radiant solar energy, driving the continuous biological growth of the tree through the intense, complex process of photosynthesis. This vibrant green appearance is dictated by chlorophyll, a primary pigment so dominant that it effectively masks other vital compounds residing within the leaf structure throughout the entire spring and summer growing season, serving as a biological curtain. As autumn approaches, the regional geography of the forest begins to shift ",
-      "created_at": "2026-11-13T12:08:55.246201+00:00",
+      "script_preview": "",
+      "created_at": "2026-11-13T12:09:32Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "hGzYuPDoo-U",
+      "topic": "Why Rivers Carve S-Bends",
+      "title": "Why Rivers Wander",
+      "format": "short",
+      "script_preview": "Why do rivers naturally abandon straight lines to carve meandering, snake-like paths? It starts with water velocity. As a current flows, it hits a curve and accelerates toward the outer bank. This increased speed triggers lateral erosion, carving into the soil. Simultaneously, on the inner curve, flow slows down, forcing the water to drop its sediment load. This creates a point bar. Over years, the outer bank continues to recede while the inner bank advances, forcing the channel to migrate sideways across the terrain. If a loop pinches off, it creates an oxbow lake. This movement is not unifor",
+      "created_at": "2026-11-15T06:52:52.162365+00:00",
       "analytics": {}
     }
   ],
@@ -1368,22 +1380,31 @@
       "source": "youtube_sync"
     },
     {
-      "topic": "Why the Moon Moves Earth's Oceans",
+      "topic": "Why the Moon Pulls Earth's Oceans",
       "title": "Why the Moon Pulls Earth's Oceans",
       "format": "short",
-      "created_at": "2026-11-13T11:39:57.169207+00:00"
+      "created_at": "2026-11-13T11:40:30Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Why Rivers Must Meander",
+      "title": "Why Rivers Must Meander",
+      "format": "short",
+      "created_at": "2026-11-13T11:48:59Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "Why Leaves Change Color: The Hidden Chemistry",
+      "title": "Why Leaves Change Color: The Hidden Chemistry",
+      "format": "long",
+      "created_at": "2026-11-13T12:09:32Z",
+      "source": "youtube_sync"
     },
     {
       "topic": "Why Rivers Carve S-Bends",
-      "title": "Why Rivers Must Meander",
+      "title": "Why Rivers Wander",
       "format": "short",
-      "created_at": "2026-11-13T11:48:34.514911+00:00"
-    },
-    {
-      "topic": "Why Autumn Leaves Reveal Hidden Colors",
-      "title": "Why Leaves Change Color: The Hidden Chemistry",
-      "format": "long",
-      "created_at": "2026-11-13T12:08:55.246201+00:00"
+      "created_at": "2026-11-15T06:52:52.162365+00:00"
     }
   ]
 }
