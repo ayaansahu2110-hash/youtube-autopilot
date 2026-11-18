@@ -508,7 +508,7 @@ class GTA6HubEditorialSystem:
         return bool(re.search(
             r"\b(?:GTA|grand theft auto|GTA\s*6|GTA\s*VI|rockstar|leonida|vice city|jason|lucia"
             r"|gameplay|easter egg|map|secret|hidden|trick|tip|guide|comparison|graphics"
-            r"|character|mission|update|patch|detail|physics|funny|moments|reaction)\\b",
+            r"|character|mission|update|patch|detail|physics|funny|moments|reaction)\b",
             title, re.IGNORECASE,
         ))
 

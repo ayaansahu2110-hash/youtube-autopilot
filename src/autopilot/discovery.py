@@ -531,7 +531,7 @@ class TopicDiscovery:
         return candidates[:max_candidates]
 
     def _queries(self) -> list[str]:
-        terms = list(self.settings.topic_query_list)
+        terms = list(self.settings.topic_query_list[:5])
         profile = self.settings.channel_profile
         if profile == "bytevexa":
             terms.extend(
@@ -560,7 +560,7 @@ class TopicDiscovery:
             terms.extend(["GTA 6 hidden secrets", "GTA 6 Leonida map guide", "GTA 6 tips and tricks", "GTA 6 Easter eggs", "GTA 6 gameplay mechanics"])
 
         terms.extend(self.state.performance_terms(limit=6))
-        return list(dict.fromkeys(terms))[:14]
+        return list(dict.fromkeys(terms))[:6]
 
     def _news_search(self, query: str) -> list[dict]:
         items = self._rss_search(
