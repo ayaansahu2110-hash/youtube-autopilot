@@ -1539,6 +1539,12 @@ class HybridVisualDirector:
                 "office", "laptop", "meeting", "desk", "computer", "phone",
                 "traffic", "car", "subway", "supermarket", "shopping", "gym",
             ]
+        if profile == "gta6hub":
+            return [
+                "office", "laptop", "meeting", "desk", "business", "suit",
+                "classroom", "student", "teacher", "kitchen", "cooking",
+                "doctor", "hospital", "clinic", "supermarket", "shopping",
+            ]
         return ["split-screen", "diagram", "typography", "text-graphic"]
 
     def _channel_positives(self) -> list[str]:
@@ -1579,5 +1585,11 @@ class HybridVisualDirector:
                 "stars", "galaxy", "night", "sky", "milky-way", "moon", "sun",
                 "nebula", "space", "candle", "ocean", "aurora", "mountains",
                 "sunrise", "nature",
+            ]
+        if profile == "gta6hub":
+            return [
+                "miami", "florida", "supercar", "sports-car", "neon", "sunset",
+                "palm-trees", "speedboat", "highway", "night-city", "drone",
+                "aerial", "skyline", "luxury", "beach", "ocean", "police", "chase",
             ]
         return ["workflow", "feature", "interface", "software", "screen"]

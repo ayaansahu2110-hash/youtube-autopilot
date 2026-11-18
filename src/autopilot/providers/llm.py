@@ -305,6 +305,14 @@ class ScriptPlanner:
                     "सनातन संस्कृति के अनुसार, इस मंत्र का नियमित स्मरण जीवन के सभी संशयों को समाप्त करता है।",
                     "आध्यात्मिक चेतना के जागरण के लिए इन पवित्र ध्वनियों का श्रवण अत्यंत कल्याणकारी माना गया है।",
                 )
+            elif profile == "gta6hub":
+                filler_extensions = (
+                    "Rockstar's attention to detail here is genuinely unmatched — no other open world game has pulled this off at this scale.",
+                    "What makes this discovery wild is that most players will spend hundreds of hours in GTA 6 and never notice it.",
+                    "The RAGE engine powering GTA 6 runs physics simulations at a level that completely breaks what we thought was possible in gaming.",
+                    "If you explore this area carefully, you'll find even more hidden details that the GTA 6 community hasn't fully documented yet.",
+                    "This is exactly why GTA 6 is a generational game — Rockstar has layered secrets inside secrets inside secrets.",
+                )
             else:
                 filler_extensions = (
                     "This architecture ensures the execution pipeline remains reliable and responsive across demanding workloads.",
@@ -503,6 +511,25 @@ narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
                 "NO boring office desk shots."
             )
             editorial_notes = "- generic wealth bragging without macroeconomic mechanisms\n- boring office desk shots"
+        elif profile == "gta6hub":
+            visual_style_note = (
+                "For GTA6Hub, EVERY scene MUST use visual_mode='stock'. "
+                "Every visual_query MUST describe GTA 6 / Vice City / Miami aesthetic cinematic B-roll: "
+                "(e.g. 'miami neon city night aerial drone', 'luxury sports car highway night speed', "
+                "'palm trees sunset florida beach aerial', 'neon signs retro miami beach night', "
+                "'speedboat ocean miami sunset fast', 'florida keys turquoise water aerial', "
+                "'confident woman city street night neon', 'urban chase police car lights night', "
+                "'helicopter city night aerial cinematic', 'miami skyline golden hour reflection'). "
+                "NEVER use 'split screen', 'animation', 'graphic', 'text overlay'. "
+                "Every title MUST include 'GTA 6' and use a viral gaming format. "
+                "Thumbnail_text must be 3-4 ALL CAPS provocative words."
+            )
+            editorial_notes = (
+                "- generic visual queries not matching GTA 6 / Vice City aesthetic\n"
+                "- slow or academic narration (must be fast, punchy gaming commentary)\n"
+                "- title without 'GTA 6' in it\n"
+                "- missing #GTA6 hashtags in description"
+            )
         else:
             visual_style_note = "Every scene must use concrete, practical moving B-roll matching the narration beat."
             editorial_notes = "- scenes whose visual does not literally explain the narration beat"

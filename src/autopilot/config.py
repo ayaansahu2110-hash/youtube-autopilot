@@ -157,6 +157,7 @@ PROFILE_CONFIGS: dict[str, dict] = {
     },
     "gta6hub": {
         "display_name": "GTA6Hub",
+        "expected_channel_id": "UCVo9n-Yun9--4rw3C-ZWoLQ",
         "niche": (
             "GTA 6 gameplay commentary, Leonida map secrets, hidden Easter eggs, "
             "character deep dives (Jason & Lucia), Vice City exploration, "
@@ -168,8 +169,8 @@ PROFILE_CONFIGS: dict[str, dict] = {
             "GTA 6 funny moments,GTA 6 physics details,GTA 6 character abilities,"
             "GTA 6 day one patch,GTA 6 launch impressions,GTA 6 open world details"
         ),
-        "voice": "en-US-GuyNeural",
-        "rate": "+3%",
+        "voice": "en-US-BrianMultilingualNeural",
+        "rate": "+2%",
         "pitch": "-1Hz",
         "category_id": "20",
         "made_for_kids": False,
@@ -296,6 +297,8 @@ class Settings(BaseSettings):
                 self.min_research_sources = cfg["min_research_sources"]
             if "longform_every_days" in cfg:
                 self.longform_every_days = cfg["longform_every_days"]
+            if "expected_channel_id" in cfg and not self.expected_youtube_channel_id:
+                self.expected_youtube_channel_id = cfg["expected_channel_id"]
 
     @property
     def topic_query_list(self) -> list[str]:

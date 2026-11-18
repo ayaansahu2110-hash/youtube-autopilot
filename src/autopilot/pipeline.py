@@ -15,7 +15,7 @@ from autopilot.facts import (
 from autopilot.models import PipelineRun, ResearchPack, ResearchSource, TopicCandidate
 from autopilot.providers.hybrid_visuals import HybridVisualDirector
 from autopilot.providers.premium_planner import PremiumScriptPlanner
-from autopilot.providers.tts import EdgeTTSProvider
+from autopilot.providers.tts import EdgeTTSProvider, OpenAITTSProvider
 from autopilot.providers.visuals import PexelsVideoProvider
 from autopilot.quality import QualityGate
 from autopilot.render import FFmpegRenderer
@@ -34,6 +34,7 @@ class AutopilotPipeline:
         self.settings = settings
         self.state = StateStore(settings.state_file)
         is_facts = settings.channel_profile == "curioaxiom"
+        is_gta6hub = settings.channel_profile == "gta6hub"
         self.discovery = (
             FactTopicDiscovery(settings, self.state)
             if is_facts
@@ -42,15 +43,39 @@ class AutopilotPipeline:
         self.researcher = Researcher(settings)
         self.editorial = editorial_system_for(settings.channel_profile)
         self.verifier = FactVerifier() if is_facts else None
-        self.planner = FactScriptPlanner(settings) if is_facts else PremiumScriptPlanner(settings)
-        self.tts = EdgeTTSProvider(
-            settings.edge_tts_voice,
-            rate=settings.edge_tts_rate,
-            pitch=settings.edge_tts_pitch,
-            volume=settings.edge_tts_volume,
-            gemini_api_key=settings.gemini_api_key,
-            ffmpeg_binary=settings.ffmpeg_binary,
-        )
+
+        # --- Planner selection ---
+        if is_facts:
+            self.planner = FactScriptPlanner(settings)
+        elif is_gta6hub:
+            from autopilot.providers.gta6hub_planner import GTA6HubScriptPlanner
+            self.planner = GTA6HubScriptPlanner(settings)
+        else:
+            self.planner = PremiumScriptPlanner(settings)
+
+        # --- TTS selection: OpenAI HD for GTA6Hub, Edge for all others ---
+        if is_gta6hub and settings.openai_api_key:
+            self.tts = OpenAITTSProvider(
+                voice="onyx",          # Deep, authoritative male voice
+                model="tts-1-hd",      # Highest quality OpenAI TTS model
+                speed=1.08,            # Slightly faster — gaming energy
+                openai_api_key=settings.openai_api_key,
+                ffmpeg_binary=settings.ffmpeg_binary,
+                fallback_voice=settings.edge_tts_voice,
+                fallback_rate=settings.edge_tts_rate,
+                fallback_pitch=settings.edge_tts_pitch,
+                gemini_api_key=settings.gemini_api_key,
+            )
+        else:
+            self.tts = EdgeTTSProvider(
+                settings.edge_tts_voice,
+                rate=settings.edge_tts_rate,
+                pitch=settings.edge_tts_pitch,
+                volume=settings.edge_tts_volume,
+                gemini_api_key=settings.gemini_api_key,
+                ffmpeg_binary=settings.ffmpeg_binary,
+            )
+
         self.visuals = PexelsVideoProvider(settings.pexels_api_key)
         self.hybrid_visuals = HybridVisualDirector(
             self.visuals,

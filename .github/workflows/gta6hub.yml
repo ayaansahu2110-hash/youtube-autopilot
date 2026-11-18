@@ -47,7 +47,7 @@ jobs:
     env:
       CHANNEL_PROFILE: gta6hub
       CHANNEL_DISPLAY_NAME: GTA6Hub
-      EXPECTED_YOUTUBE_CHANNEL_ID: ${{ secrets.GTA6HUB_CHANNEL_ID }}
+      EXPECTED_YOUTUBE_CHANNEL_ID: ${{ secrets.GTA6HUB_CHANNEL_ID || 'UCVo9n-Yun9--4rw3C-ZWoLQ' }}
       ARTIFACTS_DIR: artifacts/gta6hub
       STATE_FILE: state/gta6hub/history.json
       LEARNING_FILE: state/gta6hub/learning.json
@@ -214,3 +214,4 @@ jobs:
             artifacts/gta6hub/**/manifest.json
             artifacts/gta6hub/**/*.srt
           retention-days: 7
+

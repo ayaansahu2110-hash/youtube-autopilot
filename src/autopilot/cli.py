@@ -53,7 +53,7 @@ ALL_CHANNELS = [
     ("chronosenigma", "ChronosEnigma", "UCkskXfpnzm8lQnZGHOVMfQQ", Path("secrets/youtube_token_chronosenigma.json")),
     ("empirepulse", "EmpirePulse", "UC6rE9fs_Os6NSXdTN1oBNdw", Path("secrets/youtube_token_empirepulse.json")),
     ("astrapulse", "AstraPulse", "UC9-C8N7q2m8nax0kYWFy9og", Path("secrets/youtube_token_astrapulse.json")),
-    ("gta6hub", "GTA6Hub", "", Path("secrets/youtube_token_gta6hub.json")),
+    ("gta6hub", "GTA6Hub", "UCVo9n-Yun9--4rw3C-ZWoLQ", Path("secrets/youtube_token_gta6hub.json")),
 ]
 
 
