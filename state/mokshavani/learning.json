@@ -1,97 +1,97 @@
 {
-  "generated_at": "2026-11-18T20:55:56.665679+00:00",
+  "generated_at": "2026-11-19T16:05:37.282433+00:00",
   "competitors": [
     {
       "channel": "Nate Herk | AI Automation",
       "subscribers": 1140000,
-      "channel_views": 68376669,
-      "video_count": 602,
+      "channel_views": 68837425,
+      "video_count": 605,
       "high_performing_recent_videos": [
         {
-          "title": "Anthropic Just Released the New Rules of Claude Code",
-          "views": 161868,
-          "likes": 1659,
-          "comments": 69,
-          "published_at": "2026-11-17T13:26:00Z",
-          "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=claude-code-best-practices&sl=yt_claude-code-best-practices\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-code-best-practices&hcategory=youtube-videos&"
-        },
-        {
           "title": "I Tested Astra 6.2 vs. Fable 5.2. What You Need to Know.",
-          "views": 83135,
-          "likes": 951,
-          "comments": 163,
+          "views": 104682,
+          "likes": 1142,
+          "comments": 193,
           "published_at": "2026-11-18T03:11:31Z",
           "description_excerpt": "FREE Scrollcraft Website Design Skill: https://app.aiautomationsociety.ai/optin/scrollcraft/?utm_source=youtube&utm_medium=organic&utm_content=fable-52-vs-astra-62&sl=yt_fable-52-vs-astra-62\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=fable-52-vs-astra-62&hcategory=youtube-v"
         },
         {
           "title": "Claude Can Run a GTA 6 Clipping Channel on Autopilot",
-          "views": 60302,
-          "likes": 1544,
-          "comments": 423,
+          "views": 89305,
+          "likes": 2202,
+          "comments": 600,
           "published_at": "2026-11-17T23:30:04Z",
           "description_excerpt": ""
         },
         {
-          "title": "AI Didn’t Hack the Banks (Here’s What Did)",
-          "views": 27511,
+          "title": "Claude and GPT Get Nerfed After Launch (They Admitted It)",
+          "views": 32830,
           "likes": 320,
-          "comments": 30,
-          "published_at": "2026-11-17T18:59:23Z",
-          "description_excerpt": "How I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=ai-banks-outages&hcategory=youtube-videos&utm_campaign=plus-group\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=ai-banks-outages&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice"
+          "comments": 47,
+          "published_at": "2026-11-18T21:11:08Z",
+          "description_excerpt": "FREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=ai-models-nerfed&sl=yt_ai-models-nerfed\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=ai-models-nerfed&hcategory=youtube-videos&utm_campaign=plus"
         },
         {
-          "title": "GPT-6.2 Astra is HEREEEEE",
-          "views": 25887,
-          "likes": 602,
-          "comments": 25,
-          "published_at": "2026-11-17T18:28:38Z",
+          "title": "GPT-6.2 Astra is over 7x cheaper than Fable 5.2",
+          "views": 19731,
+          "likes": 311,
+          "comments": 6,
+          "published_at": "2026-11-18T04:26:56Z",
           "description_excerpt": ""
+        },
+        {
+          "title": "AI Models Get Nerfed After Launch (Here's the Proof)",
+          "views": 9330,
+          "likes": 200,
+          "comments": 7,
+          "published_at": "2026-11-18T12:00:39Z",
+          "description_excerpt": "AI models get worse after launch, and Anthropic and OpenAI have both admitted it in writing. But the trackers that test the same model every day show the model itself isn't changing. The dials around it are.\n\nDo you think they nerf models on purpose after launch?"
         }
       ]
     },
     {
       "channel": "Matt Wolfe",
       "subscribers": 1030000,
-      "channel_views": 86747444,
-      "video_count": 850,
+      "channel_views": 86926020,
+      "video_count": 851,
       "high_performing_recent_videos": [
         {
           "title": "AI News: Things Will Never Be The Same",
-          "views": 192489,
-          "likes": 2752,
-          "comments": 288,
+          "views": 195257,
+          "likes": 2769,
+          "comments": 287,
           "published_at": "2026-11-13T17:21:49Z",
           "description_excerpt": "Try @OpenAI Decisions API here: https://developers.openai.com/api/docs/guides/decisions \n\nHere's the AI news from one of the wildest weeks we've ever seen! Jensen Huang steps down as NVIDIA CEO, Anthropic launches Claude Fable 5.2, and Google's Gemini 4 Carbon finally becomes available. Plus, new AI features from Adobe MAX, big updates to Claude, a"
         },
         {
+          "title": "Insane AI Breakthroughs Nobody Is Talking About",
+          "views": 122311,
+          "likes": 1958,
+          "comments": 128,
+          "published_at": "2026-11-18T22:08:16Z",
+          "description_excerpt": "12 AI breakthroughs you probably missed, from incredibly human AI voices to a walking robot powered by an old phone.\n\nThese are some of the coolest AI tools, research projects, and tech demos I’ve come across recently that didn’t make it into my weekly AI news videos. We’re looking at AI characters that react to your movements, interactive world mo"
+        },
+        {
           "title": "OpenAI GPT-6.2 Astra is Here - It's Not What You Think",
-          "views": 101645,
-          "likes": 1523,
-          "comments": 141,
+          "views": 116793,
+          "likes": 1681,
+          "comments": 152,
           "published_at": "2026-11-18T01:43:27Z",
           "description_excerpt": "Sharing the latest news and advancements in AI - 🛠️ Explore AI Tools & News: https://futuretools.io/\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@m"
         },
         {
-          "title": "MASSIVE AI Shake-Up That Changes Everything",
-          "views": 48146,
-          "likes": 1214,
-          "comments": 134,
-          "published_at": "2026-11-12T20:32:27Z",
-          "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
-        },
-        {
           "title": "ChatGPT 6.2 Astra is \"A Mess\"",
-          "views": 39624,
-          "likes": 805,
-          "comments": 51,
+          "views": 47678,
+          "likes": 875,
+          "comments": 50,
           "published_at": "2026-11-17T23:38:50Z",
           "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
         },
         {
           "title": "This had never been done before!",
-          "views": 12167,
-          "likes": 605,
-          "comments": 48,
+          "views": 13346,
+          "likes": 670,
+          "comments": 51,
           "published_at": "2026-11-16T22:27:42Z",
           "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
         }
@@ -100,20 +100,20 @@
     {
       "channel": "ICOR with Tom | AI Productivity",
       "subscribers": 114000,
-      "channel_views": 14528641,
+      "channel_views": 14531187,
       "video_count": 628,
       "high_performing_recent_videos": [
         {
           "title": "Claude Code Desktop replaced my terminal and VS Code",
-          "views": 8673,
-          "likes": 66,
+          "views": 8982,
+          "likes": 68,
           "comments": 14,
           "published_at": "2026-11-15T16:50:01Z",
           "description_excerpt": "Set up Claude Code Desktop with sessions that message each other, so you get most of what Grok Bot gives without Grok Bot.\nMore on building your system: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=e_BiN-2AALA&utm_content=description\n\nWATCH THIS NEXT\n• Claude can now prompt its own SESSIONS. I built the boss.: https://ww"
         },
         {
           "title": "I pay €400 a month for AI. Only Claude Code delivers.",
-          "views": 6567,
+          "views": 6592,
           "likes": 108,
           "comments": 38,
           "published_at": "2026-11-09T22:30:34Z",
@@ -121,7 +121,7 @@
         },
         {
           "title": "Fable 5.2 did this...it's not a game #claudecode #claudeai #fable",
-          "views": 2215,
+          "views": 2221,
           "likes": 35,
           "comments": 6,
           "published_at": "2026-11-10T01:56:32Z",
@@ -137,7 +137,7 @@
         },
         {
           "title": "My AI said it made 12 skills. They never got created properly",
-          "views": 1810,
+          "views": 1812,
           "likes": 14,
           "comments": 1,
           "published_at": "2026-11-04T14:00:12Z",
@@ -152,7 +152,7 @@
       "title": "शिव तांडव स्तोत्र: रावण द्वारा रचित ब्रह्मांडीय ऊर्जा",
       "format": "short",
       "metrics": {
-        "views": 373.0,
+        "views": 372.0,
         "estimatedMinutesWatched": 71.0,
         "averageViewDuration": 24.0,
         "averageViewPercentage": 47.07,
@@ -320,7 +320,7 @@
       "title": "शिव तांडव स्तोत्रम की उत्पत्ति और दिव्य रहस्य | Divya Shloka Sutra",
       "format": "short",
       "metrics": {
-        "views": 7.0,
+        "views": 6.0,
         "estimatedMinutesWatched": 1.0,
         "averageViewDuration": 19.0,
         "averageViewPercentage": 29.5,
@@ -406,7 +406,7 @@
       "title": "शिव तांडव स्तोत्र: रावण द्वारा रचित ब्रह्मांडीय ऊर्जा",
       "format": "short",
       "metrics": {
-        "views": 373.0,
+        "views": 372.0,
         "estimatedMinutesWatched": 71.0,
         "averageViewDuration": 24.0,
         "averageViewPercentage": 47.07,
