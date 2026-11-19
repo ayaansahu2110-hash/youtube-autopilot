@@ -17,7 +17,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-19T16:03:03.547042+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.236706+00:00"
     },
     {
       "video_id": "NXwh5O6kQ7o",
@@ -36,7 +36,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-19T16:03:03.553334+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.240768+00:00"
     },
     {
       "video_id": "-g4L3jo5Kss",
@@ -55,7 +55,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-19T16:03:03.554929+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.241771+00:00"
     },
     {
       "video_id": "_tS6qVweLhU",
@@ -74,7 +74,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-19T16:03:03.554145+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.241279+00:00"
     },
     {
       "video_id": "IHJ43Gs1dK8",
@@ -93,7 +93,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-19T16:03:03.555743+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.242274+00:00"
     },
     {
       "video_id": "0gkxPDpRNgg",
@@ -112,7 +112,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-19T16:03:03.552535+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.240263+00:00"
     },
     {
       "video_id": "4clzO505QVo",
@@ -131,7 +131,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-19T16:03:03.551747+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.239757+00:00"
     },
     {
       "video_id": "q8VpV9avtOw",
@@ -150,7 +150,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-19T16:03:03.547814+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.237236+00:00"
     },
     {
       "video_id": "RNbdDj_tmoM",
@@ -189,7 +189,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-19T16:03:03.546191+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.236103+00:00"
     },
     {
       "video_id": "mYo-jv9VVKw",
@@ -226,7 +226,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-19T16:03:03.556557+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.242755+00:00"
     },
     {
       "video_id": "KZwspFBDd8c",
@@ -245,7 +245,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-19T16:03:03.545398+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.235552+00:00"
     },
     {
       "video_id": "NBDSFl91Ix0",
@@ -283,7 +283,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-19T16:03:03.550961+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.239255+00:00"
     },
     {
       "video_id": "dpoGIzVxX8A",
@@ -302,7 +302,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-19T16:03:03.544565+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.234974+00:00"
     },
     {
       "video_id": "VFLYZaUS6UY",
@@ -340,17 +340,17 @@
       "script_preview": "",
       "created_at": "2026-11-13T20:09:25Z",
       "analytics": {
-        "views": 8.0,
+        "views": 9.0,
         "estimatedMinutesWatched": 3.0,
-        "averageViewDuration": 25.0,
-        "averageViewPercentage": 42.51,
+        "averageViewDuration": 24.0,
+        "averageViewPercentage": 40.66,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-19T16:03:03.543332+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.234090+00:00"
     },
     {
       "video_id": "R4p3DzbWxwQ",
@@ -390,7 +390,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-19T16:03:03.549376+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.238250+00:00"
     },
     {
       "video_id": "Bs0UcmyqSM4",
@@ -428,7 +428,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-19T16:03:03.550181+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.238743+00:00"
     },
     {
       "video_id": "yYDT-0TF8EE",
@@ -458,7 +458,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-19T16:03:03.548580+00:00"
+      "analytics_updated_at": "2026-11-19T20:58:26.237732+00:00"
     },
     {
       "video_id": "sGHpzXcPXz4",
@@ -467,6 +467,33 @@
       "format": "short",
       "script_preview": "Hop-hop went Little Rabbit through the meadow bright, A fuzzy, happy bunny in the morning light!\nHe found a hungry duckling near the river bend, And shared his crunchy carrot with his feathered friend.\nSplash-splash went the duckling with a happy sound, Kindness makes the sweetest joys that can be found.\nBuzz-buzz sang a honeybee who lost her flowery way, Little Rabbit guided her throughout the sunny day.\nGiggle-giggle went the bee, feeling glad and free, Helping others makes a heart as happy as can be.\nWhen the moon began to glow with silver beams so deep, All the forest friends curled up to ",
       "created_at": "2026-11-19T16:16:14.842773+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "y6dBS3NT_Vc",
+      "topic": "The Hungry Squirrel 🐿️ | Moral Story for Kids About Sharing and Kindness",
+      "title": "The Hungry Squirrel: A Sharing Song",
+      "format": "short",
+      "script_preview": "Little Sammy Squirrel hops up in the tree,\nSearching for his acorns, happy as can be!\nMunching on a treasure, crunchy in his hand,\nBest little squirrel in all the woodland land!\nHop-hop goes the bunny, hungry for a treat,\nSammy gives an acorn, oh so very sweet!\nSharing makes us kinder, spreading happy cheer,\nSmiling forest buddies drawing very near!\nTweet-tweet goes the bluebird, soaring from the sky,\nSammy gives a berry, watching bluebird fly!\nGiving is a treasure, filling up the heart,\nKindness is a magic, best way to start!\nFriends are all together, playing in the sun,\nSharing all our goodi",
+      "created_at": "2026-11-19T21:03:41.931658+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "8gnNtdSCPSA",
+      "topic": "The Little Red Hen 🐔🌾 | Classic Moral Story for Kids | Bedtime Stories",
+      "title": "Little Red Hen’s Shared Bread: A Song of Helping Hands",
+      "format": "short",
+      "script_preview": "Red Hen finds a tiny seed, she plants it with a happy speed!\nShe works beneath the golden sun, until her garden chores are done!\nThe wheat grows tall and gold and bright, a truly lovely farm-yard sight!\nShe asks her friends to help her sow, to watch the little seedlings grow!\nBut friends just run and jump and play, they hop around the barn all day!\nSo Hen decides to bake the bread, and waves them over there instead!\nShe shares the loaf with every friend, on happy times we now depend!\nWhen tasks are shared with love and glee, how wonderful our lives can be!\nFor working hard is best of all, when",
+      "created_at": "2026-11-19T21:06:39.130073+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "d0O4OLcgtEE",
+      "topic": "Hey Diddle Diddle: What the Decline of Nursery Rhymes Means for Early Literacy",
+      "title": "The Literacy Crisis: Why Nursery Rhymes Are Essential for Kids",
+      "format": "long",
+      "script_preview": "What actually happens to a toddler's developing brain when we stop singing classic nursery rhymes together? We are exploring the hidden neuro-developmental consequences of losing these rhythmic traditions and what that silence truly means for the next generation of budding young readers.\nThe seemingly nonsensical melody of Hey Diddle Diddle serves as a vital neuro-developmental bridge for young minds. By engaging with these specific repetitive structures, children are actually establishing essential connections that support cognitive growth far beyond just the simple joy of a bedtime story.\nTh",
+      "created_at": "2026-11-19T21:27:19.131394+00:00",
       "analytics": {}
     }
   ],
@@ -673,6 +700,24 @@
       "title": "Be Kind, Little Rabbit | A Sweet Kindness Nursery Rhyme",
       "format": "short",
       "created_at": "2026-11-19T16:16:14.842773+00:00"
+    },
+    {
+      "topic": "The Hungry Squirrel 🐿️ | Moral Story for Kids About Sharing and Kindness",
+      "title": "The Hungry Squirrel: A Sharing Song",
+      "format": "short",
+      "created_at": "2026-11-19T21:03:41.931658+00:00"
+    },
+    {
+      "topic": "The Little Red Hen 🐔🌾 | Classic Moral Story for Kids | Bedtime Stories",
+      "title": "Little Red Hen’s Shared Bread: A Song of Helping Hands",
+      "format": "short",
+      "created_at": "2026-11-19T21:06:39.130073+00:00"
+    },
+    {
+      "topic": "Hey Diddle Diddle: What the Decline of Nursery Rhymes Means for Early Literacy",
+      "title": "The Literacy Crisis: Why Nursery Rhymes Are Essential for Kids",
+      "format": "long",
+      "created_at": "2026-11-19T21:27:19.131394+00:00"
     }
   ]
 }
