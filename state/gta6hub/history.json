@@ -67,6 +67,15 @@
       "created_at": "2026-11-18T21:06:18Z",
       "analytics": {},
       "source": "youtube_sync"
+    },
+    {
+      "video_id": "G5-TGPdSfyM",
+      "topic": "GTA 6 Vehicle Customization and Car Physics: What Changed Since GTA 5",
+      "title": "GTA 6: The Secret Car Physics Rockstar HID",
+      "format": "short",
+      "script_preview": "GTA 6 physics just changed forever! Rockstar completely rebuilt vehicle handling from the ground up. Dynamic lane widths mean driving in Leonida feels vastly more dangerous and realistic. First, your custom tuning now forces a trade-off between speed and occupant comfort. Second, every body modification impacts real-time aerodynamic drag during high speed highway chases. Third, tire wear physics now dictate your traction on soaked Leonida streets. Suspension geometry actually reacts to every single bump in the road surface. Rev your custom exhaust near NPCs and watch them panic in real-time. V",
+      "created_at": "2026-11-19T19:30:40.171425+00:00",
+      "analytics": {}
     }
   ],
   "topics": [
@@ -116,6 +125,12 @@
       "format": "short",
       "created_at": "2026-11-18T21:06:18Z",
       "source": "youtube_sync"
+    },
+    {
+      "topic": "GTA 6 Vehicle Customization and Car Physics: What Changed Since GTA 5",
+      "title": "GTA 6: The Secret Car Physics Rockstar HID",
+      "format": "short",
+      "created_at": "2026-11-19T19:30:40.171425+00:00"
     }
   ]
 }
