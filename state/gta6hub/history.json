@@ -17,6 +17,56 @@
       "script_preview": "GTA 6 NPCs are evolving! Rockstar’s new AI tech makes Leonida feel alive. First, NPCs trigger organic random events entirely on their own. Second, Rockstar’s LA team gave every pedestrian unique personality traits and routines. Third, hit the Vice City beach district to see the tech in action. You’ll find NPCs filming viral social media clips that mimic real-world Florida influencers. Watch the crowd at the boardwalk during the sunset golden hour cycle. You’ll witness complex arguments triggered by your mere presence in the area. This scale is unprecedented for an open-world sandbox city simul",
       "created_at": "2026-11-18T20:43:06.270915+00:00",
       "analytics": {}
+    },
+    {
+      "video_id": "A56HT5YGUBI",
+      "topic": "GTA 6 vs GTA 5: The Physics Leap That Changes EVERYTHING",
+      "title": "GTA 6 vs GTA 5: The Physics Leap That Changes EVERYTHING",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-11-18T20:52:33Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "8Ns0J2IRUMg",
+      "topic": "GTA 6 Vehicle PHYSICS: Everything You Need To Know",
+      "title": "GTA 6 Vehicle PHYSICS: Everything You Need To Know",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-11-18T20:55:52Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "HWO8DPib4lU",
+      "topic": "GTA 6: The DARK Secret Behind Jason and Lucia’s Fate",
+      "title": "GTA 6: The DARK Secret Behind Jason and Lucia’s Fate",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-11-18T20:59:02Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "UZVcdnGzc48",
+      "topic": "GTA 6: You Can SKIP The Romance? (Official)",
+      "title": "GTA 6: You Can SKIP The Romance? (Official)",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-11-18T21:02:31Z",
+      "analytics": {},
+      "source": "youtube_sync"
+    },
+    {
+      "video_id": "3rL1xpPEyhc",
+      "topic": "GTA 6: You MISSED This INSANE Secret!",
+      "title": "GTA 6: You MISSED This INSANE Secret!",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-11-18T21:06:18Z",
+      "analytics": {},
+      "source": "youtube_sync"
     }
   ],
   "topics": [
@@ -31,6 +81,41 @@
       "title": "GTA 6 NPCs Are Actually ALIVE! (Mind-Blowing AI)",
       "format": "short",
       "created_at": "2026-11-18T20:43:06.270915+00:00"
+    },
+    {
+      "topic": "GTA 6 vs GTA 5: The Physics Leap That Changes EVERYTHING",
+      "title": "GTA 6 vs GTA 5: The Physics Leap That Changes EVERYTHING",
+      "format": "short",
+      "created_at": "2026-11-18T20:52:33Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "GTA 6 Vehicle PHYSICS: Everything You Need To Know",
+      "title": "GTA 6 Vehicle PHYSICS: Everything You Need To Know",
+      "format": "short",
+      "created_at": "2026-11-18T20:55:52Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "GTA 6: The DARK Secret Behind Jason and Lucia’s Fate",
+      "title": "GTA 6: The DARK Secret Behind Jason and Lucia’s Fate",
+      "format": "short",
+      "created_at": "2026-11-18T20:59:02Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "GTA 6: You Can SKIP The Romance? (Official)",
+      "title": "GTA 6: You Can SKIP The Romance? (Official)",
+      "format": "short",
+      "created_at": "2026-11-18T21:02:31Z",
+      "source": "youtube_sync"
+    },
+    {
+      "topic": "GTA 6: You MISSED This INSANE Secret!",
+      "title": "GTA 6: You MISSED This INSANE Secret!",
+      "format": "short",
+      "created_at": "2026-11-18T21:06:18Z",
+      "source": "youtube_sync"
     }
   ]
 }
