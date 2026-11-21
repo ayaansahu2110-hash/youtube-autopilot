@@ -17,7 +17,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-20T20:46:45.178942+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.334498+00:00"
     },
     {
       "video_id": "SrCFKhynUyc",
@@ -36,7 +36,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-20T20:46:45.173963+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.328446+00:00"
     },
     {
       "video_id": "AUqN-Jp-MPw",
@@ -55,7 +55,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-20T20:46:45.177361+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.332838+00:00"
     },
     {
       "video_id": "bfy1acwg1Co",
@@ -67,14 +67,14 @@
       "analytics": {
         "views": 4.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 9.0,
-        "averageViewPercentage": 16.67,
+        "averageViewDuration": 8.0,
+        "averageViewPercentage": 15.439999999999998,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-20T20:46:45.178049+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.333688+00:00"
     },
     {
       "video_id": "68OhLQ7dRJE",
@@ -93,7 +93,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-20T20:46:45.176028+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.331143+00:00"
     },
     {
       "video_id": "hcZbG6mkUiw",
@@ -112,7 +112,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-20T20:46:45.182150+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.337105+00:00"
     },
     {
       "video_id": "mC8sTJyTOWo",
@@ -131,7 +131,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-20T20:46:45.180231+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.336196+00:00"
     },
     {
       "video_id": "M8GRYkspRLo",
@@ -150,7 +150,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-20T20:46:45.174743+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.329439+00:00"
     },
     {
       "video_id": "xoy8Pg3gIK8",
@@ -196,7 +196,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-20T20:46:45.182801+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.339686+00:00"
     },
     {
       "video_id": "rs40HOFDIGk",
@@ -215,7 +215,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-20T20:46:45.181502+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.337980+00:00"
     },
     {
       "video_id": "c4YcxvbXgLo",
@@ -243,7 +243,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-20T20:46:45.179588+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.335353+00:00"
     },
     {
       "video_id": "dc9VHSmbB7k",
@@ -263,7 +263,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-20T20:46:45.176680+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.331984+00:00"
     },
     {
       "video_id": "UKm4h53IB2U",
@@ -283,7 +283,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-20T20:46:45.169667+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.323703+00:00"
     },
     {
       "video_id": "G6qhKF-R9gI",
@@ -303,7 +303,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-20T20:46:45.170525+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.324682+00:00"
     },
     {
       "video_id": "ABsGQElMAQI",
@@ -323,7 +323,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-20T20:46:45.168454+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.322354+00:00"
     },
     {
       "video_id": "Jt96iox6PUg",
@@ -335,15 +335,15 @@
       "analytics": {
         "views": 13.0,
         "estimatedMinutesWatched": 5.0,
-        "averageViewDuration": 27.0,
-        "averageViewPercentage": 5.43,
+        "averageViewDuration": 26.0,
+        "averageViewPercentage": 5.11,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-20T20:46:45.175377+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.330301+00:00"
     },
     {
       "video_id": "KViCY-0ec14",
@@ -373,7 +373,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-20T20:46:45.171403+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.325610+00:00"
     },
     {
       "video_id": "ajSBox9rrV0",
@@ -392,7 +392,7 @@
         "shares": 1.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-20T20:46:45.173145+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.327564+00:00"
     },
     {
       "video_id": "IaAtXd0_TLE",
@@ -411,7 +411,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-20T20:46:45.172221+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.326521+00:00"
     },
     {
       "video_id": "L-T8I-3R6vs",
@@ -430,7 +430,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-20T20:46:45.180875+00:00"
+      "analytics_updated_at": "2026-11-21T14:58:11.338781+00:00"
     },
     {
       "video_id": "8u16PrAywTA",
