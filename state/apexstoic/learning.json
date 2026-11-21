@@ -1,149 +1,108 @@
 {
-  "generated_at": "2026-11-21T14:58:11.340525+00:00",
+  "generated_at": "2026-11-21T19:50:27.740813+00:00",
   "competitors": [
     {
-      "channel": "Nate Herk | AI Automation",
-      "subscribers": 1140000,
-      "channel_views": 69380404,
-      "video_count": 610,
+      "channel": "The AI Productivity Coach",
+      "subscribers": 43100,
+      "channel_views": 3866729,
+      "video_count": 252,
       "high_performing_recent_videos": [
         {
-          "title": "You Can Make $100/day With a Grok Bot GTA 6 Clipper",
-          "views": 62892,
-          "likes": 2032,
-          "comments": 673,
-          "published_at": "2026-11-20T00:34:27Z",
-          "description_excerpt": ""
+          "title": "Gemini Skills Are Replacing Gems: How to Use Them",
+          "views": 24149,
+          "likes": 441,
+          "comments": 13,
+          "published_at": "2026-11-01T14:30:37Z",
+          "description_excerpt": "Gemini Gems are becoming Gemini Skills. In this practical tutorial, I explain what changes, how Skills differ from Gems, and how to create, use and import your own.\n\nGoogle's personal-account transition begins on 17 November 2026. If you've been using Gems, this walkthrough shows you how Skills work inside your existing chats and where to start wit"
         },
         {
-          "title": "Claude and GPT Get Nerfed After Launch (They Admitted It)",
-          "views": 40086,
-          "likes": 387,
-          "comments": 51,
-          "published_at": "2026-11-18T21:11:08Z",
-          "description_excerpt": "FREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=ai-models-nerfed&sl=yt_ai-models-nerfed\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=ai-models-nerfed&hcategory=youtube-videos&utm_campaign=plus"
+          "title": "ChatGPT Free vs Plus: Is It Worth $20 in 2027?",
+          "views": 2691,
+          "likes": 44,
+          "comments": 9,
+          "published_at": "2026-11-15T14:30:07Z",
+          "description_excerpt": "ChatGPT Free vs Plus: is it worth paying $20 a month as you head into 2027? I explain five benefits of Plus, three things to know before upgrading, and how to decide which plan fits the way you use AI.\n\nIf you mainly use ChatGPT for questions and email drafts, Free may already cover what you need. If you regularly hit limits or want to do more with"
         },
         {
-          "title": "I Turned Grok Bot Into a 24/7 GTA 6 Clipping Machine",
-          "views": 36060,
-          "likes": 586,
-          "comments": 43,
-          "published_at": "2026-11-19T19:47:17Z",
-          "description_excerpt": "FREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?\nFREE Clipping Guide: https://www.skool.com/ai-automation-society/about?el=grok-bot-clipping-page&hcategory=youtube-videos&utm_campaign=free-group\nutm_source=youtube&utm_medium=organic&utm_content=grok-bot-clipping-page&sl=yt_grok-bot-clipping-page\nHow I built an AI a"
+          "title": "AI Tools for Work: ChatGPT, Claude, Gemini & More",
+          "views": 1765,
+          "likes": 31,
+          "comments": 2,
+          "published_at": "2026-10-31T15:00:18Z",
+          "description_excerpt": "AI tools for work: here’s where ChatGPT, Claude, Gemini, Gamma and other tools fit into everyday tasks.\n\nUse this as a quick reference when you know what you need to do but are deciding which tool to open.\n\n- Writing: Claude\n- Brainstorming: ChatGPT\n- Presentations: Gamma\n- Building apps: Lovable\n- Dictation: Wispr Flow\n- Analysing data: Claude\n- I"
         },
         {
-          "title": "How to Put Claude Code on a VPS in 10 Minutes",
-          "views": 29419,
-          "likes": 301,
-          "comments": 42,
-          "published_at": "2026-11-19T13:39:42Z",
-          "description_excerpt": "Code NATEHERK for 10% off VPS (annual plan): https://hostinger.com/nateherk10\nThe FREE setup doc: https://www.skool.com/ai-automation-society/about?el=claude-code-vps&hcategory=youtube-videos&utm_campaign=free-group\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-code-vps"
+          "title": "How to Use Claude Dashboards: 3 Real Examples",
+          "views": 1683,
+          "likes": 24,
+          "comments": 4,
+          "published_at": "2026-10-25T15:00:12Z",
+          "description_excerpt": "Claude Dashboards lets you turn your data into interactive charts and reports using plain language. In this tutorial, I walk through three practical examples: sales reporting, project tracking and a YouTube channel dashboard connected to vidIQ.\n\nYou’ll see how I build each dashboard, ask for changes and bring in data in three different ways. No cod"
         },
         {
-          "title": "How I’d Become a Forward Deployed Engineer in 2027 (no code)",
-          "views": 29230,
-          "likes": 369,
-          "comments": 29,
-          "published_at": "2026-11-20T17:34:00Z",
-          "description_excerpt": "Sign up for CompactifAI API: https://multiversecomputing.com/compactifai/api?utm_source=youtube&utm_medium=influencer&utm_campaign=compactifai_api_1126&utm_content=nate_herk_description_link\nFREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=fde-roadmap&sl=yt_fde-roadm"
+          "title": "Gemini Gems Are Becoming Skills: What Changes?",
+          "views": 1291,
+          "likes": 26,
+          "comments": 1,
+          "published_at": "2026-11-04T14:30:16Z",
+          "description_excerpt": "Gemini Skills are replacing Gems, bringing reusable instructions into your existing chats. Here's what changes, how to create a Skill and what to check when importing one from another AI tool.\n\nStart with one job you repeat, such as analysing a weekly Excel report and drafting the team update.\n\nThe transition starts on 17 November 2026 for personal"
         }
       ]
     },
     {
-      "channel": "Matt Wolfe",
-      "subscribers": 1030000,
-      "channel_views": 87212823,
-      "video_count": 854,
+      "channel": "School of AI for Productivity and Profit",
+      "subscribers": 1720,
+      "channel_views": 9347,
+      "video_count": 45,
       "high_performing_recent_videos": [
         {
-          "title": "Insane AI Breakthroughs Nobody Is Talking About",
-          "views": 207165,
-          "likes": 3057,
-          "comments": 173,
-          "published_at": "2026-11-18T22:08:16Z",
-          "description_excerpt": "12 AI breakthroughs you probably missed, from incredibly human AI voices to a walking robot powered by an old phone.\n\nThese are some of the coolest AI tools, research projects, and tech demos I’ve come across recently that didn’t make it into my weekly AI news videos. We’re looking at AI characters that react to your movements, interactive world mo"
+          "title": "NEVER Use AI Like This! (The 7 Dangerous Mistakes That Can Ruin You)",
+          "views": 97,
+          "likes": 6,
+          "comments": 0,
+          "published_at": "2026-10-13T18:30:34Z",
+          "description_excerpt": "AI can help you write emails, brainstorm business ideas, and solve problems in seconds. But while everyone is rushing to use it, very few people are asking a critical question, \n\nWhat should you never use AI for, and what should you never give it?\n\nIn this video, we break down 7 dangerous ways people misuse AI, covering personal privacy, workplace "
         },
         {
-          "title": "OpenAI GPT-6.2 Astra is Here - It's Not What You Think",
-          "views": 125021,
-          "likes": 1765,
-          "comments": 161,
-          "published_at": "2026-11-18T01:43:27Z",
-          "description_excerpt": "Sharing the latest news and advancements in AI - 🛠️ Explore AI Tools & News: https://futuretools.io/\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@m"
+          "title": "Simple vs Compound Interest Explained with Mango Trees #Shorts",
+          "views": 95,
+          "likes": 6,
+          "comments": 0,
+          "published_at": "2026-10-27T00:00:31Z",
+          "description_excerpt": "Can mango trees teach you how money grows? \n\nJoin Baba Tunde and young Chidi on a fun trip to a Nigerian village mango farm to discover the difference between simple interest and compound interest.\n\n\nSimple interest: You earn interest on your original money.\nCompound interest: You earn interest on your original money and the interest you've already"
         },
         {
-          "title": "AI News: This Is The Make or Break Week!!",
-          "views": 83814,
-          "likes": 1396,
-          "comments": 124,
-          "published_at": "2026-11-20T19:00:16Z",
-          "description_excerpt": "Hire your own team of agents with Hyperagent for free here: https://hyperagent.com/login?utm_source=youtube&utm_medium=influencer&utm_campaign=MATT\n\nAnthropic’s IPO puts the AI bubble to the test as OpenAI and Google launch powerful new models for less.\n\nThis week, I test GPT-6.2 Astra, Sol, and Gemini 4 Neon, break down Microsoft’s latest AI relea"
+          "title": "You Are Not the One Making Your Own Decisions! See How AI is Secretly Shaping Your Daily Habits",
+          "views": 93,
+          "likes": 3,
+          "comments": 0,
+          "published_at": "2026-10-21T04:00:13Z",
+          "description_excerpt": "Ever wonder how your favourite apps seem to predict what you want next?\n\nDiscover how invisible AI algorithms shape your daily decisions, from the videos in your social media feeds to the products you see online. In this video, we break down recommendation engines, explain the \"filter bubble,\" and share simple ways you can take back control of your"
         },
         {
-          "title": "ChatGPT 6.2 Astra is \"A Mess\"",
-          "views": 52176,
-          "likes": 938,
-          "comments": 56,
-          "published_at": "2026-11-17T23:38:50Z",
-          "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
+          "title": "The Birth of the Mercedes Heir EP2",
+          "views": 44,
+          "likes": 3,
+          "comments": 0,
+          "published_at": "2026-11-18T20:00:08Z",
+          "description_excerpt": "EP2 of the Birth the Mercedes Heir.\n\nAn interesting tale of life, identity and belonging in a most connecting way.\n\n\nMore to come as the story unfolds.\n\nStay tuned and subscribe."
         },
         {
-          "title": "This will test if AI truly is a bubble",
-          "views": 22937,
-          "likes": 447,
-          "comments": 48,
-          "published_at": "2026-11-19T21:14:46Z",
-          "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
+          "title": "What Are You Afraid of? 8 Phobias You Should Know #Phobias #psychologyfacts",
+          "views": 29,
+          "likes": 3,
+          "comments": 0,
+          "published_at": "2026-10-22T16:30:18Z",
+          "description_excerpt": "Why are some people afraid of spiders, heights, darkness, or even public speaking?\nDiscover 7 common phobias, their names, and what they mean in this quick, fun animated guide!\n\nWhich one surprised you the most? Tell us in the comments."
         }
       ]
     },
     {
-      "channel": "The AI Daily Brief: Artificial Intelligence News",
-      "subscribers": 588000,
-      "channel_views": 13113678,
-      "video_count": 1552,
-      "high_performing_recent_videos": [
-        {
-          "title": "Washington Fired Jensen Huang",
-          "views": 21092,
-          "likes": 317,
-          "comments": 102,
-          "published_at": "2026-11-14T14:35:53Z",
-          "description_excerpt": "Jensen Huang’s exit from Nvidia marks the start of a harder line on China, chip export controls, and corporate power in Washington. NLW breaks down the fight over chip policy, the congressional hearings ahead, the doubts about the spy claims, and what Nvidia’s leadership change means for the AI industry. This main-only cut has no headlines section,"
-        },
-        {
-          "title": "Jensen Huang Is Out. Everything in AI Is Now Up for Grabs.",
-          "views": 12240,
-          "likes": 166,
-          "comments": 21,
-          "published_at": "2026-11-12T18:44:15Z",
-          "description_excerpt": "Jensen Huang is out at Nvidia, leaving a power vacuum that stretches across the AI industry. NLW examines the allegations behind his departure, who stands to benefit, and what happens when the industry loses one of its most influential figures. From China policy and open source to the financial commitments supporting the AI buildout, the consequenc"
-        },
-        {
-          "title": "7 Things AI-Native Companies Do Differently",
-          "views": 7896,
-          "likes": 118,
-          "comments": 5,
-          "published_at": "2026-11-17T01:24:07Z",
-          "description_excerpt": "The AI Daily Brief helps you understand the most important news and discussions in AI. \nSubscribe to the podcast version of The AI Daily Brief wherever you listen: https://pod.link/1680633614\nGet it ad free at http://patreon.com/aidailybrief\nLearn more about the show https://aidailybrief.ai/"
-        },
-        {
-          "title": "Why the AI Kids Hate Astra 6.2",
-          "views": 6733,
-          "likes": 91,
-          "comments": 17,
-          "published_at": "2026-11-19T13:50:08Z",
-          "description_excerpt": "OpenAI’s GPT-6.2 Astra and Sol launch drew some of the worst first impressions on record, yet the efficiency numbers tell a different story. NLW breaks down the benchmarks, the early tester backlash, and what the release says about OpenAI’s push toward cost-efficient enterprise work. In the headlines: the Nvidia board refusing to bring Jensen back,"
-        },
-        {
-          "title": "5 Questions Shaping AI This Week",
-          "views": 5942,
-          "likes": 79,
-          "comments": 8,
-          "published_at": "2026-11-17T22:52:08Z",
-          "description_excerpt": "Anthropic’s IPO could change how Wall Street judges the entire AI industry, while the fight over Jensen Huang’s future could reshape its most important chipmaker. NLW breaks down five questions defining the week: how Anthropic’s debut will land, whether OpenAI will release a new model, whether Huang can return to Nvidia, how far the political fallo"
-        }
-      ]
+      "channel": "AI Tools and AI Productivity",
+      "subscribers": 195,
+      "channel_views": 0,
+      "video_count": 0,
+      "high_performing_recent_videos": []
     }
   ],
   "own_comments": [],
