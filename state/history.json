@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.949430+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.510120+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.991808+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.550126+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.986260+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.544447+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.962378+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.525423+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.993642+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.553990+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -147,7 +147,7 @@
       "script_preview": "Instead of waiting minutes for an AI video render, a new model generates playable shots in three seconds. MiniMax H3 Max on fal.ai turns text prompts or reference images into 768p clips faster than real-time. You type a shot description, click generate, and the rendered clip begins playback almost instantly. For video editors, this shifts AI generation from slow batch queuing into live, interactive shot prototyping. You can test it with zero sign-up, or log in to get fifteen free video generations every day. The limitation is native output maxes out at 768p, requiring an upscaler like FlashVSR",
       "created_at": "2026-08-31T06:42:32.777474+00:00",
       "analytics": {
-        "views": 7.0,
+        "views": 9.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 0.0,
         "averageViewPercentage": 0.0,
@@ -156,7 +156,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.956913+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.519720+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -194,7 +194,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.978911+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.540638+00:00"
     },
     {
       "video_id": "-P5Gzq7jUxM",
@@ -213,7 +213,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.971565+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.534963+00:00"
     },
     {
       "video_id": "9v_limHjc9k",
@@ -273,7 +273,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.999331+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.557843+00:00"
     },
     {
       "video_id": "2sOeY_bE8Mc",
@@ -333,7 +333,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.989946+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.548208+00:00"
     },
     {
       "video_id": "R2cvIjrKgno",
@@ -403,17 +403,17 @@
       "script_preview": "",
       "created_at": "2026-10-01T13:52:41Z",
       "analytics": {
-        "views": 2.0,
+        "views": 1.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 12.0,
-        "averageViewPercentage": 23.47,
+        "averageViewDuration": 23.0,
+        "averageViewPercentage": 43.39,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.975239+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.546347+00:00"
     },
     {
       "video_id": "SM2_ai8JuuE",
@@ -433,7 +433,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:48.004887+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.565623+00:00"
     },
     {
       "video_id": "e8TfuFfpb6I",
@@ -485,15 +485,15 @@
       "analytics": {
         "views": 6.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 15.0,
-        "averageViewPercentage": 34.48,
+        "averageViewDuration": 14.0,
+        "averageViewPercentage": 30.85,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.960566+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.521637+00:00"
     },
     {
       "video_id": "0UqXZiNdc0A",
@@ -513,7 +513,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.995491+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.555909+00:00"
     },
     {
       "video_id": "vQ0VEx8heTQ",
@@ -523,7 +523,7 @@
       "script_preview": "",
       "created_at": "2026-10-04T14:00:09Z",
       "analytics": {
-        "views": 5.0,
+        "views": 4.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 0.0,
         "averageViewPercentage": 0.0,
@@ -533,7 +533,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.966041+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.533067+00:00"
     },
     {
       "video_id": "4J8a1M_LOnY",
@@ -553,7 +553,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.982593+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.542560+00:00"
     },
     {
       "video_id": "NpcTI_Budv8",
@@ -593,7 +593,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.947599+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.508158+00:00"
     },
     {
       "video_id": "WDTWgea0I78",
@@ -603,7 +603,7 @@
       "script_preview": "",
       "created_at": "2026-10-07T13:51:48Z",
       "analytics": {
-        "views": 2.0,
+        "views": 1.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 0.0,
         "averageViewPercentage": 0.0,
@@ -613,7 +613,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.984413+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.559834+00:00"
     },
     {
       "video_id": "djvAoNZtVnc",
@@ -633,7 +633,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.958737+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.523524+00:00"
     },
     {
       "video_id": "KVFqKsYLfW0",
@@ -673,7 +673,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.967884+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.531147+00:00"
     },
     {
       "video_id": "Kf6vZN5CHAA",
@@ -693,7 +693,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.969702+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.527333+00:00"
     },
     {
       "video_id": "xecd0eVo1fk",
@@ -773,7 +773,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:48.003038+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.563694+00:00"
     },
     {
       "video_id": "32SAXoj_OXo",
@@ -793,7 +793,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:48.006727+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.567504+00:00"
     },
     {
       "video_id": "U0fuwALpesI",
@@ -813,7 +813,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.954991+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.515846+00:00"
     },
     {
       "video_id": "VqUrtS3l9D4",
@@ -883,7 +883,7 @@
       "script_preview": "",
       "created_at": "2026-10-15T12:44:43Z",
       "analytics": {
-        "views": 15.0,
+        "views": 14.0,
         "estimatedMinutesWatched": 17.0,
         "averageViewDuration": 533.0,
         "averageViewPercentage": 846.32,
@@ -893,7 +893,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.951283+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.512028+00:00"
     },
     {
       "video_id": "DnlI23stQlM",
@@ -903,7 +903,7 @@
       "script_preview": "",
       "created_at": "2026-10-15T14:35:24Z",
       "analytics": {
-        "views": 22.0,
+        "views": 21.0,
         "estimatedMinutesWatched": 5.0,
         "averageViewDuration": 43.0,
         "averageViewPercentage": 7.870000000000001,
@@ -913,7 +913,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.945772+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.506263+00:00"
     },
     {
       "video_id": "TkuF3hCJ3yQ",
@@ -933,7 +933,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:48.001194+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.561806+00:00"
     },
     {
       "video_id": "NxhA6taXdXI",
@@ -963,6 +963,26 @@
       "script_preview": "",
       "created_at": "2026-10-17T11:03:19Z",
       "analytics": {
+        "views": 0.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-22T15:28:00.569428+00:00"
+    },
+    {
+      "video_id": "SJk9kKOCi24",
+      "topic": "Bluesky Attie: AI Prompts Into Mini Apps",
+      "title": "Bluesky Attie: AI Prompts Into Mini Apps",
+      "format": "short",
+      "script_preview": "",
+      "created_at": "2026-10-17T11:06:26Z",
+      "analytics": {
         "views": 1.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 0.0,
@@ -973,27 +993,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.997482+00:00"
-    },
-    {
-      "video_id": "SJk9kKOCi24",
-      "topic": "Bluesky Attie: AI Prompts Into Mini Apps",
-      "title": "Bluesky Attie: AI Prompts Into Mini Apps",
-      "format": "short",
-      "script_preview": "",
-      "created_at": "2026-10-17T11:06:26Z",
-      "analytics": {
-        "views": 2.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 0.0,
-        "averageViewPercentage": 0.0,
-        "likes": 0.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      },
-      "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.977068+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.552004+00:00"
     },
     {
       "video_id": "BlNs3G51JVk",
@@ -1003,17 +1003,17 @@
       "script_preview": "",
       "created_at": "2026-10-17T12:09:47Z",
       "analytics": {
-        "views": 5.0,
+        "views": 4.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 13.0,
-        "averageViewPercentage": 2.62,
+        "averageViewDuration": 8.0,
+        "averageViewPercentage": 1.68,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.964202+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.529230+00:00"
     },
     {
       "video_id": "mGOsZQtAIsM",
@@ -1032,7 +1032,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.930353+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.492914+00:00"
     },
     {
       "video_id": "mVAkxYCL1Xs",
@@ -1051,7 +1051,7 @@
         "shares": 2.0,
         "subscribersGained": 2.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.917566+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.479505+00:00"
     },
     {
       "video_id": "VIxIb88nFE8",
@@ -1070,7 +1070,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.953137+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.513946+00:00"
     },
     {
       "video_id": "eIi0hBh9bUQ",
@@ -1089,7 +1089,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.924899+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.487225+00:00"
     },
     {
       "video_id": "btGrCa9GSDY",
@@ -1108,7 +1108,7 @@
         "shares": 0.0,
         "subscribersGained": 2.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.938216+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.498639+00:00"
     },
     {
       "video_id": "WE1y-ytiBYs",
@@ -1214,7 +1214,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.973411+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.536865+00:00"
     },
     {
       "video_id": "TyhfJ6HJnYQ",
@@ -1254,7 +1254,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.980767+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.538756+00:00"
     },
     {
       "video_id": "yknAuovRzH8",
@@ -1293,7 +1293,7 @@
         "shares": 1.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.942084+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.504368+00:00"
     },
     {
       "video_id": "7R_SEuwyUiQ",
@@ -1303,7 +1303,7 @@
       "script_preview": "Stop using AI for fact-finding; a new Stanford study exposes exactly where it breaks. A new Stanford study shows AI is brilliant for synthesis but dangerous for niche data. If you prompt an LLM for obscure facts, it prioritizes fluency over truth—creating 'hallucinations' that sound academic. Workflow shift: Use ChatGPT or Claude strictly to organize broad, well-documented fields into outlines. When you need specific, hard-to-verify data, stop. Switch to Google Scholar or library databases immediately. The AI limitation is simple: models are trained on patterns, not truth. They cannot distingu",
       "created_at": "2026-11-09T12:15:49.882365+00:00",
       "analytics": {
-        "views": 94.0,
+        "views": 95.0,
         "estimatedMinutesWatched": 33.0,
         "averageViewDuration": 61.0,
         "averageViewPercentage": 100.33000000000001,
@@ -1312,7 +1312,7 @@
         "shares": 1.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.923102+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.485345+00:00"
     },
     {
       "video_id": "5q-fBWIzGS8",
@@ -1322,7 +1322,7 @@
       "script_preview": "Stop scrubbing through hour-long meeting recordings to find that one specific deadline. One UI 9.5 upgrades the Samsung Voice Recorder with local AI, designed to extract data without a cloud round-trip. By hitting the new 'Summarize' button, the model isolates speaker transcripts and generates a bulleted task list in seconds. Crucially, while basic transcriptions remain free, Samsung is gating advanced AI agents behind their Galaxy AI Premium tier. Before you upgrade, confirm your hardware supports on-device processing to keep your private notes offline. It’s an essential shift for project man",
       "created_at": "2026-11-09T22:49:50.401610+00:00",
       "analytics": {
-        "views": 114.0,
+        "views": 115.0,
         "estimatedMinutesWatched": 7.0,
         "averageViewDuration": 12.0,
         "averageViewPercentage": 25.06,
@@ -1331,7 +1331,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.921235+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.483418+00:00"
     },
     {
       "video_id": "PmSkGh8xeLQ",
@@ -1351,7 +1351,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.926712+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.489126+00:00"
     },
     {
       "video_id": "0FecNH-i2eg",
@@ -1370,7 +1370,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.913743+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.475423+00:00"
     },
     {
       "video_id": "914eGdEzFxY",
@@ -1389,7 +1389,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.936004+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.496732+00:00"
     },
     {
       "video_id": "oAziI9Sb_io",
@@ -1399,16 +1399,16 @@
       "script_preview": "Stop wasting time in Task Manager. Anthropic’s Claude Code isn't just for writing scripts; it’s an AI agent that can audit your entire OS. Installed via NPM, it runs in your terminal with deep access to your process trees. Instead of hunting for bloatware manually, you can prompt it to identify high-CPU background tasks. It uses an 'Auto Mode' to safely run commands, turning complex debugging into a simple conversation. It’s free to experiment with if you have an Anthropic API key, but keep in mind, it requires local environment access. For a sluggish machine, use the '--local' flag to let Cla",
       "created_at": "2026-11-12T15:39:05.433837+00:00",
       "analytics": {
-        "views": 23.0,
+        "views": 28.0,
         "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 20.0,
-        "averageViewPercentage": 46.79,
+        "averageViewDuration": 16.0,
+        "averageViewPercentage": 38.16,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.943924+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.500557+00:00"
     },
     {
       "video_id": "iRx6t2_O0Dw",
@@ -1418,16 +1418,16 @@
       "script_preview": "The biggest lie in modern AI is that context window size is the only metric that matters for developers. Even with million-token capacities, your coding agents suffer from context degradation, where massive history logs cause the model to lose track of instructions. We are diving into billion-context, an open-source project that reached over five thousand GitHub stars just months after launch. It acts as a local proxy called bili that sits directly between your coding agent and your model API to manage memory intelligently. This isn't just a simple summarizer; it is a structural architectural ",
       "created_at": "2026-11-12T16:08:55.909200+00:00",
       "analytics": {
-        "views": 301.0,
-        "estimatedMinutesWatched": 1364.0,
-        "averageViewDuration": 340.0,
-        "averageViewPercentage": 62.08,
+        "views": 302.0,
+        "estimatedMinutesWatched": 1365.0,
+        "averageViewDuration": 339.0,
+        "averageViewPercentage": 61.870000000000005,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 2.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.915775+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.477535+00:00"
     },
     {
       "video_id": "2psjTFwyamI",
@@ -1446,7 +1446,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-21T19:54:47.928523+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.491000+00:00"
     },
     {
       "video_id": "24ojEojRXa4",
@@ -1456,7 +1456,7 @@
       "script_preview": "",
       "created_at": "2026-11-13T11:51:18Z",
       "analytics": {
-        "views": 144.0,
+        "views": 148.0,
         "estimatedMinutesWatched": 22.0,
         "averageViewDuration": 23.0,
         "averageViewPercentage": 40.06,
@@ -1466,7 +1466,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.919415+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.481474+00:00"
     },
     {
       "video_id": "V0NFg4TFWII",
@@ -1486,7 +1486,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.940253+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.502438+00:00"
     },
     {
       "video_id": "Y9XEGZVVgpI",
@@ -1496,7 +1496,7 @@
       "script_preview": "",
       "created_at": "2026-11-14T14:59:27Z",
       "analytics": {
-        "views": 52.0,
+        "views": 53.0,
         "estimatedMinutesWatched": 13.0,
         "averageViewDuration": 37.0,
         "averageViewPercentage": 71.16,
@@ -1506,7 +1506,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.932191+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.494809+00:00"
     },
     {
       "video_id": "Fe95_7u7JQo",
@@ -1516,17 +1516,17 @@
       "script_preview": "",
       "created_at": "2026-11-14T15:02:47Z",
       "analytics": {
-        "views": 1048.0,
-        "estimatedMinutesWatched": 340.0,
+        "views": 1055.0,
+        "estimatedMinutesWatched": 341.0,
         "averageViewDuration": 33.0,
-        "averageViewPercentage": 65.35,
+        "averageViewPercentage": 65.3,
         "likes": 9.0,
         "comments": 0.0,
         "shares": 3.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.911356+00:00"
+      "analytics_updated_at": "2026-11-22T15:28:00.472853+00:00"
     },
     {
       "video_id": "yQyoif2Q8Y4",
@@ -1535,7 +1535,17 @@
       "format": "short",
       "script_preview": "You can now process your entire morning inbox and daily agenda without ever touching your phone screen. Gemini Connected Apps lets Android users turn voice commands into multi-app background automation. To set it up on Android, launch Gemini Settings, open Personal Intelligence, and select Connected Apps. Toggle permissions on for Gmail, Google Calendar, and Keep to bridge Gemini directly into your workspace. Saying 'What does my day look like?' triggers Gemini to pull unread emails, read calendar slots, and list Keep tasks aloud. This core extension integration is free within the standard Gem",
       "created_at": "2026-11-19T21:03:42.065598+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 10.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 7.0,
+        "averageViewPercentage": 13.930000000000001,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-11-22T15:28:00.517835+00:00"
     },
     {
       "video_id": "NYOBKri86DQ",
@@ -1562,6 +1572,24 @@
       "format": "short",
       "script_preview": "Frontier AI can now automate a full forty-hour work week of heavy lifting in hours, but delegating decisions is still risky. AI evaluation firm METR updated its benchmark graph to measure multi-day autonomous task completion. Suppose a manager prompts an AI agent with raw files to create an executive presentation deck. The agent parses messy data spreadsheets, writes Python script to clean key fields, and generates structured slides. METR tracking shows AI time horizons—how long models work independently—are doubling rapidly. However, when tasks require judgment-heavy decisions, like deciding ",
       "created_at": "2026-11-21T15:28:48.026539+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "K8qUqcB_41Q",
+      "topic": "\"In the future, everyone's a builder.\" The massive AI experiment playing out in video games",
+      "title": "Roblox AI: Build Games With Text",
+      "format": "short",
+      "script_preview": "You don't need a degree in C++ to build a game anymore; you just need to talk to it. Roblox is integrating generative AI into its studio, turning natural language prompts into 3D objects. Here is the workflow: open the Studio Assistant, type 'create a neon platform with hover physics,' and the AI generates the assets and logic instantly. It replaces hours of manual vertex manipulation with a simple chat interface. The trade-off? AI-generated code is often unoptimized and prone to logic bugs, requiring manual cleanup. It is free to use within the Studio for all active developers. If you want to",
+      "created_at": "2026-11-22T15:04:11.963821+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "M8Pnl8bdZbU",
+      "topic": "Dev squeezes an AI language model onto a floppy for 486DX and Pentium PC stalwarts — Tiny 2.1 needs 540KB of memory and speaks via PC speaker, is a question-answering transformer with 367K parameters",
+      "title": "Running LLMs on a Floppy Disk: The 540KB Challenge",
+      "format": "short",
+      "script_preview": "Think AI needs H100s and massive VRAM? Think again. A developer just squeezed 'Tiny 2.1'—a functional question-answering transformer—onto a 3.5-inch floppy. This isn't a cloud wrapper. It’s a transformer running natively in DOS. It requires just 540KB of memory to function. You type a prompt, and it processes locally, outputting answers through your system's primitive PC speaker. The catch? The intelligence is severely limited by its scale, and you need a vintage DOS environment. It’s a brilliant benchmark for bare-metal efficiency. Dig out those old disks and see if your CPU can still crunch ",
+      "created_at": "2026-11-22T15:21:32.392055+00:00",
       "analytics": {}
     }
   ],
@@ -2082,6 +2110,18 @@
       "title": "The AI Benchmark Update You Need to Know",
       "format": "short",
       "created_at": "2026-11-21T15:28:48.026539+00:00"
+    },
+    {
+      "topic": "\"In the future, everyone's a builder.\" The massive AI experiment playing out in video games",
+      "title": "Roblox AI: Build Games With Text",
+      "format": "short",
+      "created_at": "2026-11-22T15:04:11.963821+00:00"
+    },
+    {
+      "topic": "Dev squeezes an AI language model onto a floppy for 486DX and Pentium PC stalwarts — Tiny 2.1 needs 540KB of memory and speaks via PC speaker, is a question-answering transformer with 367K parameters",
+      "title": "Running LLMs on a Floppy Disk: The 540KB Challenge",
+      "format": "short",
+      "created_at": "2026-11-22T15:21:32.392055+00:00"
     }
   ]
 }
