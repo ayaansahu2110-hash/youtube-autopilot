@@ -1,96 +1,96 @@
 {
-  "generated_at": "2026-11-22T14:56:17.986828+00:00",
+  "generated_at": "2026-11-22T20:03:48.295993+00:00",
   "competitors": [
     {
       "channel": "Practical Engineering",
       "subscribers": 4850000,
-      "channel_views": 578686588,
+      "channel_views": 578782036,
       "video_count": 255,
       "high_performing_recent_videos": [
         {
           "title": "Stopping the Unstoppable",
-          "views": 5624685,
-          "likes": 61684,
+          "views": 5625058,
+          "likes": 61690,
           "comments": 2984,
           "published_at": "2026-09-01T13:00:00Z",
           "description_excerpt": "Buffer stops and bumping posts are hidden in plain sight\n⚙️ Check out SendCutSend for custom parts fabricated from your CAD: http://sendcutsend.com/practicalengineering\n\nAs long as we rely on rail, the \"simple\" physics of stopping will always be a complex balancing act.\n\n📖My new book, Disasters By Design: How Engineering Failures Shaped the Modern "
         },
         {
           "title": "The Hidden Engineering of Pressure Regulators",
-          "views": 2011049,
-          "likes": 30112,
-          "comments": 879,
+          "views": 2011348,
+          "likes": 30122,
+          "comments": 880,
           "published_at": "2026-10-06T13:00:17Z",
           "description_excerpt": "Pressure regulators are Victorian-era mechanical computers, and I cut one in half so we can see how it works\n⚙️ Check out SendCutSend for custom parts fabricated from your CAD: http://sendcutsend.com/practicalengineering\n\nI just love that there’s stuff like this out there, pretty much anywhere you’re willing to look, doing an essential job that few"
         },
         {
           "title": "Every US Electrical Outlet Explained",
-          "views": 1582263,
-          "likes": 29742,
-          "comments": 2680,
+          "views": 1582683,
+          "likes": 29753,
+          "comments": 2678,
           "published_at": "2026-09-15T13:00:35Z",
           "description_excerpt": "Can you collect them all?\nWant to restore the planet's ecosystems and see your impact in monthly videos? The first 100 people to join Planet Wild with my code PRACTICAL29 will get the first month paid for by me: https://planetwild.com/r/practicalengineering/join/29\nIf you want to get to know them better first, check out their mission rewilding tran"
         },
         {
+          "title": "Why Are There So Many Different Transmission Towers?",
+          "views": 1370952,
+          "likes": 29446,
+          "comments": 1754,
+          "published_at": "2026-11-17T14:00:10Z",
+          "description_excerpt": "I love transmission towers!\nWant to restore the planet’s ecosystems and see your impact in monthly videos? The first 100 people to join Planet Wild with my code PRACTICAL11 will get the first month paid for by me: https://planetwild.com/r/practicalengineering/join/11\nIf you want to get to know them better first, check out their mission rewilding po"
+        },
+        {
           "title": "Are Beavers Actually Good at Dams?",
-          "views": 1359090,
-          "likes": 35748,
+          "views": 1359167,
+          "likes": 35747,
           "comments": 1942,
           "published_at": "2026-08-18T13:00:21Z",
           "description_excerpt": "Want to restore the planet’s ecosystems and see your impact in monthly videos? The first 100 people to join Planet Wild with my code PRACTICAL8 will get the first month paid for by me: https://planetwild.com/r/practicalengineering/join/8\nIf you want to get to know them better first, check out their wildlife crossings mission: https://planetwild.com"
-        },
-        {
-          "title": "Why Are There So Many Different Transmission Towers?",
-          "views": 1353850,
-          "likes": 29160,
-          "comments": 1743,
-          "published_at": "2026-11-17T14:00:10Z",
-          "description_excerpt": "I love transmission towers!\nWant to restore the planet’s ecosystems and see your impact in monthly videos? The first 100 people to join Planet Wild with my code PRACTICAL11 will get the first month paid for by me: https://planetwild.com/r/practicalengineering/join/11\nIf you want to get to know them better first, check out their mission rewilding po"
         }
       ]
     },
     {
       "channel": "The Engineering Mindset",
       "subscribers": 4500000,
-      "channel_views": 354143653,
+      "channel_views": 354187228,
       "video_count": 319,
       "high_performing_recent_videos": [
         {
           "title": "MOSFET vs Transistor vs Relay: Most People Get This Wrong",
-          "views": 854466,
-          "likes": 17171,
+          "views": 855093,
+          "likes": 17180,
           "comments": 505,
           "published_at": "2026-06-15T18:41:01Z",
           "description_excerpt": "MOSFET V Transistors Try Brilliant 👉  http://brilliant.org/TheEngineeringMindset Plus our viewers 20% off an annual Premium subscription.\n\nLearn the key differences between MOSFETs, transistors and relays. This beginner-friendly electronics tutorial explains how BJTs and MOSFETs work, why they are used for switching and amplification, and how to ch"
         },
         {
           "title": "How a CPU Turns 1s and 0s Into Everything You See",
-          "views": 519804,
-          "likes": 7552,
+          "views": 520700,
+          "likes": 7570,
           "comments": 189,
           "published_at": "2026-10-05T15:00:22Z",
           "description_excerpt": "How do CPUs actually work? Design PCB's with Altium:  http://altium.com/yt/engineeringmindset\nHow does a CPU use billions of microscopic transistors to perform calculations and run software? In this video, we work from individual MOSFETs through logic gates, binary arithmetic and full adders to the ALU and CPU core.\nSee how processors fetch and exe"
         },
         {
           "title": "Why 3 Phase Power Is So Much Better",
-          "views": 392200,
-          "likes": 3785,
+          "views": 392580,
+          "likes": 3789,
           "comments": 96,
           "published_at": "2026-09-15T15:00:01Z",
           "description_excerpt": "Why 3 phases? Get a 30 day free trial and 20% off an annual subscription.🎁 Click here: https://brilliant.org/TheEngineeringMindset \n\nWhat is 3 phase electricity and how does three phase power work, learn Wye Delta loads and neutral currents, how and where three phase electricity is used, why 3 phases, how the generator works to produce 3 phase sine"
         },
         {
           "title": "The 1.25V Trick That Gives You Any Voltage You Want",
-          "views": 376938,
-          "likes": 9309,
+          "views": 377056,
+          "likes": 9311,
           "comments": 335,
           "published_at": "2026-06-01T17:04:21Z",
           "description_excerpt": "Learn how voltage regulators actually work and how to design and build one. \nCheck out PCBWAY➡️ https://www.pcbway.com/ for PCB's, 3D printing and CNC at expectational value and design PCB's with Altium ➡️ http://altium.com/yt/engineeringmindset\nLearn how an LM317 adjustable voltage regulator turns unregulated DC into a smooth, stable output for el"
         },
         {
           "title": "The Truth About Three-Phase Power: Why It Became the Standard",
-          "views": 188700,
-          "likes": 6671,
+          "views": 188800,
+          "likes": 6672,
           "comments": 629,
           "published_at": "2026-07-28T17:13:17Z",
           "description_excerpt": "Why Not 2 Phase Power? Try Brilliant 👉  http://brilliant.org/TheEngineeringMindset Plus our viewers 20% off an annual Premium subscription.\n\nDownload your Excel sheets here ➡️ https://tinyurl.com/2-Phase-Excel\nTry Brilliant Tutor for free 👉  http://brilliant.org/TheEngineeringMindset\nGet your engineers mug here:➡️ https://engineeringmindset.store/p"
@@ -100,45 +100,45 @@
     {
       "channel": "Engineering Explained",
       "subscribers": 4240000,
-      "channel_views": 1075201118,
+      "channel_views": 1075275561,
       "video_count": 1074,
       "high_performing_recent_videos": [
         {
           "title": "I Fact-Checked Every Stunt in the Tesla Roadster Reveal",
-          "views": 2925954,
-          "likes": 46769,
-          "comments": 8400,
+          "views": 2926717,
+          "likes": 46781,
+          "comments": 8399,
           "published_at": "2026-10-23T14:00:00Z",
           "description_excerpt": "Tesla Roadster Revealed: It Flies, It Kickflips, It Rockets! Right?\nMath From 6 Years Ago - https://youtu.be/4PRi4B1APj0\nSubscribe to Engineering Explained for more videos! - https://goo.gl/VZstk7\n\nTesla has unveiled the new Roadster, and in classic Tesla fashion, they have some wild marketing stunts to go along with it. I love marketing stunts, be"
         },
         {
           "title": "No, The Tesla Roadster Won’t Refill Its Air Tanks (Bet)",
-          "views": 1665283,
-          "likes": 28118,
-          "comments": 6329,
+          "views": 1668952,
+          "likes": 28169,
+          "comments": 6334,
           "published_at": "2026-11-13T15:00:02Z",
           "description_excerpt": "Elon Said The Roadster Can Refill Its Air Tanks – I Bet It Won't\nWere The Roadster Stunts Real? Video: https://youtu.be/hJSbro3EBnY\nSubscribe to Engineering Explained for more videos! - https://goo.gl/VZstk7\n\nI am betting against Tesla. Elon said during the Roadster reveal that the car will come with a feature that I simply do not believe will happ"
         },
         {
           "title": "Are You Buying The Wrong Tires?",
-          "views": 960424,
-          "likes": 14271,
+          "views": 960952,
+          "likes": 14273,
           "comments": 1263,
           "published_at": "2026-09-25T14:00:36Z",
           "description_excerpt": "Summer, All-Season, All-Weather, Winter, All-Terrain – What Tires Should You Buy?\nFind the right tires for your car: https://continentaltire.com/tire-search\nBig thanks to Continental for sponsoring this video! \n\nNothing impacts the performance of your car more than tires. But when you’re buying tires, it can be overwhelming trying to figure out wha"
         },
         {
           "title": "Lucid Bought My Car Back, So I Bought A Mach-E",
-          "views": 889168,
-          "likes": 21238,
-          "comments": 3738,
+          "views": 889740,
+          "likes": 21240,
+          "comments": 3740,
           "published_at": "2026-10-09T14:00:42Z",
           "description_excerpt": "Lucid bought back my Air, so I bought a Ford Mustang Mach-E GT\nCheck out Continental's ECS02 Tires! - https://bit.ly/3Ulidu1\nSponsored by Continental \n\nGenuinely this was some of the most fun I’ve ever had car shopping because the criteria was very open: pretty much anything electric, except for three brands. I’ve already had a long term Nissan Lea"
         },
         {
           "title": "How To Easily Ruin Your Turbocharged Car",
-          "views": 493183,
-          "likes": 15182,
+          "views": 493301,
+          "likes": 15185,
           "comments": 599,
           "published_at": "2026-09-11T14:00:36Z",
           "description_excerpt": "If you want to ruin your turbocharged car, it’s easy. All you have to do is drive your car hard, then immediately shut it off. You see, turbos are one of the hottest parts of your car, since all of the exhaust gases are routed through it. To help enable high turbo speeds, and to help cool it, engine oil pass through the insides of the turbocharger,"
@@ -152,10 +152,10 @@
       "title": "Why Heat Shields Must Burn",
       "format": "short",
       "metrics": {
-        "views": 1279.0,
+        "views": 1280.0,
         "estimatedMinutesWatched": 209.0,
         "averageViewDuration": 17.0,
-        "averageViewPercentage": 43.78,
+        "averageViewPercentage": 43.74,
         "likes": 15.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -166,7 +166,7 @@
       "title": "Why F1 Brakes Glow at 1,000°C Without Melting",
       "format": "short",
       "metrics": {
-        "views": 1242.0,
+        "views": 1243.0,
         "estimatedMinutesWatched": 211.0,
         "averageViewDuration": 18.0,
         "averageViewPercentage": 37.42,
@@ -222,10 +222,10 @@
       "title": "Why the Sky Changes Color at Sunset",
       "format": "short",
       "metrics": {
-        "views": 15.0,
+        "views": 16.0,
         "estimatedMinutesWatched": 10.0,
-        "averageViewDuration": 123.0,
-        "averageViewPercentage": 202.29,
+        "averageViewDuration": 104.0,
+        "averageViewPercentage": 170.73,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -250,10 +250,10 @@
       "title": "Why the Moon Pulls Earth's Oceans",
       "format": "short",
       "metrics": {
-        "views": 119.0,
+        "views": 120.0,
         "estimatedMinutesWatched": 23.0,
         "averageViewDuration": 22.0,
-        "averageViewPercentage": 40.31,
+        "averageViewPercentage": 40.19,
         "likes": 3.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -264,10 +264,10 @@
       "title": "Why Rivers Must Meander",
       "format": "short",
       "metrics": {
-        "views": 143.0,
-        "estimatedMinutesWatched": 16.0,
+        "views": 145.0,
+        "estimatedMinutesWatched": 17.0,
         "averageViewDuration": 12.0,
-        "averageViewPercentage": 25.009999999999998,
+        "averageViewPercentage": 25.21,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -308,10 +308,10 @@
       "title": "Why Heat Shields Must Burn",
       "format": "short",
       "metrics": {
-        "views": 1279.0,
+        "views": 1280.0,
         "estimatedMinutesWatched": 209.0,
         "averageViewDuration": 17.0,
-        "averageViewPercentage": 43.78,
+        "averageViewPercentage": 43.74,
         "likes": 15.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -322,7 +322,7 @@
       "title": "Why F1 Brakes Glow at 1,000°C Without Melting",
       "format": "short",
       "metrics": {
-        "views": 1242.0,
+        "views": 1243.0,
         "estimatedMinutesWatched": 211.0,
         "averageViewDuration": 18.0,
         "averageViewPercentage": 37.42,
