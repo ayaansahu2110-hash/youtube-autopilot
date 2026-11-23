@@ -1,87 +1,31 @@
 {
-  "generated_at": "2026-11-23T19:24:45.517780+00:00",
+  "generated_at": "2026-11-23T22:17:11.911927+00:00",
   "competitors": [
-    {
-      "channel": "Nate Herk | AI Automation",
-      "subscribers": 1140000,
-      "channel_views": 69865865,
-      "video_count": 615,
-      "high_performing_recent_videos": [
-        {
-          "title": "Google Is BACK (Gemini 4 Neon Tested)",
-          "views": 98306,
-          "likes": 1047,
-          "comments": 76,
-          "published_at": "2026-11-22T00:06:32Z",
-          "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=gemini-4-neon-roundup&sl=yt_gemini-4-neon-roundup\nHow I built an AI agency from 0 to over 4 million per year: https://www.skool.com/ai-automation-society-plus/about?el=gemini-4-neon-roundup&hcategory=youtube-videos&utm_campaign=plu"
-        },
-        {
-          "title": "Anthropic Engineer Explains: How to Stop Hitting Claude's Token Limit",
-          "views": 53100,
-          "likes": 736,
-          "comments": 60,
-          "published_at": "2026-11-22T15:39:28Z",
-          "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os?utm_source=youtube&utm_medium=organic&utm_content=claude-token-limit&sl=yt_claude-token-limit\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-token-limit&hcategory=youtube-videos&utm_campaign=plus-group\nM"
-        },
-        {
-          "title": "How I’d Become a Forward Deployed Engineer in 2027 (no code)",
-          "views": 52227,
-          "likes": 588,
-          "comments": 35,
-          "published_at": "2026-11-20T17:34:00Z",
-          "description_excerpt": "Sign up for CompactifAI API: https://multiversecomputing.com/compactifai/api?utm_source=youtube&utm_medium=influencer&utm_campaign=compactifai_api_1126&utm_content=nate_herk_description_link\nFREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=fde-roadmap&sl=yt_fde-roadm"
-        },
-        {
-          "title": "Anthropic's IPO Clearly Explained in 7 Minutes",
-          "views": 45716,
-          "likes": 396,
-          "comments": 27,
-          "published_at": "2026-11-21T14:08:25Z",
-          "description_excerpt": "How I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=anthropic-ipo-explained&hcategory=youtube-videos&utm_campaign=plus-group\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=anthropic-ipo-explained&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFR"
-        },
-        {
-          "title": "The Hottest AI Job of 2027 pays $325k/year",
-          "views": 33101,
-          "likes": 767,
-          "comments": 9,
-          "published_at": "2026-11-20T17:50:29Z",
-          "description_excerpt": ""
-        }
-      ]
-    },
     {
       "channel": "Matt Wolfe",
       "subscribers": 1040000,
-      "channel_views": 87419361,
-      "video_count": 856,
+      "channel_views": 87467207,
+      "video_count": 857,
       "high_performing_recent_videos": [
         {
           "title": "Insane AI Breakthroughs Nobody Is Talking About",
-          "views": 232222,
-          "likes": 3270,
+          "views": 233009,
+          "likes": 3274,
           "comments": 178,
           "published_at": "2026-11-18T22:08:16Z",
           "description_excerpt": "12 AI breakthroughs you probably missed, from incredibly human AI voices to a walking robot powered by an old phone.\n\nThese are some of the coolest AI tools, research projects, and tech demos I’ve come across recently that didn’t make it into my weekly AI news videos. We’re looking at AI characters that react to your movements, interactive world mo"
         },
         {
           "title": "AI News: This Is The Make or Break Week!!",
-          "views": 128180,
-          "likes": 1954,
+          "views": 129395,
+          "likes": 1966,
           "comments": 170,
           "published_at": "2026-11-20T19:00:16Z",
           "description_excerpt": "Hire your own team of agents with Hyperagent for free here: https://hyperagent.com/login?utm_source=youtube&utm_medium=influencer&utm_campaign=MATT\n\nAnthropic’s IPO puts the AI bubble to the test as OpenAI and Google launch powerful new models for less.\n\nThis week, I test GPT-6.2 Astra, Sol, and Gemini 4 Neon, break down Microsoft’s latest AI relea"
         },
         {
-          "title": "OpenAI GPT-6.2 Astra is Here - It's Not What You Think",
-          "views": 128075,
-          "likes": 1794,
-          "comments": 164,
-          "published_at": "2026-11-18T01:43:27Z",
-          "description_excerpt": "Sharing the latest news and advancements in AI - 🛠️ Explore AI Tools & News: https://futuretools.io/\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@m"
-        },
-        {
           "title": "This will test if AI truly is a bubble",
-          "views": 28730,
+          "views": 28746,
           "likes": 532,
           "comments": 49,
           "published_at": "2026-11-19T21:14:46Z",
@@ -89,10 +33,18 @@
         },
         {
           "title": "They built cyborg cockroaches with built-in AI...",
-          "views": 19237,
-          "likes": 654,
+          "views": 19406,
+          "likes": 657,
           "comments": 54,
           "published_at": "2026-11-21T21:25:07Z",
+          "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
+        },
+        {
+          "title": "The Reason No One Can Catch NVIDIA",
+          "views": 18928,
+          "likes": 543,
+          "comments": 30,
+          "published_at": "2026-11-18T19:02:01Z",
           "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
         }
       ]
@@ -100,20 +52,20 @@
     {
       "channel": "The AI Daily Brief: Artificial Intelligence News",
       "subscribers": 588000,
-      "channel_views": 13123614,
+      "channel_views": 13125114,
       "video_count": 1553,
       "high_performing_recent_videos": [
         {
           "title": "Washington Fired Jensen Huang",
-          "views": 21197,
-          "likes": 318,
+          "views": 21208,
+          "likes": 317,
           "comments": 102,
           "published_at": "2026-11-14T14:35:53Z",
           "description_excerpt": "Jensen Huang’s exit from Nvidia marks the start of a harder line on China, chip export controls, and corporate power in Washington. NLW breaks down the fight over chip policy, the congressional hearings ahead, the doubts about the spy claims, and what Nvidia’s leadership change means for the AI industry. This main-only cut has no headlines section,"
         },
         {
           "title": "Jensen Huang Is Out. Everything in AI Is Now Up for Grabs.",
-          "views": 12316,
+          "views": 12325,
           "likes": 166,
           "comments": 21,
           "published_at": "2026-11-12T18:44:15Z",
@@ -121,7 +73,7 @@
         },
         {
           "title": "7 Things AI-Native Companies Do Differently",
-          "views": 8236,
+          "views": 8251,
           "likes": 123,
           "comments": 5,
           "published_at": "2026-11-17T01:24:07Z",
@@ -129,53 +81,73 @@
         },
         {
           "title": "Why the AI Kids Hate Astra 6.2",
-          "views": 7829,
-          "likes": 100,
+          "views": 7852,
+          "likes": 101,
           "comments": 18,
           "published_at": "2026-11-19T13:50:08Z",
           "description_excerpt": "OpenAI’s GPT-6.2 Astra and Sol launch drew some of the worst first impressions on record, yet the efficiency numbers tell a different story. NLW breaks down the benchmarks, the early tester backlash, and what the release says about OpenAI’s push toward cost-efficient enterprise work. In the headlines: the Nvidia board refusing to bring Jensen back,"
         },
         {
           "title": "How Business AI Use is Changing",
-          "views": 6251,
-          "likes": 73,
+          "views": 6269,
+          "likes": 74,
           "comments": 3,
           "published_at": "2026-11-18T16:50:20Z",
           "description_excerpt": "Business AI usage is growing much faster than spending as token prices fall and buyers gain leverage. NLW breaks down new data from Ramp, Databricks, and Arcana on model switching, spend concentration, and where enterprise agents really stand. In the headlines: the Nvidia board shutting the door on a Jensen return, new remote-access chip rules, and"
+        }
+      ]
+    },
+    {
+      "channel": "ICOR with Tom | AI Productivity",
+      "subscribers": 114000,
+      "channel_views": 14549671,
+      "video_count": 630,
+      "high_performing_recent_videos": [
+        {
+          "title": "Claude Code Desktop replaced my terminal and VS Code",
+          "views": 10403,
+          "likes": 76,
+          "comments": 19,
+          "published_at": "2026-11-15T16:50:01Z",
+          "description_excerpt": "Set up Claude Code Desktop with sessions that message each other, so you get most of what Grok Bot gives without Grok Bot.\nMore on building your system: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=e_BiN-2AALA&utm_content=description\n\nWATCH THIS NEXT\n• Claude can now prompt its own SESSIONS. I built the boss.: https://ww"
+        },
+        {
+          "title": "I pay €400 a month for AI. Only Claude Code delivers.",
+          "views": 6753,
+          "likes": 110,
+          "comments": 39,
+          "published_at": "2026-11-09T22:30:34Z",
+          "description_excerpt": "I pay over $400 a month for AI, and here is where Grok Bot falls short and what stays safe whichever agent tool you use.\nMore on building your system: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=WGfIwQbM9K4&utm_content=description\n\nWATCH THIS NEXT\n• Before You Set Up Grok Bot, Watch This: https://www.youtube.com/watch?v"
+        },
+        {
+          "title": "I solved object-oriented note-taking in #obsidian",
+          "views": 4752,
+          "likes": 13,
+          "comments": 3,
+          "published_at": "2026-11-20T22:47:29Z",
+          "description_excerpt": "Want this plugin?\nComing soon to an Obsidian Marketplace near you.\nFor free!\nGet notified at myicor.com"
+        },
+        {
+          "title": "Too many Claude sessions? Make one that watches the rest",
+          "views": 2780,
+          "likes": 53,
+          "comments": 4,
+          "published_at": "2026-11-20T20:00:08Z",
+          "description_excerpt": "Too many Claude Code sessions? Set up one orchestrator session that lists what is waiting on you and lets you answer it all in one place.\nMore on building your system: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=P8mxzC-nRMs&utm_content=description\n\nWATCH THIS NEXT\n• Claude can now prompt its own SESSIONS. I built the bo"
+        },
+        {
+          "title": "Fable 5.2 did this...it's not a game #claudecode #claudeai #fable",
+          "views": 2257,
+          "likes": 35,
+          "comments": 6,
+          "published_at": "2026-11-10T01:56:32Z",
+          "description_excerpt": "Full insights soon on @myicor and @myicorpodcast"
         }
       ]
     }
   ],
   "own_comments": [],
   "own_analytics": [
-    {
-      "title": "GTA 6 NPCs Are Actually ALIVE! (Mind-Blowing AI)",
-      "format": "short",
-      "metrics": {
-        "views": 17.0,
-        "estimatedMinutesWatched": 3.0,
-        "averageViewDuration": 25.0,
-        "averageViewPercentage": 42.85,
-        "likes": 2.0,
-        "comments": 1.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
-      "title": "GTA 6 vs GTA 5: The Physics Leap That Changes EVERYTHING",
-      "format": "short",
-      "metrics": {
-        "views": 3.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 4.0,
-        "averageViewPercentage": 8.44,
-        "likes": 1.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
     {
       "title": "GTA 6 Vehicle PHYSICS: Everything You Need To Know",
       "format": "short",
@@ -208,10 +180,10 @@
       "title": "GTA 6: You Can SKIP The Romance? (Official)",
       "format": "short",
       "metrics": {
-        "views": 247.0,
-        "estimatedMinutesWatched": 34.0,
+        "views": 280.0,
+        "estimatedMinutesWatched": 38.0,
         "averageViewDuration": 16.0,
-        "averageViewPercentage": 37.44,
+        "averageViewPercentage": 37.35,
         "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -250,10 +222,10 @@
       "title": "GTA 6 - The Hidden Romance Feature Rockstar Didn't Tell You About!",
       "format": "short",
       "metrics": {
-        "views": 47.0,
-        "estimatedMinutesWatched": 3.0,
-        "averageViewDuration": 13.0,
-        "averageViewPercentage": 23.16,
+        "views": 54.0,
+        "estimatedMinutesWatched": 4.0,
+        "averageViewDuration": 12.0,
+        "averageViewPercentage": 22.45,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -264,10 +236,10 @@
       "title": "GTA 6: NEW Secret Easter Egg Found (Location Guide)",
       "format": "short",
       "metrics": {
-        "views": 58.0,
-        "estimatedMinutesWatched": 8.0,
+        "views": 66.0,
+        "estimatedMinutesWatched": 10.0,
         "averageViewDuration": 23.0,
-        "averageViewPercentage": 52.77,
+        "averageViewPercentage": 52.790000000000006,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -278,11 +250,11 @@
       "title": "GTA 6: 5 Secret Mechanics Rockstar Tried To Hide!",
       "format": "short",
       "metrics": {
-        "views": 7.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 5.0,
-        "averageViewPercentage": 9.5,
-        "likes": 0.0,
+        "views": 22.0,
+        "estimatedMinutesWatched": 3.0,
+        "averageViewDuration": 13.0,
+        "averageViewPercentage": 24.93,
+        "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
@@ -292,10 +264,10 @@
       "title": "GTA 6: Rockstar Left 'Empty' Zones For A Massive Secret",
       "format": "short",
       "metrics": {
-        "views": 6.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 5.0,
-        "averageViewPercentage": 11.28,
+        "views": 12.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 9.0,
+        "averageViewPercentage": 18.48,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -306,10 +278,10 @@
       "title": "GTA 6: I Climbed for 7 Minutes and Found THIS Secret",
       "format": "short",
       "metrics": {
-        "views": 15.0,
-        "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 16.0,
-        "averageViewPercentage": 34.02,
+        "views": 33.0,
+        "estimatedMinutesWatched": 4.0,
+        "averageViewDuration": 19.0,
+        "averageViewPercentage": 40.06,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -320,11 +292,11 @@
       "title": "GTA 6 MAP LEAKED: The Leonida Size Comparison Is Insane!",
       "format": "short",
       "metrics": {
-        "views": 1.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 9.0,
-        "averageViewPercentage": 16.68,
-        "likes": 0.0,
+        "views": 673.0,
+        "estimatedMinutesWatched": 130.0,
+        "averageViewDuration": 21.0,
+        "averageViewPercentage": 39.1,
+        "likes": 6.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
@@ -334,11 +306,11 @@
       "title": "3 Real Florida Locations Hidden In GTA 6!",
       "format": "short",
       "metrics": {
-        "views": 1.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 6.0,
-        "averageViewPercentage": 10.62,
-        "likes": 0.0,
+        "views": 83.0,
+        "estimatedMinutesWatched": 14.0,
+        "averageViewDuration": 15.0,
+        "averageViewPercentage": 23.83,
+        "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
@@ -348,11 +320,25 @@
       "title": "I Drove Across the ENTIRE GTA 6 Map (Shocking Results)",
       "format": "short",
       "metrics": {
-        "views": 1.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 0.0,
-        "averageViewPercentage": 0.0,
-        "likes": 0.0,
+        "views": 119.0,
+        "estimatedMinutesWatched": 12.0,
+        "averageViewDuration": 11.0,
+        "averageViewPercentage": 24.18,
+        "likes": 2.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "GTA 6: Rockstar HID A DARK SECRET in Plain Sight!",
+      "format": "short",
+      "metrics": {
+        "views": 131.0,
+        "estimatedMinutesWatched": 24.0,
+        "averageViewDuration": 20.0,
+        "averageViewPercentage": 43.72,
+        "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
@@ -371,75 +357,145 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       }
-    }
-  ],
-  "own_winners": [
+    },
     {
-      "title": "GTA 6: You Can SKIP The Romance? (Official)",
+      "title": "GTA 6: YOU MISSED THE SILENT HILL SECRET!",
       "format": "short",
       "metrics": {
         "views": 247.0,
+        "estimatedMinutesWatched": 41.0,
+        "averageViewDuration": 15.0,
+        "averageViewPercentage": 32.57,
+        "likes": 6.0,
+        "comments": 0.0,
+        "shares": 1.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "GTA 6: FOUND Dexter Morgan’s Hidden Kill Room & Boat!",
+      "format": "short",
+      "metrics": {
+        "views": 462.0,
+        "estimatedMinutesWatched": 95.0,
+        "averageViewDuration": 22.0,
+        "averageViewPercentage": 44.56,
+        "likes": 10.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Rockstar Hid THIS Secret Twist in GTA 6 Prologue!",
+      "format": "short",
+      "metrics": {
+        "views": 964.0,
+        "estimatedMinutesWatched": 271.0,
+        "averageViewDuration": 27.0,
+        "averageViewPercentage": 54.459999999999994,
+        "likes": 16.0,
+        "comments": 0.0,
+        "shares": 1.0,
+        "subscribersGained": 1.0
+      }
+    },
+    {
+      "title": "GTA 6: I Found All 60 SECRET Birds (Location Guide)",
+      "format": "short",
+      "metrics": {
+        "views": 207.0,
         "estimatedMinutesWatched": 34.0,
-        "averageViewDuration": 16.0,
-        "averageViewPercentage": 37.44,
-        "likes": 2.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
-      "title": "GTA 6: NEW Secret Easter Egg Found (Location Guide)",
-      "format": "short",
-      "metrics": {
-        "views": 58.0,
-        "estimatedMinutesWatched": 8.0,
-        "averageViewDuration": 23.0,
-        "averageViewPercentage": 52.77,
+        "averageViewDuration": 22.0,
+        "averageViewPercentage": 43.1,
         "likes": 1.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 2.0
-      }
-    },
-    {
-      "title": "GTA 6 - The Hidden Romance Feature Rockstar Didn't Tell You About!",
-      "format": "short",
-      "metrics": {
-        "views": 47.0,
-        "estimatedMinutesWatched": 3.0,
-        "averageViewDuration": 13.0,
-        "averageViewPercentage": 23.16,
-        "likes": 0.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
-      "title": "GTA 6: The Secret Car Physics Rockstar HID",
-      "format": "short",
-      "metrics": {
-        "views": 29.0,
-        "estimatedMinutesWatched": 5.0,
-        "averageViewDuration": 16.0,
-        "averageViewPercentage": 30.349999999999998,
-        "likes": 2.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 1.0
       }
     },
     {
-      "title": "GTA 6 NPCs Are Actually ALIVE! (Mind-Blowing AI)",
+      "title": "GTA 6: Rockstar HID Sam Houser In This Mission!",
       "format": "short",
       "metrics": {
-        "views": 17.0,
-        "estimatedMinutesWatched": 3.0,
+        "views": 670.0,
+        "estimatedMinutesWatched": 174.0,
         "averageViewDuration": 25.0,
-        "averageViewPercentage": 42.85,
+        "averageViewPercentage": 44.16,
+        "likes": 10.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    }
+  ],
+  "own_winners": [
+    {
+      "title": "Rockstar Hid THIS Secret Twist in GTA 6 Prologue!",
+      "format": "short",
+      "metrics": {
+        "views": 964.0,
+        "estimatedMinutesWatched": 271.0,
+        "averageViewDuration": 27.0,
+        "averageViewPercentage": 54.459999999999994,
+        "likes": 16.0,
+        "comments": 0.0,
+        "shares": 1.0,
+        "subscribersGained": 1.0
+      }
+    },
+    {
+      "title": "GTA 6: Rockstar HID Sam Houser In This Mission!",
+      "format": "short",
+      "metrics": {
+        "views": 670.0,
+        "estimatedMinutesWatched": 174.0,
+        "averageViewDuration": 25.0,
+        "averageViewPercentage": 44.16,
+        "likes": 10.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "GTA 6 MAP LEAKED: The Leonida Size Comparison Is Insane!",
+      "format": "short",
+      "metrics": {
+        "views": 673.0,
+        "estimatedMinutesWatched": 130.0,
+        "averageViewDuration": 21.0,
+        "averageViewPercentage": 39.1,
+        "likes": 6.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "GTA 6: FOUND Dexter Morgan’s Hidden Kill Room & Boat!",
+      "format": "short",
+      "metrics": {
+        "views": 462.0,
+        "estimatedMinutesWatched": 95.0,
+        "averageViewDuration": 22.0,
+        "averageViewPercentage": 44.56,
+        "likes": 10.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "GTA 6: You Can SKIP The Romance? (Official)",
+      "format": "short",
+      "metrics": {
+        "views": 280.0,
+        "estimatedMinutesWatched": 38.0,
+        "averageViewDuration": 16.0,
+        "averageViewPercentage": 37.35,
         "likes": 2.0,
-        "comments": 1.0,
+        "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       }
