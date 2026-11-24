@@ -1,48 +1,96 @@
 {
-  "generated_at": "2026-11-23T18:43:38.247682+00:00",
+  "generated_at": "2026-11-24T00:22:26.216160+00:00",
   "competitors": [
+    {
+      "channel": "Dan Martell",
+      "subscribers": 3180000,
+      "channel_views": 429941745,
+      "video_count": 3884,
+      "high_performing_recent_videos": [
+        {
+          "title": "GTA 6 is a massive success for this one reason",
+          "views": 53788,
+          "likes": 1811,
+          "comments": 41,
+          "published_at": "2026-11-20T21:47:54Z",
+          "description_excerpt": "GTA 6 is a massive success for this one reason"
+        },
+        {
+          "title": "How to start AI automation with Grok Bot",
+          "views": 43762,
+          "likes": 940,
+          "comments": 12,
+          "published_at": "2026-11-20T15:04:11Z",
+          "description_excerpt": "How to start AI automation with Grok Bot"
+        },
+        {
+          "title": "I will delete your need for perfection in 60 seconds",
+          "views": 16081,
+          "likes": 1396,
+          "comments": 20,
+          "published_at": "2026-11-22T21:02:41Z",
+          "description_excerpt": "I will delete your need for perfection in 60 seconds"
+        },
+        {
+          "title": "This isn't just another AI tool.",
+          "views": 11734,
+          "likes": 404,
+          "comments": 6,
+          "published_at": "2026-11-21T19:04:20Z",
+          "description_excerpt": "This isn't just another AI tool."
+        },
+        {
+          "title": "CL-622-09 Most leaders ar",
+          "views": 7746,
+          "likes": 408,
+          "comments": 6,
+          "published_at": "2026-11-22T15:03:32Z",
+          "description_excerpt": "Most leaders are just managers."
+        }
+      ]
+    },
     {
       "channel": "Nate Herk | AI Automation",
       "subscribers": 1140000,
-      "channel_views": 69865865,
-      "video_count": 615,
+      "channel_views": 70077436,
+      "video_count": 616,
       "high_performing_recent_videos": [
         {
           "title": "Google Is BACK (Gemini 4 Neon Tested)",
-          "views": 97666,
-          "likes": 1037,
-          "comments": 76,
+          "views": 102989,
+          "likes": 1078,
+          "comments": 79,
           "published_at": "2026-11-22T00:06:32Z",
           "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=gemini-4-neon-roundup&sl=yt_gemini-4-neon-roundup\nHow I built an AI agency from 0 to over 4 million per year: https://www.skool.com/ai-automation-society-plus/about?el=gemini-4-neon-roundup&hcategory=youtube-videos&utm_campaign=plu"
         },
         {
           "title": "Anthropic Engineer Explains: How to Stop Hitting Claude's Token Limit",
-          "views": 52537,
-          "likes": 729,
-          "comments": 60,
+          "views": 56549,
+          "likes": 765,
+          "comments": 44,
           "published_at": "2026-11-22T15:39:28Z",
           "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os?utm_source=youtube&utm_medium=organic&utm_content=claude-token-limit&sl=yt_claude-token-limit\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-token-limit&hcategory=youtube-videos&utm_campaign=plus-group\nM"
         },
         {
-          "title": "How I’d Become a Forward Deployed Engineer in 2027 (no code)",
-          "views": 52013,
-          "likes": 586,
-          "comments": 35,
-          "published_at": "2026-11-20T17:34:00Z",
-          "description_excerpt": "Sign up for CompactifAI API: https://multiversecomputing.com/compactifai/api?utm_source=youtube&utm_medium=influencer&utm_campaign=compactifai_api_1126&utm_content=nate_herk_description_link\nFREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=fde-roadmap&sl=yt_fde-roadm"
-        },
-        {
           "title": "Anthropic's IPO Clearly Explained in 7 Minutes",
-          "views": 45537,
-          "likes": 393,
-          "comments": 27,
+          "views": 46813,
+          "likes": 403,
+          "comments": 28,
           "published_at": "2026-11-21T14:08:25Z",
           "description_excerpt": "How I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=anthropic-ipo-explained&hcategory=youtube-videos&utm_campaign=plus-group\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=anthropic-ipo-explained&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFR"
         },
         {
+          "title": "30 Everyday Ways to Use Grok Bot That Feel Like Cheating",
+          "views": 35160,
+          "likes": 614,
+          "comments": 23,
+          "published_at": "2026-11-23T01:52:25Z",
+          "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=grok-bot-use-cases&sl=yt_grok-bot-use-cases\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=grok-bot-use-cases&hcategory=youtube-videos&utm_campaign=plus-group\n"
+        },
+        {
           "title": "The Hottest AI Job of 2027 pays $325k/year",
-          "views": 32988,
-          "likes": 765,
+          "views": 33712,
+          "likes": 778,
           "comments": 9,
           "published_at": "2026-11-20T17:50:29Z",
           "description_excerpt": ""
@@ -52,96 +100,48 @@
     {
       "channel": "Matt Wolfe",
       "subscribers": 1040000,
-      "channel_views": 87419361,
-      "video_count": 856,
+      "channel_views": 87467207,
+      "video_count": 857,
       "high_performing_recent_videos": [
         {
           "title": "Insane AI Breakthroughs Nobody Is Talking About",
-          "views": 232017,
-          "likes": 3268,
+          "views": 233704,
+          "likes": 3278,
           "comments": 178,
           "published_at": "2026-11-18T22:08:16Z",
           "description_excerpt": "12 AI breakthroughs you probably missed, from incredibly human AI voices to a walking robot powered by an old phone.\n\nThese are some of the coolest AI tools, research projects, and tech demos I’ve come across recently that didn’t make it into my weekly AI news videos. We’re looking at AI characters that react to your movements, interactive world mo"
         },
         {
-          "title": "OpenAI GPT-6.2 Astra is Here - It's Not What You Think",
-          "views": 128044,
-          "likes": 1794,
-          "comments": 164,
-          "published_at": "2026-11-18T01:43:27Z",
-          "description_excerpt": "Sharing the latest news and advancements in AI - 🛠️ Explore AI Tools & News: https://futuretools.io/\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@m"
-        },
-        {
           "title": "AI News: This Is The Make or Break Week!!",
-          "views": 127873,
-          "likes": 1951,
-          "comments": 168,
+          "views": 129990,
+          "likes": 1972,
+          "comments": 171,
           "published_at": "2026-11-20T19:00:16Z",
           "description_excerpt": "Hire your own team of agents with Hyperagent for free here: https://hyperagent.com/login?utm_source=youtube&utm_medium=influencer&utm_campaign=MATT\n\nAnthropic’s IPO puts the AI bubble to the test as OpenAI and Google launch powerful new models for less.\n\nThis week, I test GPT-6.2 Astra, Sol, and Gemini 4 Neon, break down Microsoft’s latest AI relea"
         },
         {
           "title": "This will test if AI truly is a bubble",
-          "views": 28696,
-          "likes": 531,
+          "views": 28827,
+          "likes": 532,
           "comments": 49,
           "published_at": "2026-11-19T21:14:46Z",
           "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
         },
         {
           "title": "They built cyborg cockroaches with built-in AI...",
-          "views": 19202,
-          "likes": 654,
+          "views": 19507,
+          "likes": 657,
           "comments": 54,
           "published_at": "2026-11-21T21:25:07Z",
           "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
-        }
-      ]
-    },
-    {
-      "channel": "The AI Daily Brief: Artificial Intelligence News",
-      "subscribers": 588000,
-      "channel_views": 13123614,
-      "video_count": 1553,
-      "high_performing_recent_videos": [
-        {
-          "title": "Washington Fired Jensen Huang",
-          "views": 21197,
-          "likes": 318,
-          "comments": 102,
-          "published_at": "2026-11-14T14:35:53Z",
-          "description_excerpt": "Jensen Huang’s exit from Nvidia marks the start of a harder line on China, chip export controls, and corporate power in Washington. NLW breaks down the fight over chip policy, the congressional hearings ahead, the doubts about the spy claims, and what Nvidia’s leadership change means for the AI industry. This main-only cut has no headlines section,"
         },
         {
-          "title": "Jensen Huang Is Out. Everything in AI Is Now Up for Grabs.",
-          "views": 12315,
-          "likes": 166,
-          "comments": 21,
-          "published_at": "2026-11-12T18:44:15Z",
-          "description_excerpt": "Jensen Huang is out at Nvidia, leaving a power vacuum that stretches across the AI industry. NLW examines the allegations behind his departure, who stands to benefit, and what happens when the industry loses one of its most influential figures. From China policy and open source to the financial commitments supporting the AI buildout, the consequenc"
-        },
-        {
-          "title": "7 Things AI-Native Companies Do Differently",
-          "views": 8235,
-          "likes": 123,
-          "comments": 5,
-          "published_at": "2026-11-17T01:24:07Z",
-          "description_excerpt": "The AI Daily Brief helps you understand the most important news and discussions in AI. \nSubscribe to the podcast version of The AI Daily Brief wherever you listen: https://pod.link/1680633614\nGet it ad free at http://patreon.com/aidailybrief\nLearn more about the show https://aidailybrief.ai/"
-        },
-        {
-          "title": "Why the AI Kids Hate Astra 6.2",
-          "views": 7821,
-          "likes": 100,
-          "comments": 18,
-          "published_at": "2026-11-19T13:50:08Z",
-          "description_excerpt": "OpenAI’s GPT-6.2 Astra and Sol launch drew some of the worst first impressions on record, yet the efficiency numbers tell a different story. NLW breaks down the benchmarks, the early tester backlash, and what the release says about OpenAI’s push toward cost-efficient enterprise work. In the headlines: the Nvidia board refusing to bring Jensen back,"
-        },
-        {
-          "title": "How Business AI Use is Changing",
-          "views": 6249,
-          "likes": 73,
-          "comments": 3,
-          "published_at": "2026-11-18T16:50:20Z",
-          "description_excerpt": "Business AI usage is growing much faster than spending as token prices fall and buyers gain leverage. NLW breaks down new data from Ramp, Databricks, and Arcana on model switching, spend concentration, and where enterprise agents really stand. In the headlines: the Nvidia board shutting the door on a Jensen return, new remote-access chip rules, and"
+          "title": "The Reason No One Can Catch NVIDIA",
+          "views": 18982,
+          "likes": 546,
+          "comments": 30,
+          "published_at": "2026-11-18T19:02:01Z",
+          "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
         }
       ]
     }
@@ -219,6 +219,20 @@
       }
     },
     {
+      "title": "Eight Bear Cubs Go Home! 🐾 | Snohomish Rhyme",
+      "format": "short",
+      "metrics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 2.0,
+        "averageViewPercentage": 5.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
       "title": "The Secret Bear Cave Discovery",
       "format": "short",
       "metrics": {
@@ -268,6 +282,20 @@
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 0.0,
         "averageViewPercentage": 0.04,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "9 Alternatives to CoComelon: Smarter Screen Time for Toddlers",
+      "format": "long",
+      "metrics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 2.0,
+        "averageViewPercentage": 0.34,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
