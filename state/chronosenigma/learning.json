@@ -1,79 +1,31 @@
 {
-  "generated_at": "2026-11-24T18:33:35.843910+00:00",
+  "generated_at": "2026-11-24T22:49:38.278471+00:00",
   "competitors": [
-    {
-      "channel": "Nate Herk | AI Automation",
-      "subscribers": 1140000,
-      "channel_views": 70397426,
-      "video_count": 617,
-      "high_performing_recent_videos": [
-        {
-          "title": "Google Is BACK (Gemini 4 Neon Tested)",
-          "views": 113442,
-          "likes": 1141,
-          "comments": 81,
-          "published_at": "2026-11-22T00:06:32Z",
-          "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=gemini-4-neon-roundup&sl=yt_gemini-4-neon-roundup\nHow I built an AI agency from 0 to over 4 million per year: https://www.skool.com/ai-automation-society-plus/about?el=gemini-4-neon-roundup&hcategory=youtube-videos&utm_campaign=plu"
-        },
-        {
-          "title": "Anthropic Engineer Explains: How to Stop Hitting Claude's Token Limit",
-          "views": 63731,
-          "likes": 841,
-          "comments": 43,
-          "published_at": "2026-11-22T15:39:28Z",
-          "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os?utm_source=youtube&utm_medium=organic&utm_content=claude-token-limit&sl=yt_claude-token-limit\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-token-limit&hcategory=youtube-videos&utm_campaign=plus-group\nM"
-        },
-        {
-          "title": "Anthropic's IPO Clearly Explained in 7 Minutes",
-          "views": 48640,
-          "likes": 416,
-          "comments": 29,
-          "published_at": "2026-11-21T14:08:25Z",
-          "description_excerpt": "How I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=anthropic-ipo-explained&hcategory=youtube-videos&utm_campaign=plus-group\nMy FREE resources: https://www.skool.com/ai-automation-society/about?el=anthropic-ipo-explained&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFR"
-        },
-        {
-          "title": "30 Grok Bot Use Cases That Feel Like Cheating Life",
-          "views": 45389,
-          "likes": 764,
-          "comments": 29,
-          "published_at": "2026-11-23T01:52:25Z",
-          "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=grok-bot-use-cases&sl=yt_grok-bot-use-cases\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=grok-bot-use-cases&hcategory=youtube-videos&utm_campaign=plus-group\n"
-        },
-        {
-          "title": "I Paid Claude $1 vs $1,000 to Build a Video Game",
-          "views": 24126,
-          "likes": 285,
-          "comments": 29,
-          "published_at": "2026-11-23T13:55:10Z",
-          "description_excerpt": "FREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=claude-price-ladder&sl=yt_claude-price-ladder\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-price-ladder&hcategory=youtube-videos&utm_camp"
-        }
-      ]
-    },
     {
       "channel": "Matt Wolfe",
       "subscribers": 1040000,
       "channel_views": 87525366,
-      "video_count": 857,
+      "video_count": 858,
       "high_performing_recent_videos": [
         {
           "title": "Insane AI Breakthroughs Nobody Is Talking About",
-          "views": 238092,
-          "likes": 3320,
-          "comments": 178,
+          "views": 238985,
+          "likes": 3328,
+          "comments": 179,
           "published_at": "2026-11-18T22:08:16Z",
           "description_excerpt": "12 AI breakthroughs you probably missed, from incredibly human AI voices to a walking robot powered by an old phone.\n\nThese are some of the coolest AI tools, research projects, and tech demos I’ve come across recently that didn’t make it into my weekly AI news videos. We’re looking at AI characters that react to your movements, interactive world mo"
         },
         {
           "title": "AI News: This Is The Make or Break Week!!",
-          "views": 134234,
-          "likes": 2011,
-          "comments": 175,
+          "views": 135230,
+          "likes": 2021,
+          "comments": 176,
           "published_at": "2026-11-20T19:00:16Z",
           "description_excerpt": "Hire your own team of agents with Hyperagent for free here: https://hyperagent.com/login?utm_source=youtube&utm_medium=influencer&utm_campaign=MATT\n\nAnthropic’s IPO puts the AI bubble to the test as OpenAI and Google launch powerful new models for less.\n\nThis week, I test GPT-6.2 Astra, Sol, and Gemini 4 Neon, break down Microsoft’s latest AI relea"
         },
         {
           "title": "This will test if AI truly is a bubble",
-          "views": 29092,
+          "views": 29130,
           "likes": 537,
           "comments": 49,
           "published_at": "2026-11-19T21:14:46Z",
@@ -81,16 +33,16 @@
         },
         {
           "title": "Google Cooked With This New Model!",
-          "views": 21396,
-          "likes": 542,
-          "comments": 32,
+          "views": 22005,
+          "likes": 558,
+          "comments": 33,
           "published_at": "2026-11-22T20:58:01Z",
           "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
         },
         {
           "title": "They built cyborg cockroaches with built-in AI...",
-          "views": 20119,
-          "likes": 660,
+          "views": 20344,
+          "likes": 661,
           "comments": 55,
           "published_at": "2026-11-21T21:25:07Z",
           "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
@@ -105,7 +57,7 @@
       "high_performing_recent_videos": [
         {
           "title": "Washington Fired Jensen Huang",
-          "views": 21231,
+          "views": 21241,
           "likes": 317,
           "comments": 102,
           "published_at": "2026-11-14T14:35:53Z",
@@ -113,7 +65,7 @@
         },
         {
           "title": "7 Things AI-Native Companies Do Differently",
-          "views": 8323,
+          "views": 8350,
           "likes": 124,
           "comments": 5,
           "published_at": "2026-11-17T01:24:07Z",
@@ -121,7 +73,7 @@
         },
         {
           "title": "Why the AI Kids Hate Astra 6.2",
-          "views": 7981,
+          "views": 7999,
           "likes": 101,
           "comments": 18,
           "published_at": "2026-11-19T13:50:08Z",
@@ -129,19 +81,67 @@
         },
         {
           "title": "Why Some Are Claiming Gemini Neon is Better than Fable",
-          "views": 6592,
-          "likes": 101,
+          "views": 6939,
+          "likes": 105,
           "comments": 9,
           "published_at": "2026-11-23T14:48:09Z",
           "description_excerpt": "Gemini 4 Neon is earning real praise, and Google is finally back in the conversation at the top of the model race. NLW breaks down the benchmarks, early reactions, and why a different perspective can matter more than a better one. In the headlines: Anthropic’s first day as a public company, new China chip fallout, and a shake-up in White House cybe"
         },
         {
           "title": "How Business AI Use is Changing",
-          "views": 6414,
+          "views": 6451,
           "likes": 75,
           "comments": 3,
           "published_at": "2026-11-18T16:50:20Z",
           "description_excerpt": "Business AI usage is growing much faster than spending as token prices fall and buyers gain leverage. NLW breaks down new data from Ramp, Databricks, and Arcana on model switching, spend concentration, and where enterprise agents really stand. In the headlines: the Nvidia board shutting the door on a Jensen return, new remote-access chip rules, and"
+        }
+      ]
+    },
+    {
+      "channel": "Channels for AI News, Tools & Learning",
+      "subscribers": 108,
+      "channel_views": 12504,
+      "video_count": 21,
+      "high_performing_recent_videos": [
+        {
+          "title": "natural beauty video 7 #nature #beautiful",
+          "views": 1818,
+          "likes": 0,
+          "comments": 0,
+          "published_at": "2026-06-16T19:05:13Z",
+          "description_excerpt": ""
+        },
+        {
+          "title": "accident video",
+          "views": 1474,
+          "likes": 0,
+          "comments": 0,
+          "published_at": "2026-06-16T19:01:20Z",
+          "description_excerpt": ""
+        },
+        {
+          "title": "thailand tour @wizkhalifa",
+          "views": 1467,
+          "likes": 0,
+          "comments": 0,
+          "published_at": "2026-06-21T18:19:29Z",
+          "description_excerpt": "thailand tour\nbankok"
+        },
+        {
+          "title": "boom boom@Ch3Thailand",
+          "views": 270,
+          "likes": 0,
+          "comments": 0,
+          "published_at": "2026-06-16T19:09:10Z",
+          "description_excerpt": ""
+        },
+        {
+          "title": "small house concept @wizkhalifa  #love #smarthome",
+          "views": 252,
+          "likes": 2,
+          "comments": 0,
+          "published_at": "2026-06-15T17:07:17Z",
+          "description_excerpt": "concept of small house"
         }
       ]
     }
@@ -149,97 +149,13 @@
   "own_comments": [],
   "own_analytics": [
     {
-      "title": "Göbekli Tepe: The 15-Ton Engineering Paradox",
-      "format": "short",
-      "metrics": {
-        "views": 1.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 6.0,
-        "averageViewPercentage": 12.35,
-        "likes": 0.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
-      "title": "Gunung Padang: The Impossible Mountain Megalith",
-      "format": "short",
-      "metrics": {
-        "views": 9.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 9.0,
-        "averageViewPercentage": 16.62,
-        "likes": 0.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
-      "title": "The Richat Structure: Is it Really Atlantis? The Truth Revealed",
-      "format": "long",
-      "metrics": {
-        "views": 1.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 17.0,
-        "averageViewPercentage": 3.09,
-        "likes": 0.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
-      "title": "Amazonia's Secret Megalopolis",
-      "format": "short",
-      "metrics": {
-        "views": 4.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 92.0,
-        "averageViewPercentage": 188.29,
-        "likes": 0.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
-      "title": "303 New Nazca Geoglyphs: AI Reveals Lost Secrets",
-      "format": "short",
-      "metrics": {
-        "views": 1.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 0.0,
-        "averageViewPercentage": 0.0,
-        "likes": 0.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
-      "title": "The 9,000 Frog Ritual of Roman Britain",
-      "format": "short",
-      "metrics": {
-        "views": 3.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 12.0,
-        "averageViewPercentage": 20.61,
-        "likes": 0.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
       "title": "The Learjet Paradox: Anatomy of a Disappearance",
       "format": "short",
       "metrics": {
-        "views": 3.0,
-        "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 61.0,
-        "averageViewPercentage": 122.56,
+        "views": 6.0,
+        "estimatedMinutesWatched": 3.0,
+        "averageViewDuration": 46.0,
+        "averageViewPercentage": 92.98,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -250,7 +166,7 @@
       "title": "Ancient DNA Unlocks 1,600-Year-Old Nazca 'Cyclops' Baby Mystery",
       "format": "short",
       "metrics": {
-        "views": 6.0,
+        "views": 7.0,
         "estimatedMinutesWatched": 1.0,
         "averageViewDuration": 56.0,
         "averageViewPercentage": 99.61,
@@ -261,13 +177,41 @@
       }
     },
     {
+      "title": "The CPS Rot: Emails Reveal Systemic Failure",
+      "format": "short",
+      "metrics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 33.0,
+        "averageViewPercentage": 68.98,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "125,000-Year-Old Poisoned Weapons: History Rewritten",
+      "format": "short",
+      "metrics": {
+        "views": 2.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 52.0,
+        "averageViewPercentage": 100.77000000000001,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
       "title": "Egypt's First Kings: The Dark Rituals of Abydos",
       "format": "short",
       "metrics": {
-        "views": 312.0,
+        "views": 313.0,
         "estimatedMinutesWatched": 46.0,
         "averageViewDuration": 16.0,
-        "averageViewPercentage": 34.26,
+        "averageViewPercentage": 34.12,
         "likes": 5.0,
         "comments": 1.0,
         "shares": 0.0,
@@ -278,10 +222,10 @@
       "title": "Vanished in 1982: The Jennifer Marteliz Cold Case",
       "format": "short",
       "metrics": {
-        "views": 9.0,
+        "views": 10.0,
         "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 34.0,
-        "averageViewPercentage": 65.61,
+        "averageViewDuration": 33.0,
+        "averageViewPercentage": 63.43,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -292,10 +236,10 @@
       "title": "The 100-Year Fallacy",
       "format": "short",
       "metrics": {
-        "views": 152.0,
-        "estimatedMinutesWatched": 13.0,
-        "averageViewDuration": 13.0,
-        "averageViewPercentage": 27.55,
+        "views": 154.0,
+        "estimatedMinutesWatched": 14.0,
+        "averageViewDuration": 14.0,
+        "averageViewPercentage": 29.18,
         "likes": 2.0,
         "comments": 1.0,
         "shares": 0.0,
@@ -306,10 +250,10 @@
       "title": "Egypt's Lost Hydraulic Engineering Revealed",
       "format": "short",
       "metrics": {
-        "views": 642.0,
-        "estimatedMinutesWatched": 321.0,
+        "views": 649.0,
+        "estimatedMinutesWatched": 323.0,
         "averageViewDuration": 45.0,
-        "averageViewPercentage": 85.66,
+        "averageViewPercentage": 85.5,
         "likes": 15.0,
         "comments": 2.0,
         "shares": 1.0,
@@ -348,7 +292,7 @@
       "title": "12,000-Year-Old Grave Discovery Solves Göbekli Tepe Mystery",
       "format": "short",
       "metrics": {
-        "views": 1.0,
+        "views": 2.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 52.0,
         "averageViewPercentage": 83.33,
@@ -362,7 +306,7 @@
       "title": "The Epidaurus Subterranean Anomaly",
       "format": "short",
       "metrics": {
-        "views": 14.0,
+        "views": 15.0,
         "estimatedMinutesWatched": 9.0,
         "averageViewDuration": 90.0,
         "averageViewPercentage": 173.52,
@@ -376,7 +320,7 @@
       "title": "The Parthenon Puzzle: Solving Ancient Greece's Lost Masterpiece",
       "format": "short",
       "metrics": {
-        "views": 17.0,
+        "views": 18.0,
         "estimatedMinutesWatched": 8.0,
         "averageViewDuration": 80.0,
         "averageViewPercentage": 136.0,
@@ -387,13 +331,27 @@
       }
     },
     {
+      "title": "Scientists Uncover Great Pyramid's Hidden Superpower",
+      "format": "short",
+      "metrics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 0.0,
+        "averageViewPercentage": 0.0,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
       "title": "Göbekli Tepe: The Truth Behind The Scattered Bones",
       "format": "long",
       "metrics": {
-        "views": 8.0,
+        "views": 9.0,
         "estimatedMinutesWatched": 3.0,
-        "averageViewDuration": 34.0,
-        "averageViewPercentage": 6.78,
+        "averageViewDuration": 30.0,
+        "averageViewPercentage": 6.03,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -404,8 +362,8 @@
       "title": "The Teotihuacán Subterranean Secret",
       "format": "short",
       "metrics": {
-        "views": 11.0,
-        "estimatedMinutesWatched": 2.0,
+        "views": 12.0,
+        "estimatedMinutesWatched": 3.0,
         "averageViewDuration": 34.0,
         "averageViewPercentage": 66.82,
         "likes": 0.0,
@@ -418,10 +376,52 @@
       "title": "The Giza Megastructure: Revealed From Space",
       "format": "short",
       "metrics": {
-        "views": 7.0,
-        "estimatedMinutesWatched": 51.0,
-        "averageViewDuration": 1556.0,
-        "averageViewPercentage": 2936.24,
+        "views": 11.0,
+        "estimatedMinutesWatched": 52.0,
+        "averageViewDuration": 784.0,
+        "averageViewPercentage": 1479.42,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "It Should Not Exist: Ancient Mystery in the Beartooth Mountains",
+      "format": "short",
+      "metrics": {
+        "views": 43.0,
+        "estimatedMinutesWatched": 22.0,
+        "averageViewDuration": 55.0,
+        "averageViewPercentage": 99.94,
+        "likes": 0.0,
+        "comments": 1.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Göbeklitepe: 10,000-Year-Old Graves Shatter History",
+      "format": "short",
+      "metrics": {
+        "views": 374.0,
+        "estimatedMinutesWatched": 128.0,
+        "averageViewDuration": 37.0,
+        "averageViewPercentage": 70.91,
+        "likes": 6.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Amazonia Revealed: How Lasers Are Rewriting Ancient History",
+      "format": "long",
+      "metrics": {
+        "views": 2.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 38.0,
+        "averageViewPercentage": 7.79,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -434,10 +434,10 @@
       "title": "Egypt's Lost Hydraulic Engineering Revealed",
       "format": "short",
       "metrics": {
-        "views": 642.0,
-        "estimatedMinutesWatched": 321.0,
+        "views": 649.0,
+        "estimatedMinutesWatched": 323.0,
         "averageViewDuration": 45.0,
-        "averageViewPercentage": 85.66,
+        "averageViewPercentage": 85.5,
         "likes": 15.0,
         "comments": 2.0,
         "shares": 1.0,
@@ -445,13 +445,27 @@
       }
     },
     {
+      "title": "Göbeklitepe: 10,000-Year-Old Graves Shatter History",
+      "format": "short",
+      "metrics": {
+        "views": 374.0,
+        "estimatedMinutesWatched": 128.0,
+        "averageViewDuration": 37.0,
+        "averageViewPercentage": 70.91,
+        "likes": 6.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
       "title": "The 9,500-Year-Old Drowned Ruins of Khambhat",
       "format": "short",
       "metrics": {
-        "views": 455.0,
-        "estimatedMinutesWatched": 84.0,
+        "views": 459.0,
+        "estimatedMinutesWatched": 85.0,
         "averageViewDuration": 20.0,
-        "averageViewPercentage": 33.21,
+        "averageViewPercentage": 33.59,
         "likes": 9.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -476,26 +490,12 @@
       "title": "Egypt's First Kings: The Dark Rituals of Abydos",
       "format": "short",
       "metrics": {
-        "views": 312.0,
+        "views": 313.0,
         "estimatedMinutesWatched": 46.0,
         "averageViewDuration": 16.0,
-        "averageViewPercentage": 34.26,
+        "averageViewPercentage": 34.12,
         "likes": 5.0,
         "comments": 1.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
-      "title": "The Giza Megastructure: Revealed From Space",
-      "format": "short",
-      "metrics": {
-        "views": 7.0,
-        "estimatedMinutesWatched": 51.0,
-        "averageViewDuration": 1556.0,
-        "averageViewPercentage": 2936.24,
-        "likes": 0.0,
-        "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       }
