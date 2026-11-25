@@ -435,6 +435,15 @@ class AutopilotPipeline:
             seeded = self._verified_fact_seed(excluded_topics=excluded_topics)
             if seeded:
                 return seeded
+            # Fallback 1: Cycle back if all seeds exhausted by looking back only at the last 15 history items
+            if len(excluded_topics) > 15:
+                recent_excluded = excluded_topics[-15:]
+                seeded_recent = self._verified_fact_seed(excluded_topics=recent_excluded)
+                if seeded_recent:
+                    return seeded_recent
+            # Fallback 2: Pick best candidate from live discovery if confidence score >= 50
+            if best and best[0] >= 50:
+                return best[1], best[2]
             if best:
                 raise RuntimeError(
                     "No eligible facts topic passed source verification. "
