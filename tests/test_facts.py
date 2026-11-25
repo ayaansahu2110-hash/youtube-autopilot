@@ -383,7 +383,7 @@ def test_fact_planner_rebuilds_visual_contract_after_scene_splitting() -> None:
 
 
 def test_scheduled_fact_selection_skips_weakly_sourced_headline(tmp_path: Path) -> None:
-    pipeline = AutopilotPipeline(Settings(channel_profile="curioaxiom", artifacts_dir=tmp_path))
+    pipeline = AutopilotPipeline(Settings(channel_profile="curioaxiom", artifacts_dir=tmp_path, state_file=tmp_path / "history.json"))
     weak = TopicCandidate(title="Why an inventor hid his identity", score=90, reason="viral")
     strong = TopicCandidate(title="Why NASA heat shields char", score=70, reason="verified")
     pipeline.discovery.discover = lambda: [weak, strong]

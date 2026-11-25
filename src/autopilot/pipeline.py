@@ -13,6 +13,7 @@ from autopilot.facts import (
     verified_curio_seed,
 )
 from autopilot.models import PipelineRun, ResearchPack, ResearchSource, TopicCandidate
+from autopilot.providers.clipflow import ClipflowProvider
 from autopilot.providers.hybrid_visuals import HybridVisualDirector
 from autopilot.providers.premium_planner import PremiumScriptPlanner
 from autopilot.providers.tts import EdgeTTSProvider, OpenAITTSProvider
@@ -77,11 +78,17 @@ class AutopilotPipeline:
             )
 
         self.visuals = PexelsVideoProvider(settings.pexels_api_key)
+        self.clipflow = ClipflowProvider(
+            base_url=settings.clipflow_base_url,
+            api_key=settings.clipflow_api_key,
+            enabled=settings.clipflow_enabled,
+        )
         self.hybrid_visuals = HybridVisualDirector(
             self.visuals,
             brand_name=settings.channel_display_name,
             facts_mode=is_facts,
             channel_profile=settings.channel_profile,
+            clipflow=self.clipflow,
         )
         self.renderer = FFmpegRenderer(settings.ffmpeg_binary, settings.ffprobe_binary)
         self.thumbnail = ThumbnailGenerator()

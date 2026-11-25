@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 from autopilot.models import SceneBeat, VisualAsset
+from autopilot.providers.clipflow import ClipflowProvider
 from autopilot.providers.visuals import PexelsVideoProvider
 
 
@@ -31,11 +32,13 @@ class HybridVisualDirector:
         brand_name: str = "ByteVexa",
         facts_mode: bool = False,
         channel_profile: str = "bytevexa",
+        clipflow: ClipflowProvider | None = None,
     ):
         self.pexels = pexels
         self.brand_name = brand_name
         self.facts_mode = facts_mode
         self.channel_profile = channel_profile
+        self.clipflow = clipflow
 
     def build_assets(
         self,
@@ -75,7 +78,16 @@ class HybridVisualDirector:
                     vertical=vertical,
                 )
 
-            # 2. High-definition moving Video B-Roll from Pexels (Try for all scenes to eliminate slideshows)
+            # 2. Clipflow Generative AI Cinema Video (Primary Priority with dynamic camera vectors)
+            if asset is None and self.clipflow and self.clipflow.is_available():
+                asset = self._generate_clipflow_asset(
+                    scene,
+                    output_dir / f"scene-{scene_index:02d}-clipflow.mp4",
+                    scene_index=scene_index,
+                    vertical=vertical,
+                )
+
+            # 3. High-definition moving Video B-Roll from Pexels (Try for all scenes to eliminate slideshows)
             if asset is None:
                 stock = []
                 for query in self._stock_queries(scene):
@@ -123,6 +135,58 @@ class HybridVisualDirector:
             assets.append(asset)
 
         return assets
+
+    def _generate_clipflow_asset(
+        self,
+        scene: SceneBeat,
+        out_path: Path,
+        *,
+        scene_index: int,
+        vertical: bool,
+    ) -> VisualAsset | None:
+        """Render high-fidelity generative AI video using Clipflow (Higgsfield engine)."""
+        if not self.clipflow:
+            return None
+
+        prompt_parts: list[str] = []
+        if scene.generator_prompt:
+            prompt_parts.append(scene.generator_prompt)
+        elif scene.exact_visual_subject:
+            prompt_parts.append(scene.exact_visual_subject)
+            if scene.camera_and_lighting:
+                prompt_parts.append(scene.camera_and_lighting)
+        else:
+            if scene.visual_query:
+                prompt_parts.append(scene.visual_query)
+            if scene.narration:
+                prompt_parts.append(scene.narration)
+
+        prompt = ", ".join(p.strip() for p in prompt_parts if p.strip())
+        if not prompt:
+            prompt = f"Cinematic scene for {self.brand_name}: {scene.purpose}"
+
+        prompt = f"{prompt}, cinematic lighting, photorealistic 8k, hyperrealistic"
+        camera_preset = self.clipflow.map_camera_preset(scene, scene_index=scene_index)
+        aspect_ratio = "9:16" if vertical else "16:9"
+
+        rendered_file = self.clipflow.generate_scene_video(
+            prompt=prompt,
+            out_path=out_path,
+            camera_preset=camera_preset,
+            duration=4,
+            aspect_ratio=aspect_ratio,
+            resolution="720p",
+            provider="nvidia",
+        )
+        if rendered_file and rendered_file.exists() and rendered_file.stat().st_size > 0:
+            return VisualAsset(
+                local_path=rendered_file,
+                query=prompt,
+                scene_index=scene_index,
+                asset_kind="video",
+                visual_mode="stock",
+            )
+        return None
 
     def _fetch_authoritative_image(
         self,

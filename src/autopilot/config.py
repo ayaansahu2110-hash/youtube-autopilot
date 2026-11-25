@@ -224,6 +224,9 @@ class Settings(BaseSettings):
     openai_model: str = "gpt-5-mini"
 
     pexels_api_key: str | None = None
+    clipflow_enabled: bool = True
+    clipflow_base_url: str = "http://127.0.0.1:4820"
+    clipflow_api_key: str = "cf_live_a51399c62b50fcb1d67b80539a3c3e20f1511abf57421a08"
     max_visual_clips_short: int = 10
     max_visual_clips_long: int = 42
     visual_clip_seconds: float = 2.8
