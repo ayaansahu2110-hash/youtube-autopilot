@@ -18,7 +18,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.535891+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.177915+00:00"
     },
     {
       "video_id": "LMKSOhUQ6dI",
@@ -38,7 +38,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.561811+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.310703+00:00"
     },
     {
       "video_id": "TX4J_dQRoHQ",
@@ -58,7 +58,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.559483+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.299315+00:00"
     },
     {
       "video_id": "WH9XlFC_2os",
@@ -98,7 +98,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.547191+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.246344+00:00"
     },
     {
       "video_id": "hrPr_pqHlhQ",
@@ -118,7 +118,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.566275+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.330193+00:00"
     },
     {
       "video_id": "ufaDvOU9LF8",
@@ -156,7 +156,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.544942+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.214134+00:00"
     },
     {
       "video_id": "tQg49m8Gfuk",
@@ -194,7 +194,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.557230+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.284518+00:00"
     },
     {
       "video_id": "-P5Gzq7jUxM",
@@ -204,16 +204,16 @@
       "script_preview": "You can now run automated TikTok posts on physical iPhones, controlled entirely from your web browser. An open-source tool called Handler turns spare iOS devices into a self-hosted local phone farm. Once connected, you get a live interactive stream to click-to-tap, drag-to-swipe, and upload video files. The tasks are managed by a durable Docker-based Postgres queue, preserving your queue even through crashes. But note: you must compile the agent from a graphical macOS Terminal session—not a bare SSH shell. This is because the local code-signing process requires direct access to your Mac's logi",
       "created_at": "2026-09-02T11:45:35.036788+00:00",
       "analytics": {
-        "views": 3.0,
+        "views": 2.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 11.0,
-        "averageViewPercentage": 22.49,
+        "averageViewDuration": 16.0,
+        "averageViewPercentage": 33.5,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.552779+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.294290+00:00"
     },
     {
       "video_id": "9v_limHjc9k",
@@ -273,7 +273,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.573002+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.356029+00:00"
     },
     {
       "video_id": "2sOeY_bE8Mc",
@@ -333,7 +333,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.567402+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.334397+00:00"
     },
     {
       "video_id": "R2cvIjrKgno",
@@ -413,7 +413,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.565151+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.326046+00:00"
     },
     {
       "video_id": "SM2_ai8JuuE",
@@ -433,7 +433,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.569663+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.343744+00:00"
     },
     {
       "video_id": "e8TfuFfpb6I",
@@ -493,7 +493,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.548314+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.241136+00:00"
     },
     {
       "video_id": "0UqXZiNdc0A",
@@ -513,7 +513,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.570784+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.347805+00:00"
     },
     {
       "video_id": "vQ0VEx8heTQ",
@@ -533,7 +533,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.551652+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.264042+00:00"
     },
     {
       "video_id": "4J8a1M_LOnY",
@@ -553,7 +553,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.558332+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.289004+00:00"
     },
     {
       "video_id": "NpcTI_Budv8",
@@ -593,7 +593,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.538164+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.188289+00:00"
     },
     {
       "video_id": "WDTWgea0I78",
@@ -603,17 +603,17 @@
       "script_preview": "",
       "created_at": "2026-10-07T13:51:48Z",
       "analytics": {
-        "views": 1.0,
+        "views": 4.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 0.0,
-        "averageViewPercentage": 0.0,
+        "averageViewDuration": 4.0,
+        "averageViewPercentage": 0.78,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-22T19:56:14.020705+00:00"
+      "analytics_updated_at": "2026-11-15T06:30:30.474702+00:00"
     },
     {
       "video_id": "djvAoNZtVnc",
@@ -623,17 +623,17 @@
       "script_preview": "",
       "created_at": "2026-10-07T13:59:06Z",
       "analytics": {
-        "views": 7.0,
+        "views": 6.0,
         "estimatedMinutesWatched": 2.0,
-        "averageViewDuration": 70.0,
-        "averageViewPercentage": 140.1,
+        "averageViewDuration": 121.0,
+        "averageViewPercentage": 243.4,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.546083+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.250520+00:00"
     },
     {
       "video_id": "KVFqKsYLfW0",
@@ -673,7 +673,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.550522+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.259950+00:00"
     },
     {
       "video_id": "Kf6vZN5CHAA",
@@ -693,7 +693,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.560680+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.304334+00:00"
     },
     {
       "video_id": "xecd0eVo1fk",
@@ -773,7 +773,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.574119+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.361231+00:00"
     },
     {
       "video_id": "32SAXoj_OXo",
@@ -793,7 +793,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.571888+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.351912+00:00"
     },
     {
       "video_id": "U0fuwALpesI",
@@ -813,7 +813,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.541586+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.201496+00:00"
     },
     {
       "video_id": "VqUrtS3l9D4",
@@ -843,7 +843,7 @@
       "script_preview": "",
       "created_at": "2026-10-13T19:28:27Z",
       "analytics": {
-        "views": 5.0,
+        "views": 7.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 11.0,
         "averageViewPercentage": 20.74,
@@ -853,7 +853,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-19T20:55:03.936815+00:00"
+      "analytics_updated_at": "2026-11-15T06:30:30.418953+00:00"
     },
     {
       "video_id": "lktA7aPQdvs",
@@ -893,7 +893,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.543821+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.210093+00:00"
     },
     {
       "video_id": "DnlI23stQlM",
@@ -903,17 +903,17 @@
       "script_preview": "",
       "created_at": "2026-10-15T14:35:24Z",
       "analytics": {
-        "views": 17.0,
-        "estimatedMinutesWatched": 5.0,
-        "averageViewDuration": 43.0,
-        "averageViewPercentage": 7.870000000000001,
+        "views": 16.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 22.0,
+        "averageViewPercentage": 4.13,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.537060+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.183030+00:00"
     },
     {
       "video_id": "TkuF3hCJ3yQ",
@@ -933,7 +933,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.568546+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.338473+00:00"
     },
     {
       "video_id": "NxhA6taXdXI",
@@ -943,7 +943,7 @@
       "script_preview": "",
       "created_at": "2026-10-16T12:01:13Z",
       "analytics": {
-        "views": 1.0,
+        "views": 7.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 0.0,
         "averageViewPercentage": 0.0,
@@ -953,7 +953,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-21T19:54:47.988100+00:00"
+      "analytics_updated_at": "2026-11-15T06:30:30.412418+00:00"
     },
     {
       "video_id": "7_kDBbnD2tY",
@@ -973,7 +973,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.576338+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.369340+00:00"
     },
     {
       "video_id": "SJk9kKOCi24",
@@ -993,7 +993,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.575237+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.365271+00:00"
     },
     {
       "video_id": "BlNs3G51JVk",
@@ -1013,7 +1013,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.562935+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.316909+00:00"
     },
     {
       "video_id": "mGOsZQtAIsM",
@@ -1032,7 +1032,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.525625+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.137362+00:00"
     },
     {
       "video_id": "mVAkxYCL1Xs",
@@ -1051,7 +1051,7 @@
         "shares": 2.0,
         "subscribersGained": 2.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.516512+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.100413+00:00"
     },
     {
       "video_id": "VIxIb88nFE8",
@@ -1070,7 +1070,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.539326+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.193361+00:00"
     },
     {
       "video_id": "eIi0hBh9bUQ",
@@ -1089,7 +1089,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.523350+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.129301+00:00"
     },
     {
       "video_id": "btGrCa9GSDY",
@@ -1108,7 +1108,7 @@
         "shares": 0.0,
         "subscribersGained": 2.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.529076+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.150967+00:00"
     },
     {
       "video_id": "WE1y-ytiBYs",
@@ -1194,7 +1194,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.564036+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.320961+00:00"
     },
     {
       "video_id": "e2ltwbdZZsI",
@@ -1214,7 +1214,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.553895+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.269740+00:00"
     },
     {
       "video_id": "TyhfJ6HJnYQ",
@@ -1254,7 +1254,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.555010+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.275220+00:00"
     },
     {
       "video_id": "yknAuovRzH8",
@@ -1293,7 +1293,7 @@
         "shares": 1.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.534728+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.173881+00:00"
     },
     {
       "video_id": "7R_SEuwyUiQ",
@@ -1312,7 +1312,7 @@
         "shares": 1.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.519933+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.113872+00:00"
     },
     {
       "video_id": "5q-fBWIzGS8",
@@ -1331,7 +1331,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.518814+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.109518+00:00"
     },
     {
       "video_id": "PmSkGh8xeLQ",
@@ -1351,7 +1351,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.522196+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.125155+00:00"
     },
     {
       "video_id": "0FecNH-i2eg",
@@ -1370,7 +1370,7 @@
         "shares": 2.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.514111+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.090289+00:00"
     },
     {
       "video_id": "914eGdEzFxY",
@@ -1389,7 +1389,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.527905+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.146924+00:00"
     },
     {
       "video_id": "oAziI9Sb_io",
@@ -1408,7 +1408,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.532474+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.164416+00:00"
     },
     {
       "video_id": "iRx6t2_O0Dw",
@@ -1427,7 +1427,7 @@
         "shares": 0.0,
         "subscribersGained": 2.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.515341+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.095362+00:00"
     },
     {
       "video_id": "2psjTFwyamI",
@@ -1446,7 +1446,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.524486+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.133336+00:00"
     },
     {
       "video_id": "24ojEojRXa4",
@@ -1466,7 +1466,7 @@
         "subscribersGained": 1.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.517673+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.105465+00:00"
     },
     {
       "video_id": "V0NFg4TFWII",
@@ -1486,7 +1486,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.533607+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.168458+00:00"
     },
     {
       "video_id": "Y9XEGZVVgpI",
@@ -1506,7 +1506,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.526765+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.142887+00:00"
     },
     {
       "video_id": "Fe95_7u7JQo",
@@ -1526,15 +1526,15 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-24T22:48:47.512481+00:00"
+      "analytics_updated_at": "2026-11-25T06:30:47.034432+00:00"
     },
     {
       "video_id": "yQyoif2Q8Y4",
-      "topic": "I turned my phone into a hands-free productivity machine with 4 Gemini voice commands",
+      "topic": "Turn Android into a Hands-Free AI Machine with Gemini",
       "title": "Turn Android into a Hands-Free AI Machine with Gemini",
       "format": "short",
-      "script_preview": "You can now process your entire morning inbox and daily agenda without ever touching your phone screen. Gemini Connected Apps lets Android users turn voice commands into multi-app background automation. To set it up on Android, launch Gemini Settings, open Personal Intelligence, and select Connected Apps. Toggle permissions on for Gmail, Google Calendar, and Keep to bridge Gemini directly into your workspace. Saying 'What does my day look like?' triggers Gemini to pull unread emails, read calendar slots, and list Keep tasks aloud. This core extension integration is free within the standard Gem",
-      "created_at": "2026-11-19T21:03:42.065598+00:00",
+      "script_preview": "",
+      "created_at": "2026-11-19T21:03:57Z",
       "analytics": {
         "views": 36.0,
         "estimatedMinutesWatched": 5.0,
@@ -1545,15 +1545,16 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.530202+00:00"
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-25T06:30:47.155016+00:00"
     },
     {
       "video_id": "NYOBKri86DQ",
-      "topic": "Apple may be developing its own AI agent that runs your Mac",
+      "topic": "Apple Building AI Agent to Directly Control Your Mac",
       "title": "Apple Building AI Agent to Directly Control Your Mac",
       "format": "short",
-      "script_preview": "Imagine telling your Mac to debug code, fetch web data, and update files without touching your mouse. Apple job listings reveal it is hiring leadership to build an autonomous AI agent that operates macOS across apps. For developers, this replaces manual copy-pasting from chatbots with full operating-system automation. The flow is direct: your single prompt triggers background browsing and code execution, producing completed project files. Multi-outlet reports confirm Apple's agent autonomously writes code, browses websites, and controls native Mac apps. That puts Apple in direct competition wi",
-      "created_at": "2026-11-20T16:02:27.539144+00:00",
+      "script_preview": "",
+      "created_at": "2026-11-20T16:03:02Z",
       "analytics": {
         "views": 10.0,
         "estimatedMinutesWatched": 1.0,
@@ -1564,15 +1565,16 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.542713+00:00"
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-25T06:30:47.206040+00:00"
     },
     {
       "video_id": "ENmhvGYPU_Q",
-      "topic": "Microsoft is killing To Do — this free, open-source app is the forever home your tasks deserve - How-To Geek",
+      "topic": "Microsoft To Do is Dying: Switch to This",
       "title": "Microsoft To Do is Dying: Switch to This",
       "format": "short",
-      "script_preview": "Stop trusting your life to apps Microsoft might kill tomorrow. Microsoft is de-prioritizing standalone utilities like To Do to force users into the 365 ecosystem. The move? Switch to open-source alternatives like Vikunja or Super Productivity. Most allow one-click CSV imports, so you don't lose years of to-do history. These tools offer local storage, meaning you own your data, not a corporation. They are free, private, and immune to forced subscription paywalls. Pros: Total control and no subscription fees. The catch? You manage your own sync settings. Start by downloading a self-hosted client",
-      "created_at": "2026-11-20T21:00:22.517429+00:00",
+      "script_preview": "",
+      "created_at": "2026-11-20T21:00:42Z",
       "analytics": {
         "views": 32.0,
         "estimatedMinutesWatched": 3.0,
@@ -1583,15 +1585,16 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.531337+00:00"
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-25T06:30:47.160373+00:00"
     },
     {
       "video_id": "1o2SG9_EZwY",
-      "topic": "The most misunderstood graph in AI just got a major update",
+      "topic": "The AI Benchmark Update You Need to Know",
       "title": "The AI Benchmark Update You Need to Know",
-      "format": "short",
-      "script_preview": "Frontier AI can now automate a full forty-hour work week of heavy lifting in hours, but delegating decisions is still risky. AI evaluation firm METR updated its benchmark graph to measure multi-day autonomous task completion. Suppose a manager prompts an AI agent with raw files to create an executive presentation deck. The agent parses messy data spreadsheets, writes Python script to clean key fields, and generates structured slides. METR tracking shows AI time horizons—how long models work independently—are doubling rapidly. However, when tasks require judgment-heavy decisions, like deciding ",
-      "created_at": "2026-11-21T15:28:48.026539+00:00",
+      "format": "long",
+      "script_preview": "",
+      "created_at": "2026-11-21T15:29:06Z",
       "analytics": {
         "views": 11.0,
         "estimatedMinutesWatched": 0.0,
@@ -1602,15 +1605,16 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.540479+00:00"
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-25T06:30:47.197398+00:00"
     },
     {
       "video_id": "K8qUqcB_41Q",
-      "topic": "\"In the future, everyone's a builder.\" The massive AI experiment playing out in video games",
+      "topic": "Roblox AI: Build Games With Text",
       "title": "Roblox AI: Build Games With Text",
       "format": "short",
-      "script_preview": "You don't need a degree in C++ to build a game anymore; you just need to talk to it. Roblox is integrating generative AI into its studio, turning natural language prompts into 3D objects. Here is the workflow: open the Studio Assistant, type 'create a neon platform with hover physics,' and the AI generates the assets and logic instantly. It replaces hours of manual vertex manipulation with a simple chat interface. The trade-off? AI-generated code is often unoptimized and prone to logic bugs, requiring manual cleanup. It is free to use within the Studio for all active developers. If you want to",
-      "created_at": "2026-11-22T15:04:11.963821+00:00",
+      "script_preview": "",
+      "created_at": "2026-11-22T15:04:28Z",
       "analytics": {
         "views": 104.0,
         "estimatedMinutesWatched": 7.0,
@@ -1621,15 +1625,16 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.521063+00:00"
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-25T06:30:47.118922+00:00"
     },
     {
       "video_id": "M8Pnl8bdZbU",
-      "topic": "Dev squeezes an AI language model onto a floppy for 486DX and Pentium PC stalwarts — Tiny 2.1 needs 540KB of memory and speaks via PC speaker, is a question-answering transformer with 367K parameters",
+      "topic": "Running LLMs on a Floppy Disk: The 540KB Challenge",
       "title": "Running LLMs on a Floppy Disk: The 540KB Challenge",
       "format": "short",
-      "script_preview": "Think AI needs H100s and massive VRAM? Think again. A developer just squeezed 'Tiny 2.1'—a functional question-answering transformer—onto a 3.5-inch floppy. This isn't a cloud wrapper. It’s a transformer running natively in DOS. It requires just 540KB of memory to function. You type a prompt, and it processes locally, outputting answers through your system's primitive PC speaker. The catch? The intelligence is severely limited by its scale, and you need a vintage DOS environment. It’s a brilliant benchmark for bare-metal efficiency. Dig out those old disks and see if your CPU can still crunch ",
-      "created_at": "2026-11-22T15:21:32.392055+00:00",
+      "script_preview": "",
+      "created_at": "2026-11-22T15:21:57Z",
       "analytics": {
         "views": 3.0,
         "estimatedMinutesWatched": 0.0,
@@ -1640,15 +1645,16 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.556128+00:00"
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-25T06:30:47.279274+00:00"
     },
     {
       "video_id": "j4gHgkHY-G0",
-      "topic": "I keep going back to TickTick over every other to-do app; here's why",
+      "topic": "Why TickTick Beats Bloated To-Do Apps",
       "title": "Why TickTick Beats Bloated To-Do Apps",
       "format": "short",
-      "script_preview": "Most project management apps clutter your workflow until organizing tasks takes longer than completing them. After six months of testing, TickTick wins because it cuts friction while maintaining deep subtask structure. When drafting a 1,200-word article, you input the main goal and split it into discrete steps. You list title pitching, research, outlining, and drafting—setting due dates, attachments, and priorities in one tap. The output is a streamlined daily view where critical sub-steps never get lost in the shuffle. TickTick provides a generous free tier across web and mobile, unlocking co",
-      "created_at": "2026-11-22T20:02:17.668669+00:00",
+      "script_preview": "",
+      "created_at": "2026-11-22T20:02:49Z",
       "analytics": {
         "views": 5.0,
         "estimatedMinutesWatched": 0.0,
@@ -1659,25 +1665,28 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-24T22:48:47.549427+00:00"
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-25T06:30:47.255909+00:00"
     },
     {
       "video_id": "BiLd3S8Tc8k",
-      "topic": "Anthropic launches Claude Ship, letting AI agents review, fix, and approve code changes",
+      "topic": "Anthropic Claude Ship: Automate Your Pull Requests",
       "title": "Anthropic Claude Ship: Automate Your Pull Requests",
       "format": "short",
-      "script_preview": "Stop waiting 48 hours for a manual code review. Anthropic’s new 'Claude Ship' acts as an autonomous agent within your Git repository, authorized to audit, patch, and merge your pull requests. Instead of flagging syntax errors for human eyes, it interprets your team’s specific style guide and technical constraints to push changes itself. You define the logic; it executes the cleanup. It’s not just a linter—it’s an agent with actual merge privileges. The tradeoff? You’re handing over repository write-access to an LLM, meaning your unit tests must be ironclad. If you’re tired of being the bottlen",
-      "created_at": "2026-11-24T00:19:55.001574+00:00",
-      "analytics": {}
+      "script_preview": "",
+      "created_at": "2026-11-24T00:20:10Z",
+      "analytics": {},
+      "source": "youtube_sync"
     },
     {
       "video_id": "d4f5c9j6O9Q",
-      "topic": "OpenAI and Cisco Unveil AI-Assisted Linux Security Tool to Block Exploits Before Patching",
+      "topic": "Stop Linux Exploits: Cisco & OpenAI's New Shield",
       "title": "Stop Linux Exploits: Cisco & OpenAI's New Shield",
       "format": "short",
-      "script_preview": "Your Linux server is a sitting duck for days between a vulnerability discovery and its patch. Cisco and OpenAI just dropped Shirudo, an open-source tool that shrinks this window of exposure. It doesn't patch the bug; it builds a virtual 'shield'—a temporary safeguard that intercepts exploits. Think of it as a tactical firewall that buys your team weeks of breathing room. It runs on Linux, integrating into your existing security workflow to block threats while developers finalize the fix. Because it is open-source, the community constantly refines these shielding models against new AI-driven at",
-      "created_at": "2026-11-24T22:53:01.308474+00:00",
-      "analytics": {}
+      "script_preview": "",
+      "created_at": "2026-11-24T22:53:31Z",
+      "analytics": {},
+      "source": "youtube_sync"
     }
   ],
   "topics": [
@@ -2175,58 +2184,67 @@
       "source": "youtube_sync"
     },
     {
-      "topic": "I turned my phone into a hands-free productivity machine with 4 Gemini voice commands",
+      "topic": "Turn Android into a Hands-Free AI Machine with Gemini",
       "title": "Turn Android into a Hands-Free AI Machine with Gemini",
       "format": "short",
-      "created_at": "2026-11-19T21:03:42.065598+00:00"
+      "created_at": "2026-11-19T21:03:57Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "Apple may be developing its own AI agent that runs your Mac",
+      "topic": "Apple Building AI Agent to Directly Control Your Mac",
       "title": "Apple Building AI Agent to Directly Control Your Mac",
       "format": "short",
-      "created_at": "2026-11-20T16:02:27.539144+00:00"
+      "created_at": "2026-11-20T16:03:02Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "Microsoft is killing To Do — this free, open-source app is the forever home your tasks deserve - How-To Geek",
+      "topic": "Microsoft To Do is Dying: Switch to This",
       "title": "Microsoft To Do is Dying: Switch to This",
       "format": "short",
-      "created_at": "2026-11-20T21:00:22.517429+00:00"
+      "created_at": "2026-11-20T21:00:42Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "The most misunderstood graph in AI just got a major update",
+      "topic": "The AI Benchmark Update You Need to Know",
       "title": "The AI Benchmark Update You Need to Know",
-      "format": "short",
-      "created_at": "2026-11-21T15:28:48.026539+00:00"
+      "format": "long",
+      "created_at": "2026-11-21T15:29:06Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "\"In the future, everyone's a builder.\" The massive AI experiment playing out in video games",
+      "topic": "Roblox AI: Build Games With Text",
       "title": "Roblox AI: Build Games With Text",
       "format": "short",
-      "created_at": "2026-11-22T15:04:11.963821+00:00"
+      "created_at": "2026-11-22T15:04:28Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "Dev squeezes an AI language model onto a floppy for 486DX and Pentium PC stalwarts — Tiny 2.1 needs 540KB of memory and speaks via PC speaker, is a question-answering transformer with 367K parameters",
+      "topic": "Running LLMs on a Floppy Disk: The 540KB Challenge",
       "title": "Running LLMs on a Floppy Disk: The 540KB Challenge",
       "format": "short",
-      "created_at": "2026-11-22T15:21:32.392055+00:00"
+      "created_at": "2026-11-22T15:21:57Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "I keep going back to TickTick over every other to-do app; here's why",
+      "topic": "Why TickTick Beats Bloated To-Do Apps",
       "title": "Why TickTick Beats Bloated To-Do Apps",
       "format": "short",
-      "created_at": "2026-11-22T20:02:17.668669+00:00"
+      "created_at": "2026-11-22T20:02:49Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "Anthropic launches Claude Ship, letting AI agents review, fix, and approve code changes",
+      "topic": "Anthropic Claude Ship: Automate Your Pull Requests",
       "title": "Anthropic Claude Ship: Automate Your Pull Requests",
       "format": "short",
-      "created_at": "2026-11-24T00:19:55.001574+00:00"
+      "created_at": "2026-11-24T00:20:10Z",
+      "source": "youtube_sync"
     },
     {
-      "topic": "OpenAI and Cisco Unveil AI-Assisted Linux Security Tool to Block Exploits Before Patching",
+      "topic": "Stop Linux Exploits: Cisco & OpenAI's New Shield",
       "title": "Stop Linux Exploits: Cisco & OpenAI's New Shield",
       "format": "short",
-      "created_at": "2026-11-24T22:53:01.308474+00:00"
+      "created_at": "2026-11-24T22:53:31Z",
+      "source": "youtube_sync"
     }
   ]
 }
