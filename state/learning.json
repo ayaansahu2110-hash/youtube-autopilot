@@ -1,54 +1,6 @@
 {
-  "generated_at": "2026-11-25T21:42:53.762112+00:00",
+  "generated_at": "2026-11-25T22:07:27.978765+00:00",
   "competitors": [
-    {
-      "channel": "Nate Herk | AI Automation",
-      "subscribers": 1150000,
-      "channel_views": 70740418,
-      "video_count": 621,
-      "high_performing_recent_videos": [
-        {
-          "title": "Claude Artifacts Just Got a Huge Upgrade",
-          "views": 82097,
-          "likes": 1115,
-          "comments": 60,
-          "published_at": "2026-11-25T00:23:51Z",
-          "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=claude-artifacts-apps&sl=yt_claude-artifacts-apps\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-artifacts-apps&hcategory=youtube-videos&utm_campaign=pl"
-        },
-        {
-          "title": "Claude Code Just Silently Released a Cheaper Mode",
-          "views": 64164,
-          "likes": 615,
-          "comments": 29,
-          "published_at": "2026-11-24T13:48:56Z",
-          "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=claude-code-code-mode&sl=yt_claude-code-code-mode\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-code-code-mode&hcategory=youtube-videos&utm_campaign=pl"
-        },
-        {
-          "title": "Claude Artifacts Just Got a HUGE Upgrade: Apps",
-          "views": 51582,
-          "likes": 1079,
-          "comments": 24,
-          "published_at": "2026-11-25T00:56:52Z",
-          "description_excerpt": ""
-        },
-        {
-          "title": "I Paid Claude $1, $10, $100, and $1,000 to Build a Video Game",
-          "views": 30850,
-          "likes": 336,
-          "comments": 27,
-          "published_at": "2026-11-23T13:55:10Z",
-          "description_excerpt": "FREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=claude-price-ladder&sl=yt_claude-price-ladder\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-price-ladder&hcategory=youtube-videos&utm_camp"
-        },
-        {
-          "title": "Jensen is back",
-          "views": 17424,
-          "likes": 156,
-          "comments": 33,
-          "published_at": "2026-11-23T20:14:44Z",
-          "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=jensen-huang-back-nvidia&sl=yt_jensen-huang-back-nvidia\nFREE grill-me skill (from the video): https://github.com/nateherkai/AIS-OS/tree/main/.claude/skills/grill-me\nHow I built an AI agency from 0 to over $1 million per year: https"
-        }
-      ]
-    },
     {
       "channel": "Matt Wolfe",
       "subscribers": 1040000,
@@ -57,15 +9,15 @@
       "high_performing_recent_videos": [
         {
           "title": "AI News: This Is The Make or Break Week!!",
-          "views": 139152,
-          "likes": 2053,
+          "views": 139199,
+          "likes": 2055,
           "comments": 177,
           "published_at": "2026-11-20T19:00:16Z",
           "description_excerpt": "Hire your own team of agents with Hyperagent for free here: https://hyperagent.com/login?utm_source=youtube&utm_medium=influencer&utm_campaign=MATT\n\nAnthropic’s IPO puts the AI bubble to the test as OpenAI and Google launch powerful new models for less.\n\nThis week, I test GPT-6.2 Astra, Sol, and Gemini 4 Neon, break down Microsoft’s latest AI relea"
         },
         {
           "title": "This will test if AI truly is a bubble",
-          "views": 29331,
+          "views": 29333,
           "likes": 543,
           "comments": 49,
           "published_at": "2026-11-19T21:14:46Z",
@@ -73,15 +25,15 @@
         },
         {
           "title": "Google Cooked With This New Model!",
-          "views": 23878,
-          "likes": 606,
+          "views": 23903,
+          "likes": 607,
           "comments": 34,
           "published_at": "2026-11-22T20:58:01Z",
           "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
         },
         {
           "title": "They built cyborg cockroaches with built-in AI...",
-          "views": 21453,
+          "views": 21463,
           "likes": 680,
           "comments": 59,
           "published_at": "2026-11-21T21:25:07Z",
@@ -89,7 +41,7 @@
         },
         {
           "title": "We know who will REALLY be using this (Not AI)",
-          "views": 13075,
+          "views": 13120,
           "likes": 376,
           "comments": 33,
           "published_at": "2026-11-23T21:09:34Z",
@@ -105,7 +57,7 @@
       "high_performing_recent_videos": [
         {
           "title": "Why the AI Kids Hate Astra 6.2",
-          "views": 8069,
+          "views": 8070,
           "likes": 101,
           "comments": 18,
           "published_at": "2026-11-19T13:50:08Z",
@@ -121,9 +73,9 @@
         },
         {
           "title": "What Happens to AI Now",
-          "views": 6994,
-          "likes": 93,
-          "comments": 18,
+          "views": 7080,
+          "likes": 94,
+          "comments": 19,
           "published_at": "2026-11-24T23:36:35Z",
           "description_excerpt": "Jensen Huang's return to Nvidia and a reported AI proof of the Riemann hypothesis signal a new phase for AI. NLW breaks down the president's role in the reinstatement, the political fallout ahead, and the many lenses through which people read the story. In the headlines: the Riemann hypothesis claim, SpaceX AI struggles, and a new open model built "
         },
@@ -137,11 +89,59 @@
         },
         {
           "title": "5 Questions Shaping AI This Week",
-          "views": 6300,
+          "views": 6310,
           "likes": 85,
           "comments": 9,
           "published_at": "2026-11-17T22:52:08Z",
           "description_excerpt": "Anthropic’s IPO could change how Wall Street judges the entire AI industry, while the fight over Jensen Huang’s future could reshape its most important chipmaker. NLW breaks down five questions defining the week: how Anthropic’s debut will land, whether OpenAI will release a new model, whether Huang can return to Nvidia, how far the political fallo"
+        }
+      ]
+    },
+    {
+      "channel": "ICOR with Tom | AI Productivity",
+      "subscribers": 114000,
+      "channel_views": 14555177,
+      "video_count": 632,
+      "high_performing_recent_videos": [
+        {
+          "title": "Claude Code Desktop replaced my terminal and VS Code",
+          "views": 10856,
+          "likes": 78,
+          "comments": 19,
+          "published_at": "2026-11-15T16:50:01Z",
+          "description_excerpt": "Set up Claude Code Desktop with sessions that message each other, so you get most of what Grok Bot gives without Grok Bot.\nMore on building your system: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=e_BiN-2AALA&utm_content=description\n\nWATCH THIS NEXT\n• Claude can now prompt its own SESSIONS. I built the boss.: https://ww"
+        },
+        {
+          "title": "I pay €400 a month for AI. Only Claude Code delivers.",
+          "views": 6795,
+          "likes": 112,
+          "comments": 39,
+          "published_at": "2026-11-09T22:30:34Z",
+          "description_excerpt": "I pay over $400 a month for AI, and here is where Grok Bot falls short and what stays safe whichever agent tool you use.\nMore on building your system: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=WGfIwQbM9K4&utm_content=description\n\nWATCH THIS NEXT\n• Before You Set Up Grok Bot, Watch This: https://www.youtube.com/watch?v"
+        },
+        {
+          "title": "I solved object-oriented note-taking in #obsidian",
+          "views": 5155,
+          "likes": 16,
+          "comments": 3,
+          "published_at": "2026-11-20T22:47:29Z",
+          "description_excerpt": "Want this plugin?\nComing soon to an Obsidian Marketplace near you.\nFor free!\nGet notified at myicor.com"
+        },
+        {
+          "title": "Too many Claude sessions? Make one that watches the rest",
+          "views": 3157,
+          "likes": 65,
+          "comments": 5,
+          "published_at": "2026-11-20T20:00:08Z",
+          "description_excerpt": "Too many Claude Code sessions? Set up one orchestrator session that lists what is waiting on you and lets you answer it all in one place.\nMore on building your system: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=P8mxzC-nRMs&utm_content=description\n\nWATCH THIS NEXT\n• Claude can now prompt its own SESSIONS. I built the bo"
+        },
+        {
+          "title": "Fable 5.2 did this...it's not a game #claudecode #claudeai #fable",
+          "views": 2263,
+          "likes": 36,
+          "comments": 6,
+          "published_at": "2026-11-10T01:56:32Z",
+          "description_excerpt": "Full insights soon on @myicor and @myicorpodcast"
         }
       ]
     }
