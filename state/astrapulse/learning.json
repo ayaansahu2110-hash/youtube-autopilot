@@ -1,51 +1,99 @@
 {
-  "generated_at": "2026-11-25T17:54:48.582005+00:00",
+  "generated_at": "2026-11-25T22:20:50.107915+00:00",
   "competitors": [
+    {
+      "channel": "Dan Martell",
+      "subscribers": 3180000,
+      "channel_views": 430593183,
+      "video_count": 3889,
+      "high_performing_recent_videos": [
+        {
+          "title": "What's the best AI tool?",
+          "views": 24908,
+          "likes": 765,
+          "comments": 10,
+          "published_at": "2026-11-23T21:04:16Z",
+          "description_excerpt": "What's the best AI tool?"
+        },
+        {
+          "title": "10 things that will dramatically improve the quality of your life (under $100)",
+          "views": 23770,
+          "likes": 713,
+          "comments": 27,
+          "published_at": "2026-11-25T14:00:27Z",
+          "description_excerpt": "✅ Get Your FREE AI Company Operating System here: go.danmartell.com/ai-operating-system-lf-756\n\nMost people think a better life starts with the big purchase. I think the cheap stuff you use every day does more.\n\nIn this video, I share the 10 things under $100 that I can't live without, what each one costs, and how I use it.\n\nI cover how I learn, pl"
+        },
+        {
+          "title": "I will delete your need for perfection in 60 seconds",
+          "views": 19705,
+          "likes": 1663,
+          "comments": 24,
+          "published_at": "2026-11-22T21:02:41Z",
+          "description_excerpt": "I will delete your need for perfection in 60 seconds"
+        },
+        {
+          "title": "Why I let my kids use AI for school.",
+          "views": 10306,
+          "likes": 449,
+          "comments": 16,
+          "published_at": "2026-11-24T15:07:26Z",
+          "description_excerpt": "Why I let my kids use AI for school"
+        },
+        {
+          "title": "All great leaders have these three traits",
+          "views": 10053,
+          "likes": 536,
+          "comments": 9,
+          "published_at": "2026-11-23T15:07:00Z",
+          "description_excerpt": "All great leaders have these three traits"
+        }
+      ]
+    },
     {
       "channel": "Nate Herk | AI Automation",
       "subscribers": 1150000,
-      "channel_views": 70557224,
-      "video_count": 620,
+      "channel_views": 70740418,
+      "video_count": 622,
       "high_performing_recent_videos": [
         {
           "title": "Claude Artifacts Just Got a Huge Upgrade",
-          "views": 72202,
-          "likes": 997,
-          "comments": 57,
+          "views": 83118,
+          "likes": 1127,
+          "comments": 60,
           "published_at": "2026-11-25T00:23:51Z",
           "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=claude-artifacts-apps&sl=yt_claude-artifacts-apps\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-artifacts-apps&hcategory=youtube-videos&utm_campaign=pl"
         },
         {
           "title": "Claude Code Just Silently Released a Cheaper Mode",
-          "views": 62268,
-          "likes": 602,
-          "comments": 28,
+          "views": 64275,
+          "likes": 616,
+          "comments": 29,
           "published_at": "2026-11-24T13:48:56Z",
           "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=claude-code-code-mode&sl=yt_claude-code-code-mode\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-code-code-mode&hcategory=youtube-videos&utm_campaign=pl"
         },
         {
-          "title": "30 Grok Bot Use Cases That Feel Like Cheating Life",
-          "views": 52807,
-          "likes": 905,
-          "comments": 30,
-          "published_at": "2026-11-23T01:52:25Z",
-          "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=grok-bot-use-cases&sl=yt_grok-bot-use-cases\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=grok-bot-use-cases&hcategory=youtube-videos&utm_campaign=plus-group\n"
-        },
-        {
           "title": "Claude Artifacts Just Got a HUGE Upgrade: Apps",
-          "views": 43750,
-          "likes": 978,
-          "comments": 22,
+          "views": 52398,
+          "likes": 1093,
+          "comments": 24,
           "published_at": "2026-11-25T00:56:52Z",
           "description_excerpt": ""
         },
         {
-          "title": "I Paid Claude $1, $10, $100, and $1,000 to Build a Video Game",
-          "views": 30172,
-          "likes": 334,
-          "comments": 26,
-          "published_at": "2026-11-23T13:55:10Z",
-          "description_excerpt": "FREE First Client SOP: https://app.aiautomationsociety.ai/optin/first-client-SOP/?utm_source=youtube&utm_medium=organic&utm_content=claude-price-ladder&sl=yt_claude-price-ladder\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-price-ladder&hcategory=youtube-videos&utm_camp"
+          "title": "Jensen is back",
+          "views": 17433,
+          "likes": 156,
+          "comments": 33,
+          "published_at": "2026-11-23T20:14:44Z",
+          "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=jensen-huang-back-nvidia&sl=yt_jensen-huang-back-nvidia\nFREE grill-me skill (from the video): https://github.com/nateherkai/AIS-OS/tree/main/.claude/skills/grill-me\nHow I built an AI agency from 0 to over $1 million per year: https"
+        },
+        {
+          "title": "$1 vs $1,000 Video Game",
+          "views": 11696,
+          "likes": 359,
+          "comments": 7,
+          "published_at": "2026-11-23T17:41:14Z",
+          "description_excerpt": ""
         }
       ]
     },
@@ -57,15 +105,15 @@
       "high_performing_recent_videos": [
         {
           "title": "AI News: This Is The Make or Break Week!!",
-          "views": 138446,
-          "likes": 2050,
+          "views": 139226,
+          "likes": 2057,
           "comments": 177,
           "published_at": "2026-11-20T19:00:16Z",
           "description_excerpt": "Hire your own team of agents with Hyperagent for free here: https://hyperagent.com/login?utm_source=youtube&utm_medium=influencer&utm_campaign=MATT\n\nAnthropic’s IPO puts the AI bubble to the test as OpenAI and Google launch powerful new models for less.\n\nThis week, I test GPT-6.2 Astra, Sol, and Gemini 4 Neon, break down Microsoft’s latest AI relea"
         },
         {
           "title": "This will test if AI truly is a bubble",
-          "views": 29304,
+          "views": 29331,
           "likes": 543,
           "comments": 49,
           "published_at": "2026-11-19T21:14:46Z",
@@ -73,109 +121,33 @@
         },
         {
           "title": "Google Cooked With This New Model!",
-          "views": 23586,
-          "likes": 600,
+          "views": 23915,
+          "likes": 608,
           "comments": 34,
           "published_at": "2026-11-22T20:58:01Z",
           "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
         },
         {
           "title": "They built cyborg cockroaches with built-in AI...",
-          "views": 21232,
-          "likes": 676,
+          "views": 21463,
+          "likes": 680,
           "comments": 59,
           "published_at": "2026-11-21T21:25:07Z",
           "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
         },
         {
           "title": "We know who will REALLY be using this (Not AI)",
-          "views": 12644,
-          "likes": 351,
-          "comments": 32,
+          "views": 13147,
+          "likes": 377,
+          "comments": 33,
           "published_at": "2026-11-23T21:09:34Z",
           "description_excerpt": "I've never seen a robot look THIS realistic before...\n\n#AI #futuretech"
-        }
-      ]
-    },
-    {
-      "channel": "The AI Daily Brief: Artificial Intelligence News",
-      "subscribers": 589000,
-      "channel_views": 13147391,
-      "video_count": 1555,
-      "high_performing_recent_videos": [
-        {
-          "title": "7 Things AI-Native Companies Do Differently",
-          "views": 8388,
-          "likes": 125,
-          "comments": 5,
-          "published_at": "2026-11-17T01:24:07Z",
-          "description_excerpt": "The AI Daily Brief helps you understand the most important news and discussions in AI. \nSubscribe to the podcast version of The AI Daily Brief wherever you listen: https://pod.link/1680633614\nGet it ad free at http://patreon.com/aidailybrief\nLearn more about the show https://aidailybrief.ai/"
-        },
-        {
-          "title": "Why the AI Kids Hate Astra 6.2",
-          "views": 8050,
-          "likes": 101,
-          "comments": 18,
-          "published_at": "2026-11-19T13:50:08Z",
-          "description_excerpt": "OpenAI’s GPT-6.2 Astra and Sol launch drew some of the worst first impressions on record, yet the efficiency numbers tell a different story. NLW breaks down the benchmarks, the early tester backlash, and what the release says about OpenAI’s push toward cost-efficient enterprise work. In the headlines: the Nvidia board refusing to bring Jensen back,"
-        },
-        {
-          "title": "Why Some Are Claiming Gemini Neon is Better than Fable",
-          "views": 7482,
-          "likes": 110,
-          "comments": 9,
-          "published_at": "2026-11-23T14:48:09Z",
-          "description_excerpt": "Gemini 4 Neon is earning real praise, and Google is finally back in the conversation at the top of the model race. NLW breaks down the benchmarks, early reactions, and why a different perspective can matter more than a better one. In the headlines: Anthropic’s first day as a public company, new China chip fallout, and a shake-up in White House cybe"
-        },
-        {
-          "title": "How Business AI Use is Changing",
-          "views": 6500,
-          "likes": 75,
-          "comments": 3,
-          "published_at": "2026-11-18T16:50:20Z",
-          "description_excerpt": "Business AI usage is growing much faster than spending as token prices fall and buyers gain leverage. NLW breaks down new data from Ramp, Databricks, and Arcana on model switching, spend concentration, and where enterprise agents really stand. In the headlines: the Nvidia board shutting the door on a Jensen return, new remote-access chip rules, and"
-        },
-        {
-          "title": "5 Questions Shaping AI This Week",
-          "views": 6297,
-          "likes": 85,
-          "comments": 9,
-          "published_at": "2026-11-17T22:52:08Z",
-          "description_excerpt": "Anthropic’s IPO could change how Wall Street judges the entire AI industry, while the fight over Jensen Huang’s future could reshape its most important chipmaker. NLW breaks down five questions defining the week: how Anthropic’s debut will land, whether OpenAI will release a new model, whether Huang can return to Nvidia, how far the political fallo"
         }
       ]
     }
   ],
   "own_comments": [],
   "own_analytics": [
-    {
-      "title": "Taurus Compatibility: Who Actually Grounds You?",
-      "format": "short",
-      "metrics": {
-        "views": 28.0,
-        "estimatedMinutesWatched": 3.0,
-        "averageViewDuration": 20.0,
-        "averageViewPercentage": 38.03,
-        "likes": 0.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
-    {
-      "title": "Taurus Love Match: Which Signs Actually Last?",
-      "format": "short",
-      "metrics": {
-        "views": 12.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 5.0,
-        "averageViewPercentage": 10.23,
-        "likes": 0.0,
-        "comments": 0.0,
-        "shares": 0.0,
-        "subscribersGained": 0.0
-      }
-    },
     {
       "title": "Stop Parenting the Wrong Way: The Zodiac Elemental Guide",
       "format": "short",
@@ -320,7 +292,7 @@
       "title": "Scorpio Full Moon May 2026: Financial & Career Pivot",
       "format": "short",
       "metrics": {
-        "views": 19.0,
+        "views": 20.0,
         "estimatedMinutesWatched": 1.0,
         "averageViewDuration": 10.0,
         "averageViewPercentage": 22.35,
@@ -348,10 +320,10 @@
       "title": "Why Your Astrology App Is Wrong (And How I Fixed It)",
       "format": "short",
       "metrics": {
-        "views": 15.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 47.0,
-        "averageViewPercentage": 86.91,
+        "views": 17.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 57.0,
+        "averageViewPercentage": 105.1,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -376,10 +348,10 @@
       "title": "Aries Reality Check: Mercury Square Neptune",
       "format": "short",
       "metrics": {
-        "views": 63.0,
+        "views": 72.0,
         "estimatedMinutesWatched": 5.0,
-        "averageViewDuration": 16.0,
-        "averageViewPercentage": 34.76,
+        "averageViewDuration": 15.0,
+        "averageViewPercentage": 32.47,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -404,10 +376,10 @@
       "title": "AI vs. Vedic Astrologer: Who Holds Your 2026 Destiny?",
       "format": "short",
       "metrics": {
-        "views": 19.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 24.0,
-        "averageViewPercentage": 47.84,
+        "views": 32.0,
+        "estimatedMinutesWatched": 3.0,
+        "averageViewDuration": 27.0,
+        "averageViewPercentage": 53.23,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -418,10 +390,38 @@
       "title": "October Astrology: 5 Zodiac Signs Forced to Reveal Secrets",
       "format": "short",
       "metrics": {
-        "views": 4.0,
+        "views": 5.0,
         "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 20.0,
-        "averageViewPercentage": 40.06,
+        "averageViewDuration": 15.0,
+        "averageViewPercentage": 29.710000000000004,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Cancer Daily Forecast: Libra Moon Shifts & Cosmic Energy",
+      "format": "short",
+      "metrics": {
+        "views": 24.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 19.0,
+        "averageViewPercentage": 36.29,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      }
+    },
+    {
+      "title": "Gemini: The Mercury-Uranus Shockwave (Aug 28 Forecast)",
+      "format": "short",
+      "metrics": {
+        "views": 21.0,
+        "estimatedMinutesWatched": 3.0,
+        "averageViewDuration": 23.0,
+        "averageViewPercentage": 46.44,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
@@ -490,10 +490,10 @@
       "title": "Why Scorpio's Intuition Is NEVER Wrong ♏ Astrological Proof",
       "format": "short",
       "metrics": {
-        "views": 111.0,
-        "estimatedMinutesWatched": 25.0,
+        "views": 113.0,
+        "estimatedMinutesWatched": 26.0,
         "averageViewDuration": 27.0,
-        "averageViewPercentage": 46.33,
+        "averageViewPercentage": 46.65,
         "likes": 5.0,
         "comments": 1.0,
         "shares": 1.0,
@@ -502,7 +502,7 @@
     }
   ],
   "monetization": {
-    "subscribers": 11,
+    "subscribers": 12,
     "subscriber_target": 1000,
     "estimated_long_watch_hours_365d": null,
     "watch_hour_target": 4000,
