@@ -17,7 +17,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.400746+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.095115+00:00"
     },
     {
       "video_id": "SrCFKhynUyc",
@@ -36,7 +36,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.394242+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.085987+00:00"
     },
     {
       "video_id": "AUqN-Jp-MPw",
@@ -55,7 +55,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.398605+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.092084+00:00"
     },
     {
       "video_id": "bfy1acwg1Co",
@@ -74,7 +74,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.400001+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.094108+00:00"
     },
     {
       "video_id": "68OhLQ7dRJE",
@@ -93,7 +93,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.395747+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.088000+00:00"
     },
     {
       "video_id": "hcZbG6mkUiw",
@@ -112,7 +112,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.404211+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.101347+00:00"
     },
     {
       "video_id": "mC8sTJyTOWo",
@@ -131,7 +131,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.402841+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.098155+00:00"
     },
     {
       "video_id": "M8GRYkspRLo",
@@ -150,7 +150,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.394971+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.086992+00:00"
     },
     {
       "video_id": "xoy8Pg3gIK8",
@@ -168,7 +168,17 @@
       "format": "long",
       "script_preview": "Most men lose control of their lives because they allow external chaos to dictate their internal state, becoming slaves to their own impulses. They are trapped in a cycle of constant reactivity, failing to realize that their peace is being auctioned off to the highest bidder. In the modern age, you are merely reacting, not choosing, to every notification, opinion, and hardship that comes your way. This lack of intentionality is why your mental clarity evaporates, leaving you exhausted, frustrated, and perpetually chasing validation from forces you cannot possibly influence. Consider Marcus Aur",
       "created_at": "2026-11-10T20:28:08.265638+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 1.0,
+        "estimatedMinutesWatched": 0.0,
+        "averageViewDuration": 30.0,
+        "averageViewPercentage": 6.27,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-11-25T22:00:49.100301+00:00"
     },
     {
       "video_id": "G8qluur4h0I",
@@ -196,7 +206,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.404937+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.102376+00:00"
     },
     {
       "video_id": "rs40HOFDIGk",
@@ -215,7 +225,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.405726+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.103390+00:00"
     },
     {
       "video_id": "c4YcxvbXgLo",
@@ -243,7 +253,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.401436+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.096124+00:00"
     },
     {
       "video_id": "dc9VHSmbB7k",
@@ -263,7 +273,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-25T17:40:59.397883+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.091068+00:00"
     },
     {
       "video_id": "UKm4h53IB2U",
@@ -283,7 +293,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-25T17:40:59.388647+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.077455+00:00"
     },
     {
       "video_id": "G6qhKF-R9gI",
@@ -303,7 +313,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-25T17:40:59.389588+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.078625+00:00"
     },
     {
       "video_id": "ABsGQElMAQI",
@@ -323,7 +333,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-25T17:40:59.386772+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.073337+00:00"
     },
     {
       "video_id": "Jt96iox6PUg",
@@ -343,7 +353,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-25T17:40:59.396461+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.089015+00:00"
     },
     {
       "video_id": "KViCY-0ec14",
@@ -373,7 +383,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-25T17:40:59.392123+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.080798+00:00"
     },
     {
       "video_id": "ajSBox9rrV0",
@@ -383,7 +393,7 @@
       "script_preview": "You aren't grieving a person; you are grieving your loss of control. Marcus Aurelius understood this: people are external, and externals are beyond your reach. Epictetus was clear—to desire someone who does not desire you is to hand them the keys to your sanity. Weak men grovel for closure. A master accepts the reality of the situation and withdraws his energy. If their presence didn't build your character, their absence won't destroy your peace. Why beg for the crumbs of their attention? Silence is the ultimate display of superiority. Do not chase. Do not justify your worth to the unworthy. C",
       "created_at": "2026-11-18T21:05:41.613515+00:00",
       "analytics": {
-        "views": 40.0,
+        "views": 41.0,
         "estimatedMinutesWatched": 22.0,
         "averageViewDuration": 75.0,
         "averageViewPercentage": 142.23,
@@ -392,7 +402,7 @@
         "shares": 1.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.393541+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.084982+00:00"
     },
     {
       "video_id": "IaAtXd0_TLE",
@@ -411,7 +421,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.392851+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.083923+00:00"
     },
     {
       "video_id": "L-T8I-3R6vs",
@@ -421,7 +431,7 @@
       "script_preview": "Why do so many men fall apart when life turns against them? It starts in childhood, where we witness a systemic failure to teach emotional regulation, leaving boys entirely unprepared for the inevitable weight of adulthood and the crushing reality of deep-seated failure. We fundamentally mistake emotional repression for actual strength, believing that silence and hardened stoicism are the same thing. This confusion creates a generation of men who carry their burdens in total isolation, lacking the necessary tools to process their psychological internal states. Modern science demonstrates that ",
       "created_at": "2026-11-18T21:28:34.542937+00:00",
       "analytics": {
-        "views": 10.0,
+        "views": 11.0,
         "estimatedMinutesWatched": 15.0,
         "averageViewDuration": 102.0,
         "averageViewPercentage": 20.59,
@@ -430,7 +440,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.397180+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.090048+00:00"
     },
     {
       "video_id": "8u16PrAywTA",
@@ -449,7 +459,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.403518+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.099249+00:00"
     },
     {
       "video_id": "pVDtEpNMimY",
@@ -477,7 +487,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.402139+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.097141+00:00"
     },
     {
       "video_id": "QG3H1_8AN0Y",
@@ -505,7 +515,7 @@
       "script_preview": "Your reaction to incompetence is the only thing destroying your career. When colleagues trigger you, your anger is a tactical failure—an admission that you have surrendered your internal sovereignty. Marcus Aurelius commanded: 'The best revenge is to be unlike him who performed the injury.' The amateur leaks energy into venting; the professional treats emotional intelligence as a rigid defensive barrier. Psychological research confirms that emotional dysregulation functions like a parasitic drain on your cognitive resources. Observe the chaos. Neutralize your pulse. Refuse to be a mirror for t",
       "created_at": "2026-11-21T19:55:02.389934+00:00",
       "analytics": {
-        "views": 84.0,
+        "views": 85.0,
         "estimatedMinutesWatched": 15.0,
         "averageViewDuration": 17.0,
         "averageViewPercentage": 31.509999999999998,
@@ -514,7 +524,7 @@
         "shares": 0.0,
         "subscribersGained": 1.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.390470+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.079735+00:00"
     },
     {
       "video_id": "ZthJQhZnZ1Y",
@@ -524,16 +534,16 @@
       "script_preview": "Your brain is betraying you in 40 milliseconds. The moment you feel a surge of rage or fear, your amygdala has already fired. This is the 'propathē'—the involuntary biological flare Seneca warned us about. Most men are reactive slaves; they confuse this heartbeat spike with truth. They are wrong. Science proves the reasoning prefrontal cortex lags behind, providing a critical window for intervention. You do not have to accept the impulse. You do not have to act on the feeling. In the gap between the stimulus and your response, your character is forged. The weak sprint toward their triggers, de",
       "created_at": "2026-11-21T19:58:03.667222+00:00",
       "analytics": {
-        "views": 127.0,
-        "estimatedMinutesWatched": 65.0,
+        "views": 129.0,
+        "estimatedMinutesWatched": 66.0,
         "averageViewDuration": 58.0,
-        "averageViewPercentage": 103.38000000000001,
+        "averageViewPercentage": 102.56999999999998,
         "likes": 1.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.387747+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.074894+00:00"
     },
     {
       "video_id": "aNKgfTHNMi8",
@@ -543,16 +553,16 @@
       "script_preview": "You bleed emotional energy over opinions you cannot control while your own mind remains ungoverned. When Emperor Marcus Aurelius wrote Meditations, it was never meant for public praise. It was a private journal to conquer his own grief, anger, and fear before the day got away from him. Introduced to Epictetus's lectures, Marcus learned that no ruler commands external events—only his internal judgment. He anchored his emperor's soul with one brutal law: You have power over your mind—not outside events. The weak man rages when an army falters, courtiers lie, or public approval shifts. The master",
       "created_at": "2026-11-22T20:05:46.600898+00:00",
       "analytics": {
-        "views": 5.0,
-        "estimatedMinutesWatched": 1.0,
-        "averageViewDuration": 25.0,
-        "averageViewPercentage": 42.79,
+        "views": 6.0,
+        "estimatedMinutesWatched": 2.0,
+        "averageViewDuration": 30.0,
+        "averageViewPercentage": 52.129999999999995,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.399310+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.093106+00:00"
     },
     {
       "video_id": "NNX_lb-Nor0",
@@ -562,16 +572,16 @@
       "script_preview": "You are treating Stoicism like a corporate life hack, and it is rotting your character. You scan Seneca for tips to optimize your morning, ignoring that Stoicism is a practice of total character transformation, not a shortcut for shallow success. Marcus Aurelius warned that the soul becomes dyed with the color of its thoughts; if your thoughts are only on output, your soul remains hollow. The weak treat philosophy as a buffet, picking only the ideas that make them feel efficient. The master uses it as a mirror, exposing the vices they are too cowardly to confront. Stop trying to ‘optimize’ you",
       "created_at": "2026-11-22T20:09:13.187502+00:00",
       "analytics": {
-        "views": 77.0,
-        "estimatedMinutesWatched": 34.0,
-        "averageViewDuration": 49.0,
-        "averageViewPercentage": 89.1,
+        "views": 102.0,
+        "estimatedMinutesWatched": 38.0,
+        "averageViewDuration": 44.0,
+        "averageViewPercentage": 80.37,
         "likes": 3.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T17:40:59.391382+00:00"
+      "analytics_updated_at": "2026-11-25T22:00:49.076136+00:00"
     },
     {
       "video_id": "acca-VkgXlk",
@@ -589,7 +599,17 @@
       "format": "short",
       "script_preview": "You are failing because you mistake anxiety for awareness. The U.S. Naval Academy doesn't teach midshipmen to ignore the storm; they teach the Stoic Anchor. This is the art of separating internal sovereignty from external chaos. When pressure mounts, the amateur panics, surrendering his agency to the situation. The elite practitioner uses the dichotomy of control to detach from the outcome and dominate the input. Marcus Aurelius commanded: 'You have power over your mind—not outside events.' This is not a philosophy for books. It is a weapon for the battlefield. Build your psychological fortres",
       "created_at": "2026-11-23T18:53:24.289808+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 61.0,
+        "estimatedMinutesWatched": 52.0,
+        "averageViewDuration": 111.0,
+        "averageViewPercentage": 189.07,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-11-25T22:00:49.082902+00:00"
     },
     {
       "video_id": "9_vtao0yxsk",
@@ -598,7 +618,17 @@
       "format": "short",
       "script_preview": "Most players enter big games addicted to the outcome, letting high-stakes pressure shatter their discipline into what Coach Whittingham calls 'hero ball.' It is the ego’s last stand—a delusional scramble where the desperate abandon the system to play savior. Marcus Aurelius taught that the impediment to action advances action; what stands in the way becomes the way. The weak surrender to the frenzy of the rivalry, drowning in noise and frantic, uncalculated surges. The master remains stone-cold, realizing that 'Beat Ohio' sessions are just theater for the insecure. He understands that control ",
       "created_at": "2026-11-24T00:29:43.269214+00:00",
-      "analytics": {}
+      "analytics": {
+        "views": 61.0,
+        "estimatedMinutesWatched": 11.0,
+        "averageViewDuration": 21.0,
+        "averageViewPercentage": 38.47,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 2.0,
+        "subscribersGained": 0.0
+      },
+      "analytics_updated_at": "2026-11-25T22:00:49.081852+00:00"
     },
     {
       "video_id": "Gq6VWPV7YDo",
@@ -625,6 +655,24 @@
       "format": "long",
       "script_preview": "Most men live their lives in a state of constant, desperate emotional reactivity. You are effectively functioning as a biological puppet, jerked around by every external inconvenience, petty insult, or unpredictable shift in the chaotic environment that surrounds you. Acting like a puppet is a choice, not a permanent condition of your human chemistry or your genetic blueprint. You are essentially defaulting to primitive triggers because you have never bothered to engineer a higher-level logic to override your basic instincts. This state of perpetual victimhood is entirely reversible, but only ",
       "created_at": "2026-11-24T23:13:49.286458+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "mhryDBhj0f0",
+      "topic": "The Stoic Morning Practice for Taking Back Your Attention, Calming Your Mind, and Living With Less Regret",
+      "title": "The Brutal Truth: Kill Your Morning Distractions",
+      "format": "short",
+      "script_preview": "You are wasting the first hour of your life in a digital cage. You wake, reach for a screen, and forfeit your command to the chaos of algorithms. Marcus Aurelius commanded: 'At dawn, when you have trouble getting out of bed, tell yourself: I have to go to work as a human being.' The weak man begins in reaction, his mind scattered by the noise of the masses. The master begins in cold, calculated silence. He sets his intent before the world can contaminate his will. You don't need motivation; you need a fortress for your focus. Starve your anxieties by denying them your gaze. Stop watching other",
+      "created_at": "2026-11-25T22:03:54.200061+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "00yJMge9AsI",
+      "topic": "Stoicism is back: This is the ‘slave doctrine’ to understand today’s bosses and employees",
+      "title": "Why Modern Bosses Fear The Stoic Employee",
+      "format": "short",
+      "script_preview": "You are not an employee; you are a voluntary captive of your own need for validation. Seneca identified Stoicism as the ultimate equalizer, transforming the 'slave doctrine' into a weapon for internal command. Most workers live in a cycle of emotional volatility, trembling at a superior's tone or a critique of their output. This is not service; it is intellectual surrender. The Stoic master observes the chaos of corporate hierarchy from an internal citadel, unmoved by external status. Marcus Aurelius reminds us: the opinion of others is merely external noise, having no power to touch your char",
+      "created_at": "2026-11-25T22:08:15.793196+00:00",
       "analytics": {}
     }
   ],
@@ -875,6 +923,18 @@
       "title": "Chrysippus: The Stoic Architect of Your Rational Mind",
       "format": "long",
       "created_at": "2026-11-24T23:13:49.286458+00:00"
+    },
+    {
+      "topic": "The Stoic Morning Practice for Taking Back Your Attention, Calming Your Mind, and Living With Less Regret",
+      "title": "The Brutal Truth: Kill Your Morning Distractions",
+      "format": "short",
+      "created_at": "2026-11-25T22:03:54.200061+00:00"
+    },
+    {
+      "topic": "Stoicism is back: This is the ‘slave doctrine’ to understand today’s bosses and employees",
+      "title": "Why Modern Bosses Fear The Stoic Employee",
+      "format": "short",
+      "created_at": "2026-11-25T22:08:15.793196+00:00"
     }
   ]
 }
