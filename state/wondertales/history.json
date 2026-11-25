@@ -17,7 +17,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T12:56:00.129602+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.069363+00:00"
     },
     {
       "video_id": "NXwh5O6kQ7o",
@@ -36,7 +36,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T12:56:00.185991+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.081332+00:00"
     },
     {
       "video_id": "-g4L3jo5Kss",
@@ -55,7 +55,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T12:56:00.174589+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.079251+00:00"
     },
     {
       "video_id": "_tS6qVweLhU",
@@ -74,7 +74,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T12:56:00.189376+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.081987+00:00"
     },
     {
       "video_id": "IHJ43Gs1dK8",
@@ -93,7 +93,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T12:56:00.181902+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.080655+00:00"
     },
     {
       "video_id": "0gkxPDpRNgg",
@@ -112,7 +112,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T12:56:00.178879+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.079953+00:00"
     },
     {
       "video_id": "4clzO505QVo",
@@ -131,7 +131,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T12:56:00.147761+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.075724+00:00"
     },
     {
       "video_id": "q8VpV9avtOw",
@@ -150,7 +150,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T12:56:00.167311+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.078542+00:00"
     },
     {
       "video_id": "RNbdDj_tmoM",
@@ -189,7 +189,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-25T12:56:00.133074+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.070121+00:00"
     },
     {
       "video_id": "mYo-jv9VVKw",
@@ -245,7 +245,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T12:56:00.135102+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.070817+00:00"
     },
     {
       "video_id": "NBDSFl91Ix0",
@@ -283,7 +283,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T12:56:00.160899+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.077854+00:00"
     },
     {
       "video_id": "dpoGIzVxX8A",
@@ -302,7 +302,7 @@
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T12:56:00.126014+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.068498+00:00"
     },
     {
       "video_id": "VFLYZaUS6UY",
@@ -350,7 +350,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-25T12:56:00.123003+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.066134+00:00"
     },
     {
       "video_id": "R4p3DzbWxwQ",
@@ -380,7 +380,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-25T12:56:00.153189+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.077166+00:00"
     },
     {
       "video_id": "OX1rTX3nWrQ",
@@ -390,17 +390,17 @@
       "script_preview": "",
       "created_at": "2026-11-14T18:42:51Z",
       "analytics": {
-        "views": 1.0,
-        "estimatedMinutesWatched": 0.0,
-        "averageViewDuration": 38.0,
-        "averageViewPercentage": 76.34,
+        "views": 3.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 21.0,
+        "averageViewPercentage": 42.36,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-25T12:56:00.157817+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.071538+00:00"
     },
     {
       "video_id": "Bs0UcmyqSM4",
@@ -429,16 +429,16 @@
       "script_preview": "Chirp-chirp sings the bluebird high up in the tree! Flap-flap go his shiny wings so wild and free!\nHop-hop goes the robin on the garden ground, looking for a wiggly worm that he just found!\nTweet-tweet calls the cardinal in his feather coat! Music floats like fairy magic from his tiny throat!\nPeck-peck goes the woodpecker knocking on the bark! Birdie eyes are curious from sunrise until dark!\nSplash-splash goes the duckling swimming in the pond! Of the happy sunny day he is super fond!\nSwoop-swoop goes the little owl flying through the night, watching every shining star glowing soft and bright!",
       "created_at": "2026-11-15T13:04:49.102900+00:00",
       "analytics": {
-        "views": 1.0,
+        "views": 2.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 1.0,
-        "averageViewPercentage": 2.77,
+        "averageViewPercentage": 1.92,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
-      "analytics_updated_at": "2026-11-25T12:56:00.164166+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.073617+00:00"
     },
     {
       "video_id": "yYDT-0TF8EE",
@@ -468,7 +468,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-25T12:56:00.150878+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.076451+00:00"
     },
     {
       "video_id": "sGHpzXcPXz4",
@@ -518,7 +518,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-25T12:56:00.141145+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.072922+00:00"
     },
     {
       "video_id": "HCHS7unEXpA",
@@ -568,17 +568,17 @@
       "script_preview": "",
       "created_at": "2026-11-21T20:33:05Z",
       "analytics": {
-        "views": 1.0,
+        "views": 2.0,
         "estimatedMinutesWatched": 0.0,
         "averageViewDuration": 2.0,
-        "averageViewPercentage": 0.34,
+        "averageViewPercentage": 0.4,
         "likes": 0.0,
         "comments": 0.0,
         "shares": 0.0,
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-25T12:56:00.170352+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.074308+00:00"
     },
     {
       "video_id": "zo5DEUhJer8",
@@ -598,7 +598,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-25T12:56:00.144735+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.074988+00:00"
     },
     {
       "video_id": "anMnvANjP_E",
@@ -618,7 +618,7 @@
         "subscribersGained": 0.0
       },
       "source": "youtube_sync",
-      "analytics_updated_at": "2026-11-25T12:56:00.138126+00:00"
+      "analytics_updated_at": "2026-11-25T21:59:50.072254+00:00"
     },
     {
       "video_id": "ovxHzVe81HI",
@@ -647,8 +647,18 @@
       "format": "long",
       "script_preview": "",
       "created_at": "2026-11-24T00:48:56Z",
-      "analytics": {},
-      "source": "youtube_sync"
+      "analytics": {
+        "views": 7.0,
+        "estimatedMinutesWatched": 1.0,
+        "averageViewDuration": 11.0,
+        "averageViewPercentage": 1.86,
+        "likes": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "subscribersGained": 0.0
+      },
+      "source": "youtube_sync",
+      "analytics_updated_at": "2026-11-25T21:59:50.067300+00:00"
     },
     {
       "video_id": "Fq31YhPx-LY",
@@ -686,6 +696,33 @@
       "format": "short",
       "script_preview": "A bunny hops, hop-hop, with a giggle so bright, / We gather at Gwanghwamun, what a marvelous sight!\nThe birds sing their songs, tweet-tweet, in the breeze, / We read and we walk among tall, leafy trees!\nThe bear cubs dance, hum-hum, to poems so sweet, / With music and rhythm, a magical treat!\nOur language is love, flutter-flutter, take wing, / It’s a wonderful day to just walk and to sing!\nThe garden is lush, buzz-buzz, filled with cheer, / With songs for the Hangeul centennial year!\nThe kittens play pounce, zap-zap, in the light, / Our words tell a story of pure joy and delight!\nSo open your ",
       "created_at": "2026-11-25T13:04:36.448182+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "8DviDGQGXsQ",
+      "topic": "The Secret Door in Moonlight Forest 🌙🦊 | Magical Mystery Story for Kids | Bedtime Story",
+      "title": "The Secret Door in Moonlight Forest 🌙🦊 | Magical Bedtime Story",
+      "format": "short",
+      "script_preview": "Little Fox hops with a skip and a bound, searching for magic all over the ground!\nHe finds a small door by the old hollow tree, it twinkles and sparkles for only to see!\nWith a click-clack sound, the door opens wide, with soft glowing lanterns waiting inside!\nHe tiptoes so quiet, pitter-patter he goes, past fuzzy green moss where the soft river flows!\nHe giggles at stars that are blinking so bright, dancing in shadows of shimmering light!\nA snuggly warm bed made of petals so deep, where little fox friends settle down for their sleep!\nHe nestles in soft with a cozy deep sigh, under the glow of ",
+      "created_at": "2026-11-25T22:03:04.254016+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "tYYp5qmIwJY",
+      "topic": "Celebrate Gratitude and Family Learning with “Butterflies, Bears, and Other Poems for Children”",
+      "title": "Butterflies, Bears, and Gratitude: A Singing Rhyme",
+      "format": "short",
+      "script_preview": "Little bear cubs playing in the sun, Finding joy in nature one by one.\nFuzzy butterflies dance in the breeze, Giggling softly near the green trees.\nBuzz-buzz bees gather pollen so sweet, Making every petal look like a treat.\nMama bear hugs her cub in the glade, Grateful for the memories they have made.\nHop-hop bunnies play in the hay, Thankful for this beautiful, happy day.\nTwinkle-twinkle stars in the night light, Shining down so soft, calm, and bright.\nSnuggle with a book for a rhyming song, Teaching us that love is where we belong.\nRead a poem together, watch your hearts grow, Kindness is t",
+      "created_at": "2026-11-25T22:06:24.811410+00:00",
+      "analytics": {}
+    },
+    {
+      "video_id": "StaxG7RVbeA",
+      "topic": "🌳🐘 The Riddle of the Red Baobab | A Magical Animal Adventure | Kids Story",
+      "title": "The Riddle of the Red Baobab: Tree Science and Survival",
+      "format": "long",
+      "script_preview": "In the golden heart of the vast, shimmering savanna, an ancient baobab tree stands tall like a giant, silent guardian. It watches over the grassy plains with a sturdy posture, its branches reaching toward the clouds as if telling secrets to the bright, warm sky.\nLocal creatures often call it the Tree of Life for a very special reason. This nickname isn't just for show; it describes the tree's incredible ability to thrive where others fail, standing resilient against the harsh elements that sweep across our beautiful, dusty African homeland.\nThe secret to its survival is a truly magical ability",
+      "created_at": "2026-11-25T22:27:02.368924+00:00",
       "analytics": {}
     }
   ],
@@ -1010,6 +1047,24 @@
       "title": "Read, Walk, and Sing: A Magical Poetry Concert Adventure",
       "format": "short",
       "created_at": "2026-11-25T13:04:36.448182+00:00"
+    },
+    {
+      "topic": "The Secret Door in Moonlight Forest 🌙🦊 | Magical Mystery Story for Kids | Bedtime Story",
+      "title": "The Secret Door in Moonlight Forest 🌙🦊 | Magical Bedtime Story",
+      "format": "short",
+      "created_at": "2026-11-25T22:03:04.254016+00:00"
+    },
+    {
+      "topic": "Celebrate Gratitude and Family Learning with “Butterflies, Bears, and Other Poems for Children”",
+      "title": "Butterflies, Bears, and Gratitude: A Singing Rhyme",
+      "format": "short",
+      "created_at": "2026-11-25T22:06:24.811410+00:00"
+    },
+    {
+      "topic": "🌳🐘 The Riddle of the Red Baobab | A Magical Animal Adventure | Kids Story",
+      "title": "The Riddle of the Red Baobab: Tree Science and Survival",
+      "format": "long",
+      "created_at": "2026-11-25T22:27:02.368924+00:00"
     }
   ]
 }
