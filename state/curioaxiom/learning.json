@@ -1,48 +1,96 @@
 {
-  "generated_at": "2026-11-25T22:03:09.037074+00:00",
+  "generated_at": "2026-11-26T17:17:21.732218+00:00",
   "competitors": [
+    {
+      "channel": "HISTORY",
+      "subscribers": 15600000,
+      "channel_views": 5306444235,
+      "video_count": 12468,
+      "high_performing_recent_videos": [
+        {
+          "title": "Electricity Unleashes the Unknown | The Secret of Skinwalker Ranch | Full Episode",
+          "views": 180608,
+          "likes": 1256,
+          "comments": 116,
+          "published_at": "2026-11-24T23:00:26Z",
+          "description_excerpt": "When the team uses high-powered Tesla Coils to shoot electricity into the oddly conductive soil of Skinwalker Ranch, they stimulate what may be their most otherworldly encounter so far.\n \nNew Episodes Tuesdays 9/8c\n\nStay up to date on all your favorite The HISTORY Channel shows at http://history.com/schedule.\n\nCheck out more full episodes of The Se"
+        },
+        {
+          "title": "What Could This Stone Structure Be? | The Curse of Oak Island",
+          "views": 152550,
+          "likes": 1064,
+          "comments": 60,
+          "published_at": "2026-11-25T19:00:31Z",
+          "description_excerpt": "The crew digs deeper into Oak Island and discovers a strange stone structure that's purpose is unknown. \n\nStay up to date on all of your favorite shows on The HISTORY Channel website at http://history.com/schedule.\n\n#TheCurseOfOakIsland\n\nSubscribe for more from The Curse of Oak Island and other great The HISTORY Channel shows:\nhttp://histv.co/Subsc"
+        },
+        {
+          "title": "What Mysteries Lie Beneath the Ocean? | Ancient Aliens",
+          "views": 97822,
+          "likes": 584,
+          "comments": 31,
+          "published_at": "2026-11-25T17:00:36Z",
+          "description_excerpt": "Explore the legends of cities lost to the ocean, and the Gods that ruled them, in this Ancient Aliens compilation.\n\n0:00 — Poseidon and Atlantis\n4:58 — Mount Olympus: Alien Base?\n7:11 — Poseidon’s Trident\n13:05 — Orion, Son of Poseidon\n\nStay up to date on all of your favorite shows on The HISTORY Channel website at http://history.com/schedule\n\n#Anc"
+        },
+        {
+          "title": "Could Gold Unlock Alien Technology? | Ancient Aliens | Full Episode",
+          "views": 83469,
+          "likes": 474,
+          "comments": 25,
+          "published_at": "2026-11-25T23:00:03Z",
+          "description_excerpt": "Could gold be the ultimate link between humans and aliens? A church in southern France is said to hold the key to alchemy.\n\nStay up to date on all of your favorite shows on The HISTORY Channel website at http://history.com/schedule\n \n#AncientAliens\n\nSubscribe for more from Ancient Aliens and other great The HISTORY Channel shows:\nhttp://histv.co/Su"
+        },
+        {
+          "title": "What Happened to Flight MH370? | History's Greatest Mysteries | Full Episode",
+          "views": 78280,
+          "likes": 574,
+          "comments": 65,
+          "published_at": "2026-11-25T01:00:17Z",
+          "description_excerpt": "One of the most chilling aviation mysteries in modern day: a Boeing 777, carrying 239 people, vanishes over the Indian Ocean. Nearly a decade later, the whole world still wonders--what really happened to Malaysia Flight 370?\n\n#HistorysGreatestMysteries\n\nSubscribe for more from History's Greatest Mysteries and other great The HISTORY Channel shows:\n"
+        }
+      ]
+    },
     {
       "channel": "Practical Engineering",
       "subscribers": 4850000,
-      "channel_views": 579179994,
+      "channel_views": 579296998,
       "video_count": 255,
       "high_performing_recent_videos": [
         {
           "title": "Stopping the Unstoppable",
-          "views": 5628879,
-          "likes": 61736,
+          "views": 5630008,
+          "likes": 61741,
           "comments": 2983,
           "published_at": "2026-09-01T13:00:00Z",
           "description_excerpt": "Buffer stops and bumping posts are hidden in plain sight\n⚙️ Check out SendCutSend for custom parts fabricated from your CAD: http://sendcutsend.com/practicalengineering\n\nAs long as we rely on rail, the \"simple\" physics of stopping will always be a complex balancing act.\n\n📖My new book, Disasters By Design: How Engineering Failures Shaped the Modern "
         },
         {
           "title": "The Hidden Engineering of Pressure Regulators",
-          "views": 2016866,
-          "likes": 30198,
+          "views": 2018304,
+          "likes": 30226,
           "comments": 882,
           "published_at": "2026-10-06T13:00:17Z",
           "description_excerpt": "Pressure regulators are Victorian-era mechanical computers, and I cut one in half so we can see how it works\n⚙️ Check out SendCutSend for custom parts fabricated from your CAD: http://sendcutsend.com/practicalengineering\n\nI just love that there’s stuff like this out there, pretty much anywhere you’re willing to look, doing an essential job that few"
         },
         {
           "title": "Every US Electrical Outlet Explained",
-          "views": 1588612,
-          "likes": 29828,
-          "comments": 2682,
+          "views": 1590299,
+          "likes": 29852,
+          "comments": 2683,
           "published_at": "2026-09-15T13:00:35Z",
           "description_excerpt": "Can you collect them all?\nWant to restore the planet's ecosystems and see your impact in monthly videos? The first 100 people to join Planet Wild with my code PRACTICAL29 will get the first month paid for by me: https://planetwild.com/r/practicalengineering/join/29\nIf you want to get to know them better first, check out their mission rewilding tran"
         },
         {
           "title": "Why Are There So Many Different Transmission Towers?",
-          "views": 1539106,
-          "likes": 31873,
-          "comments": 1858,
+          "views": 1573076,
+          "likes": 32336,
+          "comments": 1876,
           "published_at": "2026-11-17T14:00:10Z",
           "description_excerpt": "I love transmission towers!\nWant to restore the planet’s ecosystems and see your impact in monthly videos? The first 100 people to join Planet Wild with my code PRACTICAL11 will get the first month paid for by me: https://planetwild.com/r/practicalengineering/join/11\nIf you want to get to know them better first, check out their mission rewilding po"
         },
         {
           "title": "Are Beavers Actually Good at Dams?",
-          "views": 1360763,
-          "likes": 35774,
+          "views": 1361123,
+          "likes": 35778,
           "comments": 1943,
           "published_at": "2026-08-18T13:00:21Z",
           "description_excerpt": "Want to restore the planet’s ecosystems and see your impact in monthly videos? The first 100 people to join Planet Wild with my code PRACTICAL8 will get the first month paid for by me: https://planetwild.com/r/practicalengineering/join/8\nIf you want to get to know them better first, check out their wildlife crossings mission: https://planetwild.com"
@@ -52,36 +100,36 @@
     {
       "channel": "The Engineering Mindset",
       "subscribers": 4510000,
-      "channel_views": 354520633,
+      "channel_views": 354631724,
       "video_count": 319,
       "high_performing_recent_videos": [
         {
           "title": "MOSFET vs Transistor vs Relay: Most People Get This Wrong",
-          "views": 864459,
-          "likes": 17244,
+          "views": 867559,
+          "likes": 17281,
           "comments": 506,
           "published_at": "2026-06-15T18:41:01Z",
           "description_excerpt": "MOSFET V Transistors Try Brilliant 👉  http://brilliant.org/TheEngineeringMindset Plus our viewers 20% off an annual Premium subscription.\n\nLearn the key differences between MOSFETs, transistors and relays. This beginner-friendly electronics tutorial explains how BJTs and MOSFETs work, why they are used for switching and amplification, and how to ch"
         },
         {
           "title": "How a CPU Turns 1s and 0s Into Everything You See",
-          "views": 529340,
-          "likes": 7701,
+          "views": 531934,
+          "likes": 7733,
           "comments": 188,
           "published_at": "2026-10-05T15:00:22Z",
           "description_excerpt": "How do CPUs actually work? Design PCB's with Altium:  http://altium.com/yt/engineeringmindset\nHow does a CPU use billions of microscopic transistors to perform calculations and run software? In this video, we work from individual MOSFETs through logic gates, binary arithmetic and full adders to the ALU and CPU core.\nSee how processors fetch and exe"
         },
         {
           "title": "Why 3 Phase Power Is So Much Better",
-          "views": 396565,
-          "likes": 3828,
+          "views": 397362,
+          "likes": 3837,
           "comments": 96,
           "published_at": "2026-09-15T15:00:01Z",
           "description_excerpt": "Why 3 phases? Get a 30 day free trial and 20% off an annual subscription.🎁 Click here: https://brilliant.org/TheEngineeringMindset \n\nWhat is 3 phase electricity and how does three phase power work, learn Wye Delta loads and neutral currents, how and where three phase electricity is used, why 3 phases, how the generator works to produce 3 phase sine"
         },
         {
           "title": "The 1.25V Trick That Gives You Any Voltage You Want",
-          "views": 378161,
+          "views": 378441,
           "likes": 9318,
           "comments": 335,
           "published_at": "2026-06-01T17:04:21Z",
@@ -89,59 +137,11 @@
         },
         {
           "title": "The Truth About Three-Phase Power: Why It Became the Standard",
-          "views": 189532,
-          "likes": 6683,
+          "views": 189702,
+          "likes": 6684,
           "comments": 628,
           "published_at": "2026-07-28T17:13:17Z",
           "description_excerpt": "Why Not 2 Phase Power? Try Brilliant 👉  http://brilliant.org/TheEngineeringMindset Plus our viewers 20% off an annual Premium subscription.\n\nDownload your Excel sheets here ➡️ https://tinyurl.com/2-Phase-Excel\nTry Brilliant Tutor for free 👉  http://brilliant.org/TheEngineeringMindset\nGet your engineers mug here:➡️ https://engineeringmindset.store/p"
-        }
-      ]
-    },
-    {
-      "channel": "Engineering Explained",
-      "subscribers": 4240000,
-      "channel_views": 1075692722,
-      "video_count": 1074,
-      "high_performing_recent_videos": [
-        {
-          "title": "I Fact-Checked Every Stunt in the Tesla Roadster Reveal",
-          "views": 2933679,
-          "likes": 46836,
-          "comments": 8409,
-          "published_at": "2026-10-23T14:00:00Z",
-          "description_excerpt": "Tesla Roadster Revealed: It Flies, It Kickflips, It Rockets! Right?\nMath From 6 Years Ago - https://youtu.be/4PRi4B1APj0\nSubscribe to Engineering Explained for more videos! - https://goo.gl/VZstk7\n\nTesla has unveiled the new Roadster, and in classic Tesla fashion, they have some wild marketing stunts to go along with it. I love marketing stunts, be"
-        },
-        {
-          "title": "No, The Tesla Roadster Won’t Refill Its Air Tanks (Bet)",
-          "views": 1718950,
-          "likes": 28577,
-          "comments": 6379,
-          "published_at": "2026-11-13T15:00:02Z",
-          "description_excerpt": "Elon Said The Roadster Can Refill Its Air Tanks – I Bet It Won't\nWere The Roadster Stunts Real? Video: https://youtu.be/hJSbro3EBnY\nSubscribe to Engineering Explained for more videos! - https://goo.gl/VZstk7\n\nI am betting against Tesla. Elon said during the Roadster reveal that the car will come with a feature that I simply do not believe will happ"
-        },
-        {
-          "title": "Are You Buying The Wrong Tires?",
-          "views": 966413,
-          "likes": 14329,
-          "comments": 1265,
-          "published_at": "2026-09-25T14:00:36Z",
-          "description_excerpt": "Summer, All-Season, All-Weather, Winter, All-Terrain – What Tires Should You Buy?\nFind the right tires for your car: https://continentaltire.com/tire-search\nBig thanks to Continental for sponsoring this video! \n\nNothing impacts the performance of your car more than tires. But when you’re buying tires, it can be overwhelming trying to figure out wha"
-        },
-        {
-          "title": "Lucid Bought My Car Back, So I Bought A Mach-E",
-          "views": 895476,
-          "likes": 21289,
-          "comments": 3744,
-          "published_at": "2026-10-09T14:00:42Z",
-          "description_excerpt": "Lucid bought back my Air, so I bought a Ford Mustang Mach-E GT\nCheck out Continental's ECS02 Tires! - https://bit.ly/3Ulidu1\nSponsored by Continental \n\nGenuinely this was some of the most fun I’ve ever had car shopping because the criteria was very open: pretty much anything electric, except for three brands. I’ve already had a long term Nissan Lea"
-        },
-        {
-          "title": "How To Easily Ruin Your Turbocharged Car",
-          "views": 494095,
-          "likes": 15206,
-          "comments": 599,
-          "published_at": "2026-09-11T14:00:36Z",
-          "description_excerpt": "If you want to ruin your turbocharged car, it’s easy. All you have to do is drive your car hard, then immediately shut it off. You see, turbos are one of the hottest parts of your car, since all of the exhaust gases are routed through it. To help enable high turbo speeds, and to help cool it, engine oil pass through the insides of the turbocharger,"
         }
       ]
     }
@@ -376,7 +376,7 @@
     }
   ],
   "monetization": {
-    "subscribers": 17,
+    "subscribers": 18,
     "subscriber_target": 1000,
     "estimated_long_watch_hours_365d": null,
     "watch_hour_target": 4000,
