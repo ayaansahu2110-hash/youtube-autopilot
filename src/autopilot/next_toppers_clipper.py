@@ -40,20 +40,30 @@ OFFICIAL_LIVE_CHANNELS: list[dict[str, str]] = [
 COMEDY_CLIP_CHANNELS: list[dict[str, str]] = [
     {"id": "UCcRv4COoX94JIlBd8xuGbjA", "name": "NextTopper Harsh", "tab": "shorts"},
     {"id": "UCsxA17djxwN1lWVEawbX56g", "name": "Nexttoppers Hub", "tab": "videos"},
+    {"id": "UCsxA17djxwN1lWVEawbX56g", "name": "Nexttoppers Hub Shorts", "tab": "shorts"},
     {"id": "UCcsbHSRLQNcugDQwaUup-pA", "name": "Shobby ki Olivia", "tab": "videos"},
     {"id": "UCEB1A2-aK7ITZxu1ibq8v4Q", "name": "Next topper op", "tab": "videos"},
-    {"id": "UC2Eun_8tVb5jheSIM9WYeig", "name": "NextToppers feels", "tab": "videos"},
-    {"id": "UC-h6NNu_QgPijTTR5r5bgqw", "name": "DSP Moments", "tab": "videos"},
-    {"id": "UCGM1myHrBasW_WuGX7fGrJQ", "name": "DSP GOAT Editz", "tab": "videos"},
     {"id": "UCe226-9kFQO3QkNGb_hBkow", "name": "Next toppers addict", "tab": "videos"},
 ]
 
 ROAST_SEARCH_QUERIES: list[str] = [
-    "Prashant Kirad roasting funny live class",
-    "Shobhit Nirwan funny comedy roast",
-    "Digraj Sir funny comedy class moments",
-    "Next Toppers funny moments class",
+    "prashant kirad shobhit nirwan roasting shorts",
+    "next toppers funny moments roasting shorts",
+    "prashant kirad dark comedy funny reply shorts",
+    "shobhit nirwan funny comedy live class shorts",
+    "digraj sir funny prank call roasting shorts",
 ]
+
+EXCLUDED_LECTURE_KEYWORDS: tuple[str, ...] = (
+    "one shot",
+    "complete chapter",
+    "full revision",
+    "sample paper solution",
+    "ncert exercise",
+    "most important questions marathon",
+)
+
+MIN_PREFERRED_VIEWS = 50_000
 
 PILL_HOOKS: list[dict[str, str]] = [
     {"pill": "PK Bhaiya Roasting Day By Day 📈⚡", "title": "PK Bhaiya Roasting Day By Day 📈🔥 #nexttoppers #prashantkirad #funny #roasting #ytshorts"},
@@ -120,8 +130,53 @@ def verify_face_presence_and_center(video_path: Path, start_ms: int = 0, end_ms:
         cap.release()
 
 
-def find_best_face_window(video_path: Path, target_sec: float = 22.0, scan_step_sec: float = 20.0) -> tuple[int, int, float, float]:
-    """Scan a downloaded compilation/live video to pick a window where teacher's face is clearly visible."""
+def _fetch_heatmap_peaks(url: str, max_peaks: int = 3) -> list[tuple[float, float]]:
+    """Query YouTube Most-Replayed heatmap peaks for a video so we jump straight to viral comedy moments."""
+    yt_dlp = _yt_dlp_bin()
+    proc = subprocess.run(
+        [
+            yt_dlp,
+            "--dump-single-json",
+            "--no-playlist",
+            "--js-runtimes", "node",
+            "--remote-components", "ejs:github",
+            url,
+        ],
+        capture_output=True,
+        text=True,
+        timeout=45,
+    )
+    if proc.returncode != 0 or not proc.stdout.strip():
+        return []
+    try:
+        data = json.loads(proc.stdout)
+    except json.JSONDecodeError:
+        return []
+    hm = data.get("heatmap") or []
+    if not hm:
+        return []
+    ranked = sorted(hm, key=lambda x: float(x.get("value") or 0.0), reverse=True)
+    selected: list[tuple[float, float]] = []
+    for seg in ranked:
+        st = float(seg.get("start_time") or 0.0)
+        et = float(seg.get("end_time") or st + 15.0)
+        # Skip 0-2s intro replay spike on Shorts
+        if st < 3.0 and (et - st) < 5.0:
+            continue
+        if all(abs(st - prev_s) > 20.0 for prev_s, _ in selected):
+            selected.append((st, et))
+        if len(selected) >= max_peaks:
+            break
+    return selected
+
+
+def find_best_face_window(
+    video_path: Path,
+    target_sec: float = 24.0,
+    scan_step_sec: float = 20.0,
+    preferred_peaks: list[tuple[float, float]] | None = None,
+) -> tuple[int, int, float, float]:
+    """Pick the funniest/most-replayed window where teacher's face is clearly visible on screen."""
     cap = cv2.VideoCapture(str(video_path))
     if not cap.isOpened():
         return 0, int(target_sec * 1000), 0.0, 0.5
@@ -135,6 +190,18 @@ def find_best_face_window(video_path: Path, target_sec: float = 22.0, scan_step_
         return 0, int(min(dur_sec, target_sec) * 1000), r, cx
 
     best = (0, int(target_sec * 1000), 0.0, 0.5)
+
+    # First check YouTube Most-Replayed viewer peaks (these pinpoint the actual joke/roast)
+    for pk_start, _ in (preferred_peaks or []):
+        start_s = max(0.0, min(dur_sec - target_sec - 1.0, pk_start - 3.0))
+        s_ms = int(start_s * 1000)
+        e_ms = int((start_s + target_sec) * 1000)
+        ratio, cx = verify_face_presence_and_center(video_path, s_ms, e_ms, sample_count=6)
+        if ratio > best[2]:
+            best = (s_ms, e_ms, ratio, cx)
+        if ratio >= 0.65:
+            return s_ms, e_ms, ratio, cx
+
     t = 12.0
     checked = 0
     while t + target_sec < dur_sec - 2.0 and checked < 5:
@@ -152,10 +219,10 @@ def find_best_face_window(video_path: Path, target_sec: float = 22.0, scan_step_
 
 def fetch_comedy_candidates(
     source_channel_ids: list[str] | None = None,
-    limit_per_source: int = 6,
+    limit_per_source: int = 8,
     include_live_search: bool = True,
 ) -> list[dict]:
-    """Discover funny/roasting videos from curated comedy channels, live streams, and YouTube search."""
+    """Discover high-view funny/roasting videos from curated channels, official roasts, and YouTube search."""
     yt_dlp = _yt_dlp_bin()
     urls_to_fetch: list[tuple[str, str]] = []
 
@@ -173,16 +240,19 @@ def fetch_comedy_candidates(
         for ch in COMEDY_CLIP_CHANNELS:
             urls_to_fetch.append((f"https://www.youtube.com/channel/{ch['id']}/{ch['tab']}", ch["name"]))
         for ch in OFFICIAL_LIVE_CHANNELS:
-            urls_to_fetch.append((f"https://www.youtube.com/channel/{ch['id']}/streams", ch["name"]))
             urls_to_fetch.append((f"https://www.youtube.com/channel/{ch['id']}/videos", ch["name"]))
 
     if include_live_search:
         for q in ROAST_SEARCH_QUERIES:
-            urls_to_fetch.append((f"ytsearch8:{q}", f"search:{q}"))
+            urls_to_fetch.append((f"ytsearch10:{q}", f"search:{q}"))
 
     seen_ids: set[str] = set()
     results: list[dict] = []
-    funny_keywords = ("roast", "funny", "comedy", "meme", "react", "hesitate", "dark", "chaotic", "laugh", "shayari", "masti")
+    funny_keywords = (
+        "roast", "funny", "comedy", "meme", "react", "hesitate",
+        "dark", "exposed", "prank", "reply", "angry", "abused", "laugh",
+        "dhokebaaz", "challenge", "practical", "scaring", "olivia", "masti",
+    )
 
     for url, label in urls_to_fetch:
         proc = subprocess.run(
@@ -205,9 +275,16 @@ def fetch_comedy_candidates(
             dur = float(entry.get("duration") or 0)
             views = int(entry.get("view_count") or 0)
             low = title.lower()
-            is_short_remix = "/shorts" in url or (12 <= dur <= 70)
             is_comedy_title = any(k in low for k in funny_keywords)
-            priority_score = views + (500_000 if is_comedy_title else 0) + (150_000 if "roast" in low or "funny" in low else 0)
+            # Only allow verified comedy/roast/exposed/funny titles (skip unrelated vlogs/hair/money/lectures)
+            if not is_comedy_title:
+                continue
+            if any(bad in low for bad in EXCLUDED_LECTURE_KEYWORDS):
+                continue
+            is_short_remix = "/shorts" in url or (12 <= dur <= 70)
+            # Prioritize actual viral views first; boost genuine roast/exposed/prank titles cleanly
+            viral_boost = 1.45 if ("roast" in low or "dark" in low or "exposed" in low or "prank" in low) else (1.2 if is_comedy_title else 0.7)
+            priority_score = int(views * viral_boost) + (50_000 if is_comedy_title else 0)
             results.append(
                 {
                     "video_id": vid,
@@ -222,8 +299,12 @@ def fetch_comedy_candidates(
                 }
             )
 
-    results.sort(key=lambda x: x["priority_score"], reverse=True)
-    return results
+    # Prefer genuinely viral videos (>= MIN_PREFERRED_VIEWS) first before lower-view fallback
+    viral = [r for r in results if r["views"] >= MIN_PREFERRED_VIEWS]
+    rest = [r for r in results if r["views"] < MIN_PREFERRED_VIEWS]
+    viral.sort(key=lambda x: x["priority_score"], reverse=True)
+    rest.sort(key=lambda x: x["priority_score"], reverse=True)
+    return viral + rest
 
 
 class NextToppersTrioPipeline:
@@ -279,6 +360,7 @@ class NextToppersTrioPipeline:
                 "--no-playlist",
                 "--no-part",
                 "--js-runtimes", "node",
+                "--remote-components", "ejs:github",
                 "--merge-output-format", "mp4",
                 "-f", "bv*[height<=720][ext=mp4]+ba[ext=m4a]/b[height<=720][ext=mp4]/mp4/best",
                 "-o", str(cached),
@@ -291,12 +373,24 @@ class NextToppersTrioPipeline:
             return cached
         return None
 
+    @staticmethod
+    def _is_vertical_video(video_path: Path) -> bool:
+        cap = cv2.VideoCapture(str(video_path))
+        if not cap.isOpened():
+            return False
+        w = cap.get(cv2.CAP_PROP_FRAME_WIDTH) or 1280
+        h = cap.get(cv2.CAP_PROP_FRAME_HEIGHT) or 720
+        cap.release()
+        return (w / max(1.0, h)) < 0.78
+
     def run_batch(
         self,
         *,
         count: int = 2,
         style: str = "auto",  # 'auto' | 'roast-live' | 'roast-remix' | 'both'
         video_url_override: str | None = None,
+        start_sec_override: float | None = None,
+        duration_sec_override: int | None = None,
         upload: bool = False,
     ) -> list[dict]:
         """Find face-verified comedy/roasting moments, render Shorts via ClipForge, and optionally upload."""
@@ -315,7 +409,7 @@ class NextToppersTrioPipeline:
                 "is_comedy_title": True,
             }]
         else:
-            all_cands = fetch_comedy_candidates(self.source_channel_ids, limit_per_source=6, include_live_search=True)
+            all_cands = fetch_comedy_candidates(self.source_channel_ids, limit_per_source=8, include_live_search=True)
             fresh = [c for c in all_cands if c["video_id"] not in used_ids]
             candidates = fresh if fresh else all_cands
 
@@ -341,14 +435,28 @@ class NextToppersTrioPipeline:
                     continue
 
                 is_remix = (style == "roast-remix") or (style in ("auto", "both") and src.get("is_short_remix"))
-                if is_remix:
+                is_vert = self._is_vertical_video(local_src)
+                layout = "crop" if is_vert else "face-zoom"
+                target_len = float(duration_sec_override or 26)
+
+                if start_sec_override is not None:
+                    s_ms = int(start_sec_override * 1000)
+                    e_ms = int((start_sec_override + target_len) * 1000)
+                    face_ratio, face_cx = verify_face_presence_and_center(local_src, s_ms, e_ms, sample_count=8)
+                    if face_ratio < 0.50:
+                        logger.info(f"Skipping {src['video_id']} manual slice (face_ratio={face_ratio:.2f})")
+                        continue
+                elif is_remix:
                     face_ratio, face_cx = verify_face_presence_and_center(local_src, 0, None, sample_count=8)
                     if face_ratio < 0.60:
                         logger.info(f"Skipping {src['video_id']} (face_ratio={face_ratio:.2f} < 0.60)")
                         continue
                     s_ms, e_ms = None, None
                 else:
-                    s_ms, e_ms, face_ratio, face_cx = find_best_face_window(local_src, target_sec=24.0, scan_step_sec=25.0)
+                    peaks = _fetch_heatmap_peaks(src["url"], max_peaks=3)
+                    s_ms, e_ms, face_ratio, face_cx = find_best_face_window(
+                        local_src, target_sec=target_len, scan_step_sec=25.0, preferred_peaks=peaks
+                    )
                     if face_ratio < 0.60:
                         logger.info(f"Skipping {src['video_id']} (no clear face window found: {face_ratio:.2f})")
                         continue
@@ -356,7 +464,7 @@ class NextToppersTrioPipeline:
                 hook_cfg = PILL_HOOKS[(len(history.get("produced_clips", [])) + i) % len(PILL_HOOKS)]
                 chosen_style = "roast-remix" if is_remix else "roast-live"
 
-                if is_remix:
+                if is_remix and s_ms is None:
                     probe = subprocess.run(
                         ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "default=noprint_wrappers=1:nokey=1", str(local_src)],
                         capture_output=True, text=True,
@@ -372,7 +480,7 @@ class NextToppersTrioPipeline:
                         provider="mock",
                         llm_provider="nvidia",
                         language="hinglish",
-                        layout_mode="face-zoom",
+                        layout_mode=layout,
                         color_grade="viral-warm",
                         crop_offset_x=face_cx,
                         bgm_path=bgm,
@@ -392,7 +500,7 @@ class NextToppersTrioPipeline:
                         file_path=local_src,
                         aspect_ratio="9:16",
                         clip_count=1,
-                        clip_duration_sec=24,
+                        clip_duration_sec=int(round(target_len)),
                         caption_preset="trio-hinglish",
                         resolution="1080p",
                         provider="gemini",
@@ -402,7 +510,7 @@ class NextToppersTrioPipeline:
                             "Prashant Kirad, Shobhit Nirwan, or Digraj Sir. Keep their dialogue crisp."
                         ),
                         language="hinglish",
-                        layout_mode="face-zoom",
+                        layout_mode=layout,
                         color_grade="viral-warm",
                         crop_offset_x=face_cx,
                         bgm_path=bgm,
