@@ -1,49 +1,97 @@
 {
-  "generated_at": "2026-11-26T22:17:56.796678+00:00",
+  "generated_at": "2026-11-27T17:23:36.447269+00:00",
   "competitors": [
+    {
+      "channel": "Jeff Su",
+      "subscribers": 1960000,
+      "channel_views": 109220395,
+      "video_count": 320,
+      "high_performing_recent_videos": [
+        {
+          "title": "Personal Agents, Clearly Explained",
+          "views": 367296,
+          "likes": 3825,
+          "comments": 367,
+          "published_at": "2026-10-13T13:00:11Z",
+          "description_excerpt": "📧 Join my free AI Essentials newsletter - https://www.jeffsu.org/newsletter/?utm_source=youtube&utm_medium=video&utm_campaign=v212\n\nAlready using #ChatGPT, Claude, or Gemini and wondering whether personal AI agents are worth your time? A chatbot can summarize one health report, a do-it-yourself agent can compare it with your history, and personal a"
+        },
+        {
+          "title": "Write a Killer Résumé in the AI Era: 5 New Rules!",
+          "views": 262464,
+          "likes": 3961,
+          "comments": 170,
+          "published_at": "2026-09-15T13:00:20Z",
+          "description_excerpt": "📨 Get 1% better at AI every week - https://www.jeffsu.org/newsletter/?utm_source=youtube&utm_medium=video&utm_campaign=v210\n\nFinding reliable #résumé advice was already hard enough, and now employers use #AI to screen applications. I break down research covering more than 4,000 hiring managers and nearly 2 million applications to show which résumé "
+        },
+        {
+          "title": "Stop Organizing Files Yourself.",
+          "views": 216358,
+          "likes": 2496,
+          "comments": 167,
+          "published_at": "2026-09-29T13:00:30Z",
+          "description_excerpt": "📦 Try Dropbox in ChatGPT with your team: https://bit.ly/jeffsudropbox \n\nEvery downloaded PDF becomes another file to rename and another folder to choose. In this video, I show you how to give #AI a file management rulebook so it can name and organize your files using the folder structure and preferences that make sense to you.\n\nSpecifically, you’ll"
+        },
+        {
+          "title": "6 Insanely Practical AI Tips (in 18 minutes)",
+          "views": 171770,
+          "likes": 2346,
+          "comments": 158,
+          "published_at": "2026-11-10T13:00:14Z",
+          "description_excerpt": "✅ Get HubSpot’s free guide, Use Claude like an AI Expert - https://clickhubspot.com/89c42f\n\nTired of AI tips that go out of date as soon as a new model comes out? These six AI productivity tips help you waste fewer tokens, do less manual work, and teach #ChatGPT, Claude, and Gemini how you like to work.\n\nI’ll show you how to turn a dense PDF into a"
+        },
+        {
+          "title": "I knew AI + Notion would be good, but this... wow.",
+          "views": 123087,
+          "likes": 1058,
+          "comments": 137,
+          "published_at": "2026-10-27T13:02:29Z",
+          "description_excerpt": "Grab my free Cowork Toolkit: https://coworkacademy.ai/toolkit?utm_source=youtube&utm_medium=video&utm_campaign=v213\n\nIf your #AI keeps creating Notion pages you have to fix, it needs to learn how YOU work. In this video, I’ll show you how to teach Claude and #ChatGPT your database, template, and formatting preferences so they can handle the tedious"
+        }
+      ]
+    },
     {
       "channel": "Nate Herk | AI Automation",
       "subscribers": 1150000,
-      "channel_views": 71022481,
-      "video_count": 622,
+      "channel_views": 71217188,
+      "video_count": 623,
       "high_performing_recent_videos": [
         {
           "title": "Claude Artifacts Just Got a Huge Upgrade",
-          "views": 107661,
-          "likes": 1435,
-          "comments": 74,
+          "views": 115251,
+          "likes": 1525,
+          "comments": 80,
           "published_at": "2026-11-25T00:23:51Z",
           "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=claude-artifacts-apps&sl=yt_claude-artifacts-apps\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-artifacts-apps&hcategory=youtube-videos&utm_campaign=pl"
         },
         {
-          "title": "Claude Code Just Silently Released a Cheaper Mode",
-          "views": 68061,
-          "likes": 645,
-          "comments": 31,
-          "published_at": "2026-11-24T13:48:56Z",
-          "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=claude-code-code-mode&sl=yt_claude-code-code-mode\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-code-code-mode&hcategory=youtube-videos&utm_campaign=pl"
-        },
-        {
           "title": "Claude Artifacts Just Got a HUGE Upgrade: Apps",
-          "views": 66701,
-          "likes": 1272,
-          "comments": 26,
+          "views": 70128,
+          "likes": 1308,
+          "comments": 28,
           "published_at": "2026-11-25T00:56:52Z",
           "description_excerpt": ""
         },
         {
+          "title": "Claude Code Just Silently Released a Cheaper Mode",
+          "views": 69727,
+          "likes": 660,
+          "comments": 35,
+          "published_at": "2026-11-24T13:48:56Z",
+          "description_excerpt": "FREE AI OS Template: https://app.aiautomationsociety.ai/optin/ai-os/?utm_source=youtube&utm_medium=organic&utm_content=claude-code-code-mode&sl=yt_claude-code-code-mode\nHow I built an AI agency from 0 to over $1 million per year: https://www.skool.com/ai-automation-society-plus/about?el=claude-code-code-mode&hcategory=youtube-videos&utm_campaign=pl"
+        },
+        {
           "title": "I Tested 9 Ways to Use Claude Code for Free (3 are worth it)",
-          "views": 24554,
-          "likes": 289,
-          "comments": 19,
+          "views": 29869,
+          "likes": 342,
+          "comments": 23,
           "published_at": "2026-11-25T18:52:36Z",
           "description_excerpt": "Hostinger VPS Code NATEHERK for 10% off yearly plans: https://hostinger.com/nateherk10\nFREE setup guide: https://www.skool.com/ai-automation-society/about?el=claude-code-free&hcategory=youtube-videos&utm_campaign=free-group\n\nMy Tools💻\nFREE MONTH voice to text: https://get.glaido.com/nate\nCode NATEHERK for 10% off VPS (annual plan): https://www.host"
         },
         {
           "title": "I Tested 9 Ways to Use Claude Code for Free",
-          "views": 18519,
-          "likes": 315,
-          "comments": 72,
+          "views": 24803,
+          "likes": 369,
+          "comments": 90,
           "published_at": "2026-11-25T21:48:24Z",
           "description_excerpt": ""
         }
@@ -52,96 +100,48 @@
     {
       "channel": "Matt Wolfe",
       "subscribers": 1040000,
-      "channel_views": 87600282,
-      "video_count": 859,
+      "channel_views": 87635665,
+      "video_count": 860,
       "high_performing_recent_videos": [
         {
           "title": "AI News: This Is The Make or Break Week!!",
-          "views": 142552,
-          "likes": 2098,
-          "comments": 181,
+          "views": 144682,
+          "likes": 2121,
+          "comments": 183,
           "published_at": "2026-11-20T19:00:16Z",
           "description_excerpt": "Hire your own team of agents with Hyperagent for free here: https://hyperagent.com/login?utm_source=youtube&utm_medium=influencer&utm_campaign=MATT\n\nAnthropic’s IPO puts the AI bubble to the test as OpenAI and Google launch powerful new models for less.\n\nThis week, I test GPT-6.2 Astra, Sol, and Gemini 4 Neon, break down Microsoft’s latest AI relea"
         },
         {
-          "title": "This will test if AI truly is a bubble",
-          "views": 29469,
-          "likes": 545,
-          "comments": 49,
-          "published_at": "2026-11-19T21:14:46Z",
-          "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
-        },
-        {
           "title": "Google Cooked With This New Model!",
-          "views": 25351,
-          "likes": 640,
-          "comments": 35,
+          "views": 26172,
+          "likes": 661,
+          "comments": 36,
           "published_at": "2026-11-22T20:58:01Z",
           "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
         },
         {
           "title": "They built cyborg cockroaches with built-in AI...",
-          "views": 22970,
-          "likes": 698,
+          "views": 24187,
+          "likes": 706,
           "comments": 59,
           "published_at": "2026-11-21T21:25:07Z",
           "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
         },
         {
           "title": "We know who will REALLY be using this (Not AI)",
-          "views": 14913,
-          "likes": 461,
-          "comments": 37,
+          "views": 15620,
+          "likes": 490,
+          "comments": 39,
           "published_at": "2026-11-23T21:09:34Z",
           "description_excerpt": "I've never seen a robot look THIS realistic before...\n\n#AI #futuretech"
-        }
-      ]
-    },
-    {
-      "channel": "ICOR with Tom | AI Productivity",
-      "subscribers": 114000,
-      "channel_views": 14560437,
-      "video_count": 635,
-      "high_performing_recent_videos": [
-        {
-          "title": "Claude Code Desktop replaced my terminal and VS Code",
-          "views": 11102,
-          "likes": 83,
-          "comments": 20,
-          "published_at": "2026-11-15T16:50:01Z",
-          "description_excerpt": "Set up Claude Code Desktop with sessions that message each other, so you get most of what Grok Bot gives without Grok Bot.\nMore on building your system: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=e_BiN-2AALA&utm_content=description\n\nWATCH THIS NEXT\n• Claude can now prompt its own SESSIONS. I built the boss.: https://ww"
         },
         {
-          "title": "I solved object-oriented note-taking in #obsidian",
-          "views": 5212,
-          "likes": 16,
-          "comments": 3,
-          "published_at": "2026-11-20T22:47:29Z",
-          "description_excerpt": "Want this plugin?\nComing soon to an Obsidian Marketplace near you.\nFor free!\nGet notified at myicor.com"
-        },
-        {
-          "title": "Claude Teams replaced our team's AI setup. What it really costs.",
-          "views": 3783,
-          "likes": 36,
-          "comments": 10,
-          "published_at": "2026-11-25T19:57:14Z",
-          "description_excerpt": "We moved our company onto Claude Teams. Here is how it works and what Claude Tag in Slack costs.\n🚀 Start your ICOR® Journey (FREE) https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=rCh0wO-838k&utm_content=description\n\nWATCH THIS NEXT\n• You are using the wrong Claude for work! (Here is proof): https://www.youtube.com/watch?v=P"
-        },
-        {
-          "title": "Too many Claude sessions? Make one that watches the rest",
-          "views": 3308,
-          "likes": 68,
-          "comments": 5,
-          "published_at": "2026-11-20T20:00:08Z",
-          "description_excerpt": "Too many Claude Code sessions? Set up one orchestrator session that lists what is waiting on you and lets you answer it all in one place.\nMore on building your system: https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=P8mxzC-nRMs&utm_content=description\n\nWATCH THIS NEXT\n• Claude can now prompt its own SESSIONS. I built the bo"
-        },
-        {
-          "title": "Claude Chat and Claude Code are becoming one app",
-          "views": 1447,
-          "likes": 29,
-          "comments": 5,
-          "published_at": "2026-11-26T16:31:17Z",
-          "description_excerpt": "Claude Chat and Claude Code are merging, and projects are the newest piece. Here is how they work now.\n🚀 Start your ICOR® Journey (FREE) https://www.myicor.com/?utm_source=youtube&utm_medium=video&utm_campaign=0g7_e0-jCLU&utm_content=description\n\nWATCH THIS NEXT\n• Claude Teams replaced our team's AI setup. What it really costs.: https://www.youtube"
+          "title": "What else could you use this for?",
+          "views": 11385,
+          "likes": 335,
+          "comments": 26,
+          "published_at": "2026-11-21T03:42:44Z",
+          "description_excerpt": "Sharing the latest news and advancements in AI\n\nDiscover More:\n🛠️ Explore AI Tools & News: https://futuretools.io/\n📰 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-w"
         }
       ]
     }
@@ -362,7 +362,7 @@
       "title": "Roblox AI: Build Games With Text",
       "format": "short",
       "metrics": {
-        "views": 204.0,
+        "views": 197.0,
         "estimatedMinutesWatched": 19.0,
         "averageViewDuration": 18.0,
         "averageViewPercentage": 41.38,
@@ -490,7 +490,7 @@
       "title": "Roblox AI: Build Games With Text",
       "format": "short",
       "metrics": {
-        "views": 204.0,
+        "views": 197.0,
         "estimatedMinutesWatched": 19.0,
         "averageViewDuration": 18.0,
         "averageViewPercentage": 41.38,
