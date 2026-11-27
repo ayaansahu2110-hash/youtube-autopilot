@@ -54,6 +54,7 @@ ALL_CHANNELS = [
     ("empirepulse", "EmpirePulse", "UC6rE9fs_Os6NSXdTN1oBNdw", Path("secrets/youtube_token_empirepulse.json")),
     ("astrapulse", "AstraPulse", "UC9-C8N7q2m8nax0kYWFy9og", Path("secrets/youtube_token_astrapulse.json")),
     ("gta6hub", "GTA6Hub", "UCVo9n-Yun9--4rw3C-ZWoLQ", Path("secrets/youtube_token_gta6hub.json")),
+    ("nexttoppers", "NextToppersClips", "", Path("secrets/youtube_token_nexttoppers.json")),
 ]
 
 
@@ -449,6 +450,8 @@ def schedule_all() -> None:
     def execute_slot(slot_name: str, is_morning: bool) -> None:
         console.print(f"\n[bold green]Executing {slot_name} production slot across all 7 channels ({settings.schedule_timezone})...[/bold green]")
         for profile, display_name, expected_id, token_path in ALL_CHANNELS:
+            if profile == "nexttoppers":
+                continue  # Handled by dedicated NextToppersTrioPipeline / schedule-trio
             try:
                 s = Settings(
                     channel_profile=profile,
@@ -500,6 +503,53 @@ def schedule_all() -> None:
         coalesce=True,
     )
     console.print(f"[bold green]Unified 8-Channel Scheduler active at 12:00 and 18:00 ({settings.schedule_timezone}) across all channels[/bold green]")
+    scheduler.start()
+
+
+@app.command("clip-trio")
+def clip_trio(
+    count: int = typer.Option(2, "--count", "-n", help="Number of Trio Shorts to produce"),
+    style: str = typer.Option("auto", "--style", "-s", help="auto | speech | meme | both"),
+    url: str | None = typer.Option(None, "--url", help="Optional specific YouTube URL to clip"),
+    sources: str | None = typer.Option(None, "--sources", help="Comma-separated source YouTube channel IDs"),
+    watermark: str = typer.Option("@NextToppersClips", "--watermark", help="Watermark handle on video"),
+    upload: bool = typer.Option(False, "--upload/--no-upload", help="Upload to YouTube using nexttoppers token"),
+) -> None:
+    """Cut viral Next Toppers Trio (Prashant, Shobhit, Digraj) Shorts with BGM, emojis & Hinglish hooks."""
+    from autopilot.next_toppers_clipper import NextToppersTrioPipeline
+
+    src_list = [x.strip() for x in sources.split(",") if x.strip()] if sources else None
+    pipe = NextToppersTrioPipeline(source_channel_ids=src_list, watermark=watermark)
+    results = pipe.run_batch(count=count, style=style, video_url_override=url, upload=upload)
+    for idx, r in enumerate(results, start=1):
+        console.print(f"[bold green][{idx}] {r['style'].upper()} Ready:[/bold green] {r['title']}")
+        console.print(f"  File: {r['file_path']}")
+        if r.get("uploaded_url"):
+            console.print(f"  YouTube URL: {r['uploaded_url']}")
+
+
+@app.command("schedule-trio")
+def schedule_trio(
+    count_per_slot: int = typer.Option(2, "--count", help="Shorts per daily run"),
+    watermark: str = typer.Option("@NextToppersClips", "--watermark", help="Watermark handle"),
+    upload: bool = typer.Option(True, "--upload/--no-upload", help="Auto-upload when nexttoppers token exists"),
+) -> None:
+    """Run automated daily scheduler (10:00 AM & 06:00 PM IST) for Next Toppers Trio Shorts."""
+    from autopilot.next_toppers_clipper import NextToppersTrioPipeline
+
+    settings = load_settings()
+    scheduler = BlockingScheduler(timezone=settings.schedule_timezone)
+
+    def _job() -> None:
+        try:
+            pipe = NextToppersTrioPipeline(watermark=watermark)
+            pipe.run_batch(count=count_per_slot, style="both", upload=upload)
+        except Exception as exc:
+            console.print(f"[bold red]Trio scheduler error:[/bold red] {exc}")
+
+    scheduler.add_job(_job, "cron", hour=10, minute=0, id="trio-morning", replace_existing=True)
+    scheduler.add_job(_job, "cron", hour=18, minute=0, id="trio-evening", replace_existing=True)
+    console.print(f"[bold green]Next Toppers Trio Scheduler active at 10:00 & 18:00 ({settings.schedule_timezone})[/bold green]")
     scheduler.start()
 
 

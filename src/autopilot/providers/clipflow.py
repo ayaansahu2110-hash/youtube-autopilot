@@ -193,3 +193,122 @@ class ClipflowProvider:
         except Exception as exc:
             logger.warning(f"[Clipflow] Generation exception ({exc}); falling back gracefully.")
             return None
+
+    def clip_video(
+        self,
+        *,
+        video_url: str | None = None,
+        file_path: str | Path | None = None,
+        title: str | None = None,
+        aspect_ratio: str = "9:16",
+        clip_count: int = 2,
+        clip_duration_sec: int = 22,
+        caption_preset: str = "trio-hinglish",
+        resolution: str = "1080p",
+        provider: str = "gemini",
+        llm_provider: str = "nvidia",
+        prompt: str | None = None,
+        language: str = "hinglish",
+        layout_mode: str = "fit-blur",
+        color_grade: str = "viral-warm",
+        crop_offset_x: float = 0.5,
+        bgm_path: str | Path | None = None,
+        bgm_volume: float = 0.16,
+        mute_original: bool = False,
+        speed_factor: float = 1.0,
+        top_text: str | None = None,
+        bottom_text: str | None = None,
+        center_text: str | None = None,
+        watermark_text: str | None = None,
+        auto_emoji: bool = True,
+        burn_captions: bool = True,
+        export_all: bool = True,
+        start_ms: int | None = None,
+        end_ms: int | None = None,
+        poll_timeout_sec: float = 360.0,
+    ) -> dict | None:
+        """Submit a long-to-short ClipForge clipping job and await completed outputs.
+
+        Returns the completed job dict (with outputs list containing filePath, title,
+        topHook, bottomHook, emoji, mood, score, transcript) or None on error.
+        """
+        if not self.is_available():
+            logger.warning("[Clipflow] Local server unavailable for clip_video.")
+            return None
+
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json",
+        }
+        body: dict = {
+            "aspectRatio": aspect_ratio,
+            "clipCount": clip_count,
+            "clipDurationSec": clip_duration_sec,
+            "captionPreset": caption_preset,
+            "resolution": resolution,
+            "provider": provider,
+            "llmProvider": llm_provider,
+            "language": language,
+            "layoutMode": layout_mode,
+            "colorGrade": color_grade,
+            "cropOffsetX": crop_offset_x,
+            "bgmVolume": bgm_volume,
+            "muteOriginal": mute_original,
+            "speedFactor": speed_factor,
+            "autoEmoji": auto_emoji,
+            "burnCaptions": burn_captions,
+            "exportAll": export_all,
+        }
+        if video_url:
+            body["videoUrl"] = video_url
+        if file_path:
+            body["filePath"] = str(file_path)
+        if title:
+            body["title"] = title
+        if prompt:
+            body["prompt"] = prompt
+        if bgm_path:
+            body["bgmPath"] = str(Path(bgm_path).resolve())
+        if top_text is not None:
+            body["topText"] = top_text
+        if bottom_text is not None:
+            body["bottomText"] = bottom_text
+        if center_text is not None:
+            body["centerText"] = center_text
+        if watermark_text is not None:
+            body["watermarkText"] = watermark_text
+        if start_ms is not None and end_ms is not None:
+            body["startMs"] = int(start_ms)
+            body["endMs"] = int(end_ms)
+
+        try:
+            with httpx.Client(timeout=15.0) as client:
+                res = client.post(f"{self.base_url}/api/v1/clip", json=body, headers=headers)
+                if res.status_code != 202:
+                    logger.warning(f"[Clipflow] clip submit HTTP {res.status_code}: {res.text[:250]}")
+                    return None
+                job_id = res.json().get("jobId")
+                if not job_id:
+                    return None
+
+            deadline = time.time() + poll_timeout_sec
+            while time.time() < deadline:
+                time.sleep(3.0)
+                try:
+                    with httpx.Client(timeout=10.0) as client:
+                        jr = client.get(f"{self.base_url}/api/v1/jobs/{job_id}", headers=headers)
+                        if jr.status_code == 200:
+                            jd = jr.json()
+                            st = jd.get("status")
+                            if st == "completed":
+                                return jd
+                            if st in ("failed", "cancelled"):
+                                logger.warning(f"[Clipflow] clip job {job_id} {st}: {jd.get('error')}")
+                                return None
+                except Exception as pe:
+                    logger.debug(f"[Clipflow] clip poll retry ({pe})")
+            logger.warning(f"[Clipflow] clip job {job_id} timed out after {poll_timeout_sec}s.")
+            return None
+        except Exception as exc:
+            logger.warning(f"[Clipflow] clip_video exception ({exc})")
+            return None

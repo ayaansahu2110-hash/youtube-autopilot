@@ -14,6 +14,7 @@ ChannelProfileType = Literal[
     "empirepulse",
     "astrapulse",
     "gta6hub",
+    "nexttoppers",
 ]
 
 CHANNEL_PROFILES: list[str] = [
@@ -26,6 +27,7 @@ CHANNEL_PROFILES: list[str] = [
     "empirepulse",
     "astrapulse",
     "gta6hub",
+    "nexttoppers",
 ]
 
 PROFILE_CONFIGS: dict[str, dict] = {
@@ -181,6 +183,22 @@ PROFILE_CONFIGS: dict[str, dict] = {
         "shorts_per_day": 5,
         "min_research_sources": 1,
         "longform_every_days": 1,
+    },
+    "nexttoppers": {
+        "display_name": "NextToppersClips",
+        "niche": "Next Toppers Trio (Prashant Kirad, Shobhit Nirwan, Digraj Singh Rajput) viral motivational edits, study strategy clips & relatable student moments",
+        "topic_queries": "Prashant Kirad motivation,Shobhit Nirwan class 10 strategy,Digraj Singh Rajput SST,Next Toppers funny moments",
+        "voice": "en-US-AndrewNeural",
+        "rate": "+2%",
+        "pitch": "-2Hz",
+        "category_id": "27",
+        "made_for_kids": False,
+        "token_file": "secrets/youtube_token_nexttoppers.json",
+        "max_clips_short": 10,
+        "min_clips_short": 1,
+        "clip_seconds": 2.5,
+        "shorts_per_day": 4,
+        "min_research_sources": 1,
     },
 }
 
