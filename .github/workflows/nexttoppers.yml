@@ -1,0 +1,110 @@
+name: NextToppers Roast Autopilot (Offline Cloud)
+
+on:
+  schedule:
+    # 10:00 AM IST = 04:30 UTC (1 Short)
+    - cron: "30 4 * * *"
+    # 06:00 PM IST = 12:30 UTC (2 Shorts + 4-Day Long Compilation Check)
+    - cron: "30 12 * * *"
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "Number of Shorts to produce"
+        required: false
+        default: "2"
+        type: string
+      run_long:
+        description: "Build & upload 4-5 min Long compilation now"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nexttoppers-autopilot
+  cancel-in-progress: false
+
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      CHANNEL_PROFILE: nexttoppers
+      CHANNEL_DISPLAY_NAME: NextToppers Roast
+      EXPECTED_YOUTUBE_CHANNEL_ID: UCrqB8xuwv8CCrS3n_WHIe7Q
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      YOUTUBE_CLIENT_SECRETS_B64: ${{ secrets.YOUTUBE_CLIENT_SECRETS_B64 }}
+      YOUTUBE_TOKEN_B64: ${{ secrets.NEXTTOPPERS_YOUTUBE_TOKEN_B64 }}
+      YOUTUBE_TOKEN_FILE: secrets/youtube_token_nexttoppers.json
+      ENABLE_UPLOADS: "true"
+      UPLOAD_PRIVACY_STATUS: "public"
+      ALLOW_PUBLIC_UPLOADS: "true"
+      SHORTS_PUBLIC: "true"
+      SCHEDULE_TIMEZONE: Asia/Kolkata
+      PYTHONPATH: src
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install system & Python dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-color-emoji fonts-dejavu-core
+          pip install -e .
+          pip install -U yt-dlp yt-dlp-ejs opencv-python-headless pillow
+
+      - name: Restore YouTube OAuth credentials
+        shell: bash
+        run: |
+          mkdir -p secrets state/nexttoppers artifacts/nexttoppers
+          echo "$YOUTUBE_CLIENT_SECRETS_B64" | base64 -d > secrets/client_secret.json
+          echo "$YOUTUBE_TOKEN_B64" | base64 -d > secrets/youtube_token_nexttoppers.json
+
+      - name: Produce & upload NextToppers Roast Shorts (+ 4-Day Long check)
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            COUNT="${{ inputs.count || '2' }}"
+            python -m autopilot.cli clip-trio --count "$COUNT" --style both --upload
+            if [ "${{ inputs.run_long }}" = "true" ]; then
+              python -m autopilot.cli compile-trio-long --upload
+            fi
+          elif [ "${{ github.event.schedule }}" = "30 4 * * *" ]; then
+            python -m autopilot.cli clip-trio --count 1 --style both --upload
+          else
+            python -m autopilot.cli clip-trio --count 2 --style both --upload
+            python -c "from autopilot.next_toppers_clipper import NextToppersTrioPipeline; p = NextToppersTrioPipeline(); p.run_long_compilation_if_due(every_days=4, upload=True)"
+          fi
+
+      - name: Commit updated NextToppers history state
+        shell: bash
+        run: |
+          git config user.name "NextToppers-Automation-Bot"
+          git config user.email "bot@nexttoppers.local"
+          git add state/nexttoppers/clip_history.json || true
+          if git diff --staged --quiet; then
+            echo "No NextToppers state changes."
+          else
+            git commit -m "chore(nexttoppers): update clip history [skip ci]"
+            for attempt in 1 2 3; do
+              git pull --rebase origin main || true
+              git push origin main && break
+              sleep 5
+            done
+          fi

@@ -8,7 +8,7 @@ from pathlib import Path
 
 import httpx
 
-from autopilot.models import SceneBeat, VisualAsset
+from autopilot.models import SceneBeat
 
 logger = logging.getLogger(__name__)
 

@@ -51,8 +51,6 @@ class GTA6HubScriptPlanner(ScriptPlanner):
 
     def _draft_prompt(self, research: ResearchPack, video_format: str) -> str:
         source_text = research.research_notes[:18000]
-        channel_name = "GTA6Hub"
-        niche = "GTA 6 gaming commentary, secrets, and guides"
 
         if video_format == "short":
             return f"""You are the head writer for GTA6Hub, the fastest-growing GTA 6 YouTube channel.

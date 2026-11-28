@@ -78,9 +78,58 @@ PILL_HOOKS: list[dict[str, str]] = [
 ]
 
 
+ZOOM_CONFERENCE_IDS: set[str] = {"MGH5bp-bESQ", "LWo0qmF41l0", "Ziz-2Hh3eVU"}
+
+
 def _yt_dlp_bin() -> str:
     venv_bin = Path(r"E:\youtube-autopilot\.venv\Scripts\yt-dlp.exe")
-    return str(venv_bin) if venv_bin.exists() else "yt-dlp"
+    if os.name == "nt" and venv_bin.exists():
+        return str(venv_bin)
+    return shutil.which("yt-dlp") or "yt-dlp"
+
+
+def _resolve_render_overlay_script() -> Path:
+    candidates = [
+        Path(__file__).resolve().parents[2] / "scripts" / "render_overlay.py",
+        Path(os.environ.get("CLIPFORGE_HOME", r"E:\ClipForge")) / "scripts" / "render_overlay.py",
+    ]
+    for p in candidates:
+        if p.exists():
+            return p
+    raise FileNotFoundError("Missing scripts/render_overlay.py in repository or CLIPFORGE_HOME")
+
+
+def _avg_face_width_frac(video_path: Path, start_ms: int = 0, end_ms: int | None = None, sample_count: int = 5) -> float:
+    """Measure average largest face bounding width relative to frame width (rejects tiny Zoom webcams)."""
+    if not video_path.exists():
+        return 0.0
+    cascade_path = Path(cv2.data.haarcascades) / "haarcascade_frontalface_default.xml"
+    face_cascade = cv2.CascadeClassifier(str(cascade_path))
+    cap = cv2.VideoCapture(str(video_path))
+    if not cap.isOpened():
+        return 0.0
+    try:
+        fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
+        total_ms = (int(cap.get(cv2.CAP_PROP_FRAME_COUNT) or 0) / fps) * 1000.0 if fps > 0 else 0.0
+        s_ms = max(0.0, float(start_ms))
+        e_ms = min(total_ms, float(end_ms)) if end_ms and total_ms > 0 else total_ms
+        if e_ms <= s_ms:
+            e_ms = total_ms
+        widths: list[float] = []
+        for i in range(max(3, sample_count)):
+            cap.set(cv2.CAP_PROP_POS_MSEC, s_ms + ((e_ms - s_ms) * (i + 0.5) / max(3, sample_count)))
+            ok, frame = cap.read()
+            if not ok or frame is None:
+                continue
+            w = frame.shape[1] or 1280
+            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+            faces = face_cascade.detectMultiScale(gray, scaleFactor=1.12, minNeighbors=4, minSize=(42, 42))
+            if len(faces) > 0:
+                _, _, fw, _ = max(faces, key=lambda b: b[2] * b[3])
+                widths.append(fw / max(1, w))
+        return sum(widths) / len(widths) if widths else 0.0
+    finally:
+        cap.release()
 
 
 def _pick_comedy_bgm(bgm_dir: Path) -> Path | None:
@@ -346,19 +395,7 @@ def build_roast_collage_short(
         (grid_x + tile + gap, grid_y + tile + gap),
     ]
 
-    render_overlay_py = next(
-        (
-            p
-            for p in (
-                Path(os.environ.get("CLIPFORGE_HOME", r"E:\ClipForge")) / "scripts" / "render_overlay.py",
-                Path(r"C:\Users\ayaan\Desktop\clone\scripts\render_overlay.py"),
-            )
-            if p.exists()
-        ),
-        None,
-    )
-    if render_overlay_py is None:
-        raise FileNotFoundError("Missing ClipForge scripts/render_overlay.py in E:\\ClipForge")
+    render_overlay_py = _resolve_render_overlay_script()
 
     with tempfile.TemporaryDirectory(prefix="trio_collage_") as td_str:
         td = Path(td_str)
@@ -548,7 +585,8 @@ class NextToppersTrioPipeline:
         self.history_file.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
 
     def _download_to_cache(self, url: str, video_id: str) -> Path | None:
-        cache_dir = Path(os.environ.get("CLIPFORGE_DATA_DIR", r"E:\ClipForgeData")) / "url_cache"
+        cache_root = Path(os.environ.get("CLIPFORGE_DATA_DIR") or (r"E:\ClipForgeData" if os.name == "nt" else tempfile.gettempdir()))
+        cache_dir = cache_root / "url_cache"
         cache_dir.mkdir(parents=True, exist_ok=True)
         cached = cache_dir / f"yt_{video_id}.mp4"
         if cached.exists() and cached.stat().st_size > 20000:
@@ -572,6 +610,81 @@ class NextToppersTrioPipeline:
         if proc.returncode == 0 and cached.exists() and cached.stat().st_size > 20000:
             return cached
         return None
+
+    def _standalone_render_short(
+        self,
+        *,
+        local_src: Path,
+        start_ms: int,
+        end_ms: int,
+        face_cx: float,
+        is_vertical: bool,
+        hook_pill: str,
+        bgm_path: Path | None,
+        out_mp4: Path,
+    ) -> dict | None:
+        """Render a clean 1080x1920 Short using FFmpeg + Pillow directly (used offline/GitHub Actions when ClipForge isn't running)."""
+        out_mp4.parent.mkdir(parents=True, exist_ok=True)
+        render_overlay_py = _resolve_render_overlay_script()
+        start_s = max(0.0, start_ms / 1000.0)
+        dur_s = max(8.0, min(58.0, (end_ms - start_ms) / 1000.0))
+
+        with tempfile.TemporaryDirectory(prefix="standalone_short_") as td_str:
+            td = Path(td_str)
+            ov_spec = td / "ov.json"
+            ov_png = td / "ov.png"
+            ov_spec.write_text(
+                json.dumps({
+                    "width": 1080,
+                    "height": 1920,
+                    "topText": hook_pill,
+                    "topPill": True,
+                    "watermarkText": self.watermark,
+                    "whiteBg": False,
+                }, ensure_ascii=False),
+                encoding="utf-8",
+            )
+            subprocess.run([sys.executable, str(render_overlay_py), str(ov_spec), str(ov_png)], check=True)
+
+            if is_vertical:
+                base_vf = "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920"
+            else:
+                cx = max(0.18, min(0.82, face_cx))
+                # Face-zoom framing: blurred vertical backdrop + crisp zoomed center/upper teacher band
+                base_vf = (
+                    f"split[fg0][bg0];"
+                    f"[bg0]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=28:2,eq=brightness=-0.20[bg];"
+                    f"[fg0]crop='min(iw,ih*0.92)':ih:'max(0,min(iw-min(iw,ih*0.92),iw*{cx:.3f}-min(iw,ih*0.92)/2))':0,scale=1080:-2[fg];"
+                    f"[bg][fg]overlay=(W-w)/2:(H-h)/2"
+                )
+
+            vf = f"{base_vf},fps=30,format=yuv420p,eq=contrast=1.08:saturation=1.16[vbase];[vbase][1:v]overlay=0:0[vout]"
+            if bgm_path and bgm_path.exists():
+                cmd = [
+                    "ffmpeg", "-y",
+                    "-ss", f"{start_s:.2f}", "-t", f"{dur_s:.2f}", "-i", str(local_src),
+                    "-i", str(ov_png),
+                    "-stream_loop", "-1", "-i", str(bgm_path),
+                    "-filter_complex", f"{vf};[2:a]volume=0.11[bgm];[0:a]loudnorm=I=-15:TP=-1.5:LRA=9[va];[va][bgm]amix=inputs=2:duration=first:dropout_transition=0[aout]",
+                    "-map", "[vout]", "-map", "[aout]",
+                    "-c:v", "libx264", "-preset", "fast", "-crf", "20",
+                    "-c:a", "aac", "-b:a", "192k", "-shortest", str(out_mp4), "-loglevel", "error",
+                ]
+            else:
+                cmd = [
+                    "ffmpeg", "-y",
+                    "-ss", f"{start_s:.2f}", "-t", f"{dur_s:.2f}", "-i", str(local_src),
+                    "-i", str(ov_png),
+                    "-filter_complex", vf,
+                    "-map", "[vout]", "-map", "0:a?",
+                    "-c:v", "libx264", "-preset", "fast", "-crf", "20",
+                    "-c:a", "aac", "-b:a", "192k", "-shortest", str(out_mp4), "-loglevel", "error",
+                ]
+            r = subprocess.run(cmd, capture_output=True, text=True)
+            if r.returncode != 0 or not out_mp4.exists():
+                logger.warning("Standalone FFmpeg render failed: %s", r.stderr[-200:])
+                return None
+        return {"filePath": str(out_mp4), "durationMs": int(dur_s * 1000), "transcript": hook_pill}
 
     def cleanup_storage(self, *, keep_short_days: int = 5) -> int:
         """Delete heavy downloaded raw videos immediately and prune old compiled/expired MP4s."""
@@ -661,7 +774,7 @@ class NextToppersTrioPipeline:
             c = candidates[cursor]
             cursor += 1
             checked += 1
-            if c.get("is_short_remix"):
+            if c.get("is_short_remix") or c.get("video_id") in ZOOM_CONFERENCE_IDS:
                 continue
             local_p = self._download_to_cache(c["url"], c["video_id"])
             if not local_p or self._is_vertical_video(local_p):
@@ -670,7 +783,7 @@ class NextToppersTrioPipeline:
             s_ms, e_ms, ratio, cx = find_best_face_window(
                 local_p, target_sec=9.5, scan_step_sec=30.0, preferred_peaks=peaks
             )
-            if ratio < 0.55:
+            if ratio < 0.55 or _avg_face_width_frac(local_p, s_ms, e_ms) < 0.09:
                 continue
             segs.append({
                 "path": local_p,
@@ -733,8 +846,7 @@ class NextToppersTrioPipeline:
 
         if not candidates:
             raise RuntimeError("No comedy/roasting source videos found.")
-        if not self.clipflow.is_available():
-            raise RuntimeError("ClipForge API server (127.0.0.1:4820) is not running.")
+        use_clipflow = self.clipflow.is_available()
 
         outputs: list[dict] = []
         bgm = _pick_comedy_bgm(self.bgm_dir)
@@ -758,6 +870,9 @@ class NextToppersTrioPipeline:
                 src = candidates[cand_cursor]
                 cand_cursor += 1
                 attempts += 1
+                if src["video_id"] in ZOOM_CONFERENCE_IDS and video_url_override is None:
+                    logger.info(f"Skipping multi-box Zoom grid {src['video_id']} for single-face roast")
+                    continue
 
                 local_src = self._download_to_cache(src["url"], src["video_id"])
                 if not local_src:
@@ -786,12 +901,31 @@ class NextToppersTrioPipeline:
                     s_ms, e_ms, face_ratio, face_cx = find_best_face_window(
                         local_src, target_sec=target_len, scan_step_sec=25.0, preferred_peaks=peaks
                     )
-                    if face_ratio < 0.60:
-                        logger.info(f"Skipping {src['video_id']} (no clear face window found: {face_ratio:.2f})")
+                    if face_ratio < 0.60 or _avg_face_width_frac(local_src, s_ms, e_ms) < 0.09:
+                        logger.info(f"Skipping {src['video_id']} (low face clarity: ratio={face_ratio:.2f})")
                         continue
 
                 hook_cfg = PILL_HOOKS[(len(history.get("produced_clips", [])) + i) % len(PILL_HOOKS)]
                 chosen_style = "roast-remix" if is_remix else "roast-live"
+
+                if not use_clipflow:
+                    tmp_s_mp4 = self.artifacts_dir / "_tmp_collage" / f"standalone_{src['video_id']}_{i}.mp4"
+                    s_start = 0 if s_ms is None else s_ms
+                    s_end = int(min(58.0, self._probe_duration_sec(local_src)) * 1000) if e_ms is None else e_ms
+                    out0 = self._standalone_render_short(
+                        local_src=local_src,
+                        start_ms=s_start,
+                        end_ms=s_end,
+                        face_cx=face_cx,
+                        is_vertical=is_vert,
+                        hook_pill=hook_cfg["pill"],
+                        bgm_path=bgm,
+                        out_mp4=tmp_s_mp4,
+                    )
+                    if out0:
+                        chosen_output = (src, chosen_style, hook_cfg, face_ratio, out0)
+                        break
+                    continue
 
                 if is_remix and s_ms is None:
                     probe = subprocess.run(

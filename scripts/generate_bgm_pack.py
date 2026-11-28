@@ -163,7 +163,6 @@ def make_emotional_lofi(out_mp3: Path, dur_sec: float = 32.0):
 def make_energetic_upbeat(out_mp3: Path, dur_sec: float = 30.0):
     rng = np.random.default_rng(99)
     n = int(SR * dur_sec)
-    t = np.arange(n) / SR
     buf = np.zeros((n, 2), dtype=np.float64)
 
     bpm = 118.0
