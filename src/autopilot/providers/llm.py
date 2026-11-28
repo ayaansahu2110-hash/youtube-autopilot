@@ -208,8 +208,10 @@ class ScriptPlanner:
                         camera = scene.shot_type_camera_movement.lower()
                     used_cameras.add(camera)
             if self.settings.channel_profile == "wondertales":
+                for scene in scenes:
+                    scene.narration = re.sub(r"\s*/\s*", " ", scene.narration).strip()
                 data["script"] = "\n".join(
-                    scene.narration.strip() for scene in scenes if scene.narration.strip()
+                    scene.narration for scene in scenes if scene.narration
                 )
             else:
                 data["script"] = " ".join(
@@ -361,6 +363,9 @@ LONG-FORM STANDARD
         brand = self.settings.channel_display_name
         niche = self.settings.channel_niche
         profile = self.settings.channel_profile
+        from autopilot.learning import learning_context
+        learned = learning_context(self.settings, max_chars=2500)
+        learned_block = f"\nRecent niche reference patterns:\n{learned}\n" if learned else ""
         language_rule = ""
         if profile == "mokshavani":
             language_rule = (
@@ -372,14 +377,15 @@ LONG-FORM STANDARD
             )
         elif profile == "wondertales":
             language_rule = (
-                "\nSPECIAL MUSICAL POEM & SONG REQUIREMENT (WONDERTALES KIDS):\n"
-                "- Write a genuine, singing, bouncy children's poem / nursery rhyme in strict AABB or ABAB rhyming meter.\n"
-                "- Exactly 8 visual scenes (each scene has 2 rhythmic rhyming lines, 16 rhythmic rhyming lines total, 95-135 words).\n"
-                "- The words MUST be rhythmic and musical, like a classic singing nursery rhyme (Twinkle Twinkle or Hickory Dickory Dock style).\n"
-                "- ZERO prose, ZERO adult explanations, ZERO history of printing or literature. Pure delightful singing poem with lovable animal characters and a heartwarming moral/bedtime takeaway.\n"
-                "- Use musical sound words (hop-hop, splash, giggle, twinkle-twinkle, buzz-buzz) that children love to sing along with.\n"
-                "- Every line must end with expressive punctuation (! or ,) to create a musical singsong cadence.\n"
-                "- VISUALS MUST MATCH EXACTLY: Every visual_query must describe vibrant, colorful nature and cute real animal footage (e.g. 'cute bunny rabbit hopping grass outdoors', 'playful puppy running green grass', 'baby ducks swimming in clean pond', 'colorful blooming wildflowers butterflies', 'cute brown bear cub climbing tree forest', 'owl perched on tree branch nature', 'baby elephant walking nature sunny').\n"
+                "\nSPECIAL MUSICAL POEM & SONG REQUIREMENT (WONDERTALES KIDS — CHUCHU / CUCKOO STYLE):\n"
+                "- Write an original, joyful, singing children's poem, nursery rhyme, or animated moral story in strict AABB or ABAB rhyming meter.\n"
+                "- For Shorts: create exactly 8 visual scenes (2 catchy rhyming lines per scene, 16 lines total, 95-135 words). For Long-form: create 32-38 vivid storybook scenes with cheerful dialogue and repeated sing-along choruses.\n"
+                "- Sound like a real kids cartoon song/storyteller: bouncy rhythm, simple toddler-friendly words, and playful sound effects (Hop-hop!, Splash!, Giggle!, Twinkle!, Zoom!, Yay!).\n"
+                "- STRICTLY FORBIDDEN: NEVER write 'Did you know', historical dates, centuries (e.g. '15th century', '1806'), Wikipedia history trivia, 'oral traditions', or adult literary commentary. Ignore any historical facts in the reference text and tell ONLY the joyful kids rhyme/story!\n"
+                "- Every line must end with expressive punctuation (! or ,) so voiceover sings with warm energy. NEVER put slashes ('/') inside narration lines.\n"
+                "- VISUALS MUST MATCH EXACTLY: Every visual_query MUST describe adorable colorful animals, sunny meadows, rainbows, starry skies, or cheerful cartoon-friendly nature in motion.\n"
+                "- on_screen_text MUST be big, fun 2-4 word sing-along text (e.g. 'HOP! HOP! BUNNY!', '1, 2, 3 DUCKS!', 'SWEET DREAMS!').\n"
+                "- tags: include 8-10 high-search kids tags (e.g. 'nursery rhymes', 'kids poems', 'bedtime stories for kids', 'kids songs', 'toddler rhymes', 'moral stories', 'wondertales kids').\n"
                 "- NEVER use abstract phrases like 'split screen', 'animated diagram', 'text graphic', sofas, stuffed toys, or modern office shots.\n"
             )
         elif profile == "apexstoic":
@@ -416,7 +422,7 @@ Research evidence:
 
 Approved public source pages:
 {source_catalog}
-
+{learned_block}
 CONTENT STANDARD
 - Script target: {target}.
 - Cover ONE clear idea. Do not cram unrelated concepts together.
@@ -475,12 +481,12 @@ narration, visual_query, purpose, visual_mode, source_url, on_screen_text.
         elif profile == "wondertales":
             visual_style_note = (
                 "For WonderTales Kids, EVERY scene MUST use visual_mode='stock'. "
-                "The narration MUST be an enchanting, bouncy, singing musical children's poem / nursery rhyme in strict AABB or ABAB rhyming meter (4 stanzas, 16 rhythmic rhyming lines, 95-135 words). "
-                "ZERO prose explanations, ZERO adult commentary, ZERO history facts. "
-                "Every visual_query MUST describe cute, colorful real animals or magical nature in motion (e.g. 'cute bunny rabbit hopping in green meadow', 'playful bear cub climbing tree', 'sleepy owl on tree branch night', 'colorful flowers garden butterfly'). "
+                "The narration MUST be an enchanting, bouncy, singing musical children's poem, nursery rhyme, or animated moral story in strict AABB or ABAB rhyming meter (for Shorts: 8 scenes, 16 rhythmic rhyming lines, 95-135 words; for Long-form: 32-38 vivid storybook scenes). "
+                "STRICTLY DELETE any adult history, dates, centuries, Wikipedia trivia, 'oral traditions', or 'Did you know' lecture lines — keep ONLY cheerful singing verses and playful sound words! "
+                "Every visual_query MUST describe cute, colorful animals or magical nature in motion (e.g. 'cute bunny rabbit hopping in green meadow', 'playful bear cub climbing tree', 'baby ducks swimming in clean pond', 'colorful rainbow over sunny forest'). "
                 "NEVER use modern office, split-screen, or tech graphics."
             )
-            editorial_notes = "- any adult prose or factual lecture tone (rewrite into pure singing nursery rhyme stanzas!)\n- any non-rhyming lines or clunky syllables\n- any modern or non-kid visuals"
+            editorial_notes = "- any adult prose, Wikipedia history, dates, or factual lecture tone (delete completely and replace with pure singing nursery rhyme verses!)\n- any non-rhyming lines or clunky syllables\n- any modern or non-kid visuals"
         elif profile == "mokshavani":
             visual_style_note = (
                 "For MokshaVani, EVERY scene MUST use visual_mode='stock'. "

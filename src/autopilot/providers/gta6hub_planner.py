@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import json
 
+from autopilot.learning import learning_context
 from autopilot.models import ResearchPack
 from autopilot.providers.llm import ScriptPlanner
 
@@ -51,6 +52,8 @@ class GTA6HubScriptPlanner(ScriptPlanner):
 
     def _draft_prompt(self, research: ResearchPack, video_format: str) -> str:
         source_text = research.research_notes[:18000]
+        learned = learning_context(self.settings, max_chars=2500)
+        learned_block = f"\nRecent GTA 6 channel & niche reference signals:\n{learned}\n" if learned else ""
 
         if video_format == "short":
             return f"""You are the head writer for GTA6Hub, the fastest-growing GTA 6 YouTube channel.
@@ -58,6 +61,7 @@ Write a HIGH-ENERGY gaming Short about: {research.topic}
 
 Research evidence:
 {source_text}
+{learned_block}
 
 MANDATORY GAMING SHORT FORMAT:
 - Total spoken words: exactly 115-145 words (45-55 seconds at gaming pace)
@@ -101,6 +105,7 @@ Create a HIGH-QUALITY 8-12 minute GTA 6 guide video about: {research.topic}
 
 Research evidence:
 {source_text}
+{learned_block}
 
 MANDATORY GAMING LONG-FORM FORMAT:
 - Total spoken words: 1,200-1,550 words (8-10 minutes at gaming commentary pace)
@@ -141,6 +146,7 @@ Each scenes item: narration, visual_query, purpose, visual_mode, source_url, on_
 
     def _improve_plan(self, research: ResearchPack, video_format: str, draft: dict) -> dict | None:
         source_text = research.research_notes[:14000]
+        learned = learning_context(self.settings, max_chars=2000)
         draft_json = json.dumps(draft, ensure_ascii=False)
 
         if video_format == "short":
@@ -166,6 +172,9 @@ Rewrite this draft to be the BEST GTA 6 video on the internet.
 Topic: {research.topic}
 Research evidence:
 {source_text}
+
+Niche reference signals:
+{learned or 'None yet.'}
 
 Draft JSON:
 {draft_json}

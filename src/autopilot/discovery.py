@@ -82,6 +82,36 @@ CHANNEL_EVERGREEN_TOPICS: dict[str, list[dict]] = {
             "score": 89.0,
             "reason": "Cuddly bedtime poem about cozy hugs and peaceful starry nights.",
         },
+        {
+            "title": "Five Little Monkeys Bouncing on the Bed",
+            "urls": ["https://en.wikipedia.org/wiki/Nursery_rhyme", "https://en.wikipedia.org/wiki/Children%27s_poetry"],
+            "score": 97.0,
+            "reason": "High-retention playful counting song with rhythmic bounce-and-giggle stanzas.",
+        },
+        {
+            "title": "Wheels on the Rainbow Bus Going Round and Round",
+            "urls": ["https://en.wikipedia.org/wiki/Nursery_rhyme", "https://en.wikipedia.org/wiki/Children%27s_literature"],
+            "score": 96.0,
+            "reason": "Bouncy preschool sing-along rhyme full of cheerful sound effects and animal passengers.",
+        },
+        {
+            "title": "Baby Panda's Picnic: Colors and Fruits Song",
+            "urls": ["https://en.wikipedia.org/wiki/Children%27s_poetry", "https://en.wikipedia.org/wiki/Nursery_rhyme"],
+            "score": 95.0,
+            "reason": "Colorful ChuChu-inspired toddler rhyme teaching red apples, yellow bananas, and sharing.",
+        },
+        {
+            "title": "The Honest Little Deer and the Golden Berry",
+            "urls": ["https://en.wikipedia.org/wiki/Fable", "https://en.wikipedia.org/wiki/Moral"],
+            "score": 94.0,
+            "reason": "Warm animated moral fable teaching truthfulness and kindness in simple singing verses.",
+        },
+        {
+            "title": "Clever Little Crow and the Magic Water Pitcher",
+            "urls": ["https://en.wikipedia.org/wiki/Fable", "https://en.wikipedia.org/wiki/Moral"],
+            "score": 95.0,
+            "reason": "Beloved classic moral story told in playful rhythmic couplets for kids.",
+        },
     ],
     "mokshavani": [
         {

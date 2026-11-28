@@ -38,6 +38,14 @@ SCENES = [
     ("14_jason_lucia_convertible", 61.5, 64.5, "Jason and Lucia driving through neon streets"),
     ("15_store_robbery_kick", 71.5, 74.5, "Jason and Lucia kicking store doors open"),
     ("16_trust_closing_shot", 76.5, 79.5, "Lucia and Jason saying trust holding cash"),
+    ("17_vice_skyline_aerial", 15.0, 17.5, "Vice City high-rise skyline aerial view"),
+    ("18_wynwood_street_cars", 27.5, 29.5, "Wynwood street car meet and muscle cars"),
+    ("19_keys_bridge_seaplane", 35.5, 37.5, "Leonida Keys highway bridge and seaplane"),
+    ("20_vice_yacht_party", 40.5, 43.5, "Luxury yacht party in Miami waters"),
+    ("21_gator_store_cctv", 47.5, 50.5, "Alligator walking into convenience store CCTV"),
+    ("22_mud_club_offroad", 54.5, 57.5, "Thrillbilly Mud Club 4x4 offroad gathering"),
+    ("23_florida_joker_news", 64.5, 67.5, "Leonida news report and viral mugshot"),
+    ("24_gta6_logo_reveal", 80.5, 83.5, "Official Grand Theft Auto VI neon logo"),
 ]
 
 
@@ -118,10 +126,13 @@ def slice_scenes(trailer: Path) -> None:
 
 
 def ensure_clips() -> None:
-    """Ensure all 16 GTA 6 vertical and horizontal clips are available."""
+    """Ensure all 24 GTA 6 vertical and horizontal clips are available."""
     vert_clips = list(CLIPS_DIR.glob("*_vert.mp4"))
-    if len(vert_clips) >= 14:
+    if len(vert_clips) >= len(SCENES):
         print(f"GTA 6 clips already prepared ({len(vert_clips)} clips found).")
+        return
+    if TRAILER_PATH.exists() and TRAILER_PATH.stat().st_size > 1_000_000:
+        slice_scenes(TRAILER_PATH)
         return
 
     # 1. Download pre-sliced clips from GitHub Releases (fast, datacenter-safe)

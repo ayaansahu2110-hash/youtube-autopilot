@@ -13,12 +13,38 @@ class ThumbnailGenerator:
         brief: str = "",
         brand_name: str = "ByteVexa",
         feature_image: Path | None = None,
+        channel_profile: str = "",
     ) -> Path:
-        """Create a high-contrast thumbnail with a visual story, tailored to the channel brand."""
+        """Create a high-contrast thumbnail tailored to the channel brand."""
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        facts_mode = "curio" in brand_name.lower()
-        if facts_mode:
+        prof = (channel_profile or "").strip().lower()
+        brand_low = brand_name.lower()
+        if prof == "curioaxiom" or "curio" in brand_low:
             return self._create_fact_thumbnail(
+                text,
+                output_path,
+                title=title,
+                brand_name=brand_name,
+                feature_image=feature_image,
+            )
+        if prof == "wondertales" or "wonder" in brand_low:
+            return self._create_wondertales_thumbnail(
+                text,
+                output_path,
+                title=title,
+                brand_name=brand_name,
+                feature_image=feature_image,
+            )
+        if prof == "gta6hub" or "gta6" in brand_low:
+            return self._create_gta6hub_thumbnail(
+                text,
+                output_path,
+                title=title,
+                brand_name=brand_name,
+                feature_image=feature_image,
+            )
+        if prof and prof != "bytevexa":
+            return self._create_cinematic_thumbnail(
                 text,
                 output_path,
                 title=title,
@@ -146,6 +172,142 @@ class ThumbnailGenerator:
         # The gold cue is intentionally small: the factual visual remains the hook.
         draw.rounded_rectangle((58, 610, 410, 654), radius=16, fill=(255, 218, 114))
         draw.text((78, 619), "ONE QUESTION. REAL ANSWER.", font=self._font(18), fill=(8, 14, 24))
+        image.save(output_path, quality=96, optimize=True)
+        return output_path
+
+    def _create_wondertales_thumbnail(
+        self,
+        text: str,
+        output_path: Path,
+        *,
+        title: str,
+        brand_name: str,
+        feature_image: Path | None,
+    ) -> Path:
+        """Bright, colorful storybook thumbnail tailored for WonderTales Kids."""
+        width, height = 1280, 720
+        if feature_image:
+            image = self._cover_feature_image(feature_image, width, height)
+        else:
+            image = Image.new("RGB", (width, height), (38, 166, 255))
+            glow = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+            gd = ImageDraw.Draw(glow)
+            gd.ellipse((740, -140, 1380, 500), fill=(255, 230, 90, 210))
+            gd.ellipse((-180, 260, 520, 920), fill=(255, 118, 196, 175))
+            image = Image.alpha_composite(image.convert("RGBA"), glow.filter(ImageFilter.GaussianBlur(85))).convert("RGB")
+
+        overlay = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+        od = ImageDraw.Draw(overlay)
+        for x in range(width):
+            alpha = int(175 * max(0, 1 - x / 860))
+            od.line((x, 0, x, height), fill=(22, 20, 72, alpha))
+        od.rounded_rectangle((12, 12, width - 12, height - 12), radius=34, outline=(255, 224, 71, 220), width=10)
+        image = Image.alpha_composite(image.convert("RGBA"), overlay).convert("RGB")
+        draw = ImageDraw.Draw(image)
+
+        draw.rounded_rectangle((56, 46, 412, 98), radius=24, fill=(255, 89, 152))
+        draw.text((78, 57), brand_name.upper()[:18], font=self._font(26), fill=(255, 255, 255))
+
+        display = (text or title or "RHYME & STORY TIME").upper().strip()[:32]
+        lines = self._split_display(display)
+        headline_size = 92 if len(lines) <= 2 else 74
+        y = 175 if len(lines) <= 2 else 148
+        font = self._font(headline_size)
+        for line in lines:
+            draw.text(
+                (58, y),
+                line,
+                font=font,
+                fill=(255, 235, 75),
+                stroke_width=6,
+                stroke_fill=(20, 16, 65),
+            )
+            y += headline_size + 16
+
+        draw.rounded_rectangle((58, 608, 418, 658), radius=22, fill=(76, 226, 145))
+        draw.text((80, 619), "KIDS RHYMES & STORIES", font=self._font(21), fill=(12, 28, 20))
+        image.save(output_path, quality=96, optimize=True)
+        return output_path
+
+    def _create_gta6hub_thumbnail(
+        self,
+        text: str,
+        output_path: Path,
+        *,
+        title: str,
+        brand_name: str,
+        feature_image: Path | None,
+    ) -> Path:
+        """Vice City neon high-CTR gaming thumbnail for GTA6Hub."""
+        width, height = 1280, 720
+        image = self._cover_feature_image(feature_image, width, height)
+        overlay = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+        od = ImageDraw.Draw(overlay)
+        for x in range(width):
+            alpha = int(215 * max(0, 1 - x / 880))
+            od.line((x, 0, x, height), fill=(16, 6, 30, alpha))
+        od.rectangle((0, 0, width, height), outline=(255, 62, 165, 200), width=8)
+        image = Image.alpha_composite(image.convert("RGBA"), overlay).convert("RGB")
+        draw = ImageDraw.Draw(image)
+
+        draw.rounded_rectangle((56, 46, 282, 98), radius=14, fill=(255, 56, 158))
+        draw.text((78, 56), brand_name.upper()[:14], font=self._font(28), fill=(255, 255, 255))
+        draw.rounded_rectangle((296, 46, 476, 98), radius=14, fill=(0, 229, 255))
+        draw.text((316, 58), "GTA 6", font=self._font(26), fill=(10, 12, 22))
+
+        display = (text or title or "INSANE SECRET").upper().strip()[:32]
+        lines = self._split_display(display)
+        headline_size = 96 if len(lines) <= 2 else 76
+        y = 178 if len(lines) <= 2 else 148
+        font = self._font(headline_size)
+        for idx, line in enumerate(lines):
+            fill = (255, 232, 56) if idx == 0 else (255, 255, 255)
+            draw.text(
+                (56, y),
+                line,
+                font=font,
+                fill=fill,
+                stroke_width=6,
+                stroke_fill=(5, 4, 14),
+            )
+            y += headline_size + 14
+
+        draw.rounded_rectangle((56, 608, 398, 656), radius=14, fill=(255, 232, 56))
+        draw.text((76, 619), "SECRETS & BREAKDOWNS", font=self._font(20), fill=(12, 10, 20))
+        image.save(output_path, quality=96, optimize=True)
+        return output_path
+
+    def _create_cinematic_thumbnail(
+        self,
+        text: str,
+        output_path: Path,
+        *,
+        title: str,
+        brand_name: str,
+        feature_image: Path | None,
+    ) -> Path:
+        """Clean visual-first thumbnail for general non-tech channels."""
+        width, height = 1280, 720
+        image = self._cover_feature_image(feature_image, width, height)
+        overlay = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+        od = ImageDraw.Draw(overlay)
+        for x in range(width):
+            alpha = int(215 * max(0, 1 - x / 900))
+            od.line((x, 0, x, height), fill=(8, 12, 24, alpha))
+        image = Image.alpha_composite(image.convert("RGBA"), overlay).convert("RGB")
+        draw = ImageDraw.Draw(image)
+
+        draw.rounded_rectangle((56, 48, 360, 94), radius=16, fill=(24, 34, 54))
+        draw.text((76, 59), brand_name.upper()[:18], font=self._font(24), fill=(255, 218, 114))
+
+        display = (text or title or brand_name).upper().strip()[:34]
+        lines = self._split_display(display)
+        headline_size = 90 if len(lines) <= 2 else 74
+        y = 195 if len(lines) <= 2 else 160
+        font = self._font(headline_size)
+        for line in lines:
+            draw.text((58, y), line, font=font, fill=(250, 252, 255), stroke_width=5, stroke_fill=(4, 6, 12))
+            y += headline_size + 14
         image.save(output_path, quality=96, optimize=True)
         return output_path
 

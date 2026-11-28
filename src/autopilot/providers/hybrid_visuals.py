@@ -53,6 +53,7 @@ class HybridVisualDirector:
         allowed = {url for url in allowed_source_urls if url.startswith(("http://", "https://"))}
         assets: list[VisualAsset] = []
         used_source_media: set[str] = set()
+        used_gta6_clips: set[str] = set()
 
         for scene_index, scene in enumerate(scenes[:limit]):
             asset: VisualAsset | None = None
@@ -76,6 +77,7 @@ class HybridVisualDirector:
                     output_dir / f"scene-{scene_index:02d}-gta6.mp4",
                     scene_index=scene_index,
                     vertical=vertical,
+                    used_clips=used_gta6_clips,
                 )
 
             # 2. Clipflow Generative AI Cinema Video (Primary Priority with dynamic camera vectors)
@@ -165,7 +167,14 @@ class HybridVisualDirector:
         if not prompt:
             prompt = f"Cinematic scene for {self.brand_name}: {scene.purpose}"
 
-        prompt = f"{prompt}, cinematic lighting, photorealistic 8k, hyperrealistic"
+        if self.channel_profile == "wondertales":
+            style_suffix = "vibrant 3D Pixar-style cartoon animation, cheerful bright colors, cute friendly storybook characters, soft glowing lighting, child-friendly"
+        elif self.channel_profile == "gta6hub":
+            style_suffix = "Vice City neon Miami sunset aesthetic, vibrant open-world action lighting, ultra detailed game engine style"
+        else:
+            style_suffix = "cinematic lighting, photorealistic 8k, hyperrealistic"
+
+        prompt = f"{prompt}, {style_suffix}"
         camera_preset = self.clipflow.map_camera_preset(scene, scene_index=scene_index)
         aspect_ratio = "9:16" if vertical else "16:9"
 
@@ -281,8 +290,9 @@ class HybridVisualDirector:
         *,
         scene_index: int,
         vertical: bool,
+        used_clips: set[str] | None = None,
     ) -> VisualAsset | None:
-        """Select authentic GTA 6 gameplay/trailer footage based on scene semantics."""
+        """Select authentic GTA 6 gameplay/trailer footage without repeating clips in the same video."""
         clips_dir = Path("assets/gta6/clips")
         if not clips_dir.exists() or not list(clips_dir.glob("*.mp4")):
             try:
@@ -302,6 +312,10 @@ class HybridVisualDirector:
         if not clips:
             return None
 
+        used = used_clips if used_clips is not None else set()
+        unused_clips = [c for c in clips if c.name not in used]
+        pool = unused_clips if unused_clips else clips
+
         combined_text = f"{scene.visual_query} {scene.narration}".lower()
         keyword_map = [
             (("prison", "lucia", "interview", "orange", "counselor"), "01_lucia_prison"),
@@ -320,20 +334,28 @@ class HybridVisualDirector:
             (("jason", "driving", "convertible", "cruise", "couple", "car night"), "14_jason_lucia_convertible"),
             (("robbery", "store", "heist", "door", "gun", "convenience", "cash register"), "15_store_robbery_kick"),
             (("trust", "cash", "money", "closing", "subscribe", "end", "follow"), "16_trust_closing_shot"),
+            (("skyline", "downtown", "buildings", "tower", "city"), "17_vice_skyline_aerial"),
+            (("muscle", "street", "car", "green", "paint"), "18_wynwood_street_cars"),
+            (("bridge", "seaplane", "island", "highway", "keys"), "19_keys_bridge_seaplane"),
+            (("yacht", "party", "boat", "luxury", "harbor"), "20_vice_yacht_party"),
+            (("cctv", "store", "gator", "security", "shop"), "21_gator_store_cctv"),
+            (("mud", "truck", "offroad", "4x4", "swamp", "thrillbilly"), "22_mud_club_offroad"),
+            (("news", "mugshot", "joker", "tattoo", "viral"), "23_florida_joker_news"),
+            (("logo", "gta 6", "rockstar", "vi", "title"), "24_gta6_logo_reveal"),
         ]
 
         selected_clip: Path | None = None
         for keywords, pattern in keyword_map:
             if any(k in combined_text for k in keywords):
-                candidates = [c for c in clips if pattern in c.name]
+                candidates = [c for c in pool if pattern in c.name]
                 if candidates:
                     selected_clip = candidates[0]
                     break
 
         if not selected_clip:
-            # Clean rotation across all available clips
-            selected_clip = clips[scene_index % len(clips)]
+            selected_clip = pool[scene_index % len(pool)]
 
+        used.add(selected_clip.name)
         output_file.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(selected_clip, output_file)
         return VisualAsset(
@@ -1469,6 +1491,17 @@ class HybridVisualDirector:
                 (("kitten", "cat", "meow", "purr"), "cute playful kitten playing indoors"),
                 (("bird", "sing", "chirp", "fly", "feather"), "colorful bird singing on tree branch"),
                 (("butterfly", "flutter", "wings"), "vibrant butterflies on yellow wildflowers"),
+                (("monkey", "bounce", "banana", "jump"), "playful cute monkey jumping in trees"),
+                (("bus", "wheel", "wheels", "school"), "colorful yellow bus driving sunny road"),
+                (("panda", "bamboo", "picnic", "fruit", "apple"), "cute baby panda eating bamboo nature"),
+                (("deer", "fawn", "berry", "honest"), "cute spotted baby deer fawn in forest"),
+                (("crow", "pitcher", "thirsty", "drink"), "black bird drinking water nature sunny"),
+                (("frog", "froggie", "lily", "croak"), "cute green frog sitting on lily pad pond"),
+                (("bee", "buzz", "hive"), "honey bee on bright yellow flower"),
+                (("dolphin", "ocean", "sea", "wave"), "happy dolphins jumping in blue ocean"),
+                (("koala", "eucalyptus", "gum"), "cute sleepy koala hugging tree branch"),
+                (("giraffe", "tall", "neck"), "tall giraffe eating leaves sunny savanna"),
+                (("caterpillar", "cocoon", "chrysalis"), "green caterpillar crawling on bright leaf"),
             )
             for terms, q in mappings:
                 if any(t in combined for t in terms):

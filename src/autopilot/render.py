@@ -84,15 +84,23 @@ class FFmpegRenderer:
         output_path.parent.mkdir(parents=True, exist_ok=True)
         duration = self.probe_duration(audio_path)
 
-        # Ambient background music generator to enrich video audio production
+        # Ambient / studio BGM selector
         if not bgm_path:
-            bgm_candidate = output_path.parent / "ambient_bgm.wav"
-            try:
-                bgm_path = self._generate_ambient_bgm(
-                    bgm_candidate, duration=duration, channel_profile=channel_profile
-                )
-            except Exception:
-                bgm_path = None
+            bgm_dir = Path(__file__).resolve().parents[2] / "assets" / "bgm"
+            profile_bgm = {
+                "wondertales": bgm_dir / "bgm_energetic_upbeat.mp3",
+                "gta6hub": bgm_dir / "bgm_motivational_phonk.mp3",
+            }.get(channel_profile)
+            if profile_bgm and profile_bgm.exists():
+                bgm_path = profile_bgm
+            else:
+                bgm_candidate = output_path.parent / "ambient_bgm.wav"
+                try:
+                    bgm_path = self._generate_ambient_bgm(
+                        bgm_candidate, duration=duration, channel_profile=channel_profile
+                    )
+                except Exception:
+                    bgm_path = None
 
         if visual_assets:
             video_track = self._build_visual_track(
@@ -104,6 +112,7 @@ class FFmpegRenderer:
                 scene_word_counts=scene_word_counts,
                 scene_labels=scene_labels,
                 facts_style=facts_style,
+                channel_profile=channel_profile,
             )
             self._mux(
                 video_track,
@@ -112,6 +121,7 @@ class FFmpegRenderer:
                 captions_path=captions_path,
                 vertical=vertical,
                 bgm_path=bgm_path,
+                channel_profile=channel_profile,
             )
         else:
             self._fallback(
@@ -121,6 +131,7 @@ class FFmpegRenderer:
                 vertical=vertical,
                 captions_path=captions_path,
                 bgm_path=bgm_path,
+                channel_profile=channel_profile,
             )
         return output_path
 
@@ -135,6 +146,7 @@ class FFmpegRenderer:
         scene_word_counts: list[int] | None,
         scene_labels: list[str] | None,
         facts_style: bool,
+        channel_profile: str = "bytevexa",
     ) -> Path:
         # Shorts stay at native 1080x1920. Long-form is rendered at 1440p so
         # browser text and UI survive YouTube transcoding more cleanly.
@@ -169,10 +181,17 @@ class FFmpegRenderer:
                 if source_duration < safe_duration:
                     command += ["-stream_loop", "-1"]
                 command += ["-i", str(asset.local_path)]
+                color_eq = (
+                    "eq=contrast=1.06:saturation=1.22:brightness=0.02,"
+                    if channel_profile == "wondertales"
+                    else "eq=contrast=1.08:saturation=1.16:brightness=0.00,"
+                    if channel_profile == "gta6hub"
+                    else "eq=contrast=1.04:saturation=1.05:brightness=-0.01,"
+                )
                 vf = (
                     f"scale={width}:{height}:force_original_aspect_ratio=increase:flags=lanczos,"
                     f"crop={width}:{height},"
-                    "eq=contrast=1.04:saturation=1.05:brightness=-0.01,"
+                    f"{color_eq}"
                     f"fade=t=in:st=0:d=0.10,fade=t=out:st={fade_out:.2f}:d=0.14,"
                     "fps=30,format=yuv420p"
                 )
@@ -275,19 +294,41 @@ class FFmpegRenderer:
             "x=(w-text_w)/2:y=151:borderw=1:bordercolor=0x111111"
         )
 
-    def _caption_filter(self, captions_path: Path, *, vertical: bool) -> str:
+    def _caption_filter(
+        self,
+        captions_path: Path,
+        *,
+        vertical: bool,
+        channel_profile: str = "bytevexa",
+    ) -> str:
+        if channel_profile == "wondertales":
+            primary = "&H004CEBFF"  # Bright sunny yellow
+            outline = "&H00481414"  # Deep storybook navy outline
+            font_size = 62 if vertical else 46
+            outline_w = 6 if vertical else 5
+        elif channel_profile == "gta6hub":
+            primary = "&H0038EEFF"  # Punchy neon gold-yellow
+            outline = "&H00000000"
+            font_size = 60 if vertical else 44
+            outline_w = 6 if vertical else 5
+        else:
+            primary = "&H00FFFFFF"
+            outline = "&H00000000"
+            font_size = 56 if vertical else 42
+            outline_w = 5 if vertical else 4
+
         if vertical:
             style = (
-                "PlayResX=1080,PlayResY=1920,FontName=Segoe UI,FontSize=56,Bold=1,"
-                "PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,"
-                "BorderStyle=1,Outline=5,Shadow=1,Alignment=2,MarginV=380,"
+                f"PlayResX=1080,PlayResY=1920,FontName=Segoe UI,FontSize={font_size},Bold=1,"
+                f"PrimaryColour={primary},OutlineColour={outline},"
+                f"BorderStyle=1,Outline={outline_w},Shadow=1,Alignment=2,MarginV=380,"
                 "MarginL=80,MarginR=80"
             )
         else:
             style = (
-                "PlayResX=1920,PlayResY=1080,FontName=Segoe UI,FontSize=42,Bold=1,"
-                "PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,"
-                "BorderStyle=1,Outline=4,Shadow=1,Alignment=2,MarginV=90,"
+                f"PlayResX=1920,PlayResY=1080,FontName=Segoe UI,FontSize={font_size},Bold=1,"
+                f"PrimaryColour={primary},OutlineColour={outline},"
+                f"BorderStyle=1,Outline={outline_w},Shadow=1,Alignment=2,MarginV=90,"
                 "MarginL=140,MarginR=140"
             )
         return f"subtitles='{self._filter_path(captions_path)}':force_style='{style}'"
@@ -297,7 +338,8 @@ class FFmpegRenderer:
     ) -> Path:
         dur = max(2.0, duration + 2.0)
         chord_specs = {
-            "wondertales": "sine=frequency=261.6:duration={d},volume=0.15[a];sine=frequency=329.6:duration={d},volume=0.12[b];sine=frequency=392:duration={d},volume=0.10[c];[a][b][c]amix=inputs=3,lowpass=f=800",
+            "wondertales": "sine=frequency=523.25:duration={d},volume=0.14[a];sine=frequency=659.25:duration={d},volume=0.11[b];sine=frequency=783.99:duration={d},volume=0.09[c];[a][b][c]amix=inputs=3,lowpass=f=1200",
+            "gta6hub": "sine=frequency=98.0:duration={d},volume=0.22[a];sine=frequency=146.8:duration={d},volume=0.16[b];sine=frequency=220.0:duration={d},volume=0.12[c];[a][b][c]amix=inputs=3,lowpass=f=650",
             "mokshavani": "sine=frequency=108:duration={d},volume=0.20[a];sine=frequency=216:duration={d},volume=0.15[b];sine=frequency=432:duration={d},volume=0.08[c];[a][b][c]amix=inputs=3,lowpass=f=600",
             "apexstoic": "sine=frequency=73.4:duration={d},volume=0.25[a];sine=frequency=110:duration={d},volume=0.18[b];sine=frequency=146.8:duration={d},volume=0.12[c];[a][b][c]amix=inputs=3,lowpass=f=450",
             "chronosenigma": "sine=frequency=65.4:duration={d},volume=0.25[a];sine=frequency=98:duration={d},volume=0.18[b];sine=frequency=130.8:duration={d},volume=0.12[c];[a][b][c]amix=inputs=3,lowpass=f=400",
@@ -324,6 +366,7 @@ class FFmpegRenderer:
         captions_path: Path | None,
         vertical: bool,
         bgm_path: Path | None = None,
+        channel_profile: str = "bytevexa",
     ) -> None:
         command = [self.ffmpeg_binary, "-y", "-i", str(video_track), "-i", str(audio_path)]
         filter_complex = []
@@ -331,7 +374,9 @@ class FFmpegRenderer:
         map_audio = "1:a:0"
 
         if captions_path and captions_path.exists() and captions_path.stat().st_size:
-            filter_complex.append(f"[0:v]{self._caption_filter(captions_path, vertical=vertical)}[vout]")
+            filter_complex.append(
+                f"[0:v]{self._caption_filter(captions_path, vertical=vertical, channel_profile=channel_profile)}[vout]"
+            )
             map_video = "[vout]"
 
         if bgm_path and bgm_path.exists():
@@ -366,6 +411,7 @@ class FFmpegRenderer:
         vertical: bool,
         captions_path: Path | None,
         bgm_path: Path | None = None,
+        channel_profile: str = "bytevexa",
     ) -> None:
         size = "1080x1920" if vertical else "1920x1080"
         command = [
@@ -377,7 +423,9 @@ class FFmpegRenderer:
         map_audio = "1:a:0"
 
         if captions_path and captions_path.exists() and captions_path.stat().st_size:
-            filter_complex.append(f"[0:v]{self._caption_filter(captions_path, vertical=vertical)}[vout]")
+            filter_complex.append(
+                f"[0:v]{self._caption_filter(captions_path, vertical=vertical, channel_profile=channel_profile)}[vout]"
+            )
             map_video = "[vout]"
 
         if bgm_path and bgm_path.exists():

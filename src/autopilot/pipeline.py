@@ -132,7 +132,13 @@ class AutopilotPipeline:
         if self.verifier:
             self._sanitize_fact_visual_sources(plan, research)
         self._append_product_link(plan)
-        self._append_research_sources(plan, research)
+        if self.settings.channel_profile != "wondertales":
+            self._append_research_sources(plan, research)
+        elif "#NurseryRhymes" not in plan.description:
+            plan.description = (
+                plan.description.rstrip()
+                + "\n\n#NurseryRhymes #KidsSongs #BedtimeStories #KidsPoems #WonderTalesKids"
+            ).strip()[:5000]
         quality = self.quality.evaluate(plan, research, strict=not dry_run)
         if self.verifier and not dry_run:
             if research.confidence_score < 65:
@@ -268,12 +274,15 @@ class AutopilotPipeline:
                 facts_style=self.settings.channel_profile == "curioaxiom",
                 channel_profile=self.settings.channel_profile,
             )
+            thumbnail_feature = self._extract_feature_frame(assets, run_dir)
             thumbnail_path = self.thumbnail.create(
                 plan.thumbnail_text,
                 run_dir / "thumbnail.jpg",
                 title=plan.title,
                 brief=plan.thumbnail_brief,
                 brand_name=self.settings.channel_display_name,
+                feature_image=thumbnail_feature,
+                channel_profile=self.settings.channel_profile,
             )
             result.video_path = video_path
             result.thumbnail_path = thumbnail_path
@@ -705,6 +714,37 @@ class AutopilotPipeline:
     def _append_section(description: str, heading: str, lines: list[str]) -> str:
         section = heading + ":\n" + "\n".join(f"- {line}" for line in lines)
         return (description.rstrip() + "\n\n" + section).strip()[:5000]
+
+    def _extract_feature_frame(self, assets, run_dir: Path) -> Path | None:
+        """Grab a crisp opening frame from the visual assets for custom thumbnail compositing."""
+        if not assets:
+            return None
+        first = assets[0]
+        if first.asset_kind == "image" and first.local_path.exists():
+            return first.local_path
+        if first.local_path.exists():
+            frame_out = run_dir / "feature_frame.jpg"
+            try:
+                import subprocess
+                subprocess.run(
+                    [
+                        self.settings.ffmpeg_binary,
+                        "-y",
+                        "-ss", "0.6",
+                        "-i", str(first.local_path),
+                        "-vframes", "1",
+                        "-q:v", "2",
+                        str(frame_out),
+                    ],
+                    check=True,
+                    capture_output=True,
+                    timeout=15,
+                )
+                if frame_out.exists() and frame_out.stat().st_size > 1000:
+                    return frame_out
+            except Exception:
+                pass
+        return None
 
     @staticmethod
     def _write_manifest(path: Path, result: PipelineRun) -> None:

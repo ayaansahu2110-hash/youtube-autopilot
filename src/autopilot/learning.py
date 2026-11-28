@@ -34,6 +34,42 @@ class DailyLearningLoop:
         "space facts cinematic documentary",
         "Formula 1 engineering explained",
     )
+    PROFILE_COMPETITOR_SEARCHES: dict[str, tuple[str, ...]] = {
+        "bytevexa": SEARCHES,
+        "curioaxiom": FACT_SEARCHES,
+        "wondertales": (
+            "nursery rhymes kids songs animated",
+            "moral stories for kids bedtime poem",
+            "ChuChu TV Cuckoo TV style kids rhymes",
+            "preschool learning rhymes animal songs",
+        ),
+        "gta6hub": (
+            "GTA 6 secrets hidden details shorts",
+            "GTA 6 trailer breakdown easter eggs",
+            "GTA 6 Leonida map secrets",
+            "GTA 6 vs GTA 5 comparison",
+        ),
+        "mokshavani": (
+            "hindi bhajan mantra meaning shorts",
+            "vedic shloka chanting meaning",
+        ),
+        "apexstoic": (
+            "stoic philosophy motivation shorts",
+            "marcus aurelius stoicism discipline",
+        ),
+        "chronosenigma": (
+            "ancient mysteries lost civilizations documentary",
+            "unsolved archaeology discoveries shorts",
+        ),
+        "empirepulse": (
+            "how countries got rich economics documentary",
+            "geopolitics mega wealth explained",
+        ),
+        "astrapulse": (
+            "zodiac sign personality astrology shorts",
+            "daily horoscope birth chart secrets",
+        ),
+    }
 
     def __init__(self, settings: Settings, state: StateStore):
         self.settings = settings
@@ -64,7 +100,9 @@ class DailyLearningLoop:
 
     def _competitor_snapshot(self, youtube) -> list[dict]:
         channel_ids: list[str] = []
-        searches = self.FACT_SEARCHES if self.settings.channel_profile == "curioaxiom" else self.SEARCHES
+        searches = self.PROFILE_COMPETITOR_SEARCHES.get(
+            self.settings.channel_profile, self.SEARCHES
+        )
         for query in searches:
             try:
                 data = youtube.search().list(
@@ -120,6 +158,7 @@ class DailyLearningLoop:
                                     "likes": int(st.get("likeCount") or 0),
                                     "comments": int(st.get("commentCount") or 0),
                                     "published_at": sn.get("publishedAt", ""),
+                                    "tags": list(sn.get("tags") or [])[:10],
                                     "description_excerpt": (sn.get("description") or "")[:350],
                                 }
                             )
@@ -299,15 +338,27 @@ def learning_context(settings: Settings, max_chars: int = 9000) -> str:
     except Exception:
         return ""
 
-    lines = ["DAILY CHANNEL LEARNING — use patterns only; never copy wording or creator identity."]
-    lines.append(
-        "Editorial experiment: open each Short with a concrete visual question or surprising result, "
-        "show the evidence or mechanism before the viewer has to wait through an introduction, "
-        "and end with the truthful answer. Keep the next video original; do not lengthen a weak idea "
-        "to meet a posting target. Review Studio's 'stayed to watch' and video retention after publishing "
-        "before repeating a format. Those metrics are not available in this stored report, so do not "
-        "claim an experiment improved them without fresh data."
-    )
+    lines = ["DAILY CHANNEL LEARNING — use patterns only; never copy wording, footage, audio or creator identity."]
+    if settings.channel_profile == "wondertales":
+        lines.append(
+            "Editorial reference rule (WonderTales Kids): study top kids rhyme/story channels for catchy titles, "
+            "bouncy singing cadence, playful sound words, and colorful animal themes — then write 100% original "
+            "rhyming verses or bedtime tales. Never include adult history or Wikipedia trivia."
+        )
+    elif settings.channel_profile == "gta6hub":
+        lines.append(
+            "Editorial reference rule (GTA6Hub): study top viral GTA 6 channels for curiosity-gap hooks, "
+            "title phrasing, and pacing — then deliver original, high-energy commentary over official/original footage."
+        )
+    else:
+        lines.append(
+            "Editorial experiment: open each Short with a concrete visual question or surprising result, "
+            "show the evidence or mechanism before the viewer has to wait through an introduction, "
+            "and end with the truthful answer. Keep the next video original; do not lengthen a weak idea "
+            "to meet a posting target. Review Studio's 'stayed to watch' and video retention after publishing "
+            "before repeating a format. Those metrics are not available in this stored report, so do not "
+            "claim an experiment improved them without fresh data."
+        )
     monetization = data.get("monetization") or {}
     if monetization:
         lines.append(
@@ -326,7 +377,9 @@ def learning_context(settings: Settings, max_chars: int = 9000) -> str:
             f"Channel: {item.get('channel')} | subs={item.get('subscribers', 0)} | views={item.get('channel_views', 0)}"
         )
         for video in item.get("high_performing_recent_videos", [])[:4]:
-            lines.append(f"- {video.get('views', 0)} views: {video.get('title', '')}")
+            tag_preview = ", ".join(video.get("tags", [])[:5])
+            suffix = f" [tags: {tag_preview}]" if tag_preview else ""
+            lines.append(f"- {video.get('views', 0)} views: {video.get('title', '')}{suffix}")
     analytics = data.get("own_analytics", [])[-20:]
     eligible = [
         item for item in analytics
