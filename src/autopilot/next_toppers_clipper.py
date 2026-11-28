@@ -908,21 +908,30 @@ class NextToppersTrioPipeline:
             if upload:
                 token_path = Path(self.settings.youtube_token_file)
                 if token_path.exists():
-                    uploader = YouTubeUploader(self.settings)
+                    upload_settings = self.settings.model_copy(
+                        update={
+                            "enable_uploads": True,
+                            "upload_privacy_status": "public",
+                            "allow_public_uploads": True,
+                        }
+                    )
+                    uploader = YouTubeUploader(upload_settings)
                     plan = VideoPlan(
                         topic=src["title"] or yt_title,
+                        angle="Next Toppers Trio viral comedy and roasting highlight",
                         format="short",
                         title=yt_title,
                         description=desc,
                         tags=tags,
                         hook=hook_cfg["pill"],
                         script=out0.get("transcript") or yt_title,
-                        cta="Subscribe for daily Prashant, Shobhit & Digraj comedy & roast clips!",
+                        thumbnail_brief="Bold teacher reaction close-up with white rounded hook pill",
                         thumbnail_text=hook_cfg["pill"][:30],
                     )
-                    upload_res = uploader.upload(final_mp4, plan, thumbnail_path=None)
-                    meta_record["uploaded_video_id"] = upload_res.get("video_id")
-                    meta_record["uploaded_url"] = upload_res.get("url")
+                    video_id = uploader.upload(final_mp4, plan, thumbnail_path=None)
+                    meta_record["uploaded_video_id"] = video_id
+                    if video_id and video_id != "UPLOAD_LIMIT_EXCEEDED":
+                        meta_record["uploaded_url"] = f"https://youtube.com/shorts/{video_id}"
                 else:
                     logger.warning(f"Upload skipped: authorize token first for {token_path}")
 
@@ -1061,30 +1070,38 @@ class NextToppersTrioPipeline:
         if upload:
             token_path = Path(self.settings.youtube_token_file)
             if token_path.exists():
-                uploader = YouTubeUploader(self.settings)
+                upload_settings = self.settings.model_copy(
+                    update={
+                        "enable_uploads": True,
+                        "upload_privacy_status": "public",
+                        "allow_public_uploads": True,
+                    }
+                )
+                uploader = YouTubeUploader(upload_settings)
                 plan = VideoPlan(
                     topic="Next Toppers Trio Roasting Compilation",
+                    angle="4-5 minute clubbed compilation of viral Next Toppers Trio roasting Shorts",
                     format="long",
                     title=yt_title,
                     description=desc,
                     tags=tags,
                     hook="Non-Stop NextToppers Roasting Compilation!",
                     script=desc,
-                    cta="Subscribe for daily Roasts & 4-Day Mega Compilations!",
+                    thumbnail_brief="All three Next Toppers teachers laughing and roasting in bold gaming style",
                     thumbnail_text="NEXTTOPPERS ROAST",
                 )
-                upload_res = uploader.upload(long_mp4, plan, thumbnail_path=None)
-                long_record["uploaded_video_id"] = upload_res.get("video_id")
-                long_record["uploaded_url"] = upload_res.get("url")
-                # Mark Shorts compiled and remove local Long MP4 after successful upload to save disk space
-                compile_id = upload_res.get("video_id") or stamp
-                for rec in chosen_recs:
-                    rec["compiled_in_long"] = compile_id
-                try:
-                    long_mp4.unlink()
-                    long_record["file_deleted"] = True
-                except OSError:
-                    pass
+                video_id = uploader.upload(long_mp4, plan, thumbnail_path=None)
+                long_record["uploaded_video_id"] = video_id
+                if video_id and video_id != "UPLOAD_LIMIT_EXCEEDED":
+                    long_record["uploaded_url"] = f"https://www.youtube.com/watch?v={video_id}"
+                    compile_id = video_id
+                    for rec in chosen_recs:
+                        rec["compiled_in_long"] = compile_id
+                    try:
+                        long_mp4.unlink()
+                        long_record["file_deleted"] = True
+                    except OSError:
+                        pass
             else:
                 logger.warning(f"Long compilation upload skipped: authorize {token_path}")
 
