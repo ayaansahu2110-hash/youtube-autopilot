@@ -108,6 +108,55 @@ def _wrap_text(draw: ImageDraw.ImageDraw, text: str, font_txt, font_em, max_widt
     return lines
 
 
+def _draw_emoji_chunk(
+    img: Image.Image,
+    x: int,
+    y: int,
+    chunk: str,
+    font_em: ImageFont.FreeTypeFont,
+    target_size: int,
+) -> int:
+    """Draw a color emoji chunk cleanly, downscaling bitmap NotoColorEmoji on Linux."""
+    fsize = getattr(font_em, "size", target_size)
+    if fsize > int(target_size * 1.25):
+        patch_w = max(4, fsize * max(1, len(chunk)) + 16)
+        patch_h = max(4, fsize + 16)
+        patch = Image.new("RGBA", (patch_w, patch_h), (0, 0, 0, 0))
+        pdraw = ImageDraw.Draw(patch)
+        pdraw.text((4, 4), chunk, font=font_em, embedded_color=True)
+        bbox = patch.getbbox()
+        if not bbox:
+            return target_size
+        cropped = patch.crop(bbox)
+        scale_h = max(8, target_size)
+        new_w = max(8, round(cropped.width * (scale_h / max(1, cropped.height))))
+        resized = cropped.resize((new_w, scale_h), Image.Resampling.LANCZOS)
+        img.alpha_composite(resized, (int(x), int(y)))
+        return new_w + max(2, target_size // 12)
+    draw_tmp = ImageDraw.Draw(img)
+    draw_tmp.text((x, y), chunk, font=font_em, embedded_color=True)
+    bbox = draw_tmp.textbbox((0, 0), chunk, font=font_em)
+    return max(0, bbox[2] - bbox[0])
+
+
+def _measure_line_scaled(
+    draw: ImageDraw.ImageDraw, line: str, font_txt, font_em, target_em_size: int
+) -> tuple[int, int]:
+    total_w = 0
+    max_h = getattr(font_txt, "size", target_em_size)
+    em_font_size = getattr(font_em, "size", target_em_size)
+    for is_em, chunk in _split_runs(line):
+        if is_em and em_font_size > int(target_em_size * 1.25):
+            total_w += (target_em_size + max(2, target_em_size // 12)) * max(1, len(chunk))
+            max_h = max(max_h, target_em_size)
+        else:
+            f = font_em if is_em else font_txt
+            bbox = draw.textbbox((0, 0), chunk, font=f)
+            total_w += max(0, bbox[2] - bbox[0])
+            max_h = max(max_h, bbox[3] - bbox[1])
+    return total_w, max_h
+
+
 def _draw_mixed_centered_block(
     draw: ImageDraw.ImageDraw,
     text: str,
@@ -120,6 +169,7 @@ def _draw_mixed_centered_block(
     stroke_width: int = 3,
     max_width_ratio: float = 0.88,
     line_gap: int = 12,
+    img: Image.Image | None = None,
 ):
     if not text or not str(text).strip():
         return
@@ -129,28 +179,30 @@ def _draw_mixed_centered_block(
     if not lines:
         return
 
-    line_metrics = [_measure_line(draw, ln, font_txt, font_em) for ln in lines]
+    line_metrics = [_measure_line_scaled(draw, ln, font_txt, font_em, font_size) for ln in lines]
     total_h = sum(h for _, h in line_metrics) + line_gap * (len(lines) - 1)
     cur_y = center_y - total_h // 2
 
     for ln, (lw, lh) in zip(lines, line_metrics, strict=True):
         cur_x = (width - lw) // 2
         for is_em, chunk in _split_runs(ln):
+            if is_em and img is not None:
+                cur_x += _draw_emoji_chunk(img, cur_x, cur_y, chunk, font_em, font_size)
+                continue
             f = font_em if is_em else font_txt
             if is_em:
                 draw.text((cur_x, cur_y), chunk, font=f, embedded_color=True)
+            elif stroke_fill and stroke_width > 0:
+                draw.text(
+                    (cur_x, cur_y),
+                    chunk,
+                    font=f,
+                    fill=fill,
+                    stroke_width=stroke_width,
+                    stroke_fill=stroke_fill,
+                )
             else:
-                if stroke_fill and stroke_width > 0:
-                    draw.text(
-                        (cur_x, cur_y),
-                        chunk,
-                        font=f,
-                        fill=fill,
-                        stroke_width=stroke_width,
-                        stroke_fill=stroke_fill,
-                    )
-                else:
-                    draw.text((cur_x, cur_y), chunk, font=f, fill=fill)
+                draw.text((cur_x, cur_y), chunk, font=f, fill=fill)
             bbox = draw.textbbox((0, 0), chunk, font=f)
             cur_x += max(0, bbox[2] - bbox[0])
         cur_y += lh + line_gap
@@ -163,27 +215,87 @@ def render_overlay(spec: dict, out_path: Path):
 
     img = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
+    scale = w / 1080.0
+
+    # Tile overlay mode (534x534 collage quadrant: yellow caption + optional giant freeze emoji)
+    if spec.get("tileMode"):
+        tile_caption = str(spec.get("tileCaption") or "").strip()
+        freeze_emoji = str(spec.get("freezeEmoji") or "").strip()
+        if freeze_emoji:
+            em_size = max(48, int(128 * (w / 534.0)))
+            font_em = _load_font(FONT_EMOJI, em_size)
+            em_clean = _clean_emoji_chunk(freeze_emoji) or freeze_emoji
+            _draw_emoji_chunk(img, (w - em_size) // 2, int(h * 0.56), em_clean, font_em, em_size)
+        if tile_caption:
+            _draw_mixed_centered_block(
+                draw,
+                tile_caption,
+                center_y=int(h * 0.87),
+                width=w,
+                font_path=FONT_SANS_BOLD,
+                font_size=max(18, int(30 * (w / 534.0))),
+                fill=(255, 224, 52, 255),
+                stroke_fill=(0, 0, 0, 245),
+                stroke_width=max(2, int(4 * (w / 534.0))),
+                max_width_ratio=0.92,
+                line_gap=4,
+                img=img,
+            )
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        img.save(out_path, "PNG")
+        return
 
     top_text = spec.get("topText") or ""
     bottom_text = spec.get("bottomText") or ""
     center_text = spec.get("centerText") or ""
     watermark = spec.get("watermarkText") or ""
     top_pill = bool(spec.get("topPill", False))
+    full_banner = bool(spec.get("fullBanner", False))
 
     is_white_bg = layout == "letterbox-meme"
-    scale = w / 1080.0
 
     # Top Hook Banner
     if top_text:
-        if top_pill:
-            font_txt = _load_font(FONT_SANS_BOLD, max(22, int(46 * scale)))
-            font_em = _load_font(FONT_EMOJI, max(22, int(46 * scale)))
-            lines = _wrap_text(draw, top_text, font_txt, font_em, int(w * 0.84))
+        if full_banner:
+            banner_size = max(24, int(48 * scale))
+            font_txt = _load_font(FONT_SANS_BOLD, banner_size)
+            font_em = _load_font(FONT_EMOJI, banner_size)
+            lines = _wrap_text(draw, top_text, font_txt, font_em, int(w * 0.92))
+            if len(lines) > 1:
+                banner_size = max(22, int(40 * scale))
+                font_txt = _load_font(FONT_SANS_BOLD, banner_size)
+                font_em = _load_font(FONT_EMOJI, banner_size)
+                lines = _wrap_text(draw, top_text, font_txt, font_em, int(w * 0.92))
             if lines:
-                line_metrics = [_measure_line(draw, ln, font_txt, font_em) for ln in lines]
+                line_metrics = [_measure_line_scaled(draw, ln, font_txt, font_em, banner_size) for ln in lines]
+                line_gap = int(8 * scale)
+                total_h = sum(lh for _, lh in line_metrics) + line_gap * (len(lines) - 1)
+                pad_y = int(28 * scale)
+                banner_h = total_h + pad_y * 2
+                y0 = int(210 * scale) - banner_h // 2
+                draw.rectangle([0, y0, w, y0 + banner_h], fill=(255, 255, 255, 252))
+                draw.line([(0, y0 + banner_h), (w, y0 + banner_h)], fill=(210, 210, 215, 255), width=max(1, int(2 * scale)))
+                cur_y = y0 + pad_y - int(2 * scale)
+                for ln, (lw, lh) in zip(lines, line_metrics, strict=True):
+                    cur_x = (w - lw) // 2
+                    for is_em, chunk in _split_runs(ln):
+                        if is_em:
+                            cur_x += _draw_emoji_chunk(img, cur_x, cur_y, chunk, font_em, banner_size)
+                        else:
+                            draw.text((cur_x, cur_y), chunk, font=font_txt, fill=(14, 14, 18, 255))
+                            bbox = draw.textbbox((0, 0), chunk, font=font_txt)
+                            cur_x += max(0, bbox[2] - bbox[0])
+                    cur_y += lh + line_gap
+        elif top_pill:
+            pill_size = max(22, int(46 * scale))
+            font_txt = _load_font(FONT_SANS_BOLD, pill_size)
+            font_em = _load_font(FONT_EMOJI, pill_size)
+            lines = _wrap_text(draw, top_text, font_txt, font_em, int(w * 0.86))
+            if lines:
+                line_metrics = [_measure_line_scaled(draw, ln, font_txt, font_em, pill_size) for ln in lines]
                 max_lw = max(lw for lw, _ in line_metrics)
                 line_gap = int(10 * scale)
-                total_h = sum(h for _, h in line_metrics) + line_gap * (len(lines) - 1)
+                total_h = sum(lh for _, lh in line_metrics) + line_gap * (len(lines) - 1)
                 pad_x = int(38 * scale)
                 pad_y = int(20 * scale)
                 pill_w = min(int(w * 0.94), max_lw + pad_x * 2)
@@ -202,13 +314,12 @@ def render_overlay(spec: dict, out_path: Path):
                 for ln, (lw, lh) in zip(lines, line_metrics, strict=True):
                     cur_x = (w - lw) // 2
                     for is_em, chunk in _split_runs(ln):
-                        f = font_em if is_em else font_txt
                         if is_em:
-                            draw.text((cur_x, cur_y), chunk, font=f, embedded_color=True)
+                            cur_x += _draw_emoji_chunk(img, cur_x, cur_y, chunk, font_em, pill_size)
                         else:
-                            draw.text((cur_x, cur_y), chunk, font=f, fill=(18, 18, 22, 255))
-                        bbox = draw.textbbox((0, 0), chunk, font=f)
-                        cur_x += max(0, bbox[2] - bbox[0])
+                            draw.text((cur_x, cur_y), chunk, font=font_txt, fill=(18, 18, 22, 255))
+                            bbox = draw.textbbox((0, 0), chunk, font=font_txt)
+                            cur_x += max(0, bbox[2] - bbox[0])
                     cur_y += lh + line_gap
         elif is_white_bg:
             _draw_mixed_centered_block(
@@ -221,6 +332,7 @@ def render_overlay(spec: dict, out_path: Path):
                 fill=(228, 178, 52, 255),
                 stroke_fill=(35, 25, 0, 220),
                 stroke_width=max(1, int(3 * scale)),
+                img=img,
             )
         else:
             _draw_mixed_centered_block(
@@ -233,9 +345,10 @@ def render_overlay(spec: dict, out_path: Path):
                 fill=(255, 230, 64, 255),
                 stroke_fill=(0, 0, 0, 245),
                 stroke_width=max(2, int(5 * scale)),
+                img=img,
             )
 
-    # Center / Lower-Middle Aesthetic Caption (e.g., "He doesn't look good!! 🗣️")
+    # Center / Lower-Middle Aesthetic Caption
     if center_text:
         _draw_mixed_centered_block(
             draw,
@@ -248,6 +361,7 @@ def render_overlay(spec: dict, out_path: Path):
             stroke_fill=(0, 0, 0, 235),
             stroke_width=max(2, int(4 * scale)),
             max_width_ratio=0.84,
+            img=img,
         )
 
     # Bottom Hook / Punchline Banner
@@ -263,6 +377,7 @@ def render_overlay(spec: dict, out_path: Path):
                 fill=(228, 178, 52, 255),
                 stroke_fill=(35, 25, 0, 220),
                 stroke_width=max(1, int(3 * scale)),
+                img=img,
             )
         else:
             _draw_mixed_centered_block(
@@ -275,33 +390,32 @@ def render_overlay(spec: dict, out_path: Path):
                 fill=(255, 255, 255, 255),
                 stroke_fill=(0, 0, 0, 245),
                 stroke_width=max(2, int(4 * scale)),
+                img=img,
             )
 
-    # Subtle Watermark (@handle)
+    # Subtle Watermark (@handle) placed cleanly below the 2x2 grid / off faces
     if watermark:
-        wm_font = _load_font(FONT_SCRIPT, max(16, int(28 * scale)))
-        wm_em = _load_font(FONT_EMOJI, max(16, int(28 * scale)))
-        wm_w, wm_h = _measure_line(draw, watermark, wm_font, wm_em)
-        wm_x = max(int(24 * scale), int(w * 0.60))
-        if wm_x + wm_w > w - int(24 * scale):
-            wm_x = w - wm_w - int(24 * scale)
-        wm_y = int(h * 0.64) if is_white_bg else int(h * 0.65)
+        wm_size = max(16, int(26 * scale))
+        wm_font = _load_font(FONT_SCRIPT, wm_size)
+        wm_em = _load_font(FONT_EMOJI, wm_size)
+        wm_w, _ = _measure_line_scaled(draw, watermark, wm_font, wm_em, wm_size)
+        wm_x = (w - wm_w) // 2
+        wm_y = int(h * 0.79)
         cur_x = wm_x
         for is_em, chunk in _split_runs(watermark):
-            f = wm_em if is_em else wm_font
             if is_em:
-                draw.text((cur_x, wm_y), chunk, font=f, embedded_color=True)
+                cur_x += _draw_emoji_chunk(img, cur_x, wm_y, chunk, wm_em, wm_size)
             else:
                 draw.text(
                     (cur_x, wm_y),
                     chunk,
-                    font=f,
-                    fill=(255, 255, 255, 215),
+                    font=wm_font,
+                    fill=(255, 255, 255, 195),
                     stroke_width=max(1, int(2 * scale)),
-                    stroke_fill=(0, 0, 0, 200),
+                    stroke_fill=(0, 0, 0, 190),
                 )
-            bbox = draw.textbbox((0, 0), chunk, font=f)
-            cur_x += max(0, bbox[2] - bbox[0])
+                bbox = draw.textbbox((0, 0), chunk, font=wm_font)
+                cur_x += max(0, bbox[2] - bbox[0])
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     img.save(out_path, "PNG")

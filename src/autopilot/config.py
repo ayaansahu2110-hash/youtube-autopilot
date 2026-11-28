@@ -192,7 +192,7 @@ PROFILE_CONFIGS: dict[str, dict] = {
         "voice": "en-US-AndrewNeural",
         "rate": "+2%",
         "pitch": "-2Hz",
-        "category_id": "23",
+        "category_id": "22",
         "made_for_kids": False,
         "token_file": "secrets/youtube_token_nexttoppers.json",
         "max_clips_short": 10,

@@ -70,11 +70,20 @@ EXCLUDED_LECTURE_KEYWORDS: tuple[str, ...] = (
 MIN_PREFERRED_VIEWS = 50_000
 
 PILL_HOOKS: list[dict[str, str]] = [
-    {"pill": "PK Bhaiya Roasting Day By Day 📈⚡", "title": "PK Bhaiya Roasting Day By Day 📈🔥 #nexttoppers #prashantkirad #funny #roasting #ytshorts"},
-    {"pill": "Wait For Bhaiya's Savage Reply 💀😂", "title": "Bhaiya's Savage Reply 💀😂 #nexttoppers @ExpHub #prashantkirad #comedy #ytshorts"},
-    {"pill": "Next Toppers Live Class Comedy 😂⚡", "title": "Live Class Gone Funny 😂🔥 @ExpHub @ShobhitNirwan17 #nexttoppers #funny #ytshorts"},
-    {"pill": "Shobhit & PK Bhaiya Hesitate Pls 😭💀", "title": "Bhaiya Please Hesitate 😭💀 @ShobhitNirwan17 @ExpHub #nexttoppers #roasting #ytshorts"},
-    {"pill": "Digraj Sir Comedy Mode On 🤣👑", "title": "Digraj Sir Unexpected Comedy 🤣🔥 @DigrajSinghRajput214 #nexttoppers #funny #ytshorts"},
+    {"pill": "PK Bhaiya Roasting Day By Day 📈⚡", "title": "PK Bhaiya Roasting Day By Day 📈⚡ #nexttoppers #prashantkirad #funny #relatable #studentlife #2026"},
+    {"pill": "When Class Gets Dark 😜🌚", "title": "When Class Gets Dark 😜🌚 #nexttoppers #prashantkirad #dark #funny #memes #students #2026"},
+    {"pill": "Wait For Bhaiya's Savage Reply 💀😂", "title": "PK Bhaiya Roasting Day By Day 📈⚡ #prashantkirad #nexttoppers #funny #roasting #studentlife #2026"},
+    {"pill": "Shobhit & PK Bhaiya Hesitate Pls 😭💀", "title": "When Class Gets Dark 😜🌚 #nexttoppers #shobhitnirwan #prashantkirad #funny #relatable #2026"},
+    {"pill": "Digraj Sir Comedy Mode On 🤣👑", "title": "Digraj Sir Unexpected Comedy 🤣🔥 #nexttoppers #digrajsinghrajput #funny #studentlife #2026"},
+]
+
+TILE_REACTIONS: list[tuple[str, str]] = [
+    ("Bhaiya roasting day by day 🫣", "🤣"),
+    ("Chhod do bhaiya hmm smjh gaye 💀", "💀"),
+    ("Bhaiya thoda control karo 😅", "🤣"),
+    ("No hesitation mode on 🔥", "😭"),
+    ("Sir ne toh roast kar diya 😭", "💀"),
+    ("Class dark ho gayi bhai 🌚", "🤣"),
 ]
 
 
@@ -128,6 +137,47 @@ def _avg_face_width_frac(video_path: Path, start_ms: int = 0, end_ms: int | None
                 _, _, fw, _ = max(faces, key=lambda b: b[2] * b[3])
                 widths.append(fw / max(1, w))
         return sum(widths) / len(widths) if widths else 0.0
+    finally:
+        cap.release()
+
+
+def _face_focus_box(
+    video_path: Path, start_ms: int = 0, end_ms: int | None = None, sample_count: int = 6
+) -> tuple[float, float, float]:
+    """Return (avg_cx, avg_cy, avg_w_frac) of the largest detected face for tight square/portrait framing."""
+    if not video_path.exists():
+        return 0.5, 0.42, 0.0
+    cascade_path = Path(cv2.data.haarcascades) / "haarcascade_frontalface_default.xml"
+    face_cascade = cv2.CascadeClassifier(str(cascade_path))
+    cap = cv2.VideoCapture(str(video_path))
+    if not cap.isOpened():
+        return 0.5, 0.42, 0.0
+    try:
+        fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
+        total_ms = (int(cap.get(cv2.CAP_PROP_FRAME_COUNT) or 0) / fps) * 1000.0 if fps > 0 else 0.0
+        s_ms = max(0.0, float(start_ms))
+        e_ms = min(total_ms, float(end_ms)) if end_ms and total_ms > 0 else total_ms
+        if e_ms <= s_ms:
+            e_ms = total_ms
+        xs, ys, ws = [], [], []
+        steps = max(3, sample_count)
+        for i in range(steps):
+            cap.set(cv2.CAP_PROP_POS_MSEC, s_ms + ((e_ms - s_ms) * (i + 0.5) / steps))
+            ok, frame = cap.read()
+            if not ok or frame is None:
+                continue
+            h, w = frame.shape[:2]
+            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+            faces = face_cascade.detectMultiScale(gray, scaleFactor=1.12, minNeighbors=4, minSize=(42, 42))
+            if len(faces) > 0:
+                fx, fy, fw, fh = max(faces, key=lambda b: b[2] * b[3])
+                xs.append((fx + fw / 2.0) / max(1, w))
+                ys.append((fy + fh * 0.65) / max(1, h))
+                ws.append(fw / max(1, w))
+        cx = max(0.16, min(0.84, sum(xs) / len(xs))) if xs else 0.5
+        cy = max(0.25, min(0.68, sum(ys) / len(ys))) if ys else 0.42
+        wf = sum(ws) / len(ws) if ws else 0.0
+        return cx, cy, wf
     finally:
         cap.release()
 
@@ -363,9 +413,9 @@ def fetch_comedy_candidates(
 
 
 COLLAGE_HOOKS: list[dict[str, str]] = [
-    {"pill": "PK Bhaiya Roasting Day By Day 📈⚡", "title": "PK Bhaiya Roasting Day By Day 📈🔥 #nexttoppers #prashantkirad #roasting #ytshorts"},
-    {"pill": "When Class Gets Dark 😜🌚", "title": "When Class Gets Dark 😜🌚 #nexttoppers #prashantkirad #shobhitnirwan #digrajsir #ytshorts"},
-    {"pill": "NextToppers Trio Savage Moments 💀🔥", "title": "NextToppers Trio No Hesitation 💀😂 #nexttoppers #funny #roasting #ytshorts"},
+    {"pill": "PK Bhaiya Roasting Day By Day 📈⚡", "title": "PK Bhaiya Roasting Day By Day 📈⚡ #nexttoppers #prashantkirad #funny #relatable #studentlife #2026"},
+    {"pill": "When Class Gets Dark 😜🌚", "title": "When Class Gets Dark 😜🌚 #nexttoppers #prashantkirad #dark #funny #memes #students #2026"},
+    {"pill": "PK Bhaiya Roasting Day By Day 📈⚡", "title": "PK Bhaiya Roasting Day By Day 📈⚡ #prashantkirad #nexttoppers #funny #roasting #studentlife #2026"},
 ]
 
 
@@ -377,10 +427,10 @@ def build_roast_collage_short(
     out_mp4: Path,
     bgm_path: Path | None = None,
 ) -> Path:
-    """Club 4 funny/roast teacher clips into a viral 2x2 vertical Short with sequential beat-drop freezes.
+    """Club 4 funny/roast teacher clips into a viral ~55s 2x2 vertical Short with B&W emoji freezes.
 
     Each item in `segments`: {"path": Path, "start_s": float, "dur_s": float, "face_cx": float}
-    (optional "crop_box": (w_frac, h_frac, x_frac, y_frac) for split-screen reaction boxes).
+    (optional "face_cy": float, "caption": str, "emoji": str, "crop_box": (wf, hf, xf, yf)).
     """
     if len(segments) < 4:
         raise ValueError("build_roast_collage_short requires 4 segments")
@@ -389,7 +439,7 @@ def build_roast_collage_short(
     tile = 534
     gap = 8
     grid_x = (1080 - (tile * 2 + gap)) // 2  # 2px
-    grid_y = 390
+    grid_y = 360
     coords = [
         (grid_x, grid_y),
         (grid_x + tile + gap, grid_y),
@@ -402,20 +452,43 @@ def build_roast_collage_short(
     with tempfile.TemporaryDirectory(prefix="trio_collage_") as td_str:
         td = Path(td_str)
         tile_mp4s: list[Path] = []
-        thumb_pngs: list[Path] = []
+        idle_pngs: list[Path] = []
+        done_pngs: list[Path] = []
         durs: list[float] = []
 
-        # Step 1: Extract each 534x534 face-centered subclip with a 1.2s B&W sigma freeze ending
+        # Step 1: Extract each tight face-zoomed 534x534 tile with yellow caption + permanent B&W emoji freeze
         for idx, s in enumerate(segs):
             src = Path(s["path"])
             start_s = max(0.0, float(s.get("start_s", 0.0)))
-            dur_s = max(5.0, min(14.0, float(s.get("dur_s", 9.0))))
-            face_cx = max(0.18, min(0.82, float(s.get("face_cx", 0.5))))
+            dur_s = max(5.0, min(14.5, float(s.get("dur_s", 13.8))))
+            face_cx = max(0.16, min(0.84, float(s.get("face_cx", 0.5))))
+            face_cy = max(0.25, min(0.68, float(s.get("face_cy", 0.44))))
             freeze_at = max(2.0, dur_s - 1.2)
             durs.append(dur_s)
 
+            default_cap, default_em = TILE_REACTIONS[idx % len(TILE_REACTIONS)]
+            tile_cap = str(s.get("caption") or default_cap)
+            freeze_em = str(s.get("emoji") or default_em)
+
+            live_ov = td / f"tile_live_{idx}.png"
+            freeze_ov = td / f"tile_freeze_{idx}.png"
+            for ov_out, em_val in ((live_ov, ""), (freeze_ov, freeze_em)):
+                spec_p = td / f"spec_{idx}_{'frz' if em_val else 'live'}.json"
+                spec_p.write_text(
+                    json.dumps({
+                        "width": tile,
+                        "height": tile,
+                        "tileMode": True,
+                        "tileCaption": tile_cap,
+                        "freezeEmoji": em_val,
+                    }, ensure_ascii=False),
+                    encoding="utf-8",
+                )
+                subprocess.run([sys.executable, str(render_overlay_py), str(spec_p), str(ov_out)], check=True)
+
             t_mp4 = td / f"tile_{idx}.mp4"
-            t_jpg = td / f"thumb_{idx}.jpg"
+            idle_jpg = td / f"idle_{idx}.jpg"
+            done_jpg = td / f"done_{idx}.jpg"
             crop_box = s.get("crop_box")
             if crop_box:
                 wf, hf, xf, yf = crop_box
@@ -425,41 +498,56 @@ def build_roast_collage_short(
                     f"crop={tile}:{tile}"
                 )
             else:
+                # Zoom slightly tighter (~0.80 of height) around the teacher's face so whiteboards stay cropped out
                 crop_expr = (
                     f"scale=-2:720,"
-                    f"crop='min(iw,ih)':'min(iw,ih)':"
-                    f"'max(0,min(iw-min(iw,ih),iw*{face_cx:.3f}-min(iw,ih)/2))':'(ih-min(iw,ih))/2',"
+                    f"crop='min(iw,ih*0.80)':'min(iw,ih*0.80)':"
+                    f"'max(0,min(iw-min(iw,ih*0.80),iw*{face_cx:.3f}-min(iw,ih*0.80)/2))':"
+                    f"'max(0,min(ih-min(iw,ih*0.80),ih*{face_cy:.3f}-min(iw,ih*0.80)/2))',"
                     f"scale={tile}:{tile}"
                 )
 
-            vf = (
-                f"{crop_expr},fps=30,format=yuv420p,"
-                f"eq=contrast=1.08:saturation=1.16,"
+            fc_tile = (
+                f"[0:v]{crop_expr},fps=30,format=yuv420p,"
+                f"eq=contrast=1.08:saturation=1.18,"
                 f"hue=s='if(gte(t,{freeze_at:.2f}),0,1)',"
-                f"eq=contrast='if(gte(t,{freeze_at:.2f}),1.26,1.0)':enable='gte(t,{freeze_at:.2f})'"
+                f"eq=contrast='if(gte(t,{freeze_at:.2f}),1.28,1.0)':enable='gte(t,{freeze_at:.2f})'[base];"
+                f"[base][1:v]overlay=0:0:enable='lt(t,{freeze_at:.2f})'[v1];"
+                f"[v1][2:v]overlay=0:0:enable='gte(t,{freeze_at:.2f})'[vout]"
             )
             af = "aresample=44100,aformat=sample_fmts=fltp:channel_layouts=stereo,loudnorm=I=-15:TP=-1.5:LRA=9"
             subprocess.run(
                 [
                     "ffmpeg", "-y", "-ss", f"{start_s:.2f}", "-t", f"{dur_s:.2f}",
-                    "-i", str(src), "-vf", vf, "-af", af,
+                    "-i", str(src), "-i", str(live_ov), "-i", str(freeze_ov),
+                    "-filter_complex", fc_tile,
+                    "-map", "[vout]", "-map", "0:a",
+                    "-af", af,
                     "-c:v", "libx264", "-preset", "fast", "-crf", "20",
                     "-c:a", "aac", "-b:a", "192k", str(t_mp4), "-loglevel", "error",
                 ],
                 check=True,
             )
-            # Extract clean color bright-face frame from 1.5s into tile for dimmed idle state
+            # Waiting tiles (j > turn) show dimmed color; completed tiles (j < turn) stay B&W + giant emoji!
             subprocess.run(
                 [
-                    "ffmpeg", "-y", "-ss", f"{min(1.5, freeze_at * 0.5):.2f}", "-i", str(t_mp4),
-                    "-frames:v", "1", "-vf", "eq=brightness=-0.16:saturation=0.58", str(t_jpg), "-loglevel", "error",
+                    "ffmpeg", "-y", "-ss", f"{min(1.0, freeze_at * 0.4):.2f}", "-i", str(t_mp4),
+                    "-frames:v", "1", "-vf", "eq=brightness=-0.18:saturation=0.58", str(idle_jpg), "-loglevel", "error",
+                ],
+                check=True,
+            )
+            subprocess.run(
+                [
+                    "ffmpeg", "-y", "-ss", f"{max(0.2, dur_s - 0.15):.2f}", "-i", str(t_mp4),
+                    "-frames:v", "1", str(done_jpg), "-loglevel", "error",
                 ],
                 check=True,
             )
             tile_mp4s.append(t_mp4)
-            thumb_pngs.append(t_jpg)
+            idle_pngs.append(idle_jpg)
+            done_pngs.append(done_jpg)
 
-        # Step 2: Compose 4 sequential 1080x1920 turns so inactive quadrants stay visible & dimmed
+        # Step 2: Compose 4 sequential turns (done tiles stay B&W+emoji, active plays, future tiles stay dimmed)
         seg_mp4s: list[Path] = []
         for turn in range(4):
             seg_out = td / f"turn_{turn}.mp4"
@@ -468,11 +556,13 @@ def build_roast_collage_short(
             for j in range(4):
                 if j == turn:
                     inputs += ["-i", str(tile_mp4s[j])]
+                elif j < turn:
+                    inputs += ["-loop", "1", "-t", f"{dur_s:.2f}", "-i", str(done_pngs[j])]
                 else:
-                    inputs += ["-loop", "1", "-t", f"{dur_s:.2f}", "-i", str(thumb_pngs[j])]
+                    inputs += ["-loop", "1", "-t", f"{dur_s:.2f}", "-i", str(idle_pngs[j])]
 
             fc_parts = [
-                f"[{turn}:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=28:2,eq=brightness=-0.22[bg]"
+                f"[{turn}:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=28:2,eq=brightness=-0.20[bg]"
             ]
             prev = "[bg]"
             for j, (ox, oy) in enumerate(coords):
@@ -493,7 +583,7 @@ def build_roast_collage_short(
             )
             seg_mp4s.append(seg_out)
 
-        # Step 3: Concat all 4 turns, blend subtle BGM beat, and overlay ClipForge white top pill + watermark
+        # Step 3: Concat all 4 turns, blend subtle BGM with normalize=0 (loud punch), and overlay full white top banner
         concat_txt = td / "concat.txt"
         concat_txt.write_text("\n".join(f"file '{p.as_posix()}'" for p in seg_mp4s), encoding="utf-8")
         joined = td / "joined.mp4"
@@ -510,6 +600,7 @@ def build_roast_collage_short(
                 "height": 1920,
                 "topText": hook_pill,
                 "topPill": True,
+                "fullBanner": True,
                 "watermarkText": watermark,
                 "whiteBg": False,
             }, ensure_ascii=False),
@@ -525,7 +616,9 @@ def build_roast_collage_short(
                     "-i", str(ov_png),
                     "-stream_loop", "-1", "-i", str(bgm_path),
                     "-filter_complex",
-                    "[0:v][1:v]overlay=0:0[vout];[2:a]volume=0.14[bgm];[0:a][bgm]amix=inputs=2:duration=first:dropout_transition=0[aout]",
+                    "[0:v][1:v]overlay=0:0[vout];[2:a]volume=0.14[bgm];"
+                    "[0:a][bgm]amix=inputs=2:duration=first:dropout_transition=0:normalize=0,"
+                    "loudnorm=I=-15:TP=-1.5:LRA=9[aout]",
                     "-map", "[vout]", "-map", "[aout]",
                     "-c:v", "libx264", "-preset", "fast", "-crf", "19",
                     "-c:a", "aac", "-b:a", "192k", "-shortest", str(out_mp4), "-loglevel", "error",
@@ -642,6 +735,7 @@ class NextToppersTrioPipeline:
                     "height": 1920,
                     "topText": hook_pill or "",
                     "topPill": bool(hook_pill),
+                    "fullBanner": bool(hook_pill),
                     "watermarkText": self.watermark,
                     "whiteBg": False,
                 }, ensure_ascii=False),
@@ -650,26 +744,34 @@ class NextToppersTrioPipeline:
             subprocess.run([sys.executable, str(render_overlay_py), str(ov_spec), str(ov_png)], check=True)
 
             if is_vertical:
-                base_vf = "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920"
+                base_vf = (
+                    "split[fg0][bg0];"
+                    "[bg0]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=28:2,eq=brightness=-0.18[bg];"
+                    "[fg0]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920[fg];"
+                    "[bg][fg]overlay=(W-w)/2:(H-h)/2"
+                )
             else:
-                cx = max(0.18, min(0.82, face_cx))
+                cx = max(0.16, min(0.84, face_cx))
                 base_vf = (
                     f"split[fg0][bg0];"
-                    f"[bg0]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=28:2,eq=brightness=-0.20[bg];"
-                    f"[fg0]crop='min(iw,ih*0.92)':ih:'max(0,min(iw-min(iw,ih*0.92),iw*{cx:.3f}-min(iw,ih*0.92)/2))':0,scale=1080:-2[fg];"
+                    f"[bg0]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=28:2,eq=brightness=-0.18[bg];"
+                    f"[fg0]crop='min(iw,ih*0.86)':ih:'max(0,min(iw-min(iw,ih*0.86),iw*{cx:.3f}-min(iw,ih*0.86)/2))':0,scale=1080:-2[fg];"
                     f"[bg][fg]overlay=(W-w)/2:(H-h)/2"
                 )
 
             spd_vf = f",setpts={1.0 / speed_factor:.4f}*PTS" if abs(speed_factor - 1.0) > 0.002 else ""
             spd_af = f",atempo={speed_factor:.4f}" if abs(speed_factor - 1.0) > 0.002 else ""
-            vf = f"{base_vf}{spd_vf},fps=30,format=yuv420p,eq=contrast=1.05:saturation=1.10[vbase];[vbase][1:v]overlay=0:0[vout]"
+            vf = f"{base_vf}{spd_vf},fps=30,format=yuv420p,eq=contrast=1.06:saturation=1.12[vbase];[vbase][1:v]overlay=0:0[vout]"
             if bgm_path and bgm_path.exists():
                 cmd = [
                     "ffmpeg", "-y",
                     "-ss", f"{start_s:.2f}", "-t", f"{dur_s:.2f}", "-i", str(local_src),
                     "-i", str(ov_png),
                     "-stream_loop", "-1", "-i", str(bgm_path),
-                    "-filter_complex", f"{vf};[2:a]volume=0.10[bgm];[0:a]loudnorm=I=-15:TP=-1.5:LRA=9{spd_af}[va];[va][bgm]amix=inputs=2:duration=first:dropout_transition=0[aout]",
+                    "-filter_complex",
+                    f"{vf};[2:a]volume=0.11[bgm];[0:a]loudnorm=I=-15:TP=-1.5:LRA=9{spd_af}[va];"
+                    "[va][bgm]amix=inputs=2:duration=first:dropout_transition=0:normalize=0,"
+                    "loudnorm=I=-15:TP=-1.5:LRA=9[aout]",
                     "-map", "[vout]", "-map", "[aout]",
                     "-c:v", "libx264", "-preset", "fast", "-crf", "20",
                     "-c:a", "aac", "-b:a", "192k", "-shortest", str(out_mp4), "-loglevel", "error",
@@ -785,16 +887,22 @@ class NextToppersTrioPipeline:
             if not local_p or self._is_vertical_video(local_p):
                 continue
             peaks = _fetch_heatmap_peaks(c["url"], max_peaks=2)
-            s_ms, e_ms, ratio, cx = find_best_face_window(
-                local_p, target_sec=9.5, scan_step_sec=30.0, preferred_peaks=peaks
+            seg_dur = 13.8
+            s_ms, e_ms, ratio, _ = find_best_face_window(
+                local_p, target_sec=seg_dur, scan_step_sec=30.0, preferred_peaks=peaks
             )
-            if ratio < 0.55 or _avg_face_width_frac(local_p, s_ms, e_ms) < 0.09:
+            fcx, fcy, fw_frac = _face_focus_box(local_p, s_ms, e_ms)
+            if ratio < 0.55 or fw_frac < 0.09:
                 continue
+            cap_text, em_char = TILE_REACTIONS[(produced_count + len(segs)) % len(TILE_REACTIONS)]
             segs.append({
                 "path": local_p,
                 "start_s": max(0.0, s_ms / 1000.0),
-                "dur_s": 9.5,
-                "face_cx": cx,
+                "dur_s": seg_dur,
+                "face_cx": fcx,
+                "face_cy": fcy,
+                "caption": cap_text,
+                "emoji": em_char,
             })
             used_sources.append(c)
 
@@ -861,7 +969,8 @@ class NextToppersTrioPipeline:
         for i in range(count):
             chosen_output = None
             want_collage = (
-                style == "roast-collage" or (style == "both" and i % 2 == 1)
+                style == "roast-collage"
+                or (style == "both" and ((len(history.get("produced_clips", [])) + i) % 2 == 0))
             ) and video_url_override is None
             if want_collage:
                 res = self._produce_collage_item(
@@ -1023,19 +1132,15 @@ class NextToppersTrioPipeline:
                 yt_title = hook_cfg["title"][:100]
             desc = (
                 f"{yt_title}\n\n"
-                f"Credits & Original Channels:\n"
-                f"@ExpHub @ShobhitNirwan17 @DigrajSinghRajput214 @NextToppers23 @PrashantKiradvlogs\n"
-                f"Source: {src['url']}\n\n"
-                f"#nexttoppers #prashantkirad #shobhitnirwan #digrajsinghrajput "
-                f"#roasting #comedy #funny #class10 #studentlife #ytshorts #viral"
+                f"Credits: @ExpHub @ShobhitNirwan17 @DigrajSinghRajput214 @NextToppers23\n"
+                f"#nexttoppers #prashantkirad #funny #relatable #studentlife #2026"
             )
             tags = [
                 "next toppers",
-                "prashant kirad roasting",
-                "shobhit nirwan funny",
-                "digraj sir comedy",
-                "next toppers comedy",
-                "class 10 funny",
+                "prashant kirad",
+                "shobhit nirwan",
+                "digraj sir",
+                "student life",
                 "shorts",
             ]
             meta_record = {
