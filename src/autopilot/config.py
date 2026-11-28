@@ -186,6 +186,7 @@ PROFILE_CONFIGS: dict[str, dict] = {
     },
     "nexttoppers": {
         "display_name": "NextToppers Roast",
+        "expected_channel_id": "UCrqB8xuwv8CCrS3n_WHIe7Q",
         "niche": "Next Toppers Trio (Prashant Kirad, Shobhit Nirwan, Digraj Singh Rajput) viral roasting clips, dark class comedy & savage student replies",
         "topic_queries": "Prashant Kirad roasting,Shobhit Nirwan funny comedy,Digraj Sir comedy moments,Next Toppers dark comedy",
         "voice": "en-US-AndrewNeural",

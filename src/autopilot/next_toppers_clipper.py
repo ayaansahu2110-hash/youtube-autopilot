@@ -507,6 +507,7 @@ class NextToppersTrioPipeline:
         self.settings = settings or Settings(
             channel_profile="nexttoppers",
             channel_display_name="NextToppers Roast",
+            expected_youtube_channel_id="UCrqB8xuwv8CCrS3n_WHIe7Q",
             youtube_token_file=Path("secrets/youtube_token_nexttoppers.json"),
         )
         self.source_channel_ids = source_channel_ids
