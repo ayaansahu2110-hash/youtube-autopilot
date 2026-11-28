@@ -133,7 +133,7 @@ def _draw_mixed_centered_block(
     total_h = sum(h for _, h in line_metrics) + line_gap * (len(lines) - 1)
     cur_y = center_y - total_h // 2
 
-    for ln, (lw, lh) in zip(lines, line_metrics):
+    for ln, (lw, lh) in zip(lines, line_metrics, strict=True):
         cur_x = (width - lw) // 2
         for is_em, chunk in _split_runs(ln):
             f = font_em if is_em else font_txt
@@ -199,7 +199,7 @@ def render_overlay(spec: dict, out_path: Path):
                     width=max(1, int(2 * scale)),
                 )
                 cur_y = y0 + pad_y - int(4 * scale)
-                for ln, (lw, lh) in zip(lines, line_metrics):
+                for ln, (lw, lh) in zip(lines, line_metrics, strict=True):
                     cur_x = (w - lw) // 2
                     for is_em, chunk in _split_runs(ln):
                         f = font_em if is_em else font_txt
