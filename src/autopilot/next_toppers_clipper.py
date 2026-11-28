@@ -15,6 +15,8 @@ from __future__ import annotations
 import json
 import logging
 import subprocess
+import sys
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -307,6 +309,191 @@ def fetch_comedy_candidates(
     return viral + rest
 
 
+COLLAGE_HOOKS: list[dict[str, str]] = [
+    {"pill": "PK Bhaiya Roasting Day By Day 📈⚡", "title": "PK Bhaiya Roasting Day By Day 📈🔥 #nexttoppers #prashantkirad #roasting #ytshorts"},
+    {"pill": "When Class Gets Dark 😜🌚", "title": "When Class Gets Dark 😜🌚 #nexttoppers #prashantkirad #shobhitnirwan #digrajsir #ytshorts"},
+    {"pill": "NextToppers Trio Savage Moments 💀🔥", "title": "NextToppers Trio No Hesitation 💀😂 #nexttoppers #funny #roasting #ytshorts"},
+]
+
+
+def build_roast_collage_short(
+    segments: list[dict],
+    *,
+    hook_pill: str,
+    watermark: str,
+    out_mp4: Path,
+    bgm_path: Path | None = None,
+) -> Path:
+    """Club 4 funny/roast teacher clips into a viral 2x2 vertical Short with sequential beat-drop freezes.
+
+    Each item in `segments`: {"path": Path, "start_s": float, "dur_s": float, "face_cx": float}
+    (optional "crop_box": (w_frac, h_frac, x_frac, y_frac) for split-screen reaction boxes).
+    """
+    if len(segments) < 4:
+        raise ValueError("build_roast_collage_short requires 4 segments")
+    segs = segments[:4]
+    out_mp4.parent.mkdir(parents=True, exist_ok=True)
+    tile = 534
+    gap = 8
+    grid_x = (1080 - (tile * 2 + gap)) // 2  # 2px
+    grid_y = 390
+    coords = [
+        (grid_x, grid_y),
+        (grid_x + tile + gap, grid_y),
+        (grid_x, grid_y + tile + gap),
+        (grid_x + tile + gap, grid_y + tile + gap),
+    ]
+
+    render_overlay_py = Path(r"C:\Users\ayaan\Desktop\clone\scripts\render_overlay.py")
+    if not render_overlay_py.exists():
+        raise FileNotFoundError(f"Missing ClipForge overlay renderer: {render_overlay_py}")
+
+    with tempfile.TemporaryDirectory(prefix="trio_collage_") as td_str:
+        td = Path(td_str)
+        tile_mp4s: list[Path] = []
+        thumb_pngs: list[Path] = []
+        durs: list[float] = []
+
+        # Step 1: Extract each 534x534 face-centered subclip with a 1.2s B&W sigma freeze ending
+        for idx, s in enumerate(segs):
+            src = Path(s["path"])
+            start_s = max(0.0, float(s.get("start_s", 0.0)))
+            dur_s = max(5.0, min(14.0, float(s.get("dur_s", 9.0))))
+            face_cx = max(0.18, min(0.82, float(s.get("face_cx", 0.5))))
+            freeze_at = max(2.0, dur_s - 1.2)
+            durs.append(dur_s)
+
+            t_mp4 = td / f"tile_{idx}.mp4"
+            t_jpg = td / f"thumb_{idx}.jpg"
+            crop_box = s.get("crop_box")
+            if crop_box:
+                wf, hf, xf, yf = crop_box
+                crop_expr = (
+                    f"crop=iw*{wf:.3f}:ih*{hf:.3f}:iw*{xf:.3f}:ih*{yf:.3f},"
+                    f"scale={tile}:{tile}:force_original_aspect_ratio=increase,"
+                    f"crop={tile}:{tile}"
+                )
+            else:
+                crop_expr = (
+                    f"scale=-2:720,"
+                    f"crop='min(iw,ih)':'min(iw,ih)':"
+                    f"'max(0,min(iw-min(iw,ih),iw*{face_cx:.3f}-min(iw,ih)/2))':'(ih-min(iw,ih))/2',"
+                    f"scale={tile}:{tile}"
+                )
+
+            vf = (
+                f"{crop_expr},fps=30,format=yuv420p,"
+                f"eq=contrast=1.08:saturation=1.16,"
+                f"hue=s='if(gte(t,{freeze_at:.2f}),0,1)',"
+                f"eq=contrast='if(gte(t,{freeze_at:.2f}),1.26,1.0)':enable='gte(t,{freeze_at:.2f})'"
+            )
+            af = "aresample=44100,aformat=sample_fmts=fltp:channel_layouts=stereo,loudnorm=I=-15:TP=-1.5:LRA=9"
+            subprocess.run(
+                [
+                    "ffmpeg", "-y", "-ss", f"{start_s:.2f}", "-t", f"{dur_s:.2f}",
+                    "-i", str(src), "-vf", vf, "-af", af,
+                    "-c:v", "libx264", "-preset", "fast", "-crf", "20",
+                    "-c:a", "aac", "-b:a", "192k", str(t_mp4), "-loglevel", "error",
+                ],
+                check=True,
+            )
+            # Extract clean color bright-face frame from 1.5s into tile for dimmed idle state
+            subprocess.run(
+                [
+                    "ffmpeg", "-y", "-ss", f"{min(1.5, freeze_at * 0.5):.2f}", "-i", str(t_mp4),
+                    "-frames:v", "1", "-vf", "eq=brightness=-0.16:saturation=0.58", str(t_jpg), "-loglevel", "error",
+                ],
+                check=True,
+            )
+            tile_mp4s.append(t_mp4)
+            thumb_pngs.append(t_jpg)
+
+        # Step 2: Compose 4 sequential 1080x1920 turns so inactive quadrants stay visible & dimmed
+        seg_mp4s: list[Path] = []
+        for turn in range(4):
+            seg_out = td / f"turn_{turn}.mp4"
+            dur_s = durs[turn]
+            inputs = []
+            for j in range(4):
+                if j == turn:
+                    inputs += ["-i", str(tile_mp4s[j])]
+                else:
+                    inputs += ["-loop", "1", "-t", f"{dur_s:.2f}", "-i", str(thumb_pngs[j])]
+
+            fc_parts = [
+                f"[{turn}:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=28:2,eq=brightness=-0.22[bg]"
+            ]
+            prev = "[bg]"
+            for j, (ox, oy) in enumerate(coords):
+                nxt = f"[v{j}]"
+                fc_parts.append(f"{prev}[{j}:v]overlay={ox}:{oy}:shortest=1{nxt}")
+                prev = nxt
+
+            fc = ";".join(fc_parts)
+            subprocess.run(
+                [
+                    "ffmpeg", "-y", *inputs,
+                    "-filter_complex", fc,
+                    "-map", prev, "-map", f"{turn}:a",
+                    "-c:v", "libx264", "-preset", "fast", "-crf", "20",
+                    "-c:a", "aac", "-b:a", "192k", "-shortest", str(seg_out), "-loglevel", "error",
+                ],
+                check=True,
+            )
+            seg_mp4s.append(seg_out)
+
+        # Step 3: Concat all 4 turns, blend subtle BGM beat, and overlay ClipForge white top pill + watermark
+        concat_txt = td / "concat.txt"
+        concat_txt.write_text("\n".join(f"file '{p.as_posix()}'" for p in seg_mp4s), encoding="utf-8")
+        joined = td / "joined.mp4"
+        subprocess.run(
+            ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(concat_txt), "-c", "copy", str(joined), "-loglevel", "error"],
+            check=True,
+        )
+
+        ov_spec = td / "overlay.json"
+        ov_png = td / "overlay.png"
+        ov_spec.write_text(
+            json.dumps({
+                "width": 1080,
+                "height": 1920,
+                "topText": hook_pill,
+                "topPill": True,
+                "watermarkText": watermark,
+                "whiteBg": False,
+            }, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        subprocess.run([sys.executable, str(render_overlay_py), str(ov_spec), str(ov_png)], check=True)
+
+        if bgm_path and Path(bgm_path).exists():
+            subprocess.run(
+                [
+                    "ffmpeg", "-y",
+                    "-i", str(joined),
+                    "-i", str(ov_png),
+                    "-stream_loop", "-1", "-i", str(bgm_path),
+                    "-filter_complex",
+                    "[0:v][1:v]overlay=0:0[vout];[2:a]volume=0.14[bgm];[0:a][bgm]amix=inputs=2:duration=first:dropout_transition=0[aout]",
+                    "-map", "[vout]", "-map", "[aout]",
+                    "-c:v", "libx264", "-preset", "fast", "-crf", "19",
+                    "-c:a", "aac", "-b:a", "192k", "-shortest", str(out_mp4), "-loglevel", "error",
+                ],
+                check=True,
+            )
+        else:
+            subprocess.run(
+                [
+                    "ffmpeg", "-y", "-i", str(joined), "-i", str(ov_png),
+                    "-filter_complex", "[0:v][1:v]overlay=0:0[vout]",
+                    "-map", "[vout]", "-map", "0:a",
+                    "-c:v", "libx264", "-preset", "fast", "-crf", "19", "-c:a", "copy", str(out_mp4), "-loglevel", "error",
+                ],
+                check=True,
+            )
+    return out_mp4
+
+
 class NextToppersTrioPipeline:
     """Automated pipeline for Next Toppers Trio face-focused comedy & roasting Shorts."""
 
@@ -319,7 +506,7 @@ class NextToppersTrioPipeline:
     ):
         self.settings = settings or Settings(
             channel_profile="nexttoppers",
-            channel_display_name="NextToppersClips",
+            channel_display_name="NextToppers Roast",
             youtube_token_file=Path("secrets/youtube_token_nexttoppers.json"),
         )
         self.source_channel_ids = source_channel_ids
@@ -383,11 +570,68 @@ class NextToppersTrioPipeline:
         cap.release()
         return (w / max(1.0, h)) < 0.78
 
+    def _produce_collage_item(
+        self,
+        candidates: list[dict],
+        start_cursor: int,
+        bgm: Path | None,
+        batch_index: int,
+        produced_count: int,
+    ) -> tuple[dict, str, dict, float, dict, int] | None:
+        """Pick 4 horizontal face-verified roast punchlines and club them into a 2x2 collage Short."""
+        segs: list[dict] = []
+        used_sources: list[dict] = []
+        cursor = start_cursor
+        checked = 0
+        while cursor < len(candidates) and len(segs) < 4 and checked < 14:
+            c = candidates[cursor]
+            cursor += 1
+            checked += 1
+            if c.get("is_short_remix"):
+                continue
+            local_p = self._download_to_cache(c["url"], c["video_id"])
+            if not local_p or self._is_vertical_video(local_p):
+                continue
+            peaks = _fetch_heatmap_peaks(c["url"], max_peaks=2)
+            s_ms, e_ms, ratio, cx = find_best_face_window(
+                local_p, target_sec=9.5, scan_step_sec=30.0, preferred_peaks=peaks
+            )
+            if ratio < 0.55:
+                continue
+            segs.append({
+                "path": local_p,
+                "start_s": max(0.0, s_ms / 1000.0),
+                "dur_s": 9.5,
+                "face_cx": cx,
+            })
+            used_sources.append(c)
+
+        if len(segs) < 4:
+            return None
+
+        hook_cfg = COLLAGE_HOOKS[(produced_count + batch_index) % len(COLLAGE_HOOKS)]
+        stamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+        tmp_out = self.artifacts_dir / "_tmp_collage" / f"{stamp}_{batch_index}.mp4"
+        build_roast_collage_short(
+            segs,
+            hook_pill=hook_cfg["pill"],
+            watermark=self.watermark,
+            out_mp4=tmp_out,
+            bgm_path=bgm,
+        )
+        lead_src = used_sources[0]
+        fake_out0 = {
+            "filePath": str(tmp_out),
+            "durationMs": int(sum(s["dur_s"] for s in segs) * 1000),
+            "transcript": " | ".join(u["title"][:45] for u in used_sources),
+        }
+        return lead_src, "roast-collage", hook_cfg, 1.0, fake_out0, cursor
+
     def run_batch(
         self,
         *,
         count: int = 2,
-        style: str = "auto",  # 'auto' | 'roast-live' | 'roast-remix' | 'both'
+        style: str = "both",  # 'both' | 'auto' | 'roast-live' | 'roast-collage' | 'roast-remix'
         video_url_override: str | None = None,
         start_sec_override: float | None = None,
         duration_sec_override: int | None = None,
@@ -424,8 +668,19 @@ class NextToppersTrioPipeline:
 
         for i in range(count):
             chosen_output = None
+            want_collage = (
+                style == "roast-collage" or (style == "both" and i % 2 == 1)
+            ) and video_url_override is None
+            if want_collage:
+                res = self._produce_collage_item(
+                    candidates, cand_cursor, bgm, i, len(history.get("produced_clips", []))
+                )
+                if res is not None:
+                    *chosen_list, cand_cursor = res
+                    chosen_output = tuple(chosen_list)
+
             attempts = 0
-            while cand_cursor < len(candidates) and attempts < 8:
+            while chosen_output is None and cand_cursor < len(candidates) and attempts < 8:
                 src = candidates[cand_cursor]
                 cand_cursor += 1
                 attempts += 1

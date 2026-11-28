@@ -54,7 +54,7 @@ ALL_CHANNELS = [
     ("empirepulse", "EmpirePulse", "UC6rE9fs_Os6NSXdTN1oBNdw", Path("secrets/youtube_token_empirepulse.json")),
     ("astrapulse", "AstraPulse", "UC9-C8N7q2m8nax0kYWFy9og", Path("secrets/youtube_token_astrapulse.json")),
     ("gta6hub", "GTA6Hub", "UCVo9n-Yun9--4rw3C-ZWoLQ", Path("secrets/youtube_token_gta6hub.json")),
-    ("nexttoppers", "NextToppersClips", "", Path("secrets/youtube_token_nexttoppers.json")),
+    ("nexttoppers", "NextToppers Roast", "", Path("secrets/youtube_token_nexttoppers.json")),
 ]
 
 
@@ -509,13 +509,13 @@ def schedule_all() -> None:
 @app.command("clip-trio")
 def clip_trio(
     count: int = typer.Option(2, "--count", "-n", help="Number of Trio Shorts to produce"),
-    style: str = typer.Option("auto", "--style", "-s", help="auto | speech | meme | both"),
+    style: str = typer.Option("both", "--style", "-s", help="both (mix single + 2x2 collage + remix) | roast-live | roast-collage | roast-remix"),
     url: str | None = typer.Option(None, "--url", help="Optional specific YouTube URL to clip"),
     sources: str | None = typer.Option(None, "--sources", help="Comma-separated source YouTube channel IDs"),
-    watermark: str = typer.Option("@NextToppersClips", "--watermark", help="Watermark handle on video"),
+    watermark: str = typer.Option("@NextToppersRoast", "--watermark", help="Watermark handle on video"),
     upload: bool = typer.Option(False, "--upload/--no-upload", help="Upload to YouTube using nexttoppers token"),
 ) -> None:
-    """Cut viral Next Toppers Trio (Prashant, Shobhit, Digraj) Shorts with BGM, emojis & Hinglish hooks."""
+    """Cut & collage viral Next Toppers Trio (Prashant, Shobhit, Digraj) roasting & comedy Shorts."""
     from autopilot.next_toppers_clipper import NextToppersTrioPipeline
 
     src_list = [x.strip() for x in sources.split(",") if x.strip()] if sources else None
@@ -531,7 +531,7 @@ def clip_trio(
 @app.command("schedule-trio")
 def schedule_trio(
     count_per_slot: int = typer.Option(2, "--count", help="Shorts per daily run"),
-    watermark: str = typer.Option("@NextToppersClips", "--watermark", help="Watermark handle"),
+    watermark: str = typer.Option("@NextToppersRoast", "--watermark", help="Watermark handle"),
     upload: bool = typer.Option(True, "--upload/--no-upload", help="Auto-upload when nexttoppers token exists"),
 ) -> None:
     """Run automated daily scheduler (10:00 AM & 06:00 PM IST) for Next Toppers Trio Shorts."""
