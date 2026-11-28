@@ -528,28 +528,63 @@ def clip_trio(
             console.print(f"  YouTube URL: {r['uploaded_url']}")
 
 
+@app.command("compile-trio-long")
+def compile_trio_long(
+    min_sec: int = typer.Option(240, "--min-sec", help="Minimum duration in seconds (default 240s = 4m)"),
+    max_sec: int = typer.Option(300, "--max-sec", help="Maximum duration in seconds (default 300s = 5m)"),
+    watermark: str = typer.Option("@NextToppersRoast", "--watermark", help="Watermark handle"),
+    upload: bool = typer.Option(False, "--upload/--no-upload", help="Upload compiled 4-5 min Long video to YouTube"),
+) -> None:
+    """Club recent NextToppers Roast Shorts into a 4-5 minute 16:9 Long compilation video."""
+    from autopilot.next_toppers_clipper import NextToppersTrioPipeline
+
+    pipe = NextToppersTrioPipeline(watermark=watermark)
+    res = pipe.build_long_compilation(min_sec=float(min_sec), max_sec=float(max_sec), upload=upload)
+    if not res:
+        console.print("[yellow]No Shorts ready to compile.[/yellow]")
+        return
+    console.print(f"[bold green]Long Compilation Ready:[/bold green] {res['title']} ({res['duration_sec']}s, {res['clip_count']} clips)")
+    console.print(f"  File: {res['file_path']}")
+    if res.get("uploaded_url"):
+        console.print(f"  YouTube URL: {res['uploaded_url']}")
+
+
 @app.command("schedule-trio")
 def schedule_trio(
-    count_per_slot: int = typer.Option(2, "--count", help="Shorts per daily run"),
+    morning_count: int = typer.Option(1, "--morning-count", help="Shorts uploaded in 10:00 AM IST run"),
+    evening_count: int = typer.Option(2, "--evening-count", help="Shorts uploaded in 06:00 PM IST run (default 1+2 = 3/day)"),
+    long_every_days: int = typer.Option(4, "--long-every-days", help="Upload 1 clubbed 4-5 min Long video every N days"),
     watermark: str = typer.Option("@NextToppersRoast", "--watermark", help="Watermark handle"),
     upload: bool = typer.Option(True, "--upload/--no-upload", help="Auto-upload when nexttoppers token exists"),
 ) -> None:
-    """Run automated daily scheduler (10:00 AM & 06:00 PM IST) for Next Toppers Trio Shorts."""
+    """Run automated daily scheduler (3 Shorts/day + 4-5 min Long compilation every 4 days)."""
     from autopilot.next_toppers_clipper import NextToppersTrioPipeline
 
     settings = load_settings()
     scheduler = BlockingScheduler(timezone=settings.schedule_timezone)
 
-    def _job() -> None:
+    def _morning_job() -> None:
         try:
             pipe = NextToppersTrioPipeline(watermark=watermark)
-            pipe.run_batch(count=count_per_slot, style="both", upload=upload)
+            pipe.run_batch(count=morning_count, style="both", upload=upload)
         except Exception as exc:
-            console.print(f"[bold red]Trio scheduler error:[/bold red] {exc}")
+            console.print(f"[bold red]Trio morning scheduler error:[/bold red] {exc}")
 
-    scheduler.add_job(_job, "cron", hour=10, minute=0, id="trio-morning", replace_existing=True)
-    scheduler.add_job(_job, "cron", hour=18, minute=0, id="trio-evening", replace_existing=True)
-    console.print(f"[bold green]Next Toppers Trio Scheduler active at 10:00 & 18:00 ({settings.schedule_timezone})[/bold green]")
+    def _evening_job() -> None:
+        try:
+            pipe = NextToppersTrioPipeline(watermark=watermark)
+            pipe.run_batch(count=evening_count, style="both", upload=upload)
+            pipe.run_long_compilation_if_due(every_days=long_every_days, upload=upload)
+        except Exception as exc:
+            console.print(f"[bold red]Trio evening scheduler error:[/bold red] {exc}")
+
+    scheduler.add_job(_morning_job, "cron", hour=10, minute=0, id="trio-morning", replace_existing=True)
+    scheduler.add_job(_evening_job, "cron", hour=18, minute=0, id="trio-evening", replace_existing=True)
+    console.print(
+        f"[bold green]NextToppers Roast Scheduler active:[/bold green] "
+        f"{morning_count + evening_count} Shorts/day (10:00 & 18:00 {settings.schedule_timezone}) "
+        f"+ 1 Long compilation every {long_every_days} days"
+    )
     scheduler.start()
 
 

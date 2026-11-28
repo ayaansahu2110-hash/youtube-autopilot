@@ -14,10 +14,12 @@ from __future__ import annotations
 
 import json
 import logging
+import os
+import shutil
 import subprocess
 import sys
 import tempfile
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import cv2
@@ -344,9 +346,19 @@ def build_roast_collage_short(
         (grid_x + tile + gap, grid_y + tile + gap),
     ]
 
-    render_overlay_py = Path(r"C:\Users\ayaan\Desktop\clone\scripts\render_overlay.py")
-    if not render_overlay_py.exists():
-        raise FileNotFoundError(f"Missing ClipForge overlay renderer: {render_overlay_py}")
+    render_overlay_py = next(
+        (
+            p
+            for p in (
+                Path(os.environ.get("CLIPFORGE_HOME", r"E:\ClipForge")) / "scripts" / "render_overlay.py",
+                Path(r"C:\Users\ayaan\Desktop\clone\scripts\render_overlay.py"),
+            )
+            if p.exists()
+        ),
+        None,
+    )
+    if render_overlay_py is None:
+        raise FileNotFoundError("Missing ClipForge scripts/render_overlay.py in E:\\ClipForge")
 
     with tempfile.TemporaryDirectory(prefix="trio_collage_") as td_str:
         td = Path(td_str)
@@ -536,7 +548,7 @@ class NextToppersTrioPipeline:
         self.history_file.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
 
     def _download_to_cache(self, url: str, video_id: str) -> Path | None:
-        cache_dir = Path(r"D:\ClipForgeData\renders\url_cache")
+        cache_dir = Path(os.environ.get("CLIPFORGE_DATA_DIR", r"E:\ClipForgeData")) / "url_cache"
         cache_dir.mkdir(parents=True, exist_ok=True)
         cached = cache_dir / f"yt_{video_id}.mp4"
         if cached.exists() and cached.stat().st_size > 20000:
@@ -560,6 +572,67 @@ class NextToppersTrioPipeline:
         if proc.returncode == 0 and cached.exists() and cached.stat().st_size > 20000:
             return cached
         return None
+
+    def cleanup_storage(self, *, keep_short_days: int = 5) -> int:
+        """Delete heavy downloaded raw videos immediately and prune old compiled/expired MP4s."""
+        removed = 0
+        # 1. Always delete raw yt-dlp source downloads once clip extraction finishes
+        for cache_root in (
+            Path(os.environ.get("CLIPFORGE_DATA_DIR", r"E:\ClipForgeData")) / "url_cache",
+            Path(r"D:\ClipForgeData\renders\url_cache"),
+        ):
+            if cache_root.exists():
+                for f in cache_root.glob("yt_*.mp4*"):
+                    try:
+                        f.unlink()
+                        removed += 1
+                    except OSError:
+                        pass
+
+        # 2. Remove temporary collage scratch folders
+        tmp_dir = self.artifacts_dir / "_tmp_collage"
+        if tmp_dir.exists():
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+        # 3. Clean stale ClipForge render/export scratch files older than 1 day on E:\ClipForgeData
+        cutoff_render = datetime.now(timezone.utc) - timedelta(days=1)
+        data_root = Path(os.environ.get("CLIPFORGE_DATA_DIR", r"E:\ClipForgeData"))
+        for sub in ("renders", "exports", "cache"):
+            sub_dir = data_root / sub
+            if sub_dir.exists():
+                for f in sub_dir.rglob("*"):
+                    if f.is_file():
+                        try:
+                            if datetime.fromtimestamp(f.stat().st_mtime, tz=timezone.utc) < cutoff_render:
+                                f.unlink()
+                                removed += 1
+                        except OSError:
+                            pass
+
+        # 4. Prune Short MP4 files that were already compiled into a Long video or older than keep_short_days
+        cutoff_short = datetime.now(timezone.utc) - timedelta(days=keep_short_days)
+        history = self._load_history()
+        for rec in history.get("produced_clips", []):
+            fp = Path(rec.get("file_path") or "")
+            if not fp.exists() or fp.suffix.lower() != ".mp4":
+                continue
+            compiled = bool(rec.get("compiled_in_long"))
+            created_str = rec.get("created_at") or ""
+            is_old = False
+            try:
+                if created_str:
+                    is_old = datetime.fromisoformat(created_str.replace("Z", "+00:00")) < cutoff_short
+            except Exception:
+                pass
+            if compiled or is_old:
+                try:
+                    fp.unlink()
+                    rec["file_deleted"] = True
+                    removed += 1
+                except OSError:
+                    pass
+        self._save_history(history)
+        return removed
 
     @staticmethod
     def _is_vertical_video(video_path: Path) -> bool:
@@ -862,4 +935,188 @@ class NextToppersTrioPipeline:
             history.setdefault("produced_clips", []).append(meta_record)
             self._save_history(history)
 
+        self.cleanup_storage()
         return outputs
+
+    @staticmethod
+    def _probe_duration_sec(video_path: Path) -> float:
+        p = subprocess.run(
+            ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "default=noprint_wrappers=1:nokey=1", str(video_path)],
+            capture_output=True, text=True,
+        )
+        try:
+            return float((p.stdout or "").strip() or 0.0)
+        except ValueError:
+            return 0.0
+
+    def build_long_compilation(
+        self,
+        *,
+        min_sec: float = 240.0,
+        max_sec: float = 300.0,
+        upload: bool = False,
+    ) -> dict | None:
+        """Club recent uploaded/produced roasting Shorts into a 4-5 minute 16:9 Long YouTube video."""
+        history = self._load_history()
+        produced = history.get("produced_clips", [])
+        candidates_recs = [
+            r for r in produced
+            if not r.get("compiled_in_long")
+            and not r.get("file_deleted")
+            and r.get("file_path")
+            and Path(r["file_path"]).exists()
+        ]
+
+        # If fewer than ~min_sec of uncompiled Shorts exist, produce extra Shorts (without double-uploading)
+        total_sec = sum(self._probe_duration_sec(Path(r["file_path"])) for r in candidates_recs)
+        if total_sec < min_sec:
+            needed_clips = max(1, min(6, int((min_sec - total_sec) // 26) + 1))
+            extra = self.run_batch(count=needed_clips, style="both", upload=False)
+            candidates_recs.extend(extra)
+
+        chosen_recs: list[dict] = []
+        acc_sec = 0.0
+        for rec in candidates_recs:
+            fp = Path(rec["file_path"])
+            if not fp.exists():
+                continue
+            dur = self._probe_duration_sec(fp)
+            if dur <= 3.0:
+                continue
+            if acc_sec + dur > max_sec and acc_sec >= min_sec:
+                break
+            chosen_recs.append(rec)
+            acc_sec += dur
+            if acc_sec >= min_sec and len(chosen_recs) >= 6:
+                break
+
+        if not chosen_recs:
+            return None
+
+        stamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+        long_dir = self.artifacts_dir / f"{stamp}_long_compilation"
+        long_dir.mkdir(parents=True, exist_ok=True)
+        long_mp4 = long_dir / "nexttoppers_roast_compilation.mp4"
+
+        with tempfile.TemporaryDirectory(prefix="trio_long_") as td_str:
+            td = Path(td_str)
+            norm_parts: list[Path] = []
+            for idx, rec in enumerate(chosen_recs):
+                src_fp = Path(rec["file_path"])
+                part_fp = td / f"part_{idx:02d}.mp4"
+                # Frame vertical Short crisply inside 1920x1080 16:9 widescreen with blurred sidebars
+                vf = (
+                    "split[fg0][bg0];"
+                    "[bg0]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,boxblur=28:2,eq=brightness=-0.22[bg];"
+                    "[fg0]scale=-2:1080[fg];"
+                    "[bg][fg]overlay=(W-w)/2:(H-h)/2,setsar=1,fps=30,format=yuv420p"
+                )
+                af = "aresample=44100,aformat=sample_fmts=fltp:channel_layouts=stereo,loudnorm=I=-15:TP=-1.5:LRA=9"
+                subprocess.run(
+                    [
+                        "ffmpeg", "-y", "-i", str(src_fp),
+                        "-vf", vf, "-af", af,
+                        "-c:v", "libx264", "-preset", "fast", "-crf", "21",
+                        "-c:a", "aac", "-b:a", "192k", str(part_fp), "-loglevel", "error",
+                    ],
+                    check=True,
+                )
+                norm_parts.append(part_fp)
+
+            concat_file = td / "concat.txt"
+            concat_file.write_text("\n".join(f"file '{p.as_posix()}'" for p in norm_parts), encoding="utf-8")
+            subprocess.run(
+                ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(concat_file), "-c", "copy", str(long_mp4), "-loglevel", "error"],
+                check=True,
+            )
+
+        final_dur = self._probe_duration_sec(long_mp4)
+        yt_title = "NextToppers Roast Compilation 🔥 Non-Stop Prashant, Shobhit & Digraj Funny Moments! 😂"[:100]
+        source_links = "\n".join(f"- {r.get('source_url')}" for r in chosen_recs[:10] if r.get("source_url"))
+        desc = (
+            f"{yt_title}\n\n"
+            f"Best Next Toppers Trio (Prashant Kirad, Shobhit Nirwan, Digraj Singh Rajput) roasting & dark comedy moments clubbed together!\n\n"
+            f"Credits & Official Channels:\n"
+            f"@ExpHub @ShobhitNirwan17 @DigrajSinghRajput214 @NextToppers23 @PrashantKiradvlogs\n\n"
+            f"Featured Clips:\n{source_links}\n\n"
+            f"#nexttoppers #prashantkirad #shobhitnirwan #digrajsinghrajput #roasting #comedy #compilation #nexttoppersroast"
+        )
+        tags = [
+            "next toppers", "next toppers roast", "prashant kirad roasting",
+            "shobhit nirwan funny", "digraj sir comedy", "next toppers funny compilation",
+            "next toppers dark comedy", "class 10 funny moments",
+        ]
+        long_record = {
+            "style": "long-compilation",
+            "clip_count": len(chosen_recs),
+            "duration_sec": round(final_dur, 1),
+            "title": yt_title,
+            "description": desc,
+            "tags": tags,
+            "file_path": str(long_mp4),
+            "created_at": datetime.now(timezone.utc).isoformat(),
+            "uploaded_video_id": None,
+        }
+
+        if upload:
+            token_path = Path(self.settings.youtube_token_file)
+            if token_path.exists():
+                uploader = YouTubeUploader(self.settings)
+                plan = VideoPlan(
+                    topic="Next Toppers Trio Roasting Compilation",
+                    format="long",
+                    title=yt_title,
+                    description=desc,
+                    tags=tags,
+                    hook="Non-Stop NextToppers Roasting Compilation!",
+                    script=desc,
+                    cta="Subscribe for daily Roasts & 4-Day Mega Compilations!",
+                    thumbnail_text="NEXTTOPPERS ROAST",
+                )
+                upload_res = uploader.upload(long_mp4, plan, thumbnail_path=None)
+                long_record["uploaded_video_id"] = upload_res.get("video_id")
+                long_record["uploaded_url"] = upload_res.get("url")
+                # Mark Shorts compiled and remove local Long MP4 after successful upload to save disk space
+                compile_id = upload_res.get("video_id") or stamp
+                for rec in chosen_recs:
+                    rec["compiled_in_long"] = compile_id
+                try:
+                    long_mp4.unlink()
+                    long_record["file_deleted"] = True
+                except OSError:
+                    pass
+            else:
+                logger.warning(f"Long compilation upload skipped: authorize {token_path}")
+
+        (long_dir / "metadata.json").write_text(json.dumps(long_record, indent=2, ensure_ascii=False), encoding="utf-8")
+        history = self._load_history()
+        compiled_paths = {r.get("file_path") for r in chosen_recs}
+        for rec in history.get("produced_clips", []):
+            if rec.get("file_path") in compiled_paths and long_record.get("uploaded_video_id"):
+                rec["compiled_in_long"] = long_record["uploaded_video_id"]
+        history.setdefault("long_compilations", []).append(long_record)
+        history["last_long_compiled_at"] = datetime.now(timezone.utc).isoformat()
+        self._save_history(history)
+        self.cleanup_storage()
+        return long_record
+
+    def run_long_compilation_if_due(self, *, every_days: int = 4, upload: bool = True) -> dict | None:
+        """Upload a 4-5 min clubbed Long compilation if at least `every_days` have passed since the last one."""
+        history = self._load_history()
+        last_str = history.get("last_long_compiled_at")
+        if last_str:
+            try:
+                last_dt = datetime.fromisoformat(last_str.replace("Z", "+00:00"))
+                if datetime.now(timezone.utc) - last_dt < timedelta(days=every_days):
+                    return None
+            except Exception:
+                pass
+        else:
+            # Wait until we have accumulated enough uncompiled Shorts (~4 days / >=8 Shorts) unless invoked manually
+            avail = [
+                r for r in history.get("produced_clips", [])
+                if not r.get("compiled_in_long") and r.get("file_path") and Path(r["file_path"]).exists()
+            ]
+            if len(avail) < 8:
+                return None
+        return self.build_long_compilation(upload=upload)
