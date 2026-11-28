@@ -40,22 +40,22 @@ OFFICIAL_LIVE_CHANNELS: list[dict[str, str]] = [
     {"id": "UC6k0UlWg59GNng1T-3X71DA", "name": "Next Toppers Official", "handle": "@NextToppers23"},
 ]
 
-# High-performing comedy & roasting clip/compilation channels found via YouTube research
+# High-performing comedy & roasting Shorts + compilation channels found via YouTube research
 COMEDY_CLIP_CHANNELS: list[dict[str, str]] = [
     {"id": "UCcRv4COoX94JIlBd8xuGbjA", "name": "NextTopper Harsh", "tab": "shorts"},
-    {"id": "UCsxA17djxwN1lWVEawbX56g", "name": "Nexttoppers Hub", "tab": "videos"},
     {"id": "UCsxA17djxwN1lWVEawbX56g", "name": "Nexttoppers Hub Shorts", "tab": "shorts"},
-    {"id": "UCcsbHSRLQNcugDQwaUup-pA", "name": "Shobby ki Olivia", "tab": "videos"},
-    {"id": "UCEB1A2-aK7ITZxu1ibq8v4Q", "name": "Next topper op", "tab": "videos"},
-    {"id": "UCe226-9kFQO3QkNGb_hBkow", "name": "Next toppers addict", "tab": "videos"},
+    {"id": "UCsxA17djxwN1lWVEawbX56g", "name": "Nexttoppers Hub", "tab": "videos"},
+    {"id": "UCcsbHSRLQNcugDQwaUup-pA", "name": "Shobby ki Olivia Shorts", "tab": "shorts"},
+    {"id": "UCEB1A2-aK7ITZxu1ibq8v4Q", "name": "Next topper op Shorts", "tab": "shorts"},
+    {"id": "UCe226-9kFQO3QkNGb_hBkow", "name": "Next toppers addict Shorts", "tab": "shorts"},
 ]
 
 ROAST_SEARCH_QUERIES: list[str] = [
+    "PK Bhaiya Roasting Day By Day shorts",
+    "When Class Gets Dark prashant kirad shorts",
+    "next toppers dark comedy roasting shorts",
     "prashant kirad shobhit nirwan roasting shorts",
-    "next toppers funny moments roasting shorts",
-    "prashant kirad dark comedy funny reply shorts",
-    "shobhit nirwan funny comedy live class shorts",
-    "digraj sir funny prank call roasting shorts",
+    "digraj sir dark comedy funny shorts",
 ]
 
 EXCLUDED_LECTURE_KEYWORDS: tuple[str, ...] = (
@@ -292,12 +292,13 @@ def fetch_comedy_candidates(
     else:
         for ch in COMEDY_CLIP_CHANNELS:
             urls_to_fetch.append((f"https://www.youtube.com/channel/{ch['id']}/{ch['tab']}", ch["name"]))
-        for ch in OFFICIAL_LIVE_CHANNELS:
+        # Keep official horizontal videos only as secondary sources for 2x2 collages
+        for ch in OFFICIAL_LIVE_CHANNELS[:3]:
             urls_to_fetch.append((f"https://www.youtube.com/channel/{ch['id']}/videos", ch["name"]))
 
     if include_live_search:
         for q in ROAST_SEARCH_QUERIES:
-            urls_to_fetch.append((f"ytsearch10:{q}", f"search:{q}"))
+            urls_to_fetch.append((f"ytsearch12:{q}", f"search:{q}"))
 
     seen_ids: set[str] = set()
     results: list[dict] = []
@@ -335,9 +336,10 @@ def fetch_comedy_candidates(
             if any(bad in low for bad in EXCLUDED_LECTURE_KEYWORDS):
                 continue
             is_short_remix = "/shorts" in url or (12 <= dur <= 70)
-            # Prioritize actual viral views first; boost genuine roast/exposed/prank titles cleanly
-            viral_boost = 1.45 if ("roast" in low or "dark" in low or "exposed" in low or "prank" in low) else (1.2 if is_comedy_title else 0.7)
-            priority_score = int(views * viral_boost) + (50_000 if is_comedy_title else 0)
+            # Strongly prioritize already-trending viral Shorts (high views + dark/roast comedy)
+            viral_boost = 1.6 if ("roast" in low or "dark" in low or "exposed" in low or "prank" in low) else 1.2
+            shorts_bonus = 600_000 if (is_short_remix and views >= MIN_PREFERRED_VIEWS) else 0
+            priority_score = int(views * viral_boost) + shorts_bonus + (50_000 if is_comedy_title else 0)
             results.append(
                 {
                     "video_id": vid,
@@ -619,15 +621,16 @@ class NextToppersTrioPipeline:
         end_ms: int,
         face_cx: float,
         is_vertical: bool,
-        hook_pill: str,
+        hook_pill: str | None,
         bgm_path: Path | None,
         out_mp4: Path,
+        speed_factor: float = 1.0,
     ) -> dict | None:
-        """Render a clean 1080x1920 Short using FFmpeg + Pillow directly (used offline/GitHub Actions when ClipForge isn't running)."""
+        """Render a clean 1080x1920 Short using FFmpeg + Pillow directly (used offline/GitHub Actions or viral remix)."""
         out_mp4.parent.mkdir(parents=True, exist_ok=True)
         render_overlay_py = _resolve_render_overlay_script()
         start_s = max(0.0, start_ms / 1000.0)
-        dur_s = max(8.0, min(58.0, (end_ms - start_ms) / 1000.0))
+        dur_s = max(8.0, min(59.0, (end_ms - start_ms) / 1000.0))
 
         with tempfile.TemporaryDirectory(prefix="standalone_short_") as td_str:
             td = Path(td_str)
@@ -637,8 +640,8 @@ class NextToppersTrioPipeline:
                 json.dumps({
                     "width": 1080,
                     "height": 1920,
-                    "topText": hook_pill,
-                    "topPill": True,
+                    "topText": hook_pill or "",
+                    "topPill": bool(hook_pill),
                     "watermarkText": self.watermark,
                     "whiteBg": False,
                 }, ensure_ascii=False),
@@ -650,7 +653,6 @@ class NextToppersTrioPipeline:
                 base_vf = "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920"
             else:
                 cx = max(0.18, min(0.82, face_cx))
-                # Face-zoom framing: blurred vertical backdrop + crisp zoomed center/upper teacher band
                 base_vf = (
                     f"split[fg0][bg0];"
                     f"[bg0]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=28:2,eq=brightness=-0.20[bg];"
@@ -658,14 +660,16 @@ class NextToppersTrioPipeline:
                     f"[bg][fg]overlay=(W-w)/2:(H-h)/2"
                 )
 
-            vf = f"{base_vf},fps=30,format=yuv420p,eq=contrast=1.08:saturation=1.16[vbase];[vbase][1:v]overlay=0:0[vout]"
+            spd_vf = f",setpts={1.0 / speed_factor:.4f}*PTS" if abs(speed_factor - 1.0) > 0.002 else ""
+            spd_af = f",atempo={speed_factor:.4f}" if abs(speed_factor - 1.0) > 0.002 else ""
+            vf = f"{base_vf}{spd_vf},fps=30,format=yuv420p,eq=contrast=1.05:saturation=1.10[vbase];[vbase][1:v]overlay=0:0[vout]"
             if bgm_path and bgm_path.exists():
                 cmd = [
                     "ffmpeg", "-y",
                     "-ss", f"{start_s:.2f}", "-t", f"{dur_s:.2f}", "-i", str(local_src),
                     "-i", str(ov_png),
                     "-stream_loop", "-1", "-i", str(bgm_path),
-                    "-filter_complex", f"{vf};[2:a]volume=0.11[bgm];[0:a]loudnorm=I=-15:TP=-1.5:LRA=9[va];[va][bgm]amix=inputs=2:duration=first:dropout_transition=0[aout]",
+                    "-filter_complex", f"{vf};[2:a]volume=0.10[bgm];[0:a]loudnorm=I=-15:TP=-1.5:LRA=9{spd_af}[va];[va][bgm]amix=inputs=2:duration=first:dropout_transition=0[aout]",
                     "-map", "[vout]", "-map", "[aout]",
                     "-c:v", "libx264", "-preset", "fast", "-crf", "20",
                     "-c:a", "aac", "-b:a", "192k", "-shortest", str(out_mp4), "-loglevel", "error",
@@ -676,6 +680,7 @@ class NextToppersTrioPipeline:
                     "-ss", f"{start_s:.2f}", "-t", f"{dur_s:.2f}", "-i", str(local_src),
                     "-i", str(ov_png),
                     "-filter_complex", vf,
+                    "-af", f"loudnorm=I=-15:TP=-1.5:LRA=9{spd_af}",
                     "-map", "[vout]", "-map", "0:a?",
                     "-c:v", "libx264", "-preset", "fast", "-crf", "20",
                     "-c:a", "aac", "-b:a", "192k", "-shortest", str(out_mp4), "-loglevel", "error",
@@ -684,7 +689,7 @@ class NextToppersTrioPipeline:
             if r.returncode != 0 or not out_mp4.exists():
                 logger.warning("Standalone FFmpeg render failed: %s", r.stderr[-200:])
                 return None
-        return {"filePath": str(out_mp4), "durationMs": int(dur_s * 1000), "transcript": hook_pill}
+        return {"filePath": str(out_mp4), "durationMs": int((dur_s / speed_factor) * 1000), "transcript": hook_pill or ""}
 
     def cleanup_storage(self, *, keep_short_days: int = 5) -> int:
         """Delete heavy downloaded raw videos immediately and prune old compiled/expired MP4s."""
@@ -773,9 +778,9 @@ class NextToppersTrioPipeline:
         while cursor < len(candidates) and len(segs) < 4 and checked < 14:
             c = candidates[cursor]
             cursor += 1
-            checked += 1
             if c.get("is_short_remix") or c.get("video_id") in ZOOM_CONFERENCE_IDS:
                 continue
+            checked += 1
             local_p = self._download_to_cache(c["url"], c["video_id"])
             if not local_p or self._is_vertical_video(local_p):
                 continue
@@ -851,6 +856,7 @@ class NextToppersTrioPipeline:
         outputs: list[dict] = []
         bgm = _pick_comedy_bgm(self.bgm_dir)
         cand_cursor = 0
+        collage_cursor = 0
 
         for i in range(count):
             chosen_output = None
@@ -859,26 +865,29 @@ class NextToppersTrioPipeline:
             ) and video_url_override is None
             if want_collage:
                 res = self._produce_collage_item(
-                    candidates, cand_cursor, bgm, i, len(history.get("produced_clips", []))
+                    candidates, collage_cursor, bgm, i, len(history.get("produced_clips", []))
                 )
                 if res is not None:
-                    *chosen_list, cand_cursor = res
+                    *chosen_list, collage_cursor = res
                     chosen_output = tuple(chosen_list)
 
             attempts = 0
-            while chosen_output is None and cand_cursor < len(candidates) and attempts < 8:
+            while chosen_output is None and cand_cursor < len(candidates) and attempts < 16:
                 src = candidates[cand_cursor]
                 cand_cursor += 1
-                attempts += 1
                 if src["video_id"] in ZOOM_CONFERENCE_IDS and video_url_override is None:
                     logger.info(f"Skipping multi-box Zoom grid {src['video_id']} for single-face roast")
                     continue
 
+                is_remix = (style == "roast-remix") or (style in ("auto", "both") and bool(src.get("is_short_remix")))
+                if style in ("auto", "both") and video_url_override is None and not is_remix:
+                    continue
+
+                attempts += 1
                 local_src = self._download_to_cache(src["url"], src["video_id"])
                 if not local_src:
                     continue
 
-                is_remix = (style == "roast-remix") or (style in ("auto", "both") and src.get("is_short_remix"))
                 is_vert = self._is_vertical_video(local_src)
                 layout = "crop" if is_vert else "face-zoom"
                 target_len = float(duration_sec_override or 26)
@@ -918,9 +927,10 @@ class NextToppersTrioPipeline:
                         end_ms=s_end,
                         face_cx=face_cx,
                         is_vertical=is_vert,
-                        hook_pill=hook_cfg["pill"],
-                        bgm_path=bgm,
+                        hook_pill=None if is_remix else hook_cfg["pill"],
+                        bgm_path=None if is_remix else bgm,
                         out_mp4=tmp_s_mp4,
+                        speed_factor=1.015 if is_remix else 1.0,
                     )
                     if out0:
                         chosen_output = (src, chosen_style, hook_cfg, face_ratio, out0)
@@ -946,12 +956,12 @@ class NextToppersTrioPipeline:
                         layout_mode=layout,
                         color_grade="viral-warm",
                         crop_offset_x=face_cx,
-                        bgm_path=bgm,
-                        bgm_volume=0.10,
+                        bgm_path=None,
+                        bgm_volume=0.0,
                         mute_original=False,
-                        speed_factor=1.02,
-                        top_text=hook_cfg["pill"],
-                        top_pill=True,
+                        speed_factor=1.015,
+                        top_text=None,
+                        top_pill=False,
                         watermark_text=self.watermark,
                         auto_emoji=False,
                         burn_captions=False,
@@ -1006,7 +1016,11 @@ class NextToppersTrioPipeline:
             if src_mp4.exists():
                 final_mp4.write_bytes(src_mp4.read_bytes())
 
-            yt_title = hook_cfg["title"][:100]
+            raw_src_title = " ".join(str(src.get("title") or "").split())
+            if chosen_style == "roast-remix" and raw_src_title and raw_src_title != "Manual Comedy Source":
+                yt_title = raw_src_title[:100]
+            else:
+                yt_title = hook_cfg["title"][:100]
             desc = (
                 f"{yt_title}\n\n"
                 f"Credits & Original Channels:\n"
